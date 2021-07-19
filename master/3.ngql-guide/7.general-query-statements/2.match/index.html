@@ -1881,6 +1881,10 @@ nebula&gt; SHOW JOB 122;
 ...
 </code></pre></div>
 <h3 id="_4">匹配点的属性<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>匹配点的属性的前提是 Tag 本身有对应属性的索引，否则，用户无法执行 <code>MATCH</code> 语句匹配该属性。</p>
+</div>
 <p>用户可以在Tag的右侧用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中点的属性。</p>
 <div class="highlight"><pre><span></span><code># 使用属性name搜索匹配的点。
 nebula&gt; MATCH (v:player{name:"Tim Duncan"}) RETURN v;
@@ -2050,6 +2054,10 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})--&gt;(v2) \
 ...
 </code></pre></div>
 <h3 id="_8">匹配边的属性<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>匹配边的属性的前提是 Edge type 本身有对应属性的索引，否则，用户无法执行 <code>MATCH</code> 语句匹配该属性。</p>
+</div>
 <p>用户可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中Edge type的属性，例如<code>[e:follow{likeness:95}]</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tim Duncan"})-[e:follow{degree:95}]-&gt;(v2) \
         RETURN e;
