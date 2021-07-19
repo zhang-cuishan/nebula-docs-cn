@@ -1507,7 +1507,7 @@
 <div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
     [partition_num = &lt;partition_number&gt;,] 
     [replica_factor = &lt;replica_number&gt;,]
-    vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
+    vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
     [COMMENT = '&lt;comment&gt;'];
 </code></pre></div>
@@ -1537,7 +1537,7 @@
 </tr>
 <tr>
 <td align="left"><code>vid_type</code></td>
-<td align="left">必选参数。指定点ID的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
+<td align="left">必选参数。指定点ID的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
@@ -1621,7 +1621,7 @@ nebula&gt; CREATE SPACE my_space_3 (partition_num=15, replica_factor=1, vid_type
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月14日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月19日</span>
 </small>
 </div>
 </article>
