@@ -288,6 +288,10 @@
      <lastmod>2021-07-20</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/7.general-query-statements/6.show/18.show-queries/</loc>
+     <lastmod>2021-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/8.clauses-and-options/group-by/</loc>
      <lastmod>2021-07-20</lastmod>
      <changefreq>daily</changefreq>
@@ -477,6 +481,10 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/18.operation-and-maintenance-statements/4.job-statements/</loc>
+     <lastmod>2021-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/</loc>
      <lastmod>2021-07-20</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
