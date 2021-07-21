@@ -347,13 +347,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#int">
-    int
+<a class="md-nav__link" href="#_2">
+    整数
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#double">
-    double
+<a class="md-nav__link" href="#_3">
+    浮点数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    数值的读写
   </a>
 </li>
 </ul>
@@ -1460,13 +1465,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#int">
-    int
+<a class="md-nav__link" href="#_2">
+    整数
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#double">
-    double
+<a class="md-nav__link" href="#_3">
+    浮点数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    数值的读写
   </a>
 </li>
 </ul>
@@ -1479,21 +1489,136 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/3.data-types/1.numeric.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="_1">数值类型<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<h2 id="int">int<a class="headerlink" href="#int" title="Permanent link">¶</a></h2>
-<p>Nebula Graph使用关键字<code>int</code>声明64位带符号整数，支持的范围是[-9223372036854775808, 9223372036854775807]。整数支持多种进制表示：</p>
+<h1 id="_1">数值<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>nGQL支持整数和浮点数。</p>
+<h2 id="_2">整数<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>nGQL支持带符号的64位整数（INT64）、32位整数（INT32）、16位整数（INT16）和8位整数（INT8）。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>声明关键字</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT64</td>
+<td><code>INT64</code>或<code>INT</code></td>
+<td>-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>INT32</td>
+<td><code>INT32</code></td>
+<td>-2,147,483,648 ~ 2,147,483,647</td>
+</tr>
+<tr>
+<td>INT16</td>
+<td><code>INT16</code></td>
+<td>-32,768 ~ 32,767</td>
+</tr>
+<tr>
+<td>INT8</td>
+<td><code>INT8</code></td>
+<td>-128 ~ 127</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">浮点数<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>nGQL支持单精度浮点（FLOAT）和双精度浮点（DOUBLE）。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>声明关键字</th>
+<th>范围</th>
+<th>精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FLOAT</td>
+<td><code>FLOAT</code></td>
+<td>3.4E +/- 38</td>
+<td>6~7位</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td><code>DOUBLE</code></td>
+<td>1.7E +/- 308</td>
+<td>15~16位</td>
+</tr>
+</tbody>
+</table>
+<p>nGQL支持科学计数法，例如<code>1e2</code>、<code>1.1e2</code>、<code>.3e4</code>、<code>1.e4</code>、<code>-1234E-10</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>不支持MySQL中的DECIMAL数据类型。</p>
+</div>
+<h2 id="_4">数值的读写<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>在写入和读取不同类型的数据时，nGQL的行为遵守以下规则：</p>
+<table>
+<thead>
+<tr>
+<th>数值类型</th>
+<th>设置为VID</th>
+<th>设置为属性类型</th>
+<th>读取该类型的属性值得到的类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT64</td>
+<td>支持</td>
+<td>支持</td>
+<td>INT64</td>
+</tr>
+<tr>
+<td>INT32</td>
+<td>不支持</td>
+<td>支持</td>
+<td>INT64</td>
+</tr>
+<tr>
+<td>INT16</td>
+<td>不支持</td>
+<td>支持</td>
+<td>INT64</td>
+</tr>
+<tr>
+<td>INT8</td>
+<td>不支持</td>
+<td>支持</td>
+<td>INT64</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>不支持</td>
+<td>支持</td>
+<td>DOUBLE</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>不支持</td>
+<td>支持</td>
+<td>DOUBLE</td>
+</tr>
+</tbody>
+</table>
+<p>例如，nGQL不支持设置INT8类型的<a href="../../../1.introduction/3.vid/">VID</a>，但支持将<a href="../../10.tag-statements/1.create-tag/">TAG</a>或<a href="../../11.edge-type-statements/1.create-edge/">Edge type</a>的某个属性类型设置为INT8。当使用nGQL语句读取INT8类型的属性时，获取到的值的类型为INT64。</p>
+<p>同时，Nebula Graph支持写入多种进制的数值：</p>
 <ul>
 <li>十进制，例如<code>123456</code>。</li>
 <li>十六进制，例如<code>0x1e240</code>。</li>
 <li>八进制，例如<code>0361100</code>。</li>
 </ul>
-<h2 id="double">double<a class="headerlink" href="#double" title="Permanent link">¶</a></h2>
-<p>Nebula Graph使用关键字<code>double</code>声明双精度浮点数，例如<code>1.2</code>、<code>-3.0000001</code>。同时支持科学计数法，例如<code>1e2</code>、<code>1.1e2</code>、<code>.3e4</code>、<code>1.e4</code>、<code>-1234E-10</code>。</p>
+<p>但Nebula Graph会将写入的非十进制数值解析为十进制的值保存。读取到的值为十进制。</p>
+<p>例如，属性<code>score</code>的类型为<code>INT</code>，通过INSERT语句为其赋值<code>0xb</code>，使用FETCH等语句查询该属性值获取到的结果是<code>11</code>，即将十六进制的<code>0xb</code>转换为十进制后的值。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年3月18日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月21日</span>
 </small>
 </div>
 </article>

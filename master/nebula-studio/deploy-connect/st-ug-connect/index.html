@@ -1476,7 +1476,7 @@
 <p>Nebula Graph 数据库登录账号信息，包括用户名和密码。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果 Nebula Graph 已经启用了身份验证，并且已经创建了不同角色的用户，用户只能使用被分配到的账号和密码登录数据库。如果未启用身份验证，用户可以使用默认用户名（<code>user</code>）和默认密码（<code>password</code>）登录数据库。关于启用身份验证，参考 <a href="../../.." title="点击进入 Nebula Graph 用户手册">Nebula Graph 用户手册</a>。</p>
+<p>如果 Nebula Graph 已经启用了身份验证，并且已经创建了不同角色的用户，用户只能使用被分配到的账号和密码登录数据库。如果未启用身份验证，用户可以使用 <code>root</code> 用户名和任意密码登录数据库。关于启用身份验证，参考 <a href="../../.." title="点击进入 Nebula Graph 用户手册">Nebula Graph 用户手册</a>。</p>
 </div>
 </li>
 </ul>
@@ -1496,7 +1496,7 @@
 </ul>
 <ul>
 <li><strong>用户名</strong> 和 <strong>密码</strong>：根据 Nebula Graph 的身份验证设置填写登录账号和密码。<ul>
-<li>如果未启用身份验证，可以填写默认用户名 <code>user</code> 和默认密码 <code>password</code>。</li>
+<li>如果未启用身份验证，可以填写默认用户名 <code>root</code> 和任意密码。</li>
 <li>如果已启用身份验证，但是未创建账号信息，用户只能以 GOD 角色登录，必须填写 <code>root</code> 及对应的密码 <code>nebula</code>。</li>
 <li>
 <p>如果已启用身份验证，同时又创建了不同的用户并分配了角色，不同角色的用户使用自己的账号和密码登录。</p>
@@ -1524,7 +1524,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月17日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月21日</span>
 </small>
 </div>
 </article>

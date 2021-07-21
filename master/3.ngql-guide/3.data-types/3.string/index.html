@@ -358,11 +358,16 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    字符串类型
+    声明与表示方式
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    字符串读写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     转义字符
   </a>
 </li>
@@ -1466,11 +1471,16 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    字符串类型
+    声明与表示方式
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    字符串读写
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     转义字符
   </a>
 </li>
@@ -1490,20 +1500,34 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">字符串<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph使用关键字<code>string</code>（变长）或<code>fixed_string(&lt;length&gt;)</code>（定长）声明字符串类型数据，格式为双引号或单引号包裹的任意长度的字符串，例如<code>"Shaquille O'Neal"</code>或<code>'This is a double-quoted literal string'</code>。</p>
-<h2 id="_2">字符串类型<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Nebula Graph支持定长字符串和变长字符串。示例如下：</p>
+<p>Nebula Graph支持定长字符串和变长字符串。</p>
+<h2 id="_2">声明与表示方式<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>nGQL中的字符串声明方式如下：</p>
 <ul>
-<li>定长字符串<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t1 (p1 fixed_string(10)); 
+<li>使用关键字<code>STRING</code>声明变长字符串。</li>
+<li>使用关键字<code>FIXED_STRING(&lt;length&gt;)</code>声明定长字符串，<code>&lt;length&gt;</code>为字符串长度，例如<code>FIXED_STRING(32)</code>。</li>
+</ul>
+<p>字符串的表示方式为用双引号或单引号包裹，例如<code>"Hello, Cooper"</code>或<code>'Hello, Cooper'</code>。</p>
+<h2 id="_3">字符串读写<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>nGQL支持以如下方式使用字符串：</p>
+<ul>
+<li>将<a href="../../../1.introduction/3.vid/">VID</a>的数据类型定义为定长字符串。</li>
+<li>将变长字符串设置为Schema名称，包括图空间、Tag、Edge type和属性的名称。</li>
+<li>将属性值的数据类型定义为定长或变长字符串。</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li>将属性值的类型定义为定长字符串<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t1 (p1 FIXED_STRING(10)); 
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>变长字符串<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t2 (p2 string); 
+<li>将属性值的类型定义为变长字符串<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t2 (p2 STRING); 
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_3">转义字符<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>在写入定长字符串时，如果尝试写入的字符串超出长度限制，Nebula Graph将截断字符串，仅存入符合长度限制的部分。例如，当一个图空间的VID类型为<code>FIXED_STRING(8)</code>时，如果尝试将<code>A_string_with_27_characters</code>设置为VID，然后使用nGQL命令查询该VID，获取到的只有<code>A_string</code>。</p>
+<h2 id="_4">转义字符<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>字符串中不支持直接换行，可以使用转义字符实现，例如：</p>
 <ul>
 <li><code>"\n\t\r\b\f"</code></li>
@@ -1540,7 +1564,7 @@ Background:
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月10日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月21日</span>
 </small>
 </div>
 </article>
