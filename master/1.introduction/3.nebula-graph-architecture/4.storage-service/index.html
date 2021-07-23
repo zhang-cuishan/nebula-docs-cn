@@ -1675,7 +1675,7 @@
 <li>支持向第三方系统进行同步（例如<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">全文索引</a>）</li>
 </ul>
 <h2 id="storage_1">Storage服务架构<a class="headerlink" href="#storage_1" title="Permanent link">¶</a></h2>
-<p><img alt="image" src="https://docs-cdn.nebula-graph.com.cn/1.overview/3.design-and-architecture/2.storage-design/storage-design.png"/></p>
+<p><img alt="image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-reading-storage-architecture.png"/></p>
 <p>Storage服务是由nebula-storaged进程提供的，用户可以根据场景配置nebula-storaged进程数量，例如测试环境1个，生产环境3个。</p>
 <p>所有nebula-storaged进程构成了基于Raft协议的集群，整个服务架构可以分为三层，从上到下依次为：</p>
 <ul>
@@ -1741,7 +1741,7 @@
 <p>图存储的主要数据是点和边，Nebula Graph将点和边的信息存储为key，同时将点和边的属性信息存储在value中，以便更高效地使用属性过滤。</p>
 <p>由于Nebula Graph 2.0的数据存储格式在1.x的基础上做了修改，下文将在介绍数据存储格式时同时介绍不同版本的差异。</p>
 <ul>
-<li>点数据存储格式<p><img alt="The vertex format of storage service" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/storage-vertex-format.png"/></p>
+<li>点数据存储格式<p><img alt="The vertex format of storage service" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-graph-vertex-data-format.png"/></p>
 <table>
 <thead>
 <tr>
@@ -1771,7 +1771,7 @@
 </li>
 </ul>
 <ul>
-<li>边数据存储格式<p><img alt="The edge format of storage service" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/storage-edge-format.png"/></p>
+<li>边数据存储格式<p><img alt="The edge format of storage service" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-graph-edge-data-format.png"/></p>
 <table>
 <thead>
 <tr>
@@ -1957,7 +1957,7 @@ PartitionID pId = vid % numParts + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月8日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月22日</span>
 </small>
 </div>
 </article>
