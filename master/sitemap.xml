@@ -40,7 +40,7 @@
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/2.quick-start/2.deploy-nebula-graph-with-docker-compose/</loc>
+     <loc>https://docs.nebula-graph.com.cn/master/master/2.quick-start/install-nebula-graph/</loc>
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -500,15 +500,23 @@
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/deploy-nebula-graph-cluster/</loc>
+     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/</loc>
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/3.upgrade-nebula-graph/</loc>
+     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/</loc>
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/5.upgrade-nebula-from-200-to-201/</loc>
+     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/manage-service/</loc>
+     <lastmod>2021-07-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200/</loc>
+     <lastmod>2021-07-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-201/</loc>
      <lastmod>2021-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url><url>

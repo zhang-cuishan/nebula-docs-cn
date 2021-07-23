@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/deploy-nebula-graph-cluster/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/master/2.quick-start/install-nebula-graph/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.0" name="generator"/>
-<title>部署Nebula Graph集群 - Nebula Graph Database 手册</title>
+<title>步骤1：安装Nebula Graph - Nebula Graph Database 手册</title>
 <link href="../../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#nebula_graph">
+<a class="md-skip" href="#1nebula_graph">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              部署Nebula Graph集群
+              步骤1：安装Nebula Graph
             
           </span>
 </div>
@@ -189,13 +189,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_5">
-        Nebula Graph架构
+        服务架构
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Nebula Graph架构" class="md-nav" data-md-level="2">
+<nav aria-label="服务架构" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
-          Nebula Graph架构
+          服务架构
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -224,8 +224,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
         快速入门
         <span class="md-nav__icon md-icon"></span>
@@ -237,28 +237,75 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.quick-start/1.quick-start-workflow/">
+<a class="md-nav__link" href="../1.quick-start-workflow/">
         快速入门流程
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          步骤1：安装Nebula Graph
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        步骤1：安装Nebula Graph
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.quick-start/2.deploy-nebula-graph-with-docker-compose/">
-        Docker Compose部署Nebula Graph
+<a class="md-nav__link" href="#_1">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    下载安装包
+  </a>
+<nav aria-label="下载安装包" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oss">
+    阿里云OSS下载
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#github">
+    GitHub下载
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_graph">
+    安装Nebula Graph
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    相关文档
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.start-stop-service/">
+        步骤2：启动Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.quick-start/5.start-stop-service/">
-        管理Nebula Graph服务
+<a class="md-nav__link" href="../3.connect-to-nebula-graph/">
+        步骤3：连接Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.quick-start/3.connect-to-nebula-graph/">
-        连接Nebula Graph
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../2.quick-start/4.nebula-graph-crud/">
-        Nebula Graph常用语法（CRUD）
+<a class="md-nav__link" href="../4.nebula-graph-crud/">
+        步骤4：使用常用命令
       </a>
 </li>
 </ul>
@@ -290,7 +337,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../3.ngql-guide/1.nGQL-overview/1.overview/">
-        Nebula Graph查询语言（nGQL）
+        什么是nGQL
       </a>
 </li>
 <li class="md-nav__item">
@@ -989,17 +1036,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6.deploy-text-based-index/1.text-based-index-restrictions/">
+<a class="md-nav__link" href="../../4.deployment-and-installation/6.deploy-text-based-index/1.text-based-index-restrictions/">
         全文索引限制
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6.deploy-text-based-index/2.deploy-es/">
+<a class="md-nav__link" href="../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">
         部署全文索引
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../6.deploy-text-based-index/3.deploy-listener/">
+<a class="md-nav__link" href="../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">
         部署Raft listener
       </a>
 </li>
@@ -1089,8 +1136,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
         安装部署
         <span class="md-nav__icon md-icon"></span>
@@ -1102,104 +1149,77 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../1.resource-preparations/">
+<a class="md-nav__link" href="../../4.deployment-and-installation/1.resource-preparations/">
         准备资源
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2">
-        编译安装Nebula Graph
+        编译与安装
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="编译安装Nebula Graph" class="md-nav" data-md-level="2">
+<nav aria-label="编译与安装" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          编译安装Nebula Graph
+          编译与安装
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
-        源码编译安装
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
+        使用源码安装
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
-        RPM/DEB包安装
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+        使用RPM/DEB包安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">
+        使用Docker Compose部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">
+        使用RPM/DEB包部署集群
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          部署Nebula Graph集群
-          <span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/manage-service/">
+        管理服务
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4">
+        升级版本
+        <span class="md-nav__icon md-icon"></span>
 </label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        部署Nebula Graph集群
-      </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
+<nav aria-label="升级版本" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
 <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+          升级版本
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    部署方案
-  </a>
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200/">
+        升级历史版本至v2.0.0
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    前提条件
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    手动部署流程
-  </a>
-<nav aria-label="手动部署流程" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1nebula_graph">
-    1.安装Nebula Graph
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2.修改配置文件
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.启动集群
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.检查集群
-  </a>
-</li>
-</ul>
-</nav>
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-201/">
+        升级v2.0.0至v2.0.1
+      </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.upgrade-nebula-graph/">
-        升级历史版本至Nebula Graph v2.0.0
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../5.upgrade-nebula-from-200-to-201/">
-        Nebula Graph v2.0.0升级至v2.0.1
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../4.uninstall-nebula-graph/">
+<a class="md-nav__link" href="../../4.deployment-and-installation/4.uninstall-nebula-graph/">
         卸载Nebula Graph
       </a>
 </li>
@@ -1209,13 +1229,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
-        配置和日志
+        配置与日志
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="配置和日志" class="md-nav" data-md-level="1">
+<nav aria-label="配置与日志" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-          配置和日志
+          配置与日志
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1492,42 +1512,37 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    部署方案
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
     前提条件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    手动部署流程
+<a class="md-nav__link" href="#_2">
+    下载安装包
   </a>
-<nav aria-label="手动部署流程" class="md-nav">
+<nav aria-label="下载安装包" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1nebula_graph">
-    1.安装Nebula Graph
+<a class="md-nav__link" href="#oss">
+    阿里云OSS下载
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-    2.修改配置文件
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-    3.启动集群
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4">
-    4.检查集群
+<a class="md-nav__link" href="#github">
+    GitHub下载
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_graph">
+    安装Nebula Graph
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    相关文档
+  </a>
 </li>
 </ul>
 </nav>
@@ -1536,421 +1551,127 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/4.deployment-and-installation/deploy-nebula-graph-cluster.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/2.quick-start/install-nebula-graph.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_graph">部署Nebula Graph集群<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
-<p>Nebula Graph不提供官方的集群部署工具，需要手动部署，下文将介绍手动部署的简单流程。</p>
-<h2 id="_1">部署方案<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">机器名称</th>
-<th align="left">IP地址</th>
-<th align="left">graphd进程数量</th>
-<th align="left">storaged进程数量</th>
-<th align="left">metad进程数量</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">A</td>
-<td align="left">192.168.10.111</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">B</td>
-<td align="left">192.168.10.112</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">C</td>
-<td align="left">192.168.10.113</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">D</td>
-<td align="left">192.168.10.114</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">-</td>
-</tr>
-<tr>
-<td align="left">E</td>
-<td align="left">192.168.10.115</td>
-<td align="left">1</td>
-<td align="left">1</td>
-<td align="left">-</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>准备5台用于部署集群的机器。</p>
-<h2 id="_3">手动部署流程<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="1nebula_graph">1.安装Nebula Graph<a class="headerlink" href="#1nebula_graph" title="Permanent link">¶</a></h3>
-<p>在集群的每一台服务器上都安装Nebula Graph，安装后暂不需要启动服务。安装方式请参见：</p>
-<ul>
-<li><a href="../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用RPM或DEB安装包安装Nebula Graph</a></li>
-</ul>
-<ul>
-<li><a href="../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译安装Nebula Graph</a></li>
-</ul>
-<h3 id="2">2.修改配置文件<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p>修改每个服务器上的Nebula Graph配置文件。</p>
-<p>Nebula Graph的所有配置文件均位于安装目录的<code>etc</code>目录内，包括<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>，用户可以只修改所需服务的配置文件。各个机器需要修改的配置文件如下。</p>
-<table>
-<thead>
-<tr>
-<th align="left">机器名称</th>
-<th align="left">待修改配置文件</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">A</td>
-<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
-</tr>
-<tr>
-<td align="left">B</td>
-<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
-</tr>
-<tr>
-<td align="left">C</td>
-<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
-</tr>
-<tr>
-<td align="left">D</td>
-<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
-</tr>
-<tr>
-<td align="left">E</td>
-<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
-</tr>
-</tbody>
-</table>
-<p>用户可以参考如下配置文件的内容，仅展示集群通信的部分设置，未展示的内容为默认设置，便于用户了解集群间各个服务器的关系。</p>
+<h1 id="1nebula_graph">步骤1：安装Nebula Graph<a class="headerlink" href="#1nebula_graph" title="Permanent link">¶</a></h1>
+<p>RPM和DEB是Linux系统下常见的两种安装包格式，本文介绍如何使用RPM或DEB文件在一台机器上快速安装Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>主要修改的配置是<code>meta_server_addrs</code>，所有配置文件都需要填写所有Meta服务的IP地址和端口，同时需要修改<code>local_ip</code>为机器本身的联网IP地址。配置参数的详细说明请参见：</p>
-<ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta服务配置</a></li>
-</ul>
-<ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph服务配置</a></li>
-</ul>
-<ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage服务配置</a></li>
-</ul>
+<p>部署Nebula Graph集群的方式参见<a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">使用RPM/DEB包部署集群</a>。</p>
 </div>
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>安装wget</p>
+<h2 id="_2">下载安装包<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="oss">阿里云OSS下载<a class="headerlink" href="#oss" title="Permanent link">¶</a></h3>
+<ul>
+<li>下载release版本<p>URL格式如下：</p>
+<div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el7.x86_64.rpm
+
+//Centos <span class="m">8</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.rpm
+
+//Ubuntu <span class="m">1604</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.deb
+
+//Ubuntu <span class="m">1804</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.deb
+
+//Ubuntu <span class="m">2004</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.deb
+</code></pre></div>
+<p>例如要下载适用于<code>Centos 7.5</code>的<code>{{ nebula.release }}</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/<span class="o">{{</span> nebula.release <span class="o">}}</span>/nebula-graph-<span class="o">{{</span> nebula.release <span class="o">}}</span>.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/<span class="o">{{</span> nebula.release <span class="o">}}</span>/nebula-graph-<span class="o">{{</span> nebula.release <span class="o">}}</span>.el7.x86_64.rpm.sha256sum.txt
+</code></pre></div>
+<p>下载适用于<code>ubuntu 1804</code>的<code>{{ nebula.release }}</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/<span class="o">{{</span> nebula.release <span class="o">}}</span>/nebula-graph-<span class="o">{{</span> nebula.release <span class="o">}}</span>.ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/<span class="o">{{</span> nebula.release <span class="o">}}</span>/nebula-graph-<span class="o">{{</span> nebula.release <span class="o">}}</span>.ubuntu1804.amd64.deb.sha256sum.txt
+</code></pre></div></p>
+</li>
+</ul>
+<ul>
+<li>下载日常开发版本(nightly)<blockquote>
+<p><strong>禁止</strong>：nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
+</blockquote>
+<p>URL格式如下：</p>
+<div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el7.x86_64.rpm
+
+//Centos <span class="m">8</span>
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el8.x86_64.rpm
+
+//Ubuntu <span class="m">1604</span>
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1604.amd64.deb
+
+//Ubuntu <span class="m">1804</span>
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
+
+//Ubuntu <span class="m">2004</span>
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
+</code></pre></div>
+<p>例如要下载<code>2021.03.28</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm.sha256sum.txt
+</code></pre></div>
+<p>要下载<code>2021.03.28</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb.sha256sum.txt
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="github">GitHub下载<a class="headerlink" href="#github" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p>机器A配置</p>
+<p>下载release版本</p>
+<ul>
+<li>登录<a href="https://github.com/vesoft-inc/nebula-graph/releases">Nebula Graph Releases</a>页面，确认需要的版本，单击<strong>Assets</strong>。</li>
+</ul>
+<p><img alt="Select a Nebula Graph release version" src="https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/releases-page.png?raw=true"/></p>
+<ul>
+<li>在<strong>Assets</strong>区域找到机器运行所需的安装包，下载文件到机器上。</li>
+</ul>
+</li>
+</ul>
 <ul>
 <li>
-<p><code>nebula-graphd.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server Addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
-<span class="c1"># Network device to listen on</span>
---listen_netdev<span class="o">=</span>any
-<span class="c1"># Port to listen on</span>
---port<span class="o">=</span><span class="m">9669</span>
+<p>下载nightly版本</p>
+<blockquote>
+<p><strong>禁止</strong>：nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
+</blockquote>
+<ul>
+<li>登录<a href="https://github.com/vesoft-inc/nebula/actions/workflows/package.yaml">Nebula Graph package</a>页面，单击顶部最新的<strong>package</strong>。</li>
+</ul>
+<p><img alt="Select a Nebula Graph nightly version" src="https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/nightly-page.png?raw=true"/></p>
+<ul>
+<li>在<strong>Artifacts</strong>区域找到机器运行所需的安装包，下载文件到机器上。</li>
+</ul>
+</li>
+</ul>
+<h2 id="nebula_graph">安装Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
+<ul>
+<li>安装RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>
-<p><code>nebula-storaged.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
-<span class="c1"># Storage daemon listening port</span>
---port<span class="o">=</span><span class="m">9779</span>
+<li>安装DEB包<div class="highlight"><pre><span></span><code>$ sudo dpkg -i --instdir<span class="o">==</span>&lt;installation_path&gt; &lt;package_name&gt;
 </code></pre></div>
 </li>
 </ul>
-<ul>
-<li>
-<p><code>nebula-metad.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-metad process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
-<span class="c1"># Meta daemon listening port</span>
---port<span class="o">=</span><span class="m">9559</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>机器B配置</p>
-<ul>
-<li>
-<p><code>nebula-graphd.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server Addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
-<span class="c1"># Network device to listen on</span>
---listen_netdev<span class="o">=</span>any
-<span class="c1"># Port to listen on</span>
---port<span class="o">=</span><span class="m">9669</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-storaged.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
-<span class="c1"># Storage daemon listening port</span>
---port<span class="o">=</span><span class="m">9779</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-metad.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-metad process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
-<span class="c1"># Meta daemon listening port</span>
---port<span class="o">=</span><span class="m">9559</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>机器C配置</p>
-<ul>
-<li>
-<p><code>nebula-graphd.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server Addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
-<span class="c1"># Network device to listen on</span>
---listen_netdev<span class="o">=</span>any
-<span class="c1"># Port to listen on</span>
---port<span class="o">=</span><span class="m">9669</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-storaged.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
-<span class="c1"># Storage daemon listening port</span>
---port<span class="o">=</span><span class="m">9779</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-metad.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-metad process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
-<span class="c1"># Meta daemon listening port</span>
---port<span class="o">=</span><span class="m">9559</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>机器D配置</p>
-<ul>
-<li>
-<p><code>nebula-graphd.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server Addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.114
-<span class="c1"># Network device to listen on</span>
---listen_netdev<span class="o">=</span>any
-<span class="c1"># Port to listen on</span>
---port<span class="o">=</span><span class="m">9669</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-storaged.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.114
-<span class="c1"># Storage daemon listening port</span>
---port<span class="o">=</span><span class="m">9779</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>机器E配置</p>
-<ul>
-<li>
-<p><code>nebula-graphd.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta Server Addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.115
-<span class="c1"># Network device to listen on</span>
---listen_netdev<span class="o">=</span>any
-<span class="c1"># Port to listen on</span>
---port<span class="o">=</span><span class="m">9669</span>
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p><code>nebula-storaged.conf</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
-<span class="c1"># Comma separated Meta server addresses</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
-<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
-<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
-<span class="c1"># will be accessed remotely.</span>
---local_ip<span class="o">=</span><span class="m">192</span>.168.10.115
-<span class="c1"># Storage daemon listening port</span>
---port<span class="o">=</span><span class="m">9779</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3">3.启动集群<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p>依次启动各个服务器上的对应进程。说明如下。</p>
-<table>
-<thead>
-<tr>
-<th align="left">机器名称</th>
-<th align="left">待启动的进程</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">A</td>
-<td align="left">graphd、storaged、metad</td>
-</tr>
-<tr>
-<td align="left">B</td>
-<td align="left">graphd、storaged、metad</td>
-</tr>
-<tr>
-<td align="left">C</td>
-<td align="left">graphd、storaged、metad</td>
-</tr>
-<tr>
-<td align="left">D</td>
-<td align="left">graphd、storaged</td>
-</tr>
-<tr>
-<td align="left">E</td>
-<td align="left">graphd、storaged</td>
-</tr>
-</tbody>
-</table>
-<p>启动Nebula Graph进程的命令如下：</p>
-<div class="highlight"><pre><span></span><code>sudo /usr/local/nebula/scripts/nebula.service start &lt;metad<span class="p">|</span>graphd<span class="p">|</span>storaged<span class="p">|</span>all&gt;
-</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul>
-<li>graphd、storaged和metad都启动时，可以用all代替。</li>
-</ul>
-<ul>
-<li><code>/usr/local/nebula</code>是Nebula Graph的默认安装路径，如果修改过安装路径，请使用实际路径。更多启停服务的内容，请参见<a href="../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a>。</li>
-</ul>
+<p>如果不设置安装路径，默认安装路径为<code>/usr/local/nebula/</code>。</p>
 </div>
-<h3 id="4">4.检查集群<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<p>安装原生CLI客户端<a href="../../2.quick-start/3.connect-to-nebula-graph/#_1">Nebula Console</a>，然后连接任何一个已启动graphd进程的机器，执行命令<code>SHOW HOSTS</code>检查集群状态。例如：</p>
-<div class="highlight"><pre><span></span><code>$ ./nebula-console --addr <span class="m">192</span>.168.10.111 --port <span class="m">9669</span> -u root -p nebula
-
-<span class="m">2021</span>/05/25 <span class="m">01</span>:41:19 <span class="o">[</span>INFO<span class="o">]</span> connection pool is initialized successfully
-Welcome to Nebula Graph!
-
-&gt; SHOW HOSTS<span class="p">;</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> Host             <span class="p">|</span> Port <span class="p">|</span> Status   <span class="p">|</span> Leader count <span class="p">|</span> Leader distribution  <span class="p">|</span> Partition distribution <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"192.168.10.111"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"192.168.10.112"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"192.168.10.113"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"192.168.10.114"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"192.168.10.115"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"Total"</span>          <span class="p">|</span>      <span class="p">|</span>          <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span>                      <span class="p">|</span>                        <span class="p">|</span>
-+------------------+------+----------+--------------+----------------------+------------------------+
-</code></pre></div>
+<h2 id="_3">相关文档<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p><a href="../3.connect-to-nebula-graph/">连接Nebula Graph</a></p>
+<!--  This part is reused from the docs-2.0/reuse directory. To modify it, update the source file. -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月26日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
 </small>
 </div>
 </article>
@@ -1963,7 +1684,7 @@ Welcome to Nebula Graph!
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: RPM/DEB包安装" class="md-footer__link md-footer__link--prev" href="../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/" rel="prev">
+<a aria-label="上一页: 快速入门流程" class="md-footer__link md-footer__link--prev" href="../1.quick-start-workflow/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -1972,17 +1693,17 @@ Welcome to Nebula Graph!
 <span class="md-footer__direction">
                 上一页
               </span>
-              RPM/DEB包安装
+              快速入门流程
             </div>
 </div>
 </a>
-<a aria-label="下一页: 升级历史版本至Nebula Graph v2.0.0" class="md-footer__link md-footer__link--next" href="../3.upgrade-nebula-graph/" rel="next">
+<a aria-label="下一页: 步骤2：启动Nebula Graph" class="md-footer__link md-footer__link--next" href="../5.start-stop-service/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              升级历史版本至Nebula Graph v2.0.0
+              步骤2：启动Nebula Graph
             </div>
 </div>
 <div class="md-footer__button md-icon">

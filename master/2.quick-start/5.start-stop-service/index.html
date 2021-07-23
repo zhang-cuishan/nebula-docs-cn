@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/2.quick-start/5.start-stop-service/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.0" name="generator"/>
-<title>管理Nebula Graph服务 - Nebula Graph Database 手册</title>
+<title>步骤2：启动Nebula Graph - Nebula Graph Database 手册</title>
 <link href="../../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#nebula_graph">
+<a class="md-skip" href="#2nebula_graph">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              管理Nebula Graph服务
+              步骤2：启动Nebula Graph
             
           </span>
 </div>
@@ -189,13 +189,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_5">
-        Nebula Graph架构
+        服务架构
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Nebula Graph架构" class="md-nav" data-md-level="2">
+<nav aria-label="服务架构" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
-          Nebula Graph架构
+          服务架构
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -242,18 +242,18 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.deploy-nebula-graph-with-docker-compose/">
-        Docker Compose部署Nebula Graph
+<a class="md-nav__link" href="../install-nebula-graph/">
+        步骤1：安装Nebula Graph
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          管理Nebula Graph服务
+          步骤2：启动Nebula Graph
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        管理Nebula Graph服务
+        步骤2：启动Nebula Graph
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -267,7 +267,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_1">
+<a class="md-nav__link" href="#nebula_graph">
     启动Nebula Graph服务
   </a>
 <nav aria-label="启动Nebula Graph服务" class="md-nav">
@@ -286,7 +286,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_2">
+<a class="md-nav__link" href="#nebula_graph_1">
     停止Nebula Graph服务
   </a>
 <nav aria-label="停止Nebula Graph服务" class="md-nav">
@@ -305,7 +305,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_3">
+<a class="md-nav__link" href="#nebula_graph_2">
     查看Nebula Graph服务
   </a>
 <nav aria-label="查看Nebula Graph服务" class="md-nav">
@@ -323,17 +323,22 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    下一步
+  </a>
+</li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../3.connect-to-nebula-graph/">
-        连接Nebula Graph
+        步骤3：连接Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../4.nebula-graph-crud/">
-        Nebula Graph常用语法（CRUD）
+        步骤4：使用常用命令
       </a>
 </li>
 </ul>
@@ -365,7 +370,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../3.ngql-guide/1.nGQL-overview/1.overview/">
-        Nebula Graph查询语言（nGQL）
+        什么是nGQL
       </a>
 </li>
 <li class="md-nav__item">
@@ -1184,42 +1189,67 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2">
-        编译安装Nebula Graph
+        编译与安装
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="编译安装Nebula Graph" class="md-nav" data-md-level="2">
+<nav aria-label="编译与安装" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          编译安装Nebula Graph
+          编译与安装
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
-        源码编译安装
+        使用源码安装
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
-        RPM/DEB包安装
+        使用RPM/DEB包安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">
+        使用Docker Compose部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">
+        使用RPM/DEB包部署集群
       </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/deploy-nebula-graph-cluster/">
-        部署Nebula Graph集群
+<a class="md-nav__link" href="../../4.deployment-and-installation/manage-service/">
+        管理服务
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4">
+        升级版本
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="升级版本" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+          升级版本
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200/">
+        升级历史版本至v2.0.0
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/">
-        升级历史版本至Nebula Graph v2.0.0
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-201/">
+        升级v2.0.0至v2.0.1
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/5.upgrade-nebula-from-200-to-201/">
-        Nebula Graph v2.0.0升级至v2.0.1
-      </a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/4.uninstall-nebula-graph/">
@@ -1232,13 +1262,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
-        配置和日志
+        配置与日志
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="配置和日志" class="md-nav" data-md-level="1">
+<nav aria-label="配置与日志" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-          配置和日志
+          配置与日志
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1519,7 +1549,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_1">
+<a class="md-nav__link" href="#nebula_graph">
     启动Nebula Graph服务
   </a>
 <nav aria-label="启动Nebula Graph服务" class="md-nav">
@@ -1538,7 +1568,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_2">
+<a class="md-nav__link" href="#nebula_graph_1">
     停止Nebula Graph服务
   </a>
 <nav aria-label="停止Nebula Graph服务" class="md-nav">
@@ -1557,7 +1587,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_3">
+<a class="md-nav__link" href="#nebula_graph_2">
     查看Nebula Graph服务
   </a>
 <nav aria-label="查看Nebula Graph服务" class="md-nav">
@@ -1575,6 +1605,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+    下一步
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1585,7 +1620,7 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/2.quick-start/5.start-stop-service.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_graph">管理Nebula Graph服务<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
+<h1 id="2nebula_graph">步骤2：启动Nebula Graph服务<a class="headerlink" href="#2nebula_graph" title="Permanent link">¶</a></h1>
 <p>Nebula Graph使用脚本<code>nebula.service</code>管理服务，包括启动、停止、重启、中止和查看。</p>
 <p><code>nebula.service</code>的默认路径是<code>/usr/local/nebula/scripts</code>，如果修改过安装路径，请使用实际路径。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
@@ -1648,9 +1683,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="nebula_graph_1">启动Nebula Graph服务<a class="headerlink" href="#nebula_graph_1" title="Permanent link">¶</a></h2>
+<h2 id="nebula_graph">启动Nebula Graph服务<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
 <h3 id="_2">非容器部署<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<p>关于非容器部署，用户可以查看 <a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用RPM或DEB安装包安装Nebula Graph</a>，执行如下命令启动Nebula Graph服务：</p>
+<p>对于使用RPM或DEB文件安装的Nebula Graph，执行如下命令启动服务：</p>
 <div class="highlight"><pre><span></span><code>$ sudo /usr/local/nebula/scripts/nebula.service start all
 <span class="o">[</span>INFO<span class="o">]</span> Starting nebula-metad...
 <span class="o">[</span>INFO<span class="o">]</span> Done
@@ -1660,7 +1695,7 @@
 <span class="o">[</span>INFO<span class="o">]</span> Done
 </code></pre></div>
 <h3 id="_3">容器部署<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
-<p>在<code>nebula-docker-compose/</code>目录内执行如下命令启动Nebula Graph服务：</p>
+<p>对于使用Docker Compose部署的Nebula Graph，在<code>nebula-docker-compose/</code>目录内执行如下命令启动服务：</p>
 <div class="highlight"><pre><span></span><code>nebula-docker-compose<span class="o">]</span>$ docker-compose up -d
 Building with native build. Learn about native build <span class="k">in</span> Compose here: https://docs.docker.com/go/compose-native-build/
 Creating network <span class="s2">"nebula-docker-compose_nebula-net"</span> with the default driver
@@ -1674,13 +1709,13 @@ Creating nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
 Creating nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
 Creating nebula-docker-compose_graphd_1    ... <span class="k">done</span>
 </code></pre></div>
-<h2 id="nebula_graph_2">停止Nebula Graph服务<a class="headerlink" href="#nebula_graph_2" title="Permanent link">¶</a></h2>
+<h2 id="nebula_graph_1">停止Nebula Graph服务<a class="headerlink" href="#nebula_graph_1" title="Permanent link">¶</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>请勿使用<code>kill -9</code> 命令强制终止进程，否则可能较小概率出现数据丢失。</p>
 </div>
 <h3 id="_4">非容器部署<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p>执行如下命令停止Nebula Graph服务：</p>
+<p>对于使用Docker Compose安装的Nebula Graph，执行如下命令停止Nebula Graph服务：</p>
 <div class="highlight"><pre><span></span><code>$ sudo /usr/local/nebula/scripts/nebula.service stop all
 <span class="o">[</span>INFO<span class="o">]</span> Stopping nebula-metad...
 <span class="o">[</span>INFO<span class="o">]</span> Done
@@ -1716,7 +1751,7 @@ Removing network nebula-docker-compose_nebula-net
 <p class="admonition-title">Note</p>
 <p>命令<code>docker-compose down -v</code>将会<strong>删除</strong>所有本地Nebula Graph的数据。如果使用的是developing或nightly版本，并且有一些兼容性问题，请尝试这个命令。</p>
 </div>
-<h2 id="nebula_graph_3">查看Nebula Graph服务<a class="headerlink" href="#nebula_graph_3" title="Permanent link">¶</a></h2>
+<h2 id="nebula_graph_2">查看Nebula Graph服务<a class="headerlink" href="#nebula_graph_2" title="Permanent link">¶</a></h2>
 <h3 id="_6">非容器部署<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>执行如下命令查看Nebula Graph服务状态：</p>
 <div class="highlight"><pre><span></span><code>$ sudo /usr/local/nebula/scripts/nebula.service status all
@@ -1773,11 +1808,14 @@ a74054c6ae25   vesoft/nebula-graphd:v2-nightly     <span class="s2">"/usr/local/
 nebula-docker-compose<span class="o">]</span>$ docker <span class="nb">exec</span> -it 2a6c56c405f5 bash
 <span class="o">[</span>root@2a6c56c405f5 nebula<span class="o">]</span><span class="c1">#</span>
 </code></pre></div>
+<h2 id="_8">下一步<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<p><a href="../3.connect-to-nebula-graph/">连接Nebula Graph</a></p>
+<!--  This part is reused from the docs-2.0/reuse directory. To modify it, update the source file. -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月28日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
 </small>
 </div>
 </article>
@@ -1790,7 +1828,7 @@ nebula-docker-compose<span class="o">]</span>$ docker <span class="nb">exec</spa
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: Docker Compose部署Nebula Graph" class="md-footer__link md-footer__link--prev" href="../2.deploy-nebula-graph-with-docker-compose/" rel="prev">
+<a aria-label="上一页: 步骤1：安装Nebula Graph" class="md-footer__link md-footer__link--prev" href="../install-nebula-graph/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -1799,17 +1837,17 @@ nebula-docker-compose<span class="o">]</span>$ docker <span class="nb">exec</spa
 <span class="md-footer__direction">
                 上一页
               </span>
-              Docker Compose部署Nebula Graph
+              步骤1：安装Nebula Graph
             </div>
 </div>
 </a>
-<a aria-label="下一页: 连接Nebula Graph" class="md-footer__link md-footer__link--next" href="../3.connect-to-nebula-graph/" rel="next">
+<a aria-label="下一页: 步骤3：连接Nebula Graph" class="md-footer__link md-footer__link--next" href="../3.connect-to-nebula-graph/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              连接Nebula Graph
+              步骤3：连接Nebula Graph
             </div>
 </div>
 <div class="md-footer__button md-icon">

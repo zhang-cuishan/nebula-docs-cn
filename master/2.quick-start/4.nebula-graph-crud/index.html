@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/2.quick-start/4.nebula-graph-crud/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.0" name="generator"/>
-<title>Nebula Graph常用语法（CRUD） - Nebula Graph Database 手册</title>
+<title>步骤4：使用常用命令 - Nebula Graph Database 手册</title>
 <link href="../../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#_1">
+<a class="md-skip" href="#4ngqlcrud">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Nebula Graph常用语法（CRUD）
+              步骤4：使用常用命令
             
           </span>
 </div>
@@ -189,13 +189,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_5">
-        Nebula Graph架构
+        服务架构
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Nebula Graph架构" class="md-nav" data-md-level="2">
+<nav aria-label="服务架构" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
-          Nebula Graph架构
+          服务架构
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -242,28 +242,28 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.deploy-nebula-graph-with-docker-compose/">
-        Docker Compose部署Nebula Graph
+<a class="md-nav__link" href="../install-nebula-graph/">
+        步骤1：安装Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../5.start-stop-service/">
-        管理Nebula Graph服务
+        步骤2：启动Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../3.connect-to-nebula-graph/">
-        连接Nebula Graph
+        步骤3：连接Nebula Graph
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Nebula Graph常用语法（CRUD）
+          步骤4：使用常用命令
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Nebula Graph常用语法（CRUD）
+        步骤4：使用常用命令
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -283,7 +283,7 @@
 <nav aria-label="检查Nebula Graph集群的机器状态" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_1">
     异步实现创建和修改
   </a>
 </li>
@@ -291,7 +291,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_2">
     创建和选择图空间
   </a>
 <nav aria-label="创建和选择图空间" class="md-nav">
@@ -302,7 +302,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     示例
   </a>
 </li>
@@ -321,7 +321,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     示例
   </a>
 </li>
@@ -329,7 +329,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     插入点和边
   </a>
 <nav aria-label="插入点和边" class="md-nav">
@@ -340,7 +340,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     示例
   </a>
 </li>
@@ -348,7 +348,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_7">
     查询数据
   </a>
 <nav aria-label="查询数据" class="md-nav">
@@ -372,7 +372,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_8">
     修改点和边
   </a>
 <nav aria-label="修改点和边" class="md-nav">
@@ -383,7 +383,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_9">
     示例
   </a>
 </li>
@@ -391,7 +391,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_10">
     删除点和边
   </a>
 <nav aria-label="删除点和边" class="md-nav">
@@ -402,7 +402,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_11">
     示例
   </a>
 </li>
@@ -410,13 +410,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_12">
     索引
   </a>
 <nav aria-label="索引" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_13">
     使用索引必读
   </a>
 </li>
@@ -426,7 +426,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
+<a class="md-nav__link" href="#_14">
     示例
   </a>
 </li>
@@ -470,7 +470,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../3.ngql-guide/1.nGQL-overview/1.overview/">
-        Nebula Graph查询语言（nGQL）
+        什么是nGQL
       </a>
 </li>
 <li class="md-nav__item">
@@ -1289,42 +1289,67 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2">
-        编译安装Nebula Graph
+        编译与安装
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="编译安装Nebula Graph" class="md-nav" data-md-level="2">
+<nav aria-label="编译与安装" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          编译安装Nebula Graph
+          编译与安装
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
-        源码编译安装
+        使用源码安装
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
-        RPM/DEB包安装
+        使用RPM/DEB包安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">
+        使用Docker Compose部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">
+        使用RPM/DEB包部署集群
       </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/deploy-nebula-graph-cluster/">
-        部署Nebula Graph集群
+<a class="md-nav__link" href="../../4.deployment-and-installation/manage-service/">
+        管理服务
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4">
+        升级版本
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="升级版本" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+          升级版本
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200/">
+        升级历史版本至v2.0.0
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/">
-        升级历史版本至Nebula Graph v2.0.0
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-201/">
+        升级v2.0.0至v2.0.1
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/5.upgrade-nebula-from-200-to-201/">
-        Nebula Graph v2.0.0升级至v2.0.1
-      </a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/4.uninstall-nebula-graph/">
@@ -1337,13 +1362,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
-        配置和日志
+        配置与日志
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="配置和日志" class="md-nav" data-md-level="1">
+<nav aria-label="配置与日志" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-          配置和日志
+          配置与日志
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1630,7 +1655,7 @@
 <nav aria-label="检查Nebula Graph集群的机器状态" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#_1">
     异步实现创建和修改
   </a>
 </li>
@@ -1638,7 +1663,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_2">
     创建和选择图空间
   </a>
 <nav aria-label="创建和选择图空间" class="md-nav">
@@ -1649,7 +1674,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_3">
     示例
   </a>
 </li>
@@ -1668,7 +1693,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_4">
     示例
   </a>
 </li>
@@ -1676,7 +1701,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_5">
     插入点和边
   </a>
 <nav aria-label="插入点和边" class="md-nav">
@@ -1687,7 +1712,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
+<a class="md-nav__link" href="#_6">
     示例
   </a>
 </li>
@@ -1695,7 +1720,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_7">
     查询数据
   </a>
 <nav aria-label="查询数据" class="md-nav">
@@ -1719,7 +1744,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_8">
     修改点和边
   </a>
 <nav aria-label="修改点和边" class="md-nav">
@@ -1730,7 +1755,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_9">
     示例
   </a>
 </li>
@@ -1738,7 +1763,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_10">
     删除点和边
   </a>
 <nav aria-label="删除点和边" class="md-nav">
@@ -1749,7 +1774,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_11">
     示例
   </a>
 </li>
@@ -1757,13 +1782,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_12">
     索引
   </a>
 <nav aria-label="索引" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_13">
     使用索引必读
   </a>
 </li>
@@ -1773,7 +1798,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_15">
+<a class="md-nav__link" href="#_14">
     示例
   </a>
 </li>
@@ -1795,8 +1820,9 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/2.quick-start/4.nebula-graph-crud.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="_1">基础操作语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>本文介绍Nebula Graph基础操作的语法。</p>
+<h1 id="4ngqlcrud">步骤4：使用常用nGQL（CRUD命令）<a class="headerlink" href="#4ngqlcrud" title="Permanent link">¶</a></h1>
+<p>本文介绍Nebula Graph查询语言的基础语法，包括用于Schema创建和常用增删改查操作的语句。</p>
+<p>如需了解更多语句的用法，参见<a href="../../3.ngql-guide/1.nGQL-overview/1.overview/">nGQL指南</a>。</p>
 <h2 id="schema">图空间和Schema<a class="headerlink" href="#schema" title="Permanent link">¶</a></h2>
 <p>一个Nebula Graph实例由一个或多个图空间组成。每个图空间都是物理隔离的，用户可以在同一个实例中使用不同的图空间存储不同的数据集。</p>
 <p><img alt="Nebula Graph and graph spaces" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-graph-instance-and-graph-spaces.png"/></p>
@@ -1847,7 +1873,7 @@
 Got 4 rows (time spent 1061/2251 us)
 </code></pre></div>
 <p>在返回结果中，查看<strong>Status</strong>列，可以看到所有Storage服务都在线。</p>
-<h3 id="_2">异步实现创建和修改<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h3 id="_1">异步实现创建和修改<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <p>Nebula Graph中执行如下创建和修改操作，是异步实现的，需要在下一个心跳周期才同步数据。</p>
 <ul>
 <li><code>CREATE SPACE</code></li>
@@ -1869,7 +1895,7 @@ Got 4 rows (time spent 1061/2251 us)
 <ul>
 <li>等待2个心跳周期（20秒）。</li>
 </ul>
-<h2 id="_3">创建和选择图空间<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_2">创建和选择图空间<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="ngql">nGQL语法<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h3>
 <ul>
 <li>创建图空间<div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
@@ -1896,7 +1922,7 @@ vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>执行如下语句创建名为<code>basketballplayer</code>的图空间。</p>
@@ -1945,7 +1971,7 @@ Got 1 rows (time spent 977/2000 us)
 [COMMENT = '&lt;comment&gt;'];
 </code></pre></div>
 <p>参数详情请参见<a href="../../3.ngql-guide/10.tag-statements/1.create-tag/">CREATE TAG</a>和<a href="../../3.ngql-guide/11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
-<h3 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>创建Tag<code>player</code>和<code>team</code>，以及Edge type<code>follow</code>和<code>serve</code>。说明如下表。</p>
 <table>
 <thead>
@@ -1998,7 +2024,7 @@ Execution succeeded (time spent 5858/6870 us)
 
 Wed, 24 Feb 2021 03:48:16 EST
 </code></pre></div>
-<h2 id="_6">插入点和边<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h2 id="_5">插入点和边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>用户可以使用<code>INSERT</code>语句，基于现有的Tag插入点，或者基于现有的Edge type插入边。</p>
 <h3 id="ngql_2">nGQL语法<a class="headerlink" href="#ngql_2" title="Permanent link">¶</a></h3>
 <ul>
@@ -2018,7 +2044,7 @@ Wed, 24 Feb 2021 03:48:16 EST
 <p>参数详情请参见<a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>。</p>
 </li>
 </ul>
-<h3 id="_7">示例<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <ul>
 <li>插入代表球员和球队的点。<div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name, age) VALUES "player100":("Tim Duncan", 42);
 Execution succeeded (time spent 28196/30896 us)
@@ -2065,7 +2091,7 @@ Wed, 24 Feb 2021 03:58:01 EST
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_8">查询数据<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<h2 id="_7">查询数据<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="../../3.ngql-guide/7.general-query-statements/3.go/">GO</a>语句可以根据指定的条件遍历数据库。<code>GO</code>语句从一个或多个点开始，沿着一条或多条边遍历，返回<code>YIELD</code>子句中指定的信息。</li>
 </ul>
@@ -2244,7 +2270,7 @@ Got 1 rows (time spent 2006/2406 us)
 <p class="admonition-title">Note</p>
 <p><code>LOOKUP</code>和<code>MATCH</code>的示例在下文的<a href="#_14">索引</a>部分查看。</p>
 </div>
-<h2 id="_9">修改点和边<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<h2 id="_8">修改点和边<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
 <p>用户可以使用<code>UPDATE</code>语句或<code>UPSERT</code>语句修改现有数据。</p>
 <p><code>UPSERT</code>是<code>UPDATE</code>和<code>INSERT</code>的结合体。当使用<code>UPSERT</code>更新一个点或边，如果它不存在，数据库会自动插入一个新的点或边。</p>
 <div class="admonition note">
@@ -2270,7 +2296,7 @@ SET &lt;properties to be updated&gt; [WHEN &lt;condition&gt;] [YIELD &lt;columns
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_10">示例<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h3 id="_9">示例<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
 <ul>
 <li>用<code>UPDATE</code>修改VID为<code>player100</code>的球员的<code>name</code>属性，然后用<code>FETCH</code>语句检查结果。<div class="highlight"><pre><span></span><code>nebula&gt; UPDATE VERTEX "player100" SET player.name = "Tim";
 Execution succeeded (time spent 3483/3914 us)
@@ -2319,7 +2345,7 @@ Got 1 rows (time spent 1815/2329 us)
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_11">删除点和边<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<h2 id="_10">删除点和边<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
 <h3 id="ngql_5">nGQL语法<a class="headerlink" href="#ngql_5" title="Permanent link">¶</a></h3>
 <ul>
 <li>删除点<div class="highlight"><pre><span></span><code>DELETE VERTEX &lt;vid1&gt;[, &lt;vid2&gt;...]
@@ -2332,7 +2358,7 @@ Got 1 rows (time spent 1815/2329 us)
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_12">示例<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<h3 id="_11">示例<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
 <ul>
 <li>删除点<div class="highlight"><pre><span></span><code>nebula&gt; DELETE VERTEX "team1", "team2";
 Execution succeeded (time spent 4337/4782 us)
@@ -2345,9 +2371,9 @@ Execution succeeded (time spent 3700/4101 us)
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_13">索引<a class="headerlink" href="#_13" title="Permanent link">¶</a></h2>
+<h2 id="_12">索引<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
 <p>用户可以通过<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">CREATE INDEX</a>语句为Tag和Edge type增加索引。</p>
-<h3 id="_14">使用索引必读<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<h3 id="_13">使用索引必读<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <ul>
 <li><code>MATCH</code>和<code>LOOKUP</code>语句的执行都依赖索引，但是索引会导致写性能大幅降低（降低90%甚至更多）。请<strong>不要随意</strong>在生产环境中使用索引，除非很清楚使用索引对业务的影响。</li>
 </ul>
@@ -2366,7 +2392,7 @@ ON {&lt;tag_name&gt; | &lt;edge_name&gt;} ([&lt;prop_name_list&gt;]) [COMMENT = 
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_15">示例<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<h3 id="_14">示例<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
 <p>为Tag<code>player</code>的属性<code>name</code>创建索引，并且重建索引。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX player_index_0 on player(name(20));
 nebula&gt; REBUILD TAG INDEX player_index_0;
@@ -2413,7 +2439,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月14日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
 </small>
 </div>
 </article>
@@ -2426,7 +2452,7 @@ Got 1 rows (time spent 5132/6246 us)
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: 连接Nebula Graph" class="md-footer__link md-footer__link--prev" href="../3.connect-to-nebula-graph/" rel="prev">
+<a aria-label="上一页: 步骤3：连接Nebula Graph" class="md-footer__link md-footer__link--prev" href="../3.connect-to-nebula-graph/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2435,17 +2461,17 @@ Got 1 rows (time spent 5132/6246 us)
 <span class="md-footer__direction">
                 上一页
               </span>
-              连接Nebula Graph
+              步骤3：连接Nebula Graph
             </div>
 </div>
 </a>
-<a aria-label="下一页: Nebula Graph查询语言（nGQL）" class="md-footer__link md-footer__link--next" href="../../3.ngql-guide/1.nGQL-overview/1.overview/" rel="next">
+<a aria-label="下一页: 什么是nGQL" class="md-footer__link md-footer__link--next" href="../../3.ngql-guide/1.nGQL-overview/1.overview/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              Nebula Graph查询语言（nGQL）
+              什么是nGQL
             </div>
 </div>
 <div class="md-footer__button md-icon">

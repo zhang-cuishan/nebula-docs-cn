@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/2.quick-start/2.deploy-nebula-graph-with-docker-compose/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/master/reuse/source_connect-to-nebula-graph/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.0" name="generator"/>
-<title>Docker Compose部署Nebula Graph - Nebula Graph Database 手册</title>
+<title>Source connect to nebula graph - Nebula Graph Database 手册</title>
 <link href="../../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#docker_composenebula_graph">
+<a class="md-skip" href="#nebula_graph">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Docker Compose部署Nebula Graph
+              Source connect to nebula graph
             
           </span>
 </div>
@@ -189,13 +189,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" id="__nav_2_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_5">
-        Nebula Graph架构
+        服务架构
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Nebula Graph架构" class="md-nav" data-md-level="2">
+<nav aria-label="服务架构" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_2_5">
 <span class="md-nav__icon md-icon"></span>
-          Nebula Graph架构
+          服务架构
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -224,8 +224,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
         快速入门
         <span class="md-nav__icon md-icon"></span>
@@ -237,130 +237,28 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../1.quick-start-workflow/">
+<a class="md-nav__link" href="../../2.quick-start/1.quick-start-workflow/">
         快速入门流程
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Docker Compose部署Nebula Graph
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        Docker Compose部署Nebula Graph
-      </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    阅读指南
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    前提条件
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph">
-    部署和连接Nebula Graph
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_1">
-    查看Nebula Graph服务的状态和端口
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_2">
-    查看Nebula Graph服务的数据和日志
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_3">
-    停止Nebula Graph服务
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-    常见问题
-  </a>
-<nav aria-label="常见问题" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#docker">
-    如何固定Docker映射到外部的端口？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graphdocker">
-    如何更新Nebula Graph服务的Docker镜像？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#docker-compose_pullerror_toomanyrequests">
-    执行命令docker-compose pull报错ERROR: toomanyrequests
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console">
-    如何更新Nebula Console？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_4">
-    如何升级Nebula Graph？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-composenebula_graph_200-rc3699nebula_graph">
-    为什么更新nebula-docker-compose仓库（Nebula Graph 2.0.0-RC）后，无法通过端口3699连接Nebula Graph？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-compose20210104">
-    为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月04日）
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-compose20210127">
-    为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月27日）
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    相关文档
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    相关视频
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../5.start-stop-service/">
-        管理Nebula Graph服务
+<a class="md-nav__link" href="../../2.quick-start/install-nebula-graph/">
+        步骤1：安装Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.connect-to-nebula-graph/">
-        连接Nebula Graph
+<a class="md-nav__link" href="../../2.quick-start/5.start-stop-service/">
+        步骤2：启动Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../4.nebula-graph-crud/">
-        Nebula Graph常用语法（CRUD）
+<a class="md-nav__link" href="../../2.quick-start/3.connect-to-nebula-graph/">
+        步骤3：连接Nebula Graph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../2.quick-start/4.nebula-graph-crud/">
+        步骤4：使用常用命令
       </a>
 </li>
 </ul>
@@ -392,7 +290,7 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../3.ngql-guide/1.nGQL-overview/1.overview/">
-        Nebula Graph查询语言（nGQL）
+        什么是nGQL
       </a>
 </li>
 <li class="md-nav__item">
@@ -1211,42 +1109,67 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2">
-        编译安装Nebula Graph
+        编译与安装
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="编译安装Nebula Graph" class="md-nav" data-md-level="2">
+<nav aria-label="编译与安装" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
-          编译安装Nebula Graph
+          编译与安装
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
-        源码编译安装
+        使用源码安装
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
-        RPM/DEB包安装
+        使用RPM/DEB包安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">
+        使用Docker Compose部署
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">
+        使用RPM/DEB包部署集群
       </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/deploy-nebula-graph-cluster/">
-        部署Nebula Graph集群
+<a class="md-nav__link" href="../../4.deployment-and-installation/manage-service/">
+        管理服务
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4">
+        升级版本
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="升级版本" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+          升级版本
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200/">
+        升级历史版本至v2.0.0
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/">
-        升级历史版本至Nebula Graph v2.0.0
+<a class="md-nav__link" href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-201/">
+        升级v2.0.0至v2.0.1
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/5.upgrade-nebula-from-200-to-201/">
-        Nebula Graph v2.0.0升级至v2.0.1
-      </a>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../4.deployment-and-installation/4.uninstall-nebula-graph/">
@@ -1259,13 +1182,13 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6">
-        配置和日志
+        配置与日志
         <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="配置和日志" class="md-nav" data-md-level="1">
+<nav aria-label="配置与日志" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
-          配置和日志
+          配置与日志
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
@@ -1541,33 +1464,37 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    阅读指南
+<a class="md-nav__link" href="#nebula_graph">
+    Nebula Graph客户端
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
+<a class="md-nav__link" href="#nebula_consolenebula_graph">
+    使用Nebula Console连接Nebula Graph
+  </a>
+<nav aria-label="使用Nebula Console连接Nebula Graph" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
     前提条件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph">
-    部署和连接Nebula Graph
+<a class="md-nav__link" href="#_2">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_console">
+    Nebula Console导出模式
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_1">
-    查看Nebula Graph服务的状态和端口
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_2">
-    查看Nebula Graph服务的数据和日志
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_3">
-    停止Nebula Graph服务
+<a class="md-nav__link" href="#nebula_console_1">
+    使用Nebula Console断开连接
   </a>
 </li>
 <li class="md-nav__item">
@@ -1577,57 +1504,12 @@
 <nav aria-label="常见问题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#docker">
-    如何固定Docker映射到外部的端口？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graphdocker">
-    如何更新Nebula Graph服务的Docker镜像？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#docker-compose_pullerror_toomanyrequests">
-    执行命令docker-compose pull报错ERROR: toomanyrequests
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console">
-    如何更新Nebula Console？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_graph_4">
-    如何升级Nebula Graph？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-composenebula_graph_200-rc3699nebula_graph">
-    为什么更新nebula-docker-compose仓库（Nebula Graph 2.0.0-RC）后，无法通过端口3699连接Nebula Graph？
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-compose20210104">
-    为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月04日）
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nebula-docker-compose20210127">
-    为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月27日）
+<a class="md-nav__link" href="#nebula_console_2">
+    如何通过源码安装Nebula Console？
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-    相关文档
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-    相关视频
-  </a>
 </li>
 </ul>
 </nav>
@@ -1636,291 +1518,146 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/2.quick-start/2.deploy-nebula-graph-with-docker-compose.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/reuse/source_connect-to-nebula-graph.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="docker_composenebula_graph">Docker Compose部署Nebula Graph<a class="headerlink" href="#docker_composenebula_graph" title="Permanent link">¶</a></h1>
-<p>有多种方式可以部署Nebula Graph，但是使用Docker Compose通常是最快的方式。</p>
-<h2 id="_1">阅读指南<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>本节将回答如下问题：</p>
+<h1>Source connect to nebula graph</h1>
+<p>Nebula Graph支持多种类型客户端，包括CLI客户端、GUI客户端和流行编程语言开发的客户端。本文将概述Nebula Graph客户端，并介绍如何使用原生CLI客户端Nebula Console。</p>
+<h2 id="nebula_graph">Nebula Graph客户端<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
+<p>用户可以使用已支持的<a href="../../20.appendix/6.eco-tool-version/">客户端或者命令行工具</a>来连接Nebula Graph数据库。</p>
+<!-- TODO 云服务未能和 v2.5.0 一起发布.
+如果还没有Nebula Graph数据库，建议尝试云服务[Nebula Graph Cloud Service](https://cloud.nebula-graph.com.cn/)。Nebula Graph Cloud Service支持按需部署和快速搭建，并且使用Nebula Graph Studio作为默认客户端。
+-->
+<h2 id="nebula_consolenebula_graph">使用Nebula Console连接Nebula Graph<a class="headerlink" href="#nebula_consolenebula_graph" title="Permanent link">¶</a></h2>
+<h3 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
-<li><a href="#_2">部署Nebula Graph之前需要做什么准备工作？</a></li>
+<li>Nebula Graph服务已启动。如何启动服务，请参见<a href="5.start-stop-service.md">启动和停止Nebula Graph服务</a>。</li>
 </ul>
 <ul>
-<li><a href="#nebula_graph">如何通过Docker Compose快速部署Nebula Graph？</a></li>
+<li>运行Nebula Console的机器和运行Nebula Graph的服务器网络互通。</li>
 </ul>
-<ul>
-<li><a href="#nebula_graph_1">如何检查Nebula Graph服务的状态和端口？</a></li>
-</ul>
-<ul>
-<li><a href="#nebula_graph_2">如何检查Nebula Graph服务的数据和日志？</a></li>
-</ul>
-<ul>
-<li><a href="#nebula_graph_3">如何停止Nebula Graph服务？</a></li>
-</ul>
-<ul>
-<li><a href="#_3">如何通过其他方式部署Nebula Graph？</a></li>
-</ul>
-<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ul>
-<li>主机上安装如下应用程序。<table>
+<h3 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>在<a href="https://github.com/vesoft-inc/nebula-console/releases" title="the nebula-console Releases page">Nebula Console</a>下载页面，确认需要的版本，单击<strong>Assets</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议选择<strong>最新</strong>版本。</p>
+</div>
+<p><img alt="Select a Nebula Graph version and click **Assets**" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-console-releases-1.png" title="Click Assets to show the available Nebula Graph binary files"/></p>
+</li>
+<li>
+<p>在<strong>Assets</strong>区域找到机器运行所需的二进制文件，下载文件到机器上。</p>
+<p><img alt="Click to download the package according to your hardware architecture" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-console-releases-2-1.png" title="Click the package name to download it"/></p>
+</li>
+<li>
+<p>（可选）为方便使用，重命名文件为<code>nebula-console</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在Windows系统中，请重命名为<code>nebula-console.exe</code>。</p>
+</div>
+</li>
+<li>
+<p>在运行Nebula Console的机器上执行如下命令，为用户授予nebula-console文件的执行权限。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows系统请跳过此步骤。</p>
+</div>
+<div class="highlight"><pre><span></span><code>$ chmod <span class="m">111</span> nebula-console
+</code></pre></div>
+</li>
+<li>
+<p>在命令行界面中，切换工作目录至nebula-console文件所在目录。</p>
+</li>
+<li>
+<p>执行如下命令连接Nebula Graph。</p>
+<p>- Linux或macOS</p>
+<div class="highlight"><pre><span></span><code>$ ./nebula-console -addr &lt;ip&gt; -port &lt;port&gt; -u &lt;username&gt; -p &lt;password&gt;
+<span class="o">[</span>-t <span class="m">120</span><span class="o">]</span> <span class="o">[</span>-e <span class="s2">"nGQL_statement"</span> <span class="p">|</span> -f filename.nGQL<span class="o">]</span>
+</code></pre></div>
+<p>- Windows</p>
+<div class="highlight"><pre><span></span><code><span class="p">&gt;</span> <span class="n">nebula-console</span><span class="p">.</span><span class="n">exe</span> <span class="n">-addr</span> <span class="p">&lt;</span><span class="n">ip</span><span class="p">&gt;</span> <span class="n">-port</span> <span class="p">&lt;</span><span class="n">port</span><span class="p">&gt;</span> <span class="n">-u</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;</span> <span class="n">-p</span> <span class="p">&lt;</span><span class="n">password</span><span class="p">&gt;</span>
+<span class="p">[</span><span class="n">-t</span> <span class="n">120</span><span class="p">]</span> <span class="p">[</span><span class="n">-e</span> <span class="s2">"nGQL_statement"</span> <span class="p">|</span> <span class="o">-f</span> <span class="n">filename</span><span class="p">.</span><span class="n">nGQL</span><span class="p">]</span>
+</code></pre></div>
+<p>参数说明如下。</p>
+<table>
 <thead>
 <tr>
-<th align="left">应用程序</th>
-<th align="left">推荐版本</th>
-<th align="left">官方安装参考</th>
+<th>参数</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Docker</td>
-<td align="left">最新版本</td>
-<td align="left"><a href="https://docs.docker.com/engine/install/">Install Docker Engine</a></td>
+<td><code>-h</code></td>
+<td>显示帮助菜单。</td>
 </tr>
 <tr>
-<td align="left">Docker Compose</td>
-<td align="left">最新版本</td>
-<td align="left"><a href="https://docs.docker.com/compose/install/">Install Docker Compose</a></td>
+<td><code>-addr</code></td>
+<td>设置要连接的graphd服务的IP地址。默认地址为127.0.0.1。</td>
 </tr>
 <tr>
-<td align="left">Git</td>
-<td align="left">最新版本</td>
-<td align="left"><a href="https://git-scm.com/download/">Download Git</a></td>
+<td><code>-port</code></td>
+<td>设置要连接的graphd服务的端口。默认端口为9669。</td>
+</tr>
+<tr>
+<td><code>-u/-user</code></td>
+<td>设置Nebula Graph账号的用户名。未启用身份认证时，可以使用任意已存在的用户名（默认为<code>root</code>）。</td>
+</tr>
+<tr>
+<td><code>-p/-password</code></td>
+<td>设置用户名对应的密码。未启用身份认证时，密码可以填写任意字符。</td>
+</tr>
+<tr>
+<td><code>-t/-timeout</code></td>
+<td>设置整数类型的连接超时时间。单位为秒，默认值为120。</td>
+</tr>
+<tr>
+<td><code>-e/-eval</code></td>
+<td>设置字符串类型的nGQL语句。连接成功后会执行一次该语句并返回结果，然后自动断开连接。</td>
+</tr>
+<tr>
+<td><code>-f/-file</code></td>
+<td>设置存储nGQL语句的文件的路径。连接成功后会执行该文件内的nGQL语句并返回结果，执行完毕后自动断开连接。</td>
 </tr>
 </tbody>
 </table>
 </li>
-</ul>
-<ul>
-<li>如果使用非root用户部署Nebula Graph，请授权该用户Docker相关的权限。详细信息，请参见<a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">Manage Docker as a non-root user</a>。</li>
-</ul>
-<ul>
-<li>启动主机上的Docker服务。</li>
-</ul>
-<ul>
-<li>如果已经通过Docker Compose在主机上部署了另一个版本的Nebula Graph，为避免兼容性问题，需要删除目录<code>nebula-docker-compose/data</code>。</li>
-</ul>
-<h2 id="nebula_graph">部署和连接Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
-<ol>
-<li>
-<p>通过Git克隆<code>nebula-docker-compose</code>仓库的<code>master</code>分支到主机。</p>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p><code>master</code>分支包含最新的未测试代码。请<strong>不要</strong>在生产环境使用此版本。</p>
-</div>
-<div class="highlight"><pre><span></span><code>$ git clone -b master https://github.com/vesoft-inc/nebula-docker-compose.git
-</code></pre></div>
-</li>
-<li>
-<p>切换至目录<code>nebula-docker-compose</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-docker-compose/
-</code></pre></div>
-</li>
-<li>
-<p>执行如下命令启动Nebula Graph服务。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果长期未更新镜像，请先更新<a href="#nebula_graphdocker">Nebula Graph镜像</a>和<a href="#nebula_console">Nebula Console镜像</a>。</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-docker-compose<span class="o">]</span>$ docker-compose up -d
-Creating nebula-docker-compose_metad0_1 ... <span class="k">done</span>
-Creating nebula-docker-compose_metad2_1 ... <span class="k">done</span>
-Creating nebula-docker-compose_metad1_1 ... <span class="k">done</span>
-Creating nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
-Creating nebula-docker-compose_graphd_1    ... <span class="k">done</span>
-Creating nebula-docker-compose_graphd1_1   ... <span class="k">done</span>
-Creating nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
-Creating nebula-docker-compose_storaged2_1 ... <span class="k">done</span>
-Creating nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>上述服务的更多信息，请参见<a href="../../1.introduction/3.nebula-graph-architecture/1.architecture-overview/">架构总览</a>。</p>
-</div>
-</li>
-<li>
-<p>连接Nebula Graph。</p>
-<ol>
-<li>
-<p>使用Nebula Console镜像启动一个容器，并连接到Nebula Graph服务所在的网络（nebula-docker-compose_nebula-net）中。</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm -ti --network nebula-docker-compose_nebula-net --entrypoint<span class="o">=</span>/bin/sh vesoft/nebula-console:v2-nightly
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>本地网络可能和示例中的<code>nebula-docker-compose_nebula-net</code>不同，请使用如下命令查看。</p>
-</div>
-<div class="highlight"><pre><span></span><code>$ docker network  ls
-NETWORK ID          NAME                               DRIVER              SCOPE
-a74c312b1d16        bridge                             bridge              <span class="nb">local</span>
-dbfa82505f0e        host                               host                <span class="nb">local</span>
-ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span class="nb">local</span>
-93ba48b4b288        none                               null                <span class="nb">local</span>
-</code></pre></div>
-</li>
-<li>
-<p>通过Nebula Console连接Nebula Graph。</p>
-<div class="highlight"><pre><span></span><code>docker&gt; nebula-console -u &lt;user_name&gt; -p &lt;password&gt; --address<span class="o">=</span>graphd --port<span class="o">=</span><span class="m">9669</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>默认情况下，身份认证功能是关闭的，只能使用已存在的用户名（默认为<code>root</code>）和任意密码登录。如果想使用身份认证，请参见<a href="../../7.data-security/1.authentication/1.authentication/">身份认证</a>。</p>
-</div>
-</li>
-<li>
-<p>执行如下命令检查<code>nebula-storaged</code>进程状态。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS<span class="p">;</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> Host        <span class="p">|</span> Port <span class="p">|</span> Status   <span class="p">|</span> Leader count <span class="p">|</span> Leader distribution  <span class="p">|</span> Partition distribution <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"storaged0"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"storaged1"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"storaged2"</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">"ONLINE"</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">"No valid partition"</span> <span class="p">|</span> <span class="s2">"No valid partition"</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-<span class="p">|</span> <span class="s2">"Total"</span>     <span class="p">|</span>      <span class="p">|</span>          <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span>                      <span class="p">|</span>                        <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
-</code></pre></div>
-</li>
 </ol>
-</li>
-<li>
-<p>执行两次<code>exit</code> 可以退出容器。</p>
-</li>
-</ol>
-<h2 id="nebula_graph_1">查看Nebula Graph服务的状态和端口<a class="headerlink" href="#nebula_graph_1" title="Permanent link">¶</a></h2>
-<p>执行命令<code>docker-compose ps</code>可以列出Nebula Graph服务的状态和端口。</p>
-<div class="highlight"><pre><span></span><code>$ docker-compose ps
-Name                     Command                       State                                                   Ports
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-nebula-docker-compose_graphd1_1     ./bin/nebula-graphd --flag ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">13000</span>/tcp, <span class="m">13002</span>/tcp, <span class="m">0</span>.0.0.0:33295-&gt;19669/tcp, <span class="m">0</span>.0.0.0:33291-&gt;19670/tcp,
-                                                                                             <span class="m">3699</span>/tcp, <span class="m">0</span>.0.0.0:33298-&gt;9669/tcp
-nebula-docker-compose_graphd2_1     ./bin/nebula-graphd --flag ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">13000</span>/tcp, <span class="m">13002</span>/tcp, <span class="m">0</span>.0.0.0:33285-&gt;19669/tcp, <span class="m">0</span>.0.0.0:33284-&gt;19670/tcp,
-                                                                                             <span class="m">3699</span>/tcp, <span class="m">0</span>.0.0.0:33286-&gt;9669/tcp
-nebula-docker-compose_graphd_1      ./bin/nebula-graphd --flag ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">13000</span>/tcp, <span class="m">13002</span>/tcp, <span class="m">0</span>.0.0.0:33288-&gt;19669/tcp, <span class="m">0</span>.0.0.0:33287-&gt;19670/tcp,
-                                                                                             <span class="m">3699</span>/tcp, <span class="m">0</span>.0.0.0:9669-&gt;9669/tcp
-nebula-docker-compose_metad0_1      ./bin/nebula-metad --flagf ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">11000</span>/tcp, <span class="m">11002</span>/tcp, <span class="m">0</span>.0.0.0:33276-&gt;19559/tcp, <span class="m">0</span>.0.0.0:33275-&gt;19560/tcp,
-                                                                                             <span class="m">45500</span>/tcp, <span class="m">45501</span>/tcp, <span class="m">0</span>.0.0.0:33278-&gt;9559/tcp
-nebula-docker-compose_metad1_1      ./bin/nebula-metad --flagf ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">11000</span>/tcp, <span class="m">11002</span>/tcp, <span class="m">0</span>.0.0.0:33279-&gt;19559/tcp, <span class="m">0</span>.0.0.0:33277-&gt;19560/tcp,
-                                                                                             <span class="m">45500</span>/tcp, <span class="m">45501</span>/tcp, <span class="m">0</span>.0.0.0:33281-&gt;9559/tcp
-nebula-docker-compose_metad2_1      ./bin/nebula-metad --flagf ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">11000</span>/tcp, <span class="m">11002</span>/tcp, <span class="m">0</span>.0.0.0:33282-&gt;19559/tcp, <span class="m">0</span>.0.0.0:33280-&gt;19560/tcp,
-                                                                                             <span class="m">45500</span>/tcp, <span class="m">45501</span>/tcp, <span class="m">0</span>.0.0.0:33283-&gt;9559/tcp
-nebula-docker-compose_storaged0_1   ./bin/nebula-storaged --fl ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">12000</span>/tcp, <span class="m">12002</span>/tcp, <span class="m">0</span>.0.0.0:33290-&gt;19779/tcp, <span class="m">0</span>.0.0.0:33289-&gt;19780/tcp,
-                                                                                             <span class="m">44500</span>/tcp, <span class="m">44501</span>/tcp, <span class="m">0</span>.0.0.0:33294-&gt;9779/tcp
-nebula-docker-compose_storaged1_1   ./bin/nebula-storaged --fl ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">12000</span>/tcp, <span class="m">12002</span>/tcp, <span class="m">0</span>.0.0.0:33296-&gt;19779/tcp, <span class="m">0</span>.0.0.0:33292-&gt;19780/tcp,
-                                                                                             <span class="m">44500</span>/tcp, <span class="m">44501</span>/tcp, <span class="m">0</span>.0.0.0:33299-&gt;9779/tcp
-nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span class="o">(</span>health: starting<span class="o">)</span>   <span class="m">12000</span>/tcp, <span class="m">12002</span>/tcp, <span class="m">0</span>.0.0.0:33297-&gt;19779/tcp, <span class="m">0</span>.0.0.0:33293-&gt;19780/tcp,
-                                                                                             <span class="m">44500</span>/tcp, <span class="m">44501</span>/tcp, <span class="m">0</span>.0.0.0:33300-&gt;9779/tcp
-</code></pre></div>
-<p>Nebula Graph默认使用<code>9669</code>端口为客户端提供服务，如果需要修改端口，请修改目录<code>nebula-docker-compose</code>内的文件<code>docker-compose.yaml</code>，然后重启Nebula Graph服务。</p>
-<h2 id="nebula_graph_2">查看Nebula Graph服务的数据和日志<a class="headerlink" href="#nebula_graph_2" title="Permanent link">¶</a></h2>
-<p>Nebula Graph的所有数据和日志都持久化存储在<code>nebula-docker-compose/data</code>和<code>nebula-docker-compose/logs</code>目录中。</p>
-<p>目录的结构如下：</p>
-<div class="highlight"><pre><span></span><code>nebula-docker-compose/
-  |-- docker-compose.yaml
-  ├── data
-  │   ├── meta0
-  │   ├── meta1
-  │   ├── meta2
-  │   ├── storage0
-  │   ├── storage1
-  │   └── storage2
-  └── logs
-      ├── graph
-      ├── graph1
-      ├── graph2
-      ├── meta0
-      ├── meta1
-      ├── meta2
-      ├── storage0
-      ├── storage1
-      └── storage2
-</code></pre></div>
-<h2 id="nebula_graph_3">停止Nebula Graph服务<a class="headerlink" href="#nebula_graph_3" title="Permanent link">¶</a></h2>
-<p>用户可以执行如下命令停止Nebula Graph服务：</p>
-<div class="highlight"><pre><span></span><code>$ docker-compose down
-</code></pre></div>
-<p>如果返回如下信息，表示已经成功停止服务。</p>
-<div class="highlight"><pre><span></span><code>Stopping nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
-Stopping nebula-docker-compose_graphd1_1   ... <span class="k">done</span>
-Stopping nebula-docker-compose_graphd_1    ... <span class="k">done</span>
-Stopping nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
-Stopping nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
-Stopping nebula-docker-compose_storaged2_1 ... <span class="k">done</span>
-Stopping nebula-docker-compose_metad0_1    ... <span class="k">done</span>
-Stopping nebula-docker-compose_metad2_1    ... <span class="k">done</span>
-Stopping nebula-docker-compose_metad1_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
-Removing nebula-docker-compose_graphd1_1   ... <span class="k">done</span>
-Removing nebula-docker-compose_graphd_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
-Removing nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
-Removing nebula-docker-compose_storaged2_1 ... <span class="k">done</span>
-Removing nebula-docker-compose_metad0_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_metad2_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_metad1_1    ... <span class="k">done</span>
-Removing network nebula-docker-compose_nebula-net
-</code></pre></div>
+<p>用户可以使用<code>./nebula-console --help</code>命令获取所有参数的说明，也可以在<a href="https://github.com/vesoft-inc/nebula-console/tree/v2.0.0-ga">项目仓库</a>找到更多说明。</p>
+<h2 id="nebula_console">Nebula Console导出模式<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
+<p>导出模式开启时，Nebula Console会导出所有请求的结果到CSV格式文件中。关闭导出模式会停止导出。使用语法如下：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>命令<code>docker-compose down -v</code>将会<strong>删除</strong>所有本地Nebula Graph的数据。如果使用的是developing或nightly版本，并且有一些兼容性问题，请尝试这个命令。</p>
+<ul>
+<li>命令不区分大小写。</li>
+<li>CSV格式文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
+</ul>
 </div>
+<ul>
+<li>开启导出模式</li>
+</ul>
+<div class="highlight"><pre><span></span><code>nebula&gt; :SET CSV &lt;your_file.csv&gt;
+</code></pre></div>
+<ul>
+<li>关闭导出模式</li>
+</ul>
+<div class="highlight"><pre><span></span><code>nebula&gt; :UNSET CSV
+</code></pre></div>
+<h2 id="nebula_console_1">使用Nebula Console断开连接<a class="headerlink" href="#nebula_console_1" title="Permanent link">¶</a></h2>
+<p>用户可以使用<code>:EXIT</code>或者<code>:QUIT</code>从Nebula Graph断开连接。为方便使用，Nebula Console支持使用不带冒号（:）的小写命令，例如<code>quit</code>。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :QUIT
+
+Bye root!
+</code></pre></div>
 <h2 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="docker">如何固定Docker映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">¶</a></h3>
-<p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
-<div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:v2-nightly
-    ...
-    ports:
-      - <span class="m">9669</span>:9669
-      - <span class="m">19669</span>
-      - <span class="m">19670</span>
-</code></pre></div>
-<p><code>9669:9669</code>表示内部的9669映射到外部的端口也是9669，下方的<code>19669</code>表示内部的19669映射到外部的端口是随机的。</p>
-<h3 id="nebula_graphdocker">如何更新Nebula Graph服务的Docker镜像？<a class="headerlink" href="#nebula_graphdocker" title="Permanent link">¶</a></h3>
-<p>在目录<code>nebula-docker-compose</code>内执行命令<code>docker-compose pull</code>，可以更新Graph服务、Storage服务和Meta服务的镜像。</p>
-<h3 id="docker-compose_pullerror_toomanyrequests">执行命令<code>docker-compose pull</code>报错<code>ERROR: toomanyrequests</code><a class="headerlink" href="#docker-compose_pullerror_toomanyrequests" title="Permanent link">¶</a></h3>
-<p>可能遇到如下错误：</p>
-<p><code>ERROR: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit</code></p>
-<p>以上错误表示已达到Docker Hub的速率限制。解决方案请参见<a href="https://www.docker.com/increase-rate-limit">Understanding Docker Hub Rate Limiting</a>。</p>
-<h3 id="nebula_console">如何更新Nebula Console？<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h3>
-<p>执行如下命令可以更新Nebula Console客户端镜像。</p>
-<div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v2-nightly
-</code></pre></div>
-<h3 id="nebula_graph_4">如何升级Nebula Graph？<a class="headerlink" href="#nebula_graph_4" title="Permanent link">¶</a></h3>
-<p>更新Nebula Graph的Docker镜像并重启服务：</p>
-<ol>
-<li>
-<p>在目录<code>nebula-docker-compose</code>内，执行命令<code>docker-compose pull</code>更新Nebula Graph的Docker镜像。</p>
-</li>
-<li>
-<p>执行命令<code>docker-compose down</code>停止Nebula Graph服务。</p>
-</li>
-<li>
-<p>执行命令<code>docker-compose up -d</code>启动Nebula Graph服务。</p>
-</li>
-</ol>
-<h3 id="nebula-docker-composenebula_graph_200-rc3699nebula_graph">为什么更新nebula-docker-compose仓库（Nebula Graph 2.0.0-RC）后，无法通过端口<code>3699</code>连接Nebula Graph？<a class="headerlink" href="#nebula-docker-composenebula_graph_200-rc3699nebula_graph" title="Permanent link">¶</a></h3>
-<p>在 Nebula Graph 2.0.0-RC 版本，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
-<h3 id="nebula-docker-compose20210104">为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月04日）<a class="headerlink" href="#nebula-docker-compose20210104" title="Permanent link">¶</a></h3>
-<p>如果在2021年01月04日后更新过nebula-docker-compose仓库，而且之前已经有数据，请修改文件<code>docker-compose.yaml</code>，将端口修改为之前使用的端口。详情请参见<a href="https://github.com/vesoft-inc/nebula-docker-compose/commit/2a612f1c4f0e2c31515e971b24b355b3be69420a">修改默认端口</a>。</p>
-<h3 id="nebula-docker-compose20210127">为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月27日）<a class="headerlink" href="#nebula-docker-compose20210127" title="Permanent link">¶</a></h3>
-<p>2021年01月27日修改了数据格式，无法兼容之前的数据，请执行命令<code>docker-compose down -v</code>删除所有本地数据。</p>
-<h2 id="_4">相关文档<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装部署Nebula Graph</a></li>
-<li><a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用RPM或DEB安装包安装Nebula Graph</a></li>
-<li><a href="../3.connect-to-nebula-graph/">多种方式连接Nebula Graph</a></li>
-</ul>
-<h2 id="_5">相关视频<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<p>用户也可以查看视频快速部署Nebula Graph 2.0。</p>
-<p><a href="https://www.bilibili.com/video/BV1T54y1b7pa">使用 docker compose 部署 Nebula Graph 2.0 和 Web Studio</a>（18分10秒）</p>
-<iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="480px" scrolling="no" src="//player.bilibili.com/player.html?aid=844979052&amp;bvid=BV1T54y1b7pa&amp;cid=319036307&amp;page=1" width="720px"> </iframe>
+<h3 id="nebula_console_2">如何通过源码安装Nebula Console？<a class="headerlink" href="#nebula_console_2" title="Permanent link">¶</a></h3>
+<p>下载和编译Nebula Console的最新源码，请参见<a href="https://github.com/vesoft-inc/nebula-console#build-nebula-graph-console">GitHub nebula console</a>页面的说明。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月6日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
 </small>
 </div>
 </article>
@@ -1932,34 +1669,6 @@ Removing network nebula-docker-compose_nebula-net
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: 快速入门流程" class="md-footer__link md-footer__link--prev" href="../1.quick-start-workflow/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                上一页
-              </span>
-              快速入门流程
-            </div>
-</div>
-</a>
-<a aria-label="下一页: 管理Nebula Graph服务" class="md-footer__link md-footer__link--next" href="../5.start-stop-service/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                下一页
-              </span>
-              管理Nebula Graph服务
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
