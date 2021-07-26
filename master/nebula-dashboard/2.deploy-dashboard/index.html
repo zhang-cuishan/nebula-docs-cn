@@ -1424,27 +1424,27 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#node-exporter">
-    部署node-exporter服务。
+    部署node-exporter服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-stats-exporter">
-    部署nebula-stats-exporter服务。
+    部署nebula-stats-exporter服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#prometheus">
-    部署prometheus服务。
+    部署prometheus服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-http-gateway">
-    部署nebula-http-gateway服务。
+    部署nebula-http-gateway服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-graph-dashboard">
-    部署nebula-graph-dashboard服务。
+    部署nebula-graph-dashboard服务
   </a>
 </li>
 </ul>
@@ -1553,27 +1553,27 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#node-exporter">
-    部署node-exporter服务。
+    部署node-exporter服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-stats-exporter">
-    部署nebula-stats-exporter服务。
+    部署nebula-stats-exporter服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#prometheus">
-    部署prometheus服务。
+    部署prometheus服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-http-gateway">
-    部署nebula-http-gateway服务。
+    部署nebula-http-gateway服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-graph-dashboard">
-    部署nebula-graph-dashboard服务。
+    部署nebula-graph-dashboard服务
   </a>
 </li>
 </ul>
@@ -1651,7 +1651,7 @@
 </table>
 <p>5个目录需要按照部署需要，复制到各个机器上，详情请参见下文。</p>
 <h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="node-exporter">部署<code>node-exporter</code>服务。<a class="headerlink" href="#node-exporter" title="Permanent link">¶</a></h3>
+<h3 id="node-exporter">部署<code>node-exporter</code>服务<a class="headerlink" href="#node-exporter" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>集群中的每个机器都需要部署<code>node-exporter</code>服务。</p>
@@ -1660,7 +1660,7 @@
 <div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span>:9200 <span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9200</code>检查服务是否正常启动。</p>
-<h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务。<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">¶</a></h3>
+<h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>nebula-stats-exporter</code>服务。</p>
@@ -1706,7 +1706,7 @@ nebulaItems:
 </li>
 </ol>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
-<h3 id="prometheus">部署<code>prometheus</code>服务。<a class="headerlink" href="#prometheus" title="Permanent link">¶</a></h3>
+<h3 id="prometheus">部署<code>prometheus</code>服务<a class="headerlink" href="#prometheus" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>prometheus</code>服务。</p>
@@ -1743,7 +1743,7 @@ scrape_configs:
 </li>
 </ol>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9090</code>检查服务是否正常启动。</p>
-<h3 id="nebula-http-gateway">部署<code>nebula-http-gateway</code>服务。<a class="headerlink" href="#nebula-http-gateway" title="Permanent link">¶</a></h3>
+<h3 id="nebula-http-gateway">部署<code>nebula-http-gateway</code>服务<a class="headerlink" href="#nebula-http-gateway" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>nebula-http-gateway</code>服务。</p>
@@ -1752,7 +1752,7 @@ scrape_configs:
 <div class="highlight"><pre><span></span><code>$ nohup ./nebula-httpd <span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:8090</code>检查服务是否正常启动。</p>
-<h3 id="nebula-graph-dashboard">部署<code>nebula-graph-dashboard</code>服务。<a class="headerlink" href="#nebula-graph-dashboard" title="Permanent link">¶</a></h3>
+<h3 id="nebula-graph-dashboard">部署<code>nebula-graph-dashboard</code>服务<a class="headerlink" href="#nebula-graph-dashboard" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>在目录<code>nebula-graph-dashboard/static/</code>内修改文件<code>custom.json</code>，配置Graph服务的IP地址和端口，示例如下：</p>
@@ -1791,7 +1791,7 @@ $ npm run stop <span class="c1"># 停止nebula-graph-dashboard服务</span>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月19日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月26日</span>
 </small>
 </div>
 </article>
