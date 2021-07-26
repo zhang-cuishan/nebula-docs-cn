@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/nebula-studio/about-studio/st-ug-limitations/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.0" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.2.1" name="generator"/>
 <title>使用限制 - Nebula Graph Database 手册</title>
-<link href="../../../assets/stylesheets/main.fe914879.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -1510,13 +1510,15 @@
 <h2 id="_2">系统架构<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>Docker 版和 RPM 版 Studio 目前仅支持 x86_64 架构。</p>
 <h2 id="_3">数据上传<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>使用云服务版 Studio 上传数据有以下限制：</p>
-<ul>
-<li>目前仅支持上传没有表头行的 CSV 文件，而且仅支持英文逗号（,）作为分隔符。</li>
-<li>单个文件不得超过 100 MB。</li>
-<li>单个实例上传文件总量不得超过 1 GB。</li>
-<li>单个文件仅能保存 1 天。</li>
-</ul>
+<!--
+使用云服务版 Studio 上传数据有以下限制：
+
+- 目前仅支持上传没有表头行的 CSV 文件，而且仅支持英文逗号（,）作为分隔符。
+- 单个文件不得超过 100 MB。
+- 单个实例上传文件总量不得超过 1 GB。
+- 单个文件仅能保存 1 天。
+
+-->
 <p>使用 Docker 版和 RPM 版 Studio 上传数据也仅支持上传无表头的 CSV 文件，但是，单个文件大小及保存时间不受限制，而且，数据总量以本地存储容量为准。</p>
 <h2 id="_4">数据备份<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>目前仅支持在 <strong>控制台</strong> 上以 CSV 格式导出查询结果，不支持其他数据备份方式。</p>
@@ -1542,7 +1544,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月24日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月26日</span>
 </small>
 </div>
 </article>
