@@ -1961,8 +1961,7 @@
 <h2 id="_2">安装步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>克隆Nebula Graph源码到主机。</p>
-<p>如果需要安装最新版本的开发代码，请执行如下命令下载<code>v2.0.1</code>分支的源码：</p>
+<p>克隆Nebula Graph v2.0.1版本的源代码到主机。</p>
 <div class="highlight"><pre><span></span><code>$ git clone -b v2.0.1 https://github.com/vesoft-inc/nebula-graph.git
 </code></pre></div>
 </li>
@@ -1977,26 +1976,12 @@
 </code></pre></div>
 </li>
 <li>
-<p>使用CMake生成makefile文件。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p>运行如下命令，使用CMake生成makefile文件。</p>
 <p>默认安装路径为<code>/usr/local/nebula</code>，如果需要修改路径，请在下方命令内增加参数<code>-DCMAKE_INSTALL_PREFIX=&lt;installation_path&gt;</code>。更多CMake参数说明，请参见<a href="#cmake">CMake参数</a>。</p>
-</div>
-<ul>
-<li>
-<p>如果在第1步下载的是最新版本的开发代码，请执行如下命令：</p>
-<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>如果在第1步下载的是指定版本的Nebula Graph 2.x，请使用选项<code>-DNEBULA_COMMON_REPO_TAG</code>和<code>-DNEBULA_STORAGE_REPO_TAG</code>指定相同的<a href="https://github.com/vesoft-inc/nebula-common">nebula-common</a>和<a href="https://github.com/vesoft-inc/nebula-storage">nebula-storage</a>分支。例如安装2.0.1 GA版本，请执行如下命令：</p>
+<p>为了让相关库的版本保持一致，需使用选项<code>-DNEBULA_COMMON_REPO_TAG</code>和<code>-DNEBULA_STORAGE_REPO_TAG</code>指定<a href="https://github.com/vesoft-inc/nebula-common">nebula-common</a>和<a href="https://github.com/vesoft-inc/nebula-storage">nebula-storage</a>库的分支。</p>
 <div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
 -DNEBULA_COMMON_REPO_TAG<span class="o">=</span>v2.0.1 -DNEBULA_STORAGE_REPO_TAG<span class="o">=</span>v2.0.1 ..
 </code></pre></div>
-</li>
-</ul>
 </li>
 <li>
 <p>编译Nebula Graph。</p>
@@ -2008,20 +1993,6 @@
 <p>安装Nebula Graph。</p>
 <div class="highlight"><pre><span></span><code>$ sudo make install-all
 </code></pre></div>
-</li>
-<li>
-<p>（可选）更新<code>master</code>分支的源码，因为它经常更新。</p>
-<ol>
-<li>
-<p>在目录<code>nebula-graph/</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
-</li>
-<li>
-<p>在目录<code>nebula-graph/modules/common/</code>和<code>nebula-graph/modules/storage/</code>中，分别执行命令<code>git pull upstream master</code>。</p>
-</li>
-<li>
-<p>在目录<code>nebula-graph/build/</code>中，重新执行<code>make -j{N}</code>和<code>make install-all</code>。</p>
-</li>
-</ol>
 </li>
 </ol>
 <h2 id="_3">下一步<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
@@ -2090,7 +2061,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月28日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月26日</span>
 </small>
 </div>
 </article>
