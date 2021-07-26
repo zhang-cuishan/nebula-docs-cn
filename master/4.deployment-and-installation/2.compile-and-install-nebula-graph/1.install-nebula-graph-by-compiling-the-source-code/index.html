@@ -1144,6 +1144,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#master">
+    更新master版本
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
     下一步
   </a>
@@ -1566,6 +1571,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#master">
+    更新master版本
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
     下一步
   </a>
@@ -1656,14 +1666,14 @@
 <h2 id="_2">安装步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>克隆Nebula Graph源码到主机。</p>
+<p>克隆Nebula Graph的源代码到主机。</p>
 <ul>
-<li>[推荐]如果需要安装指定版本的Nebula Graph 2.x，请使用选项<code>--branch</code>指定分支。例如安装v2.5.0发布版本，请执行如下命令：<div class="highlight"><pre><span></span><code>$ git clone --branch v2.5.0 https://github.com/vesoft-inc/nebula-graph.git
+<li>[推荐]如果需要安装v2.5.0版本的Nebula Graph，执行如下命令：<div class="highlight"><pre><span></span><code>$ git clone --branch v2.5.0 https://github.com/vesoft-inc/nebula-graph.git
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>如果需要安装日常开发版本的开发代码，请执行如下命令下载<code>master</code>分支的源码：<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula-graph.git
+<li>如果需要安装最新的开发版本用于测试，执行如下命令克隆master分支的代码：<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula-graph.git
 </code></pre></div>
 </li>
 </ul>
@@ -1686,13 +1696,13 @@
 <p>更多CMake参数说明，请参见<a href="#cmake">CMake参数</a>。</p>
 </div>
 <ul>
-<li>如果在第1步下载的是最新版本的开发代码（master），请执行如下命令：<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DENABLE_MODULE_UPDATE<span class="o">=</span>ON -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
+<li>如果在第1步下载了v2.5.0版本的源码，执行如下命令。选项<code>-DNEBULA_COMMON_REPO_TAG</code>和<code>-DNEBULA_STORAGE_REPO_TAG</code>用于指定<a href="https://github.com/vesoft-inc/nebula-common">nebula-common</a>和<a href="https://github.com/vesoft-inc/nebula-storage">nebula-storage</a>库的分支，以使各Nebula Graph组件的版本保持一致。<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
+-DNEBULA_COMMON_REPO_TAG<span class="o">=</span>v2.5.0 -DNEBULA_STORAGE_REPO_TAG<span class="o">=</span>v2.5.0 ..
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>如果在第1步下载的是指定版本的Nebula Graph 2.5.0，请使用选项<code>-DNEBULA_COMMON_REPO_TAG</code>和<code>-DNEBULA_STORAGE_REPO_TAG</code>指定相同的<a href="https://github.com/vesoft-inc/nebula-common">nebula-common</a>和<a href="https://github.com/vesoft-inc/nebula-storage">nebula-storage</a>分支。例如安装2.5.0 版本，请执行如下命令：<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
--DNEBULA_COMMON_REPO_TAG<span class="o">=</span>v2.5.0 -DNEBULA_STORAGE_REPO_TAG<span class="o">=</span>v2.5.0 ..
+<li>如果在第1步下载了master分支的代码，执行如下命令即可。<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DENABLE_MODULE_UPDATE<span class="o">=</span>ON -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
 </code></pre></div>
 </li>
 </ul>
@@ -1712,21 +1722,12 @@
 <div class="highlight"><pre><span></span><code>$ sudo make install-all
 </code></pre></div>
 </li>
-<li>
-<p>（可选）更新<code>master</code>分支的源码，因为它经常更新。</p>
-<ol>
-<li>
-<p>在目录<code>nebula-graph/</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
-</li>
-<li>
-<p>在目录<code>nebula-graph/modules/common/</code>和<code>nebula-graph/modules/storage/</code>中，分别执行命令<code>git pull upstream master</code>。</p>
-</li>
-<li>
-<p>在目录<code>nebula-graph/build/</code>中，重新执行<code>make -j{N}</code>和<code>make install-all</code>。</p>
-</li>
 </ol>
-</li>
-</ol>
+<h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
+<p>master分支的代码更新速度快，如果安装了master分支对应的开发版Nebula Graph，可根据以下步骤更新版本。</p>
+<p>1. 在目录<code>nebula-graph/</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
+<p>2. 在目录<code>nebula-graph/modules/common/</code>和<code>nebula-graph/modules/storage/</code>中，分别执行命令<code>git pull upstream master</code>。</p>
+<p>3. 在目录<code>nebula-graph/build/</code>中，重新执行<code>make -j{N}</code>和<code>make install-all</code>。</p>
 <h2 id="_3">下一步<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a></li>
@@ -1809,7 +1810,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年6月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月26日</span>
 </small>
 </div>
 </article>
