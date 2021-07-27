@@ -1562,6 +1562,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#error_-1005_schema_not_exist_xxx">
+    [ERROR (-1005)]: Schema not exist: xxx
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_8">
     关于悬挂边
   </a>
@@ -1780,6 +1785,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory">
     如何处理错误信息[ERROR (-1005)]: Used memory hits the high watermark(0.800000) of total system memory.
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error_-1005_schema_not_exist_xxx">
+    [ERROR (-1005)]: Schema not exist: xxx
   </a>
 </li>
 <li class="md-nav__item">
@@ -2008,6 +2018,14 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == "given" RETURN count(e); #入度
 </div>
 </li>
 </ul>
+<h3 id="error_-1005_schema_not_exist_xxx">[ERROR (-1005)]: Schema not exist: xxx<a class="headerlink" href="#error_-1005_schema_not_exist_xxx" title="Permanent link">¶</a></h3>
+<p>查询时提示<code>Schema not exist</code>，请确认：</p>
+<ul>
+<li>Schema中是否存在该Tag或Edge type。</li>
+</ul>
+<ul>
+<li>Tag或Edge type的名称是否为关键字，如果是关键字，请使用反引号（`）将它们括起来。详情请参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字</a>。</li>
+</ul>
 <h3 id="_8">关于悬挂边<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>悬挂边 (Dangling edge) 是指一条边的起点或者终点在数据库中不存在。</p>
 <p>Nebula Graph 2.5.0 的数据模型中，允许存在"悬挂边"；也没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。详见<a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="docs-2.0/3.ngql-guide/13.edge-statements/1.insert-edge.md">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
@@ -2123,7 +2141,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月27日</span>
 </small>
 </div>
 </article>
