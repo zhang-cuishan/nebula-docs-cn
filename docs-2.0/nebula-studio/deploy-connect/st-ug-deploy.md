@@ -127,7 +127,7 @@
 
    | 安装包 | 检验和 | Nebula Graph内核版本 |
    | ----- | ----- | ----- |
-   | [nebula-graph-studio-2.2.1-7.x86_64.rpm](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/nebula-graph-studio-2.2.1-7.x86_64.rpm) |  [nebula-graph-studio-2.2.1-7.x86_64.rpm.sha256](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/nebula-graph-studio-2.2.1-7.x86_64.rpm.sha256) | 2.0.1 |
+   | [nebula-graph-studio-2.2.2-1.x86_64.rpm](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/nebula-graph-studio-2.2.2-1.x86_64.rpm) |  [nebula-graph-studio-2.2.2-1.x86_64.rpm.sha256](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/nebula-graph-studio-2.2.1-7.x86_64.rpm.sha256) | 2.0.1 |
    
 2. 使用`sudo rpm -i <rpm>`命令安装RPM包。
 
