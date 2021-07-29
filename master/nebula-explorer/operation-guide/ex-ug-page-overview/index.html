@@ -1537,6 +1537,11 @@
     缩略图
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+    关系列表
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1679,6 +1684,11 @@
     缩略图
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+    关系列表
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1703,12 +1713,12 @@ Explorer 的主页面分为五个部分：</img></p>
 </ul>
 <h2 id="_3">标签栏<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li>导出图形：支持导出当前视图的 CSV 文件或 SVG（图片）文件。</li>
+<li>导出图形：支持导出当前视图的 CSV 文件或 PNG（图片）文件。</li>
 </ul>
 <h2 id="_4">侧边栏<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>侧边栏包括四个部分，用户可以点击按钮对图进行探索、修改画布上点的内容等等。</p>
 <ul>
-<li>查询探索：在进行探索之前，用户需要在查询数据并显示在画布中。</li>
+<li>查询探索：在进行探索之前，用户需要查询数据并显示在画布中。</li>
 </ul>
 <ul>
 <li>画布操作：包括框选画布中的点、拖动画布、选中多条点边功能。</li>
@@ -1729,19 +1739,17 @@ Explorer 的主页面分为五个部分：</img></p>
 <h3 id="_6">画布操作<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <ul>
 <li>框选模式：单击<img alt="frameSelect" src="../../figs/nav-frameSelect.png"/> 图标，支持框选画布中的点和边。</li>
-</ul>
-<ul>
-<li>拖动画布：单击<img alt="moveCanvas" src="../../figs/nav-moveCanvas.png"/> 图标，支持拖动画布的位置。</li>
-</ul>
-<ul>
 <li>选中多条点边：单击<img alt="singleSelect" src="../../figs/nav-singleSelect.png"/> 图标，可以方便的点击画布中的点和边，单击空白处取消选择。</li>
+<li>拖动画布：单击<img alt="moveCanvas" src="../../figs/nav-moveCanvas.png"/> 图标，支持拖动画布的位置。
+更多详细信息参考 <a href="../ex-ug-canvas/">画布操作</a>。</li>
 </ul>
 <h3 id="_7">图探索扩展<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <ul>
 <li>拓展：单击 <img alt="expand" src="../../figs/rightclickmenu-expand.png"/>图标，选择页面上的节点并进行自定义拓展，包括拓展方向、拓展步数、过滤条件等。</li>
 <li>共同邻居：单击 <img alt="commonNeighbor" src="../../figs/rightclickmenu-commonNeighbor.png"/>图标，选择页面上 2 个点并查看它们的共同邻居。</li>
 <li>路径查询：单击 <img alt="findPath" src="../../figs/rightclickmenu-findPath.png"/>图标，可以查询起点到终点之间的 <code>all paths</code> 、 <code>Shortest path</code> 或者是 <code>Noloop path</code> 的路径。</li>
-<li>查看属性：单击 <img alt="propertyView" src="../../figs/nav-propertyView.png"/>图标，选择是否显示画板中的点或边的属性值。</li>
+<li>查看属性：单击 <img alt="propertyView" src="../../figs/nav-propertyView.png"/>图标，选择是否显示画板中的点或边的属性值。
+更多详细信息参考 <a href="../ex-ug-graph-exploration/">图探索拓展</a>。</li>
 </ul>
 <h3 id="_8">删除及撤销<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <ul>
@@ -1763,7 +1771,7 @@ Explorer 的主页面分为五个部分：</img></p>
 <ul>
 <li>
 <p>点边概览：默认隐藏，在当前画布选中点和边时才显示。点击如图标识，用户可以打开菜单，查看当前子图中选中的点和边的详细数据。</p>
-<p><img alt="review" src="../figs/ex-ug-027.png"/></p>
+<p><img alt="review" src="../../figs/ex-ug-027-1.png"/></p>
 </li>
 </ul>
 <p>更多详细操作参考 <a href="../ex-ug-canvas/">画布操作</a>。</p>
@@ -1788,22 +1796,17 @@ Explorer 的主页面分为五个部分：</img></p>
 <td>dagre（层次图）</td>
 <td>circular（环形图）</td>
 </tr>
-<tr>
-<td>## 关系列表</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 </li>
 </ul>
+<h2 id="_12">关系列表<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
 <p>点击右侧的 <img alt="unfold" src="../../figs/sidebar-unfold.png"/>图标，用户可以打开菜单，查看画板中 Tag 和 Edge 的数量、搜索 Tag 和 Edge ，同时也支持修改点的颜色和图标。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月27日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月29日</span>
 </small>
 </div>
 </article>
