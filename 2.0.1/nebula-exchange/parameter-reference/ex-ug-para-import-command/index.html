@@ -1788,20 +1788,22 @@
 <ul>
 <li>
 <p>首次导入</p>
-<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;csv_application.conf_path&gt; 
+<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;application.conf_path&gt; 
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
-<p>二次导入</p>
-<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;csv_application.conf_path&gt; -r <span class="s2">"&lt;import_fail_file_path&gt;"</span> 
+<p>导入reload文件</p>
+<p>如果首次导入时有一些数据导入失败，会将导入失败的数据存入reload文件，可以用参数<code>-r</code>尝试导入reload文件。</p>
+<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;application.conf_path&gt; -r <span class="s2">"&lt;reload_file_path&gt;"</span> 
 </code></pre></div>
 </li>
 </ul>
-<blockquote>
-<p><strong>说明</strong>：JAR文件版本号以实际编译得到的JAR文件名称为准。</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>JAR文件版本号以实际编译得到的JAR文件名称为准。</p>
+</div>
 <p>下表列出了命令的相关参数。</p>
 <table>
 <thead>
@@ -1844,10 +1846,10 @@
 <td align="left">添加这个参数表示检查配置文件的格式是否符合要求，但不会校验<code>tags</code>和<code>edges</code>的配置项是否正确。正式导入数据时不能添加这个参数。</td>
 </tr>
 <tr>
-<td align="left"><code>-r</code> / <code>--reload</code></td>
+<td align="left">-r / --reload</td>
 <td align="left">否</td>
 <td align="left">无</td>
-<td align="left">指定需要重新加载的文件路径。如果之前导入时有一些数据导入失败，会生成导入失败文件，可以用该参数将导入失败文件的数据再次尝试导入。</td>
+<td align="left">指定需要重新加载的reload文件路径。</td>
 </tr>
 </tbody>
 </table>
@@ -1855,7 +1857,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月26日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月3日</span>
 </small>
 </div>
 </article>
