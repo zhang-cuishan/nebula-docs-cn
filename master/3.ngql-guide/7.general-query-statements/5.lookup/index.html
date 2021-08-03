@@ -9,7 +9,7 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/7.general-query-statements/5.lookup/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.1" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.2.2" name="generator"/>
 <title>LOOKUP - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
@@ -580,11 +580,16 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    前提条件
+    注意事项
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     语法
   </a>
 </li>
@@ -594,12 +599,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     检索点
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
     检索边
   </a>
 </li>
@@ -609,7 +614,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
     统计点或边
   </a>
 </li>
@@ -1597,6 +1602,11 @@
         PDF
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://docs.nebula-graph.io/">
+        English Docs
+      </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1618,11 +1628,16 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    前提条件
+    注意事项
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     语法
   </a>
 </li>
@@ -1632,12 +1647,12 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     检索点
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
+<a class="md-nav__link" href="#_5">
     检索边
   </a>
 </li>
@@ -1647,7 +1662,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#_6">
     统计点或边
   </a>
 </li>
@@ -1677,13 +1692,16 @@
 </ul>
 <h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <p>本文操作仅适用于原生nGQL。</p>
-<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li>索引会导致写性能大幅降低（降低90%甚至更多）。请不要随意在生产环境中使用索引，除非很清楚使用索引对业务的影响。</li>
+</ul>
+<ul>
+<li>如果查询时没有合适的索引，会退化为全表扫描。</li>
+</ul>
+<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>请确保<code>LOOKUP</code>语句有至少一个索引可用。如果需要创建索引，但是已经有相关的点、边或属性，用户必须在创建索引后<a href="../../14.native-index-statements/4.rebuild-native-index/">重建索引</a>，才能使其生效。</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>索引会导致写性能大幅降低（降低90%甚至更多）。请不要随意在生产环境中使用索引，除非很清楚使用索引对业务的影响。</p>
-</div>
-<h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] [YIELD &lt;return_list&gt;];
 
 &lt;return_list&gt;
@@ -1711,7 +1729,7 @@
 <li>字符串类型索引不支持范围扫描。</li>
 <li>不支持XOR和NOT运算符。</li>
 </ul>
-<h2 id="_3">检索点<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_4">检索点<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>返回Tag为<code>player</code>且<code>name</code>为<code>Tony Parker</code>的点。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX index_player ON player(name(30), age);
 
@@ -1729,7 +1747,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == "Tony Parker";
 | 101      |
 ------------
 
-//正则表达式匹配
+# 正则表达式匹配
 nebula&gt; LOOKUP ON player WHERE player.name =~ "^.{15,20}$" \
         YIELD player.name, player.age;
 +-------------+----------------------+------------+
@@ -1763,7 +1781,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == "Kobe Bryant" YIELD player.name
 | Kobe Bryant | 1996             | 2016           | Lakers       |
 ------------------------------------------------------------------
 </code></pre></div>
-<h2 id="_4">检索边<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h2 id="_5">检索边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>返回Edge type为<code>follow</code>且<code>degree</code>为<code>90</code>的边。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX index_follow ON follow(degree);
 
@@ -1855,7 +1873,7 @@ nebula&gt; REBUILD EDGE INDEX like_index;
 
 nebula&gt; INSERT EDGE like(likeness) values "player100"-&gt;"player101":(95);
 
-# 列出所有的 like 边。类似于 MATCH (s)-[e:like]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */
+# 列出所有的 like 边。类似于 MATCH (s)-[e:like]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */。
 
 nebula)&gt; LOOKUP ON like;
 +-------------+----------+-------------+
@@ -1866,7 +1884,7 @@ nebula)&gt; LOOKUP ON like;
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_5">统计点或边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h2 id="_6">统计点或边<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>统计Tag为<code>player</code>的点和Edge type为<code>like</code>的边。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player | YIELD COUNT(*) AS Player_Number;
 +---------------+
@@ -1890,7 +1908,7 @@ nebula&gt; LOOKUP ON like | YIELD COUNT(*) AS Like_Number;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月27日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月3日</span>
 </small>
 </div>
 </article>
@@ -1954,8 +1972,8 @@ nebula&gt; LOOKUP ON like | YIELD COUNT(*) AS Like_Number;
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": {"method": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
 <script src="../../../js/version-select.js"></script>
 <script src="../../../js/config.js"></script>
 <script src="../../../js/jquery.js"></script>

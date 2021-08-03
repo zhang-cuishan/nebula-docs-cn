@@ -9,7 +9,7 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/3.data-types/4.date-and-time/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.1" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.2.2" name="generator"/>
 <title>日期时间 - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
@@ -365,7 +365,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    openCypher兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -1587,6 +1587,11 @@
         PDF
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://docs.nebula-graph.io/">
+        English Docs
+      </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1603,7 +1608,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    openCypher兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -1648,8 +1653,13 @@
 <p class="admonition-title">Note</p>
 <p>如需修改当前时区，请同时修改所有服务的配置文件中的<code>timezone_name</code>参数。</p>
 </div>
-<p>结合<code>RETURN</code>子句，函数<code>date()</code>、<code>time()</code>、<code>datetime()</code>和<code>timestamp()</code>可以用空值返回当前的日期或时间。</p>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<ul>
+<li>函数<code>date()</code>、<code>time()</code>、<code>datetime()</code>和<code>timestamp()</code>可以用空值获取当前的日期或时间。</li>
+</ul>
+<ul>
+<li>函数<code>date()</code>、<code>time()</code>和<code>datetime()</code>可以用属性名称获取自身的某一个具体属性值，例如<code>date().month</code>获取当前月份、<code>time("02:59:40").minute</code>获取传入时间的分钟数。</li>
+</ul>
+<h2 id="opencypher">openCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <ul>
 <li>支持年、月、日、时、分、秒，不支持毫秒。</li>
 </ul>
@@ -1661,10 +1671,13 @@
 </ul>
 <h2 id="date">DATE<a class="headerlink" href="#date" title="Permanent link">¶</a></h2>
 <p><code>DATE</code>包含日期，但是不包含时间。Nebula Graph检索和显示<code>DATE</code>的格式为<code>YYYY-MM-DD</code>。支持的范围是<code>-32768-01-01</code>到<code>32767-12-31</code>。</p>
+<p><code>date()</code>支持的属性名称包括<code>year</code>、<code>month</code>和<code>day</code>。</p>
 <h2 id="time">TIME<a class="headerlink" href="#time" title="Permanent link">¶</a></h2>
 <p><code>TIME</code>包含时间，但是不包含日期。Nebula Graph检索和显示<code>TIME</code>的格式为<code>hh:mm:ss.msmsmsususus</code>。支持的范围是<code>00:00:00.000000</code>到<code>23:59:59.999999</code>。</p>
+<p><code>time()</code>支持的属性名称包括<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
 <h2 id="datetime">DATETIME<a class="headerlink" href="#datetime" title="Permanent link">¶</a></h2>
 <p><code>DATETIME</code>包含日期和时间。Nebula Graph检索和显示<code>DATETIME</code>的格式为<code>YYYY-MM-DDThh:mm:ss.msmsmsususus</code>。支持的范围是<code>-32768-01-01T00:00:00.000000</code>到<code>32767-12-31T23:59:59.999999</code>。</p>
+<p><code>datetime()</code>支持的属性名称包括<code>year</code>、<code>month</code>、<code>day</code>、<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
 <h2 id="timestamp">TIMESTAMP<a class="headerlink" href="#timestamp" title="Permanent link">¶</a></h2>
 <p><code>TIMESTAMP</code>包含日期和时间。支持的范围是UTC时间的<code>1970-01-01T00:00:01</code>到<code>2262-04-11T23:47:16</code>。</p>
 <p><code>TIMESTAMP</code>还有以下特点：</p>
@@ -1714,6 +1727,18 @@ nebula&gt; return timestamp("2021-07-05T06:18:43.984000");
 </code></pre></div>
 </li>
 <li>
+<p>获取<code>test1</code>的属性<code>p1</code>的月份。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX date1_index ON date1(p1);
+nebula&gt; REBUILD TAG INDEX date1_index;
+nebula&gt; MATCH (v:date1) RETURN v.p1.month;
++------------+
+| v.p1.month |
++------------+
+| 3          |
++------------+
+</code></pre></div>
+</li>
+<li>
 <p>创建Tag，名称为<code>school</code>，包含<code>TIMESTAMP</code>类型。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG school(name string , found_time timestamp);
 </code></pre></div>
@@ -1756,7 +1781,7 @@ nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月6日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月2日</span>
 </small>
 </div>
 </article>
@@ -1820,8 +1845,8 @@ nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.53c85856.min.js", "version": {"method": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
 <script src="../../../js/version-select.js"></script>
 <script src="../../../js/config.js"></script>
 <script src="../../../js/jquery.js"></script>
