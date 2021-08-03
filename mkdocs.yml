@@ -42,6 +42,14 @@ extra:
   studio:
     base111b: 1.1.1-beta
     base220: 2.2.0
+  exchange:
+    release: 2.1.0
+  importer:
+    release: 2.0.0-GA
+  sparkconnector:
+    release: 2.1.0
+  dashboard:
+    release: beta
   
 nav:
   - 前言: README.md
