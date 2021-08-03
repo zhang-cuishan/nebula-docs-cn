@@ -4,7 +4,7 @@ Nebula Spark Connector是一个Spark连接器，提供通过Spark标准形式读
 
 - Reader
   
-  提供一个Spark SQL接口，用户可以使用该接口编程读取Nebula Graph图数据，单次读取一个点或边类型的数据，并将读取的结果组装成Spark的DataFrame。
+  提供一个Spark SQL接口，用户可以使用该接口编程读取Nebula Graph图数据，单次读取一个点或Edge type的数据，并将读取的结果组装成Spark的DataFrame。
 
 - Writer
 
@@ -24,7 +24,7 @@ Nebula Spark Connector适用于以下场景：
 
 - 结合[Nebula Algorithm](nebula-algorithm.md)进行图计算。
 
-## 优势
+## 特性
 
 - 提供多种连接配置项，如超时时间、连接重试次数、执行重试次数等。
 
@@ -36,6 +36,12 @@ Nebula Spark Connector适用于以下场景：
 
 - Nebula Spark Connector 2.0统一了SparkSQL的扩展数据源，统一采用DataSourceV2进行Nebula Graph数据扩展。
 
+- 支持`insert`和`update`两种写入模式。`insert`模式会插入（覆盖）数据，`update`模式仅会更新已存在的数据。
+
+    !!! note
+
+        `update`模式为Nebula Spark Connector 2.1.0版本新增功能。
+
 ## 获取Nebula Spark Connector
 
 ### 编译打包
@@ -43,7 +49,7 @@ Nebula Spark Connector适用于以下场景：
 1. 克隆仓库`nebula-spark-utils`。
 
   ```bash
-  $ git clone -b v2.0.0 https://github.com/vesoft-inc/nebula-spark-utils.git
+  $ git clone -b {{sparkconnector.release}} https://github.com/vesoft-inc/nebula-spark-utils.git
   ```
 
 2. 进入目录`nebula-spark-connector`。
@@ -128,11 +134,12 @@ val edge = spark.read.nebula(config, nebulaReadEdgeConfig).loadEdgesToDF()
   |参数|是否必须|说明|
   |:---|:---|:---|
   |`withSpace`  |是|  Nebula Graph图空间名称。  |
-  |`withLabel`  |是|  Nebula Graph图空间内的标签或边类型名称。  |
+  |`withLabel`  |是|  Nebula Graph图空间内的Tag或Edge type名称。  |
   |`withNoColumn`  |否|  是否不读取属性。默认值为`false`，表示读取属性。取值为`true`时，表示不读取属性，此时`withReturnCols`配置无效。  |
   |`withReturnCols`  |否|  配置要读取的点或边的属性集。格式为`List(property1,property2,...)`，默认值为`List()`，表示读取全部属性。  |
   |`withLimit`  |否|  配置Nebula Java Storage Client一次从服务端读取的数据行数。默认值为1000。  |
-  |`withPartitionNum`  |否|  配置读取Nebula Graph数据时Spark的分区数。默认值为100。该值的配置最好不超过图空间的的分片数量（partition_num）。  |
+  |`withPartitionNum`  |否|  配置读取Nebula Graph数据时Spark的分区数。默认值为100。该值的配置最好不超过图空间的的分片数量（partition_num）。|
+
 ### 向Nebula Graph写入数据
 
 ```scala
@@ -175,6 +182,26 @@ val nebulaWriteEdgeConfig: WriteNebulaEdgeConfig = WriteNebulaEdgeConfig
 df.write.nebula(config, nebulaWriteEdgeConfig).writeEdges()
 ```
 
+默认写入模式为`insert`，可以通过`withWriteMode`配置修改为`update`：
+
+```scala
+val config = NebulaConnectionConfig
+  .builder()
+  .withMetaAddress("127.0.0.1:9559")
+  .withGraphAddress("127.0.0.1:9669")
+  .build()
+val nebulaWriteVertexConfig = WriteNebulaVertexConfig
+  .builder()
+  .withSpace("test")
+  .withTag("person")
+  .withVidField("id")
+  .withVidAsProp(true)
+  .withBatch(1000)
+  .withWriteMode(WriteMode.UPDATE)
+  .build()
+df.write.nebula(config, nebulaWriteVertexConfig).writeVertices()
+```
+
 - `NebulaConnectionConfig`是连接Nebula Graph的配置，说明如下。
 
   |参数|是否必须|说明|
@@ -188,28 +215,30 @@ df.write.nebula(config, nebulaWriteEdgeConfig).writeEdges()
   |参数|是否必须|说明|
   |:---|:---|:---|
   |`withSpace`  |是|  Nebula Graph图空间名称。  |
-  |`withTag`  |是|  写入点时需要关联的标签名称。  |
+  |`withTag`  |是|  写入点时需要关联的Tag名称。  |
   |`withVidField`  |是|  DataFrame中作为点ID的列。  |
   |`withVidPolicy`  |否|  写入点ID时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。  |
-  |`withVidAsProp`  |否|  DataFrame中作为点ID的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保标签中有和`VidField`相同的属性名。  |
+  |`withVidAsProp`  |否|  DataFrame中作为点ID的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Tag中有和`VidField`相同的属性名。  |
   |`withUser`  |否|  Nebula Graph用户名。若未开启[身份验证](7.data-security/1.authentication/1.authentication.md)，无需配置用户名和密码。   |
   |`withPasswd`  |否|  Nebula Graph用户名对应的密码。  |
   |`withBatch`  |是|  一次写入的数据行数。默认值为`1000`.  |
+  |`withWriteMode`|否|写入模式。可选值为`insert`和`update`。默认为`insert`。|
 
 - `WriteNebulaEdgeConfig`是写入边的配置，说明如下。
 
   |参数|是否必须|说明|
   |:---|:---|:---|
   |`withSpace`  |是|  Nebula Graph图空间名称。  |
-  |`withEdge`  |是|  写入边时需要关联的边类型名称。  |
+  |`withEdge`  |是|  写入边时需要关联的Edge type名称。  |
   |`withSrcIdField`  |是|  DataFrame中作为起始点的列。  |
   |`withSrcPolicy`  |否| 写入起始点时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。   |
   |`withDstIdField`  |是| DataFrame中作为目的点的列。   |
   |`withDstPolicy`  |否| 写入目的点时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。   |
   |`withRankField`  |否| DataFrame中作为rank的列。默认不写入rank。   |
-  |`withSrcAsProperty`  |否| DataFrame中作为起始点的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保边类型中有和`SrcIdField`相同的属性名。   |
-  |`withDstAsProperty`  |否| DataFrame中作为目的点的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保边类型中有和`DstIdField`相同的属性名。   |
-  |`withRankAsProperty`  |否| DataFrame中作为rank的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保边类型中有和`RankField`相同的属性名。   |
+  |`withSrcAsProperty`  |否| DataFrame中作为起始点的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Edge type中有和`SrcIdField`相同的属性名。   |
+  |`withDstAsProperty`  |否| DataFrame中作为目的点的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Edge type中有和`DstIdField`相同的属性名。   |
+  |`withRankAsProperty`  |否| DataFrame中作为rank的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Edge type中有和`RankField`相同的属性名。   |
   |`withUser`  |否|  Nebula Graph用户名。若未开启[身份验证](7.data-security/1.authentication/1.authentication.md)，无需配置用户名和密码。  |
   |`withPasswd`  |否|  Nebula Graph用户名对应的密码。  |
   |`withBatch`  |是|  一次写入的数据行数。默认值为`1000`.  |
+  |`withWriteMode`|否|写入模式。可选值为`insert`和`update`。默认为`insert`。|
