@@ -49,8 +49,11 @@ extra:
     release: 2.0.0-GA
   sparkconnector:
     release: 2.1.0
+    branch: v2.1
   dashboard:
     release: beta
+  console:
+    release: 2.0.0
   
 nav:
   - 前言: README.md
