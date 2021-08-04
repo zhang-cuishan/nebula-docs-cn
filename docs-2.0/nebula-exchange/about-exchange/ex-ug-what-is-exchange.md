@@ -40,7 +40,7 @@ Exchange具有以下优点：
 
 ## 数据格式和来源
 
-Exchange 2.0支持将以下格式或来源的数据转换为Nebula Graph能识别的点和边数据：
+Exchange {{exchange.release}}支持将以下格式或来源的数据转换为Nebula Graph能识别的点和边数据：
 
 - 存储在HDFS或本地的数据：
   - [Apache Parquet](../use-exchange/ex-ug-import-from-parquet.md)
