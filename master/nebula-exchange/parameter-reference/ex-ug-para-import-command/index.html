@@ -1572,7 +1572,7 @@
 <ul>
 <li>
 <p>首次导入</p>
-<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;csv_application.conf_path&gt; 
+<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;application.conf_path&gt; 
 </code></pre></div>
 </li>
 </ul>
@@ -1580,7 +1580,7 @@
 <li>
 <p>导入reload文件</p>
 <p>如果首次导入时有一些数据导入失败，会将导入失败的数据存入reload文件，可以用参数<code>-r</code>尝试导入reload文件。</p>
-<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;csv_application.conf_path&gt; -r <span class="s2">"&lt;reload_file_path&gt;"</span> 
+<div class="highlight"><pre><span></span><code>&lt;spark_install_path&gt;/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.x.y.jar_path&gt; -c &lt;application.conf_path&gt; -r <span class="s2">"&lt;reload_file_path&gt;"</span> 
 </code></pre></div>
 </li>
 </ul>
@@ -1641,7 +1641,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月27日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月4日</span>
 </small>
 </div>
 </article>
