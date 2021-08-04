@@ -704,11 +704,19 @@
      <lastmod>2021-08-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://docs.nebula-graph.com.cn/2.0.1/2.0.1/nebula-exchange/use-exchange/ex-ug-import-from-clickhouse/</loc>
+     <lastmod>2021-08-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://docs.nebula-graph.com.cn/2.0.1/2.0.1/nebula-exchange/use-exchange/ex-ug-import-from-neo4j/</loc>
      <lastmod>2021-08-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.nebula-graph.com.cn/2.0.1/2.0.1/nebula-exchange/use-exchange/ex-ug-import-from-hive/</loc>
+     <lastmod>2021-08-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/2.0.1/2.0.1/nebula-exchange/use-exchange/ex-ug-import-from-maxcompute/</loc>
      <lastmod>2021-08-04</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
