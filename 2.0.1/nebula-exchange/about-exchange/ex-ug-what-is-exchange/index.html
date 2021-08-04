@@ -1842,7 +1842,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="nebula_exchange">什么是Nebula Exchange<a class="headerlink" href="#nebula_exchange" title="Permanent link">¶</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/v2.0.0/nebula-exchange">Nebula Exchange</a>（简称Exchange）是一款Apache Spark™应用，用于在分布式环境中将集群中的数据批量迁移到Nebula Graph中，能支持多种不同格式的批式数据和流式数据的迁移。</p>
+<p><a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/v2.1/nebula-exchange">Nebula Exchange</a>（简称Exchange）是一款Apache Spark™应用，用于在分布式环境中将集群中的数据批量迁移到Nebula Graph中，能支持多种不同格式的批式数据和流式数据的迁移。</p>
 <p>Exchange由Reader、Processor和Writer三部分组成。Reader读取不同来源的数据返回DataFrame后，Processor遍历DataFrame的每一行，根据配置文件中<code>fields</code>的映射关系，按列名获取对应的值。在遍历指定批处理的行数后，Writer会将获取的数据一次性写入到Nebula Graph中。下图描述了Exchange完成数据转换和迁移的过程。</p>
 <p><img alt="Nebula Graph® Exchange 由 Reader、Processor、Writer 组成，可以完成多种不同格式和来源的数据向 Nebula Graph 的迁移" src="../../figs/ex-ug-003.png" title="Nebula Graph® Exchange 转数据转换和迁移的过程"/></p>
 <h2 id="_1">适用场景<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
@@ -1888,7 +1888,7 @@
 <h2 id="_3">数据格式和来源<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>Exchange 2.0支持将以下格式或来源的数据转换为Nebula Graph能识别的点和边数据：</p>
 <ul>
-<li>存储在HDFS或本地的数据，包括：<ul>
+<li>存储在HDFS或本地的数据：<ul>
 <li><a href="../../use-exchange/ex-ug-import-from-parquet/">Apache Parquet</a></li>
 <li><a href="../../use-exchange/ex-ug-import-from-orc/">Apache ORC</a></li>
 <li><a href="../../use-exchange/ex-ug-import-from-json/">JSON</a></li>
@@ -1900,7 +1900,13 @@
 <li><a href="../../use-exchange/ex-ug-import-from-hbase/">Apache HBase™</a></li>
 </ul>
 <ul>
-<li>数据仓库：<a href="../../use-exchange/ex-ug-import-from-hive/">Hive</a></li>
+<li>
+<p>数据仓库：</p>
+<ul>
+<li><a href="../../use-exchange/ex-ug-import-from-hive/">Hive</a></li>
+<li><a href="../../use-exchange/ex-ug-import-from-maxcompute/">MaxCompute</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li>图数据库：<a href="../../use-exchange/ex-ug-import-from-neo4j/">Neo4j</a>（Client版本2.4.5-M1）</li>
@@ -1909,12 +1915,14 @@
 <li>关系型数据库：<a href="../../use-exchange/ex-ug-import-from-mysql/">MySQL</a></li>
 </ul>
 <ul>
+<li>列式数据库：<a href="../../use-exchange/ex-ug-import-from-clickhouse/">ClickHouse</a></li>
+</ul>
+<ul>
 <li>流处理软件平台：<a href="../../use-exchange/ex-ug-import-from-kafka/">Apache Kafka®</a></li>
 </ul>
 <ul>
 <li>发布/订阅消息平台：<a href="../../use-exchange/ex-ug-import-from-pulsar/">Apache Pulsar 2.4.5</a></li>
 </ul>
-<p>Exchange 2.1新增支持<a href="../../use-exchange/ex-ug-import-from-clickhouse/">ClickHouse</a>和<a href="../../use-exchange/ex-ug-import-from-maxcompute/">MaxCompute</a>，同时兼容以上数据格式和来源。</p>
 <h2 id="_4">视频<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.bilibili.com/video/BV1Pq4y177D9">图数据库 Nebula Graph 数据导入工具——Exchange</a>（3分08秒）</li>
@@ -1924,7 +1932,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月3日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月4日</span>
 </small>
 </div>
 </article>
