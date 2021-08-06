@@ -1691,7 +1691,7 @@ nebula&gt; RETURN "Amber" AS Name;
 +-----------------+----------+----------+
 </code></pre></div>
 <h2 id="_8">返回表达式结果<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
-<p><code>RETURN</code>语句可以返回文字、函数或谓词等表达式的结果。</p>
+<p><code>RETURN</code>语句可以返回字面量、函数或谓词等表达式的结果。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tony Parker"})--&gt;(v2:player) \
         RETURN DISTINCT v2.name, "Hello"+" graphs!", v2.age &gt; 35;
 +---------------------+------------------+-------------+
@@ -1773,7 +1773,7 @@ nebula&gt; MATCH (v:player{name:"Tony Parker"})--(v2:player) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月5日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月6日</span>
 </small>
 </div>
 </article>
