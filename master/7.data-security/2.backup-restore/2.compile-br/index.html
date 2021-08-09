@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/7.data-security/2.backup-restore/2.compile-br/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.2" name="generator"/>
-<title>编译BR - Nebula Graph Database 手册</title>
+<title>2.compile br - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,9 +30,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#br">
-          跳转至
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -60,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              编译BR
+              2.compile br
             
           </span>
 </div>
@@ -1419,66 +1416,54 @@
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    准备工作
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    操作步骤
-  </a>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/2.backup-restore/2.compile-br.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="br">编译BR<a class="headerlink" href="#br" title="Permanent link">¶</a></h1>
-<p>目前，BR还没有作为一个包提供。需要先编译BR。</p>
-<h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<ul>
-<li>安装<a href="https://github.com/golang/go" title="Click to go to GitHub">Go</a> 1.14或更新版本。</li>
-<li>安装make。</li>
-</ul>
-<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ol>
-<li>
-<p>克隆<code>nebula-storage</code>库至机器。</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/vesoft-inc/nebula-storage.git
+<h1>2.compile br</h1>
+<!--
+# 编译BR
+
+目前，BR还没有作为一个包提供。需要先编译BR。
+
+## 准备工作
+
+- 安装 [Go](https://github.com/golang/go "Click to go to GitHub") 1.14.x或更新版本。
+- 安装make。
+
+## 操作步骤
+
+1. 克隆`nebula-storage`库至机器。
+
+    <div class="highlight"><pre><span></span><code>git clone https://github.com/vesoft-inc/nebula-br.git
 </code></pre></div>
-</li>
-<li>
-<p>进入<code>br</code>目录。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-storage/util/br
+
+2. 进入`br`目录。
+
+    <div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-br
 </code></pre></div>
-</li>
-<li>
-<p>编译BR。</p>
-<div class="highlight"><pre><span></span><code>make build <span class="o">&amp;&amp;</span> make <span class="nb">test</span>
+
+3. 编译BR。
+
+    <div class="highlight"><pre><span></span><code>make
 </code></pre></div>
-</li>
-</ol>
-<p>如果BR编译成功，用户可以在<code>nebula-storage/util/br/bin/</code>目录内找到二进制文件<code>br</code>。</p>
+
+用户可以在命令行输入`bin/br version`，如果返回以下内容，则认为编译成功。
+
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-br<span class="o">]</span>$ bin/br version
+Nebula Backup And Restore Ultility Tool,V-0.1.0
+   GitSha: 8e994dc
+   GitRef: master
+please run <span class="s2">&quot;help&quot;</span> subcommand <span class="k">for</span> more infomation.
+</code></pre></div>
+
+-->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月14日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月9日</span>
 </small>
 </div>
 </article>

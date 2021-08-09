@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/7.data-security/2.backup-restore/4.br-restore-data/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.2" name="generator"/>
-<title>使用BR恢复数据 - Nebula Graph Database 手册</title>
+<title>4.br restore data - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,9 +30,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#br">
-          跳转至
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -60,7 +57,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              使用BR恢复数据
+              4.br restore data
             
           </span>
 </div>
@@ -1419,173 +1416,95 @@
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    准备工作
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    操作步骤
-  </a>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/2.backup-restore/4.br-restore-data.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="br">使用BR恢复数据<a class="headerlink" href="#br" title="Permanent link">¶</a></h1>
-<p>如果使用BR备份了Nebula Graph的数据，可以通过备份文件进行数据恢复。本文介绍如何通过备份文件恢复数据。</p>
-<blockquote>
-<p><strong>警告</strong>：恢复过程中，目标集群上已有的数据会被删除，然后替换为备份文件中的数据。建议提前备份目标集群上的数据。</p>
-<p><strong>注意</strong>：数据恢复需要离线进行。</p>
-</blockquote>
-<h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<ul>
-<li>BR编译完成。如何编译BR，请参见<a href="../2.compile-br/">编译BR</a>。</li>
-</ul>
-<ul>
-<li>确认没有应用程序连接到待恢复数据的Nebula Graph集群。</li>
-</ul>
-<ul>
-<li>确认集群的拓扑结构一致，即原集群和目标集群的主机数量一致。</li>
-</ul>
-<ul>
-<li>确认进行数据恢复的备份文件夹名称。本文示例为<code>BACKUP_2020_12_21_01_17_53</code>。</li>
-</ul>
-<ul>
-<li>
-<p>确认目标集群中Meta服务器和Storage服务器的IP和端口。</p>
-<ul>
-<li>在Nebula Graph的安装路径内查看<code>nebula-metad.conf</code>文件(例如<code>/usr/local/nebula/etc/nebula-metad.conf</code>)，确认Meta服务器的IP和端口。本文示例为<code>192.168.8.161:9559</code>。</li>
-</ul>
-<ul>
-<li>在Nebula Graph的安装路径内查看和<code>nebula-storaged.conf</code>文件(例如<code>/usr/local/nebula/etc/nebula-storaged.conf</code>)，确认Storage服务器的IP和端口。本文示例为<code>192.168.8.161:9779</code>。</li>
-</ul>
-<blockquote>
-<p><strong>注意</strong>：确保配置文件中使用的是实际的IP地址，而不是<code>127.0.0.1</code>。</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>BR可以免密登录服务器，即在BR机器上的账号可以通过SSH免密登录到Meta服务器和Storage服务器。详情请参见<a href="http://alexander.holbreich.org/ssh-tunnel-without-password/">SSH tunnels with keys</a>。本文示例账号名称为<code>nebula</code>。<blockquote>
-<p><strong>注意</strong>:该账号必须有Nebula Graph安装目录的写权限。</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见<a href="https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829">Alibaba Cloud ossutil文档</a>和<a href="https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html">Amazon S3 CLI文档</a>。<blockquote>
-<p><strong>注意</strong>：请创建软链接方便使用ossutil命令。命令为<code>ln -s /&lt;ossutil_tool_installation_path&gt;/&lt;ossutil64 or ossutil&gt; /usr/local/bin/ossutil</code>，根据实际路径和系统替换内容。</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>如果备份文件保存在本地磁盘，需要将BR机器上备份的Meta文件手动合并到Meta服务器和Storage服务器的备份目录内（和meta、storage目录平级）。本文示例为<code>/home/user/backup/</code>。</li>
-</ul>
-<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<ol>
-<li>
-<p>在<code>nebula-storage/util/br/config</code>目录内修改配置文件<code>backup.yaml</code>。用户可以参考如下配置，目录内也有示例文件<code>restore_example.yaml</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">meta_nodes</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="c1"># 配置一个Meta服务器的IP和端口</span>
-   <span class="nt">addrs</span><span class="p">:</span> <span class="s">"192.168.8.161:9559"</span>
-   <span class="c1"># 配置Nebula Graph的绝对安装路径</span>
-   <span class="nt">root</span><span class="p">:</span> <span class="s">"/usr/local/nebula/"</span>
-   <span class="c1"># 配置metad进程数据目录的绝对路径</span>
-   <span class="nt">data</span><span class="p">:</span> <span class="s">"/usr/local/nebula/data/meta"</span>
-   <span class="c1"># 配置可以免密登录服务器的账号名称，需要对备份存储目录有读写权限</span>
-   <span class="nt">user</span><span class="p">:</span> <span class="s">"nebula"</span>
-  <span class="c1">#- # 如果存在多个metad进程，请参考上述配置继续添加</span>
-  <span class="c1">#  addrs: "192.168.8.161:9559"</span>
-  <span class="c1">#  root: "/usr/local/nebula/"</span>
-  <span class="c1">#  data: "/usr/local/nebula/data/meta"</span>
-  <span class="c1">#  user: "nebula"</span>
-  <span class="c1">#- addrs: "192.168.8.161:9559"</span>
-  <span class="c1">#  root: "/usr/local/nebula/"</span>
-  <span class="c1">#  data: "/usr/local/nebula/data/meta"</span>
-  <span class="c1">#  user: "nebula"</span>
+<h1>4.br restore data</h1>
+<!--
+# 使用BR恢复数据
 
-<span class="nt">storage_nodes</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="c1"># 配置一个Storage服务器的IP和端口</span>
-   <span class="nt">addrs</span><span class="p">:</span> <span class="s">"192.168.8.161:9779"</span>
-   <span class="c1"># 配置Nebula Graph的绝对安装路径</span>
-   <span class="nt">root</span><span class="p">:</span> <span class="s">"/usr/local/nebula/"</span>
-   <span class="c1"># 配置storaged进程数据目录的绝对路径</span>
-   <span class="nt">data</span><span class="p">:</span> <span class="s">"/usr/local/nebula/data/storage"</span>
-   <span class="c1"># 配置可以免密登录服务器的账号名称，需要对备份存储目录有读写权限</span>
-   <span class="nt">user</span><span class="p">:</span> <span class="s">"nebula"</span>
-  <span class="c1">#- # 如果存在多个storaged进程，请参考上述配置继续添加</span>
-  <span class="c1">#  addrs: "192.168.8.161:9779"</span>
-  <span class="c1">#  root: "/usr/local/nebula/"</span>
-  <span class="c1">#  data: "/usr/local/nebula/data/storage"</span>
-  <span class="c1">#  user: "nebula"</span>
-  <span class="c1">#- addrs: "192.168.8.161:9779"</span>
-  <span class="c1">#  root: "/usr/local/nebula/"</span>
-  <span class="c1">#  data: "/usr/local/nebula/data/storage"</span>
-  <span class="c1">#  user: "nebula"</span>
+如果使用BR备份了Nebula Graph的数据，可以通过备份文件进行数据恢复。本文介绍如何通过备份文件恢复数据。
 
-  <span class="c1"># 设置备份文件的存储路径</span>
-  <span class="c1"># 如果是本地存储备份文件，请设置： </span>
-<span class="nt">backend</span><span class="p">:</span> <span class="s">"local:///home/user/backup/"</span>
-  <span class="c1"># 如果使用HDFS存储备份文件，请设置：</span>
-  <span class="c1"># hdfs://namenode:port/nebulabackup</span>
-  <span class="c1"># 如果使用Alibaba Cloud OSS存储备份文件，请设置：</span>
-  <span class="c1"># backend: "oss://nebulabackup"</span>
-  <span class="c1"># 如果使用Amazon S3存储备份文件，请设置：</span>
-  <span class="c1"># backend: "s3://nebulabackup"</span>
+!!! warning
 
-  <span class="c1"># 设置要恢复的备份文件夹</span>
-<span class="nt">backup_name</span><span class="p">:</span> <span class="s">"BACKUP_2020_12_21_01_17_53"</span>
+    恢复执行成功后，目标集群上已有的数据会被删除，然后替换为备份文件中的数据。建议提前备份目标集群上的数据。
+
+!!! caution
+
+    数据恢复需要离线进行。
+
+## 准备工作
+
+- BR编译完成。如何编译BR，请参见[编译BR](2.compile-br.md)。
+
+- 确认没有应用程序连接到待恢复数据的Nebula Graph集群。
+
+- 确认集群的拓扑结构一致，即原集群和目标集群的主机数量一致。
+
+- BR可以免密登录服务器，即在BR机器上的账号可以通过SSH免密登录到Meta服务器和Storage服务器。详情请参见[SSH tunnels with keys](http://alexander.holbreich.org/ssh-tunnel-without-password/)。
+
+  !!! caution
+
+        该账号必须有Nebula Graph安装目录的写权限，meta/storage 服务的数据目录（--data_path）的写权限。
+
+- 执行恢复操作时需使用 `root` 用户。
+
+- 如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见[Alibaba Cloud ossutil文档](https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829)和[Amazon S3 CLI文档](https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html)。
+
+    !!! warning
+
+        请创建软链接方便使用ossutil命令。命令为`ln -s /<ossutil_tool_installation_path>/<ossutil64 or ossutil> /usr/local/bin/ossutil`，根据实际路径和系统替换内容。
+
+## 操作步骤
+
+1. 用户可以使用以下命令列出现有备份信息：
+
+   <div class="highlight"><pre><span></span><code>$ ./bin/br show --storage &lt;ip_address&gt;
 </code></pre></div>
-</li>
-<li>
-<p>切换到<code>nebula-storage/util/br/bin/</code>目录。</p>
-<div class="highlight"><pre><span></span><code> <span class="nb">cd</span> nebula-storage/util/br/bin/
+   例如，可以使用以下命令列出在本地 `/home/test/backup` 路径中的备份的信息。
+   <div class="highlight"><pre><span></span><code>$ ./bin/br show --storage <span class="s2">&quot;local:///home/test/backup&quot;</span>
++----------------------------+---------------------+------------------+-------------+---------------+
+<span class="p">|</span>            NAME            <span class="p">|</span>     CREATE TIME     <span class="p">|</span>      SPACES      <span class="p">|</span> FULL BACKUP <span class="p">|</span> SPECIFY SPACE <span class="p">|</span>
++----------------------------+---------------------+------------------+-------------+---------------+
+<span class="p">|</span> BACKUP_2021_07_29_06_51_09 <span class="p">|</span> <span class="m">2021</span>-07-29 <span class="m">06</span>:51:09 <span class="p">|</span> basketballplayer <span class="p">|</span> <span class="nb">true</span>        <span class="p">|</span> <span class="nb">true</span>          <span class="p">|</span>
+<span class="p">|</span> BACKUP_2021_07_29_07_55_08 <span class="p">|</span> <span class="m">2021</span>-07-29 <span class="m">07</span>:55:09 <span class="p">|</span> basketballplayer <span class="p">|</span> <span class="nb">true</span>        <span class="p">|</span> <span class="nb">true</span>          <span class="p">|</span>
++----------------------------+---------------------+------------------+-------------+---------------+
 </code></pre></div>
-</li>
-<li>
-<p>执行如下命令恢复数据。</p>
-<div class="highlight"><pre><span></span><code>./br restore full --config <span class="s2">"/home/vesoft/nebula-storage/util/br/config/backup.yaml"</span>
+
+
+2. 用户可以使用以下命令恢复数据：
+   <div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># ./bin/br restore full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt; --name &lt;backup_name&gt; --user &lt;user_name&gt;</span>
 </code></pre></div>
-<ul>
-<li><code>restore full</code>: 表示恢复数据。</li>
-<li><code>--config "/home/vesoft/nebula-storage/util/br/config/backup.yaml"</code>: 填写配置文件的绝对路径，通过配置文件进行恢复。</li>
-</ul>
-<blockquote>
-<p><strong>注意</strong>：如果恢复过程中leader发生变更，会导致数据恢复出错，为保证数据正确性，请重新执行本步骤命令。</p>
-</blockquote>
-<p>恢复成功后，用户可以在Nebula Graph安装目录下的<code>data/storage</code>目录内找到数据文件，例如<code>/usr/local/nebula/data/storage/</code>。</p>
-</li>
-<li>
-<p>等待一段时间，直至Meta数据和Schema同步，用户可以登录数据库验证数据。例如运行<a href="../../3.ngql-guide/7.general-query-statements/6.show/14.show-stats/"><code>SHOW STATS</code></a> 验证图空间中点和边的数量是否正确。</p>
-<blockquote>
-<p><strong>注意</strong>：恢复完成后，用户需要注意以下两点：</p>
-<ul>
-<li>如果执行<code>USE &lt;space_name&gt;</code>返回错误，建议重启Nebula Graph服务。</li>
-<li>如果查询数据时报错<code>Storage Error: part: 2, error code: -3.</code>，请检查Storage服务的状态，或者重启Storage服务后再次尝试查询。</li>
-</ul>
-</blockquote>
-</li>
-</ol>
+
+   例如，可以使用以下命令，将本地 `/home/foesa/backup` 路径中的数据恢复到地址为`192.168.*.*:9559`，meta/storage 服务所在主机的用户名为`root`的集群：
+
+   <div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># ./bin/br restore full --meta &quot;192.168.*.*:9559&quot; --storage &quot;local:///home/test/backup&quot; --name &quot;BACKUP_2021_07_29_07_55_08&quot; --user &quot;root&quot;</span>
+</code></pre></div>
+
+   如果返回如下信息，表示数据已经恢复成功。
+   <div class="highlight"><pre><span></span><code>restore successed
+</code></pre></div>
+
+   以下列出命令的相关参数。
+
+   | 参数 | 是否必需 | 默认值 | 说明 | 数据类型 |
+   | --- | --- | --- | --- | --- |
+   | --concurrent | 否 | 5 | 针对阿里云 OSS 最大并发数。 | int |
+   | --extra_args | 否 | 无 | 备份存储工具（OSS/HDFS/S3）用于备份的参数。 | string |
+   | -h,-help | 否 | 无 | 查看帮助。 | - |
+   | --meta | 是 | 无 | meta 服务的地址和端口号。 | string |
+   | --name | 是 | 无 | 备份名字。 | string |
+   | --storage | 是 | 无 | BR 备份数据存储路径。 | string |
+   | --user | 是 | 无 | 登录到 meta/storage 服务所在主机的用户名。 | string |
+
+-->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月14日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月9日</span>
 </small>
 </div>
 </article>
