@@ -9,10 +9,10 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/14.client/4.nebula-java-client/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.2" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
 <title>Nebula Java - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.1118c9be.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ba0d045b.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -1514,6 +1514,10 @@
 </li>
 </ul>
 <h2 id="_3">使用方法<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议一个线程使用一个会话，如果多个线程使用同一个会话，会降低效率。</p>
+</div>
 <p>使用IDEA等工具导入Maven项目，请在<code>pom.xml</code>中添加如下依赖：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1584,7 +1588,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月10日</span>
 </small>
 </div>
 </article>
@@ -1621,7 +1625,7 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.2b46852b.min.js"></script>
+<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>
