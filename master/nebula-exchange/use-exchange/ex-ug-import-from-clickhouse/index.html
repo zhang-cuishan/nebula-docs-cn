@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/nebula-exchange/use-exchange/ex-ug-import-from-kafka/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/master/nebula-exchange/use-exchange/ex-ug-import-from-clickhouse/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
-<title>导入Kafka数据 - Nebula Graph Database 手册</title>
+<title>导入ClickHouse数据 - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#kafka">
+<a class="md-skip" href="#clickhouse">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              导入Kafka数据
+              导入ClickHouse数据
             
           </span>
 </div>
@@ -1430,16 +1430,21 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    环境配置
+    数据集
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    前提条件
+    环境配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
     操作步骤
   </a>
 <nav aria-label="操作步骤" class="md-nav">
@@ -1479,12 +1484,14 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/nebula-exchange/use-exchange/ex-ug-import-from-kafka.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/nebula-exchange/use-exchange/ex-ug-import-from-clickhouse.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="kafka">导入Kafka数据<a class="headerlink" href="#kafka" title="Permanent link">¶</a></h1>
-<p>本文简单说明如何使用Exchange将存储在Kafka上的数据导入Nebula Graph。</p>
-<h2 id="_1">环境配置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h1 id="clickhouse">导入ClickHouse数据<a class="headerlink" href="#clickhouse" title="Permanent link">¶</a></h1>
+<p>本文以一个示例说明如何使用Exchange将存储在ClickHouse上的数据导入Nebula Graph。</p>
+<h2 id="_1">数据集<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>本文以<a href="https://docs-cdn.nebula-graph.com.cn/dataset/dataset.zip">basketballplayer数据集</a>为例。</p>
+<h2 id="_2">环境配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>本文示例在MacOS下完成，以下是相关的环境配置信息：</p>
 <ul>
 <li>硬件规格：<ul>
@@ -1497,9 +1504,15 @@
 <li>Spark：2.4.7，单机版</li>
 </ul>
 <ul>
+<li>Hadoop：2.9.2，伪分布式部署</li>
+</ul>
+<ul>
+<li>ClickHouse：docker部署yandex/clickhouse-server tag: latest(2021.07.01)</li>
+</ul>
+<ul>
 <li>Nebula Graph：2.5.0。使用<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署</a>。</li>
 </ul>
-<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_3">前提条件<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
@@ -1522,9 +1535,9 @@
 <li>了解Nebula Graph中创建Schema的信息，包括Tag和Edge type的名称、属性等。</li>
 </ul>
 <ul>
-<li>已经安装并开启Kafka服务。</li>
+<li>已经安装并开启Hadoop服务。</li>
 </ul>
-<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_4">操作步骤<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <h3 id="1nebula_graphschema">步骤 1：在Nebula Graph中创建Schema<a class="headerlink" href="#1nebula_graphschema" title="Permanent link">¶</a></h3>
 <p>分析数据，按以下步骤在Nebula Graph中创建Schema：</p>
 <ol>
@@ -1589,7 +1602,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </ol>
 <p>更多信息，请参见<a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
 <h3 id="2">步骤 2：修改配置文件<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p>编译Exchange后，复制<code>target/classes/application.conf</code>文件设置Kafka数据源相关的配置。在本示例中，复制的文件名为<code>kafka_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
+<p>编译Exchange后，复制<code>target/classes/application.conf</code>文件设置ClickHouse数据源相关的配置。在本示例中，复制的文件名为<code>clickhouse_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
 <div class="highlight"><pre><span></span><code>{
   # Spark相关配置
   spark: {
@@ -1605,8 +1618,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
     }
   }
 
-
-  # Nebula Graph相关配置
+# Nebula Graph相关配置
   nebula: {
     address:{
       # 以下为Nebula Graph的Graph服务和Meta服务所在机器的IP地址及端口。
@@ -1640,58 +1652,64 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   tags: [
     # 设置Tag player相关信息。
     {
-      # Nebula Graph中对应的Tag名称。
       name: player
       type: {
-        # 指定数据源文件格式，设置为Kafka。
-        source: kafka
+        # 指定数据源文件格式，设置为ClickHouse。
+        source: clickhouse
         # 指定如何将点数据导入Nebula Graph：Client或SST。
         sink: client
       }
-      # Kafka服务器地址。
-      service: "127.0.0.1:9092"
-      # 消息类别。
-      topic: "topic_name"
+
+      # ClickHouse的JDBC URL
+      url:"jdbc:clickhouse://192.168.*.*:8123/basketballplayer"
+
+      user:"user"
+      password:"123456"
+
+      # ClickHouse分区数
+      numPartition:"5"
+
+      sentence:"select * from player"
 
       # 在fields里指定player表中的列名称，其对应的value会作为Nebula Graph中指定属性。
       # fields和nebula.fields里的配置必须一一对应。
       # 如果需要指定多个列名称，用英文逗号（,）隔开。
-      fields: [age,name]
-      nebula.fields: [age,name]
+      fields: [name,age]
+      nebula.fields: [name,age]
 
       # 指定表中某一列数据为Nebula Graph中点VID的来源。
-      vertex:{
-          field:playerid
+      vertex: {
+        field:playerid
+        # policy:hash
       }
 
-
       # 单批次写入 Nebula Graph 的数据条数。
-      batch: 10
+      batch: 256
 
       # Spark 分区数量
-      partition: 10
-      # 读取消息的间隔。单位：秒。
-      interval.seconds: 10
+      partition: 32
     }
+
     # 设置Tag team相关信息。
     {
       name: team
       type: {
-        source: kafka
+        source: clickhouse
         sink: client
       }
-      service: "127.0.0.1:9092"
-      topic: "topic_name"
+      url:"jdbc:clickhouse://192.168.*.*:8123/basketballplayer"
+      user:"user"
+      password:"123456"
+      numPartition:"5"
+      sentence:"select * from team"
       fields: [name]
       nebula.fields: [name]
-      vertex:{
-          field:teamid
+      vertex: {
+        field:teamid
       }
-      batch: 10
-      partition: 10
-      interval.seconds: 10
+      batch: 256
+      partition: 32
     }
-
   ]
 
   # 处理边数据
@@ -1702,18 +1720,24 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       name: follow
 
       type: {
-        # 指定数据源文件格式，设置为Kafka。
-        source: kafka
+        # 指定数据源文件格式，设置为ClickHouse。
+        source: clickhouse
 
         # 指定边数据导入Nebula Graph的方式，
         # 指定如何将点数据导入Nebula Graph：Client或SST。
         sink: client
       }
 
-      # Kafka服务器地址。
-      service: "127.0.0.1:9092"
-      # 消息类别。
-      topic: "topic_name"
+      # ClickHouse的JDBC URL
+      url:"jdbc:clickhouse://192.168.*.*:8123/basketballplayer"
+
+      user:"user"
+      password:"123456"
+
+      # ClickHouse分区数
+      numPartition:"5"
+
+      sentence:"select * from follow"
 
       # 在fields里指定follow表中的列名称，其对应的value会作为Nebula Graph中指定属性。
       # fields和nebula.fields里的配置必须一一对应。
@@ -1722,64 +1746,58 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       nebula.fields: [degree]
 
       # 在source里，将follow表中某一列作为边的起始点数据源。
+      source: {
+        field:src_player
+      }
+
       # 在target里，将follow表中某一列作为边的目的点数据源。
-      source:{
-          field:src_player
+      target: {
+        field:dst_player
       }
-
-
-      target:{
-          field:dst_player
-      }
-
 
       # 单批次写入 Nebula Graph 的数据条数。
-      batch: 10
+      batch: 256
 
       # Spark 分区数量
-      partition: 10
-
-      # 读取消息的间隔。单位：秒。
-      interval.seconds: 10
+      partition: 32
     }
 
     # 设置Edge type serve相关信息
     {
       name: serve
       type: {
-        source: kafka
+        source: clickhouse
         sink: client
       }
-      service: "127.0.0.1:9092"
-      topic: "topic_name"
-
+      url:"jdbc:clickhouse://192.168.*.*:8123/basketballplayer"
+      user:"user"
+      password:"123456"
+      numPartition:"5"
+      sentence:"select * from serve"
       fields: [start_year,end_year]
       nebula.fields: [start_year,end_year]
-      source:{
-          field:playerid
+      source: {
+        field:playerid
       }
-
-      target:{
-          field:teamid
+      target: {
+        field:teamid
       }
-
-      batch: 10
-      partition: 10
-      interval.seconds: 10
+      batch: 256
+      partition: 32
     }
   ]
 }
 </code></pre></div>
 <h3 id="3nebula_graph">步骤 3：向Nebula Graph导入数据<a class="headerlink" href="#3nebula_graph" title="Permanent link">¶</a></h3>
-<p>运行如下命令将Kafka数据导入到Nebula Graph中。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">导入命令参数</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-master.jar_path&gt; -c &lt;kafka_application.conf_path&gt;
+<p>运行如下命令将ClickHouse数据导入到Nebula Graph中。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">导入命令参数</a>。</p>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-master.jar_path&gt; -c &lt;clickhouse_application.conf_path&gt;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JAR包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从maven仓库下载。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-master.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/kafka_application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-master.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/clickhouse_application.conf
 </code></pre></div>
 <p>用户可以在返回信息中搜索<code>batchSuccess.&lt;tag_name/edge_name&gt;</code>，确认成功的数量。例如<code>batchSuccess.follow: 300</code>。</p>
 <h3 id="4">步骤 4：（可选）验证数据<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>

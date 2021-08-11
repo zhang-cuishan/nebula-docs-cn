@@ -1497,7 +1497,7 @@
 <li>Spark：2.4.7，单机版</li>
 </ul>
 <ul>
-<li>Nebula Graph：2.0.0。使用<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署</a>。</li>
+<li>Nebula Graph：2.5.0。使用<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署</a>。</li>
 </ul>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>开始导入数据之前，用户需要确认以下信息：</p>
@@ -1513,7 +1513,7 @@
 </li>
 </ul>
 <ul>
-<li>已经编译Exchange。详情请参见<a href="../../ex-ug-compile/">编译Exchange</a>。本示例中使用Exchange 2.0。</li>
+<li>已经编译Exchange。详情请参见<a href="../../ex-ug-compile/">编译Exchange</a>。本示例中使用Exchange master。</li>
 </ul>
 <ul>
 <li>已经安装Spark。</li>
@@ -1594,7 +1594,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   # Spark相关配置
   spark: {
     app: {
-      name: Nebula Exchange 2.0
+      name: Nebula Exchange master
     }
     driver: {
       cores: 1
@@ -1669,7 +1669,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
 
-      # 单次写入 Nebula Graph 的最大点数据量。
+      # 单批次写入 Nebula Graph 的数据条数。
       batch: 10
 
       # Spark 分区数量
@@ -1744,7 +1744,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
 
-      # 单次写入 Nebula Graph 的最大点数据量。
+      # 单批次写入 Nebula Graph 的数据条数。
       batch: 10
 
       # Spark 分区数量
@@ -1786,14 +1786,14 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 <h3 id="3nebula_graph">步骤 3：向Nebula Graph导入数据<a class="headerlink" href="#3nebula_graph" title="Permanent link">¶</a></h3>
 <p>运行如下命令将Pulsar数据导入到Nebula Graph中。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">导入命令参数</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.0.0.jar_path&gt; -c &lt;pulsar_application.conf_path&gt;
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-master.jar_path&gt; -c &lt;pulsar_application.conf_path&gt;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JAR包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从maven仓库下载。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-2.0.0.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/pulsar_application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-master.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/pulsar_application.conf
 </code></pre></div>
 <p>用户可以在返回信息中搜索<code>batchSuccess.&lt;tag_name/edge_name&gt;</code>，确认成功的数量。例如<code>batchSuccess.follow: 300</code>。</p>
 <h3 id="4">步骤 4：（可选）验证数据<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
@@ -1807,7 +1807,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月11日</span>
 </small>
 </div>
 </article>

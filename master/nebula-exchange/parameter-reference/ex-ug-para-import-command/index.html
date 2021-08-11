@@ -1453,6 +1453,18 @@
 <p class="admonition-title">Note</p>
 <p>JAR文件版本号以实际编译得到的JAR文件名称为准。</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果使用yarn-cluster模式提交任务，请参考如下示例：</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$SPARK_HOME</span>/bin/spark-submit     --master yarn-cluster <span class="se">\</span>
+--class com.vesoft.nebula.exchange.Exchange <span class="se">\</span>
+--files application.conf <span class="se">\</span>
+--conf spark.driver.extraClassPath<span class="o">=</span>./ <span class="se">\</span>
+--conf spark.executor.extraClassPath<span class="o">=</span>./ <span class="se">\</span>
+nebula-exchange-master.jar <span class="se">\</span>
+-c application.conf
+</code></pre></div>
+</div>
 <p>下表列出了命令的相关参数。</p>
 <table>
 <thead>
@@ -1506,7 +1518,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月4日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月11日</span>
 </small>
 </div>
 </article>
