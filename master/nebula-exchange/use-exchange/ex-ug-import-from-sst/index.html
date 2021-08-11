@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/nebula-exchange/about-exchange/ex-ug-what-is-exchange/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/master/nebula-exchange/use-exchange/ex-ug-import-from-sst/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
-<title>什么是Nebula Exchange - Nebula Graph Database 手册</title>
+<title>导入SST文件数据（WIP） - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#nebula_exchange">
+<a class="md-skip" href="#sstwip">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              什么是Nebula Exchange
+              导入SST文件数据（WIP）
             
           </span>
 </div>
@@ -1430,23 +1430,72 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    适用场景
+    背景信息
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    产品优点
+    实现方法
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    数据源
+    数据集
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
-    视频
+    环境配置
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    操作步骤
+  </a>
+<nav aria-label="操作步骤" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1nebula_graphschema">
+    步骤 1：在Nebula Graph中创建Schema
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2csv">
+    步骤 2：处理CSV文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    步骤 3：修改配置文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4sst">
+    步骤 4：生成SST文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5sst">
+    步骤 5：导入SST文件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    步骤 6：（可选）验证数据
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7nebula_graph">
+    步骤 7：（如有）在Nebula Graph中重建索引
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1455,97 +1504,515 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/nebula-exchange/about-exchange/ex-ug-what-is-exchange.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/nebula-exchange/use-exchange/ex-ug-import-from-sst.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_exchange">什么是Nebula Exchange<a class="headerlink" href="#nebula_exchange" title="Permanent link">¶</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/master/nebula-exchange">Nebula Exchange</a>（简称Exchange）是一款Apache Spark™应用，用于在分布式环境中将集群中的数据批量迁移到Nebula Graph中，能支持多种不同格式的批式数据和流式数据的迁移。</p>
-<p>Exchange由Reader、Processor和Writer三部分组成。Reader读取不同来源的数据返回DataFrame后，Processor遍历DataFrame的每一行，根据配置文件中<code>fields</code>的映射关系，按列名获取对应的值。在遍历指定批处理的行数后，Writer会将获取的数据一次性写入到Nebula Graph中。下图描述了Exchange完成数据转换和迁移的过程。</p>
-<p><img alt="Nebula Graph® Exchange 由 Reader、Processor、Writer 组成，可以完成多种不同格式和来源的数据向 Nebula Graph 的迁移" src="../../figs/ex-ug-003.png" title="Nebula Graph® Exchange 转数据转换和迁移的过程"/></p>
-<h2 id="_1">适用场景<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>Exchange适用于以下场景：</p>
+<h1 id="sstwip">导入SST文件数据（WIP）<a class="headerlink" href="#sstwip" title="Permanent link">¶</a></h1>
+<p>本文以一个示例说明如何将数据源的数据生成SST（Sorted String Table）文件，然后导入Nebula Graph，示例数据源是CSV文件。</p>
+<blockquote>
+<p><strong>说明</strong>：仅Linux系统支持导入SST文件。</p>
+</blockquote>
+<h2 id="_1">背景信息<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>Exchange支持两种数据导入模式：</p>
 <ul>
-<li>需要将来自Kafka、Pulsar平台的流式数据，如日志文件、网购数据、游戏内玩家活动、社交网站信息、金融交易大厅或地理空间服务，以及来自数据中心内所连接设备或仪器的遥测数据等转化为属性图的点或边数据，并导入Nebula Graph数据库。</li>
+<li>直接将数据源的数据通过<strong>nGQL</strong>语句的形式导入Nebula Graph。</li>
 </ul>
 <ul>
-<li>需要从关系型数据库（如MySQL）或者分布式文件系统（如HDFS）中读取批式数据，如某个时间段内的数据，将它们转化为属性图的点或边数据，并导入 Nebula Graph数据库。</li>
+<li>将数据源的数据生成SST文件，然后借助Console将SST文件导入Nebula Graph。</li>
+</ul>
+<p>下文将介绍生成导入SST文件的实现方法、前提条件、操作步骤等内容。</p>
+<h2 id="_2">实现方法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>Nebula Graph底层使用RocksDB作为键值型存储引擎。RocksDB是基于磁盘的存储引擎，提供了一系列API用于创建及导入SST格式的文件，有助于快速导入海量数据。</p>
+<p>SST文件是一个内部包含了任意长度、排好序的键值对集合的文件，用于高效地存储大量键值型数据。生成SST文件的整个过程主要由Exchange的Reader、sstProcessor和sstWriter完成。整个数据处理过程如下：</p>
+<ol>
+<li>
+<p>Reader从数据源中读取数据。</p>
+</li>
+<li>
+<p>sstProcessor根据Nebula Graph的Schema信息生成SST文件，然后上传至HDFS。SST文件的格式请参见<a href="../../../1.introduction/3.nebula-graph-architecture/4.storage-service/">数据存储格式</a>。</p>
+</li>
+<li>
+<p>sstWriter打开一个文件并插入数据。生成SST文件时，Key必须按照顺序写入。</p>
+</li>
+<li>
+<p>生成SST文件之后，RocksDB通过<code>IngestExternalFile()</code>方法将SST文件导入到Nebula Graph中。例如：</p>
+<div class="highlight"><pre><span></span><code>IngestExternalFileOptions ifo;
+# 导入两个SST文件
+Status s = db_-&gt;IngestExternalFile({"/home/usr/file1.sst", "/home/usr/file2.sst"}, ifo);
+if (!s.ok()) {
+  printf("Error while adding file %s and %s, Error %s\n",
+         file_path1.c_str(), file_path2.c_str(), s.ToString().c_str());
+  return 1;
+}
+</code></pre></div>
+<p>调用<code>IngestExternalFile()</code>方法时，RocksDB默认会将文件拷贝到数据目录，并且阻塞RocksDB写入操作。如果SST文件中的键范围覆盖了Memtable键的范围，则将Memtable落盘（flush）到硬盘。将SST文件放置在LSM树最优位置后，为文件分配一个全局序列号，并打开写操作。</p>
+</li>
+</ol>
+<h2 id="_3">数据集<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>本文以<a href="https://docs-cdn.nebula-graph.com.cn/dataset/dataset.zip">basketballplayer数据集</a>为例。</p>
+<h2 id="_4">环境配置<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>本文示例在MacOS下完成，以下是相关的环境配置信息：</p>
+<ul>
+<li>硬件规格：<ul>
+<li>CPU：1.7 GHz Quad-Core Intel Core i7</li>
+<li>内存：16 GB</li>
+</ul>
+</li>
 </ul>
 <ul>
-<li>需要将大批量数据生成Nebula Graph能识别的SST文件，再导入Nebula Graph数据库。</li>
-</ul>
-<h2 id="_2">产品优点<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Exchange具有以下优点：</p>
-<ul>
-<li>适应性强：支持将多种不同格式或不同来源的数据导入Nebula Graph数据库，便于迁移数据。</li>
+<li>Spark：2.4.7 单机版</li>
 </ul>
 <ul>
-<li>支持导入SST：支持将不同来源的数据转换为SST文件，用于数据导入。</li>
+<li>Hadoop：2.9.2 伪分布式部署</li>
 </ul>
+<ul>
+<li>Nebula Graph：2.5.0。使用<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署</a>。</li>
+</ul>
+<h2 id="_5">前提条件<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
-<p>支持断点续传：导入数据时支持断点续传，有助于节省时间，提高数据导入效率。</p>
+<p>已经<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署Nebula Graph 2.5.0</a>并获取如下信息：</p>
+<ul>
+<li>Graph服务和Meta服务的的IP地址和端口。</li>
+</ul>
+<ul>
+<li>拥有Nebula Graph写权限的用户名和密码。</li>
+</ul>
+<ul>
+<li>Meta服务配置文件中的<code>--ws_storage_http_port</code>和Storage服务配置文件中的<code>--ws_http_port</code>一致。例如都为<code>19779</code>。</li>
+</ul>
+<ul>
+<li>Graph服务配置文件中的<code>--ws_meta_http_port</code>和Meta服务配置文件中的<code>--ws_http_port</code>一致。例如都为<code>19559</code>。</li>
+</ul>
+<ul>
+<li>Schema的信息，包括Tag和Edge type的名称、属性等。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>已经<a href="../../ex-ug-compile/">编译Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>编译完成的.jar文件。本示例中使用Exchange master。</li>
+</ul>
+<ul>
+<li>已经安装Spark。</li>
+</ul>
+<ul>
+<li>已经安装JDK 1.8或以上版本，并配置环境变量JAVA_HOME。</li>
+</ul>
+<ul>
+<li>确认Hadoop服务在所有部署Storage服务的机器上运行正常。</li>
+</ul>
+<h2 id="_6">操作步骤<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h3 id="1nebula_graphschema">步骤 1：在Nebula Graph中创建Schema<a class="headerlink" href="#1nebula_graphschema" title="Permanent link">¶</a></h3>
+<p>分析CSV文件中的数据，按以下步骤在Nebula Graph中创建Schema：</p>
+<ol>
+<li>
+<p>确认Schema要素。Nebula Graph中的Schema要素如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th align="left">要素</th>
+<th align="left">名称</th>
+<th align="left">属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Tag</td>
+<td align="left"><code>player</code></td>
+<td align="left"><code>name string, age int</code></td>
+</tr>
+<tr>
+<td align="left">Tag</td>
+<td align="left"><code>team</code></td>
+<td align="left"><code>name string</code></td>
+</tr>
+<tr>
+<td align="left">Edge Type</td>
+<td align="left"><code>follow</code></td>
+<td align="left"><code>degree int</code></td>
+</tr>
+<tr>
+<td align="left">Edge Type</td>
+<td align="left"><code>serve</code></td>
+<td align="left"><code>start_year int, end_year int</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>使用Nebula Console创建一个图空间<strong>basketballplayer</strong>，并创建一个Schema，如下所示。</p>
+<div class="highlight"><pre><span></span><code>## 创建图空间
+nebula&gt; CREATE SPACE basketballplayer \
+        (partition_num = 10, \
+        replica_factor = 1, \
+        vid_type = FIXED_STRING(30));
+
+## 选择图空间basketballplayer
+nebula&gt; USE basketballplayer;
+
+## 创建Tag player
+nebula&gt; CREATE TAG player(name string, age int);
+
+## 创建Tag team
+nebula&gt; CREATE TAG team(name string);
+
+## 创建Edge type follow
+nebula&gt; CREATE EDGE follow(degree int);
+
+## 创建Edge type serve
+nebula&gt; CREATE EDGE serve(start_year int, end_year int);
+</code></pre></div>
+</li>
+</ol>
+<p>更多信息，请参见<a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
+<h3 id="2csv">步骤 2：处理CSV文件<a class="headerlink" href="#2csv" title="Permanent link">¶</a></h3>
+<p>确认以下信息：</p>
+<ol>
+<li>
+<p>处理CSV文件以满足Schema的要求。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>目前仅迁移Neo4j数据时支持断点续传。</p>
+<p>可以使用有表头或者无表头的CSV文件。</p>
 </div>
 </li>
-</ul>
-<ul>
-<li>异步操作：会在源数据中生成一条插入语句，发送给Graph服务，最后再执行插入操作。</li>
-</ul>
-<ul>
-<li>灵活性强：支持同时导入多个Tag和Edge type，不同Tag和Edge type可以是不同的数据来源或格式。</li>
-</ul>
-<ul>
-<li>统计功能：使用Apache Spark™中的累加器统计插入操作的成功和失败次数。</li>
-</ul>
-<ul>
-<li>易于使用：采用HOCON（Human-Optimized Config Object Notation）配置文件格式，具有面向对象风格，便于理解和操作。</li>
-</ul>
-<h2 id="_3">数据源<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>Exchange master 支持将以下格式或来源的数据转换为Nebula Graph能识别的点和边数据，然后通过<strong>nGQL</strong>语句的形式导入Nebula Graph：</p>
-<ul>
-<li>存储在HDFS或本地的数据：<ul>
-<li><a href="../../use-exchange/ex-ug-import-from-parquet/">Apache Parquet</a></li>
-<li><a href="../../use-exchange/ex-ug-import-from-orc/">Apache ORC</a></li>
-<li><a href="../../use-exchange/ex-ug-import-from-json/">JSON</a></li>
-<li><a href="../../use-exchange/ex-ug-import-from-csv/">CSV</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><a href="../../use-exchange/ex-ug-import-from-hbase/">Apache HBase™</a></li>
-</ul>
-<ul>
 <li>
-<p>数据仓库：</p>
-<ul>
-<li><a href="../../use-exchange/ex-ug-import-from-hive/">Hive</a></li>
-<li><a href="../../use-exchange/ex-ug-import-from-maxcompute/">MaxCompute</a></li>
-</ul>
+<p>获取CSV文件存储路径。</p>
 </li>
+</ol>
+<h3 id="3">步骤 3：修改配置文件<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>编译Exchange后，复制<code>target/classes/application.conf</code>文件设置相关配置。在本示例中，复制的文件名为<code>sst_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
+<div class="highlight"><pre><span></span><code>{
+  # Spark相关配置
+  spark: {
+    app: {
+      name: Nebula Exchange 2.0
+    }
+
+    master:local
+
+    driver: {
+      cores: 1
+      maxResultSize: 1G
+    }
+
+    executor: {
+        memory:1G
+    }
+
+    cores:{
+      max: 16
+    }
+  }
+
+  # Nebula Graph相关配置
+  nebula: {
+    address:{
+      graph:["127.0.0.1:9669"]
+      meta:["127.0.0.1:9559"]
+    }
+    user: root
+    pswd: nebula
+    space: basketballplayer
+
+    # SST文件相关配置
+    path:{
+        # 本地临时存放生成的SST文件的目录
+        local:"/tmp"
+
+        # SST文件在HDFS的存储路径
+        remote:"/sst"
+
+        # HDFS的NameNode地址
+        hdfs.namenode: "hdfs://*.*.*.*:9000"
+    }
+
+    # 客户端连接参数
+    connection {
+      # socket连接、执行的超时时间，单位：毫秒。
+      timeout: 30000
+    }
+
+    error: {
+      # 最大失败数，超过后会退出应用程序。
+      max: 32
+      # 失败的导入作业将记录在输出路径中。
+      output: /tmp/errors
+    }
+
+    # 使用谷歌的RateLimiter来限制发送到NebulaGraph的请求。
+    rate: {
+      # RateLimiter的稳定吞吐量。
+      limit: 1024
+
+      # 从RateLimiter获取允许的超时时间，单位：毫秒
+      timeout: 1000
+    }
+  }
+
+
+  # 处理点
+  tags: [
+    # 设置Tag player相关信息。
+    {
+      # 指定Nebula Graph中定义的Tag名称。
+      name: player
+      type: {
+        # 指定数据源，使用CSV。
+        source: csv
+
+        # 指定如何将点数据导入Nebula Graph：Client或SST。
+        sink: sst
+      }
+
+      # 指定CSV文件的路径。
+      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
+      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      path: "hdfs://*.*.*.*:9000/dataset/vertex_player.csv"
+
+      # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
+      # 如果CSV文件有表头，则使用实际的列名。
+      fields: [_c1, _c2]
+
+      # 指定Nebula Graph中定义的属性名称。
+      # fields与nebula.fields的顺序必须一一对应。
+      nebula.fields: [age, name]
+
+      # 指定一个列作为VID的源。
+      # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
+      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      vertex: {
+        field:_c0
+      }
+
+      # 指定的分隔符。默认值为英文逗号（,）。
+      separator: ","
+
+      # 如果CSV文件有表头，请将header设置为true。
+      # 如果CSV文件没有表头，请将header设置为false。默认值为false。
+      header: false
+
+      # 指定单批次写入Nebula Graph的最大点数量。
+      batch: 256
+
+      # 指定Spark分片数量。
+      partition: 32
+    }
+
+    # 设置Tag team相关信息。
+    {
+      # 指定Nebula Graph中定义的Tag名称。
+      name: team
+      type: {
+        # 指定数据源，使用CSV。
+        source: csv
+
+        # 指定如何将点数据导入Nebula Graph：Client或SST。
+        sink: sst
+      }
+
+      # 指定CSV文件的路径。
+      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
+      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      path: "hdfs://*.*.*.*:9000/dataset/vertex_team.csv"
+
+      # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
+      # 如果CSV文件有表头，则使用实际的列名。
+      fields: [_c1]
+
+      # 指定Nebula Graph中定义的属性名称。
+      # fields与nebula.fields的顺序必须一一对应。
+      nebula.fields: [name]
+
+      # 指定一个列作为VID的源。
+      # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
+      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      vertex: {
+        field:_c0
+      }
+
+      # 指定的分隔符。默认值为英文逗号（,）。
+      separator: ","
+
+      # 如果CSV文件有表头，请将header设置为true。
+      # 如果CSV文件没有表头，请将header设置为false。默认值为false。
+      header: false
+
+      # 指定单批次写入Nebula Graph的最大点数量。
+      batch: 256
+
+      # 指定Spark分片数量。
+      partition: 32
+    }
+
+
+    # 如果需要添加更多点，请参考前面的配置进行添加。
+  ]
+  # 处理边
+  edges: [
+    # 设置Edge type follow相关信息。
+    {
+      # 指定Nebula Graph中定义的Edge type名称。
+      name: follow
+      type: {
+        # 指定数据源，使用CSV。
+        source: csv
+
+        # 指定如何将点数据导入Nebula Graph：Client或SST。
+        sink: sst
+      }
+
+      # 指定CSV文件的路径。
+      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
+      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      path: "hdfs://*.*.*.*:9000/dataset/edge_follow.csv"
+
+      # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
+      # 如果CSV文件有表头，则使用实际的列名。
+      fields: [_c2]
+
+      # 指定Nebula Graph中定义的属性名称。
+      # fields与nebula.fields的顺序必须一一对应。
+      nebula.fields: [degree]
+
+      # 指定一个列作为起始点和目的点的源。
+      # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
+      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      source: {
+        field: _c0
+      }
+      target: {
+        field: _c1
+      }
+
+      # 指定的分隔符。默认值为英文逗号（,）。
+      separator: ","
+
+      # 指定一个列作为rank的源(可选)。
+
+      #ranking: rank
+
+      # 如果CSV文件有表头，请将header设置为true。
+      # 如果CSV文件没有表头，请将header设置为false。默认值为false。
+      header: false
+
+      # 指定单批次写入Nebula Graph的最大边数量。
+      batch: 256
+
+      # 指定Spark分片数量。
+      partition: 32
+    }
+
+    # 设置Edge type serve相关信息。
+    {
+      # 指定Nebula Graph中定义的Edge type名称。
+      name: serve
+      type: {
+        # 指定数据源，使用CSV。
+        source: csv
+
+        # 指定如何将点数据导入Nebula Graph：Client或SST。
+        sink: sst
+      }
+
+      # 指定CSV文件的路径。
+      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
+      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      path: "hdfs://*.*.*.*:9000/dataset/edge_serve.csv"
+
+      # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
+      # 如果CSV文件有表头，则使用实际的列名。
+      fields: [_c2,_c3]
+
+      # 指定Nebula Graph中定义的属性名称。
+      # fields与nebula.fields的顺序必须一一对应。
+      nebula.fields: [start_year, end_year]
+
+      # 指定一个列作为起始点和目的点的源。
+      # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
+      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      source: {
+        field: _c0
+      }
+      target: {
+        field: _c1
+      }
+
+      # 指定的分隔符。默认值为英文逗号（,）。
+      separator: ","
+
+      # 指定一个列作为rank的源(可选)。
+      #ranking: _c5
+
+      # 如果CSV文件有表头，请将header设置为true。
+      # 如果CSV文件没有表头，请将header设置为false。默认值为false。
+      header: false
+
+      # 指定单批次写入Nebula Graph的最大边数量。
+      batch: 256
+
+      # 指定Spark分片数量。
+      partition: 32
+    }
+
+  ]
+  # 如果需要添加更多边，请参考前面的配置进行添加。
+}
+</code></pre></div>
+<h3 id="4sst">步骤 4：生成SST文件<a class="headerlink" href="#4sst" title="Permanent link">¶</a></h3>
+<p>运行如下命令将CSV源文件生成为SST文件。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">命令参数</a>。</p>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-master.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>JAR包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从maven仓库下载。</p>
+</div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-master.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/sst_application.conf
+</code></pre></div>
+<p>任务执行完成后，可以在HDFS上的<code>/sst</code>目录（<code>nebula.path.remote</code>参数指定）内查看到生成的SST文件。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果对Schema有修改操作，例如重建图空间、修改Tag、修改Edge type等，需要重新生成SST文件，因为SST文件会验证Space ID、Tag ID、Edge ID等信息。</p>
+</div>
+<h3 id="5sst">步骤 5：导入SST文件<a class="headerlink" href="#5sst" title="Permanent link">¶</a></h3>
+<p>使用客户端工具连接Nebula Graph数据库，按如下操作导入SST文件：</p>
+<ol>
+<li>
+<p>执行命令选择之前创建的图空间。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; USE basketballplayer;
+</code></pre></div>
+</li>
+<li>
+<p>执行命令下载SST文件：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; DOWNLOAD HDFS "hdfs://&lt;hadoop_address&gt;:&lt;hadoop_port&gt;/&lt;sst_file_path&gt;";
+</code></pre></div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; DOWNLOAD HDFS "hdfs://*.*.*.*:9000/sst";
+</code></pre></div>
+</li>
+<li>
+<p>执行命令导入SST文件：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; INGEST;
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>如果需要重新下载，请在Nebula Graph安装路径内的<code>data/storage/nebula</code>目录内，将对应Space ID目录内的<code>download</code>文件夹删除，然后重新下载SST文件。如果是图空间是多副本，保存副本的所有机器都需要删除<code>download</code>文件夹。</li>
 </ul>
 <ul>
-<li>图数据库：<a href="../../use-exchange/ex-ug-import-from-neo4j/">Neo4j</a>（Client版本2.4.5-M1）</li>
+<li>如果导入时出现问题需要重新导入，重新执行<code>INGEST;</code>即可。</li>
 </ul>
-<ul>
-<li>关系型数据库：<a href="../../use-exchange/ex-ug-import-from-mysql/">MySQL</a></li>
-</ul>
-<ul>
-<li>列式数据库：<a href="../../use-exchange/ex-ug-import-from-clickhouse/">ClickHouse</a></li>
-</ul>
-<ul>
-<li>流处理软件平台：<a href="../../use-exchange/ex-ug-import-from-kafka/">Apache Kafka®</a></li>
-</ul>
-<ul>
-<li>发布/订阅消息平台：<a href="../../use-exchange/ex-ug-import-from-pulsar/">Apache Pulsar 2.4.5</a></li>
-</ul>
-<p>除了用nGQL语句的形式导入数据，Exchange还支持将数据源的数据生成<strong>SST文件</strong>，然后通过Console<a href="../../use-exchange/ex-ug-import-from-sst/">导入SST文件</a>。</p>
-<h2 id="_4">视频<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1Pq4y177D9">图数据库 Nebula Graph 数据导入工具——Exchange</a>（3分08秒）</li>
-</ul>
-<iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="480px" scrolling="no" src="//player.bilibili.com/player.html?aid=546003709&amp;bvid=BV1Pq4y177D9&amp;cid=352387808&amp;page=1&amp;high_quality=1" width="720px"> </iframe>
+</div>
+<h3 id="6">步骤 6：（可选）验证数据<a class="headerlink" href="#6" title="Permanent link">¶</a></h3>
+<p>用户可以在Nebula Graph客户端（例如Nebula Graph Studio）中执行查询语句，确认数据是否已导入。例如：</p>
+<div class="highlight"><pre><span></span><code>GO FROM "player100" OVER follow;
+</code></pre></div>
+<p>用户也可以使用命令<a href="../../../3.ngql-guide/7.general-query-statements/6.show/14.show-stats/"><code>SHOW STATS</code></a>查看统计数据。</p>
+<h3 id="7nebula_graph">步骤 7：（如有）在Nebula Graph中重建索引<a class="headerlink" href="#7nebula_graph" title="Permanent link">¶</a></h3>
+<p>导入数据后，用户可以在Nebula Graph中重新创建并重建索引。详情请参见<a href="../../../3.ngql-guide/14.native-index-statements/">索引介绍</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>
