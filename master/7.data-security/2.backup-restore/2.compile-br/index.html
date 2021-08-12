@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/7.data-security/2.backup-restore/2.compile-br/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
-<title>2.compile br - Nebula Graph Database 手册</title>
+<title>编译BR - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,6 +30,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#br">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -57,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              2.compile br
+              编译BR
             
           </span>
 </div>
@@ -1271,8 +1274,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8">
         数据安全
         <span class="md-nav__icon md-icon"></span>
@@ -1308,6 +1311,64 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../1.authentication/3.role-list/">
         内置角色权限
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2">
+        备份恢复
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+          备份恢复
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.what-is-br/">
+        什么是BR
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          编译BR
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        编译BR
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备工作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.br-backup-data/">
+        使用BR备份数据
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4.br-restore-data/">
+        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -1416,54 +1477,72 @@
 </div>
 </div>
 </div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备工作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/2.backup-restore/2.compile-br.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1>2.compile br</h1>
-<!--
-# 编译BR
-
-目前，BR还没有作为一个包提供。需要先编译BR。
-
-## 准备工作
-
-- 安装 [Go](https://github.com/golang/go "Click to go to GitHub") 1.14.x或更新版本。
-- 安装make。
-
-## 操作步骤
-
-1. 克隆`nebula-storage`库至机器。
-
-    <div class="highlight"><pre><span></span><code>git clone https://github.com/vesoft-inc/nebula-br.git
+<h1 id="br">编译BR<a class="headerlink" href="#br" title="Permanent link">¶</a></h1>
+<p>目前，BR还没有作为一个包提供。需要先编译BR。</p>
+<h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li>安装 <a href="https://github.com/golang/go" title="Click to go to GitHub">Go</a> 1.14.x或更新版本。</li>
+<li>安装make。</li>
+</ul>
+<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>克隆<code>nebula-storage</code>库至机器。</p>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/vesoft-inc/nebula-br.git
 </code></pre></div>
-
-2. 进入`br`目录。
-
-    <div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-br
+</li>
+<li>
+<p>进入<code>br</code>目录。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-br
 </code></pre></div>
-
-3. 编译BR。
-
-    <div class="highlight"><pre><span></span><code>make
+</li>
+<li>
+<p>编译BR。</p>
+<div class="highlight"><pre><span></span><code>make
 </code></pre></div>
-
-用户可以在命令行输入`bin/br version`，如果返回以下内容，则认为编译成功。
-
+</li>
+</ol>
+<p>用户可以在命令行输入<code>bin/br version</code>，如果返回以下内容，则认为编译成功。</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-br<span class="o">]</span>$ bin/br version
 Nebula Backup And Restore Ultility Tool,V-0.1.0
    GitSha: 8e994dc
    GitRef: master
-please run <span class="s2">&quot;help&quot;</span> subcommand <span class="k">for</span> more infomation.
+please run <span class="s2">"help"</span> subcommand <span class="k">for</span> more infomation.
 </code></pre></div>
-
--->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月9日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月12日</span>
 </small>
 </div>
 </article>
@@ -1475,6 +1554,34 @@ please run <span class="s2">&quot;help&quot;</span> subcommand <span class="k">f
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="上一页: 什么是BR" class="md-footer__link md-footer__link--prev" href="../1.what-is-br/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              什么是BR
+            </div>
+</div>
+</a>
+<a aria-label="下一页: 使用BR备份数据" class="md-footer__link md-footer__link--next" href="../3.br-backup-data/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              使用BR备份数据
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">

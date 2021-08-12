@@ -10,7 +10,7 @@
 <link href="https://docs.nebula-graph.com.cn/master/master/7.data-security/2.backup-restore/4.br-restore-data/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
-<title>4.br restore data - Nebula Graph Database 手册</title>
+<title>使用BR恢复数据 - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
@@ -30,6 +30,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#br">
+          跳转至
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -57,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              4.br restore data
+              使用BR恢复数据
             
           </span>
 </div>
@@ -1271,8 +1274,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8">
         数据安全
         <span class="md-nav__icon md-icon"></span>
@@ -1309,6 +1312,64 @@
 <a class="md-nav__link" href="../../1.authentication/3.role-list/">
         内置角色权限
       </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" id="__nav_8_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8_2">
+        备份恢复
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_2">
+<span class="md-nav__icon md-icon"></span>
+          备份恢复
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.what-is-br/">
+        什么是BR
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.compile-br/">
+        编译BR
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.br-backup-data/">
+        使用BR备份数据
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          使用BR恢复数据
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        使用BR恢复数据
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备工作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1416,95 +1477,169 @@
 </div>
 </div>
 </div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    准备工作
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/2.backup-restore/4.br-restore-data.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1>4.br restore data</h1>
-<!--
-# 使用BR恢复数据
-
-如果使用BR备份了Nebula Graph的数据，可以通过备份文件进行数据恢复。本文介绍如何通过备份文件恢复数据。
-
-!!! warning
-
-    恢复执行成功后，目标集群上已有的数据会被删除，然后替换为备份文件中的数据。建议提前备份目标集群上的数据。
-
-!!! caution
-
-    数据恢复需要离线进行。
-
-## 准备工作
-
-- BR编译完成。如何编译BR，请参见[编译BR](2.compile-br.md)。
-
-- 确认没有应用程序连接到待恢复数据的Nebula Graph集群。
-
-- 确认集群的拓扑结构一致，即原集群和目标集群的主机数量一致。
-
-- BR可以免密登录服务器，即在BR机器上的账号可以通过SSH免密登录到Meta服务器和Storage服务器。详情请参见[SSH tunnels with keys](http://alexander.holbreich.org/ssh-tunnel-without-password/)。
-
-  !!! caution
-
-        该账号必须有Nebula Graph安装目录的写权限，meta/storage 服务的数据目录（--data_path）的写权限。
-
-- 执行恢复操作时需使用 `root` 用户。
-
-- 如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见[Alibaba Cloud ossutil文档](https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829)和[Amazon S3 CLI文档](https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html)。
-
-    !!! warning
-
-        请创建软链接方便使用ossutil命令。命令为`ln -s /<ossutil_tool_installation_path>/<ossutil64 or ossutil> /usr/local/bin/ossutil`，根据实际路径和系统替换内容。
-
-## 操作步骤
-
-1. 用户可以使用以下命令列出现有备份信息：
-
-   <div class="highlight"><pre><span></span><code>$ ./bin/br show --storage &lt;ip_address&gt;
+<h1 id="br">使用BR恢复数据<a class="headerlink" href="#br" title="Permanent link">¶</a></h1>
+<p>如果使用BR备份了Nebula Graph的数据，可以通过备份文件进行数据恢复。本文介绍如何通过备份文件恢复数据。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>恢复执行成功后，目标集群上已有的数据会被删除，然后替换为备份文件中的数据。建议提前备份目标集群上的数据。</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>数据恢复需要离线进行。</p>
+</div>
+<h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li>BR编译完成。如何编译BR，请参见<a href="../2.compile-br/">编译BR</a>。</li>
+</ul>
+<ul>
+<li>确认没有应用程序连接到待恢复数据的Nebula Graph集群。</li>
+</ul>
+<ul>
+<li>确认集群的拓扑结构一致，即原集群和目标集群的主机数量一致。</li>
+</ul>
+<ul>
+<li>
+<p>BR可以免密登录服务器，即在BR机器上的账号可以通过SSH免密登录到Meta服务器和Storage服务器。详情请参见<a href="http://alexander.holbreich.org/ssh-tunnel-without-password/">SSH tunnels with keys</a>。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>该账号必须有Nebula Graph安装目录的写权限，meta/storage 服务的数据目录（--data_path）的写权限。</p>
+</div>
+</li>
+</ul>
+<ul>
+<li>执行恢复操作时需使用 <code>root</code> 用户。</li>
+</ul>
+<ul>
+<li>如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见<a href="https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829">Alibaba Cloud ossutil文档</a>和<a href="https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html">Amazon S3 CLI文档</a>。<p>!!! warning</p>
+<div class="codehilite"><pre><span></span><code>  请创建软链接方便使用ossutil命令。命令为`ln -s /&lt;ossutil_tool_installation_path&gt;/&lt;ossutil64 or ossutil&gt; /usr/local/bin/ossutil`，根据实际路径和系统替换内容。
 </code></pre></div>
-   例如，可以使用以下命令列出在本地 `/home/test/backup` 路径中的备份的信息。
-   <div class="highlight"><pre><span></span><code>$ ./bin/br show --storage <span class="s2">&quot;local:///home/test/backup&quot;</span>
+</li>
+</ul>
+<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>用户可以使用以下命令列出现有备份信息：</p>
+<p><div class="highlight"><pre><span></span><code>$ ./bin/br show --storage &lt;ip_address&gt;
+</code></pre></div>
+ 例如，可以使用以下命令列出在本地 <code>/home/test/backup</code> 路径中的备份的信息。
+ <div class="highlight"><pre><span></span><code>$ ./bin/br show --storage <span class="s2">"local:///home/test/backup"</span>
 +----------------------------+---------------------+------------------+-------------+---------------+
 <span class="p">|</span>            NAME            <span class="p">|</span>     CREATE TIME     <span class="p">|</span>      SPACES      <span class="p">|</span> FULL BACKUP <span class="p">|</span> SPECIFY SPACE <span class="p">|</span>
 +----------------------------+---------------------+------------------+-------------+---------------+
 <span class="p">|</span> BACKUP_2021_07_29_06_51_09 <span class="p">|</span> <span class="m">2021</span>-07-29 <span class="m">06</span>:51:09 <span class="p">|</span> basketballplayer <span class="p">|</span> <span class="nb">true</span>        <span class="p">|</span> <span class="nb">true</span>          <span class="p">|</span>
 <span class="p">|</span> BACKUP_2021_07_29_07_55_08 <span class="p">|</span> <span class="m">2021</span>-07-29 <span class="m">07</span>:55:09 <span class="p">|</span> basketballplayer <span class="p">|</span> <span class="nb">true</span>        <span class="p">|</span> <span class="nb">true</span>          <span class="p">|</span>
 +----------------------------+---------------------+------------------+-------------+---------------+
+</code></pre></div></p>
+</li>
+<li>
+<p>用户可以使用以下命令恢复数据：
+   <div class="highlight"><pre><span></span><code>[root]# ./bin/br restore full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt; --name &lt;backup_name&gt; --user &lt;user_name&gt;
+</code></pre></div></p>
+<p>例如，可以使用以下命令，将本地 <code>/home/foesa/backup</code> 路径中的数据恢复到地址为<code>192.168.*.*:9559</code>，meta/storage 服务所在主机的用户名为<code>root</code>的集群：</p>
+<div class="highlight"><pre><span></span><code>[root]# ./bin/br restore full --meta "192.168.*.*:9559" --storage "local:///home/test/backup" --name "BACKUP_2021_07_29_07_55_08" --user "root"
 </code></pre></div>
-
-
-2. 用户可以使用以下命令恢复数据：
-   <div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># ./bin/br restore full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt; --name &lt;backup_name&gt; --user &lt;user_name&gt;</span>
-</code></pre></div>
-
-   例如，可以使用以下命令，将本地 `/home/foesa/backup` 路径中的数据恢复到地址为`192.168.*.*:9559`，meta/storage 服务所在主机的用户名为`root`的集群：
-
-   <div class="highlight"><pre><span></span><code><span class="o">[</span>root<span class="o">]</span><span class="c1"># ./bin/br restore full --meta &quot;192.168.*.*:9559&quot; --storage &quot;local:///home/test/backup&quot; --name &quot;BACKUP_2021_07_29_07_55_08&quot; --user &quot;root&quot;</span>
-</code></pre></div>
-
-   如果返回如下信息，表示数据已经恢复成功。
-   <div class="highlight"><pre><span></span><code>restore successed
-</code></pre></div>
-
-   以下列出命令的相关参数。
-
-   | 参数 | 是否必需 | 默认值 | 说明 | 数据类型 |
-   | --- | --- | --- | --- | --- |
-   | --concurrent | 否 | 5 | 针对阿里云 OSS 最大并发数。 | int |
-   | --extra_args | 否 | 无 | 备份存储工具（OSS/HDFS/S3）用于备份的参数。 | string |
-   | -h,-help | 否 | 无 | 查看帮助。 | - |
-   | --meta | 是 | 无 | meta 服务的地址和端口号。 | string |
-   | --name | 是 | 无 | 备份名字。 | string |
-   | --storage | 是 | 无 | BR 备份数据存储路径。 | string |
-   | --user | 是 | 无 | 登录到 meta/storage 服务所在主机的用户名。 | string |
-
--->
+<p>如果返回如下信息，表示数据已经恢复成功。
+ <div class="highlight"><pre><span></span><code>restore successed
+</code></pre></div></p>
+<p>以下列出命令的相关参数。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必需</th>
+<th>默认值</th>
+<th>说明</th>
+<th>数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--concurrent</td>
+<td>否</td>
+<td>5</td>
+<td>针对阿里云 OSS 最大并发数。</td>
+<td>int</td>
+</tr>
+<tr>
+<td>--extra_args</td>
+<td>否</td>
+<td>无</td>
+<td>备份存储工具（OSS/HDFS/S3）用于备份的参数。</td>
+<td>string</td>
+</tr>
+<tr>
+<td>-h,-help</td>
+<td>否</td>
+<td>无</td>
+<td>查看帮助。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>--meta</td>
+<td>是</td>
+<td>无</td>
+<td>meta 服务的地址和端口号。</td>
+<td>string</td>
+</tr>
+<tr>
+<td>--name</td>
+<td>是</td>
+<td>无</td>
+<td>备份名字。</td>
+<td>string</td>
+</tr>
+<tr>
+<td>--storage</td>
+<td>是</td>
+<td>无</td>
+<td>BR 备份数据存储路径。</td>
+<td>string</td>
+</tr>
+<tr>
+<td>--user</td>
+<td>是</td>
+<td>无</td>
+<td>登录到 meta/storage 服务所在主机的用户名。</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月9日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月12日</span>
 </small>
 </div>
 </article>
@@ -1516,6 +1651,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="上一页: 使用BR备份数据" class="md-footer__link md-footer__link--prev" href="../3.br-backup-data/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              使用BR备份数据
+            </div>
+</div>
+</a>
+<a aria-label="下一页: 管理快照" class="md-footer__link md-footer__link--next" href="../../3.manage-snapshot/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              管理快照
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">
