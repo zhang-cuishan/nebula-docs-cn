@@ -1538,7 +1538,8 @@
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>ALTER TAG &lt;tag_name&gt;
     &lt;alter_definition&gt; [, alter_definition] ...]
-    [ttl_definition [, ttl_definition] ... ];
+    [ttl_definition [, ttl_definition] ... ]
+    [COMMENT = '&lt;comment&gt;'];
 
 alter_definition:
 | ADD    (prop_name data_type)
@@ -1558,6 +1559,7 @@ ttl_definition:
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t1 (p1 string, p2 int);
 nebula&gt; ALTER TAG t1 ADD (p3 int, p4 string);
 nebula&gt; ALTER TAG t1 TTL_DURATION = 2, TTL_COL = "p2";
+nebula&gt; ALTER TAG t1 COMMENT = 'test1';
 </code></pre></div>
 <h2 id="tag">修改Tag说明<a class="headerlink" href="#tag" title="Permanent link">¶</a></h2>
 <p>尝试使用刚修改的Tag可能会失败，因为修改是异步实现的。</p>
@@ -1573,7 +1575,7 @@ nebula&gt; ALTER TAG t1 TTL_DURATION = 2, TTL_COL = "p2";
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年6月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月12日</span>
 </small>
 </div>
 </article>
