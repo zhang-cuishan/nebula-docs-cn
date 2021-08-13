@@ -1539,9 +1539,12 @@
 <li>执行恢复操作时需使用 <code>root</code> 用户。</li>
 </ul>
 <ul>
-<li>如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见<a href="https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829">Alibaba Cloud ossutil文档</a>和<a href="https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html">Amazon S3 CLI文档</a>。<p>!!! warning</p>
-<div class="codehilite"><pre><span></span><code>  请创建软链接方便使用ossutil命令。命令为`ln -s /&lt;ossutil_tool_installation_path&gt;/&lt;ossutil64 or ossutil&gt; /usr/local/bin/ossutil`，根据实际路径和系统替换内容。
-</code></pre></div>
+<li>
+<p>如果使用Alibaba Cloud OSS或Amazon S3保存备份文件，请确保Meta服务器、Storage服务器和BR机器都已安装相应的客户端。详情请参见<a href="https://www.alibabacloud.com/help/zh/doc-detail/120075.htm#concept-303829">Alibaba Cloud ossutil文档</a>和<a href="https://docs.amazonaws.cn/cli/latest/userguide/cli-services-s3.html">Amazon S3 CLI文档</a>。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>请创建软链接方便使用ossutil命令。命令为<code>ln -s /&lt;ossutil_tool_installation_path&gt;/&lt;ossutil64 or ossutil&gt; /usr/local/bin/ossutil</code>，根据实际路径和系统替换内容。</p>
+</div>
 </li>
 </ul>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
@@ -1639,7 +1642,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月12日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月13日</span>
 </small>
 </div>
 </article>
