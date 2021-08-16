@@ -1154,11 +1154,6 @@
     阿里云OSS下载
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#github">
-    GitHub下载
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -1526,11 +1521,6 @@
     阿里云OSS下载
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#github">
-    GitHub下载
-  </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -1564,6 +1554,10 @@
 <p>安装wget</p>
 <h2 id="_2">下载安装包<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="oss">阿里云OSS下载<a class="headerlink" href="#oss" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nebula Graph v2.5.0版本尚未发布，下方含有<code>2.5.0</code>的URL暂不可用，如需下载最新的已发布版本，请用<code>2.0.1</code>替换<code>2.5.0</code>。</p>
+</div>
 <ul>
 <li>下载release版本<p>URL格式如下：</p>
 <div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
@@ -1621,34 +1615,27 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-gr
 </code></pre></div></p>
 </li>
 </ul>
-<h3 id="github">GitHub下载<a class="headerlink" href="#github" title="Permanent link">¶</a></h3>
-<ul>
-<li>
-<p>下载release版本</p>
-<ul>
-<li>登录<a href="https://github.com/vesoft-inc/nebula-graph/releases">Nebula Graph Releases</a>页面，确认需要的版本，单击<strong>Assets</strong>。</li>
-</ul>
-<p><img alt="Select a Nebula Graph release version" src="https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/releases-page.png?raw=true"/></p>
-<ul>
-<li>在<strong>Assets</strong>区域找到机器运行所需的安装包，下载文件到机器上。</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>下载nightly版本</p>
-<blockquote>
-<p><strong>禁止</strong>：nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
-</blockquote>
-<ul>
-<li>登录<a href="https://github.com/vesoft-inc/nebula/actions/workflows/package.yaml">Nebula Graph package</a>页面，单击顶部最新的<strong>package</strong>。</li>
-</ul>
-<p><img alt="Select a Nebula Graph nightly version" src="https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/nightly-page.png?raw=true"/></p>
-<ul>
-<li>在<strong>Artifacts</strong>区域找到机器运行所需的安装包，下载文件到机器上。</li>
-</ul>
-</li>
-</ul>
+<!--
+### GitHub下载
+
+- 下载release版本
+
+   + 登录[Nebula Graph Releases](https://github.com/vesoft-inc/nebula/releases)页面，确认需要的版本，单击**Assets**。
+
+   ![Select a Nebula Graph release version](https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/releases-page.png?raw=true)
+
+   + 在**Assets**区域找到机器运行所需的安装包，下载文件到机器上。
+
+- 下载nightly版本
+
+    >**禁止**：nightly版本通常用于测试新功能、新特性，请**不要**在生产环境中使用nightly版本。
+
+   + 登录[Nebula Graph package](https://github.com/vesoft-inc/nebula/actions/workflows/package.yaml)页面，单击顶部最新的**package**。
+
+   ![Select a Nebula Graph nightly version](https://github.com/vesoft-inc/nebula-docs/raw/master/docs-2.0/figs/4.deployment-and-installation/2.complie-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/nightly-page.png?raw=true)
+
+   + 在**Artifacts**区域找到机器运行所需的安装包，下载文件到机器上。
+-->
 <h2 id="nebula_graph">安装Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
 <ul>
 <li>安装RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
@@ -1670,7 +1657,7 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-gr
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月13日</span>
 </small>
 </div>
 </article>

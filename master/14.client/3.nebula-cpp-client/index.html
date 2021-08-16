@@ -1616,21 +1616,21 @@
 </ol>
 <h3 id="_4">核心代码<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>详细示例请参见<a href="https://github.com/vesoft-inc/nebula-cpp/blob/master/examples/SessionExample.cpp">SessionExample</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="n">nebula</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">address</span> <span class="o">=</span> <span class="s">"192.168.xx.1:9669"</span><span class="p">;</span>
-<span class="n">nebula</span><span class="o">::</span><span class="n">ConnectionPool</span> <span class="n">pool</span><span class="p">;</span>
-<span class="n">pool</span><span class="p">.</span><span class="n">init</span><span class="p">({</span><span class="n">address</span><span class="p">},</span> <span class="n">nebula</span><span class="o">::</span><span class="n">Config</span><span class="p">{});</span>
-<span class="k">auto</span> <span class="n">session</span> <span class="o">=</span> <span class="n">pool</span><span class="p">.</span><span class="n">getSession</span><span class="p">(</span><span class="s">"root"</span><span class="p">,</span> <span class="s">"nebula"</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">nebula</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"192.168.xx.1:9669"</span><span class="p">;</span><span class="w"></span>
+<span class="n">nebula</span><span class="o">::</span><span class="n">ConnectionPool</span><span class="w"> </span><span class="n">pool</span><span class="p">;</span><span class="w"></span>
+<span class="n">pool</span><span class="p">.</span><span class="n">init</span><span class="p">({</span><span class="n">address</span><span class="p">},</span><span class="w"> </span><span class="n">nebula</span><span class="o">::</span><span class="n">Config</span><span class="p">{});</span><span class="w"></span>
+<span class="k">auto</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">getSession</span><span class="p">(</span><span class="s">"root"</span><span class="p">,</span><span class="w"> </span><span class="s">"nebula"</span><span class="p">);</span><span class="w"></span>
 
-<span class="k">auto</span> <span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"SHOW HOSTS"</span><span class="p">);</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"SHOW HOSTS"</span><span class="p">);</span><span class="w"></span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">result</span><span class="p">.</span><span class="n">data</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">std</span><span class="o">::</span><span class="kt">atomic_bool</span> <span class="n">complete</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span>
-<span class="n">session</span><span class="p">.</span><span class="n">asyncExecute</span><span class="p">(</span><span class="s">"SHOW HOSTS"</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">complete</span><span class="p">](</span><span class="n">nebula</span><span class="o">::</span><span class="n">ExecutionResponse</span><span class="o">&amp;&amp;</span> <span class="n">cbResult</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">cbResult</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
-    <span class="n">complete</span><span class="p">.</span><span class="n">store</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="n">session</span><span class="p">.</span><span class="n">release</span><span class="p">();</span>
+<span class="n">std</span><span class="o">::</span><span class="kt">atomic_bool</span><span class="w"> </span><span class="n">complete</span><span class="p">{</span><span class="nb">false</span><span class="p">};</span><span class="w"></span>
+<span class="n">session</span><span class="p">.</span><span class="n">asyncExecute</span><span class="p">(</span><span class="s">"SHOW HOSTS"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="n">complete</span><span class="p">](</span><span class="n">nebula</span><span class="o">::</span><span class="n">ExecutionResponse</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cbResult</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">cbResult</span><span class="p">.</span><span class="n">data</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">complete</span><span class="p">.</span><span class="n">store</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="n">session</span><span class="p">.</span><span class="n">release</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
