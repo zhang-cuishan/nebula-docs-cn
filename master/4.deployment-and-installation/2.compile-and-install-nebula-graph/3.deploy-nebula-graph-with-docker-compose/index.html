@@ -1170,6 +1170,11 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
+    修改配置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     常见问题
   </a>
 <nav aria-label="常见问题" class="md-nav">
@@ -1218,7 +1223,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     相关视频
   </a>
 </li>
@@ -2192,6 +2197,11 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
+    修改配置
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
     常见问题
   </a>
 <nav aria-label="常见问题" class="md-nav">
@@ -2240,7 +2250,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
+<a class="md-nav__link" href="#_4">
     相关视频
   </a>
 </li>
@@ -2460,7 +2470,10 @@ Removing network nebula-docker-compose_nebula-net
 <p class="admonition-title">Note</p>
 <p>命令<code>docker-compose down -v</code>将会<strong>删除</strong>所有本地Nebula Graph的数据。如果使用的是developing或nightly版本，并且有一些兼容性问题，请尝试这个命令。</p>
 </div>
-<h2 id="_2">常见问题<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_2">修改配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>Docker Compose部署的Nebula Graph，配置文件位置为<code>nebula-docker-compose/docker-compose.yaml</code>，修改该文件内的配置并重启服务即可使新配置生效。</p>
+<p>具体的配置说明请参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
+<h2 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <h3 id="docker">如何固定Docker映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">¶</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
@@ -2501,7 +2514,7 @@ Removing network nebula-docker-compose_nebula-net
 <p>如果在2021年01月04日后更新过nebula-docker-compose仓库，而且之前已经有数据，请修改文件<code>docker-compose.yaml</code>，将端口修改为之前使用的端口。详情请参见<a href="https://github.com/vesoft-inc/nebula-docker-compose/commit/2a612f1c4f0e2c31515e971b24b355b3be69420a">修改默认端口</a>。</p>
 <h3 id="nebula-docker-compose20210127">为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月27日）<a class="headerlink" href="#nebula-docker-compose20210127" title="Permanent link">¶</a></h3>
 <p>2021年01月27日修改了数据格式，无法兼容之前的数据，请执行命令<code>docker-compose down -v</code>删除所有本地数据。</p>
-<h2 id="_3">相关视频<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h2 id="_4">相关视频<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>用户也可以查看视频快速部署Nebula Graph 2.0。</p>
 <p><a href="https://www.bilibili.com/video/BV1T54y1b7pa">使用 docker compose 部署 Nebula Graph 2.0 和 Web Studio</a>（18分10秒）</p>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="480px" scrolling="no" src="//player.bilibili.com/player.html?aid=844979052&amp;bvid=BV1T54y1b7pa&amp;cid=319036307&amp;page=1" width="720px"> </iframe>
@@ -2509,7 +2522,7 @@ Removing network nebula-docker-compose_nebula-net
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月18日</span>
 </small>
 </div>
 </article>
