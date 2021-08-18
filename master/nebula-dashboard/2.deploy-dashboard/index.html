@@ -2227,8 +2227,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">beta</td>
-<td align="left">2.0.1</td>
+<td align="left">master</td>
+<td align="left">2.5.0、2.0.1</td>
 </tr>
 </tbody>
 </table>
@@ -2251,10 +2251,10 @@
 </ul>
 <h2 id="dashboard_1">下载Dashboard<a class="headerlink" href="#dashboard_1" title="Permanent link">¶</a></h2>
 <p>执行如下命令下载压缩包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/nebula-graph-dashboard/master.tar.gz
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/nebula-graph-dashboard/nebula-graph-dashboard-beta.tar.gz
 </code></pre></div>
 <h2 id="_2">目录结构说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>执行命令<code>tar -xvf master.tar.gz</code>解压缩，目录<code>nebula-graph-dashboard</code>内一共有5个子目录，说明如下。</p>
+<p>执行命令<code>tar -xvf nebula-graph-dashboard-beta.tar.gz</code>解压缩，目录<code>nebula-graph-dashboard</code>内一共有5个子目录，说明如下。</p>
 <table>
 <thead>
 <tr>
@@ -2293,9 +2293,9 @@
 <p>集群中的每个机器都需要部署<code>node-exporter</code>服务。</p>
 </div>
 <p>在目录<code>node-exporter</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span>:9200 <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span>:9100 <span class="p">&amp;</span>
 </code></pre></div>
-<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9200</code>检查服务是否正常启动。</p>
+<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
 <h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2341,7 +2341,7 @@ nebulaItems:
 </code></pre></div>
 </li>
 </ol>
-<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
+<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9200</code>检查服务是否正常启动。</p>
 <h3 id="prometheus">部署<code>prometheus</code>服务<a class="headerlink" href="#prometheus" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2357,12 +2357,12 @@ scrape_configs:
   - job_name: <span class="s1">'nebula-exporter'</span>
     static_configs:
       - targets: <span class="o">[</span>
-          <span class="s1">'192.168.xx.100:9100'</span>,  <span class="c1"># nebula-stats-exporter服务的IP地址和端口。</span>
+          <span class="s1">'192.168.xx.100:9200'</span>,  <span class="c1"># nebula-stats-exporter服务的IP地址和端口。</span>
         <span class="o">]</span>
   - job_name: <span class="s1">'node-exporter'</span>
     static_configs:
       - targets: <span class="o">[</span>
-          <span class="s1">'192.168.xx.101:9200'</span>  <span class="c1"># node-exporter服务的IP地址和端口。</span>
+          <span class="s1">'192.168.xx.101:9100'</span>  <span class="c1"># node-exporter服务的IP地址和端口。</span>
         <span class="o">]</span>
 </code></pre></div>
 <ul>
@@ -2416,8 +2416,8 @@ scrape_configs:
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:7003</code>检查服务是否正常启动。</p>
 <h2 id="dashboard_2">停止Dashboard<a class="headerlink" href="#dashboard_2" title="Permanent link">¶</a></h2>
 <p>如果需要停止Dashboard，可以使用<code>kill &lt;pid&gt;</code>的方式停止，示例如下：</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9200<span class="k">)</span> <span class="c1"># 停止node-exporter服务</span>
-$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9100<span class="k">)</span> <span class="c1"># 停止nebula-stats-exporter服务</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9100<span class="k">)</span> <span class="c1"># 停止node-exporter服务</span>
+$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9200<span class="k">)</span> <span class="c1"># 停止nebula-stats-exporter服务</span>
 $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9090<span class="k">)</span> <span class="c1"># 停止prometheus服务</span>
 $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :8090<span class="k">)</span> <span class="c1"># 停止nebula-http-gateway服务</span>
 $ <span class="nb">cd</span> nebula-graph-dashboard
@@ -2427,7 +2427,7 @@ $ npm run stop <span class="c1"># 停止nebula-graph-dashboard服务</span>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月30日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月18日</span>
 </small>
 </div>
 </article>
