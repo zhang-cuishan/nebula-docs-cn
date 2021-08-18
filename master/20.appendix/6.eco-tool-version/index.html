@@ -2057,8 +2057,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_exchange">
-    Nebula Exchange
+<a class="md-nav__link" href="#nebula_graph_dashboard">
+    Nebula Graph Dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_graph_explorer">
+    Nebula Graph Explorer
   </a>
 </li>
 <li class="md-nav__item">
@@ -2157,8 +2162,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_exchange">
-    Nebula Exchange
+<a class="md-nav__link" href="#nebula_graph_dashboard">
+    Nebula Graph Dashboard
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_graph_explorer">
+    Nebula Graph Explorer
   </a>
 </li>
 <li class="md-nav__item">
@@ -2222,6 +2232,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">生态工具概览<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p><img alt="Nebula Graph 鸟瞰图" src="../../1.introduction/nebula-birdview.png"/></p>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
 <p>内核版本号命名规则为 <code>X.Y.Z</code>，表示<code>大版本X</code>,<code>中版本Y</code>,<code>小版本Z</code>。对于客户端的升级要求为：</p>
@@ -2271,11 +2282,46 @@
 <tbody>
 <tr>
 <td align="left">2.5.0</td>
-<td align="left">2.2.1</td>
+<td align="left">3.0.0</td>
 </tr>
 </tbody>
 </table>
-<h2 id="nebula_exchange">Nebula Exchange<a class="headerlink" href="#nebula_exchange" title="Permanent link">¶</a></h2>
+<h2 id="nebula_graph_dashboard">Nebula Graph Dashboard<a class="headerlink" href="#nebula_graph_dashboard" title="Permanent link">¶</a></h2>
+<p>Nebula Graph Dashboard（简称Dashboard）是一款用于监控Nebula Graph集群中机器和服务状态的可视化工具。详情参见<a href="../../nebula-dashboard/1.what-is-dashboard/">什么是Nebula Graph Dashboard</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Dashboard版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.5.0</td>
+<td align="left">master</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_graph_explorer">Nebula Graph Explorer<a class="headerlink" href="#nebula_graph_explorer" title="Permanent link">¶</a></h2>
+<p>Nebula Graph Explorer（简称 Explorer）是一款可以通过 Web 访问的图探索可视化工具，搭配 Nebula Graph 内核使用，用于与图数据进行可视化交互。即使没有图数据操作经验，用户也可以快速成为图专家。详情参见<a href="../../nebula-explorer/about-explorer/ex-ug-what-is-explorer/">什么是Nebula Graph Explorer</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Explorer版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.5.0</td>
+<td align="left">1.0.0</td>
+</tr>
+<tr>
+<td align="left">## Nebula Exchange</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <p>Nebula Exchange（简称Exchange）是一款Apache Spark™应用，用于在分布式环境中将集群中的数据批量迁移到Nebula Graph中，能支持多种不同格式的批式数据和流式数据的迁移。详情请参见<a href="../../nebula-exchange/about-exchange/ex-ug-what-is-exchange/">什么是Nebula Exchange</a>。</p>
 <table>
 <thead>
@@ -2475,16 +2521,13 @@
 <li><a href="https://github.com/vesoft-inc/nebula-stats-exporter">Promethus connector</a></li>
 </ul>
 <ul>
-<li><a href="https://github.com/vesoft-inc/nebula-stats-exporter">Dashboard</a></li>
-</ul>
-<ul>
 <li>[Graph Computing] (TODO: in coding)</li>
 </ul>
 </li>
 </ul>
 <ul>
 <li>
-<p>性能、测试、备份与恢复</p>
+<p>测试</p>
 <ul>
 <li><a href="https://github.com/vesoft-inc/nebula-chaos">Chaos Test</a></li>
 </ul>
