@@ -2186,7 +2186,7 @@
 </tbody>
 </table>
 <h2 id="_2">系统架构<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Docker 版和 RPM 版 Studio 目前仅支持 x86_64 架构。</p>
+<p>Studio 目前仅支持 x86_64 架构。</p>
 <h2 id="_3">数据上传<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <!--
 使用云服务版 Studio 上传数据有以下限制：
@@ -2197,32 +2197,34 @@
 - 单个文件仅能保存 1 天。
 
 -->
-<p>使用 Docker 版和 RPM 版 Studio 上传数据仅支持上传无表头的 CSV 文件，但是，单个文件大小及保存时间不受限制，而且数据总量以本地存储容量为准。</p>
+<p>Studio 上传数据仅支持上传无表头的 CSV 文件，但是，单个文件大小及保存时间不受限制，而且数据总量以本地存储容量为准。</p>
 <h2 id="_4">数据备份<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>目前仅支持在 <strong>控制台</strong> 上以 CSV 格式导出查询结果，不支持其他数据备份方式。</p>
 <h2 id="ngql">nGQL 支持<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h2>
-<p>使用 Docker 版 Studio 时，除以下内容外，用户可以在 <strong>控制台</strong> 上执行所有 nGQL 语句：</p>
+<p>除以下内容外，用户可以在 <strong>控制台</strong> 上执行所有 nGQL 语句：</p>
 <ul>
 <li><code>USE &lt;space_name&gt;</code>：只能在 <strong>Space</strong> 下拉列表中选择图空间，不能运行这个语句选择图空间。</li>
 <li><strong>控制台</strong> 上使用 nGQL 语句时，用户可以直接回车换行，不能使用换行符。</li>
 </ul>
-<p>使用云服务版 Studio 时，除以上限制外，用户也不能在 <strong>控制台</strong> 上执行用户管理和角色管理相关的语句，包括：</p>
-<ul>
-<li><code>CREATE USER</code></li>
-<li><code>ALTER USER</code></li>
-<li><code>CHANGE PASSWORD</code></li>
-<li><code>DROP USER</code></li>
-<li><code>GRANT ROLE</code></li>
-<li><code>REVOKE ROLE</code> </li>
-</ul>
-<p>关于语句的详细信息，参考 <a href="../../../7.data-security/1.authentication/2.management-user/" title="点击前往用户管理">用户管理</a>。</p>
+<!--
+使用云服务版 Studio 时，除以上限制外，用户也不能在 **控制台** 上执行用户管理和角色管理相关的语句，包括：
+
+- `CREATE USER`
+- `ALTER USER`
+- `CHANGE PASSWORD`
+- `DROP USER`
+- `GRANT ROLE`
+- `REVOKE ROLE`  
+
+关于语句的详细信息，参考 [用户管理](../../7.data-security/1.authentication/2.management-user.md "点击前往用户管理")。
+-->
 <h2 id="_5">浏览器支持<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>建议使用最新版本的 Chrome 访问 Studio。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月17日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月18日</span>
 </small>
 </div>
 </article>
