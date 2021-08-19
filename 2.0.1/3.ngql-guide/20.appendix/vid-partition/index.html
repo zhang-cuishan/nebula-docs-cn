@@ -1861,7 +1861,7 @@
     PartitionID pId = vid % numParts + 1;
 </code></pre></div>
 <p>简单来说，上述代码是将一个固定的字符串进行哈希计算，转换成数据类型为int64的数字（int64数字的哈希计算结果是数字本身），将数字取模，然后加1，即：</p>
-<div class="highlight"><pre><span></span><code><span class="n">pId</span> <span class="o">=</span> <span class="n">vid</span> <span class="o">%</span> <span class="n">numParts</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">pId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vid</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">numParts</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>示例的部分参数说明如下。</p>
 <table>
