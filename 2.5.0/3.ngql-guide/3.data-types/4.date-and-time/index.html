@@ -2266,11 +2266,11 @@ nebula&gt; INSERT VERTEX school(name, found_time) VALUES "dut":("dut", timestamp
 </ol>
 <p>还可以使用<code>WITH</code>语句设置具体日期和时间，例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; WITH time({hour: 12, minute: 31, second: 14}) AS d RETURN d;
-+--------------+
-| d            |
-+--------------+
-| 12:31:14.000 |
-+--------------+
++-----------------+
+| d               |
++-----------------+
+| 12:31:14.000000 |
++-----------------+
 
 nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 +------------+
@@ -2283,7 +2283,7 @@ nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月2日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月19日</span>
 </small>
 </div>
 </article>
