@@ -276,6 +276,7 @@ nav:
 
   - 监控:
       - 查询Nebula Graph监控指标: 6.monitor-and-metrics/1.query-performance-metrics.md
+      - RocksDB 统计数据: 6.monitor-and-metrics/2.rocksdb-statistics.md
 
   - 数据安全:
       - 验证和授权:
@@ -383,6 +384,7 @@ nav:
       - 导入MaxCompute数据: nebula-exchange/use-exchange/ex-ug-import-from-maxcompute.md
       - 导入Pulsar数据: nebula-exchange/use-exchange/ex-ug-import-from-pulsar.md
       - 导入Kafka数据: nebula-exchange/use-exchange/ex-ug-import-from-kafka.md
+      - 导入SST文件数据: nebula-exchange/use-exchange/ex-ug-import-sst.md
     - Exchange 常见问题: nebula-exchange/ex-ug-FAQ.md
 
   - Nebula Algorithm: nebula-algorithm.md
