@@ -608,6 +608,26 @@
      <lastmod>2021-08-19</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/1.nebula-client/</loc>
+     <lastmod>2021-08-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/3.nebula-cpp-client/</loc>
+     <lastmod>2021-08-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/4.nebula-java-client/</loc>
+     <lastmod>2021-08-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/5.nebula-python-client/</loc>
+     <lastmod>2021-08-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/6.nebula-go-client/</loc>
+     <lastmod>2021-08-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://docs.nebula-graph.com.cn/master/master/nebula-studio/about-studio/st-ug-release-note/</loc>
      <lastmod>2021-08-19</lastmod>
      <changefreq>daily</changefreq>
@@ -853,26 +873,6 @@
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://docs.nebula-graph.com.cn/master/master/nebula-flink-connector/</loc>
-     <lastmod>2021-08-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/1.nebula-client/</loc>
-     <lastmod>2021-08-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/3.nebula-cpp-client/</loc>
-     <lastmod>2021-08-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/4.nebula-java-client/</loc>
-     <lastmod>2021-08-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/5.nebula-python-client/</loc>
-     <lastmod>2021-08-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://docs.nebula-graph.com.cn/master/master/14.client/6.nebula-go-client/</loc>
      <lastmod>2021-08-19</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
