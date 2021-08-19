@@ -2,8 +2,8 @@
 site_name: Nebula Graph Database 手册
 site_description: Documentation for Nebula Graph Database
 site_author: Nebula Graph
-site_url: https://docs.nebula-graph.com.cn/2.5.0/
-edit_uri: 'edit/v2.5.0/docs-2.0/'
+site_url: https://docs.nebula-graph.com.cn/master/
+edit_uri: 'edit/master/docs-2.0/'
 docs_dir: docs-2.0
 
 # repository
@@ -20,8 +20,8 @@ theme:
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
   favicon: 'assets/images/favicon.ico'
   palette:
-    primary: 'blue grey'
-    accent: 'lime'
+    primary: 'teal'
+    accent: 'light green'
   features:
     - navigation.top
     - header.autohide
@@ -51,26 +51,29 @@ extra:
   explorer:
     base100: 1.0.0
   exchange:
-    release: master
-    branch: master
+    release: 2.5.0
+    branch: v2.5
   importer:
-    release: master  
+    release: master
   algorithm:
-    release: master
+    release: 2.5.0
+    branch: v2.5
   sparkconnector:
-    release: master
-    branch: master
+    release: 2.5.0
+    branch: v2.5
   flinkconnector:
-    release: master
+    release: 2.5.0
+    branch: v2.5
   dockercompose:
-    release: master
+    release: 2.0.1
+    branch: v2.0.1
   common:
     release: master
   dashboard:
     release: master
     base100: 1.0.0
   console:
-    release: master
+    release: 2.0.1
   br:
     release: 0.5.0
   cpp:
@@ -82,8 +85,8 @@ extra:
   go:
     release: 2.5.0
   bench:
-    release: master
-    branch: v2.0
+    release: 1.0.0
+    branch: master
   
 nav:
   - PDF: ./pdf/NebulaGraph-CN.pdf
@@ -276,7 +279,6 @@ nav:
 
   - 监控:
       - 查询Nebula Graph监控指标: 6.monitor-and-metrics/1.query-performance-metrics.md
-      - RocksDB 统计数据: 6.monitor-and-metrics/2.rocksdb-statistics.md
 
   - 数据安全:
       - 验证和授权:
@@ -384,7 +386,6 @@ nav:
       - 导入MaxCompute数据: nebula-exchange/use-exchange/ex-ug-import-from-maxcompute.md
       - 导入Pulsar数据: nebula-exchange/use-exchange/ex-ug-import-from-pulsar.md
       - 导入Kafka数据: nebula-exchange/use-exchange/ex-ug-import-from-kafka.md
-      - 导入SST文件数据: nebula-exchange/use-exchange/ex-ug-import-sst.md
     - Exchange 常见问题: nebula-exchange/ex-ug-FAQ.md
 
   - Nebula Algorithm: nebula-algorithm.md
