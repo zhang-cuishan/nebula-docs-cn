@@ -2146,24 +2146,20 @@
 <h2 id="opencypher">openCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <p>本文操作仅适用于原生nGQL。</p>
 <p>用户也可以使用openCypher方式的<a href="../../6.functions-and-expressions/7.count/">count()</a>函数聚合数据。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt;  MATCH (v:player)&lt;-[:follow]-(:player) RETURN v.name AS Name, count(*) as cnt ORDER BY cnt DESC
-+----------------------+--------------+
-| Name                 | Follower_Num |
-+----------------------+--------------+
-| "Tim Duncan"         | 10           |
-+----------------------+--------------+
-| "LeBron James"       | 6            |
-+----------------------+--------------+
-| "Tony Parker"        | 5            |
-+----------------------+--------------+
-| "Manu Ginobili"      | 4            |
-+----------------------+--------------+
-| "Chris Paul"         | 4            |
-+----------------------+--------------+
-| "Tracy McGrady"      | 3            |
-+----------------------+--------------+
-| "Dwyane Wade"        | 3            |
-+----------------------+--------------+
+<div class="highlight"><pre><span></span><code>nebula&gt;  MATCH (v:player)&lt;-[:follow]-(:player) RETURN v.name AS Name, count(*) as cnt ORDER BY cnt DESC;
++----------------------+-----+
+| Name                 | cnt |
++----------------------+-----+
+| "Tim Duncan"         | 10  |
++----------------------+-----+
+| "LeBron James"       | 6   |
++----------------------+-----+
+| "Tony Parker"        | 5   |
++----------------------+-----+
+| "Chris Paul"         | 4   |
++----------------------+-----+
+| "Manu Ginobili"      | 4   |
++----------------------+-----+
 ...
 </code></pre></div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
@@ -2219,7 +2215,7 @@ nebula&gt; GO FROM "player100" OVER follow \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年5月24日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月19日</span>
 </small>
 </div>
 </article>

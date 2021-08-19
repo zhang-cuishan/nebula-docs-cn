@@ -2490,14 +2490,14 @@
 </div>
 <h2 id="_3">关于历史兼容性<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <div class="admonition compatibility">
-<p class="admonition-title">大版本兼容性</p>
+<p class="admonition-title"><code>X</code>版本兼容性</p>
 <p>Nebula Graph 2.5.0 与 历史版本 (包括 Nebula Graph 1.x 和 2.0-RC) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
 数据格式升级参见<a href="../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200.md">升级 Nebula Graph 历史版本至 v2.0.0</a>。
 客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
 </div>
 <div class="admonition compatibility">
-<p class="admonition-title">小版本兼容性</p>
-<p>Neubla Graph 2.5.0 与 Nebula Graph 2.0 的数据格式、通信协议历史兼容。</p>
+<p class="admonition-title"><code>Y</code>版本兼容性</p>
+<p>Neubla Graph 2.5.0 与 Nebula Graph 2.0 的数据格式兼容，客户端不兼容。</p>
 </div>
 <h2 id="_4">关于执行<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <h3 id="gomatch">使用GO和MATCH执行相同语义的查询，查询结果为什么不同？<a class="headerlink" href="#gomatch" title="Permanent link">¶</a></h3>
@@ -2532,7 +2532,8 @@ Got 1 rows (time spent 1235/1934 us)
 <h3 id="create_spacereplica_factor2">可以在<code>CREATE SPACE</code>时设置<code>replica_factor</code>为偶数（例如设置为2）吗？<a class="headerlink" href="#create_spacereplica_factor2" title="Permanent link">¶</a></h3>
 <p>不要这样设置。</p>
 <p>Storage服务使用Raft协议（多数表决），为保证可用性，要求出故障的副本数量不能达到一半。</p>
-<p>如果<code>replica_factor=2</code>，当其中一个副本故障时，就会导致系统无法工作；如果<code>replica_factor=4</code>，只能有一个副本可以出现故障，这和<code>replica_factor=3</code>是一样。以此类推，所以<code>replica_factor</code>设置为奇数即可。</p>
+<p>当机器数量为1时，<code>replica_factor</code>只能设置为<code>1</code>。</p>
+<p>当机器数量足够时，如果<code>replica_factor=2</code>，当其中一个副本故障时，就会导致系统无法正常工作；如果<code>replica_factor=4</code>，只能有一个副本可以出现故障，这和<code>replica_factor=3</code>是一样。以此类推，所以<code>replica_factor</code>设置为奇数即可。</p>
 <p>建议在生产环境中设置<code>replica_factor=3</code>，测试环境中设置<code>replica_factor=1</code>，不要使用偶数。</p>
 <h3 id="error_-7_syntaxerror_syntax_error_near">如何处理错误信息<code>[ERROR (-7)]: SyntaxError: syntax error near</code>？<a class="headerlink" href="#error_-7_syntaxerror_syntax_error_near" title="Permanent link">¶</a></h3>
 <p>大部分情况下，查询语句需要有<code>YIELD</code>或<code>RETURN</code>，请检查查询语句是否包含。</p>
@@ -2756,7 +2757,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月18日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月19日</span>
 </small>
 </div>
 </article>
