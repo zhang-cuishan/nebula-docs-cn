@@ -109,7 +109,8 @@ nGQL没有严格的构建格式要求，但根据恰当而统一的风格创建n
 
   ```ngql
   go from "player100" over Follow
-   ```
+  ```
+  
   推荐:
     
   ```ngql
