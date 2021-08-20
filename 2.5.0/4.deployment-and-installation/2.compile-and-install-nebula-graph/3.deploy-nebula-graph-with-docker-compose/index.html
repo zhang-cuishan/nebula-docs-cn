@@ -2476,9 +2476,9 @@ Removing nebula-docker-compose_metad2_1    ... <span class="k">done</span>
 Removing nebula-docker-compose_metad1_1    ... <span class="k">done</span>
 Removing network nebula-docker-compose_nebula-net
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>命令<code>docker-compose down -v</code>将会<strong>删除</strong>所有本地Nebula Graph的数据。如果使用的是developing或nightly版本，并且有一些兼容性问题，请尝试这个命令。</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>命令<code>docker-compose down -v</code>的参数<code>-v</code>将会<strong>删除</strong>所有本地的数据。如果使用的是nightly版本，并且有一些兼容性问题，请尝试这个命令。</p>
 </div>
 <h2 id="_2">修改配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>Docker Compose部署的Nebula Graph，配置文件位置为<code>nebula-docker-compose/docker-compose.yaml</code>，修改该文件内的配置并重启服务即可使新配置生效。</p>
@@ -2532,7 +2532,7 @@ Removing network nebula-docker-compose_nebula-net
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
 </small>
 </div>
 </article>
