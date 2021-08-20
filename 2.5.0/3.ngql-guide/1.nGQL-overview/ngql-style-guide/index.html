@@ -2209,15 +2209,6 @@ RETURN v2;
 <p class="admonition-title">Note</p>
 <p>即使子句不超过80个字符，如需换行后有助于理解，也可将子句再次分行。</p>
 </div>
-<ol>
-<li>语法关键词大写，变量小写。<p>不推荐：</p>
-<div class="highlight"><pre><span></span><code>go from "player100" over Follow
-</code></pre></div>
-<p>推荐:</p>
-<div class="highlight"><pre><span></span><code>GO FROM "player100" OVER follow
-</code></pre></div>
-</li>
-</ol>
 <h2 id="_2">标识符命名<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>在nGQL语句中，关键字、标点符号、空格以外的字符内容都是标识符。推荐的标识符命名方式如下。</p>
 <ol>
@@ -2241,6 +2232,17 @@ RETURN v;
 <p>推荐：</p>
 <div class="highlight"><pre><span></span><code>MATCH (v:basketball_team) \
 RETURN v;
+</code></pre></div>
+</li>
+<li>
+<p>语法关键词大写，变量小写。</p>
+<p>不推荐：</p>
+<div class="highlight"><pre><span></span><code>go from "player100" over Follow
+ ```
+推荐:
+
+```ngql
+GO FROM "player100" OVER follow
 </code></pre></div>
 </li>
 </ol>
