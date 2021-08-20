@@ -2477,7 +2477,10 @@
 <p>本文将使用下图的数据集演示基础操作的语法。</p>
 <p><img alt="The demo dataset" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/dataset-for-crud.png"/></p>
 <h2 id="nebula_graph">检查Nebula Graph集群的机器状态<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>首先建议检查机器状态，确保所有的Storage服务连接到了Meta服务。执行命令<code>SHOW HOSTS</code>查看机器状态。</p>
+</div>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 +-------------+-----------+-----------+--------------+----------------------+------------------------+
 | Host        | Port      | Status    | Leader count | Leader distribution  | Partition distribution |
@@ -2494,7 +2497,10 @@ Got 4 rows (time spent 1061/2251 us)
 </code></pre></div>
 <p>在返回结果中，查看<strong>Status</strong>列，可以看到所有Storage服务都在线。</p>
 <h3 id="_1">异步实现创建和修改<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>Nebula Graph中执行如下创建和修改操作，是异步实现的，需要在下一个心跳周期才同步数据。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Nebula Graph中执行如下创建和修改操作，是异步实现的。要在<strong>下一个</strong>心跳周期之后才能生效；否则访问会报错。</p>
+</div>
 <ul>
 <li><code>CREATE SPACE</code></li>
 <li><code>CREATE TAG</code></li>
@@ -3059,7 +3065,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
 </small>
 </div>
 </article>
