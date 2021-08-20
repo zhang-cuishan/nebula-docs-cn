@@ -136,6 +136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/20.appendix/releasenote/</loc>
+         <lastmod>2021-08-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/20.appendix/write-tools/</loc>
          <lastmod>2021-08-20</lastmod>
          <changefreq>daily</changefreq>
