@@ -297,22 +297,51 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula_console">
-    Nebula Console导出模式
+    Nebula Console命令
+  </a>
+<nav aria-label="Nebula Console命令" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#csv">
+    导出CSV文件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_1">
-    使用Nebula Console断开连接
+<a class="md-nav__link" href="#dot">
+    导出DOT文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    加载测试数据集
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    重复执行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    睡眠
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    断开连接
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
     常见问题
   </a>
 <nav aria-label="常见问题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_2">
+<a class="md-nav__link" href="#nebula_console_1">
     如何通过源码安装Nebula Console？
   </a>
 </li>
@@ -2170,22 +2199,51 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula_console">
-    Nebula Console导出模式
+    Nebula Console命令
+  </a>
+<nav aria-label="Nebula Console命令" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#csv">
+    导出CSV文件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_1">
-    使用Nebula Console断开连接
+<a class="md-nav__link" href="#dot">
+    导出DOT文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    加载测试数据集
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    重复执行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    睡眠
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    断开连接
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
     常见问题
   </a>
 <nav aria-label="常见问题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_2">
+<a class="md-nav__link" href="#nebula_console_1">
     如何通过源码安装Nebula Console？
   </a>
 </li>
@@ -2306,33 +2364,105 @@
 </li>
 </ol>
 <p>用户可以使用<code>./nebula-console --help</code>命令获取所有参数的说明，也可以在<a href="https://github.com/vesoft-inc/nebula-console/tree/v2.0.0-ga">项目仓库</a>找到更多说明。</p>
-<h2 id="nebula_console">Nebula Console导出模式<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
-<p>导出模式开启时，Nebula Console会导出所有请求的结果到CSV格式文件中。关闭导出模式会停止导出。使用语法如下：</p>
+<h2 id="nebula_console">Nebula Console命令<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
+<p>Nebula Console提供部分命令，可以导出CSV文件、导出DOT文件、导入测试数据集等。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>命令不区分大小写。</p>
+</div>
+<h3 id="csv">导出CSV文件<a class="headerlink" href="#csv" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>命令不区分大小写。</li>
-<li>CSV格式文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
+<li>CSV文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
+</ul>
+<ul>
+<li>命令只对下一条查询语句生效。</li>
 </ul>
 </div>
-<ul>
-<li>开启导出模式</li>
-</ul>
-<div class="highlight"><pre><span></span><code>nebula&gt; :SET CSV &lt;your_file.csv&gt;
+<p>导出CSV文件命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :CSV &lt;file_name.csv&gt;
 </code></pre></div>
+<h3 id="dot">导出DOT文件<a class="headerlink" href="#dot" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>关闭导出模式</li>
+<li>DOT文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
 </ul>
-<div class="highlight"><pre><span></span><code>nebula&gt; :UNSET CSV
+<ul>
+<li>DOT文件的内容可以复制后在<a href="https://dreampuf.github.io/GraphvizOnline/">GraphvizOnline</a>网页中粘贴，生成可视化的执行计划图。</li>
+</ul>
+<ul>
+<li>命令只对下一条查询语句生效。</li>
+</ul>
+</div>
+<p>导出DOT文件命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :dot &lt;file_name.dot&gt;
 </code></pre></div>
-<h2 id="nebula_console_1">使用Nebula Console断开连接<a class="headerlink" href="#nebula_console_1" title="Permanent link">¶</a></h2>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :dot a.dot
+nebula&gt; PROFILE FORMAT="dot" GO FROM "player100" OVER follow;
+</code></pre></div>
+<h3 id="_3">加载测试数据集<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>测试数据集名称为nba，详细Schema信息和数据信息请使用相关<code>SHOW</code>命令查看。</p>
+<p>加载测试数据集命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :play nba
+</code></pre></div>
+<h3 id="_4">重复执行<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>重复执行下一个命令N次，然后打印平均执行时间。命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :repeat N
+</code></pre></div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :repeat 3
+nebula&gt; GO FROM "player100" OVER follow;
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 2602/3214 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 583/849 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 496/671 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
+Executed 3 times, (total time spent 3681/4734 us), (average time spent 1227/1578 us)
+</code></pre></div>
+<h3 id="_5">睡眠<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>睡眠N秒。常用于修改Schema的操作中，因为修改Schema是异步实现的，需要在下一个心跳周期才同步数据。命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :sleep N
+</code></pre></div>
+<h3 id="_6">断开连接<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>用户可以使用<code>:EXIT</code>或者<code>:QUIT</code>从Nebula Graph断开连接。为方便使用，Nebula Console支持使用不带冒号（:）的小写命令，例如<code>quit</code>。</p>
+<p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; :QUIT
 
 Bye root!
 </code></pre></div>
-<h2 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="nebula_console_2">如何通过源码安装Nebula Console？<a class="headerlink" href="#nebula_console_2" title="Permanent link">¶</a></h3>
+<h2 id="_7">常见问题<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="nebula_console_1">如何通过源码安装Nebula Console？<a class="headerlink" href="#nebula_console_1" title="Permanent link">¶</a></h3>
 <p>下载和编译Nebula Console的最新源码，请参见<a href="https://github.com/vesoft-inc/nebula-console#build-nebula-graph-console">GitHub nebula console</a>页面的说明。</p>
 <!--  This part is reused from the docs-2.0/reuse directory. To modify it, update the source file. -->
 <hr/>

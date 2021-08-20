@@ -2584,7 +2584,10 @@ Got 1 rows (time spent 1235/1934 us)
 <h3 id="storage_error_e_rpc_failure">如何处理错误信息<code>Storage Error E_RPC_FAILURE</code><a class="headerlink" href="#storage_error_e_rpc_failure" title="Permanent link">¶</a></h3>
 <p>报错原因通常为Graph服务向Storage服务请求了过多的数据，导致Storage服务超时。请尝试以下解决方案：</p>
 <ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true再重启服务。</li>
+<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。</li>
+</ul>
+<!--提示：请在配置文件开头添加--local_config=true再重启服务。-->
+<ul>
 <li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
 <li>检查Storaged是否发生的 OOM。(<code>dmesg |grep nebula</code>)。</li>
 <li>为 Storage 服务器提供性能更好的SSD或者内存。</li>
@@ -2609,8 +2612,9 @@ Got 1 rows (time spent 1235/1934 us)
 <li>导入数据时，手动<a href="../../8.service-tuning/compaction/">compaction</a>，加速读的速度。</li>
 </ul>
 <ul>
-<li>增加Graph服务与Storage服务的RPC连接超时时间，在<code>nebula-storaged.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为60000毫秒。提示：请在配置文件开头添加--local_config=true再重启服务。</li>
+<li>增加Graph服务与Storage服务的RPC连接超时时间，在<code>nebula-storaged.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为60000毫秒。</li>
 </ul>
+<!--提示：请在配置文件开头添加--local_config=true再重启服务。-->
 <h3 id="nebula-storagedinfometaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfohbprocessorcpp54_reject_wrong_cluster_host_xxxx9771">如何处理<code>nebula-storaged.INFO</code>错误日志<code>MetaClient.cpp:65] Heartbeat failed, status:Wrong cluster!</code>或者 <code>nebula-metad.INFO</code>含有错误日志<code>HBProcessor.cpp:54] Reject wrong cluster host "x.x.x.x":9771!</code><a class="headerlink" href="#nebula-storagedinfometaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfohbprocessorcpp54_reject_wrong_cluster_host_xxxx9771" title="Permanent link">¶</a></h3>
 <p>报错的原因可能是用户修改了 metad 的 ip 或者端口信息，或者 storage 之前加入过其他集群。请尝试以下解决方法：</p>
 <p>用户到storage部署的机器所在的安装目录（默认安装目录为 <code>/usr/local/nebula</code>）下面将<code>cluster.id</code>文件删除，然后重启 storaged 服务。</p>
@@ -2762,7 +2766,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
 </small>
 </div>
 </article>
