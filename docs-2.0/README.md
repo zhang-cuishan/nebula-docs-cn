@@ -42,7 +42,7 @@ Graph 完全指南》](https://docs.nebula-graph.com.cn/site/pdf/NebulaGraph-boo
 
 !!! danger
 
-    会引发危险的事项。不遵守danger必定会导致系统故障、数据丢失、安全问题等。本文有 30 个 danger。
+    会引发危险的事项。不遵守danger必定会导致系统故障、数据丢失、安全问题等。
 
 !!! performance
 
