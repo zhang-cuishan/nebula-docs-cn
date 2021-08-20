@@ -1395,18 +1395,9 @@
 <a class="md-nav__link" href="#compaction_1">
     自动Compaction
   </a>
-<nav aria-label="自动Compaction" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_2">
-    关闭自动Compaction
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_3">
     全量Compaction
   </a>
 </li>
@@ -1422,12 +1413,12 @@
 <nav aria-label="FAQ" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_4">
+<a class="md-nav__link" href="#compaction_3">
     可以同时在多个图空间执行全量Compaction操作吗？
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_5">
+<a class="md-nav__link" href="#compaction_4">
     全量Compaction操作会耗费多长时间？
   </a>
 </li>
@@ -1437,7 +1428,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_6">
+<a class="md-nav__link" href="#compaction_5">
     全量Compaction操作开始后可以停止吗？
   </a>
 </li>
@@ -2153,18 +2144,9 @@
 <a class="md-nav__link" href="#compaction_1">
     自动Compaction
   </a>
-<nav aria-label="自动Compaction" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_2">
-    关闭自动Compaction
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_3">
     全量Compaction
   </a>
 </li>
@@ -2180,12 +2162,12 @@
 <nav aria-label="FAQ" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_4">
+<a class="md-nav__link" href="#compaction_3">
     可以同时在多个图空间执行全量Compaction操作吗？
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_5">
+<a class="md-nav__link" href="#compaction_4">
     全量Compaction操作会耗费多长时间？
   </a>
 </li>
@@ -2195,7 +2177,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_6">
+<a class="md-nav__link" href="#compaction_5">
     全量Compaction操作开始后可以停止吗？
   </a>
 </li>
@@ -2222,22 +2204,26 @@
 </div>
 <p>Nebula Graph有两种类型的<code>Compaction</code>操作：自动<code>Compaction</code>和全量<code>Compaction</code>。</p>
 <h2 id="compaction_1">自动<code>Compaction</code><a class="headerlink" href="#compaction_1" title="Permanent link">¶</a></h2>
-<p>自动<code>Compaction</code>是在系统读取数据、写入数据或系统重启时自动触发<code>Compaction</code>操作，提升短时间内的读取性能。默认情况下，自动<code>Compaction</code>是开启状态，可能在业务高峰期触发，导致意外抢占IO影响业务。如果需要完全手动控制<code>Compaction</code>操作，用户可以关闭自动<code>Compaction</code>。</p>
-<h3 id="compaction_2">关闭自动<code>Compaction</code><a class="headerlink" href="#compaction_2" title="Permanent link">¶</a></h3>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>命令<code>UPDATE CONFIGS</code>会将未设置的参数恢复为默认值，因此修改前需要使用<code>SHOW CONFIGS STORAGE</code>查看<code>rocksdb_column_family_options</code>配置，然后一起重新传入值。</p>
-</div>
+<p>自动<code>Compaction</code>是在系统读取数据、写入数据或系统重启时自动触发<code>Compaction</code>操作，提升短时间内的读取性能。默认情况下，自动<code>Compaction</code>是开启状态，可能在业务高峰期触发，导致意外抢占IO影响业务。</p>
+<!--
+如果需要完全手动控制`Compaction`操作，用户可以关闭自动`Compaction`。
+
+### 关闭自动`Compaction`
+
+!!! danger
+
+    命令`UPDATE CONFIGS`会将未设置的参数恢复为默认值，因此修改前需要使用`SHOW CONFIGS STORAGE`查看`rocksdb_column_family_options`配置，然后一起重新传入值。
+
 <div class="highlight"><pre><span></span><code># 查看当前rocksdb_column_family_options设置，复制value列内容。
 nebula&gt; SHOW CONFIGS STORAGE;
 +-----------+-------------------------------------+-------+-----------+------------------------------------------------------------------------------------------------------+
 | module    | name                                | type  | mode      | value                                                                                                |
 +-----------+-------------------------------------+-------+-----------+------------------------------------------------------------------------------------------------------+
-| "STORAGE" | "v"                                 | "int" | "MUTABLE" | 0                                                                                                    |
+| &quot;STORAGE&quot; | &quot;v&quot;                                 | &quot;int&quot; | &quot;MUTABLE&quot; | 0                                                                                                    |
 +-----------+-------------------------------------+-------+-----------+------------------------------------------------------------------------------------------------------+
 ...
 +-----------+-------------------------------------+-------+-----------+------------------------------------------------------------------------------------------------------+
-| "STORAGE" | "rocksdb_column_family_options"     | "map" | "MUTABLE" | {max_bytes_for_level_base: "268435456", max_write_buffer_number: "4", write_buffer_size: "67108864"} |
+| &quot;STORAGE&quot; | &quot;rocksdb_column_family_options&quot;     | &quot;map&quot; | &quot;MUTABLE&quot; | {max_bytes_for_level_base: &quot;268435456&quot;, max_write_buffer_number: &quot;4&quot;, write_buffer_size: &quot;67108864&quot;} |
 +-----------+-------------------------------------+-------+-----------+------------------------------------------------------------------------------------------------------+
 ...
 
@@ -2249,15 +2235,16 @@ nebula&gt; SHOW CONFIGS STORAGE;
 +-----------+-------------------------------------+-------+-----------+--------------------------------------------------------------------------------------------------------------------------------------+
 | module    | name                                | type  | mode      | value                                                                                                                                |
 +-----------+-------------------------------------+-------+-----------+--------------------------------------------------------------------------------------------------------------------------------------+
-| "STORAGE" | "v"                                 | "int" | "MUTABLE" | 0                                                                                                                                    |
+| &quot;STORAGE&quot; | &quot;v&quot;                                 | &quot;int&quot; | &quot;MUTABLE&quot; | 0                                                                                                                                    |
 +-----------+-------------------------------------+-------+-----------+--------------------------------------------------------------------------------------------------------------------------------------+
 ...
 +-----------+-------------------------------------+-------+-----------+--------------------------------------------------------------------------------------------------------------------------------------+
-| "STORAGE" | "rocksdb_column_family_options"     | "map" | "MUTABLE" | {disable_auto_compactions: true, max_bytes_for_level_base: "268435456", max_write_buffer_number: "4", write_buffer_size: "67108864"} |
+| &quot;STORAGE&quot; | &quot;rocksdb_column_family_options&quot;     | &quot;map&quot; | &quot;MUTABLE&quot; | {disable_auto_compactions: true, max_bytes_for_level_base: &quot;268435456&quot;, max_write_buffer_number: &quot;4&quot;, write_buffer_size: &quot;67108864&quot;} |
 +-----------+-------------------------------------+-------+-----------+--------------------------------------------------------------------------------------------------------------------------------------+
 ...
 </code></pre></div>
-<h2 id="compaction_3">全量<code>Compaction</code><a class="headerlink" href="#compaction_3" title="Permanent link">¶</a></h2>
+-->
+<h2 id="compaction_2">全量<code>Compaction</code><a class="headerlink" href="#compaction_2" title="Permanent link">¶</a></h2>
 <p>全量<code>Compaction</code>可以对图空间进行大规模后台操作，例如合并文件、删除TTL过期数据等，该操作需要手动发起。使用如下语句执行全量<code>Compaction</code>操作：</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2271,18 +2258,18 @@ nebula&gt; SUBMIT JOB COMPACT;
 </code></pre></div>
 <h2 id="_1">操作建议<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>为保证Nebula Graph的性能，请参考如下操作建议：</p>
-<ul>
-<li>数据写入时为避免浪费IO，请在大量数据写入前关闭自动<code>Compaction</code>。详情请参见<a href="#compaction_2">关闭自动<code>Compaction</code></a>。</li>
-</ul>
+<!--
+- 数据写入时为避免浪费IO，请在大量数据写入前关闭自动`Compaction`。详情请参见[关闭自动`Compaction`](#compaction_2)。
+-->
 <ul>
 <li>数据导入完成后，请执行<code>SUBMIT JOB COMPACT</code>。</li>
 </ul>
 <ul>
 <li>业务低峰期（例如凌晨）执行<code>SUBMIT JOB COMPACT</code>。</li>
 </ul>
-<ul>
-<li>白天时设置<code>disable_auto_compactions</code>为<code>false</code>，提升短时间内的读取性能。</li>
-</ul>
+<!--
+- 白天时设置`disable_auto_compactions`为`false`，提升短时间内的读取性能。
+-->
 <ul>
 <li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下两个参数：<div class="highlight"><pre><span></span><code><span class="c1"># 设置为从本地配置文件读取配置。</span>
 --local-config<span class="o">=</span><span class="nb">true</span>
@@ -2292,19 +2279,19 @@ nebula&gt; SUBMIT JOB COMPACT;
 </li>
 </ul>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
-<h3 id="compaction_4">可以同时在多个图空间执行全量<code>Compaction</code>操作吗？<a class="headerlink" href="#compaction_4" title="Permanent link">¶</a></h3>
+<h3 id="compaction_3">可以同时在多个图空间执行全量<code>Compaction</code>操作吗？<a class="headerlink" href="#compaction_3" title="Permanent link">¶</a></h3>
 <p>可以，但是此时的硬盘IO会很高，可能会影响效率。</p>
-<h3 id="compaction_5">全量<code>Compaction</code>操作会耗费多长时间？<a class="headerlink" href="#compaction_5" title="Permanent link">¶</a></h3>
+<h3 id="compaction_4">全量<code>Compaction</code>操作会耗费多长时间？<a class="headerlink" href="#compaction_4" title="Permanent link">¶</a></h3>
 <p>如果已经设置读写速率限制，例如<code>rate_limit</code>限制为20MB/S时，用户可以通过<code>硬盘使用量/rate_limit</code>预估需要耗费的时间。如果没有设置读写速率限制，根据经验，速率大约为50MB/S。</p>
 <h3 id="rate_limit">可以动态调整<code>rate_limit</code>吗？<a class="headerlink" href="#rate_limit" title="Permanent link">¶</a></h3>
 <p>不可以。</p>
-<h3 id="compaction_6">全量<code>Compaction</code>操作开始后可以停止吗？<a class="headerlink" href="#compaction_6" title="Permanent link">¶</a></h3>
+<h3 id="compaction_5">全量<code>Compaction</code>操作开始后可以停止吗？<a class="headerlink" href="#compaction_5" title="Permanent link">¶</a></h3>
 <p>不可以停止，必须等待操作完成。这是RocksDB的限制。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
 </small>
 </div>
 </article>
