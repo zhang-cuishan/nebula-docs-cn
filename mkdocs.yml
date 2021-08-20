@@ -400,7 +400,8 @@ nav:
   - Nebula Bench: nebula-bench.md
 
   - 附录:
-      - Nebula Graph 常见问题: 20.appendix/0.FAQ.md
+      - Release Note: 20.appendix/releasenote.md
+      - 常见问题 FAQ: 20.appendix/0.FAQ.md
       - 生态工具概览: 20.appendix/6.eco-tool-version.md
       - 导入工具选择: 20.appendix/write-tools.md
       - 社区参与: 15.contribution/how-to-contribute.md
