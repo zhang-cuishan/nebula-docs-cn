@@ -2246,7 +2246,7 @@
 <li>Reader支持将Nebula Graph数据读取成Graphx的VertexRDD和EdgeRDD，支持非Long型点ID。</li>
 </ul>
 <ul>
-<li>Nebula Spark Connector 2.0统一了SparkSQL的扩展数据源，统一采用DataSourceV2进行Nebula Graph数据扩展。</li>
+<li>统一了SparkSQL的扩展数据源，统一采用DataSourceV2进行Nebula Graph数据扩展。</li>
 </ul>
 <ul>
 <li>支持<code>insert</code>和<code>update</code>两种写入模式。<code>insert</code>模式会插入（覆盖）数据，<code>update</code>模式仅会更新已存在的数据。</li>
@@ -2256,7 +2256,7 @@
 <ol>
 <li>
 <p>克隆仓库<code>nebula-spark-utils</code>。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b <span class="m">2</span>.5.0 https://github.com/vesoft-inc/nebula-spark-utils.git
+<div class="highlight"><pre><span></span><code>$ git clone -b v2.5 https://github.com/vesoft-inc/nebula-spark-utils.git
 </code></pre></div>
 </li>
 <li>
@@ -2514,7 +2514,7 @@
 <tr>
 <td align="left"><code>withVidPolicy</code></td>
 <td align="left">否</td>
-<td align="left">写入点ID时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。</td>
+<td align="left">写入点ID时，采用的映射函数，Nebula Graph 2.x仅支持HASH。默认不做映射。</td>
 </tr>
 <tr>
 <td align="left"><code>withVidAsProp</code></td>
@@ -2575,7 +2575,7 @@
 <tr>
 <td align="left"><code>withSrcPolicy</code></td>
 <td align="left">否</td>
-<td align="left">写入起始点时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。</td>
+<td align="left">写入起始点时，采用的映射函数，Nebula Graph 2.x仅支持HASH。默认不做映射。</td>
 </tr>
 <tr>
 <td align="left"><code>withDstIdField</code></td>
@@ -2585,7 +2585,7 @@
 <tr>
 <td align="left"><code>withDstPolicy</code></td>
 <td align="left">否</td>
-<td align="left">写入目的点时，采用的映射函数，Nebula Graph 2.0仅支持HASH。默认不做映射。</td>
+<td align="left">写入目的点时，采用的映射函数，Nebula Graph 2.x仅支持HASH。默认不做映射。</td>
 </tr>
 <tr>
 <td align="left"><code>withRankField</code></td>
@@ -2635,7 +2635,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
 </small>
 </div>
 </article>
