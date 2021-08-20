@@ -67,20 +67,6 @@ nGQL没有严格的构建格式要求，但根据恰当而统一的风格创建n
 
     即使子句不超过80个字符，如需换行后有助于理解，也可将子句再次分行。
 
-4. 语法关键词大写，变量小写。
-
-    不推荐：
-
-    ```ngql
-    go from "player100" over Follow
-    ```
-    
-    推荐:
-    
-    ```ngql
-    GO FROM "player100" OVER follow
-    ```
-
 ## 标识符命名
 
 在nGQL语句中，关键字、标点符号、空格以外的字符内容都是标识符。推荐的标识符命名方式如下。
@@ -115,6 +101,19 @@ nGQL没有严格的构建格式要求，但根据恰当而统一的风格创建n
   ```ngql
   MATCH (v:basketball_team) \
   RETURN v;
+  ```
+
+3. 语法关键词大写，变量小写。
+
+  不推荐：
+
+  ```ngql
+  go from "player100" over Follow
+   ```
+  推荐:
+    
+  ```ngql
+  GO FROM "player100" OVER follow
   ```
 
 ## Pattern
