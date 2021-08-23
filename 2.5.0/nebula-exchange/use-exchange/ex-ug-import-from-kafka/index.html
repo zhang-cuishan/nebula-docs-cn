@@ -2306,6 +2306,10 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </ol>
 <p>更多信息，请参见<a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
 <h3 id="2">步骤 2：修改配置文件<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果部分数据存储在Kafka的value域内，需要自行修改源码，从Kafka中获取value域，将value通过from_json函数解析，然后作为Dataframe返回。</p>
+</div>
 <p>编译Exchange后，复制<code>target/classes/application.conf</code>文件设置Kafka数据源相关的配置。在本示例中，复制的文件名为<code>kafka_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
 <div class="highlight"><pre><span></span><code>{
   # Spark相关配置
@@ -2370,8 +2374,8 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 消息类别。
       topic: "topic_name1"
 
-      # kafka数据有固定的字段名称：key、value、topic、partition、offset、timestamp、timestampType。
-      # 如果需要指定多个列名称，用英文逗号（,）隔开。
+      # Kafka数据有固定的域名称：key、value、topic、partition、offset、timestamp、timestampType。
+      # Spark读取为DataFrame后，如果需要指定多个字段，用英文逗号（,）隔开。
       # 在fields里指定字段名称，例如用key对应Nebula中的name， value对应Nebula中的age，示例如下：
       fields: [key,value]
       nebula.fields: [name,age]
@@ -2433,8 +2437,8 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 消息类别。
       topic: "topic_name3"
 
-      # kafka数据有固定的字段名称：key、value、topic、partition、offset、timestamp、timestampType。
-      # 如果需要指定多个列名称，用英文逗号（,）隔开。
+      # Kafka数据有固定的域名称：key、value、topic、partition、offset、timestamp、timestampType。
+      # Spark读取为DataFrame后，如果需要指定多个字段，用英文逗号（,）隔开。
       # 在fields里指定字段名称，例如用key对应Nebula中的degree，示例如下：
       fields: [key]
       nebula.fields: [degree]
@@ -2511,7 +2515,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
 </small>
 </div>
 </article>
