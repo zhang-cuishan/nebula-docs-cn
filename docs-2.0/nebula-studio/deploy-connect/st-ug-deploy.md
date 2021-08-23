@@ -219,6 +219,7 @@ $ npm run start
 ### 安装
 
 1. 根据需要下载 tar 包，建议选择最新版本。
+
    | 安装包 | Studio 版本 |
    | --- | --- |
    | [nebula-graph-studio-3.0.0-1.x86_64.tar.gz](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/3.0.0/nebula-graph-studio-3.0.0-1.x86_64.tar.gz) | 3.0.0 |
