@@ -22,7 +22,7 @@
 
 |参数|数据类型|默认值|是否必须|说明|
 |:---|:---|:---|:---|:---|
-|`spark.app.name`|string|`Nebula Exchange 2.0`|否|Spark驱动程序名称。|
+|`spark.app.name`|string|-|否|Spark驱动程序名称。|
 |`spark.driver.cores`|int|`1`|否|驱动程序使用的CPU核数，仅适用于集群模式。|
 |`spark.driver.maxResultSize`|string|`1G`|否|单个Spark操作（例如collect）时，所有分区的序列化结果的总大小限制（字节为单位）。最小值为1M，0表示无限制。|
 |`spark.executor.memory`|string|`1G`|否|Spark驱动程序使用的内存量，可以指定单位，例如512M、1G。|
