@@ -2178,7 +2178,11 @@
 </code></pre></div>
 </li>
 </ul>
-<p>在写入定长字符串时，如果尝试写入的字符串超出长度限制，Nebula Graph将截断字符串，仅存入符合长度限制的部分。例如，当一个图空间的VID类型为<code>FIXED_STRING(8)</code>时，如果尝试将<code>A_string_with_27_characters</code>设置为VID，然后使用nGQL命令查询该VID，获取到的只有<code>A_string</code>。</p>
+<p>如果尝试写入的定长字符串超出长度限制：</p>
+<ul>
+<li>当该定长字符串为属性值时，写入会成功，Nebula Graph将截断字符串，仅存入符合长度限制的部分。</li>
+<li>当该定长字符串为VID时，写入会失败，Nebula Graph将报错。</li>
+</ul>
 <h2 id="_4">转义字符<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>字符串中不支持直接换行，可以使用转义字符实现，例如：</p>
 <ul>
@@ -2216,7 +2220,7 @@ Background:
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
 </small>
 </div>
 </article>
