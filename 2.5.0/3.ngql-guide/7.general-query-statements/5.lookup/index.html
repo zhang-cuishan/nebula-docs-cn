@@ -2222,12 +2222,17 @@
 <li>索引会导致写性能大幅降低（降低90%甚至更多）。请不要随意在生产环境中使用索引，除非很清楚使用索引对业务的影响。</li>
 </ul>
 <ul>
-<li>如果查询时没有合适的索引，会退化为全表扫描。</li>
+<li>
+<p>如果<code>LOOKUP</code>查询时没有合适的索引，系统会在可用的索引中随机选择一个。</p>
+<p>例如，Tag <code>player</code>有属性<code>name</code>和<code>age</code>，Tag <code>player</code>本身和属性<code>name</code>有索引，而属性<code>age</code>没有索引。当运行<code>LOOKUP ON player WHERE player.age == 36 YIELD player.name;</code>时，系统会在Tag <code>player</code>和属性<code>age</code>的索引中随机使用一个。</p>
+</li>
 </ul>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>请确保<code>LOOKUP</code>语句有至少一个索引可用。如果需要创建索引，但是已经有相关的点、边或属性，用户必须在创建索引后<a href="../../14.native-index-statements/4.rebuild-native-index/">重建索引</a>，才能使其生效。</p>
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] [YIELD &lt;return_list&gt;];
+<div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
+[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
+[YIELD &lt;return_list&gt;];
 
 &lt;return_list&gt;
     &lt;prop_name&gt; [AS &lt;col_alias&gt;] [, &lt;prop_name&gt; [AS &lt;prop_alias&gt;] ...];
@@ -2265,40 +2270,27 @@ nebula&gt; REBUILD TAG INDEX index_player;
 | 15         |
 +------------+
 
-nebula&gt; LOOKUP ON player WHERE player.name == "Tony Parker";
+nebula&gt; LOOKUP ON player \
+        WHERE player.name == "Tony Parker";
 ============
 | VertexID |
 ============
 | 101      |
 ------------
 
-# 正则表达式匹配
-nebula&gt; LOOKUP ON player WHERE player.name =~ "^.{15,20}$" \
+nebula&gt; LOOKUP ON player \
+        WHERE player.name == "Tony Parker" \
         YIELD player.name, player.age;
-+-------------+----------------------+------------+
-| VertexID    | player.name          | player.age |
-+-------------+----------------------+------------+
-| "player147" | "Amar'e Stoudemire"  | 36         |
-+-------------+----------------------+------------+
-| "player144" | "Shaquille O'Neal"   | 47         |
-+-------------+----------------------+------------+
-...
+=======================================
+| VertexID | player.name | player.age |
+=======================================
+| 101      | Tony Parker | 36         |
+---------------------------------------
 
-nebula&gt; LOOKUP ON player WHERE player.name CONTAINS toLower("L") \
-        YIELD player.name, player.age;
-+-------------+---------------------+------------+
-| VertexID    | player.name         | player.age |
-+-------------+---------------------+------------+
-| "player145" | "JaVale McGee"      | 31         |
-+-------------+---------------------+------------+
-| "player144" | "Shaquille O'Neal"  | 47         |
-+-------------+---------------------+------------+
-| "player102" | "LaMarcus Aldridge" | 33         |
-+-------------+---------------------+------------+
-...
-
-nebula&gt; LOOKUP ON player WHERE player.name == "Kobe Bryant" YIELD player.name AS name \
-        | GO FROM $-.VertexID OVER serve \
+nebula&gt; LOOKUP ON player \
+        WHERE player.name == "Kobe Bryant" \
+        YIELD player.name AS name |\
+        GO FROM $-.VertexID OVER serve \
         YIELD $-.name, serve.start_year, serve.end_year, $$.team.name;
 ==================================================================
 | $-.name     | serve.start_year | serve.end_year | $$.team.name |
@@ -2317,7 +2309,8 @@ nebula&gt; REBUILD EDGE INDEX index_follow;
 | 62         |
 +------------+
 
-nebula&gt; LOOKUP ON follow WHERE follow.degree == 90;
+nebula&gt; LOOKUP ON follow \
+        WHERE follow.degree == 90;
 +-------------+-------------+---------+
 | SrcVID      | DstVID      | Ranking |
 +-------------+-------------+---------+
@@ -2329,7 +2322,9 @@ nebula&gt; LOOKUP ON follow WHERE follow.degree == 90;
 +-------------+-------------+---------+
 ...
 
-nebula&gt; LOOKUP ON follow WHERE follow.degree == 90 YIELD follow.degree;
+nebula&gt; LOOKUP ON follow \
+        WHERE follow.degree == 90 \
+        YIELD follow.degree;
 +-------------+-------------+---------+---------------+
 | SrcVID      | DstVID      | Ranking | follow.degree |
 +-------------+-------------+---------+---------------+
@@ -2341,8 +2336,10 @@ nebula&gt; LOOKUP ON follow WHERE follow.degree == 90 YIELD follow.degree;
 +-------------+-------------+---------+---------------+
 ...
 
-nebula&gt; LOOKUP ON follow WHERE follow.degree == 60 YIELD follow.degree AS Degree \
-        | GO FROM $-.DstVID OVER serve \
+nebula&gt; LOOKUP ON follow \
+        WHERE follow.degree == 60 \
+        YIELD follow.degree AS Degree |\
+        GO FROM $-.DstVID OVER serve \
         YIELD $-.DstVID, serve.start_year, serve.end_year, $$.team.name;
 +-------------+------------------+----------------+--------------+
 | $-.DstVID   | serve.start_year | serve.end_year | $$.team.name |
@@ -2356,7 +2353,7 @@ nebula&gt; LOOKUP ON follow WHERE follow.degree == 60 YIELD follow.degree AS Deg
 </code></pre></div>
 <h2 id="tagedge_type">通过Tag列出所有的对应的点/通过Edge type列出边<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h2>
 <p>如果需要通过Tag列出所有的点，或通过Edge type列出边，则Tag、Edge type或属性上必须有至少一个索引。</p>
-<p>例如一个Tag<code>player</code>有两个属性<code>name</code>和<code>age</code>，为了遍历所有包含Tag<code>player</code>的点ID，Tag<code>player</code>、属性<code>name</code>或属性<code>age</code>中必须有一个已经创建索引。</p>
+<p>例如一个Tag <code>player</code>有属性<code>name</code>和<code>age</code>，为了遍历所有包含Tag <code>player</code>的点ID，Tag <code>player</code>、属性<code>name</code>或属性<code>age</code>中必须有一个已经创建索引。</p>
 <ul>
 <li>查找所有Tag为<code>player</code>的点 VID。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player(name string,age int);
 
@@ -2369,7 +2366,8 @@ nebula&gt; REBUILD TAG INDEX player_index;
 | 66         |
 +------------+
 
-nebula&gt; INSERT VERTEX player(name,age) VALUES "player100":("Tim Duncan", 42), "player101":("Tony Parker", 36);
+nebula&gt; INSERT VERTEX player(name,age) \
+        VALUES "player100":("Tim Duncan", 42), "player101":("Tony Parker", 36);
 
 # 列出所有的 player。类似于 MATCH (n:player) RETURN id(n) /*, n */。
 
@@ -2396,7 +2394,8 @@ nebula&gt; REBUILD EDGE INDEX like_index;
 | 88         |
 +------------+
 
-nebula&gt; INSERT EDGE like(likeness) values "player100"-&gt;"player101":(95);
+nebula&gt; INSERT EDGE like(likeness) \
+        VALUES "player100"-&gt;"player101":(95);
 
 # 列出所有的 like 边。类似于 MATCH (s)-[e:like]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */。
 
@@ -2411,14 +2410,16 @@ nebula)&gt; LOOKUP ON like;
 </ul>
 <h2 id="_6">统计点或边<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>统计Tag为<code>player</code>的点和Edge type为<code>like</code>的边。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player | YIELD COUNT(*) AS Player_Number;
+<div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player |\
+        YIELD COUNT(*) AS Player_Number;
 +---------------+
 | Player_Number |
 +---------------+
 | 2             |
 +---------------+
 
-nebula&gt; LOOKUP ON like | YIELD COUNT(*) AS Like_Number;
+nebula&gt; LOOKUP ON like | \
+        YIELD COUNT(*) AS Like_Number;
 +-------------+
 | Like_Number |
 +-------------+
@@ -2433,7 +2434,7 @@ nebula&gt; LOOKUP ON like | YIELD COUNT(*) AS Like_Number;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
 </small>
 </div>
 </article>

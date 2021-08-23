@@ -2178,9 +2178,23 @@
 <h2 id="_2">使用索引必读<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>索引的概念和使用限制都较为复杂。索引配合<code>LOOKUP</code>和<code>MATCH</code>语句使用。</p>
 <p><code>CREATE INDEX</code>语句用于对Tag、EdgeType或其属性创建原生索引。通常分别称为“Tag索引”、“Edge type索引”和“属性索引”。</p>
-<p>"Tag索引"和"Edge type索引"应用于和"Tag"、"Edge type"（自身）相关的查询,而不是"基于Tag上某属性"的查询。例如用 <code>LOOKUP</code> 找到"某种Edge type E"的所有的边。</p>
-<p>"属性索引"目的是"基于属性的查询"。例如基于属性<code>Age</code>找到<code>Age == 19</code>的所有的点VID。</p>
-<p>如果已经为"某个Tag T的属性A"建立过属性索引<code>i_TA</code>，则没有必要对于<code>Tag T</code>额外再建立一个Tag索引<code>i_T</code>。这是因为查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。Edge type索引同理。但是，<code>i_T</code>却不能替代<code>i_TA</code>用于属性查找。</p>
+<ul>
+<li>Tag索引和Edge type索引应用于和Tag、Edge type自身相关的查询，例如用<code>LOOKUP</code>查找有Tag <code>player</code>的所有点。</li>
+</ul>
+<ul>
+<li>“属性索引”应用于基于属性的查询，例如基于属性<code>age</code>找到<code>age == 19</code>的所有的点。</li>
+</ul>
+<p>如果已经为Tag <code>T</code>的属性<code>A</code>建立过属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type索引同理）：</p>
+<ul>
+<li>查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。</li>
+</ul>
+<ul>
+<li>在<code>MATCH</code>语句中<code>i_T</code>不能替代<code>i_TA</code>用于属性查找。</li>
+</ul>
+<ul>
+<li>在<code>LOOKUP</code>语句中<code>i_T</code>可能替代<code>i_TA</code>用于属性查找。</li>
+</ul>
+<p>使用替代索引进行查询虽然能获得相同的结果，但查询性能会根据选择的索引有所区别。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>不要任意在生产环境中使用索引，除非很清楚使用索引对业务的影响。索引会导致写性能下降90%甚至更多。</p>
@@ -2301,7 +2315,7 @@ nebula&gt; LOOKUP ON t WHERE p1 == 1 and p2 == 1 and p3 == 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
 </small>
 </div>
 </article>
