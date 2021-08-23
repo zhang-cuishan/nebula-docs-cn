@@ -1965,6 +1965,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#maxcompute">
+    MaxCompute源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#neo4j">
     Neo4j源特有参数
   </a>
@@ -1972,6 +1977,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mysql">
     MySQL源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clickhouse">
+    ClickHouse源特有参数
   </a>
 </li>
 <li class="md-nav__item">
@@ -1987,6 +1997,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#kafka">
     Kafka源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sst">
+    SST源特有参数
   </a>
 </li>
 </ul>
@@ -2226,6 +2241,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#maxcompute">
+    MaxCompute源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#neo4j">
     Neo4j源特有参数
   </a>
@@ -2233,6 +2253,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#mysql">
     MySQL源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clickhouse">
+    ClickHouse源特有参数
   </a>
 </li>
 <li class="md-nav__item">
@@ -2248,6 +2273,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#kafka">
     Kafka源特有参数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sst">
+    SST源特有参数
   </a>
 </li>
 </ul>
@@ -2664,6 +2694,76 @@
 </tr>
 </tbody>
 </table>
+<h3 id="maxcompute">MaxCompute源特有参数<a class="headerlink" href="#maxcompute" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>tags.table</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute的表名。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.project</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute的项目名。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.odpsUrl</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute服务的odpsUrl。地址可根据<a href="https://help.aliyun.com/document_detail/34951.html">阿里云文档</a>查看。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.tunnelUrl</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute服务的tunnelUrl。地址可根据<a href="https://help.aliyun.com/document_detail/34951.html">阿里云文档</a>查看。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.accessKeyId</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute服务的accessKeyId。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.accessKeySecret</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">MaxCompute服务的accessKeySecret。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.partitionSpec</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">MaxCompute表的分区描述。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.sentence</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">查询数据源的语句。SQL语句中的表名和上方table的值相同。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="neo4j">Neo4j源特有参数<a class="headerlink" href="#neo4j" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -2783,6 +2883,55 @@
 </tr>
 </tbody>
 </table>
+<h3 id="clickhouse">ClickHouse源特有参数<a class="headerlink" href="#clickhouse" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>tags.url</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">ClickHouse的JDBC URL。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.user</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">有读取权限的ClickHouse用户名。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.password</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">用户名对应密码。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.numPartition</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">ClickHouse分区数。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.sentence</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">查询数据源的语句。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="hbase">Hbase源特有参数<a class="headerlink" href="#hbase" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -2899,6 +3048,27 @@
 <td align="left"><code>10</code></td>
 <td align="left">是</td>
 <td align="left">读取消息的间隔。单位：秒。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sst">SST源特有参数<a class="headerlink" href="#sst" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>tags.path</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">指定需要生成SST文件的源文件的路径。</td>
 </tr>
 </tbody>
 </table>

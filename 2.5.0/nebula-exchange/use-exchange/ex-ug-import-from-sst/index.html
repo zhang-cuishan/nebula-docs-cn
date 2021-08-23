@@ -2260,7 +2260,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="sst">导入SST文件数据<a class="headerlink" href="#sst" title="Permanent link">¶</a></h1>
-<p>本文以一个示例说明如何将数据源的数据生成SST（Sorted String Table）文件，然后导入Nebula Graph，示例数据源是CSV文件。</p>
+<p>本文以一个示例说明如何将数据源的数据生成SST（Sorted String Table）文件并保存在HDFS上，然后导入Nebula Graph，示例数据源是CSV文件。</p>
 <blockquote>
 <p><strong>说明</strong>：仅Linux系统支持导入SST文件。</p>
 </blockquote>
@@ -2531,8 +2531,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
       # 指定CSV文件的路径。
-      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
-      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      # 文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
       path: "hdfs://*.*.*.*:9000/dataset/vertex_player.csv"
 
       # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
@@ -2577,8 +2576,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
       # 指定CSV文件的路径。
-      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
-      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      # 文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
       path: "hdfs://*.*.*.*:9000/dataset/vertex_team.csv"
 
       # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
@@ -2628,8 +2626,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
       # 指定CSV文件的路径。
-      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
-      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      # 文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
       path: "hdfs://*.*.*.*:9000/dataset/edge_follow.csv"
 
       # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
@@ -2681,8 +2678,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       }
 
       # 指定CSV文件的路径。
-      # 如果文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
-      # 如果文件存储在本地，用双引号括起路径，以file://开头，例如"file:///tmp/xx.csv"。
+      # 文件存储在HDFS上，用双引号括起路径，以hdfs://开头，例如"hdfs://ip:port/xx/xx"。
       path: "hdfs://*.*.*.*:9000/dataset/edge_serve.csv"
 
       # 如果CSV文件没有表头，使用[_c0, _c1, _c2, ..., _cn]表示其表头，并将列指示为属性值的源。
@@ -2782,7 +2778,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
 </small>
 </div>
 </article>
