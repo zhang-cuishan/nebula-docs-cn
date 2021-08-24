@@ -2262,7 +2262,7 @@
 <p>集群中的每个机器都需要部署<code>node-exporter</code>服务。</p>
 </div>
 <p>在目录<code>node-exporter</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span>:9100 <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span><span class="s2">":9100"</span> <span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
 <h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">¶</a></h3>
@@ -2317,7 +2317,7 @@ clusters:
 </li>
 <li>
 <p>执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./nebula-stats-exporter --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup  ./nebula-stats-exporter --listen-address<span class="o">=</span><span class="s2">":9200"</span> --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>

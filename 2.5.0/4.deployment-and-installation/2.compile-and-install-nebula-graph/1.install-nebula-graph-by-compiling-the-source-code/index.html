@@ -2290,18 +2290,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>如需启动服务，请复制安装目录下的 <code>etc/</code> 目录（默认为<code>/usr/local/nebula</code>）下的配置文件。
-   <div class="highlight"><pre><span></span><code># 用于生产环境
-$ cd /usr/local/nebula/etc
-$ sudo cp nebula-storaged.conf.production nebula-storaged.conf
-$ sudo cp nebula-metad.conf.production nebula-metad.conf
-$ sudo cp nebula-graphd.conf.production nebula-graphd.conf
-# 用于试用
-$ cd /usr/local/nebula/etc
-$ sudo cp nebula-storaged.conf.default nebula-storaged.conf
-$ sudo cp nebula-metad.conf.default nebula-metad.conf
-$ sudo cp nebula-graphd.conf.default nebula-graphd.conf
-</code></pre></div></p>
+<p>安装目录下的 <code>etc/</code> 目录中（默认为<code>/usr/local/nebula/etc</code>）的配置文件为参考模版，用户可以根据需要创建自己的配置文件。如果要使用 <code>script</code> 目录下的脚本，启动、停止、重启、中止和查看服务，配置文件需要命名为 <code>nebula-graph.conf</code>，<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>。</p>
 </li>
 </ol>
 <h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
