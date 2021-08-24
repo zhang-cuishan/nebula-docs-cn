@@ -2192,7 +2192,13 @@
 <li>在<code>MATCH</code>语句中<code>i_T</code>不能替代<code>i_TA</code>用于属性查找。</li>
 </ul>
 <ul>
-<li>在<code>LOOKUP</code>语句中<code>i_T</code>可能替代<code>i_TA</code>用于属性查找。</li>
+<li>
+<p>在<code>LOOKUP</code>语句中<code>i_T</code>可能替代<code>i_TA</code>用于属性查找。</p>
+<div class="admonition compatibility">
+<p class="admonition-title">历史版本兼容性</p>
+<p>在此前的版本中，<code>LOOKUP</code>语句中的Tag或Edge type索引不可替代属性索引用于属性查找。</p>
+</div>
+</li>
 </ul>
 <p>使用替代索引进行查询虽然能获得相同的结果，但查询性能会根据选择的索引有所区别。</p>
 <div class="admonition caution">
@@ -2315,7 +2321,7 @@ nebula&gt; LOOKUP ON t WHERE p1 == 1 and p2 == 1 and p3 == 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2021</span>
 </small>
 </div>
 </article>
