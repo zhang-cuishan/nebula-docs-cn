@@ -1695,6 +1695,16 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#prometheus">
+    部署prometheus服务
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula-http-gateway">
+    部署nebula-http-gateway服务
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-graph-dashboard">
     部署nebula-graph-dashboard服务
   </a>
@@ -2129,6 +2139,16 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#prometheus">
+    部署prometheus服务
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula-http-gateway">
+    部署nebula-http-gateway服务
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#nebula-graph-dashboard">
     部署nebula-graph-dashboard服务
   </a>
@@ -2251,105 +2271,101 @@
 <p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>nebula-stats-exporter</code>服务。</p>
 </div>
 <ol>
-<li>在目录<code>nebula-stats-exporter</code>内修改文件<code>config.yaml</code>，配置所有服务的HTTP端口，示例如下：</li>
-</ol>
-<div class="highlight"><pre><span></span><code>version: v0.0.4
+<li>
+<p>在目录<code>nebula-stats-exporter</code>内修改文件<code>config.yaml</code>，配置所有服务的HTTP端口，示例如下：</p>
+<p><code>bash
+version: v0.0.4
 clusters:
   - name: nebula
     instances:
       - name: metad0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19559</span>
+        endpointIP: 192.168.8.157
+        endpointPort: 19559
         componentType: metad
       - name: metad1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19559</span>
+        endpointIP: 192.168.8.155
+        endpointPort: 19559
         componentType: metad
       - name: metad2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19559</span>
+        endpointIP: 192.168.8.154
+        endpointPort: 19559
         componentType: metad
       - name: graphd0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19669</span>
+        endpointIP: 192.168.8.157
+        endpointPort: 19669
         componentType: graphd
       - name: graphd1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19669</span>
+        endpointIP: 192.168.8.155
+        endpointPort: 19669
         componentType: graphd
       - name: graphd2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19669</span>
+        endpointIP: 192.168.8.154
+        endpointPort: 19669
         componentType: graphd
       - name: storaged0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19779</span>
+        endpointIP: 192.168.8.157
+        endpointPort: 19779
         componentType: storaged
       - name: storaged1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19779</span>
+        endpointIP: 192.168.8.155
+        endpointPort: 19779
         componentType: storaged
       - name: storaged2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19779</span>
-        componentType: storaged
-  <span class="sb">```</span>
-
-<span class="m">2</span>. 执行如下命令启动服务：
-
-  <span class="sb">```</span>bash
-  $ nohup ./nebula-stats-exporter --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
-  <span class="sb">```</span>
-
-服务启动后，可以在浏览器中输入<span class="sb">`</span>&lt;IP&gt;:9200<span class="sb">`</span>检查服务是否正常启动。
-
-<span class="c1">### 部署`prometheus`服务</span>
-
-!!! note
-
-    只需要在<span class="sb">`</span>nebula-graph-dashboard<span class="sb">`</span>服务所在机器部署<span class="sb">`</span>prometheus<span class="sb">`</span>服务。
-
-<span class="m">1</span>. 在目录<span class="sb">`</span>prometheus<span class="sb">`</span>内修改文件<span class="sb">`</span>prometheus.yaml<span class="sb">`</span>，配置<span class="sb">`</span>node-exporter<span class="sb">`</span>服务和<span class="sb">`</span>nebula-stats-exporter<span class="sb">`</span>服务的IP地址和端口，示例如下：
-
-  <span class="sb">```</span>bash
-  global:
-    scrape_interval:     5s
-    evaluation_interval: 5s
-  scrape_configs:
-    - job_name: <span class="s1">'nebula-exporter'</span>
-      static_configs:
-        - targets: <span class="o">[</span>
-            <span class="s1">'192.168.xx.100:9200'</span>,  <span class="c1"># nebula-stats-exporter服务的IP地址和端口。</span>
-          <span class="o">]</span>
-    - job_name: <span class="s1">'node-exporter'</span>
-      static_configs:
-        - targets: <span class="o">[</span>
-            <span class="s1">'192.168.xx.101:9100'</span>  <span class="c1"># node-exporter服务的IP地址和端口。</span>
-          <span class="o">]</span>
-  <span class="sb">```</span>
-
-  - scrape_interval：收集监控数据的间隔时间。默认为1分钟。
-
-  - evaluation_interval：告警规则扫描时间间隔。默认为1分钟。
-
-<span class="m">2</span>. 执行如下命令启动服务：
-
-  <span class="sb">```</span>bash
-  $ nohup ./prometheus --config.file<span class="o">=</span>./prometheus.yaml <span class="p">&amp;</span>
-  <span class="sb">```</span>
-
-服务启动后，可以在浏览器中输入<span class="sb">`</span>&lt;IP&gt;:9090<span class="sb">`</span>检查服务是否正常启动。
-
-<span class="c1">### 部署`nebula-http-gateway`服务</span>
-
-!!! note
-
-    只需要在<span class="sb">`</span>nebula-graph-dashboard<span class="sb">`</span>服务所在机器部署<span class="sb">`</span>nebula-http-gateway<span class="sb">`</span>服务。
-
-在目录<span class="sb">`</span>nebula-http-gateway<span class="sb">`</span>内执行如下命令启动服务：
-
-<span class="sb">```</span>bash
-$ nohup ./nebula-httpd <span class="p">&amp;</span>
+        endpointIP: 192.168.8.154
+        endpointPort: 19779
+        componentType: storaged</code></p>
+</li>
+<li>
+<p>执行如下命令启动服务：</p>
+<div class="highlight"><pre><span></span><code>$ nohup ./nebula-stats-exporter --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
+</code></pre></div>
+</li>
+</ol>
+<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9200</code>检查服务是否正常启动。</p>
+<h3 id="prometheus">部署<code>prometheus</code>服务<a class="headerlink" href="#prometheus" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>prometheus</code>服务。</p>
+</div>
+<ol>
+<li>
+<p>在目录<code>prometheus</code>内修改文件<code>prometheus.yaml</code>，配置<code>node-exporter</code>服务和<code>nebula-stats-exporter</code>服务的IP地址和端口，示例如下：</p>
+<div class="highlight"><pre><span></span><code>global:
+  scrape_interval:     5s
+  evaluation_interval: 5s
+scrape_configs:
+  - job_name: <span class="s1">'nebula-exporter'</span>
+    static_configs:
+      - targets: <span class="o">[</span>
+          <span class="s1">'192.168.xx.100:9200'</span>,  <span class="c1"># nebula-stats-exporter服务的IP地址和端口。</span>
+        <span class="o">]</span>
+  - job_name: <span class="s1">'node-exporter'</span>
+    static_configs:
+      - targets: <span class="o">[</span>
+          <span class="s1">'192.168.xx.101:9100'</span>  <span class="c1"># node-exporter服务的IP地址和端口。</span>
+        <span class="o">]</span>
+</code></pre></div>
+<ul>
+<li>scrape_interval：收集监控数据的间隔时间。默认为1分钟。</li>
+</ul>
+<ul>
+<li>evaluation_interval：告警规则扫描时间间隔。默认为1分钟。</li>
+</ul>
+</li>
+<li>
+<p>执行如下命令启动服务：</p>
+<div class="highlight"><pre><span></span><code>$ nohup ./prometheus --config.file<span class="o">=</span>./prometheus.yaml <span class="p">&amp;</span>
+</code></pre></div>
+</li>
+</ol>
+<p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9090</code>检查服务是否正常启动。</p>
+<h3 id="nebula-http-gateway">部署<code>nebula-http-gateway</code>服务<a class="headerlink" href="#nebula-http-gateway" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>只需要在<code>nebula-graph-dashboard</code>服务所在机器部署<code>nebula-http-gateway</code>服务。</p>
+</div>
+<p>在目录<code>nebula-http-gateway</code>内执行如下命令启动服务：</p>
+<div class="highlight"><pre><span></span><code>$ nohup ./nebula-httpd <span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:8090</code>检查服务是否正常启动。</p>
 <h3 id="nebula-graph-dashboard">部署<code>nebula-graph-dashboard</code>服务<a class="headerlink" href="#nebula-graph-dashboard" title="Permanent link">¶</a></h3>
