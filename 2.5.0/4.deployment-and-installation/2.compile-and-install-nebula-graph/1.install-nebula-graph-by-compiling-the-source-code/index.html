@@ -2289,6 +2289,20 @@
 <div class="highlight"><pre><span></span><code>$ sudo make install-all
 </code></pre></div>
 </li>
+<li>
+<p>如需启动服务，请复制安装目录下的 <code>etc/</code> 目录（默认为<code>/usr/local/nebula</code>）下的配置文件。
+   <div class="highlight"><pre><span></span><code># 用于生产环境
+$ cd /usr/local/nebula/etc
+$ sudo cp nebula-storaged.conf.production nebula-storaged.conf
+$ sudo cp nebula-metad.conf.production nebula-metad.conf
+$ sudo cp nebula-graphd.conf.production nebula-graphd.conf
+# 用于试用
+$ cd /usr/local/nebula/etc
+$ sudo cp nebula-storaged.conf.default nebula-storaged.conf
+$ sudo cp nebula-metad.conf.default nebula-metad.conf
+$ sudo cp nebula-graphd.conf.default nebula-graphd.conf
+</code></pre></div></p>
+</li>
 </ol>
 <h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
 <p>master分支的代码更新速度快，如果安装了master分支对应的开发版Nebula Graph，可根据以下步骤更新版本。</p>
@@ -2377,7 +2391,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2021</span>
 </small>
 </div>
 </article>
