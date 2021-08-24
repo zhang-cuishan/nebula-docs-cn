@@ -40,7 +40,7 @@
 
 ## Changes & Known issues
 
-- Subgraph 语法变化
+- Subgraph语法变化。
 
     ```ngql
     # 2.5.0版本增加WITH PROP关键字用于输出属性
@@ -68,4 +68,4 @@
             | ORDER BY number DESC, age DESC;
     ```
     
-该版本已知 bug/issue 见 https://github.com/vesoft-inc/nebula-graph/issues
+该版本已知bug/issue请参见[issues](https://github.com/vesoft-inc/nebula-graph/issues)。
