@@ -2291,6 +2291,10 @@
 </li>
 <li>
 <p>安装目录下的 <code>etc/</code> 目录中（默认为<code>/usr/local/nebula/etc</code>）的配置文件为参考模版，用户可以根据需要创建自己的配置文件。如果要使用 <code>script</code> 目录下的脚本，启动、停止、重启、中止和查看服务，配置文件需要命名为 <code>nebula-graph.conf</code>，<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>。</p>
+<div class="admonition compatibility">
+<p class="admonition-title">Compatibility</p>
+<p>在 2.0.1 中，可以直接使用 <code>script</code> 目录下的脚本，不需要将配置文件重新命名。</p>
+</div>
 </li>
 </ol>
 <h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
@@ -2380,7 +2384,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2021</span>
 </small>
 </div>
 </article>
