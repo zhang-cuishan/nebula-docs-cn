@@ -36,7 +36,7 @@
 
 ## Map顺序说明
 
-<!--`RETURN`返回Map时，Key的顺序是未定义的。-->
+`RETURN`返回Map时，Key的顺序是未定义的。
 
 ```ngql
 nebula> RETURN {age: 32, name: "Marco Belinelli"};
