@@ -2102,10 +2102,11 @@
 <ul>
 <li>RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -Uvh &lt;package_name&gt;
 </code></pre></div>
-</li>
-</ul>
-<ul>
-<li>DEB包<div class="highlight"><pre><span></span><code>$ sudo dpkg -i &lt;package_name&gt;
+<p>若安装时指定路径，那么升级时也需要指定路径</p>
+<p><div class="highlight"><pre><span></span><code>$ sudo rpm  -Uivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt; 
+</code></pre></div>
+   - DEB包</p>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg -i &lt;package_name&gt;
 </code></pre></div>
 </li>
 </ul>
@@ -2133,7 +2134,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2021</span>
 </small>
 </div>
 </article>
