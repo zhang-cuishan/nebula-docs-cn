@@ -2103,9 +2103,10 @@
 <ul>
 <li>如果使用原生nGQL语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等），必须使用管道符或分号组合子句。</li>
 </ul>
-<p>!!! Danger “行为未定义”</p>
-<div class="codehilite"><pre><span></span><code>不要混用 openCypher 兼容语句和原生 nGQ L语句，行为是未定义的。
-</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">行为未定义</p>
+<p>不要混用 openCypher 兼容语句和原生 nGQL语句，行为是未定义的。</p>
+</div>
 <h2 id="_2">复合查询不支持事务<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>例如一个查询由三个子查询A、B、C组成，A是一个读操作，B是一个计算操作，C是一个写操作，如果在执行过程中，任何一个操作执行失败，则整个结果是未定义的：没有回滚，而且写入的内容取决于执行程序。</p>
 <div class="admonition note">
@@ -2150,7 +2151,7 @@ nebula&gt; GO FROM "player100" OVER follow YIELD follow._dst AS id | \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2021</span>
 </small>
 </div>
 </article>
