@@ -2136,10 +2136,14 @@
 <div class="highlight"><pre><span></span><code>&lt;YIELD clause&gt;
 ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...];
 </code></pre></div>
+<div class="admonition compatibility">
+<p class="admonition-title">Compatibility</p>
+<p>原生nGQL语法中，<code>ORDER BY</code>命令后必须使用引用符<code>$-.</code>。但在2.5.0之前的版本中不需要。</p>
+</div>
 <h3 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; FETCH PROP ON player "player100", "player101", "player102", "player103" \
         YIELD player.age AS age, player.name AS name \
-        | ORDER BY age ASC, name DESC;
+        | ORDER BY $-.age ASC, $-.name DESC;
 +-------------+-----+---------------------+
 | VertexID    | age | name                |
 +-------------+-----+---------------------+
@@ -2222,7 +2226,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"}) --&gt; (v2) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2021</span>
 </small>
 </div>
 </article>

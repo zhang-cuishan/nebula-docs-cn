@@ -2503,11 +2503,11 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"}) RETURN v;
 <h3 id="id">匹配点ID<a class="headerlink" href="#id" title="Permanent link">¶</a></h3>
 <p>用户可以使用点ID去匹配点。<code>id()</code>函数可以检索点的ID。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v) WHERE id(v) == 'player101' RETURN v;
-+---------------------------------------------------+
-| v                                                 |
-+---------------------------------------------------+
-| (player101) player.name:Tony Parker,player.age:36 |
-+---------------------------------------------------+
++-----------------------------------------------------+
+| v                                                   |
++-----------------------------------------------------+
+| ("player101" :player{age: 36, name: "Tony Parker"}) |
++-----------------------------------------------------+
 </code></pre></div>
 <p>要匹配多个点的ID，可以用<code>WHERE id(v) IN [vid_list]</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player { name: 'Tim Duncan' })--(v2) \
@@ -2976,7 +2976,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})-[e]-&gt;(v2) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 25, 2021</span>
 </small>
 </div>
 </article>
