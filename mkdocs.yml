@@ -19,8 +19,8 @@ theme:
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
   favicon: 'assets/images/favicon.ico'
   palette:
-    primary: 'indigo'
-    accent: 'indigo'
+    primary: 'deep orange'
+    accent: 'light green'
   features:
     - navigation.top
   language: 'zh'
