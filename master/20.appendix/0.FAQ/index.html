@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/20.appendix/0.FAQ/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
-<title>Nebula Graph 常见问题 - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
+<title>常见问题 FAQ - Nebula Graph Database 手册</title>
+<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Nebula Graph 常见问题
-            
-          </span>
+              
+                常见问题 FAQ
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1151,14 +1151,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1316,41 +1321,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -1988,6 +1958,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2031,14 +2006,19 @@
           附录
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../releasenote/">
+        Release Note
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Nebula Graph 常见问题
+          常见问题 FAQ
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -2492,7 +2472,7 @@
 <div class="admonition compatibility">
 <p class="admonition-title"><code>X</code>版本兼容性</p>
 <p>Nebula Graph 2.5.0 与 历史版本 (包括 Nebula Graph 1.x 和 2.0-RC) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
-数据格式升级参见<a href="../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-200.md">升级 Nebula Graph 历史版本至 v2.0.0</a>。
+数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-250/">升级 Nebula Graph 历史版本至 v2.0.0</a>。
 客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
 </div>
 <div class="admonition compatibility">
@@ -2579,7 +2559,10 @@ Got 1 rows (time spent 1235/1934 us)
 <h3 id="storage_error_e_rpc_failure">如何处理错误信息<code>Storage Error E_RPC_FAILURE</code><a class="headerlink" href="#storage_error_e_rpc_failure" title="Permanent link">¶</a></h3>
 <p>报错原因通常为Graph服务向Storage服务请求了过多的数据，导致Storage服务超时。请尝试以下解决方案：</p>
 <ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true再重启服务。</li>
+<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。</li>
+</ul>
+<!--提示：请在配置文件开头添加--local_config=true再重启服务。-->
+<ul>
 <li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
 <li>检查Storaged是否发生的 OOM。(<code>dmesg |grep nebula</code>)。</li>
 <li>为 Storage 服务器提供性能更好的SSD或者内存。</li>
@@ -2604,8 +2587,9 @@ Got 1 rows (time spent 1235/1934 us)
 <li>导入数据时，手动<a href="../../8.service-tuning/compaction/">compaction</a>，加速读的速度。</li>
 </ul>
 <ul>
-<li>增加Graph服务与Storage服务的RPC连接超时时间，在<code>nebula-storaged.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为60000毫秒。提示：请在配置文件开头添加--local_config=true再重启服务。</li>
+<li>增加Graph服务与Storage服务的RPC连接超时时间，在<code>nebula-storaged.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为60000毫秒。</li>
 </ul>
+<!--提示：请在配置文件开头添加--local_config=true再重启服务。-->
 <h3 id="nebula-storagedinfometaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfohbprocessorcpp54_reject_wrong_cluster_host_xxxx9771">如何处理<code>nebula-storaged.INFO</code>错误日志<code>MetaClient.cpp:65] Heartbeat failed, status:Wrong cluster!</code>或者 <code>nebula-metad.INFO</code>含有错误日志<code>HBProcessor.cpp:54] Reject wrong cluster host "x.x.x.x":9771!</code><a class="headerlink" href="#nebula-storagedinfometaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfohbprocessorcpp54_reject_wrong_cluster_host_xxxx9771" title="Permanent link">¶</a></h3>
 <p>报错的原因可能是用户修改了 metad 的 ip 或者端口信息，或者 storage 之前加入过其他集群。请尝试以下解决方法：</p>
 <p>用户到storage部署的机器所在的安装目录（默认安装目录为 <code>/usr/local/nebula</code>）下面将<code>cluster.id</code>文件删除，然后重启 storaged 服务。</p>
@@ -2757,7 +2741,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月19日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2770,7 +2754,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: Nebula Bench" class="md-footer__link md-footer__link--prev" href="../../nebula-bench/" rel="prev">
+<a aria-label="上一页: Release Note" class="md-footer__link md-footer__link--prev" href="../releasenote/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2779,7 +2763,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <span class="md-footer__direction">
                 上一页
               </span>
-              Nebula Bench
+              Release Note
             </div>
 </div>
 </a>
@@ -2821,8 +2805,8 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>

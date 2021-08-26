@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/reuse/source_connect-to-nebula-graph/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>Source connect to nebula graph - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              Source connect to nebula graph
-            
-          </span>
+              
+                Source connect to nebula graph
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1151,14 +1151,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1316,41 +1321,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -1988,6 +1958,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2032,8 +2007,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2104,22 +2084,51 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula_console">
-    Nebula Console导出模式
+    Nebula Console命令
+  </a>
+<nav aria-label="Nebula Console命令" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#csv">
+    导出CSV文件
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_1">
-    使用Nebula Console断开连接
+<a class="md-nav__link" href="#dot">
+    导出DOT文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
+    加载测试数据集
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    重复执行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    睡眠
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    断开连接
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
     常见问题
   </a>
 <nav aria-label="常见问题" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#nebula_console_2">
+<a class="md-nav__link" href="#nebula_console_1">
     如何通过源码安装Nebula Console？
   </a>
 </li>
@@ -2146,7 +2155,7 @@
 <h2 id="nebula_consolenebula_graph">使用Nebula Console连接Nebula Graph<a class="headerlink" href="#nebula_consolenebula_graph" title="Permanent link">¶</a></h2>
 <h3 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <ul>
-<li>Nebula Graph服务已启动。如何启动服务，请参见<a href="../../2.quick-start/5.start-stop-service/">启动和停止Nebula Graph服务</a>。</li>
+<li>Nebula Graph服务已<a href="../../2.quick-start/5.start-stop-service/">启动</a>。</li>
 </ul>
 <ul>
 <li>运行Nebula Console的机器和运行Nebula Graph的服务器网络互通。</li>
@@ -2159,11 +2168,11 @@
 <p class="admonition-title">Note</p>
 <p>建议选择<strong>最新</strong>版本。</p>
 </div>
-<p><img alt="Select a Nebula Graph version and click **Assets**" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-console-releases-1.png" title="Click Assets to show the available Nebula Graph binary files"/></p>
+<p><img alt="Select a Nebula Graph version and click **Assets**" src="../console.png" title="Click Assets to show the available Nebula Graph binary files"/></p>
 </li>
 <li>
 <p>在<strong>Assets</strong>区域找到机器运行所需的二进制文件，下载文件到机器上。</p>
-<p><img alt="Click to download the package according to your hardware architecture" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/nebula-console-releases-2-1.png" title="Click the package name to download it"/></p>
+<p><img alt="Click to download the package according to your hardware architecture" src="../assets.png" title="Click the package name to download it"/></p>
 </li>
 <li>
 <p>（可选）为方便使用，重命名文件为<code>nebula-console</code>。</p>
@@ -2186,14 +2195,22 @@
 </li>
 <li>
 <p>执行如下命令连接Nebula Graph。</p>
-<p>- Linux或macOS</p>
+<ul>
+<li>
+<p>Linux或macOS</p>
 <div class="highlight"><pre><span></span><code>$ ./nebula-console -addr &lt;ip&gt; -port &lt;port&gt; -u &lt;username&gt; -p &lt;password&gt;
-<span class="o">[</span>-t <span class="m">120</span><span class="o">]</span> <span class="o">[</span>-e <span class="s2">"nGQL_statement"</span> <span class="p">|</span> -f filename.nGQL<span class="o">]</span>
+  <span class="o">[</span>-t <span class="m">120</span><span class="o">]</span> <span class="o">[</span>-e <span class="s2">"nGQL_statement"</span> <span class="p">|</span> -f filename.nGQL<span class="o">]</span>
 </code></pre></div>
-<p>- Windows</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Windows</p>
 <div class="highlight"><pre><span></span><code><span class="p">&gt;</span> <span class="n">nebula-console</span><span class="p">.</span><span class="n">exe</span> <span class="n">-addr</span> <span class="p">&lt;</span><span class="n">ip</span><span class="p">&gt;</span> <span class="n">-port</span> <span class="p">&lt;</span><span class="n">port</span><span class="p">&gt;</span> <span class="n">-u</span> <span class="p">&lt;</span><span class="n">username</span><span class="p">&gt;</span> <span class="n">-p</span> <span class="p">&lt;</span><span class="n">password</span><span class="p">&gt;</span>
-<span class="p">[</span><span class="n">-t</span> <span class="n">120</span><span class="p">]</span> <span class="p">[</span><span class="n">-e</span> <span class="s2">"nGQL_statement"</span> <span class="p">|</span> <span class="o">-f</span> <span class="n">filename</span><span class="p">.</span><span class="n">nGQL</span><span class="p">]</span>
+  <span class="p">[</span><span class="n">-t</span> <span class="n">120</span><span class="p">]</span> <span class="p">[</span><span class="n">-e</span> <span class="s2">"nGQL_statement"</span> <span class="p">|</span> <span class="o">-f</span> <span class="n">filename</span><span class="p">.</span><span class="n">nGQL</span><span class="p">]</span>
 </code></pre></div>
+</li>
+</ul>
 <p>参数说明如下。</p>
 <table>
 <thead>
@@ -2240,39 +2257,111 @@
 </li>
 </ol>
 <p>用户可以使用<code>./nebula-console --help</code>命令获取所有参数的说明，也可以在<a href="https://github.com/vesoft-inc/nebula-console/tree/v2.0.0-ga">项目仓库</a>找到更多说明。</p>
-<h2 id="nebula_console">Nebula Console导出模式<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
-<p>导出模式开启时，Nebula Console会导出所有请求的结果到CSV格式文件中。关闭导出模式会停止导出。使用语法如下：</p>
+<h2 id="nebula_console">Nebula Console命令<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
+<p>Nebula Console提供部分命令，可以导出CSV文件、导出DOT文件、导入测试数据集等。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>命令不区分大小写。</p>
+</div>
+<h3 id="csv">导出CSV文件<a class="headerlink" href="#csv" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>命令不区分大小写。</li>
-<li>CSV格式文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
+<li>CSV文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
+</ul>
+<ul>
+<li>命令只对下一条查询语句生效。</li>
 </ul>
 </div>
-<ul>
-<li>开启导出模式</li>
-</ul>
-<div class="highlight"><pre><span></span><code>nebula&gt; :SET CSV &lt;your_file.csv&gt;
+<p>导出CSV文件命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :CSV &lt;file_name.csv&gt;
 </code></pre></div>
+<h3 id="dot">导出DOT文件<a class="headerlink" href="#dot" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
-<li>关闭导出模式</li>
+<li>DOT文件保存在当前工作目录中，即Linux命令<code>pwd</code>显示的目录。</li>
 </ul>
-<div class="highlight"><pre><span></span><code>nebula&gt; :UNSET CSV
+<ul>
+<li>DOT文件的内容可以复制后在<a href="https://dreampuf.github.io/GraphvizOnline/">GraphvizOnline</a>网页中粘贴，生成可视化的执行计划图。</li>
+</ul>
+<ul>
+<li>命令只对下一条查询语句生效。</li>
+</ul>
+</div>
+<p>导出DOT文件命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :dot &lt;file_name.dot&gt;
 </code></pre></div>
-<h2 id="nebula_console_1">使用Nebula Console断开连接<a class="headerlink" href="#nebula_console_1" title="Permanent link">¶</a></h2>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :dot a.dot
+nebula&gt; PROFILE FORMAT="dot" GO FROM "player100" OVER follow;
+</code></pre></div>
+<h3 id="_3">加载测试数据集<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>测试数据集名称为nba，详细Schema信息和数据信息请使用相关<code>SHOW</code>命令查看。</p>
+<p>加载测试数据集命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :play nba
+</code></pre></div>
+<h3 id="_4">重复执行<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>重复执行下一个命令N次，然后打印平均执行时间。命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :repeat N
+</code></pre></div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :repeat 3
+nebula&gt; GO FROM "player100" OVER follow;
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 2602/3214 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 583/849 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
++-------------+
+| follow._dst |
++-------------+
+| "player101" |
++-------------+
+| "player125" |
++-------------+
+Got 2 rows (time spent 496/671 us)
+
+Fri, 20 Aug 2021 06:36:05 UTC
+
+Executed 3 times, (total time spent 3681/4734 us), (average time spent 1227/1578 us)
+</code></pre></div>
+<h3 id="_5">睡眠<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>睡眠N秒。常用于修改Schema的操作中，因为修改Schema是异步实现的，需要在下一个心跳周期才同步数据。命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :sleep N
+</code></pre></div>
+<h3 id="_6">断开连接<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>用户可以使用<code>:EXIT</code>或者<code>:QUIT</code>从Nebula Graph断开连接。为方便使用，Nebula Console支持使用不带冒号（:）的小写命令，例如<code>quit</code>。</p>
+<p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; :QUIT
 
 Bye root!
 </code></pre></div>
-<h2 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="nebula_console_2">如何通过源码安装Nebula Console？<a class="headerlink" href="#nebula_console_2" title="Permanent link">¶</a></h3>
+<h2 id="_7">常见问题<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="nebula_console_1">如何通过源码安装Nebula Console？<a class="headerlink" href="#nebula_console_1" title="Permanent link">¶</a></h3>
 <p>下载和编译Nebula Console的最新源码，请参见<a href="https://github.com/vesoft-inc/nebula-console#build-nebula-graph-console">GitHub nebula console</a>页面的说明。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月18日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2308,8 +2397,8 @@ Bye root!
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>

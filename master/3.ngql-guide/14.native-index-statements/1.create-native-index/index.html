@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/14.native-index-statements/1.create-native-index/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>CREATE INDEX - Nebula Graph Database 手册</title>
-<link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              CREATE INDEX
-            
-          </span>
+              
+                CREATE INDEX
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1194,14 +1194,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1359,41 +1364,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -2031,6 +2001,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2075,8 +2050,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2168,9 +2148,29 @@
 <h2 id="_2">使用索引必读<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>索引的概念和使用限制都较为复杂。索引配合<code>LOOKUP</code>和<code>MATCH</code>语句使用。</p>
 <p><code>CREATE INDEX</code>语句用于对Tag、EdgeType或其属性创建原生索引。通常分别称为“Tag索引”、“Edge type索引”和“属性索引”。</p>
-<p>"Tag索引"和"Edge type索引"应用于和"Tag"、"Edge type"（自身）相关的查询,而不是"基于Tag上某属性"的查询。例如用 <code>LOOKUP</code> 找到"某种Edge type E"的所有的边。</p>
-<p>"属性索引"目的是"基于属性的查询"。例如基于属性<code>Age</code>找到<code>Age == 19</code>的所有的点VID。</p>
-<p>如果已经为"某个Tag T的属性A"建立过属性索引<code>i_TA</code>，则没有必要对于<code>Tag T</code>额外再建立一个Tag索引<code>i_T</code>。这是因为查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。Edge type索引同理。但是，<code>i_T</code>却不能替代<code>i_TA</code>用于属性查找。</p>
+<ul>
+<li>Tag索引和Edge type索引应用于和Tag、Edge type自身相关的查询，例如用<code>LOOKUP</code>查找有Tag <code>player</code>的所有点。</li>
+</ul>
+<ul>
+<li>“属性索引”应用于基于属性的查询，例如基于属性<code>age</code>找到<code>age == 19</code>的所有的点。</li>
+</ul>
+<p>如果已经为Tag <code>T</code>的属性<code>A</code>建立过属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type索引同理）：</p>
+<ul>
+<li>查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。</li>
+</ul>
+<ul>
+<li>在<code>MATCH</code>语句中<code>i_T</code>不能替代<code>i_TA</code>用于属性查找。</li>
+</ul>
+<ul>
+<li>
+<p>在<code>LOOKUP</code>语句中<code>i_T</code>可能替代<code>i_TA</code>用于属性查找。</p>
+<div class="admonition compatibility">
+<p class="admonition-title">历史版本兼容性</p>
+<p>在此前的版本中，<code>LOOKUP</code>语句中的Tag或Edge type索引不可替代属性索引用于属性查找。</p>
+</div>
+</li>
+</ul>
+<p>使用替代索引进行查询虽然能获得相同的结果，但查询性能会根据选择的索引有所区别。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>不要任意在生产环境中使用索引，除非很清楚使用索引对业务的影响。索引会导致写性能下降90%甚至更多。</p>
@@ -2291,7 +2291,7 @@ nebula&gt; LOOKUP ON t WHERE p1 == 1 and p2 == 1 and p3 == 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月17日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2355,8 +2355,8 @@ nebula&gt; LOOKUP ON t WHERE p1 == 1 and p2 == 1 and p3 == 1;
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../../js/version-select.js"></script>
 <script src="../../../js/config.js"></script>
 <script src="../../../js/jquery.js"></script>

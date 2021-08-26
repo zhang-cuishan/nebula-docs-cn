@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/nebula-dashboard/2.deploy-dashboard/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>部署Dashboard - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              部署Dashboard
-            
-          </span>
+              
+                部署Dashboard
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1151,14 +1151,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1316,41 +1321,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -2060,6 +2030,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2104,8 +2079,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2255,9 +2235,21 @@
 <li>7003</li>
 </ul>
 <h2 id="dashboard_1">下载Dashboard<a class="headerlink" href="#dashboard_1" title="Permanent link">¶</a></h2>
-<p>执行如下命令下载压缩包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/nebula-graph-dashboard/nebula-graph-dashboard-1.0.0-1.x86_64.tar.gz
-</code></pre></div>
+<p>根据需要下载 tar 包，建议选择最新版本。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Dashboard 安装包</th>
+<th align="left">Nebula Graph版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://oss-cdn.nebula-graph.com.cn/nebula-graph-dashboard/1.0.0/nebula-graph-dashboard-1.0.0-1.x86_64.tar.gz">nebula-graph-dashboard-1.0.0-1.x86_64.tar.gz</a></td>
+<td align="left">2.5.0</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_2">目录结构说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>执行命令<code>tar -xvf nebula-graph-dashboard-1.0.0-1.x86_64.tar.gz</code>解压缩，目录<code>nebula-graph-dashboard</code>内一共有5个子目录，说明如下。</p>
 <table>
@@ -2298,7 +2290,7 @@
 <p>集群中的每个机器都需要部署<code>node-exporter</code>服务。</p>
 </div>
 <p>在目录<code>node-exporter</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span>:9100 <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span><span class="s2">":9100"</span> <span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
 <h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">¶</a></h3>
@@ -2309,40 +2301,51 @@
 <ol>
 <li>
 <p>在目录<code>nebula-stats-exporter</code>内修改文件<code>config.yaml</code>，配置所有服务的HTTP端口，示例如下：</p>
-<div class="highlight"><pre><span></span><code>version: v0.0.2
-nebulaItems:
-    - instanceName: metad0
-      endpointIP: <span class="m">192</span>.168.xx.1
-      endpointPort: <span class="m">19559</span>
-      componentType: metad
-    - instanceName: metad1
-      endpointIP: <span class="m">192</span>.168.xx.2
-      endpointPort: <span class="m">19559</span>
-      componentType: metad
-    - instanceName: metad2
-      endpointIP: <span class="m">192</span>.168.xx.3
-      endpointPort: <span class="m">19559</span>
-      componentType: metad
-    - instanceName: graphd0
-      endpointIP: <span class="m">192</span>.168.xx.4
-      endpointPort: <span class="m">19669</span>
-      componentType: graphd
-    - instanceName: storaged0
-      endpointIP: <span class="m">192</span>.168.xx.5
-      endpointPort: <span class="m">19779</span>
-      componentType: storaged
-    - instanceName: storaged1
-      endpointIP: <span class="m">192</span>.168.xx.6
-      endpointPort: <span class="m">19779</span>
-      componentType: storaged
-    - instanceName: storaged2
-      endpointIP: <span class="m">192</span>.168.xx.7
-      endpointPort: <span class="m">19779</span>
+<div class="highlight"><pre><span></span><code>version: v0.0.4
+clusters:
+  - name: nebula
+    instances:
+      - name: metad0
+        endpointIP: <span class="m">192</span>.168.8.157
+        endpointPort: <span class="m">19559</span>
+        componentType: metad
+      - name: metad1
+        endpointIP: <span class="m">192</span>.168.8.155
+        endpointPort: <span class="m">19559</span>
+        componentType: metad
+      - name: metad2
+        endpointIP: <span class="m">192</span>.168.8.154
+        endpointPort: <span class="m">19559</span>
+        componentType: metad
+      - name: graphd0
+        endpointIP: <span class="m">192</span>.168.8.157
+        endpointPort: <span class="m">19669</span>
+        componentType: graphd
+      - name: graphd1
+        endpointIP: <span class="m">192</span>.168.8.155
+        endpointPort: <span class="m">19669</span>
+        componentType: graphd
+      - name: graphd2
+        endpointIP: <span class="m">192</span>.168.8.154
+        endpointPort: <span class="m">19669</span>
+        componentType: graphd
+      - name: storaged0
+        endpointIP: <span class="m">192</span>.168.8.157
+        endpointPort: <span class="m">19779</span>
+        componentType: storaged
+      - name: storaged1
+        endpointIP: <span class="m">192</span>.168.8.155
+        endpointPort: <span class="m">19779</span>
+        componentType: storaged
+      - name: storaged2
+        endpointIP: <span class="m">192</span>.168.8.154
+        endpointPort: <span class="m">19779</span>
+        componentType: storaged
 </code></pre></div>
 </li>
 <li>
 <p>执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./nebula-stats-exporter --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup  ./nebula-stats-exporter --listen-address<span class="o">=</span><span class="s2">":9200"</span> --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2363,6 +2366,7 @@ scrape_configs:
     static_configs:
       - targets: <span class="o">[</span>
           <span class="s1">'192.168.xx.100:9200'</span>,  <span class="c1"># nebula-stats-exporter服务的IP地址和端口。</span>
+          <span class="s1">'192.168.xx.101:9200'</span>
         <span class="o">]</span>
   - job_name: <span class="s1">'node-exporter'</span>
     static_configs:
@@ -2432,7 +2436,7 @@ $ npm run stop <span class="c1"># 停止nebula-graph-dashboard服务</span>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月19日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2496,8 +2500,8 @@ $ npm run stop <span class="c1"># 停止nebula-graph-dashboard服务</span>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>

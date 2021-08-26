@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/1.introduction/1.what-is-nebula-graph/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>什么是Nebula Graph - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              什么是Nebula Graph
-            
-          </span>
+              
+                什么是Nebula Graph
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -363,7 +363,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1267,14 +1267,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1432,41 +1437,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -2104,6 +2074,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2148,8 +2123,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2327,10 +2307,10 @@
 <h3 id="_6">高可靠访问控制<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>Nebula Graph支持严格的角色访问控制和LDAP（Lightweight Directory Access Protocol）等外部认证服务，能够有效提高数据安全性。详情请参见<a href="../../7.data-security/1.authentication/1.authentication/">验证和授权</a>。</p>
 <h3 id="_7">生态多样化<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
-<p>Nebula Graph开放了越来越多的原生工具，例如<a href="https://github.com/vesoft-inc/nebula-web-docker">Nebula Graph Studio</a>、<a href="https://github.com/vesoft-inc/nebula-console">Nebula Console</a>、<a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/v2.0.0/nebula-exchange">Nebula Exchange</a>等。</p>
+<p>Nebula Graph开放了越来越多的原生工具，例如<a href="https://github.com/vesoft-inc/nebula-studio">Nebula Graph Studio</a>、<a href="https://github.com/vesoft-inc/nebula-console">Nebula Console</a>、<a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/v2.0.0/nebula-exchange">Nebula Exchange</a>等。</p>
 <p>此外，Nebula Graph还具备与Spark、Flink、HBase等产品整合的能力，在这个充满挑战与机遇的时代，大大增强了自身的竞争力。</p>
 <h3 id="opencypher">兼容openCypher查询语言<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h3>
-<p>Nebula Graph查询语言，也称为nGQL，是一种声明性的、兼容openCypher的文本查询语言，易于理解和使用。详细语法请参见<a href="../../3.ngql-guide/1.nGQL-overview/1.overview/">nGQL指南</a>。</p>
+<p>Nebula Graph 查询语言，简称为 nGQL，是一种声明性的、部分兼容 openCypher 的文本查询语言，易于理解和使用。详细语法请参见<a href="../../3.ngql-guide/1.nGQL-overview/1.overview/">nGQL指南</a>。</p>
 <h3 id="_8">面向未来硬件，读写平衡<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>闪存型设备有着极高的性能，并且<a href="https://blocksandfiles.com/wp-content/uploads/2021/01/Wikibon-SSD-less-than-HDD-in-2026.jpg">价格快速下降</a>，
  Nebula Graph 是一个面向 SSD 设计的产品，相比于基于HDD + 大内存的产品，更适合面向未来的硬件趋势，也更容易做到读写平衡。</p>
@@ -2366,7 +2346,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月13日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2430,8 +2410,8 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>

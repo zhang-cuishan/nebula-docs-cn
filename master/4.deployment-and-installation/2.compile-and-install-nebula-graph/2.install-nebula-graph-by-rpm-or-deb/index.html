@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>使用RPM/DEB包安装 - Nebula Graph Database 手册</title>
-<link href="../../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              使用RPM/DEB包安装
-            
-          </span>
+              
+                使用RPM/DEB包安装
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="./">
+<a class="md-nav__link" href="../../../2.quick-start/2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -1193,14 +1193,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1358,41 +1363,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -2030,6 +2000,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2074,8 +2049,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2163,16 +2143,12 @@
 <p>RPM和DEB是Linux系统下常见的两种安装包格式，本文介绍如何使用RPM或DEB文件在一台机器上快速安装Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>部署Nebula Graph集群的方式参见<a href="../deploy-nebula-graph-cluster/">使用RPM/DEB包部署集群</a>。</p>
+<p>部署Nebula Graph集群的方式参见<a href="/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster">使用RPM/DEB包部署集群</a>。<!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></p>
 </div>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>安装wget</p>
 <h2 id="_2">下载安装包<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="oss">阿里云OSS下载<a class="headerlink" href="#oss" title="Permanent link">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Nebula Graph v2.5.0版本尚未发布，下方含有<code>2.5.0</code>的URL暂不可用，如需下载最新的已发布版本，请用<code>2.0.1</code>替换<code>2.5.0</code>。</p>
-</div>
 <ul>
 <li>下载release版本<p>URL格式如下：</p>
 <div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
@@ -2182,28 +2158,31 @@ https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph
 https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.rpm
 
 //Ubuntu <span class="m">1604</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu1604.amd64.deb
 
 //Ubuntu <span class="m">1804</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu1804.amd64.deb
 
 //Ubuntu <span class="m">2004</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu2004.amd64.deb
 </code></pre></div>
 <p>例如要下载适用于<code>Centos 7.5</code>的<code>2.5.0</code>安装包：</p>
 <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.el7.x86_64.rpm
 wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.el7.x86_64.rpm.sha256sum.txt
 </code></pre></div>
 <p>下载适用于<code>ubuntu 1804</code>的<code>2.5.0</code>安装包：
-  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.ubuntu1804.amd64.deb
-wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.ubuntu1804.amd64.deb.sha256sum.txt
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.Ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.Ubuntu1804.amd64.deb.sha256sum.txt
 </code></pre></div></p>
 </li>
 </ul>
 <ul>
-<li>下载日常开发版本(nightly)<blockquote>
-<p><strong>禁止</strong>：nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
-</blockquote>
+<li>
+<p>下载日常开发版本(nightly)</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
+</div>
 <p>URL格式如下：</p>
 <div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
 https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el7.x86_64.rpm
@@ -2212,21 +2191,21 @@ https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula
 https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el8.x86_64.rpm
 
 //Ubuntu <span class="m">1604</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1604.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu1604.amd64.deb
 
 //Ubuntu <span class="m">1804</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu1804.amd64.deb
 
 //Ubuntu <span class="m">2004</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu2004.amd64.deb
 </code></pre></div>
-<p>例如要下载<code>2021.03.28</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm
-wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm.sha256sum.txt
+<p>例如要下载<code>2021.08.18</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.el7.x86_64.rpm.sha256sum.txt
 </code></pre></div>
-<p>要下载<code>2021.03.28</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
-  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb
-wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb.sha256sum.txt
+<p>要下载<code>2021.08.18</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.Ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.Ubuntu1804.amd64.deb.sha256sum.txt
 </code></pre></div></p>
 </li>
 </ul>
@@ -2268,14 +2247,15 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-gr
 </div>
 <h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="../../manage-service/">启动Nebula Graph</a></li>
-<li><a href="../../../2.quick-start/3.connect-to-nebula-graph/">连接Nebula Graph</a></li>
+<li><a href="/4.deployment-and-installation/manage-service">启动Nebula Graph</a><!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></li>
+<li><a href="/2.quick-start/3.connect-to-nebula-graph">连接Nebula Graph</a><!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></li>
 </ul>
+<!-- The line above is for content reusing. The source file is in the docs-2.0/reuse directory. -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年8月20日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -2339,8 +2319,8 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-gr
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../../js/version-select.js"></script>
 <script src="../../../js/config.js"></script>
 <script src="../../../js/jquery.js"></script>

@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/2.quick-start/4.nebula-graph-crud/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-7.2.3" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
 <title>步骤4：使用常用命令 - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.f7f47774.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -39,9 +39,9 @@
 <header class="md-header" data-md-component="header">
 <div id="dialog-bg"></div>
 <div id="banner" style="width: 100%;display:flex;height: 35px;justify-content:center;align-items:center;background-color:#FFE45E;font-size:15px;font-weight: 400;color: #000000;">
-    该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
-    <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
-    <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
+      该版本文档对应尚未发布的Nebula Graph开发版本。如需了解已发布版本，请查看
+      <a href="https://docs.nebula-graph.com.cn/" style="font-weight: 500;text-decoration:underline;">文档</a>。
+      <a id="delete" style="margin-left: 20px;cursor: pointer;">✖</a>
 </div>
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Nebula Graph Database 手册" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Nebula Graph Database 手册">
@@ -54,15 +54,15 @@
 <div class="md-header__ellipsis">
 <div class="md-header__topic">
 <span class="md-ellipsis">
-            Nebula Graph Database 手册
-          </span>
+              Nebula Graph Database 手册
+            </span>
 </div>
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
-            
-              步骤4：使用常用命令
-            
-          </span>
+              
+                步骤4：使用常用命令
+              
+            </span>
 </div>
 </div>
 </div>
@@ -109,22 +109,22 @@
 </nav>
 </header>
 <script>
-  var symbol = document.getElementById("delete");
-  var banner = document.getElementById("banner");
-  symbol.addEventListener("click",function(){
-    banner.style.display = "none";
-  })
-  window.onload = function(){
-    var hidden = document.getElementsByClassName("md-nav__item");
-    var hiddenlabel = [...(hidden)]
-    for(i=0;i<hidden.length;i++){
-      var link = hidden[i].getElementsByClassName("md-nav__link")
-      if(link[0].innerHTML.replace(/\s+/g,"") == ""){
-        hidden.item(i).style.display = "none"
+    var symbol = document.getElementById("delete");
+    var banner = document.getElementById("banner");
+    symbol.addEventListener("click",function(){
+      banner.style.display = "none";
+    })
+    window.onload = function(){
+      var hidden = document.getElementsByClassName("md-nav__item");
+      var hiddenlabel = [...(hidden)]
+      for(i=0;i<hidden.length;i++){
+        var link = hidden[i].getElementsByClassName("md-nav__link")
+        if(link[0].innerHTML.replace(/\s+/g,"") == ""){
+          hidden.item(i).style.display = "none"
+        }
       }
     }
-  }
-</script>
+  </script>
 <div class="md-container" data-md-component="container">
 <main class="md-main" data-md-component="main">
 <div class="md-main__inner md-grid">
@@ -247,7 +247,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../2.install-nebula-graph/">
         步骤1：安装Nebula Graph
       </a>
 </li>
@@ -421,17 +421,12 @@
 <nav aria-label="索引" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
-    使用索引必读
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#ngql_6">
     nGQL语法
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_13">
     示例
   </a>
 </li>
@@ -1331,14 +1326,19 @@
         管理服务
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../4.deployment-and-installation/connect-to-nebula-graph/">
+        连接服务
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_4">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" id="__nav_6_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_5">
         升级版本
         <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="升级版本" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_6_5">
 <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -1496,41 +1496,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../7.data-security/1.authentication/3.role-list/">
         内置角色权限
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_9_2">
-        备份恢复
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="备份恢复" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
-<span class="md-nav__icon md-icon"></span>
-          备份恢复
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/1.what-is-br/">
-        什么是BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/2.compile-br/">
-        编译BR
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/3.br-backup-data/">
-        使用BR备份数据
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../7.data-security/2.backup-restore/4.br-restore-data/">
-        使用BR恢复数据
       </a>
 </li>
 </ul>
@@ -2168,6 +2133,11 @@
         导入Kafka数据
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">
+        导入SST文件数据
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2212,8 +2182,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../20.appendix/releasenote/">
+        Release Note
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../20.appendix/0.FAQ/">
-        Nebula Graph 常见问题
+        常见问题 FAQ
       </a>
 </li>
 <li class="md-nav__item">
@@ -2403,17 +2378,12 @@
 <nav aria-label="索引" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
-    使用索引必读
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#ngql_6">
     nGQL语法
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
+<a class="md-nav__link" href="#_13">
     示例
   </a>
 </li>
@@ -2472,7 +2442,10 @@
 <p>本文将使用下图的数据集演示基础操作的语法。</p>
 <p><img alt="The demo dataset" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/2.quick-start/dataset-for-crud.png"/></p>
 <h2 id="nebula_graph">检查Nebula Graph集群的机器状态<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>首先建议检查机器状态，确保所有的Storage服务连接到了Meta服务。执行命令<code>SHOW HOSTS</code>查看机器状态。</p>
+</div>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 +-------------+-----------+-----------+--------------+----------------------+------------------------+
 | Host        | Port      | Status    | Leader count | Leader distribution  | Partition distribution |
@@ -2489,7 +2462,10 @@ Got 4 rows (time spent 1061/2251 us)
 </code></pre></div>
 <p>在返回结果中，查看<strong>Status</strong>列，可以看到所有Storage服务都在线。</p>
 <h3 id="_1">异步实现创建和修改<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
-<p>Nebula Graph中执行如下创建和修改操作，是异步实现的，需要在下一个心跳周期才同步数据。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Nebula Graph中执行如下创建和修改操作，是异步实现的。要在<strong>下一个</strong>心跳周期之后才能生效；否则访问会报错。</p>
+</div>
 <ul>
 <li><code>CREATE SPACE</code></li>
 <li><code>CREATE TAG</code></li>
@@ -2587,7 +2563,7 @@ Got 1 rows (time spent 977/2000 us)
 </code></pre></div>
 <p>参数详情请参见<a href="../../3.ngql-guide/10.tag-statements/1.create-tag/">CREATE TAG</a>和<a href="../../3.ngql-guide/11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
 <h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
-<p>创建Tag<code>player</code>和<code>team</code>，以及Edge type<code>follow</code>和<code>serve</code>。说明如下表。</p>
+<p>创建Tag:<code>player</code>和<code>team</code>，以及Edge type:<code>follow</code>和<code>serve</code>。说明如下表。</p>
 <table>
 <thead>
 <tr>
@@ -2622,22 +2598,14 @@ Got 1 rows (time spent 977/2000 us)
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player(name string, age int);
 Execution succeeded (time spent 20708/22071 us)
 
-Wed, 24 Feb 2021 03:47:01 EST
-
 nebula&gt; CREATE TAG team(name string);
 Execution succeeded (time spent 5643/6810 us)
-
-Wed, 24 Feb 2021 03:47:59 EST
 
 nebula&gt; CREATE EDGE follow(degree int);
 Execution succeeded (time spent 12665/13934 us)
 
-Wed, 24 Feb 2021 03:48:07 EST
-
 nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 Execution succeeded (time spent 5858/6870 us)
-
-Wed, 24 Feb 2021 03:48:16 EST
 </code></pre></div>
 <h2 id="_5">插入点和边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>用户可以使用<code>INSERT</code>语句，基于现有的Tag插入点，或者基于现有的Edge type插入边。</p>
@@ -2664,22 +2632,14 @@ Wed, 24 Feb 2021 03:48:16 EST
 <li>插入代表球员和球队的点。<div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name, age) VALUES "player100":("Tim Duncan", 42);
 Execution succeeded (time spent 28196/30896 us)
 
-Wed, 24 Feb 2021 03:55:08 EST
-
 nebula&gt; INSERT VERTEX player(name, age) VALUES "player101":("Tony Parker", 36);
 Execution succeeded (time spent 2708/3834 us)
-
-Wed, 24 Feb 2021 03:55:20 EST
 
 nebula&gt; INSERT VERTEX player(name, age) VALUES "player102":("LaMarcus Aldridge", 33);
 Execution succeeded (time spent 1945/3294 us)
 
-Wed, 24 Feb 2021 03:55:32 EST
-
 nebula&gt; INSERT VERTEX team(name) VALUES "team200":("Warriors"), "team201":("Nuggets");
 Execution succeeded (time spent 2269/3310 us)
-
-Wed, 24 Feb 2021 03:55:47 EST
 </code></pre></div>
 </li>
 </ul>
@@ -2687,22 +2647,14 @@ Wed, 24 Feb 2021 03:55:47 EST
 <li>插入代表球员和球队之间关系的边。<div class="highlight"><pre><span></span><code>nebula&gt; INSERT EDGE follow(degree) VALUES "player100" -&gt; "player101":(95);
 Execution succeeded (time spent 3362/4542 us)
 
-Wed, 24 Feb 2021 03:57:36 EST
-
 nebula&gt; INSERT EDGE follow(degree) VALUES "player100" -&gt; "player102":(90);
 Execution succeeded (time spent 2974/4274 us)
-
-Wed, 24 Feb 2021 03:57:44 EST
 
 nebula&gt; INSERT EDGE follow(degree) VALUES "player102" -&gt; "player101":(75);
 Execution succeeded (time spent 1891/3096 us)
 
-Wed, 24 Feb 2021 03:57:52 EST
-
 nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES "player100" -&gt; "team200":(1997, 2016), "player101" -&gt; "team201":(1999,  2018);
 Execution succeeded (time spent 6064/7104 us)
-
-Wed, 24 Feb 2021 03:58:01 EST
 </code></pre></div>
 </li>
 </ul>
@@ -2714,10 +2666,10 @@ Wed, 24 Feb 2021 03:58:01 EST
 <li><a href="../../3.ngql-guide/7.general-query-statements/4.fetch/">FETCH</a>语句可以获得点或边的属性。</li>
 </ul>
 <ul>
-<li><a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a>语句是基于<a href="#_14">索引</a>的，和<code>WHERE</code>子句一起使用，查找符合特定条件的数据。</li>
+<li><a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a>语句是基于<a href="#_12">索引</a>的，和<code>WHERE</code>子句一起使用，查找符合特定条件的数据。</li>
 </ul>
 <ul>
-<li><a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a>语句是查询图数据最常用的，但是它依赖<a href="#_14">索引</a>去匹配Nebula Graph中的数据模型。</li>
+<li><a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a>语句是查询图数据最常用的，可以灵活的描述各种图模式，但是它依赖<a href="#_12">索引</a>去匹配Nebula Graph中的数据模型，性能也还需要调优。</li>
 </ul>
 <h3 id="ngql_3">nGQL语法<a class="headerlink" href="#ngql_3" title="Permanent link">¶</a></h3>
 <ul>
@@ -2883,14 +2835,14 @@ Got 1 rows (time spent 2006/2406 us)
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>LOOKUP</code>和<code>MATCH</code>的示例在下文的<a href="#_14">索引</a>部分查看。</p>
+<p><code>LOOKUP</code>和<code>MATCH</code>的示例在下文的<a href="#_12">索引</a>部分查看。</p>
 </div>
 <h2 id="_8">修改点和边<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
 <p>用户可以使用<code>UPDATE</code>语句或<code>UPSERT</code>语句修改现有数据。</p>
 <p><code>UPSERT</code>是<code>UPDATE</code>和<code>INSERT</code>的结合体。当使用<code>UPSERT</code>更新一个点或边，如果它不存在，数据库会自动插入一个新的点或边。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>UPSERT</code>操作是基于Nebula Graph的分区进行串行操作，所以执行速度比单独执行<code>INSERT</code>或<code>UPDATE</code>慢。</p>
+<p>每个 partition 内部，<code>UPSERT</code> 操作是一个串行操作，所以执行速度比执行 <code>INSERT</code> 或 <code>UPDATE</code> 慢很多。其仅在多个 partition 之间有并发。</p>
 </div>
 <h3 id="ngql_4">nGQL语法<a class="headerlink" href="#ngql_4" title="Permanent link">¶</a></h3>
 <ul>
@@ -2915,8 +2867,6 @@ SET &lt;properties to be updated&gt; [WHEN &lt;condition&gt;] [YIELD &lt;columns
 <ul>
 <li>用<code>UPDATE</code>修改VID为<code>player100</code>的球员的<code>name</code>属性，然后用<code>FETCH</code>语句检查结果。<div class="highlight"><pre><span></span><code>nebula&gt; UPDATE VERTEX "player100" SET player.name = "Tim";
 Execution succeeded (time spent 3483/3914 us)
-
-Wed, 21 Oct 2020 10:53:14 UTC
 
 nebula&gt; FETCH PROP ON player "player100";
 +---------------------------------------------+
@@ -2988,13 +2938,11 @@ Execution succeeded (time spent 3700/4101 us)
 </ul>
 <h2 id="_12">索引<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
 <p>用户可以通过<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">CREATE INDEX</a>语句为Tag和Edge type增加索引。</p>
-<h3 id="_13">使用索引必读<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
-<ul>
-<li><code>MATCH</code>和<code>LOOKUP</code>语句的执行都依赖索引，但是索引会导致写性能大幅降低（降低90%甚至更多）。请<strong>不要随意</strong>在生产环境中使用索引，除非很清楚使用索引对业务的影响。</li>
-</ul>
-<ul>
-<li><strong>必须</strong>为已存在的数据重建索引，否则不能索引已存在的数据，导致无法在<code>MATCH</code>和<code>LOOKUP</code>语句中返回这些数据。更多信息，请参见<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">重建索引</a>。</li>
-</ul>
+<div class="admonition caution">
+<p class="admonition-title">使用索引必读</p>
+<p><code>MATCH</code>和<code>LOOKUP</code>语句的执行都依赖索引，但是索引会导致写性能大幅降低（降低90%甚至更多）。请<strong>不要随意</strong>在生产环境中使用索引，除非很清楚使用索引对业务的影响。</p>
+<p><strong>必须</strong>为“已写入但未构建索引”的数据重建索引，否则无法在<code>MATCH</code>和<code>LOOKUP</code>语句中返回这些数据。参见<a href="../../3.ngql-guide/14.native-index-statements/4.rebuild-native-index/">重建索引</a>。</p>
+</div>
 <h3 id="ngql_6">nGQL语法<a class="headerlink" href="#ngql_6" title="Permanent link">¶</a></h3>
 <ul>
 <li>创建索引<div class="highlight"><pre><span></span><code>CREATE {TAG | EDGE} INDEX [IF NOT EXISTS] &lt;index_name&gt; 
@@ -3007,7 +2955,7 @@ ON {&lt;tag_name&gt; | &lt;edge_name&gt;} ([&lt;prop_name_list&gt;]) [COMMENT = 
 </code></pre></div>
 </li>
 </ul>
-<h3 id="_14">示例<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<h3 id="_13">示例<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <p>为Tag<code>player</code>的属性<code>name</code>创建索引，并且重建索引。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX player_index_0 on player(name(20));
 nebula&gt; REBUILD TAG INDEX player_index_0;
@@ -3054,7 +3002,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">2021年7月23日</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
 </small>
 </div>
 </article>
@@ -3118,8 +3066,8 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.29db7785.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>
