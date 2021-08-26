@@ -133,7 +133,7 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
    例如，安装Studio 3.0.0 版本需要运行以下命令：
 
    ```bash
-   $ sudo rpm -i nebula-graph-studio-3.0.0-6.x86_64.rpm
+   $ sudo rpm -i nebula-graph-studio-3.0.0-1.x86_64.rpm
    ```
 
    当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。
