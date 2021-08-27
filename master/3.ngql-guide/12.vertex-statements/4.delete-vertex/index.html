@@ -813,6 +813,11 @@
         DESCRIBE TAG
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10.tag-statements/6.delete-tag/">
+        DELETE TAG
+      </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -2114,6 +2119,15 @@
 <h1 id="delete_vertex">DELETE VERTEX<a class="headerlink" href="#delete_vertex" title="Permanent link">¶</a></h1>
 <p><code>DELETE VERTEX</code>语句可以删除点，以及点关联的出边和入边。</p>
 <p><code>DELETE VERTEX</code>语句一次可以删除一个或多个点。用户可以结合管道符一起使用，详情请参见<a href="../../5.operators/4.pipe/">管道符</a>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><code>DELETE VERTEX</code>是直接删除点和关联的边。</li>
+</ul>
+<ul>
+<li><code>DELETE TAG</code>是删除指定点上的指定Tag。当点上只有一个Tag时，执行<code>DELETE TAG</code>会删除点，但是不会删除关联的边。</li>
+</ul>
+</div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>DELETE VERTEX &lt;vid&gt; [, &lt;vid&gt; ...];
 </code></pre></div>
@@ -2136,7 +2150,7 @@ nebula&gt; GO FROM "player100" OVER serve WHERE serve.start_year == "2021" YIELD
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2021</span>
 </small>
 </div>
 </article>
