@@ -2418,11 +2418,19 @@ root# swapoff -a <span class="o">&amp;&amp;</span> swapon -a
 <h3 id="sysctl">sysctl命令<a class="headerlink" href="#sysctl" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p><code>sysctl &lt;conf_name&gt;</code></p>
-<p>查看当前参数值。
-- <code>sysctl -w &lt;conf_name&gt;=&lt;value&gt;</code></p>
-<p>临时修改参数值，立即生效，重启后恢复原值。
-- <code>sysctl -p [&lt;file_path&gt;]</code>  </p>
+<p><code>sysctl &lt;conf_name&gt;</code> </p>
+<p>查看当前参数值。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>sysctl -w &lt;conf_name&gt;=&lt;value&gt;</code> </p>
+<p>临时修改参数值，立即生效，重启后恢复原值。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>sysctl -p [&lt;file_path&gt;]</code> </p>
 <p>从指定配置文件里加载Linux系统参数，默认从<code>/etc/sysctl.conf</code>加载。</p>
 </li>
 </ul>
@@ -2432,7 +2440,7 @@ root# swapoff -a <span class="o">&amp;&amp;</span> swapon -a
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2021</span>
 </small>
 </div>
 </article>
