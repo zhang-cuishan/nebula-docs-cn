@@ -2223,9 +2223,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 - 白天时设置`disable_auto_compactions`为`false`，提升短时间内的读取性能。
 -->
 <ul>
-<li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下两个参数：<div class="highlight"><pre><span></span><code><span class="c1"># 设置为从本地配置文件读取配置。</span>
---local-config<span class="o">=</span><span class="nb">true</span>
-<span class="c1"># 读写速率限制为20MB/S。</span>
+<li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下参数：<div class="highlight"><pre><span></span><code><span class="c1"># 读写速率限制为20MB/S。</span>
 --rate_limit<span class="o">=</span><span class="m">20</span> <span class="o">(</span><span class="k">in</span> MB/s<span class="o">)</span>
 </code></pre></div>
 </li>
@@ -2243,7 +2241,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 31, 2021</span>
 </small>
 </div>
 </article>
