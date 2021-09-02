@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/master/master/8.service-tuning/compaction/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.2.5" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
 <title>Compaction - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.be71726b.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#009485" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -2251,9 +2251,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 - 白天时设置`disable_auto_compactions`为`false`，提升短时间内的读取性能。
 -->
 <ul>
-<li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下两个参数：<div class="highlight"><pre><span></span><code><span class="c1"># 设置为从本地配置文件读取配置。</span>
---local-config<span class="o">=</span><span class="nb">true</span>
-<span class="c1"># 读写速率限制为20MB/S。</span>
+<li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下参数：<div class="highlight"><pre><span></span><code><span class="c1"># 读写速率限制为20MB/S。</span>
 --rate_limit<span class="o">=</span><span class="m">20</span> <span class="o">(</span><span class="k">in</span> MB/s<span class="o">)</span>
 </code></pre></div>
 </li>
@@ -2271,7 +2269,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
 </small>
 </div>
 </article>
@@ -2336,7 +2334,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
+<script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>
