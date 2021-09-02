@@ -1191,12 +1191,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/nebula-studio/use-console/st-ug-open-in-explorer/</loc>
+         <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/nebula-studio/use-console/st-ug-open-in-explore/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/nebula-studio/use-console/st-ug-visualize-findpath/</loc>
+         <loc>https://docs.nebula-graph.com.cn/v2.5.0/2.5.0/nebula-studio/use-console/st-ug-visualize-subgraph/</loc>
          <lastmod>2021-09-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
