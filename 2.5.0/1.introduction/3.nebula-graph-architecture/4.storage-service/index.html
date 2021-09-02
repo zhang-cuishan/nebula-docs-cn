@@ -2420,7 +2420,7 @@
 <p>Nebula Graph使用强类型Schema。</p>
 <p>对于点或边的属性信息，Nebula Graph会将属性信息编码后按顺序存储。由于属性的长度是固定的，查询时可以根据偏移量快速查询。在解码之前，需要先从Meta服务中查询具体的Schema信息（并缓存）。同时为了支持在线变更Schema，在编码属性时，会加入对应的Schema版本信息。</p>
 <h2 id="_4">数据分片<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<p>由于超大规模关系网络的节点数量高达百亿到千亿，而边的数量更会高达万亿，即使仅存储点和边两者也远大于一般服务器的容量。因此需要有方法将图元素切割，并存储在不同逻辑分片（Partition）上。Nebula Graph 采用边分割的方式</p>
+<p>由于超大规模关系网络的节点数量高达百亿到千亿，而边的数量更会高达万亿，即使仅存储点和边两者也远大于一般服务器的容量。因此需要有方法将图元素切割，并存储在不同逻辑分片（Partition）上。Nebula Graph 采用边分割的方式。</p>
 <p><img alt="data partitioning" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/DataModel02.png"/></p>
 <h3 id="_5">切边与存储放大<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>Nebula Graph中逻辑上的一条边对应着硬盘上的两个键值对（key-value pair），在边的数量和属性较多时，存储放大现象较明显。边的存储方式如下图所示。</p>
@@ -2554,7 +2554,7 @@ PartitionID pId = vid % numParts + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
 </small>
 </div>
 </article>
