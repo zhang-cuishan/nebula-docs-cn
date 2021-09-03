@@ -2336,7 +2336,7 @@
 <p>Nebula Graph将启动一个负载均衡任务，迁移storage3和storage4中的分片，然后将服务器从集群中移除。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>已下线节点状态会显示为OFFLINE.</p>
+<p>已下线节点状态会显示为 OFFLINE。该记录一天后删除，或更改 meta 配置项 <code>removed_threshold_sec</code>。</p>
 </div>
 <h2 id="leader">均衡leader分布<a class="headerlink" href="#leader" title="Permanent link">¶</a></h2>
 <p><code>BALANCE DATA</code>只能均衡分片分布，不能均衡Raft leader分布。用户可以使用命令<code>BALANCE LEADER</code>均衡leader分布。</p>
@@ -2369,7 +2369,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
 </small>
 </div>
 </article>

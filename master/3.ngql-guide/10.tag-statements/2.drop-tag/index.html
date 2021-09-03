@@ -2146,20 +2146,11 @@
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG test(p1 string, p2 int);
 nebula&gt; DROP TAG test;
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>nGQL中没有移除指定点的某个Tag的语句。</p>
-<ul>
-<li>在openCypher中，可以使用<code>REMOVE v:LABEL</code>语句来移除该点<code>v</code>的Tag<code>LABLE</code>。</li>
-<li>在nGQL中，通过<code>CREATE TAG</code>和<code>INSERT VERTEX</code>语句后，可以为该点增加一个<code>TAG</code>；但是没有任何办法移除这个点的<code>TAG</code>。</li>
-</ul>
-<p>建议在schema中增加一个字段来标识软移除，例如为每个TAG的schema增加一个字段<code>removed</code>。</p>
-</div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
 </small>
 </div>
 </article>
