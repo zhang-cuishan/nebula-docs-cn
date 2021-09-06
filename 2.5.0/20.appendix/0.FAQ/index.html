@@ -2084,6 +2084,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#tagedgetype">
+    如何在不指定Tag/EdgeType的情况下，获取所有的点和边？
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#cant_solve_the_start_vids_from_the_sentence">
     如何处理错误信息can’t solve the start vids from the sentence
   </a>
@@ -2315,6 +2320,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#tagedgetype">
+    如何在不指定Tag/EdgeType的情况下，获取所有的点和边？
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#cant_solve_the_start_vids_from_the_sentence">
     如何处理错误信息can’t solve the start vids from the sentence
   </a>
@@ -2542,6 +2552,12 @@ Got 1 rows (time spent 1235/1934 us)
 </li>
 </ol>
 <p>更多详情请参见<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">INDEX</a>、<a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a>和<a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a>。</p>
+<h3 id="tagedgetype">如何在不指定Tag/EdgeType的情况下，获取所有的点和边？<a class="headerlink" href="#tagedgetype" title="Permanent link">¶</a></h3>
+<p>nGQL 没有该功能。</p>
+<p>你必须先指定 Tag/EdgeType，才能获取对应类型的所有的点和边。</p>
+<p>例如执行 <code>MATCH (n) RETURN (n)</code>. 会返回错误 <code>can’t solve the start vids from the sentence</code>。</p>
+<p>一个办法是使用<a href="../../nebula-algorithm/">Nebula Algorithm</a>.</p>
+<p>或者指定各Tag/Edge Type，然后再自己通过 <code>Union</code> 拼装。</p>
 <h3 id="cant_solve_the_start_vids_from_the_sentence">如何处理错误信息<code>can’t solve the start vids from the sentence</code><a class="headerlink" href="#cant_solve_the_start_vids_from_the_sentence" title="Permanent link">¶</a></h3>
 <p>查询引擎需要知道从哪些VID开始图遍历。这些开始图遍历的VID，或者通过用户指定，例如：</p>
 <div class="highlight"><pre><span></span><code>&gt; GO FROM ${vids} ...
@@ -2720,7 +2736,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2021</span>
 </small>
 </div>
 </article>
