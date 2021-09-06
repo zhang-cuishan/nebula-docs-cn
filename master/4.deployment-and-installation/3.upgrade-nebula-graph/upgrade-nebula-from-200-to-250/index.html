@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#nebula_graph_v20xv250">
+<a class="md-skip" href="#nebula_graph_v20xvmaster">
           跳转至
         </a>
 </div>
@@ -1639,12 +1639,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-open-in-explorer/">
+<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-open-in-explore/">
         导入图探索
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-visualize-findpath/">
+<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-visualize-subgraph/">
         查看子图
       </a>
 </li>
@@ -2116,16 +2116,16 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-250.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_graph_v20xv250">升级Nebula Graph v2.0.x至v2.5.0<a class="headerlink" href="#nebula_graph_v20xv250" title="Permanent link">¶</a></h1>
-<p>Nebula Graph v2.0.x升级至v2.5.0，只需要使用v2.5.0的RPM/DEB包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译v2.5.0</a>之后重新安装。</p>
+<h1 id="nebula_graph_v20xvmaster">升级Nebula Graph v2.0.x至vmaster<a class="headerlink" href="#nebula_graph_v20xvmaster" title="Permanent link">¶</a></h1>
+<p>Nebula Graph v2.0.x升级至vmaster，只需要使用vmaster的RPM/DEB包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译vmaster</a>之后重新安装。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Nebula Graph v2.0.x指v2.0.0-GA和v2.0.1版本。如果Nebula Graph版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见<a href="../upgrade-nebula-graph-to-250/">升级 Nebula Graph 历史版本至 v2.5.0</a>。</p>
+<p>Nebula Graph v2.0.x指v2.0.0-GA和v2.0.1版本。如果Nebula Graph版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见<a href="../upgrade-nebula-graph-to-250/">升级 Nebula Graph 历史版本至 vmaster</a>。</p>
 </div>
 <h2 id="rpmdeb">RPM/DEB包升级步骤<a class="headerlink" href="#rpmdeb" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>下载<a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/v2.5.0">RPM/DEB包</a>。</p>
+<p>下载<a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/vmaster">RPM/DEB包</a>。</p>
 </li>
 <li>
 <p>停止所有Nebula Graph服务。详情请参见<a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a>。建议更新前备份配置文件。</p>
@@ -2136,7 +2136,7 @@
 <li>RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -Uvh &lt;package_name&gt;
 </code></pre></div>
 <p>若安装时指定路径，那么升级时也需要指定路径</p>
-<p><div class="highlight"><pre><span></span><code>$ sudo rpm  -Uivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt; 
+<p><div class="highlight"><pre><span></span><code>$ sudo rpm  -Uvh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt; 
 </code></pre></div>
    - DEB包</p>
 <div class="highlight"><pre><span></span><code>$ sudo dpkg -i &lt;package_name&gt;
@@ -2167,7 +2167,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2021</span>
 </small>
 </div>
 </article>

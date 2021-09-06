@@ -1611,12 +1611,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-open-in-explorer/">
+<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-open-in-explore/">
         导入图探索
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-visualize-findpath/">
+<a class="md-nav__link" href="../../../nebula-studio/use-console/st-ug-visualize-subgraph/">
         查看子图
       </a>
 </li>
@@ -2306,13 +2306,13 @@ if (!s.ok()) {
 <li>Hadoop：2.9.2 伪分布式部署</li>
 </ul>
 <ul>
-<li>Nebula Graph：2.5.0。</li>
+<li>Nebula Graph：master。</li>
 </ul>
 <h2 id="_6">前提条件<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
-<p>已经<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署Nebula Graph 2.5.0</a>并获取如下信息：</p>
+<p>已经<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署Nebula Graph master</a>并获取如下信息：</p>
 <ul>
 <li>Graph服务和Meta服务的的IP地址和端口。</li>
 </ul>
@@ -2331,7 +2331,7 @@ if (!s.ok()) {
 </li>
 </ul>
 <ul>
-<li>已经<a href="../../ex-ug-compile/">编译Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>编译完成的.jar文件。本示例中使用Exchange master。</li>
+<li>已经<a href="../../ex-ug-compile/">编译Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>编译完成的.jar文件。本示例中使用Exchange 2.5.0。</li>
 </ul>
 <ul>
 <li>已经安装Spark。</li>
@@ -2519,7 +2519,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为VID的源。
       # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
-      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      # 目前，Nebula Graph master仅支持字符串或整数类型的VID。
       vertex: {
         field:_c0
       }
@@ -2564,7 +2564,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为VID的源。
       # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
-      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      # 目前，Nebula Graph master仅支持字符串或整数类型的VID。
       vertex: {
         field:_c0
       }
@@ -2614,7 +2614,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为起始点和目的点的源。
       # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
-      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      # 目前，Nebula Graph master仅支持字符串或整数类型的VID。
       source: {
         field: _c0
       }
@@ -2666,7 +2666,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为起始点和目的点的源。
       # vertex的值必须与上述fields或者csv.fields中的列名保持一致。
-      # 目前，Nebula Graph 2.5.0仅支持字符串或整数类型的VID。
+      # 目前，Nebula Graph master仅支持字符串或整数类型的VID。
       source: {
         field: _c0
       }
@@ -2697,14 +2697,14 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 <h3 id="4sst">步骤 4：生成SST文件<a class="headerlink" href="#4sst" title="Permanent link">¶</a></h3>
 <p>运行如下命令将CSV源文件生成为SST文件。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">命令参数</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-master.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.5.0.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JAR包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从maven仓库下载。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-master.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/sst_application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-spark-utils/nebula-exchange/target/nebula-exchange-2.5.0.jar  -c /root/nebula-spark-utils/nebula-exchange/target/classes/sst_application.conf
 </code></pre></div>
 <p>任务执行完成后，可以在HDFS上的<code>/sst</code>目录（<code>nebula.path.remote</code>参数指定）内查看到生成的SST文件。</p>
 <div class="admonition note">

@@ -1653,12 +1653,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-open-in-explorer/">
+<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-open-in-explore/">
         导入图探索
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-visualize-findpath/">
+<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-visualize-subgraph/">
         查看子图
       </a>
 </li>
@@ -2148,7 +2148,7 @@
 <p>RPM和DEB是Linux系统下常见的两种安装包格式，本文介绍如何使用RPM或DEB文件在一台机器上快速安装Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>部署Nebula Graph集群的方式参见<a href="/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster">使用RPM/DEB包部署集群</a>。<!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></p>
+<p>部署Nebula Graph集群的方式参见<a href="https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/1.resource-preparations/">使用RPM/DEB包部署集群</a>。<!--这里用外链。--></p>
 </div>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>安装wget</p>
@@ -2163,21 +2163,21 @@ https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph
 https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.rpm
 
 //Ubuntu <span class="m">1604</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu1604.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.deb
 
 //Ubuntu <span class="m">1804</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu1804.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.deb
 
 //Ubuntu <span class="m">2004</span>
-https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.Ubuntu2004.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.deb
 </code></pre></div>
-<p>例如要下载适用于<code>Centos 7.5</code>的<code>2.5.0</code>安装包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.el7.x86_64.rpm
-wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.el7.x86_64.rpm.sha256sum.txt
+<p>例如要下载适用于<code>Centos 7.5</code>的<code>master</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.el7.x86_64.rpm.sha256sum.txt
 </code></pre></div>
-<p>下载适用于<code>ubuntu 1804</code>的<code>2.5.0</code>安装包：
-  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.Ubuntu1804.amd64.deb
-wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.Ubuntu1804.amd64.deb.sha256sum.txt
+<p>下载适用于<code>ubuntu 1804</code>的<code>master</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.ubuntu1804.amd64.deb.sha256sum.txt
 </code></pre></div></p>
 </li>
 </ul>
@@ -2186,7 +2186,10 @@ wget https://oss-cdn.nebula-graph.com.cn/package/2.5.0/nebula-graph-2.5.0.Ubuntu
 <p>下载日常开发版本(nightly)</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>nightly版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用nightly版本。</p>
+<ul>
+<li>nightly 版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用 nightly 版本。</li>
+<li>nightly 版本不保证每日都能完整发布，也不保证是否会更改文件名。</li>
+</ul>
 </div>
 <p>URL格式如下：</p>
 <div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
@@ -2196,21 +2199,21 @@ https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula
 https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el8.x86_64.rpm
 
 //Ubuntu <span class="m">1604</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu1604.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1604.amd64.deb
 
 //Ubuntu <span class="m">1804</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu1804.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
 
 //Ubuntu <span class="m">2004</span>
-https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.Ubuntu2004.amd64.deb
+https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu2004.amd64.deb
 </code></pre></div>
-<p>例如要下载<code>2021.08.18</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.el7.x86_64.rpm
-wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.el7.x86_64.rpm.sha256sum.txt
+<p>例如要下载<code>2021.03.28</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm.sha256sum.txt
 </code></pre></div>
-<p>要下载<code>2021.08.18</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
-  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.Ubuntu1804.amd64.deb
-wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-graph-2021.08.18-nightly.Ubuntu1804.amd64.deb.sha256sum.txt
+<p>要下载<code>2021.03.28</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb.sha256sum.txt
 </code></pre></div></p>
 </li>
 </ul>
@@ -2252,8 +2255,8 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.08.18/nebula-gr
 </div>
 <h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li><a href="/master/2.quick-start/5.start-stop-service">启动Nebula Graph</a><!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></li>
-<li><a href="/master/2.quick-start/3.connect-to-nebula-graph">连接Nebula Graph</a><!--这里必须用绝对路径，并且文件名的后缀.md要删掉。--></li>
+<li><a href="https://docs.nebula-graph.com.cn/master/2.quick-start/5.start-stop-service/">启动Nebula Graph</a><!--这里用外链。--></li>
+<li><a href="https://docs.nebula-graph.com.cn/master/2.quick-start/3.connect-to-nebula-graph/">连接Nebula Graph</a><!--这里用外链。--></li>
 </ul>
 <!-- The line above is for content reusing. The source file is in the docs-2.0/reuse directory. -->
 <hr/>

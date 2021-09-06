@@ -221,6 +221,11 @@
     定义和修改VID的数据类型
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start_vid">
+    "查询起始点"(start vid)与全局扫描
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1644,12 +1649,12 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-open-in-explorer/">
+<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-open-in-explore/">
         导入图探索
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-visualize-findpath/">
+<a class="md-nav__link" href="../../nebula-studio/use-console/st-ug-visualize-subgraph/">
         查看子图
       </a>
 </li>
@@ -2116,6 +2121,11 @@
     定义和修改VID的数据类型
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#start_vid">
+    "查询起始点"(start vid)与全局扫描
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -2183,15 +2193,29 @@
 <li>如果个别记录的主键特别长，但绝大多数记录的主键都很短的情况，不要将<code>FIXED_STRING(&lt;N&gt;)</code>的<code>N</code>设置成超大，这会浪费大量内存和硬盘，也会降低性能。此时可通过BASE64，MD5，hash编码加拼接的方式来生成。</li>
 </ul>
 <ul>
-<li>如果用hash方式生成int64 VID，在有10亿个点的情况下，发生碰撞的概率大约是1/10。边的数量与碰撞的概率无关。</li>
+<li>如果用hash方式生成int64 VID：在有10亿个点的情况下，发生hash冲突的概率大约是1/10。边的数量与碰撞的概率无关。</li>
 </ul>
 <h2 id="vid_4">定义和修改VID的数据类型<a class="headerlink" href="#vid_4" title="Permanent link">¶</a></h2>
 <p>VID的数据类型必须在<a href="../../3.ngql-guide/9.space-statements/1.create-space/">创建图空间</a>时定义，且一旦定义无法修改。</p>
+<h2 id="start_vid">"查询起始点"(<code>start vid</code>)与全局扫描<a class="headerlink" href="#start_vid" title="Permanent link">¶</a></h2>
+<p>绝大多数情况下，Nebula Graph 的查询语句(<code>MATCH</code>, <code>GO</code>, <code>LOOKUP</code>)的执行计划，必须要通过一定方式找到查询起始点的 VID (<code>start vid</code>)。</p>
+<p>定位 <code>start vid</code> 只有两种方式：</p>
+<ol>
+<li>
+<p>例如 <code>GO FROM "player100" OVER</code> 是在语句中显式的指明 <code>start vid</code> 是 "player100";</p>
+</li>
+<li>
+<p>例如, <code>LOOKUP ON player WHERE player.name == "Tony Parker"</code> 或者 <code>MATCH (v:player {name:"Tony Parker"})</code>，是通过属性 <code>player.name</code> 的索引来定位到 <code>start vid</code>；</p>
+</li>
+</ol>
+<p>!!! caution 不能在没有 <code>start vid</code> 情况下进行全局扫描；</p>
+<div class="codehilite"><pre><span></span><code>例如 `match (n) return n;` 会返回错误，因为此时无法定位到 `start vid`；这是一个全局扫描，因此被禁止。
+</code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2021</span>
 </small>
 </div>
 </article>
