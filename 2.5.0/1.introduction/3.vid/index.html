@@ -2180,14 +2180,15 @@
 <p>例如, <code>LOOKUP ON player WHERE player.name == "Tony Parker"</code> 或者 <code>MATCH (v:player {name:"Tony Parker"})</code>，是通过属性 <code>player.name</code> 的索引来定位到 <code>start vid</code>；</p>
 </li>
 </ol>
-<p>!!! caution 不能在没有 <code>start vid</code> 情况下进行全局扫描；</p>
-<div class="codehilite"><pre><span></span><code>例如 `match (n) return n;` 会返回错误，因为此时无法定位到 `start vid`；这是一个全局扫描，因此被禁止。
-</code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">不能在没有 <code>start vid</code> 情况下进行全局扫描</p>
+<p>例如 <code>match (n) return n;</code> 会返回错误，因为此时无法定位到 <code>start vid</code>；这是一个全局扫描，因此被禁止。</p>
+</div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2021</span>
 </small>
 </div>
 </article>
