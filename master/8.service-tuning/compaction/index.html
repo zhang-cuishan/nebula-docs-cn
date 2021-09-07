@@ -1389,11 +1389,16 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_3">
-    可以同时在多个图空间执行全量Compaction操作吗？
+    Compaction 相关的日志在哪？
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_4">
+    可以同时在多个图空间执行全量Compaction操作吗？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compaction_5">
     全量Compaction操作会耗费多长时间？
   </a>
 </li>
@@ -1403,7 +1408,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_5">
+<a class="md-nav__link" href="#compaction_6">
     全量Compaction操作开始后可以停止吗？
   </a>
 </li>
@@ -2143,11 +2148,16 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_3">
-    可以同时在多个图空间执行全量Compaction操作吗？
+    Compaction 相关的日志在哪？
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#compaction_4">
+    可以同时在多个图空间执行全量Compaction操作吗？
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compaction_5">
     全量Compaction操作会耗费多长时间？
   </a>
 </li>
@@ -2157,7 +2167,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#compaction_5">
+<a class="md-nav__link" href="#compaction_6">
     全量Compaction操作开始后可以停止吗？
   </a>
 </li>
@@ -2257,19 +2267,29 @@ nebula&gt; SUBMIT JOB COMPACT;
 </li>
 </ul>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
-<h3 id="compaction_3">可以同时在多个图空间执行全量<code>Compaction</code>操作吗？<a class="headerlink" href="#compaction_3" title="Permanent link">¶</a></h3>
+<h3 id="compaction_3">Compaction 相关的日志在哪？<a class="headerlink" href="#compaction_3" title="Permanent link">¶</a></h3>
+<p>默认情况下，<code>/usr/local/nebula/data/storage/nebula/{1}/data/</code> 目录下的文件名为 <code>LOG</code> 文件，或者类似 <code>LOG.old.1625797988509303</code>，找到如下的部分。</p>
+<div class="highlight"><pre><span></span><code>** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      2/0    2.46 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0      0.53              0.51         2    0.264       0      0
+ Sum      2/0    2.46 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      0.0      0.53              0.51         2    0.264       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+</code></pre></div>
+<p>如果当前的 <code>L0</code> 文件数量较多，对读性能影响较大，可以触发 compaction。</p>
+<h3 id="compaction_4">可以同时在多个图空间执行全量<code>Compaction</code>操作吗？<a class="headerlink" href="#compaction_4" title="Permanent link">¶</a></h3>
 <p>可以，但是此时的硬盘IO会很高，可能会影响效率。</p>
-<h3 id="compaction_4">全量<code>Compaction</code>操作会耗费多长时间？<a class="headerlink" href="#compaction_4" title="Permanent link">¶</a></h3>
-<p>如果已经设置读写速率限制，例如<code>rate_limit</code>限制为20MB/S时，用户可以通过<code>硬盘使用量/rate_limit</code>预估需要耗费的时间。如果没有设置读写速率限制，根据经验，速率大约为50MB/S。</p>
+<h3 id="compaction_5">全量<code>Compaction</code>操作会耗费多长时间？<a class="headerlink" href="#compaction_5" title="Permanent link">¶</a></h3>
+<p>如果已经设置读写速率限制，例如<code>rate_limit</code>限制为 20MB/S 时，用户可以通过 <code>硬盘使用量/rate_limit</code> 预估需要耗费的时间。如果没有设置读写速率限制，根据经验，速率大约为 50MB/S。</p>
 <h3 id="rate_limit">可以动态调整<code>rate_limit</code>吗？<a class="headerlink" href="#rate_limit" title="Permanent link">¶</a></h3>
 <p>不可以。</p>
-<h3 id="compaction_5">全量<code>Compaction</code>操作开始后可以停止吗？<a class="headerlink" href="#compaction_5" title="Permanent link">¶</a></h3>
+<h3 id="compaction_6">全量<code>Compaction</code>操作开始后可以停止吗？<a class="headerlink" href="#compaction_6" title="Permanent link">¶</a></h3>
 <p>不可以停止，必须等待操作完成。这是RocksDB的限制。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2021</span>
 </small>
 </div>
 </article>
