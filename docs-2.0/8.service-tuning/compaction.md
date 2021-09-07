@@ -114,6 +114,8 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
  Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
 ```
 
+如果当前的 `L0` 文件数量较多，对读性能影响较大，可以触发 compaction。
+
 ### 可以同时在多个图空间执行全量`Compaction`操作吗？
 
 可以，但是此时的硬盘IO会很高，可能会影响效率。
