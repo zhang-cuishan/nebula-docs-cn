@@ -518,13 +518,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#listener" class="md-nav__link">
-    Listener 角色
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#leadertransfer_leadership" class="md-nav__link">
     leader切换（Transfer Leadership）
   </a>
@@ -4708,13 +4701,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#listener" class="md-nav__link">
-    Listener 角色
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#leadertransfer_leadership" class="md-nav__link">
     leader切换（Transfer Leadership）
   </a>
@@ -5032,10 +5018,16 @@ PartitionID pId = vid % numParts + 1;
 <h3 id="batch">批量（Batch）操作<a class="headerlink" href="#batch" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph中，每个分片都是串行写日志，为了提高吞吐，写日志时需要做批量操作，但是由于Nebula Graph利用WAL实现一些特殊功能，需要对批量操作进行分组，这是Nebula Graph的特色。</p>
 <p>例如无锁CAS操作需要之前的WAL全部提交后才能执行，如果一个批量写入的WAL里包含了CAS类型的WAL，就需要拆分成粒度更小的几个组，还要保证这几组WAL串行提交。</p>
-<h3 id="listener">Listener 角色<a class="headerlink" href="#listener" title="Permanent link">&para;</a></h3>
-<p>Listener 角色的存在主要是为了应对<strong>扩容</strong>，扩容时新增的机器需要很长时间去同步数据，如果以 follower 角色同步数据，会导致整个集群的高可用性下降。</p>
-<p>新增Listener角色后，会写入command类型的WAL，leader在写WAL时如果发现有<code>add learner</code>的command，会将learner加入自己的peers，并将它标记为Listener，在统计多数派的时候，不会算上Listener，但是日志还是会照常发送给它们，Listener本身也不会主动发起选举。</p>
-<p>Raft listener进程还可以从Leader获取数据后，然后将它们写入Elasticsearch集群，以便实现全文搜索。详情请参见<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">部署Raft Listener</a>。</p>
+<!--
+### Listener 角色
+
+Listener 角色的存在主要是为了应对**扩容**，扩容时新增的机器需要很长时间去同步数据，如果以 follower 角色同步数据，会导致整个集群的高可用性下降。
+
+新增Listener角色后，会写入command类型的WAL，leader在写WAL时如果发现有`add learner`的command，会将learner加入自己的peers，并将它标记为Listener，在统计多数派的时候，不会算上Listener，但是日志还是会照常发送给它们，Listener本身也不会主动发起选举。
+
+Raft listener进程还可以从Leader获取数据后，然后将它们写入Elasticsearch集群，以便实现全文搜索。详情请参见[部署Raft Listener](../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener.md)。
+-->
+
 <h3 id="leadertransfer_leadership">leader切换（Transfer Leadership）<a class="headerlink" href="#leadertransfer_leadership" title="Permanent link">&para;</a></h3>
 <p>leader切换对于负载均衡至关重要，当把某个分片从一台机器迁移到另一台机器时，首先会检查分片是不是leader，如果是的话，需要先切换leader，数据迁移完毕之后，通常还要重新<a href="../../../8.service-tuning/load-balance/">均衡leader分布</a>。</p>
 <p>对于leader来说，提交leader切换命令时，就会放弃自己的leader身份，当follower收到leader切换命令时，就会发起选举。</p>
@@ -5070,7 +5062,7 @@ PartitionID pId = vid % numParts + 1;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
       
     
   </small>
