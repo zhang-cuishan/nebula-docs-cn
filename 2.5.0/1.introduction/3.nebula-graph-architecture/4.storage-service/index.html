@@ -4897,7 +4897,7 @@
 </tr>
 <tr>
 <td align="left"><code>PlaceHolder</code></td>
-<td align="left">占位符，预留给TOSS（Transaction On Storage Side）功能使用。长度为1个字节。</td>
+<td align="left">预留。长度为1个字节。</td>
 </tr>
 </tbody>
 </table>
@@ -4998,7 +4998,10 @@ PartitionID pId = vid % numParts + 1;
 <p class="admonition-title">Note</p>
 <p>Raft 多副本的方式与 HDFS 多副本的方式是不同的，Raft 基于“多数派”投票，因此副本数量不能是偶数。</p>
 </div>
-<p>Listener：这是一种特殊的 Raft 角色，并不参与投票，也不能用于多副本的数据一致性。在Nebula Graph中，其作用是从 Leader 读取 Raft-wal，并向ElasticSearch集群同步。</p>
+<!--
+Listener：这是一种特殊的 Raft 角色，并不参与投票，也不能用于多副本的数据一致性。在Nebula Graph中，其作用是从 Leader 读取 Raft-wal，并向ElasticSearch集群同步。
+-->
+
 <h3 id="multi_group_raft">Multi Group Raft<a class="headerlink" href="#multi_group_raft" title="Permanent link">&para;</a></h3>
 <p>由于Storage服务需要支持集群分布式架构，所以基于Raft协议实现了Multi Group Raft，即每个分片的所有副本共同组成一个Raft group，其中一个副本是leader，其他副本是follower，从而实现强一致性和高可用性。Raft的部分实现如下。</p>
 <p>由于Raft日志不允许空洞，Nebula Graph使用Multi Group Raft缓解此问题，分片数量较多时，可以有效提高Nebula Graph的性能。但是分片数量太多会增加开销，例如Raft group内部存储的状态信息、WAL文件，或者负载过低时的批量操作。</p>
