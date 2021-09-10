@@ -4667,6 +4667,17 @@ ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]
 +-------------+-----+---------------------+
 | &quot;player100&quot; | 42  | &quot;Tim Duncan&quot;        |
 +-------------+-----+---------------------+
+
+nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow \
+        YIELD follow._dst AS dst; \
+        ORDER BY $var.dst DESC;
++-------------+
+| dst         |
++-------------+
+| &quot;player125&quot; |
++-------------+
+| &quot;player101&quot; |
++-------------+
 </code></pre></div>
 <h2 id="opencypher">OpenCypher方式语法<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>&lt;RETURN clause&gt;
@@ -4742,7 +4753,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
       
     
   </small>
