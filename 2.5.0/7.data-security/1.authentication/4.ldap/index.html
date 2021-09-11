@@ -4603,11 +4603,10 @@
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE USER test2 WITH PASSWORD &#39;&#39;;
 nebula&gt; GRANT ROLE ADMIN ON basketballplayer TO test2;
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>!!! note
-
-  Nebula Graph内创建用户时，密码可以任意设置。
-</code></pre></div>
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nebula Graph内创建用户时，密码可以任意设置。</p>
+</div>
 </li>
 <li>
 <p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>）：</p>
@@ -4664,11 +4663,10 @@ nebula&gt; GRANT ROLE ADMIN ON basketballplayer TO test2;
 
 Welcome to Nebula Graph!
 </code></pre></div>
-<div class="codehilite"><pre><span></span><code>!!! note
-
-  使用OpenLDAP进行身份验证后，本地用户（包括`root`）无法正常登录。
-</code></pre></div>
-
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用OpenLDAP进行身份验证后，本地用户（包括<code>root</code>）无法正常登录。</p>
+</div>
 </li>
 </ol>
                 
@@ -4679,7 +4677,7 @@ Welcome to Nebula Graph!
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 11, 2021</span>
       
     
   </small>
