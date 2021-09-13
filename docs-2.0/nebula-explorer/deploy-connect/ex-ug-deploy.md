@@ -19,9 +19,9 @@
   
 - 使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js，安装有版本为1.13及以上的Go。
 
-    !!! caution
+  !!! caution
 
-         目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆[http-gateway repo](https://github.com/vesoft-inc/nebula-http-gateway)，并修改 `nebula-http-gateway/conf/app.conf` 文件中的`httpport = 8070` 使用 `make` 命令编译启动。
+        目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆[http-gateway repo](https://github.com/vesoft-inc/nebula-http-gateway)，并修改 `nebula-http-gateway/conf/app.conf` 文件中的`httpport = 8070` 使用 `make` 命令编译启动。
 
 ### 安装
 
@@ -74,9 +74,9 @@ $ sudo rpm -e nebula-graph-explorer-<version>.x86_64
 
 - 使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js，安装有版本为1.13及以上的Go。
 
-    !!! caution
+  !!! caution
 
-         目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆[http-gateway repo](https://github.com/vesoft-inc/nebula-http-gateway)，并修改 `nebula-http-gateway/conf/app.conf` 文件中的`httpport = 8070` 使用 `make` 命令编译启动。
+        目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆[http-gateway repo](https://github.com/vesoft-inc/nebula-http-gateway)，并修改 `nebula-http-gateway/conf/app.conf` 文件中的`httpport = 8070` 使用 `make` 命令编译启动。
 
 - 以下端口未被使用。
 
