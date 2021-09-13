@@ -4654,7 +4654,7 @@ nebula&gt; GO FROM &quot;player100&quot; \
 
 // 修改属性start_year的值，并返回end_year和新的start_year。
 
-nebula&gt; UPDATE EDGE on serve &quot;player100&quot; -&gt; &quot;team204&quot;@0 \
+nebula&gt; UPDATE EDGE ON serve &quot;player100&quot; -&gt; &quot;team204&quot;@0 \
         SET start_year = start_year + 1 \
         WHEN end_year &gt; 2010 \
         YIELD start_year, end_year;
@@ -4672,7 +4672,7 @@ nebula&gt; UPDATE EDGE on serve &quot;player100&quot; -&gt; &quot;team204&quot;@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
       
     
   </small>
