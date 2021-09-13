@@ -4697,13 +4697,11 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>注意</strong>：</p>
-<ul>
-<li>Show operations为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。</li>
-<li>只有God角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</li>
-</ul>
-</blockquote>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Show operations为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
+只有God角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</p>
+</div>
                 
                   
                     
@@ -4712,7 +4710,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
       
     
   </small>
