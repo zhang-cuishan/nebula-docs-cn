@@ -4730,7 +4730,7 @@
 <tr>
 <td align="left"><code>timezone_name</code></td>
 <td align="left">-</td>
-<td align="left">指定Nebula Graph的时区。初始配置文件中未设置该参数，如需使用请手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见<a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=CST-8</code>。</td>
+<td align="left">指定Nebula Graph的时区。初始配置文件中未设置该参数，如需使用请手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见<a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>local_config</code></td>
@@ -4742,7 +4742,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a>的属性值时，Nebula Graph会根据<code>timezone_name</code>设置的时区将该时间值转换成相应的UTC时间，因此在查询中返回的时间类型属性值为UTC时间。</li>
+<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a>的属性值时，Nebula Graph会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP类型例外）转换成相应的UTC时间，因此在查询中返回的时间类型属性值为UTC时间。</li>
 <li><code>timezone_name</code>参数只用于转换Nebula Graph中存储的数据，Nebula Graph进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
 </ul>
 </div>
@@ -5052,7 +5052,7 @@ disable_auto_compactions
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
       
     
   </small>

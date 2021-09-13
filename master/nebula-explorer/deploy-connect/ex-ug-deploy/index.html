@@ -4759,7 +4759,13 @@
 </li>
 </ul>
 <ul>
-<li>使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js。</li>
+<li>
+<p>使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js，安装有版本为1.13及以上的Go。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆<a href="https://github.com/vesoft-inc/nebula-http-gateway">http-gateway repo</a>，并修改 <code>nebula-http-gateway/conf/app.conf</code> 文件中的<code>httpport = 8070</code> 使用 <code>make</code> 命令编译启动。</p>
+</div>
+</li>
 </ul>
 <h3 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
@@ -4804,7 +4810,13 @@
 <li>Nebula Graph 服务已经部署并启动。详细信息参考<a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph安装部署</a>。</li>
 </ul>
 <ul>
-<li>使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js。</li>
+<li>
+<p>使用的 Linux 发行版为 CentOS ，安装有版本为 v10.16.0 + 以上的 Node.js，安装有版本为1.13及以上的Go。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>目前 Nebula Explorer 提供的包仅在 Linux 环境中使用，如果用户使用 mac 或其他环境，需要克隆<a href="https://github.com/vesoft-inc/nebula-http-gateway">http-gateway repo</a>，并修改 <code>nebula-http-gateway/conf/app.conf</code> 文件中的<code>httpport = 8070</code> 使用 <code>make</code> 命令编译启动。</p>
+</div>
+</li>
 </ul>
 <ul>
 <li>
@@ -4882,7 +4894,7 @@ $ npm run stop <span class="c1"># 停止 nebula-graph-explorer</span>
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
       
     
   </small>
