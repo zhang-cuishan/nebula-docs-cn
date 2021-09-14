@@ -2156,9 +2156,13 @@
 <p>仅企业版支持本功能。</p>
 </div>
 <h2 id="concat_1">concat()函数<a class="headerlink" href="#concat_1" title="Permanent link">¶</a></h2>
-<p><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。
-- 如果字符串参数只有一个，则返回该字符串参数本身。
-- 如果任何一个的字符串参数为 <code>NULL</code>，则 <code>concat()</code> 函数返回值为<code>NULL</code>。</p>
+<p><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。</p>
+<ul>
+<li>如果字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>如果任何一个的字符串参数为 <code>NULL</code>，则 <code>concat()</code> 函数返回值为<code>NULL</code>。</li>
+</ul>
 <h3 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>concat<span class="o">(</span>string1,string2,...<span class="o">)</span>
 </code></pre></div>
@@ -2190,10 +2194,16 @@ nebula&gt; GO FROM <span class="s2">"player100"</span> over follow <span class="
 +------------------------------+
 </code></pre></div>
 <h2 id="concat_ws">concat_ws()函数<a class="headerlink" href="#concat_ws" title="Permanent link">¶</a></h2>
-<p><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。
-- 如果分隔符为<code>NULL</code>时，<code>concat_ws()</code>函数才返回<code>NULL</code>。
-- 如果分隔符不为<code>NULL</code>，字符串参数只有一个，则返回该字符串参数本身。
-- 字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</p>
+<p><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。</p>
+<ul>
+<li>如果分隔符为<code>NULL</code>时，<code>concat_ws()</code>函数才返回<code>NULL</code>。</li>
+</ul>
+<ul>
+<li>如果分隔符不为<code>NULL</code>，字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</li>
+</ul>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>concat_ws<span class="o">(</span>separator,string1,string2,... <span class="o">)</span>
 </code></pre></div>
@@ -2244,7 +2254,7 @@ nebula&gt; GO FROM <span class="s2">"player100"</span> over follow <span class="
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2021</span>
 </small>
 </div>
 </article>
