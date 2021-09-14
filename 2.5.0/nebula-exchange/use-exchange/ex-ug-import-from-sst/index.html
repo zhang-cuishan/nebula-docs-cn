@@ -2327,7 +2327,14 @@ if (!s.ok()) {
 <li>已经安装JDK 1.8或以上版本，并配置环境变量JAVA_HOME。</li>
 </ul>
 <ul>
-<li>确认Hadoop服务在所有部署Storage服务的机器上运行正常。</li>
+<li>
+<p>确认Hadoop服务在所有部署Storage服务的机器上运行正常。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>- 如果需要生成其他数据源的SST文件，请参见相应数据源的文档，查看前提条件部分。</p>
+<p>- 如果只需要生成SST文件，不需要在部署Storage服务的机器上安装Hadoop服务。</p>
+</div>
+</li>
 </ul>
 <h2 id="_7">操作步骤<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <h3 id="1nebula_graphschema">步骤 1：在Nebula Graph中创建Schema<a class="headerlink" href="#1nebula_graphschema" title="Permanent link">¶</a></h3>
@@ -2699,6 +2706,19 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <p>如果对Schema有修改操作，例如重建图空间、修改Tag、修改Edge type等，需要重新生成SST文件，因为SST文件会验证Space ID、Tag ID、Edge ID等信息。</p>
 </div>
 <h3 id="5sst">步骤 5：导入SST文件<a class="headerlink" href="#5sst" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>导入前请确认以下信息：</p>
+<ul>
+<li>确认所有部署Storage服务的机器上都已部署Hadoop服务，并配置HADOOP_HOME和JAVA_HOME。</li>
+</ul>
+<ul>
+<li>Meta服务配置文件中的<code>--ws_storage_http_port</code>（如果没有，请手动添加）和Storage服务配置文件中的<code>--ws_http_port</code>一致。例如都为<code>19779</code>。</li>
+</ul>
+<ul>
+<li>Graph服务配置文件中的<code>--ws_meta_http_port</code>（如果没有，请手动添加）和Meta服务配置文件中的<code>--ws_http_port</code>一致。例如都为<code>19559</code>。</li>
+</ul>
+</div>
 <p>使用客户端工具连接Nebula Graph数据库，按如下操作导入SST文件：</p>
 <ol>
 <li>
@@ -2740,7 +2760,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2021</span>
 </small>
 </div>
 </article>
