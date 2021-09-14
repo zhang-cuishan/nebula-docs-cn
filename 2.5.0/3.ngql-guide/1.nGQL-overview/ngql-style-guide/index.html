@@ -2229,22 +2229,22 @@ RETURN v, e, v2;
 <li>
 <p>将无需查询的点和边匿名化。</p>
 <p>不推荐：</p>
-<div class="highlight"><pre><span></span><code>MATCH (v:player)-(e:follow)-&gt;(v2) \
+<div class="highlight"><pre><span></span><code>MATCH (v:player)[e:follow]-&gt;(v2) \
 RETURN v;
 </code></pre></div>
 <p>推荐：</p>
-<div class="highlight"><pre><span></span><code>MATCH (v:player)-(:follow)-&gt;() \
+<div class="highlight"><pre><span></span><code>MATCH (v:player)-[:follow]-&gt;() \
 RETURN v;
 </code></pre></div>
 </li>
 <li>
 <p>将非匿名点放在匿名点的前面。</p>
 <p>不推荐：</p>
-<div class="highlight"><pre><span></span><code>MATCH ()-(:follow)-&gt;(v) \
+<div class="highlight"><pre><span></span><code>MATCH ()-[:follow]-&gt;(v) \
 RETURN v;
 </code></pre></div>
 <p>推荐：</p>
-<div class="highlight"><pre><span></span><code>MATCH (v)&lt;-(:follow)-() \
+<div class="highlight"><pre><span></span><code>MATCH (v)&lt;-[:follow]-() \
 RETURN v;
 </code></pre></div>
 </li>
@@ -2326,7 +2326,7 @@ YIELD $$.team.name AS Team, $^.player.name AS Player;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2021</span>
 </small>
 </div>
 </article>
