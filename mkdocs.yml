@@ -21,8 +21,8 @@ theme:
   favicon: 'assets/images/favicon.ico'
   palette:
     - scheme: default
-      primary: teal
-      accent: green
+      primary: cyan
+      accent: blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
