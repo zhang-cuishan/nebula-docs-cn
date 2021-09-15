@@ -2643,24 +2643,11 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == "given" RETURN count(e); #入度
 <p>Nebula Graph使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以使用 crontab 设置定期任务回收日志文件，详情请参见<a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</p>
 <h3 id="nebula_graph">如何查看Nebula Graph版本<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h3>
 <p>服务运行时: <code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见<a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
-<p>服务未运行时:</p>
-<ul>
-<li>
-<p>编译安装</p>
-<ul>
-<li>
-<p>对于正式发布版本，在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到version和GitHub上的commit ID，例如：</p>
+<p>服务未运行时: 在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到version和GitHub上的commit ID，例如：</p>
 <div class="highlight"><pre><span></span><code>$ ./nebula-graphd --version
 nebula-graphd version <span class="m">2</span>.5.0, Git: c397299c, Build Time: Aug <span class="m">19</span> <span class="m">2021</span> <span class="m">11</span>:20:18
 This <span class="nb">source</span> code is licensed under Apache <span class="m">2</span>.0 License, attached with Common Clause Condition <span class="m">1</span>.0.
 </code></pre></div>
-</li>
-</ul>
-<ul>
-<li>对于nightly版本，在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到GitHub上的commit ID，通过<a href="https://github.com/vesoft-inc/nebula/commits/master">GitHub commits</a>页搜索该commit ID，查看提交时间，并和<a href="https://github.com/vesoft-inc/nebula/releases">GitHub Releases</a>页的版本发布时间进行对比，即可确定Nebula Graph的版本。</li>
-</ul>
-</li>
-</ul>
 <ul>
 <li>
 <p>Docker Compose部署</p>
