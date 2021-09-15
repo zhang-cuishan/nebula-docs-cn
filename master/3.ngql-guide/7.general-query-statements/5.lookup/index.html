@@ -2224,7 +2224,7 @@
 <ul>
 <li>
 <p>如果用<code>LOOKUP</code>语句基于指定属性查询时该属性没有索引，系统会在可用的索引中随机选择一个。</p>
-<p>例如，Tag <code>player</code> 有属性 <code>name</code> 和 <code>age</code>，Tag <code>player</code> 本身和属性 <code>age</code> 有索引，而属性 <code>name</code> 没有索引。当运行 <code>LOOKUP ON player WHERE player.age == 36 YIELD player.name;</code> 时，系统会在Tag <code>player</code> 和属性 <code>age</code> 的索引中随机使用一个。</p>
+<p>例如，Tag <code>player</code> 有属性 <code>name</code> 和 <code>age</code>，Tag <code>player</code> 本身和属性 <code>name</code> 有索引，而属性 <code>age</code> 没有索引。当运行 <code>LOOKUP ON player WHERE player.age == 36 YIELD player.name;</code> 时，系统会在 Tag <code>player</code> 和属性 <code>name</code> 的索引中随机使用一个。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
 <p>在此前的版本中，如果用<code>LOOKUP</code>语句基于指定属性查询时该属性没有索引，系统将报错，而不会使用其它索引。</p>
@@ -2438,7 +2438,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
 </small>
 </div>
 </article>
