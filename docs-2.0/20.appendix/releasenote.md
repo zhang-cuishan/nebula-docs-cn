@@ -3,7 +3,7 @@
 ## Feature
 
 - 支持session管理。[#280](https://github.com/vesoft-inc/nebula-graph/pull/280)
-- 支持慢查询终止，已知问题：所以query的查询与终止都会有延迟，这与实现方案有关。[#1152](https://github.com/vesoft-inc/nebula-graph/pull/1152)
+- 支持慢查询终止，已知问题：所有query的查询与终止都会有延迟，这与实现方案有关。[#1152](https://github.com/vesoft-inc/nebula-graph/pull/1152)
 - Lookup语句增强表达式解析索引的能力。[#1188](https://github.com/vesoft-inc/nebula-graph/pull/1188)
 - 支持配置机器内存水位，一定程度上缓解OOM的问题。[1067](https://github.com/vesoft-inc/nebula-graph/pull/1067)
 - Find Path支持边过滤。[#1091](https://github.com/vesoft-inc/nebula-graph/pull/1091)
