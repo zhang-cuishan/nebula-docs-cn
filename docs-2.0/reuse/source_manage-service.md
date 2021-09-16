@@ -185,7 +185,7 @@ a74054c6ae25   vesoft/nebula-graphd:v2-nightly     "/usr/local/nebula/b…"   36
 最后登录容器排查问题
 
 ```bash
-nebula-docker-compose]$ docker exec -it 2a6c56c405f5 bash
+[nebula-docker-compose]$ docker exec -it 2a6c56c405f5 bash
 [root@2a6c56c405f5 nebula]#
 ```
 
