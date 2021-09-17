@@ -2024,23 +2024,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#feature">
-    Feature
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enhancement">
-    Enhancement
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#bug_fix">
     Bug fix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changes_known_issues">
-    Changes &amp; Known issues
   </a>
 </li>
 </ul>
@@ -2094,23 +2079,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#feature">
-    Feature
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enhancement">
-    Enhancement
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#bug_fix">
     Bug fix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changes_known_issues">
-    Changes &amp; Known issues
   </a>
 </li>
 </ul>
@@ -2124,78 +2094,18 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="nebula_graph_251_release_notes">Nebula Graph 2.5.1 release notes<a class="headerlink" href="#nebula_graph_251_release_notes" title="Permanent link">¶</a></h1>
-<h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">¶</a></h2>
-<ul>
-<li>支持session管理。<a href="https://github.com/vesoft-inc/nebula-graph/pull/280">#280</a></li>
-<li>支持慢查询终止，已知问题：所有query的查询与终止都会有延迟，这与实现方案有关。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1152">#1152</a></li>
-<li>Lookup语句增强表达式解析索引的能力。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1188">#1188</a></li>
-<li>支持配置机器内存水位，一定程度上缓解OOM的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1067">1067</a></li>
-<li>Find Path支持边过滤。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1091">#1091</a></li>
-<li>Subgraph支持只返回图结构，不包含属性。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1134">#1134</a></li>
-<li>timestamp函数支持无参数执行。<a href="https://github.com/vesoft-inc/nebula-common/pull/515">#515</a></li>
-<li>支持查询各个服务的版本。<a href="https://github.com/vesoft-inc/nebula-graph/pull/944">#944</a></li>
-<li>index和TTL可以同时支持。<a href="https://github.com/vesoft-inc/nebula-storage/pull/382">#382</a></li>
-<li>支持在指定属性创建全文索引。<a href="https://github.com/vesoft-inc/nebula-storage/pull/460">#460</a></li>
-<li>创建space及schema支持comment。<a href="https://github.com/vesoft-inc/nebula-graph/pull/895">#895</a></li>
-<li>支持全文索引重建。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1123">#1123</a></li>
-</ul>
-<h2 id="enhancement">Enhancement<a class="headerlink" href="#enhancement" title="Permanent link">¶</a></h2>
-<ul>
-<li>listener接口优化，支持获取全量数据，<a href="https://github.com/vesoft-inc/nebula-storage/pull/465">#465</a>、<a href="https://github.com/vesoft-inc/nebula-storage/pull/484">#484</a></li>
-<li>meta的leader表重新组织。<a href="https://github.com/vesoft-inc/nebula-storage/pull/439">#439</a></li>
-<li>增加DiskManager用于检查磁盘剩余容量。<a href="https://github.com/vesoft-inc/nebula-storage/pull/461">#461</a></li>
-<li>优化raft的heartbeat实现。<a href="https://github.com/vesoft-inc/nebula-storage/pull/438">#438</a></li>
-<li>storage支持并发执行go/fetch/lookup。 <a href="https://github.com/vesoft-inc/nebula-storage/pull/503">#503</a></li>
-<li>加强了exists函数对map的支持。<a href="https://github.com/vesoft-inc/nebula-graph/pull/973">#973</a></li>
-<li>加强聚合函数的使用方式，比如COUNT(v)+AVG(v)。<a href="https://github.com/vesoft-inc/nebula-graph/pull/968">#968</a></li>
-</ul>
 <h2 id="bug_fix">Bug fix<a class="headerlink" href="#bug_fix" title="Permanent link">¶</a></h2>
 <ul>
-<li>权限导致的多语句执行问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1165">#1165</a></li>
-<li>修复unwind导致没有结果的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1018">#1018</a></li>
-<li>修复聚合函数在某些场景下导致的crash问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1015">#1015</a></li>
-<li>修复OR表达式在索引匹配中的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1005">#1005</a></li>
-<li>修复函数的大小写敏感问题。<a href="https://github.com/vesoft-inc/nebula-graph/issues/927">#927</a></li>
-<li>修复查询索引创建信息时没有检查tag/edge类型的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/933">#933</a></li>
-<li>修复substring函数的bug。<a href="https://github.com/vesoft-inc/nebula-common/pull/491">#491</a></li>
-<li>修复meta不能正确返回leader change。<a href="https://github.com/vesoft-inc/nebula-storage/pull/423">#423</a></li>
-<li>修复LIMIT，ORDER，GROUP语句使用变量的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1314">#1314</a></li>
-<li>修复db_dump工具打印int类型VID的问题。<a href="https://github.com/vesoft-inc/nebula-storage/pull/533">#533</a></li>
-<li>修复balance任务恢复后仍显示FAIL的问题。<a href="https://github.com/vesoft-inc/nebula-storage/pull/528">#528</a></li>
-</ul>
-<h2 id="changes_known_issues">Changes &amp; Known issues<a class="headerlink" href="#changes_known_issues" title="Permanent link">¶</a></h2>
-<ul>
-<li>Subgraph语法变化。<div class="highlight"><pre><span></span><code># 2.5.0版本增加WITH PROP关键字用于输出属性
-GET SUBGRAPH WITH PROP FROM &lt;vids&gt;
-
-# 原有语法将只输出图结构
-GET SUBGRAPH FROM &lt;vids&gt;#
-</code></pre></div>
-</li>
+<li>修复使用<code>USE SPACE</code>时，Session会在下一个上传周期更新导致性能下降的问题。<a href="https://github.com/vesoft-inc/nebula-graph/pull/1355">#1355</a></li>
 </ul>
 <ul>
-<li>在<code>ORDER BY</code>命令后必须使用引用符<code>$-.</code>。但在更早的版本中不需要。<div class="highlight"><pre><span></span><code># 2.5.0版本的ORDER BY命令后需要使用引用符`$-.`。
-nebula&gt; LOOKUP ON player \
-        YIELD player.age As playerage \
-        | GROUP BY $-.playerage \
-        YIELD $-.playerage as age, count(*) AS number \
-        | ORDER BY $-.number DESC, $-.age DESC;
-
-# 之前版本不需要使用引用符`$-.`。
-nebula&gt; LOOKUP ON player \
-        YIELD player.age As playerage \
-        | GROUP BY $-.playerage \
-        YIELD $-.playerage as age, count(*) AS number \
-        | ORDER BY number DESC, age DESC;
-</code></pre></div>
-</li>
+<li>优化处理连接请求中远端地址的解析逻辑，提高K8S环境性能。<a href="https://github.com/vesoft-inc/nebula-common/pull/615">#615</a></li>
 </ul>
-<p>该版本已知bug/issue请参见<a href="https://github.com/vesoft-inc/nebula-graph/issues">issues</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
 </small>
 </div>
 </article>
