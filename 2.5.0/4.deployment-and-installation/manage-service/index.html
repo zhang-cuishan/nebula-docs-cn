@@ -2404,7 +2404,7 @@ a74054c6ae25   vesoft/nebula-graphd:v2-nightly     <span class="s2">"/usr/local/
 7bb31b7a5b3f   vesoft/nebula-metad:v2-nightly      <span class="s2">"./bin/nebula-metad …"</span>   <span class="m">36</span> minutes ago   Up <span class="m">36</span> minutes <span class="o">(</span>healthy<span class="o">)</span>   <span class="m">9560</span>/tcp, <span class="m">0</span>.0.0.0:49210-&gt;9559/tcp, <span class="m">0</span>.0.0.0:49209-&gt;19559/tcp, <span class="m">0</span>.0.0.0:49208-&gt;19560/tcp                  nebula-docker-compose_metad1_1
 </code></pre></div>
 <p>最后登录容器排查问题</p>
-<div class="highlight"><pre><span></span><code>nebula-docker-compose<span class="o">]</span>$ docker <span class="nb">exec</span> -it 2a6c56c405f5 bash
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-docker-compose<span class="o">]</span>$ docker <span class="nb">exec</span> -it 2a6c56c405f5 bash
 <span class="o">[</span>root@2a6c56c405f5 nebula<span class="o">]</span><span class="c1">#</span>
 </code></pre></div>
 <h2 id="_8">下一步<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
