@@ -2200,7 +2200,7 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 <li>使用<code>WHERE</code>子句时只能过滤边属性，暂不支持过滤点属性，且不支持函数。</li>
 </ul>
 <ul>
-<li>路径的查找是单线程，会占用很多内存。</li>
+<li>路径的查找是单进程，会占用很多内存。</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>返回的路径格式类似于<code>(&lt;vertex_id&gt;)-[:&lt;edge_type_name&gt;@&lt;rank&gt;]-&gt;(&lt;vertex_id)</code>。</p>
@@ -2253,7 +2253,7 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
 </small>
 </div>
 </article>
