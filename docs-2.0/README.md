@@ -1,3 +1,6 @@
+!!! danger "新版本已经发布，请升级[新版本](https://docs.nebula-graph.com.cn/)"
+
+<!--
 # 欢迎阅读Nebula Graph {{ nebula.release }} 文档
 
 !!! Note "确认正在阅读最新的版本"
@@ -69,3 +72,4 @@ Graph 完全指南》](https://docs.nebula-graph.com.cn/site/pdf/NebulaGraph-boo
 ## 修改文档中的错误
  
 Nebula Graph 文档以 Markdown 语言编写。单击文档标题右上侧的铅笔图标即可提交修改建议。
+-->
