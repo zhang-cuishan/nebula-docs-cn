@@ -2550,6 +2550,9 @@ Got 1 rows (time spent 1235/1934 us)
 <p>支持。</p>
 <p>详情请参见<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a>。</p>
 <h3 id="gomatch">使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，查询结果为什么不同？<a class="headerlink" href="#gomatch" title="Permanent link">¶</a></h3>
+<p>悬挂边。</p>
+<p><code>RETURN</code> 命令未指定排序方式。</p>
+<p>稠密点截断。</p>
 <p>路径的类型不同，导致查询结果可能会不同。</p>
 <ul>
 <li><code>GO</code>语句采用的是<code>walk</code>类型，遍历时点和边可以重复。</li>
@@ -2750,7 +2753,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
 </small>
 </div>
 </article>
