@@ -861,6 +861,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/2.5.0/8.service-tuning/practice/</loc>
+         <lastmod>2021-09-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/2.5.0/8.service-tuning/super-node/</loc>
          <lastmod>2021-09-17</lastmod>
          <changefreq>daily</changefreq>
