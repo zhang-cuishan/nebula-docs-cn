@@ -12,9 +12,9 @@ TTL（Time To Live）指定属性的存活时间，超时后，该属性就会�
 
 - TTL 和 INDEX 共存问题：
 
-    + 如果已有 INDEX：不能再设置 TTL，即使在没有 INDEX 的属性上设置 TTL 也不行。    
+   - 如果已有 INDEX：不能再设置 TTL，即使在没有 INDEX 的属性上设置 TTL 也不行。    
 
-    + 如果已有 TTL：可以再添加 INDEX。
+   - 如果已有 TTL：可以再添加 INDEX。
 
 ## 属性过期
 
