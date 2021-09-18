@@ -2588,9 +2588,18 @@ Got 1 rows (time spent 1235/1934 us)
 <p>支持。</p>
 <p>详情请参见<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a>。</p>
 <h3 id="gomatch">使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，查询结果为什么不同？<a class="headerlink" href="#gomatch" title="Permanent link">¶</a></h3>
-<p>悬挂边。</p>
-<p><code>RETURN</code> 命令未指定排序方式。</p>
-<p>稠密点截断。</p>
+<p>原因可能有以下几种：</p>
+<ul>
+<li><code>GO</code>查询到了悬挂边。</li>
+</ul>
+<ul>
+<li><code>RETURN</code> 命令未指定排序方式。</li>
+</ul>
+<ul>
+<li>触发了Storage服务中<code>max_edge_returned_per_vertex</code>定义的稠密点截断限制。</li>
+</ul>
+<ul>
+<li>
 <p>路径的类型不同，导致查询结果可能会不同。</p>
 <ul>
 <li><code>GO</code>语句采用的是<code>walk</code>类型，遍历时点和边可以重复。</li>
@@ -2598,7 +2607,9 @@ Got 1 rows (time spent 1235/1934 us)
 <ul>
 <li><code>MATCH</code>语句兼容openCypher，采用的是<code>trail</code>类型，遍历时只有点可以重复，边不可以重复。</li>
 </ul>
-<p>例如下图。</p>
+</li>
+</ul>
+<p>因路径类型不同导致查询结果不同的示例图和说明如下。</p>
 <p><img alt="路径示例" src="../../images/path1.png"/></p>
 <p>从点A开始查询距离5跳的点，都会查询到点C（<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C</code>），查询6跳的点时，<code>GO</code>语句会查询到点D（<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C-&gt;D</code>），因为边<code>C-&gt;D</code>可以重复查询，而<code>MATCH</code>语句查询为空，因为边不可以重复。</p>
 <p>所以使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，可能会出现<code>MATCH</code>语句的查询结果比<code>GO</code>语句少。</p>
@@ -2791,7 +2802,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
 </small>
 </div>
 </article>
