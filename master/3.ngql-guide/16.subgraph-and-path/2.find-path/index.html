@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/16.subgraph-and-path/2.find-path/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/16.subgraph-and-path/2.find-path/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
 <title>FIND PATH - Nebula Graph Database 手册</title>
@@ -2181,7 +2181,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/16.subgraph-and-path/2.find-path.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.5.1/docs-2.0/3.ngql-guide/16.subgraph-and-path/2.find-path.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="find_path">FIND PATH<a class="headerlink" href="#find_path" title="Permanent link">¶</a></h1>
@@ -2238,7 +2238,7 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 <li>使用<code>WHERE</code>子句时只能过滤边属性，暂不支持过滤点属性，且不支持函数。</li>
 </ul>
 <ul>
-<li>路径的查找是单线程，会占用很多内存。</li>
+<li>路径的查找是单进程，会占用很多内存。</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>返回的路径格式类似于<code>(&lt;vertex_id&gt;)-[:&lt;edge_type_name&gt;@&lt;rank&gt;]-&gt;(&lt;vertex_id)</code>。</p>
@@ -2291,7 +2291,7 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
 </small>
 </div>
 </article>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/reuse/source_manage-service/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/reuse/source_manage-service/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
 <title>Source manage service - Nebula Graph Database 手册</title>
@@ -2177,7 +2177,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/reuse/source_manage-service.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.5.1/docs-2.0/reuse/source_manage-service.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1>Source manage service</h1>
@@ -2354,7 +2354,7 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 </code></pre></div>
 <p>如果服务有异常，用户可以先确认异常的容器名称（例如<code>nebula-docker-compose_graphd2_1</code>）,</p>
 <p>然后执行<code>docker ps</code>查看对应的<code>CONTAINER ID</code>(示例为<code>2a6c56c405f5</code>)。</p>
-<div class="highlight"><pre><span></span><code>nebula-docker-compose<span class="o">]</span>$ docker ps
+<div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-docker-compose<span class="o">]</span>$ docker ps
 CONTAINER ID   IMAGE                               COMMAND                  CREATED          STATUS                    PORTS                                                                                                  NAMES
 2a6c56c405f5   vesoft/nebula-graphd:nightly     <span class="s2">"/usr/local/nebula/b…"</span>   <span class="m">36</span> minutes ago   Up <span class="m">36</span> minutes <span class="o">(</span>healthy<span class="o">)</span>   <span class="m">0</span>.0.0.0:49230-&gt;9669/tcp, <span class="m">0</span>.0.0.0:49229-&gt;19669/tcp, <span class="m">0</span>.0.0.0:49228-&gt;19670/tcp                            nebula-docker-compose_graphd2_1
 7042e0a8e83d   vesoft/nebula-storaged:nightly   <span class="s2">"./bin/nebula-storag…"</span>   <span class="m">36</span> minutes ago   Up <span class="m">36</span> minutes <span class="o">(</span>healthy<span class="o">)</span>   <span class="m">9777</span>-9778/tcp, <span class="m">9780</span>/tcp, <span class="m">0</span>.0.0.0:49227-&gt;9779/tcp, <span class="m">0</span>.0.0.0:49226-&gt;19779/tcp, <span class="m">0</span>.0.0.0:49225-&gt;19780/tcp   nebula-docker-compose_storaged2_1
@@ -2376,7 +2376,7 @@ a74054c6ae25   vesoft/nebula-graphd:nightly     <span class="s2">"/usr/local/neb
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
 </small>
 </div>
 </article>

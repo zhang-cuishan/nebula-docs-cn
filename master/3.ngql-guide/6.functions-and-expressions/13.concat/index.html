@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/3.ngql-guide/6.functions-and-expressions/13.concat/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/13.concat/" rel="canonical"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
 <title>concat函数 - Nebula Graph Database 手册</title>
@@ -2199,15 +2199,23 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/6.functions-and-expressions/13.concat.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.5.1/docs-2.0/3.ngql-guide/6.functions-and-expressions/13.concat.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="concat">concat函数<a class="headerlink" href="#concat" title="Permanent link">¶</a></h1>
 <p><code>concat()</code>和<code>concat_ws()</code>函数返回一个或多个字符串连接产生的字符串。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅企业版支持本功能。</p>
+</div>
 <h2 id="concat_1">concat()函数<a class="headerlink" href="#concat_1" title="Permanent link">¶</a></h2>
-<p><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。
-- 如果字符串参数只有一个，则返回该字符串参数本身。
-- 如果任何一个的字符串参数为 <code>NULL</code>，则 <code>concat()</code> 函数返回值为<code>NULL</code>。</p>
+<p><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。</p>
+<ul>
+<li>如果字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>如果任何一个的字符串参数为 <code>NULL</code>，则 <code>concat()</code> 函数返回值为<code>NULL</code>。</li>
+</ul>
 <h3 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>concat<span class="o">(</span>string1,string2,...<span class="o">)</span>
 </code></pre></div>
@@ -2239,10 +2247,16 @@ nebula&gt; GO FROM <span class="s2">"player100"</span> over follow <span class="
 +------------------------------+
 </code></pre></div>
 <h2 id="concat_ws">concat_ws()函数<a class="headerlink" href="#concat_ws" title="Permanent link">¶</a></h2>
-<p><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。
-- 如果分隔符为<code>NULL</code>时，<code>concat_ws()</code>函数才返回<code>NULL</code>。
-- 如果分隔符不为<code>NULL</code>，字符串参数只有一个，则返回该字符串参数本身。
-- 字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</p>
+<p><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。</p>
+<ul>
+<li>如果分隔符为<code>NULL</code>时，<code>concat_ws()</code>函数才返回<code>NULL</code>。</li>
+</ul>
+<ul>
+<li>如果分隔符不为<code>NULL</code>，字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</li>
+</ul>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>concat_ws<span class="o">(</span>separator,string1,string2,... <span class="o">)</span>
 </code></pre></div>
@@ -2293,7 +2307,7 @@ nebula&gt; GO FROM <span class="s2">"player100"</span> over follow <span class="
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 14, 2021</span>
 </small>
 </div>
 </article>

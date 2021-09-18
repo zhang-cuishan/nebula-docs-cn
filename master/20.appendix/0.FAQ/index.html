@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/20.appendix/0.FAQ/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/20.appendix/0.FAQ/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
 <title>常见问题 FAQ - Nebula Graph Database 手册</title>
@@ -2177,18 +2177,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage_error_e_rpc_failure_1">
-    如何处理错误信息Storage Error E_RPC_FAILURE
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the_leader_has_changed_try_again_later_1">
-    如何处理错误信息The leader has changed. Try again later
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#rpc_failure_in_metaclient_connection_refused">
-    如何处理错误信息RPC failure in MetaClient: Connection refused
+    如何处理错误信息 RPC failure in MetaClient: Connection refused
   </a>
 </li>
 <li class="md-nav__item">
@@ -2423,18 +2413,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#storage_error_e_rpc_failure_1">
-    如何处理错误信息Storage Error E_RPC_FAILURE
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the_leader_has_changed_try_again_later_1">
-    如何处理错误信息The leader has changed. Try again later
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#rpc_failure_in_metaclient_connection_refused">
-    如何处理错误信息RPC failure in MetaClient: Connection refused
+    如何处理错误信息 RPC failure in MetaClient: Connection refused
   </a>
 </li>
 <li class="md-nav__item">
@@ -2525,7 +2505,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/20.appendix/0.FAQ.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.5.1/docs-2.0/20.appendix/0.FAQ.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="faq">常见问题 FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h1>
@@ -2547,7 +2527,7 @@
 <div class="admonition compatibility">
 <p class="admonition-title"><code>X</code>版本兼容性</p>
 <p>Nebula Graph master 与 历史版本 (包括 Nebula Graph 1.x 和 2.0-RC) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
-数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-250/">升级 Nebula Graph 历史版本至 vmaster</a>。
+数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-250/">升级 Nebula Graph 历史版本至 v2.0.0</a>。
 客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
 </div>
 <div class="admonition compatibility">
@@ -2576,7 +2556,7 @@
 <ul>
 <li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true再重启服务。</li>
 <li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
-<li>检查Storaged是否发生的 OOM。(<code>dmesg |grep nebula</code>)。</li>
+<li>检查Storaged是否发生过 OOM。(<code>dmesg |grep nebula</code>)。</li>
 <li>为 Storage 服务器提供性能更好的SSD或者内存。</li>
 <li>重试请求。</li>
 </ul>
@@ -2608,6 +2588,9 @@ Got 1 rows (time spent 1235/1934 us)
 <p>支持。</p>
 <p>详情请参见<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a>。</p>
 <h3 id="gomatch">使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，查询结果为什么不同？<a class="headerlink" href="#gomatch" title="Permanent link">¶</a></h3>
+<p>悬挂边。</p>
+<p><code>RETURN</code> 命令未指定排序方式。</p>
+<p>稠密点截断。</p>
 <p>路径的类型不同，导致查询结果可能会不同。</p>
 <ul>
 <li><code>GO</code>语句采用的是<code>walk</code>类型，遍历时点和边可以重复。</li>
@@ -2667,21 +2650,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>检查输入的VID是否超过限制长度。详情请参见<a href="../../3.ngql-guide/9.space-statements/1.create-space/">create space</a>。</p>
 <h3 id="edge_conflict_vertex_conflict">如何处理错误信息 <code>edge conflict</code> 或 <code>vertex conflict</code><a class="headerlink" href="#edge_conflict_vertex_conflict" title="Permanent link">¶</a></h3>
 <p>Storage服务在毫秒级时间内多次收到插入或者更新同一点或边的请求时，可能返回该错误。请稍后重试。</p>
-<h3 id="storage_error_e_rpc_failure_1">如何处理错误信息<code>Storage Error E_RPC_FAILURE</code><a class="headerlink" href="#storage_error_e_rpc_failure_1" title="Permanent link">¶</a></h3>
-<p>报错原因通常为Graph服务向Storage服务请求了过多的数据，导致Storage服务超时。请尝试以下解决方案：</p>
-<ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加Storage client的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。</li>
-</ul>
-<!--提示：请在配置文件开头添加--local_config=true再重启服务。-->
-<ul>
-<li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
-<li>检查Storaged是否发生的 OOM。(<code>dmesg |grep nebula</code>)。</li>
-<li>为 Storage 服务器提供性能更好的SSD或者内存。</li>
-<li>重试请求。</li>
-</ul>
-<h3 id="the_leader_has_changed_try_again_later_1">如何处理错误信息<code>The leader has changed. Try again later</code><a class="headerlink" href="#the_leader_has_changed_try_again_later_1" title="Permanent link">¶</a></h3>
-<p>已知问题，通常需要重试1-N次(N==partition数量)。原因为 meta client 更新leader缓存需要1-2个心跳或者通过错误触发强制更新。</p>
-<h3 id="rpc_failure_in_metaclient_connection_refused">如何处理错误信息<code>RPC failure in MetaClient: Connection refused</code><a class="headerlink" href="#rpc_failure_in_metaclient_connection_refused" title="Permanent link">¶</a></h3>
+<h3 id="rpc_failure_in_metaclient_connection_refused">如何处理错误信息 <code>RPC failure in MetaClient: Connection refused</code><a class="headerlink" href="#rpc_failure_in_metaclient_connection_refused" title="Permanent link">¶</a></h3>
 <p>报错原因通常为metad服务状态异常，或是metad和graphd服务所在机器网络不通。请尝试以下解决方案：</p>
 <ul>
 <li>在metad所在服务器查看下 metad 服务状态，如果服务状态异常，可以重新启动metad服务。</li>
@@ -2822,7 +2791,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2021</span>
 </small>
 </div>
 </article>
