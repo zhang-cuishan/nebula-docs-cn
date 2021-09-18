@@ -2223,8 +2223,14 @@
 <li>不能修改带有TTL选项的属性的Schema。</li>
 </ul>
 <ul>
-<li>TTL 和 INDEX 共存问题：<p>+ 如果已有 INDEX：不能再设置 TTL，即使在没有 INDEX 的属性上设置 TTL 也不行。    </p>
-<p>+ 如果已有 TTL：可以再添加 INDEX。</p>
+<li>
+<p>TTL 和 INDEX 共存问题：</p>
+<ul>
+<li>如果已有 INDEX：不能再设置 TTL，即使在没有 INDEX 的属性上设置 TTL 也不行。    </li>
+</ul>
+<ul>
+<li>如果已有 TTL：可以再添加 INDEX。</li>
+</ul>
 </li>
 </ul>
 <h2 id="_2">属性过期<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
@@ -2306,7 +2312,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) values "102":(1612778164674, 30, "Hello");
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
 </small>
 </div>
 </article>
