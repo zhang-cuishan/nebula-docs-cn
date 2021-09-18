@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/master/1.introduction/3.vid/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/master/8.service-tuning/practice/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
-<title>VID - Nebula Graph Database 手册</title>
+<title>实践案例 - Nebula Graph Database 手册</title>
 <link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#vid">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
               
-                VID
+                实践案例
               
             </span>
 </div>
@@ -169,8 +169,8 @@
         前言
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
         简介
         <span class="md-nav__icon md-icon"></span>
@@ -182,62 +182,24 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../1.what-is-nebula-graph/">
+<a class="md-nav__link" href="../../1.introduction/1.what-is-nebula-graph/">
         什么是Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.data-model/">
+<a class="md-nav__link" href="../../1.introduction/2.data-model/">
         数据模型
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.1.path/">
+<a class="md-nav__link" href="../../1.introduction/2.1.path/">
         路径
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          VID
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../1.introduction/3.vid/">
         VID
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vid_1">
-    VID的特点
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vid_2">
-    VID使用建议
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vid_3">
-    VID生成建议
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vid_4">
-    定义和修改VID的数据类型
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#start_vid">
-    "查询起始点"(start vid)与全局扫描
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" id="__nav_3_5" type="checkbox"/>
@@ -252,22 +214,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.nebula-graph-architecture/1.architecture-overview/">
+<a class="md-nav__link" href="../../1.introduction/3.nebula-graph-architecture/1.architecture-overview/">
         架构总览
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.nebula-graph-architecture/2.meta-service/">
+<a class="md-nav__link" href="../../1.introduction/3.nebula-graph-architecture/2.meta-service/">
         Meta服务
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.nebula-graph-architecture/3.graph-service/">
+<a class="md-nav__link" href="../../1.introduction/3.nebula-graph-architecture/3.graph-service/">
         Graph服务
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../3.nebula-graph-architecture/4.storage-service/">
+<a class="md-nav__link" href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">
         Storage服务
       </a>
 </li>
@@ -1407,8 +1369,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
 <label class="md-nav__link" for="__nav_10">
         最佳实践
         <span class="md-nav__icon md-icon"></span>
@@ -1420,44 +1382,72 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/compaction/">
+<a class="md-nav__link" href="../compaction/">
         Compaction
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/load-balance/">
+<a class="md-nav__link" href="../load-balance/">
         Storage负载均衡
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/2.graph-modeling/">
+<a class="md-nav__link" href="../2.graph-modeling/">
         图建模
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/3.system-design/">
+<a class="md-nav__link" href="../3.system-design/">
         系统建模
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/4.plan/">
+<a class="md-nav__link" href="../4.plan/">
         执行计划
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/super-node/">
+<a class="md-nav__link" href="../super-node/">
         超级节点(稠密点)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/improve-query-by-tag-index/">
+<a class="md-nav__link" href="../improve-query-by-tag-index/">
         增加和删除标签
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../8.service-tuning/practice/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          实践案例
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         实践案例
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    业务场景
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    内核
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    周边工具
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2142,28 +2132,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#vid_1">
-    VID的特点
+<a class="md-nav__link" href="#_2">
+    业务场景
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#vid_2">
-    VID使用建议
+<a class="md-nav__link" href="#_3">
+    内核
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#vid_3">
-    VID生成建议
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vid_4">
-    定义和修改VID的数据类型
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#start_vid">
-    "查询起始点"(start vid)与全局扫描
+<a class="md-nav__link" href="#_4">
+    周边工具
   </a>
 </li>
 </ul>
@@ -2173,89 +2153,52 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/1.introduction/3.vid.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/8.service-tuning/practice.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="vid">点VID<a class="headerlink" href="#vid" title="Permanent link">¶</a></h1>
-<p>在Nebula Graph中，一个点由点的ID唯一标识，即VID或Vertex ID。</p>
-<h2 id="vid_1">VID的特点<a class="headerlink" href="#vid_1" title="Permanent link">¶</a></h2>
+<h1 id="_1">实践案例<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>Nebula Graph在各行各业都有应用，本文介绍部分实践案例。更多实践分享内容请参见<a href="https://nebula-graph.com.cn/posts/">博客</a>。</p>
+<h2 id="_2">业务场景<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
-<li>VID数据类型只可以为定长字符串<code>FIXED_STRING(&lt;N&gt;)</code>或<code>INT64</code>；一个图空间只能选用其中一种VID类型。</li>
+<li><a href="https://nebula-graph.com.cn/posts/kuaishou-security-intelligence-platform-with-nebula-graph/">百亿级图数据在快手安全情报的应用与挑战</a></li>
 </ul>
 <ul>
-<li>VID在一个图空间中必须唯一，其作用类似于关系型数据库中的主键（索引+唯一约束）。但不同图空间中的VID是完全独立无关的。</li>
+<li><a href="https://nebula-graph.com.cn/posts/use-case-financial-risk-control-360-digital/">金融风控场景的使用案例</a></li>
 </ul>
 <ul>
-<li>点VID的生成方式必须由用户自行指定，系统不提供自增ID或者UUID。</li>
+<li><a href="https://nebula-graph.com.cn/posts/how-fulltext-index-works/">基于全文搜索引擎的文本搜索</a></li>
+</ul>
+<h2 id="_3">内核<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://nebula-graph.com.cn/posts/nebula-graph-source-code-reading-06/">MATCH中变长Pattern的实现</a></li>
 </ul>
 <ul>
-<li>
-<p>VID相同的点，会被认为是同一个点。例如：</p>
-<ul>
-<li>VID相当于一个实体的唯一标号，例如一个人的身份证号。Tag相当于实体所拥有的类型，例如"滴滴司机"和"老板"。不同的Tag又相应定义了两组不同的属性，例如"驾照号、驾龄、接单量、接单小号"和"工号、薪水、债务额度、商务电话"。</li>
+<li><a href="https://nebula-graph.com.cn/posts/what-is-nebula-jdbc/">Nebula Graph支持JDBC协议</a></li>
 </ul>
 <ul>
-<li>同时操作相同VID并且相同Tag的两条<code>INSERT</code>语句（均无<code>IF NOT EXISTS</code>参数），晚写入的<code>INSERT</code>会覆盖先写入的。</li>
+<li><a href="https://nebula-graph.com.cn/posts/bdd-testing-practice-add-test-case/">如何向Nebula Graph增加一个测试用例</a></li>
 </ul>
 <ul>
-<li>同时操作包含相同VID但是两个不同<code>TAG A</code>和<code>TAG B</code>的两条<code>INSERT</code>语句，对<code>TAG A</code>的操作不会影响<code>TAG B</code>。</li>
-</ul>
-</li>
+<li><a href="https://nebula-graph.com.cn/posts/bdd-testing-practice/">基于BDD理论的Nebula集成测试框架重构（上）</a></li>
 </ul>
 <ul>
-<li>VID通常会被（LSM-tree方式）索引并缓存在内存中，因此直接访问VID的性能最高。</li>
-</ul>
-<h2 id="vid_2">VID使用建议<a class="headerlink" href="#vid_2" title="Permanent link">¶</a></h2>
-<ul>
-<li>Nebula Graph 1.x只支持VID类型为<code>INT64</code>，2.x支持<code>INT64</code>和<code>FIXED_STRING(&lt;N&gt;)</code>。在<code>CREATE SPACE</code>中通过参数<code>vid_type</code>可以指定VID类型。</li>
+<li><a href="https://nebula-graph.com.cn/posts/bdd-testing-practice-volume-2/">基于BDD理论的Nebula集成测试框架重构（下）</a></li>
 </ul>
 <ul>
-<li>可以使用<code>id()</code>函数，指定或引用该点的VID；</li>
+<li><a href="https://nebula-graph.com.cn/posts/nebula-graph-subgraph-introduction/">解析Nebula Graph子图设计及实践</a></li>
+</ul>
+<h2 id="_4">周边工具<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://nebula-graph.com.cn/posts/nebula-importer-practice/">基于Nebula Importer批量导入工具性能验证方案总结</a></li>
 </ul>
 <ul>
-<li>可以使用<code>LOOKUP</code>或者<code>MATCH</code>语句，来通过属性索引查找对应的VID;</li>
+<li><a href="https://nebula-graph.com.cn/posts/v2.0-benchmark-and-nebula-importer-optimize/">详解Nebula 2.0性能测试和Nebula Importer数据导入调优</a></li>
 </ul>
-<ul>
-<li>性能上，直接通过VID找到点的语句性能最高，例如<code>DELETE xxx WHERE id(xxx) == "player100"</code>, 或者<code>GO FROM "player100"</code>等语句。通过属性先查找VID，再进行图操作的性能会变差，例如<code>LOOKUP | GO FROM $-.ids</code>等语句，相比前者多了一次内存或硬盘的随机读（<code>LOOKUP</code>）以及一次序列化（<code>|</code>）。</li>
-</ul>
-<h2 id="vid_3">VID生成建议<a class="headerlink" href="#vid_3" title="Permanent link">¶</a></h2>
-<p>VID的生成工作完全交给应用端，有一些通用的建议：</p>
-<ul>
-<li>（最优）通过有唯一性的主键或者属性来直接作为VID；属性访问依赖于VID;</li>
-</ul>
-<ul>
-<li>通过有唯一性的属性组合来生成VID，属性访问依赖于属性索引。</li>
-</ul>
-<ul>
-<li>通过snowflake等算法生成VID，属性访问依赖于属性索引;</li>
-</ul>
-<ul>
-<li>如果个别记录的主键特别长，但绝大多数记录的主键都很短的情况，不要将<code>FIXED_STRING(&lt;N&gt;)</code>的<code>N</code>设置成超大，这会浪费大量内存和硬盘，也会降低性能。此时可通过BASE64，MD5，hash编码加拼接的方式来生成。</li>
-</ul>
-<ul>
-<li>如果用hash方式生成int64 VID：在有10亿个点的情况下，发生hash冲突的概率大约是1/10。边的数量与碰撞的概率无关。</li>
-</ul>
-<h2 id="vid_4">定义和修改VID的数据类型<a class="headerlink" href="#vid_4" title="Permanent link">¶</a></h2>
-<p>VID的数据类型必须在<a href="../../3.ngql-guide/9.space-statements/1.create-space/">创建图空间</a>时定义，且一旦定义无法修改。</p>
-<h2 id="start_vid">"查询起始点"(<code>start vid</code>)与全局扫描<a class="headerlink" href="#start_vid" title="Permanent link">¶</a></h2>
-<p>绝大多数情况下，Nebula Graph 的查询语句(<code>MATCH</code>, <code>GO</code>, <code>LOOKUP</code>)的执行计划，必须要通过一定方式找到查询起始点的 VID (<code>start vid</code>)。</p>
-<p>定位 <code>start vid</code> 只有两种方式：</p>
-<ol>
-<li>
-<p>例如 <code>GO FROM "player100" OVER</code> 是在语句中显式的指明 <code>start vid</code> 是 "player100";</p>
-</li>
-<li>
-<p>例如, <code>LOOKUP ON player WHERE player.name == "Tony Parker"</code> 或者 <code>MATCH (v:player {name:"Tony Parker"})</code>，是通过属性 <code>player.name</code> 的索引来定位到 <code>start vid</code>；</p>
-</li>
-</ol>
-<p>!!! caution 不能在没有 <code>start vid</code> 情况下进行全局扫描；</p>
-<div class="codehilite"><pre><span></span><code>例如 `match (n) return n;` 会返回错误，因为此时无法定位到 `start vid`；这是一个全局扫描，因此被禁止。
-</code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
 </small>
 </div>
 </article>
@@ -2268,7 +2211,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="上一页: 路径" class="md-footer__link md-footer__link--prev" href="../2.1.path/" rel="prev">
+<a aria-label="上一页: 增加和删除标签" class="md-footer__link md-footer__link--prev" href="../improve-query-by-tag-index/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2277,17 +2220,17 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              路径
+              增加和删除标签
             </div>
 </div>
 </a>
-<a aria-label="下一页: 架构总览" class="md-footer__link md-footer__link--next" href="../3.nebula-graph-architecture/1.architecture-overview/" rel="next">
+<a aria-label="下一页: 客户端介绍" class="md-footer__link md-footer__link--next" href="../../14.client/1.nebula-client/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              架构总览
+              客户端介绍
             </div>
 </div>
 <div class="md-footer__button md-icon">
