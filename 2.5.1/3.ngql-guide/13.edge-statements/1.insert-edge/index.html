@@ -2110,7 +2110,7 @@
 </a>
 <h1 id="insert_edge">INSERT EDGE<a class="headerlink" href="#insert_edge" title="Permanent link">¶</a></h1>
 <p><code>INSERT EDGE</code>语句可以在Nebula Graph实例的指定图空间中插入一条或多条边。边是有方向的，从起始点（src_vid）到目的点（dst_vid）。</p>
-<p><code>INSERT EDGE</code>的执行方式为覆盖式插入。如果已有Edge type、起点、终点、rank都相同的边，则<strong>覆盖</strong>原边。</p>
+<p><code>INSERT EDGE</code>的执行方式为覆盖式插入。四元组&lt;起点、终点、Edge type、rank&gt;唯一确定一条边，如果四元组都相同，则<strong>覆盖</strong>。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>INSERT EDGE [IF NOT EXISTS] &lt;edge_type&gt; ( &lt;prop_name_list&gt; ) {VALUES | VALUE}
 &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; )
@@ -2174,11 +2174,11 @@ nebula&gt; INSERT EDGE e2 (name, age) VALUES \
 # 创建失败，因为"a13"不是int类型。
 nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", "a13");
 </code></pre></div>
-<p>一条边可以多次插入属性值，以最后一次为准。</p>
+<p>同一条边(四元组&lt;起始点、目的点、Edge_Type、Rank&gt;相同）可以多次插入属性值，以最后一次为准。</p>
 <div class="highlight"><pre><span></span><code># 多次插入属性值。
-nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", 12);
-nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", 13);
-nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", 14);
+nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13@0":("n1", 12);
+nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13@0":("n1", 13);
+nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13@0":("n1", 14);
 nebula&gt; FETCH PROP ON e2 "11"-&gt;"13";
 +-------------------------------------------+
 | edges_                                    |
