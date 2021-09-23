@@ -470,7 +470,7 @@ ${SPARK_HOME}/bin/spark-submit  --master "local" --class com.vesoft.nebula.excha
 
 !!! caution
   
-    如果需要导入SST文件至Nebula Graph 2.5.x中，请在[Storage配置文件](../../5.configurations-and-logs/1.configurations/4.storage-config.md)中添加`--enable_vertex_cache =false`，并重启Storage服务，才能正常导入SST文件，否则可能会出现没有覆盖旧数据的问题。
+    如果需要导入SST文件至Nebula Graph 2.5.x中，请在[Storage配置文件](../../5.configurations-and-logs/1.configurations/4.storage-config.md)中添加`--enable_vertex_cache =false`，并重启Storage服务，才能正常导入SST文件，否则可能会出现没有覆盖旧数据的问题。导入后可以删除`--enable_vertex_cache =false`，该参数用于加速查询。
 
 使用客户端工具连接Nebula Graph数据库，按如下操作导入SST文件：
 
