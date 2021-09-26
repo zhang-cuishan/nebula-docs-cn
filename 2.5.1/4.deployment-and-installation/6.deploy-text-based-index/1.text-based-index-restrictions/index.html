@@ -5406,6 +5406,9 @@
 </div>
 <p>目前为止，全文索引有如下限制：</p>
 <ul>
+<li>全文索引当前仅支持<code>LOOKUP</code>语句。</li>
+</ul>
+<ul>
 <li>定长字符串长度超过256字节，将无法创建全文索引。</li>
 </ul>
 <ul>
@@ -5416,9 +5419,6 @@
 </ul>
 <ul>
 <li>属性的类型必须为<code>String</code>。</li>
-</ul>
-<ul>
-<li>全文搜索语句<code>LOOKUP</code>/<code>MATCH</code>中的<code>WHERE</code>子句不支持逻辑运算<code>AND</code>和<code>OR</code>。</li>
 </ul>
 <ul>
 <li>全文索引不支持多个Tag/Edge type的搜索。</li>
@@ -5433,10 +5433,10 @@
 <li>不支持修改Elasticsearch索引。</li>
 </ul>
 <ul>
-<li><code>LOOKUP</code>和<code>MATCH</code>语句不支持管道符，文档中的示例除外。</li>
+<li>不支持管道符。</li>
 </ul>
 <ul>
-<li>只能用单个条件进行全文搜索。</li>
+<li><code>WHERE</code>子句只能用单个条件进行全文搜索。</li>
 </ul>
 <ul>
 <li>全文索引不会与图空间一起删除。</li>
@@ -5458,7 +5458,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2021</span>
       
     
   </small>
