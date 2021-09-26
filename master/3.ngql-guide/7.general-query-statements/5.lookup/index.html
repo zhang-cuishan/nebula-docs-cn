@@ -5794,7 +5794,7 @@ nebula&gt; INSERT VERTEX player(name,age) \
 
 nebula&gt; LOOKUP ON player;
 +-------------+
-| _vid        |
+|  VertexID   |
 +-------------+
 | &quot;player100&quot; |
 +-------------+
@@ -5822,7 +5822,7 @@ nebula&gt; INSERT EDGE like(likeness) \
 
 nebula)&gt; LOOKUP ON like;
 +-------------+----------+-------------+
-| _src        | _ranking | _dst        |
+| VertexID    | DstVID   | _dst        |
 +-------------+----------+-------------+
 | &quot;player100&quot; | 0        | &quot;player101&quot; |
 +-------------+----------+-------------+
@@ -5859,7 +5859,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2021</span>
       
     
   </small>
