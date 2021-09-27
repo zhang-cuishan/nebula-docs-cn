@@ -5876,12 +5876,12 @@
 </tr>
 <tr>
 <td align="left"><code>enable_rocksdb_prefix_filtering</code></td>
-<td align="left"><code>false</code></td>
-<td align="left">是否启用prefix bloom filter (内存充裕时可以打开，提升图遍历速度)。</td>
+<td align="left"><code>true</code></td>
+<td align="left">是否启用prefix bloom filter，启用时可以提升图遍历速度，但是会增加内存消耗。</td>
 </tr>
 <tr>
 <td align="left"><code>enable_rocksdb_whole_key_filtering</code></td>
-<td align="left"><code>true</code></td>
+<td align="left"><code>false</code></td>
 <td align="left">是否启用whole key bloom filter。</td>
 </tr>
 <tr>
@@ -5995,7 +5995,7 @@ disable_auto_compactions
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2021</span>
       
     
   </small>
