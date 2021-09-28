@@ -5527,7 +5527,7 @@
 <ul>
 <li>“属性索引”应用于基于属性的查询，例如基于属性<code>age</code>找到<code>age == 19</code>的所有的点。</li>
 </ul>
-<p>如果已经为Tag <code>T</code>的属性<code>A</code>建立过属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type索引同理）：</p>
+<p>如果为Tag <code>T</code>建立了Tag索引<code>i_T</code>，同时为属性<code>A</code>建立了属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type索引同理）：</p>
 <ul>
 <li>查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。</li>
 </ul>
@@ -5668,7 +5668,7 @@ nebula&gt; LOOKUP ON t WHERE p1 == 1 and p2 == 1 and p3 == 1;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2021</span>
       
     
   </small>
