@@ -5526,11 +5526,11 @@
 </tr>
 <tr>
 <td align="left">list tags(vertex)</td>
-<td align="left">返回点的Tag。</td>
+<td align="left">返回点的Tag，与labels()作用相同。</td>
 </tr>
 <tr>
 <td align="left">list labels(vertex)</td>
-<td align="left">返回点的Tag。</td>
+<td align="left">返回点的Tag，与tags()作用相同，用于兼容openCypher语法。</td>
 </tr>
 <tr>
 <td align="left">map properties(vertex_or_edge)</td>
@@ -5587,7 +5587,7 @@ nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 28, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2021</span>
       
     
   </small>
