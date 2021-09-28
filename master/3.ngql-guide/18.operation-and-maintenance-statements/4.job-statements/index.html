@@ -5828,6 +5828,10 @@
                 
                 <h1 id="_1">作业管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>在Storage服务上长期运行的任务称为作业，例如<code>COMPACT</code>、<code>FLUSH</code>和<code>STATS</code>。 如果图空间的数据量很大，这些作业可能耗时很长。作业管理可以帮助执行、查看、停止和恢复作业。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>所有作业管理命令都需要先选择图空间后才能执行。</p>
+</div>
 <h2 id="submit_job_compact">SUBMIT JOB COMPACT<a class="headerlink" href="#submit_job_compact" title="Permanent link">&para;</a></h2>
 <p><code>SUBMIT JOB COMPACT</code> 语句会触发 RocksDB 的长耗时 <code>compact</code> 操作。</p>
 <p><code>compact</code>配置详情请参见<a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage服务配置</a>。</p>
@@ -5864,7 +5868,7 @@
 +------------+
 </code></pre></div>
 <h2 id="show_job">SHOW JOB<a class="headerlink" href="#show_job" title="Permanent link">&para;</a></h2>
-<p>Meta服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示指定作业和相关任务的信息。</p>
+<p>Meta服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
 <p><code>job_id</code>在执行<code>SUBMIT JOB</code>语句时会返回。</p>
 <h3 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 96;
@@ -5954,7 +5958,7 @@
         \ ---------- stopped -/
 </code></pre></div>
 <h2 id="show_jobs">SHOW JOBS<a class="headerlink" href="#show_jobs" title="Permanent link">&para;</a></h2>
-<p><code>SHOW JOBS</code>语句列出所有未过期的作业。</p>
+<p><code>SHOW JOBS</code>语句列出当前图空间内所有未过期的作业。</p>
 <p>作业的默认过期时间为一周。如果需要修改过期时间，请修改Meta服务的参数<code>job_expired_secs</code>。详情请参见<a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta服务配置</a>。</p>
 <h3 id="_7">示例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOBS;
@@ -5971,7 +5975,7 @@
 +--------+----------------------+------------+-------------------------+-------------------------+
 </code></pre></div>
 <h2 id="stop_job">STOP JOB<a class="headerlink" href="#stop_job" title="Permanent link">&para;</a></h2>
-<p><code>STOP JOB</code>语句可以停止未完成的作业。</p>
+<p><code>STOP JOB</code>语句可以停止当前图空间内未完成的作业。</p>
 <h3 id="_8">示例<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; STOP JOB 22;
 +---------------+
@@ -5981,7 +5985,7 @@
 +---------------+
 </code></pre></div>
 <h2 id="recover_job">RECOVER JOB<a class="headerlink" href="#recover_job" title="Permanent link">&para;</a></h2>
-<p><code>RECOVER JOB</code>语句会重新执行失败的作业，并返回已恢复的作业数量。</p>
+<p><code>RECOVER JOB</code>语句会重新执行当前图空间内失败的作业，并返回已恢复的作业数量。</p>
 <h3 id="_9">示例<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; RECOVER JOB;
 +-------------------+
@@ -6003,7 +6007,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2021</span>
       
     
   </small>
