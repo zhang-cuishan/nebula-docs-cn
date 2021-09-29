@@ -5714,7 +5714,7 @@
 <p>Nebula Graph将启动一个负载均衡任务，迁移storage3和storage4中的分片，然后将服务器从集群中移除。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>已下线节点状态会显示为OFFLINE。该条记录默认一天后会删除，可以通过metaD中的配置项<code>removed_threshold_sec</code>更改OFFLINE节点被删除的时长。</p>
+<p>已下线节点状态会显示为OFFLINE。该条记录默认一天后会删除，可以通过<code>nebula-metad.conf</code>中的配置项<code>removed_threshold_sec</code>更改OFFLINE节点被删除的时长。单位：秒。</p>
 </div>
 <h2 id="leader">均衡leader分布<a class="headerlink" href="#leader" title="Permanent link">&para;</a></h2>
 <p><code>BALANCE DATA</code>只能均衡分片分布，不能均衡Raft leader分布。用户可以使用命令<code>BALANCE LEADER</code>均衡leader分布。</p>
