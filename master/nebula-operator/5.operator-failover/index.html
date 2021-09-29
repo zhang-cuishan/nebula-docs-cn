@@ -5528,7 +5528,7 @@
 <p>创建Nebula Graph集群。具体步骤参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用Kubectl部署Nebula Graph集群</a>或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用Helm部署Nebula Graph集群</a>。</p>
 </li>
 <li>
-<p>待所有Pods都处于<code>Running</code>状态时，模拟故障，删除名为<code>&lt;cluster_name&gt;-storaged-2 Pod</code>。</p>
+<p>待所有Pods都处于<code>Running</code>状态时，模拟故障，删除名为<code>&lt;cluster_name&gt;-storaged-2</code> Pod。</p>
 <p><div class="highlight"><pre><span></span><code>kubectl delete pod &lt;cluster-name&gt;-storaged-2 --now
 </code></pre></div>
 <code>&lt;cluster_name&gt;</code>为Nebula Graph集群的名称。</p>
@@ -5557,7 +5557,7 @@ nebula-cluster-storaged-2        <span class="m">1</span>/1     Running     <spa
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2021</span>
       
     
   </small>
