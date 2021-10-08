@@ -70,13 +70,13 @@ nebula-exchange-2.0.0.jar \
     nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up (healthy)   0.0.0.0:33184->19779/tcp, 0.0.0.0:33181->19780/tcp, 9777/tcp, 9778/tcp, 0.0.0.0:33185->9779/tcp, 9780/tcp
     ```
 
-  查看`Ports`列，查找docker映射的端口号，例如：
+    查看`Ports`列，查找docker映射的端口号，例如：
 
-  - Graph服务可用的端口号是9669。
+    - Graph服务可用的端口号是9669。
 
-  - Meta服务可用的端口号有33167、33168、33164。
+    - Meta服务可用的端口号有33167、33168、33164。
 
-  - Storage服务可用的端口号有33183、33177、33185。
+    - Storage服务可用的端口号有33183、33177、33185。
 
 ## 配置问题
 
