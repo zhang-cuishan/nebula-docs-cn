@@ -70,13 +70,13 @@ nebula-exchange-2.0.0.jar \
     nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up (healthy)   0.0.0.0:33184->19779/tcp, 0.0.0.0:33181->19780/tcp, 9777/tcp, 9778/tcp, 0.0.0.0:33185->9779/tcp, 9780/tcp
     ```
 
-    查看`Ports`列，查找docker映射的端口号，例如：
+查看`Ports`列，查找docker映射的端口号，例如：
 
-      - Graph服务可用的端口号是9669。
+  - Graph服务可用的端口号是9669。
 
-      - Meta服务可用的端口号有33167、33168、33164。
+  - Meta服务可用的端口号有33167、33168、33164。
 
-      - Storage服务可用的端口号有33183、33177、33185。
+  - Storage服务可用的端口号有33183、33177、33185。
 
 ## 配置问题
 
@@ -88,9 +88,9 @@ nebula-exchange-2.0.0.jar \
 
 - nebula.rate：向Nebula Graph发送请求前先去令牌桶获取令牌。
 
-      - limit：表示令牌桶的大小。
+  - limit：表示令牌桶的大小。
 
-      - timeout：表示获取令牌的超时时间。
+  - timeout：表示获取令牌的超时时间。
 
 根据机器性能可适当调整这四项参数的值。如果在导入过程中，Storage服务的leader变更，可以适当调小这四项参数的值，降低导入速度。
 
