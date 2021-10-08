@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/2.5.1/nebula-exchange/ex-ug-FAQ/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.24c991ad.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -5707,9 +5707,13 @@ nebula-docker-compose_storaged1_1   ./bin/nebula-storaged --fl ...   Up <span cl
 nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span class="o">(</span>healthy<span class="o">)</span>   <span class="m">0</span>.0.0.0:33184-&gt;19779/tcp, <span class="m">0</span>.0.0.0:33181-&gt;19780/tcp, <span class="m">9777</span>/tcp, <span class="m">9778</span>/tcp, <span class="m">0</span>.0.0.0:33185-&gt;9779/tcp, <span class="m">9780</span>/tcp
 </code></pre></div>
 <p>查看<code>Ports</code>列，查找docker映射的端口号，例如：</p>
-<p>- Graph服务可用的端口号是9669。</p>
-<p>- Meta服务可用的端口号有33167、33168、33164。</p>
-<p>- Storage服务可用的端口号有33183、33177、33185。</p>
+<div class="codehilite"><pre><span></span><code>- Graph服务可用的端口号是9669。
+
+- Meta服务可用的端口号有33167、33168、33164。
+
+- Storage服务可用的端口号有33183、33177、33185。
+</code></pre></div>
+
 </li>
 </ul>
 <h2 id="_3">配置问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -5721,8 +5725,11 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 <li>partition：Spark数据的分区数，表示数据导入的并发数。</li>
 </ul>
 <ul>
-<li>nebula.rate：向Nebula Graph发送请求前先去令牌桶获取令牌。<p>- limit：表示令牌桶的大小。</p>
-<p>- timeout：表示获取令牌的超时时间。</p>
+<li>nebula.rate：向Nebula Graph发送请求前先去令牌桶获取令牌。<div class="codehilite"><pre><span></span><code>- limit：表示令牌桶的大小。
+
+- timeout：表示获取令牌的超时时间。
+</code></pre></div>
+
 </li>
 </ul>
 <p>根据机器性能可适当调整这四项参数的值。如果在导入过程中，Storage服务的leader变更，可以适当调小这四项参数的值，降低导入速度。</p>
@@ -5745,7 +5752,7 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 8, 2021</span>
       
     
   </small>
@@ -5845,10 +5852,10 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": {"method": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.e99e714c.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.bc35569b.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       
