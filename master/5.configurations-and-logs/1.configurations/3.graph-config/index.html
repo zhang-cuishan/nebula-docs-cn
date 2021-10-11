@@ -3182,6 +3182,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#experimental" class="md-nav__link">
+    experimental配置
+  </a>
+  
+    <nav class="md-nav" aria-label="experimental配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experimental_1" class="md-nav__link">
+    experimental功能说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5587,6 +5607,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#experimental" class="md-nav__link">
+    experimental配置
+  </a>
+  
+    <nav class="md-nav" aria-label="experimental配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experimental_1" class="md-nav__link">
+    experimental功能说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5886,6 +5926,38 @@
 </tr>
 </tbody>
 </table>
+<h2 id="experimental">experimental配置<a class="headerlink" href="#experimental" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>预设值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_experimental_feature</code></td>
+<td><code>false</code></td>
+<td>实验性功能开关。可选值为<code>true</code>和<code>false</code>。当前支持的实验性功能请参见下文。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="experimental_1">experimental功能说明<a class="headerlink" href="#experimental_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TOSS</td>
+<td>TOSS（Transaction on Storage Side）功能，用于保证对边进行<code>INSERT</code>、<code>UPDATE</code>或<code>UPSERT</code>操作的最终一致性（因为逻辑上的一条边对应着硬盘上的两个键值对）。暂不支持<code>DELETE</code>操作。开启后会增加相关操作的时延约1倍。</td>
+</tr>
+</tbody>
+</table>
                 
                   
                     
@@ -5894,7 +5966,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 11, 2021</span>
       
     
   </small>
