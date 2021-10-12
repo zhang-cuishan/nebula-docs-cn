@@ -5658,7 +5658,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow, serve \
 | __EMPTY__     | 1997             |
 +---------------+------------------+
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 返回player100的入边。
+<div class="highlight"><pre><span></span><code># 返回player100入方向的邻居点。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
         YIELD follow._dst AS destination;
 +-------------+
@@ -5710,7 +5710,7 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2)-[e2:serve]-&gt;(v3)  \
 +---------------------+-----------------+
 ...
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 返回player102的出边和入边。
+<div class="highlight"><pre><span></span><code># 返回player102所有邻居点。
 nebula&gt; GO FROM &quot;player102&quot; OVER follow BIDIRECT \
         YIELD follow._dst AS both;
 +-------------+
@@ -5805,7 +5805,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER * WHERE $$.player.name IS NOT EMPT
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
       
     
   </small>
