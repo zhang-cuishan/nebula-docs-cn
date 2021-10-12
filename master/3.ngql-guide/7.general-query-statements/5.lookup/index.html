@@ -5677,8 +5677,8 @@
 <li><code>$-</code>和<code>$^</code>。</li>
 <li>在关系表达式中，不支持运算符两边都有字段名，例如<code>tagName.prop1 &gt; tagName.prop2</code>。</li>
 <li>不支持运算表达式和函数表达式中嵌套AliasProp表达式。</li>
-<li>字符串类型索引不支持范围扫描。</li>
 <li>不支持XOR和NOT运算符。</li>
+<li>不支持除<code>STARTS WITH</code>之外的字符串操作。</li>
 </ul>
 <h2 id="_4">检索点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>返回Tag为<code>player</code>且<code>name</code>为<code>Tony Parker</code>的点。</p>
@@ -5693,31 +5693,53 @@ nebula&gt; REBUILD TAG INDEX index_player;
 
 nebula&gt; LOOKUP ON player \
         WHERE player.name == &quot;Tony Parker&quot;;
-============
-| VertexID |
-============
-| 101      |
-------------
++-------------+
+| VertexID    |
++-------------+
+| &quot;player101&quot; |
++-------------+
 
 nebula&gt; LOOKUP ON player \
         WHERE player.name == &quot;Tony Parker&quot; \
         YIELD player.name, player.age;
-=======================================
-| VertexID | player.name | player.age |
-=======================================
-| 101      | Tony Parker | 36         |
----------------------------------------
++-------------+---------------+------------+
+| VertexID    | player.name   | player.age |
++-------------+---------------+------------+
+| &quot;player101&quot; | &quot;Tony Parker&quot; | 36         |
++-------------+---------------+------------+
+
+nebula&gt; LOOKUP ON player \
+        WHERE player.age  &gt; 45;
++-------------+
+| VertexID    |
++-------------+
+| &quot;player144&quot; |
++-------------+
+| &quot;player140&quot; |
++-------------+
+
+nebula&gt; LOOKUP ON player \
+        WHERE player.name STARTS WITH &quot;B&quot; \
+        AND player.age IN [22,30] \
+        YIELD player.name, player.age;
++-------------+-----------------+------------+
+| VertexID    | player.name     | player.age |
++-------------+-----------------+------------+
+| &quot;player149&quot; | &quot;Ben Simmons&quot;   | 22         |
++-------------+-----------------+------------+
+| &quot;player134&quot; | &quot;Blake Griffin&quot; | 30         |
++-------------+-----------------+------------+
 
 nebula&gt; LOOKUP ON player \
         WHERE player.name == &quot;Kobe Bryant&quot; \
         YIELD player.name AS name |\
         GO FROM $-.VertexID OVER serve \
         YIELD $-.name, serve.start_year, serve.end_year, $$.team.name;
-==================================================================
-| $-.name     | serve.start_year | serve.end_year | $$.team.name |
-==================================================================
-| Kobe Bryant | 1996             | 2016           | Lakers       |
-------------------------------------------------------------------
++---------------+------------------+----------------+--------------+
+| $-.name       | serve.start_year | serve.end_year | $$.team.name |
++---------------+------------------+----------------+--------------+
+| &quot;Kobe Bryant&quot; | 1996             | 2016           | &quot;Lakers&quot;     |
++---------------+------------------+----------------+--------------+
 </code></pre></div>
 <h2 id="_5">检索边<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>返回Edge type为<code>follow</code>且<code>degree</code>为<code>90</code>的边。</p>
@@ -5859,7 +5881,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
       
     
   </small>
