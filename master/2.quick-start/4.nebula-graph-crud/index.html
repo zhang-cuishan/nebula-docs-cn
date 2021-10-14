@@ -6452,7 +6452,7 @@ Got 1 rows (time spent 2205/2800 us)
 </li>
 </ul>
 <ul>
-<li>用<code>UPSERT</code>插入一个VID为<code>player111</code>的点。<div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name, age) VALUES &quot;player111&quot;:(&quot;Ben Simmons&quot;, 22);
+<li>用<code>INSERT</code>插入一个VID为<code>player111</code>的点，然后用<code>UPSERT</code>更新它。<div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name, age) VALUES &quot;player111&quot;:(&quot;Ben Simmons&quot;, 22);
 Execution succeeded (time spent 2115/2900 us)
 
 Wed, 21 Oct 2020 11:11:50 UTC
@@ -6565,7 +6565,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
       
     
   </small>

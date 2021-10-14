@@ -5895,7 +5895,7 @@ git rebase upstream/master
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>由于一个PR通常包含多个commit，在合并至master时容易被挤压（squash），因此强烈建议创建一个独立的分支进行更改。合并后，这个分支可以被丢弃，因此可以使用上述rebase命令将本地master与upstream同步。此外，如果直接将commit提交至 master，用户可以需要在master分支使用hard reset，例如：</p>
+<p>由于一个PR通常包含多个commit，因此强烈建议创建一个独立的分支进行更改。合并后，这个分支可以被丢弃，因此可以使用上述rebase命令将本地master与upstream同步。此外，如果直接将commit提交至 master，用户可以需要在master分支使用hard reset，例如：</p>
 <div class="highlight"><pre><span></span><code>git fetch upstream
 git checkout master
 git reset --hard upstream/master
@@ -5983,7 +5983,7 @@ git rebase upstream/master
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
       
     
   </small>
