@@ -4982,48 +4982,55 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    背景信息
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    适用场景
+    背景信息
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    实现方法
+    适用场景
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    数据集
+    实现方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    环境配置
+    数据集
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    前提条件
+    环境配置
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     操作步骤
   </a>
   
@@ -5519,48 +5526,55 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    背景信息
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    适用场景
+    背景信息
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    实现方法
+    适用场景
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    数据集
+    实现方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    环境配置
+    数据集
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    前提条件
+    环境配置
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     操作步骤
   </a>
   
@@ -5640,10 +5654,14 @@
                 
                 <h1 id="sst">导入SST文件数据<a class="headerlink" href="#sst" title="Permanent link">&para;</a></h1>
 <p>本文以一个示例说明如何将数据源的数据生成SST（Sorted String Table）文件并保存在HDFS上，然后导入Nebula Graph，示例数据源是CSV文件。</p>
-<blockquote>
-<p><strong>说明</strong>：仅Linux系统支持导入SST文件。</p>
-</blockquote>
-<h2 id="_1">背景信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>仅Linux系统支持导入SST文件。</li>
+</ul>
+<ul>
+<li>不支持属性的Default值。因为是直接替换文件，在Schema中设置Default值无法生效。</li>
+</ul>
+<h2 id="_2">背景信息<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Exchange支持两种数据导入模式：</p>
 <ul>
 <li>直接将数据源的数据通过<strong>nGQL</strong>语句的形式导入Nebula Graph。</li>
@@ -5652,7 +5670,7 @@
 <li>将数据源的数据生成SST文件，然后借助Console将SST文件导入Nebula Graph。</li>
 </ul>
 <p>下文将介绍生成SST文件并用其导入数据的适用场景、实现方法、前提条件、操作步骤等内容。</p>
-<h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">适用场景<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>适合在线业务，因为生成时几乎不会影响业务（只是读取Schema），导入速度快。</p>
@@ -5665,7 +5683,7 @@
 <ul>
 <li>适合数据源数据量较大的场景，导入速度快。</li>
 </ul>
-<h2 id="_3">实现方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">实现方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>Nebula Graph底层使用RocksDB作为键值型存储引擎。RocksDB是基于硬盘的存储引擎，提供了一系列API用于创建及导入SST格式的文件，有助于快速导入海量数据。</p>
 <p>SST文件是一个内部包含了任意长度的有序键值对集合的文件，用于高效地存储大量键值型数据。生成SST文件的整个过程主要由Exchange的Reader、sstProcessor和sstWriter完成。整个数据处理过程如下：</p>
 <ol>
@@ -5692,9 +5710,9 @@ if (!s.ok()) {
 <p>调用<code>IngestExternalFile()</code>方法时，RocksDB默认会将文件拷贝到数据目录，并且阻塞RocksDB写入操作。如果SST文件中的键范围覆盖了Memtable键的范围，则将Memtable落盘（flush）到硬盘。将SST文件放置在LSM树最优位置后，为文件分配一个全局序列号，并打开写操作。</p>
 </li>
 </ol>
-<h2 id="_4">数据集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">数据集<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>本文以<a href="https://docs-cdn.nebula-graph.com.cn/dataset/dataset.zip">basketballplayer数据集</a>为例。</p>
-<h2 id="_5">环境配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">环境配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>本文示例在MacOS下完成，以下是相关的环境配置信息：</p>
 <ul>
 <li>硬件规格：<ul>
@@ -5712,7 +5730,7 @@ if (!s.ok()) {
 <ul>
 <li>Nebula Graph：2.5.1。</li>
 </ul>
-<h2 id="_6">前提条件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">前提条件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
@@ -5757,7 +5775,7 @@ if (!s.ok()) {
 </div>
 </li>
 </ul>
-<h2 id="_7">操作步骤<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">操作步骤<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="1nebula_graphschema">步骤 1：在Nebula Graph中创建Schema<a class="headerlink" href="#1nebula_graphschema" title="Permanent link">&para;</a></h3>
 <p>分析CSV文件中的数据，按以下步骤在Nebula Graph中创建Schema：</p>
 <ol>
@@ -6189,7 +6207,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2021</span>
       
     
   </small>
