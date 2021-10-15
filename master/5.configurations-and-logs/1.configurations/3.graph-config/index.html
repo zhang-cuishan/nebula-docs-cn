@@ -3183,6 +3183,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    memory配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#experimental" class="md-nav__link">
     experimental配置
   </a>
@@ -5622,6 +5629,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#memory" class="md-nav__link">
+    memory配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#experimental" class="md-nav__link">
     experimental配置
   </a>
@@ -5696,11 +5710,6 @@
 <td><code>enable_optimizer</code></td>
 <td><code>true</code></td>
 <td>是否启用优化器。</td>
-</tr>
-<tr>
-<td><code>system_memory_high_watermark_ratio</code></td>
-<td>-</td>
-<td>内存高水位报警机制的触发阈值，默认为<code>0.8</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph会停止接受查询。初始配置文件中未设置该参数，使用需手动添加。</td>
 </tr>
 <tr>
 <td><code>timezone_name</code></td>
@@ -5945,6 +5954,23 @@
 </tr>
 </tbody>
 </table>
+<h2 id="memory">memory配置<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>预设值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>system_memory_high_watermark_ratio</code></td>
+<td>-</td>
+<td>内存高水位报警机制的触发阈值，默认为<code>0.9</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph会停止接受查询。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="experimental">experimental配置<a class="headerlink" href="#experimental" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -5985,7 +6011,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2021</span>
       
     
   </small>
