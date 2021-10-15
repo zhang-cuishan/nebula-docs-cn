@@ -4,7 +4,7 @@
 
 ## 概览
 
-![Explorer](../figs/ex-ug-006.png)
+![Explorer](../figs/explorer.png)
 Explorer 的主页面分为五个部分：
 
 - 标签栏
@@ -16,6 +16,8 @@ Explorer 的主页面分为五个部分：
 ## 标签栏
 
 - 导出图形：支持导出当前视图的 CSV 文件或 PNG（图片）文件。
+
+- 新增画布：支持创建多个画布，最多仅能打开10个画布。
 
 ## 侧边栏
 
@@ -40,7 +42,8 @@ Explorer 的主页面分为五个部分：
 - 框选模式：单击![frameSelect](../figs/nav-frameSelect.png) 图标，支持框选画布中的点和边。
 - 选中多条点边：单击![singleSelect](../figs/nav-singleSelect.png) 图标，可以方便的点击画布中的点和边，单击空白处取消选择。
 - 拖动画布：单击![moveCanvas](../figs/nav-moveCanvas.png) 图标，支持拖动画布的位置。
-- 
+- 节点过滤：单击![filter](../figs/nav-filter.png)图标，支持对画布中显示的点进行过滤。
+
 更多详细信息参考 [画布操作](../operation-guide/ex-ug-canvas.md)。
 
 ### 图探索扩展
