@@ -5633,6 +5633,8 @@
                 
                 
                 <h1 id="lookup">LOOKUP<a class="headerlink" href="#lookup" title="Permanent link">&para;</a></h1>
+<!-- 3.0强制使用YIELD后需要修改本文档，参考 https://confluence.nebula-graph.io/pages/viewpage.action?pageId=10723963 -->
+
 <p><code>LOOKUP</code>根据索引遍历数据。用户可以使用<code>LOOKUP</code>实现如下功能：</p>
 <ul>
 <li>根据<code>WHERE</code>子句搜索特定数据。</li>
@@ -5667,7 +5669,7 @@
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
 [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
-[YIELD &lt;return_list&gt;];
+[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 
 &lt;return_list&gt;
     &lt;prop_name&gt; [AS &lt;col_alias&gt;] [, &lt;prop_name&gt; [AS &lt;prop_alias&gt;] ...];
@@ -5676,14 +5678,16 @@
 <li><code>WHERE &lt;expression&gt;</code>：指定遍历的过滤条件，还可以结合布尔运算符AND和OR一起使用。详情请参见<a href="../../8.clauses-and-options/where/">WHERE</a>。</li>
 </ul>
 <ul>
-<li><code>YIELD &lt;return_list&gt;</code>：指定要返回的结果和格式。</li>
-</ul>
+<li>
+<p><code>YIELD</code>：定义需要返回的输出。</p>
 <ul>
-<li>如果只有<code>WHERE</code>子句，没有<code>YIELD</code>子句：<ul>
-<li><code>LOOKUP</code>Tag时，返回点ID。</li>
-<li><code>LOOKUP</code>Edge type时，返回起始点ID、目的点ID和rank。</li>
+<li><code>LOOKUP</code>Tag时，除了返回定义的属性，额外返回<code>VertexID</code>。如果没有<code>YIELD</code>子句，返回<code>VertexID</code>。</li>
+<li><code>LOOKUP</code>Edge type时，除了返回定义的属性，额外返回<code>起始点ID</code>、<code>目的点ID</code>和<code>rank</code>。如果没有<code>YIELD</code>子句，返回<code>起始点ID</code>、<code>目的点ID</code>和<code>rank</code>。</li>
 </ul>
 </li>
+</ul>
+<ul>
+<li><code>AS</code>：设置别名。</li>
 </ul>
 <h2 id="where">WHERE语句限制<a class="headerlink" href="#where" title="Permanent link">&para;</a></h2>
 <p>在<code>LOOKUP</code>语句中使用<code>WHERE</code>子句，不支持如下操作：</p>
@@ -5715,12 +5719,12 @@ nebula&gt; LOOKUP ON player \
 
 nebula&gt; LOOKUP ON player \
         WHERE player.name == &quot;Tony Parker&quot; \
-        YIELD player.name, player.age;
-+-------------+---------------+------------+
-| VertexID    | player.name   | player.age |
-+-------------+---------------+------------+
-| &quot;player101&quot; | &quot;Tony Parker&quot; | 36         |
-+-------------+---------------+------------+
+        YIELD player.name AS name, player.age AS age;
++-------------+---------------+-----+
+| VertexID    | name          | age |
++-------------+---------------+-----+
+| &quot;player101&quot; | &quot;Tony Parker&quot; | 36  |
++-------------+---------------+-----+
 
 nebula&gt; LOOKUP ON player \
         WHERE player.age  &gt; 45;
@@ -5895,7 +5899,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2021</span>
       
     
   </small>
