@@ -5643,19 +5643,19 @@
 <p>Nebula Graph支持三种加密策略。加密涉及的具体进程请参见<a href="https://github.com/vesoft-inc/nebula/blob/a67d166b284cae1b534bf8d19c936ee38bf12e29/docs/rfcs/0001-ssl-transportation.md#usage-explanation">详细说明</a>。</p>
 <ul>
 <li>
-<p>对客户端、Graph服务、Meta服务和Storage服务之间的数据传输进行加密。</p>
+<p>对客户端、Graph服务、Meta服务和Storage服务之间的传输数据加密。</p>
 <p>需要修改<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>配置文件，设置<code>enable_ssl = true</code>。</p>
 </li>
 </ul>
 <ul>
 <li>
-<p>加密客户端与Graph服务之间的数据传输。</p>
+<p>对客户端和Graph服务之间的传输数据加密。</p>
 <p>适用于集群设置在同一个机房内，仅对外开放Graph服务的端口。因为其他服务可以通过内部网络通信，无需加密。需要修改<code>nebula-graphd.conf</code>配置文件，设置<code>enable_graph_ssl = true</code>。</p>
 </li>
 </ul>
 <ul>
 <li>
-<p>加密集群中Meta服务相关的数据传输。</p>
+<p>对集群中Meta服务相关的传输数据加密。</p>
 <p>适用于向meta服务传输需保密的信息。需要修改<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>配置文件，设置<code>enable_meta_ssl = true</code>。</p>
 </li>
 </ul>
@@ -5685,7 +5685,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2021</span>
       
     
   </small>
