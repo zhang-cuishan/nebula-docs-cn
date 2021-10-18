@@ -5681,7 +5681,7 @@
                 
                 
                 <h1 id="nebula_algorithm">Nebula Algorithm<a class="headerlink" href="#nebula_algorithm" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/master/nebula-algorithm">Nebula Algorithm</a> （简称Algorithm）是一款基于<a href="https://spark.apache.org/graphx/">GraphX</a>的Spark应用程序，通过提交Spark任务的形式使用完整的算法工具对Nebula Graph数据库中的数据执行图计算，也可以通过编程形式调用lib库下的算法针对DataFrame执行图计算。</p>
+<p><a href="https://github.com/vesoft-inc/nebula-algorithm">Nebula Algorithm</a> （简称Algorithm）是一款基于<a href="https://spark.apache.org/graphx/">GraphX</a>的Spark应用程序，通过提交Spark任务的形式使用完整的算法工具对Nebula Graph数据库中的数据执行图计算，也可以通过编程形式调用lib库下的算法针对DataFrame执行图计算。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>在使用 Algorithm 之前，用户需要确认以下信息：</p>
 <ul>
@@ -5780,18 +5780,18 @@
 <p>调用GraphX提供的图算法（例如PageRank）或者自行实现的算法（例如Louvain社区发现）。</p>
 </li>
 </ol>
-<p>详细的实现方法可以参见相关<a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/master/nebula-algorithm/src/main/scala/com/vesoft/nebula/algorithm/lib">Scala文件</a>。</p>
+<p>详细的实现方法可以参见相关<a href="https://github.com/vesoft-inc/nebula-algorithm/tree/master/nebula-algorithm/src/main/scala/com/vesoft/nebula/algorithm/lib">Scala文件</a>。</p>
 <h2 id="nebula_algorithm_1">获取Nebula Algorithm<a class="headerlink" href="#nebula_algorithm_1" title="Permanent link">&para;</a></h2>
 <h3 id="_5">编译打包<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>克隆仓库<code>nebula-spark-utils</code>。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b v2.5.1 https://github.com/vesoft-inc/nebula-spark-utils.git
+<p>克隆仓库<code>nebula-algorithm</code>。</p>
+<div class="highlight"><pre><span></span><code>$ git clone -b v2.5 https://github.com/vesoft-inc/nebula-algorithm.git
 </code></pre></div>
 </li>
 <li>
 <p>进入目录<code>nebula-algorithm</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-spark-utils/nebula-algorithm
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-algorithm
 </code></pre></div>
 </li>
 <li>
@@ -5810,14 +5810,14 @@
 <li>
 <p>在文件<code>pom.xml</code>中添加依赖。</p>
 <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
-&lt;groupId&gt;com.vesoft&lt;/groupId&gt;
-&lt;artifactId&gt;nebula-algorithm&lt;/artifactId&gt;
-&lt;version&gt;2.5.1&lt;/version&gt;
+     &lt;groupId&gt;com.vesoft&lt;/groupId&gt;
+     &lt;artifactId&gt;nebula-algorithm&lt;/artifactId&gt;
+     &lt;version&gt;2.5.1&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre></div>
 </li>
 <li>
-<p>传入参数调用算法（以PageRank为例）。更多算法请参见<a href="https://github.com/vesoft-inc/nebula-spark-utils/tree/master/nebula-algorithm/src/test/scala/com/vesoft/nebula/algorithm/lib">测试用例</a>。</p>
+<p>传入参数调用算法（以PageRank为例）。更多算法请参见<a href="https://github.com/vesoft-inc/nebula-algorithm/tree/master/nebula-algorithm/src/test/scala/com/vesoft/nebula/algorithm/lib">测试用例</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>执行算法的DataFrame默认第一列是起始点，第二列是目的点，第三列是边权重（非Nebula Graph中的Rank）。</p>
@@ -5834,7 +5834,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </div>
 <ol>
 <li>
-<p>设置<a href="https://github.com/vesoft-inc/nebula-spark-utils/blob/v2.5.1/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
+<p>设置<a href="https://github.com/vesoft-inc/nebula-algorithm/blob/v2.5/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
     <span class="c1"># Spark相关配置</span>
     spark: <span class="o">{</span>
@@ -5985,7 +5985,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master &lt;mode&gt; --class com.vesoft.nebula.algorithm.Main &lt;nebula-algorithm-2.5.1.jar_path&gt; -p &lt;application.conf_path&gt;
 </code></pre></div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">&quot;local&quot;</span> --class com.vesoft.nebula.algorithm.Main /root/nebula-spark-utils/nebula-algorithm/target/nebula-algorithm-2.5.1.jar -p /root/nebula-spark-utils/nebula-algorithm/src/main/resources/application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">&quot;local&quot;</span> --class com.vesoft.nebula.algorithm.Main /root/nebula-algorithm/target/nebula-algorithm-2.5.1.jar -p /root/nebula-algorithm/src/main/resources/application.conf
 </code></pre></div>
 </li>
 </ol>
@@ -6002,7 +6002,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2021</span>
       
     
   </small>
