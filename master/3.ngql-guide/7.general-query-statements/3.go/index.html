@@ -5557,13 +5557,9 @@
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
 [YIELD [DISTINCT] &lt;return_list&gt;]
+[| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
 [| ORDER BY &lt;expression&gt; [{ASC | DESC}]]
 [| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;]
-
-GO [[&lt;M&gt; TO] &lt;N&gt; STEPS ] FROM &lt;vertex_list&gt;
-OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
-[ WHERE &lt;conditions&gt; ]
-[| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
 
 &lt;vertex_list&gt; ::=
     &lt;vid&gt; [, &lt;vid&gt; ...]
@@ -5606,7 +5602,10 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：指定输出结果。详情请参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
+<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用<a href="../../6.functions-and-expressions/4.schema/">Schema函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>、<code>rank(edge)</code>、<code>properties(edge)</code>、<code>id(vertex)</code>、<code>properties(vertex)</code>。详情请参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
+</ul>
+<ul>
+<li><code>GROUP BY</code>：根据指定属性的值将输出分组。详情请参见<a href="../../8.clauses-and-options/group-by/">GROUP BY</a>。分组后需要再次使用<code>YIELD</code>定义需要返回的输出。</li>
 </ul>
 <ul>
 <li>
@@ -5619,9 +5618,6 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </ul>
 <ul>
 <li><code>LIMIT</code>：限制输出结果的行数。详情请参见<a href="../../8.clauses-and-options/limit/">LIMIT</a>。</li>
-</ul>
-<ul>
-<li><code>GROUP BY</code>：根据指定属性的值将输出分组。详情请参见<a href="../../8.clauses-and-options/group-by/">GROUP BY</a>。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code># 返回player102所属队伍。
@@ -5647,8 +5643,9 @@ nebula&gt; GO 2 STEPS FROM &quot;player102&quot; OVER follow;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 添加过滤条件。
 nebula&gt; GO FROM &quot;player100&quot;, &quot;player102&quot; OVER serve \
-        WHERE serve.start_year &gt; 1995 \
-        YIELD DISTINCT $$.team.name AS team_name, serve.start_year AS start_year, $^.player.name AS player_name;
+        WHERE properties(edge).start_year &gt; 1995 \
+        YIELD DISTINCT properties($$).name AS team_name, properties(edge).start_year AS start_year, properties($^).name AS player_name;
+
 +-----------------+------------+---------------------+
 | team_name       | start_year | player_name         |
 +-----------------+------------+---------------------+
@@ -5659,22 +5656,22 @@ nebula&gt; GO FROM &quot;player100&quot;, &quot;player102&quot; OVER serve \
 | &quot;Spurs&quot;         | 2015       | &quot;LaMarcus Aldridge&quot; |
 +-----------------+------------+---------------------+
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 遍历多个Edge type。属性没有值时，会显示__EMPTY__。
+<div class="highlight"><pre><span></span><code># 遍历多个Edge type。属性没有值时，会显示UNKNOWN_PROP。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow, serve \
-        YIELD follow.degree, serve.start_year;
-+---------------+------------------+
-| follow.degree | serve.start_year |
-+---------------+------------------+
-| 95            | __EMPTY__        |
-+---------------+------------------+
-| 95            | __EMPTY__        |
-+---------------+------------------+
-| __EMPTY__     | 1997             |
-+---------------+------------------+
+        YIELD properties(edge).degree, properties(edge).start_year;
++-------------------------+-----------------------------+
+| properties(EDGE).degree | properties(EDGE).start_year |
++-------------------------+-----------------------------+
+| 95                      | UNKNOWN_PROP                |
++-------------------------+-----------------------------+
+| 95                      | UNKNOWN_PROP                |
++-------------------------+-----------------------------+
+| UNKNOWN_PROP            | 1997                        |
++-------------------------+-----------------------------+
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 返回player100入方向的邻居点。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
-        YIELD follow._dst AS destination;
+        YIELD src(edge) AS destination;
 +-------------+
 | destination |
 +-------------+
@@ -5698,16 +5695,16 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2) WHERE id(v) == &#39;player100&#39; \
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 查询player100的朋友和朋友所属队伍。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
-        YIELD follow._dst AS id | \
+        YIELD src(edge) AS id | \
         GO FROM $-.id OVER serve \
-        WHERE $^.player.age &gt; 20 \
-        YIELD $^.player.name AS FriendOf, $$.team.name AS Team;
+        WHERE properties($^).age &gt; 20 \
+        YIELD properties($^).name AS FriendOf, properties($$).name AS Team;
 +---------------------+-----------------+
 | FriendOf            | Team            |
 +---------------------+-----------------+
-| &quot;Tony Parker&quot;       | &quot;Spurs&quot;         |
+| &quot;Danny Green&quot;       | &quot;Spurs&quot;         |
 +---------------------+-----------------+
-| &quot;Tony Parker&quot;       | &quot;Hornets&quot;       |
+| &quot;Danny Green&quot;       | &quot;Cavaliers&quot;     |
 +---------------------+-----------------+
 ...
 
@@ -5725,8 +5722,8 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2)-[e2:serve]-&gt;(v3)  \
 ...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 返回player102所有邻居点。
-nebula&gt; GO FROM &quot;player102&quot; OVER follow BIDIRECT \
-        YIELD follow._dst AS both;
+nebula&gt; GO FROM &quot;player102&quot; OVER follow \
+        YIELD dst(edge) AS both;
 +-------------+
 | both        |
 +-------------+
@@ -5751,7 +5748,7 @@ nebula&gt; MATCH (v) -[e:follow]-(v2) \
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 查询player100 1~2跳内的朋友。
 nebula&gt; GO 1 TO 2 STEPS FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS destination;
+        YIELD dst(edge) AS destination;
 +-------------+
 | destination |
 +-------------+
@@ -5775,9 +5772,9 @@ nebula&gt; MATCH (v) -[e:follow*1..2]-&gt;(v2) \
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 根据年龄分组。
 nebula&gt; GO 2 STEPS FROM &quot;player100&quot; OVER follow \
-        YIELD follow._src AS src, follow._dst AS dst, $$.player.age AS age \
+        YIELD src(edge) AS src, dst(edge) AS dst, properties($$).age AS age \
         | GROUP BY $-.dst \
-        YIELD $-.dst AS dst, collect_set($-.src) AS src, collect($-.age) AS age
+        YIELD $-.dst AS dst, collect_set($-.src) AS src, collect($-.age) AS age;
 +-------------+----------------------------+----------+
 | dst         | src                        | age      |
 +-------------+----------------------------+----------+
@@ -5789,9 +5786,9 @@ nebula&gt; GO 2 STEPS FROM &quot;player100&quot; OVER follow \
 +-------------+----------------------------+----------+
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 分组并限制输出结果的行数。
-nebula&gt; $a = GO FROM &quot;player100&quot; OVER follow YIELD follow._src AS src, follow._dst AS dst; \
+nebula&gt; $a = GO FROM &quot;player100&quot; OVER follow YIELD src(edge) AS src, dst(edge) AS dst; \
         GO 2 STEPS FROM $a.dst OVER follow \
-        YIELD $a.src AS src, $a.dst, follow._src, follow._dst \
+        YIELD $a.src AS src, $a.dst, src(edge), dst(edge) \
         | ORDER BY $-.src | OFFSET 1 LIMIT 2;
 +-------------+-------------+-------------+-------------+
 | src         | $a.dst      | follow._src | follow._dst |
@@ -5802,7 +5799,7 @@ nebula&gt; $a = GO FROM &quot;player100&quot; OVER follow YIELD follow._src AS s
 +-------------+-------------+-------------+-------------+
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 在多个边上通过IS NOT EMPTY进行判断。
-nebula&gt; GO FROM &quot;player100&quot; OVER * WHERE $$.player.name IS NOT EMPTY YIELD follow._dst;
+nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name IS NOT EMPTY YIELD dst(edge);
 +-------------+
 | follow._dst |
 +-------------+
@@ -5819,7 +5816,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER * WHERE $$.player.name IS NOT EMPT
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2021</span>
       
     
   </small>
