@@ -5602,7 +5602,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用<a href="../../6.functions-and-expressions/4.schema/">Schema函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>、<code>rank(edge)</code>、<code>properties(edge)</code>、<code>id(vertex)</code>、<code>properties(vertex)</code>。详情请参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
+<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用<a href="../../6.functions-and-expressions/4.schema/">Schema函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>、<code>rank(edge)</code>、<code>properties(edge)</code>、<code>id(vertex)</code>、<code>properties(vertex)</code>，暂不支持嵌套函数。详情请参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
 </ul>
 <ul>
 <li><code>GROUP BY</code>：根据指定属性的值将输出分组。详情请参见<a href="../../8.clauses-and-options/group-by/">GROUP BY</a>。分组后需要再次使用<code>YIELD</code>定义需要返回的输出。</li>
