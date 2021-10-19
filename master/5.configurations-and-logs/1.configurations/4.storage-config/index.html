@@ -3190,6 +3190,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocksdb_options" class="md-nav__link">
     rocksdb options配置
   </a>
@@ -5609,6 +5616,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#rocksdb_options" class="md-nav__link">
     rocksdb options配置
   </a>
@@ -5658,7 +5672,7 @@
 <h2 id="_1">配置文件使用方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>如需使用初始配置文件，从上述两个文件选择其一，删除后缀<code>.default</code>或<code>.production</code>，Meta服务才能将其识别为配置文件并从中获取配置信息。</p>
 <h2 id="_2">配置文件参数值说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>配置文件内没有设置某个参数表示参数使用的是默认值。文件内只预设了部分参数的值，而且两份初始配置文件内的参数值也略有不同，本文的预设值以<code>nebula-metad.conf.default</code>为准。</p>
+<p>配置文件内没有设置某个参数表示参数使用的是默认值。文件内只预设了部分参数的值，而且两份初始配置文件内的参数值也略有不同，本文的预设值以<code>nebula-metad.conf.default</code>文件为准，其中没有的参数则以<code>nebula-storaged.conf.production</code>文件为准。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Raft Listener的配置和Storage服务配置不同，详情请参见<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">部署Raft listener</a>。</p>
@@ -5910,6 +5924,42 @@
 </tr>
 </tbody>
 </table>
+<h2 id="misc">misc配置<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>下表中的<code>snapshot</code>与Nebula Graph快照是不同的概念，这里的<code>snapshot</code>指Raft同步过程中leader上的存量数据。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>snapshot_part_rate_limit</code></td>
+<td align="left"><code>8388608</code></td>
+<td align="left">Raft leader向Raft group中其它成员同步存量数据时的限速。单位：字节/秒。</td>
+</tr>
+<tr>
+<td align="left"><code>snapshot_batch_size</code></td>
+<td align="left"><code>1048576</code></td>
+<td align="left">Raft leader向Raft group中其它成员同步存量数据时每批发送的数据量。单位：字节。</td>
+</tr>
+<tr>
+<td align="left"><code>rebuild_index_part_rate_limit</code></td>
+<td align="left"><code>4194304</code></td>
+<td align="left">重建索引过程中，Raft leader向Raft group中其它成员同步索引数据时的限速。单位：字节/秒。</td>
+</tr>
+<tr>
+<td align="left"><code>rebuild_index_batch_size</code></td>
+<td align="left"><code>1048576</code></td>
+<td align="left">重建索引过程中，Raft leader向Raft group中其它成员同步索引数据时每批发送的数据量。单位：字节。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rocksdb_options">rocksdb options配置<a class="headerlink" href="#rocksdb_options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -6009,7 +6059,7 @@ disable_auto_compactions
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2021</span>
       
     
   </small>
