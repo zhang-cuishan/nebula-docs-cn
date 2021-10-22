@@ -5625,7 +5625,7 @@
 </ol>
 <h2 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">&para;</a></h2>
 <p>Parser 模块收到请求后，通过 Flex（词法分析工具）和 Bison（语法分析工具）生成的词法语法解析器，将语句转换为抽象语法树（AST），在语法解析阶段会拦截不符合语法规则的语句。</p>
-<p>例如<code>GO FROM "Tim" OVER like WHERE like.likeness &gt; 8.0 YIELD like._dst</code>语句转换的 AST 如下。</p>
+<p>例如<code>GO FROM "Tim" OVER like WHERE properties(edge).likeness &gt; 8.0 YIELD dst(edge)</code>语句转换的 AST 如下。</p>
 <p><img alt="AST" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/parser-ast-tree.png" /></p>
 <h2 id="validator">Validator<a class="headerlink" href="#validator" title="Permanent link">&para;</a></h2>
 <p>Validator 模块对生成的 AST 进行语义校验，主要包括：</p>
@@ -5636,7 +5636,7 @@
 </ul>
 <ul>
 <li>校验上下文引用信息<p>校验引用的变量是否存在或者引用的属性是否属于变量。</p>
-<p>例如语句<code>$var = GO FROM "Tim" OVER like YIELD like._dst AS ID; GO FROM $var.ID OVER serve YIELD serve._dst</code>，Validator 模块首先会检查变量 <code>var</code> 是否定义，其次再检查属性 <code>ID</code> 是否属于变量 <code>var</code>。</p>
+<p>例如语句<code>$var = GO FROM "Tim" OVER like YIELD dst(edge) AS ID; GO FROM $var.ID OVER serve YIELD dst(edge)</code>，Validator 模块首先会检查变量 <code>var</code> 是否定义，其次再检查属性 <code>ID</code> 是否属于变量 <code>var</code>。</p>
 </li>
 </ul>
 <ul>
@@ -5646,12 +5646,12 @@
 </ul>
 <ul>
 <li>校验 <code>*</code> 代表的信息<p>查询语句中包含 <code>*</code> 时，校验子句时需要将 <code>*</code> 涉及的Schema都进行校验。</p>
-<p>例如语句<code>GO FROM "Tim" OVER * YIELD like._dst, like.likeness, serve._dst</code>，校验<code>OVER</code>子句时需要校验所有的 Edge type，如果 Edge type 包含 <code>like</code>和<code>serve</code>，该语句会展开为<code>GO FROM "Tim" OVER like,serve YIELD like._dst, like.likeness, serve._dst</code>。</p>
+<p>例如语句<code>GO FROM "Tim" OVER * YIELD dst(edge), properties(edge).likeness, dst(edge)</code>，校验<code>OVER</code>子句时需要校验所有的 Edge type，如果 Edge type 包含 <code>like</code>和<code>serve</code>，该语句会展开为<code>GO FROM "Tim" OVER like,serve YIELD dst(edge), properties(edge).likeness, dst(edge)</code>。</p>
 </li>
 </ul>
 <ul>
 <li>校验输入输出<p>校验管道符（|）前后的一致性。</p>
-<p>例如语句<code>GO FROM "Tim" OVER like YIELD like._dst AS ID | GO FROM $-.ID OVER serve YIELD serve._dst</code>，Validator 模块会校验 <code>$-.ID</code> 在管道符左侧是否已经定义。</p>
+<p>例如语句<code>GO FROM "Tim" OVER like YIELD dst(edge) AS ID | GO FROM $-.ID OVER serve YIELD dst(edge)</code>，Validator 模块会校验 <code>$-.ID</code> 在管道符左侧是否已经定义。</p>
 </li>
 </ul>
 <p>校验完成后，Validator 模块还会生成一个默认可执行，但是未进行优化的执行计划，存储在目录 <code>src/planner</code> 内。</p>
@@ -5709,7 +5709,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 6, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

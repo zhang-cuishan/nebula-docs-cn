@@ -6233,9 +6233,12 @@ Execution succeeded (time spent 6064/7104 us)
 <h3 id="ngql_3">nGQL语法<a class="headerlink" href="#ngql_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>GO</code><div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; STEPS ] FROM &lt;vertex_list&gt;
-OVER &lt;edge_type_list&gt; [REVERSELY] [BIDIRECT]
-[WHERE &lt;expression&gt; [AND | OR expression ...])]
-YIELD [DISTINCT] &lt;return_list&gt;;
+OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
+[ WHERE &lt;conditions&gt; ]
+[YIELD [DISTINCT] &lt;return_list&gt;]
+[| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
+[| ORDER BY &lt;expression&gt; [{ASC | DESC}]]
+[| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;];
 </code></pre></div>
 </li>
 </ul>
@@ -6245,26 +6248,26 @@ YIELD [DISTINCT] &lt;return_list&gt;;
 <ul>
 <li>
 <p>查询Tag属性</p>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt; | &lt;tag_name_list&gt; | *} &lt;vid_list&gt;
-[YIELD [DISTINCT] &lt;return_list&gt;];
+<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *} 
+&lt;vid&gt; [, vid ...] 
+[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]]; 
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>查询边属性</p>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;]
-[, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt; ...]
-[YIELD [DISTINCT] &lt;return_list&gt;];
+<div class="highlight"><pre><span></span><code>FETCH PROP ON &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt; ...]
+[YIELD &lt;output&gt;];
 </code></pre></div>
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li><code>LOOKUP</code><div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;tag_name&gt; | &lt;edge_type&gt;} 
-WHERE &lt;expression&gt; [AND expression ...])]
-[YIELD &lt;return_list&gt;];
+<li><code>LOOKUP</code><div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
+[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
+[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 </code></pre></div>
 </li>
 </ul>
@@ -6288,14 +6291,15 @@ Got 2 rows (time spent 12097/14220 us)
 </li>
 </ul>
 <ul>
-<li>从VID为<code>player100</code>的球员开始，沿着边<code>follow</code>查找年龄大于或等于35岁的球员，并返回他们的姓名和年龄，同时重命名对应的列。<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE $$.player.age &gt;= 35 \
-        YIELD $$.player.name AS Teammate, $$.player.age AS Age;
-+---------------+-----+
-| Teammate      | Age |
-+---------------+-----+
-| &quot;Tony Parker&quot; | 36  |
-+---------------+-----+
-Got 1 rows (time spent 8206/9335 us)
+<li>从VID为<code>player100</code>的球员开始，沿着边<code>follow</code>查找年龄大于或等于35岁的球员，并返回他们的姓名和年龄，同时重命名对应的列。<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).age &gt;= 35 \
+        YIELD properties($$).name AS Teammate, properties($$).age AS Age;
++-----------------+-----+
+| Teammate        | Age |
++-----------------+-----+
+| &quot;Tony Parker&quot;   | 36  |
++-----------------+-----+
+| &quot;Manu Ginobili&quot; | 41  |
++-----------------+-----+
 </code></pre></div>
 <table>
 <thead>
@@ -6327,15 +6331,18 @@ Got 1 rows (time spent 8206/9335 us)
 <ul>
 <li>
 <p>使用管道符</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD follow._dst AS id | \
-        GO FROM $-.id OVER serve YIELD $$.team.name AS Team, \
-        $^.player.name AS Player;
-+-----------+---------------+
-| Team      | Player        |
-+-----------+---------------+
-| &quot;Nuggets&quot; | &quot;Tony Parker&quot; |
-+-----------+---------------+
-Got 1 rows (time spent 5055/8203 us)
+<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS id | \
+        GO FROM $-.id OVER serve YIELD properties($$).name AS Team, \
+        properties($^).name AS Player;
++-----------+-----------------+
+| Team      | Player          |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
++-----------+-----------------+
 </code></pre></div>
 <table>
 <thead>
@@ -6368,15 +6375,18 @@ Got 1 rows (time spent 5055/8203 us)
 <p class="admonition-title">Note</p>
 <p>当复合语句作为一个整体提交给服务器时，其中的临时变量会在语句结束时被释放。</p>
 </div>
-<div class="highlight"><pre><span></span><code>nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow YIELD follow._dst AS id; \
-        GO FROM $var.id OVER serve YIELD $$.team.name AS Team, \
-        $^.player.name AS Player;
-+---------+-------------+
-| Team    | Player      |
-+---------+-------------+
-| Nuggets | Tony Parker |
-+---------+-------------+
-Got 1 rows (time spent 3103/3711 us)
+<div class="highlight"><pre><span></span><code>nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS id; \
+        GO FROM $var.id OVER serve YIELD properties($$).name AS Team, \
+        properties($^).name AS Player;
++-----------+-----------------+
+| Team      | Player          |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
++-----------+-----------------+
 </code></pre></div>
 </li>
 </ul>
@@ -6390,7 +6400,6 @@ Got 1 rows (time spent 3103/3711 us)
 +----------------------------------------------------+
 | (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) |
 +----------------------------------------------------+
-Got 1 rows (time spent 2006/2406 us)
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6565,7 +6574,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

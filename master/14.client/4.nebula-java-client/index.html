@@ -5693,7 +5693,7 @@
     <span class="n">ResultSet</span> <span class="n">resp</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">insertEdges</span><span class="p">);</span>
 
     <span class="c1">// query</span>
-    <span class="n">String</span> <span class="n">query</span> <span class="o">=</span> <span class="s">&quot;GO FROM \&quot;Bob\&quot; OVER like &quot;</span> <span class="o">+</span> <span class="s">&quot;YIELD $$.person.name, $$.person.age, like.likeness&quot;</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">query</span> <span class="o">=</span> <span class="s">&quot;GO FROM \&quot;Bob\&quot; OVER like &quot;</span> <span class="o">+</span> <span class="s">&quot;YIELD properties($$).name, properties($$).age, properties(edge).likeness&quot;</span><span class="p">;</span>
     <span class="n">ResultSet</span> <span class="n">resp</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="na">execute</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
     <span class="n">printResult</span><span class="p">(</span><span class="n">resp</span><span class="p">);</span>
 <span class="p">}</span><span class="k">finally</span> <span class="p">{</span>
@@ -5711,7 +5711,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

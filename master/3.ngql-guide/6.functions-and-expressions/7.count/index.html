@@ -5565,7 +5565,7 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 返回player101 follow的人，以及follow player101的人，即双向查询。
 nebula&gt; GO FROM &quot;player101&quot; OVER follow BIDIRECT \
-        YIELD $$.player.name AS Name \
+        YIELD properties($$).name AS Name \
         | GROUP BY $-.Name YIELD $-.Name, count(*);
 +---------------------+----------+
 | $-.Name             | count(*) |
@@ -5657,7 +5657,7 @@ nebula&gt; MATCH (n:player {name : &quot;Tim Duncan&quot;})-[]-&gt;(friend:playe
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

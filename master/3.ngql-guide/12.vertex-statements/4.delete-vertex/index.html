@@ -5567,7 +5567,7 @@
 <div class="highlight"><pre><span></span><code>nebula&gt; DELETE VERTEX &quot;team1&quot;;
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 结合管道符，删除符合条件的点。
-nebula&gt; GO FROM &quot;player100&quot; OVER serve WHERE serve.start_year == &quot;2021&quot; YIELD serve._dst AS id | DELETE VERTEX $-.id;
+nebula&gt; GO FROM &quot;player100&quot; OVER serve WHERE properties(edge).start_year == &quot;2021&quot; YIELD dst(edge) AS id | DELETE VERTEX $-.id;
 </code></pre></div>
 <h2 id="_3">删除过程与删除邻边<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>Nebula Graph 先找到并删除目标点的所有邻边（出边和入边），然后删除目标点。</p>
@@ -5586,7 +5586,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER serve WHERE serve.start_year == &q
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

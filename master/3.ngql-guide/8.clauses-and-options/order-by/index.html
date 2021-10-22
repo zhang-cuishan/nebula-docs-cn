@@ -5623,7 +5623,7 @@ ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]
 </div>
 <h3 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; FETCH PROP ON player &quot;player100&quot;, &quot;player101&quot;, &quot;player102&quot;, &quot;player103&quot; \
-        YIELD player.age AS age, player.name AS name \
+        YIELD properties(vertex).age AS age, properties(vertex).name AS name \
         | ORDER BY $-.age ASC, $-.name DESC;
 +-------------+-----+---------------------+
 | VertexID    | age | name                |
@@ -5638,7 +5638,7 @@ ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]
 +-------------+-----+---------------------+
 
 nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS dst; \
+        YIELD dst(edge) AS dst; \
         ORDER BY $var.dst DESC;
 +-------------+
 | dst         |
@@ -5722,7 +5722,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

@@ -5681,22 +5681,22 @@ nebula&gt; UNWIND &#39;a&#39; AS a UNWIND &#39;b&#39; AS b RETURN a + b;
 | &quot;Tony Parker&quot; | 2018         | 2019       | &quot;Hornets&quot; |
 +---------------+--------------+------------+-----------+
 
-nebula&gt; GO FROM &quot;player101&quot; OVER serve WHERE (STRING)serve.start_year CONTAINS &quot;19&quot; AND \
-        $^.player.name CONTAINS &quot;ny&quot; \
-        YIELD $^.player.name, serve.start_year, serve.end_year, $$.team.name;
-+----------------+------------------+----------------+--------------+
-| $^.player.name | serve.start_year | serve.end_year | $$.team.name |
-+----------------+------------------+----------------+--------------+
-| &quot;Tony Parker&quot;  | 1999             | 2018           | &quot;Spurs&quot;      |
-+----------------+------------------+----------------+--------------+
+nebula&gt; GO FROM &quot;player101&quot; OVER serve WHERE (STRING)properties(edge).start_year CONTAINS &quot;19&quot; AND \
+        properties($^).name CONTAINS &quot;ny&quot; \
+        YIELD properties($^).name, properties(edge).start_year, properties(edge).end_year, properties($$).name;
++---------------------+-----------------------------+---------------------------+---------------------+
+| properties($^).name | properties(EDGE).start_year | properties(EDGE).end_year | properties($$).name |
++---------------------+-----------------------------+---------------------------+---------------------+
+| &quot;Tony Parker&quot;       | 1999                        | 2018                      | &quot;Spurs&quot;             |
++---------------------+-----------------------------+---------------------------+---------------------+
 
-nebula&gt; GO FROM &quot;player101&quot; OVER serve WHERE !($$.team.name CONTAINS &quot;ets&quot;) \
-        YIELD $^.player.name, serve.start_year, serve.end_year, $$.team.name;
-+----------------+------------------+----------------+--------------+
-| $^.player.name | serve.start_year | serve.end_year | $$.team.name |
-+----------------+------------------+----------------+--------------+
-| &quot;Tony Parker&quot;  | 1999             | 2018           | &quot;Spurs&quot;      |
-+----------------+------------------+----------------+--------------+
+nebula&gt; GO FROM &quot;player101&quot; OVER serve WHERE !(properties($$).name CONTAINS &quot;ets&quot;) \
+        YIELD properties($^).name, properties(edge).start_year, properties(edge).end_year, properties($$).name;
++---------------------+-----------------------------+---------------------------+---------------------+
+| properties($^).name | properties(EDGE).start_year | properties(EDGE).end_year | properties($$).name |
++---------------------+-----------------------------+---------------------------+---------------------+
+| &quot;Tony Parker&quot;       | 1999                        | 2018                      | &quot;Spurs&quot;             |
++---------------------+-----------------------------+---------------------------+---------------------+
 </code></pre></div>
 <h3 id="not_in"><code>(NOT) IN</code><a class="headerlink" href="#not_in" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; RETURN  1 IN [1,2,3], &quot;Yao&quot; NOT IN [&quot;Yi&quot;, &quot;Tim&quot;, &quot;Kobe&quot;], NULL IN [&quot;Yi&quot;, &quot;Tim&quot;, &quot;Kobe&quot;]
@@ -5757,7 +5757,7 @@ nebula&gt; MATCH (v:player) WHERE v.name =~ &#39;Tony.*&#39; RETURN v.name;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

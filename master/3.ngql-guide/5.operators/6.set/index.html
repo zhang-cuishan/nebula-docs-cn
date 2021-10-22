@@ -5726,18 +5726,20 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
 
 # UNION也可以和YIELD语句一起使用，去重时会检查每一行的所有列，每列都相同时才会去重。
 nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD follow._dst AS id, follow.degree AS Degree, $$.player.age AS Age \
+        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age \
         UNION /* DISTINCT */ \
         GO FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS id, follow.degree AS Degree, $$.player.age AS Age;
+        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age;
 +-------------+--------+-----+
 | id          | Degree | Age |
 +-------------+--------+-----+
-| &quot;player101&quot; | 75     | 36  |     
+| &quot;player100&quot; | 75     | 42  |
 +-------------+--------+-----+
-| &quot;player101&quot; | 96     | 36  |       
+| &quot;player101&quot; | 75     | 36  |
 +-------------+--------+-----+
-| &quot;player102&quot; | 90     | 33  |     
+| &quot;player101&quot; | 95     | 36  |
++-------------+--------+-----+
+| &quot;player125&quot; | 95     | 41  |
 +-------------+--------+-----+
 </code></pre></div>
 <h2 id="intersect">INTERSECT<a class="headerlink" href="#intersect" title="Permanent link">&para;</a></h2>
@@ -5751,10 +5753,10 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
 </ul>
 <h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD follow._dst AS id, follow.degree AS Degree, $$.player.age AS Age \
+        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age \
         INTERSECT \
         GO FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS id, follow.degree AS Degree, $$.player.age AS Age;
+        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age;
 Empty set (time spent 2990/3511 us)
 </code></pre></div>
 <h2 id="minus">MINUS<a class="headerlink" href="#minus" title="Permanent link">&para;</a></h2>
@@ -5780,29 +5782,33 @@ Empty set (time spent 2243/3259 us)
 <p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a>的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
 <h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD follow._dst AS play_dst  \
+        YIELD dst(edge) AS play_dst  \
         UNION \
         GO FROM &quot;team200&quot; OVER serve REVERSELY \
-        YIELD serve._dst AS play_dst \
-        | GO FROM $-.play_dst OVER follow YIELD follow._dst AS play_dst;
+        YIELD src(edge) AS play_src \
+        | GO FROM $-.play_src OVER follow YIELD dst(edge) AS play_dst;
 
 +-------------+
 | play_dst    |
 +-------------+
+| &quot;player100&quot; |
++-------------+
 | &quot;player101&quot; |
 +-------------+
-| &quot;player102&quot; |
+| &quot;player117&quot; |
++-------------+
+| &quot;player105&quot; |
 +-------------+
 </code></pre></div>
 <p><img alt="image" src="https://user-images.githubusercontent.com/42762957/97955863-3a213000-1de2-11eb-8de3-2c78da30747c.png" /></p>
 <p>该查询会先执行红框内的语句，然后执行绿框的<code>UNION</code>操作。</p>
 <p>圆括号可以修改执行的优先级，例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; (GO FROM &quot;player102&quot; OVER follow \
-        YIELD follow._dst AS play_dst  \
+        YIELD dst(edge) AS play_dst  \
         UNION \
         GO FROM &quot;team200&quot; OVER serve REVERSELY \
-        YIELD serve._dst AS play_dst) \
-        | GO FROM $-.play_dst OVER follow YIELD follow._dst AS play_dst;
+        YIELD src(edge) AS play_dst) \
+        | GO FROM $-.play_dst OVER follow YIELD dst(edge) AS play_dst;
 </code></pre></div>
 <p>该查询中，圆括号包裹的部分先执行，即先执行<code>UNION</code>操作，再将结果结合管道符进行下一步操作。</p>
                 
@@ -5813,7 +5819,7 @@ Empty set (time spent 2243/3259 us)
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

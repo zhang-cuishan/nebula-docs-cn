@@ -5602,7 +5602,7 @@ SET &lt;update_prop&gt;
 <div class="highlight"><pre><span></span><code>// 用GO语句查看边的属性值。
 nebula&gt; GO FROM &quot;player100&quot; \
         OVER serve \
-        YIELD serve.start_year, serve.end_year;
+        YIELD properties(edge).start_year, properties(edge).end_year;
 +------------------+----------------+
 | serve.start_year | serve.end_year |
 +------------------+----------------+
@@ -5629,7 +5629,7 @@ nebula&gt; UPDATE EDGE ON serve &quot;player100&quot; -&gt; &quot;team204&quot;@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

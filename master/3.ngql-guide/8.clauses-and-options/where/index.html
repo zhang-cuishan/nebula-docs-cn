@@ -5797,16 +5797,15 @@
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; \
         OVER follow \
-        WHERE follow.degree &gt; 90 \
-        OR $$.player.age != 33 \
-        AND $$.player.name != &quot;Tony Parker&quot;;
-+-------------+
-| follow._dst |
-+-------------+
-| &quot;player101&quot; |
-+-------------+
-| &quot;player125&quot; |
-+-------------+
+        WHERE properties(edge).degree &gt; 90 \
+        OR properties($$).age != 33 \
+        AND properties($$).name != &quot;Tony Parker&quot; \
+        YIELD properties($$);
++----------------------------------+
+| properties($$)                   |
++----------------------------------+
+| {age: 41, name: &quot;Manu Ginobili&quot;} |
++----------------------------------+
 </code></pre></div>
 <h3 id="_3">过滤属性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>在<code>WHERE</code>子句中使用点或边的属性定义条件。</p>
@@ -5911,20 +5910,20 @@ nebula&gt; INSERT EDGE e1(p1) VALUES &quot;1&quot;-&gt;&quot;2&quot;@6:(16);
 # 通过rank过滤边，查找rank大于2的边。
 nebula&gt; GO FROM &quot;1&quot; \
         OVER e1 \
-        WHERE e1._rank&gt;2 \
-        YIELD e1._src, e1._dst, e1._rank AS Rank, e1.p1 | \
+        WHERE rank(edge) &gt; 2 \
+        YIELD src(edge), dst(edge), rank(edge) AS Rank, properties(edge).p1 | \
         ORDER BY $-.Rank DESC;
-====================================
-| e1._src | e1._dst | Rank | e1.p1 |
-====================================
-| 1       | 2       | 6    | 16    |
-------------------------------------
-| 1       | 2       | 5    | 15    |
-------------------------------------
-| 1       | 2       | 4    | 14    |
-------------------------------------
-| 1       | 2       | 3    | 13    |
-------------------------------------
++-----------+-----------+------+---------------------+
+| src(EDGE) | dst(EDGE) | Rank | properties(EDGE).p1 |
++-----------+-----------+------+---------------------+
+| &quot;1&quot;       | &quot;2&quot;       | 6    | 16                  |
++-----------+-----------+------+---------------------+
+| &quot;1&quot;       | &quot;2&quot;       | 5    | 15                  |
++-----------+-----------+------+---------------------+
+| &quot;1&quot;       | &quot;2&quot;       | 4    | 14                  |
++-----------+-----------+------+---------------------+
+| &quot;1&quot;       | &quot;2&quot;       | 3    | 13                  |
++-----------+-----------+------+---------------------+
 </code></pre></div>
 <h2 id="_6">过滤字符串<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>在<code>WHERE</code>子句中使用<code>STARTS WITH</code>、<code>ENDS WITH</code>或<code>CONTAINS</code>可以匹配字符串的特定部分。匹配时区分大小写。</p>
@@ -6040,20 +6039,20 @@ Empty set (time spent 5080/6474 us)
 | &quot;Joel Embiid&quot;           | 25    |
 +-------------------------+-------+
 
-nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD player.name, player.age;
-+-------------+------------------+------------+
-| VertexID    | player.name      | player.age |
-+-------------+------------------+------------+
-| &quot;player135&quot; | &quot;Damian Lillard&quot; | 28         |
-+-------------+------------------+------------+
-| &quot;player131&quot; | &quot;Paul George&quot;    | 28         |
-+-------------+------------------+------------+
-| &quot;player130&quot; | &quot;Joel Embiid&quot;    | 25         |
-+-------------+------------------+------------+
-| &quot;player123&quot; | &quot;Ricky Rubio&quot;    | 28         |
-+-------------+------------------+------------+
-| &quot;player106&quot; | &quot;Kyle Anderson&quot;  | 25         |
-+-------------+------------------+------------+
+nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex).name, properties(vertex).age;
++-------------+-------------------------+------------------------+
+| VertexID    | properties(VERTEX).name | properties(VERTEX).age |
++-------------+-------------------------+------------------------+
+| &quot;player106&quot; | &quot;Kyle Anderson&quot;         | 25                     |
++-------------+-------------------------+------------------------+
+| &quot;player135&quot; | &quot;Damian Lillard&quot;        | 28                     |
++-------------+-------------------------+------------------------+
+| &quot;player130&quot; | &quot;Joel Embiid&quot;           | 25                     |
++-------------+-------------------------+------------------------+
+| &quot;player131&quot; | &quot;Paul George&quot;           | 28                     |
++-------------+-------------------------+------------------------+
+| &quot;player123&quot; | &quot;Ricky Rubio&quot;           | 28                     |
++-------------+-------------------------+------------------------+
 </code></pre></div>
 <h3 id="not_1">结合NOT使用<a class="headerlink" href="#not_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
@@ -6083,7 +6082,7 @@ nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD player.name, play
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

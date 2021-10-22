@@ -1215,6 +1215,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ngql" class="md-nav__link">
+    原生nGQL语句适用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencypher" class="md-nav__link">
+    openCypher兼容语句适用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     示例
   </a>
@@ -5497,6 +5511,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ngql" class="md-nav__link">
+    原生nGQL语句适用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencypher" class="md-nav__link">
+    openCypher兼容语句适用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     示例
   </a>
@@ -5521,11 +5549,16 @@
                 
                 
                 <h1 id="schema">Schema函数<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h1>
+<p>Nebula Graph支持以下Schema函数。</p>
+<h2 id="ngql">原生nGQL语句适用<a class="headerlink" href="#ngql" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>本文介绍的函数仅适用于openCypher兼容语句。</p>
+<ul>
+<li>GO语句中，WHERE子句和YIELD子句中可以使用如下函数。</li>
+<li>LOOKUP语句中，YIELD子句中可以使用如下函数。</li>
+<li>FETCH语句中，YIELD子句中可以使用如下函数。</li>
+</ul>
 </div>
-<p>Nebula Graph支持以下Schema函数。</p>
 <table>
 <thead>
 <tr>
@@ -5539,16 +5572,12 @@
 <td align="left">返回点ID。数据类型和点ID的类型保持一致。</td>
 </tr>
 <tr>
-<td align="left">list tags(vertex)</td>
-<td align="left">返回点的Tag，与labels()作用相同。</td>
+<td align="left">map properties(vertex)</td>
+<td align="left">返回点的所有属性。</td>
 </tr>
 <tr>
-<td align="left">list labels(vertex)</td>
-<td align="left">返回点的Tag，与tags()作用相同，用于兼容openCypher语法。</td>
-</tr>
-<tr>
-<td align="left">map properties(vertex_or_edge)</td>
-<td align="left">接收点或边并返回其属性。</td>
+<td align="left">map properties(edge)</td>
+<td align="left">返回边的所有属性。</td>
 </tr>
 <tr>
 <td align="left">string type(edge)</td>
@@ -5563,21 +5592,84 @@
 <td align="left">返回边的目的点ID。数据类型和点ID的类型保持一致。</td>
 </tr>
 <tr>
-<td align="left">vertex startNode(path)</td>
-<td align="left">获取一条边或一条路径并返回它的起始点ID。</td>
-</tr>
-<tr>
-<td align="left">string endNode(path)</td>
-<td align="left">获取一条边或一条路径并返回它的目的点ID。</td>
-</tr>
-<tr>
 <td align="left">int rank(edge)</td>
 <td align="left">返回边的rank。</td>
 </tr>
 </tbody>
 </table>
+<h2 id="opencypher">openCypher兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id(\&lt;vertex>)</td>
+<td align="left">返回点ID。数据类型和点ID的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">list tags(\&lt;vertex>)</td>
+<td align="left">返回点的Tag，与labels()作用相同。</td>
+</tr>
+<tr>
+<td align="left">list labels(\&lt;vertex>)</td>
+<td align="left">返回点的Tag，与tags()作用相同，用于兼容openCypher语法。</td>
+</tr>
+<tr>
+<td align="left">map properties(\&lt;vertex_or_edge>)</td>
+<td align="left">返回点或边的所有属性。</td>
+</tr>
+<tr>
+<td align="left">string type(\&lt;edge>)</td>
+<td align="left">返回边的Edge type。</td>
+</tr>
+<tr>
+<td align="left">src(\&lt;edge>)</td>
+<td align="left">返回边的起始点ID。数据类型和点ID的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">dst(\&lt;edge>)</td>
+<td align="left">返回边的目的点ID。数据类型和点ID的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">vertex startNode(\&lt;path>)</td>
+<td align="left">获取一条边或一条路径并返回它的起始点ID。</td>
+</tr>
+<tr>
+<td align="left">string endNode(\&lt;path>)</td>
+<td align="left">获取一条边或一条路径并返回它的目的点ID。</td>
+</tr>
+<tr>
+<td align="left">int rank(\&lt;edge>)</td>
+<td align="left">返回边的rank。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (a:player) WHERE id(a) == &quot;player100&quot; \
+<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
+        YIELD src(edge) AS destination;
++-------------+
+| destination |
++-------------+
+| &quot;player101&quot; |
++-------------+
+| &quot;player102&quot; |
++-------------+
+
+nebula&gt; LOOKUP ON player WHERE player.age  &gt; 45 YIELD id(vertex);
++-------------+-------------+
+| VertexID    | id(VERTEX)  |
++-------------+-------------+
+| &quot;player144&quot; | &quot;player144&quot; |
++-------------+-------------+
+| &quot;player140&quot; | &quot;player140&quot; |
++-------------+-------------+
+
+
+nebula&gt; MATCH (a:player) WHERE id(a) == &quot;player100&quot; \
         RETURN tags(a), labels(a), properties(a);
 +------------+------------+-------------------------------+
 | tags(a)    | labels(a)  | properties(a)                 |
@@ -5609,7 +5701,7 @@ nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

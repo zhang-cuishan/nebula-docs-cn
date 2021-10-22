@@ -5672,7 +5672,7 @@ SET &lt;update_prop&gt;
 <div class="highlight"><pre><span></span><code>// 查看如下三个点是否有serve类型的出边，结果“Empty set”表示没有serve类型的出边。
 nebula&gt; GO FROM &quot;player666&quot;, &quot;player667&quot;, &quot;player668&quot; \
         OVER serve \
-        YIELD serve.start_year, serve.end_year;
+        YIELD properties(edge).start_year, properties(edge).end_year;
 Empty set
 
 nebula&gt; UPSERT EDGE on serve \
@@ -5781,7 +5781,7 @@ nebula&gt; UPSERT EDGE on serve \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

@@ -5577,7 +5577,7 @@
 </table>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code># 返回起始点和目的点的年龄。
-nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD $^.player.age AS SrcAge, $$.player.age AS DestAge;
+nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD properties($^).age AS SrcAge, properties($$).age AS DestAge;
 +--------+---------+
 | SrcAge | DestAge |
 +--------+---------+
@@ -5588,9 +5588,9 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD $^.player.age AS SrcA
 
 # 返回player100追随的player的名称和团队。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS id | \
+        YIELD dst(edge) AS id | \
         GO FROM $-.id OVER serve \
-        YIELD $^.player.name AS Player, $$.team.name AS Team;
+        YIELD properties($^).name AS Player, properties($$).name AS Team;
 +-----------------+-----------+
 | Player          | Team      |
 +-----------------+-----------+
@@ -5609,7 +5609,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 11, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

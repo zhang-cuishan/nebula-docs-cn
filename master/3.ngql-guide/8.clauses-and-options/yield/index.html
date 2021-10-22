@@ -5712,23 +5712,23 @@
 </ul>
 <ul>
 <li><code>FETCH</code>语句中使用<code>YIELD</code>：<div class="highlight"><pre><span></span><code>nebula&gt; FETCH PROP ON player &quot;player100&quot; \
-        YIELD player.name;
-+-------------+--------------+
-| VertexID    | player.name  |
-+-------------+--------------+
-| &quot;player100&quot; | &quot;Tim Duncan&quot; |
-+-------------+--------------+
+        YIELD properties(vertex).name;
++-------------+-------------------------+
+| VertexID    | properties(VERTEX).name |
++-------------+-------------------------+
+| &quot;player100&quot; | &quot;Tim Duncan&quot;            |
++-------------+-------------------------+
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li><code>LOOKUP</code>语句中使用<code>YIELD</code>：<div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; \
-        YIELD player.name, player.age;
-+-------------+---------------+------------+
-| VertexID    | player.name   | player.age |
-+-------------+---------------+------------+
-| &quot;player101&quot; | &quot;Tony Parker&quot; | 36         |
-+-------------+---------------+------------+
+        YIELD properties(vertex).name, properties(vertex).age;
++-------------+-------------------------+------------------------+
+| VertexID    | properties(VERTEX).name | properties(VERTEX).age |
++-------------+-------------------------+------------------------+
+| &quot;player101&quot; | &quot;Tony Parker&quot;           | 36                     |
++-------------+-------------------------+------------------------+
 </code></pre></div>
 </li>
 </ul>
@@ -5769,7 +5769,7 @@
 nebula&gt; GO FROM &quot;player100&quot; OVER follow \
         YIELD dst(edge) AS ID \
         | FETCH PROP ON player $-.ID \
-        YIELD player.age AS Age \
+        YIELD properties(vertex).age AS Age \
         | YIELD AVG($-.Age) as Avg_age, count(*)as Num_friends;
 +---------+-------------+
 | Avg_age | Num_friends |
@@ -5833,7 +5833,7 @@ nebula&gt; YIELD \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

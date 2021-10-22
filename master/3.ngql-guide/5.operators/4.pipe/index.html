@@ -5576,7 +5576,7 @@
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow \
-        YIELD follow._dst AS dstid, $$.player.name AS Name | \
+        YIELD dst(edge) AS dstid, properties($$).name AS Name | \
         GO FROM $-.dstid OVER follow;
 
 +-------------+
@@ -5584,6 +5584,7 @@
 +-------------+
 | &quot;player101&quot; |
 +-------------+
+...
 </code></pre></div>
 <p>用户可以使用<code>YIELD</code>显式声明需要返回的结果，如果不使用<code>YIELD</code>，默认返回目标点ID。</p>
 <p>必须在<code>YIELD</code>子句中为需要的返回结果设置别名，才能在管道符右侧使用引用符<code>$-</code>，例如示例中的<code>$-.dstid</code>。</p>
@@ -5623,7 +5624,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

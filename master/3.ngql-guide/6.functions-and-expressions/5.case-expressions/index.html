@@ -5684,20 +5684,20 @@ END
 +--------+
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow \
-        YIELD $$.player.name AS Name, \
-        CASE $$.player.age &gt; 35 \
+        YIELD properties($$).name AS Name, \
+        CASE properties($$).age &gt; 35 \
         WHEN true THEN &quot;Yes&quot; \
         WHEN false THEN &quot;No&quot; \
         ELSE &quot;Nah&quot; \
         END \
         AS Age_above_35;
-+---------------------+--------------+
-| Name                | Age_above_35 |
-+---------------------+--------------+
-| &quot;Tony Parker&quot;       | &quot;Yes&quot;        |
-+---------------------+--------------+
-| &quot;LaMarcus Aldridge&quot; | &quot;No&quot;         |
-+---------------------+--------------+
++-----------------+--------------+
+| Name            | Age_above_35 |
++-----------------+--------------+
+| &quot;Tony Parker&quot;   | &quot;Yes&quot;        |
++-----------------+--------------+
+| &quot;Manu Ginobili&quot; | &quot;Yes&quot;        |
++-----------------+--------------+
 </code></pre></div>
 <h2 id="_4">通用形式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">语法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -5762,9 +5762,9 @@ END
 <h2 id="_7">简单形式和通用形式的区别<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>为了避免误用简单形式和通用形式，用户需要了解它们的差异。请参见如下示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow \
-        YIELD $$.player.name AS Name, $$.player.age AS Age, \
-        CASE $$.player.age \
-        WHEN $$.player.age &gt; 35 THEN &quot;Yes&quot; \
+        YIELD properties($$).name AS Name, properties($$).age AS Age, \
+        CASE properties($$).age \
+        WHEN properties($$).age &gt; 35 THEN &quot;Yes&quot; \
         ELSE &quot;No&quot; \
         END \
         AS Age_above_35;
@@ -5793,7 +5793,7 @@ END
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 19, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

@@ -5868,18 +5868,18 @@ Feature:  Comparison of where clause
       When profiling query:
         &quot;&quot;&quot;
         GO FROM &quot;player100&quot; OVER follow 
-        WHERE follow.degree IN [v IN [95,99] WHERE v &gt; 0] 
-        YIELD follow._dst, follow.degree
+        WHERE properties(edge).degree IN [v IN [95,99] WHERE v &gt; 0] 
+        YIELD dst(edge), properties(edge).degree
         &quot;&quot;&quot;
       Then the result should be, in any order:
         | follow._dst | follow.degree |
         | &quot;player101&quot; | 95            |
         | &quot;player125&quot; | 95            |
       And the execution plan should be:
-        | id | name         | dependencies | operator info                                               |
-        | 0  | Project      | 1            |                                                             |
-        | 1  | GetNeighbors | 2            | {&quot;filter&quot;: &quot;(follow.degree IN [v IN [95,99] WHERE (v&gt;0)])&quot;} |
-        | 2  | Start        |              |                                                             |
+        | id | name         | dependencies | operator info                                                         |
+        | 0  | Project      | 1            |                                                                       |
+        | 1  | GetNeighbors | 2            | {&quot;filter&quot;: &quot;(properties(edge).degree IN [v IN [95,99] WHERE (v&gt;0)])&quot;} |
+        | 2  | Start        |              |                                                                       |
 </code></pre></div>
 <p>示例中的关键字说明如下。</p>
 <table>
@@ -5939,7 +5939,7 @@ Feature:  Comparison of where clause
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

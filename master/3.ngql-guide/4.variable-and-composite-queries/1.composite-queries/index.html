@@ -5601,14 +5601,18 @@ nebula&gt; INSERT VERTEX player(name, age) VALUES &quot;player100&quot;:(&quot;T
 </ul>
 <ul>
 <li>原生nGQL（管道符）<div class="highlight"><pre><span></span><code># 管道符连接多个查询。
-nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD follow._dst AS id | \
-        GO FROM $-.id OVER serve YIELD $$.team.name AS Team, \
-        $^.player.name AS Player;
-+---------+-------------+
-| Team    | Player      |
-+---------+-------------+
-| Nuggets | Tony Parker |
-+---------+-------------+
+nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS id | \
+        GO FROM $-.id OVER serve YIELD properties($$).name AS Team, \
+        properties($^).name AS Player;
++-----------+-----------------+
+| Team      | Player          |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
++-----------+-----------------+
+| &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
++-----------+-----------------+
 </code></pre></div>
 </li>
 </ul>
@@ -5620,7 +5624,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD follow._dst AS id | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>
