@@ -356,6 +356,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/3.data-types/10.geography/</loc>
+         <lastmod>2021-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/3.data-types/2.boolean/</loc>
          <lastmod>2021-10-22</lastmod>
          <changefreq>daily</changefreq>
@@ -472,6 +477,11 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/13.concat/</loc>
+         <lastmod>2021-10-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/14.geo/</loc>
          <lastmod>2021-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
