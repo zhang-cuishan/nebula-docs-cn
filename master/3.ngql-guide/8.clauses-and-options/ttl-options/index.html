@@ -3511,6 +3511,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../7.data-security/5.zone/" class="md-nav__link">
+        Group&Zone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../7.data-security/4.ssl/" class="md-nav__link">
         SSL加密
       </a>
@@ -5693,8 +5707,8 @@
 <li>不能修改带有TTL选项的属性的Schema。</li>
 </ul>
 <ul>
-<li>TTL 和 INDEX 共存问题：<p>+ 如果已有 INDEX：不能再设置 TTL，即使在没有 INDEX 的属性上设置 TTL 也不行。    </p>
-<p>+ 如果已有 TTL：可以再添加 INDEX。</p>
+<li>TTL和INDEX共存问题：<p>+ 如果一个Tag的其中一属性已有INDEX，则不能为其设置TTL，也不能为该Tag的其他属性设置TTL。    </p>
+<p>+ 如果已有TTL，可以再添加INDEX。</p>
 </li>
 </ul>
 <h2 id="_2">属性过期<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -5780,7 +5794,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) values &quot;102&quot;:(1612778164674, 30, 
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>

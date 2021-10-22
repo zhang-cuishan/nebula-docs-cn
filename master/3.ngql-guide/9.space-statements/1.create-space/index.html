@@ -3477,6 +3477,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../7.data-security/5.zone/" class="md-nav__link">
+        Group&Zone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../7.data-security/4.ssl/" class="md-nav__link">
         SSL加密
       </a>
@@ -5627,6 +5641,7 @@
     [replica_factor = &lt;replica_number&gt;,]
     vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
+    [ON &lt;group_name&gt;]
     [COMMENT = &#39;&lt;comment&gt;&#39;];
 </code></pre></div>
 <table>
@@ -5656,6 +5671,10 @@
 <tr>
 <td align="left"><code>vid_type</code></td>
 <td align="left">必选参数。指定点ID的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
+</tr>
+<tr>
+<td align="left"><code>ON &lt;group_name&gt;</code></td>
+<td align="left">指定图空间所属的Group。详情请参见<a href="../../../7.data-security/5.zone/">Group&amp;Zone</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
@@ -5777,7 +5796,7 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
       
     
   </small>
