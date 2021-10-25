@@ -6297,7 +6297,13 @@ This <span class="nb">source</span> code is licensed under Apache <span class="m
 <h3 id="_11">如何扩缩容<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph master 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
 <ul>
-<li>metad 的扩容和缩容： metad 不支持扩缩容，也不支持迁移到新机器，也不要增加新的 metad 进程。</li>
+<li>
+<p>metad 的扩容和缩容： metad 不支持扩缩容，也不支持迁移到新机器，也不要增加新的 metad 进程。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>用户可以使用<a href="https://github.com/vesoft-inc/nebula/blob/master/scripts/meta-transfer-tools.sh">脚本工具</a>迁移meta服务，但是需要自行修改Graph服务和Storage服务的配置文件中的Meta设置。</p>
+</div>
+</li>
 </ul>
 <ul>
 <li>graphd 的缩容： 将该graphd 的 ip 从 client 的代码中移除，关闭该 graphd 进程。</li>
@@ -6369,7 +6375,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2021</span>
       
     
   </small>
