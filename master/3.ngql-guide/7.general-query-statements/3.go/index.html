@@ -1811,6 +1811,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../8.clauses-and-options/sample/" class="md-nav__link">
+        SAMPLE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../8.clauses-and-options/order-by/" class="md-nav__link">
         ORDER BY
       </a>
@@ -5571,9 +5585,10 @@
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
 [YIELD [DISTINCT] &lt;return_list&gt;]
+[{SAMPLE &lt;sample_list&gt; | LIMIT &lt;limit_list&gt;}]
 [| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
 [| ORDER BY &lt;expression&gt; [{ASC | DESC}]]
-[| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;];
+[| LIMIT [&lt;offset&gt;,] &lt;number_rows&gt;];
 
 &lt;vertex_list&gt; ::=
     &lt;vid&gt; [, &lt;vid&gt; ...]
@@ -5590,7 +5605,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <p><code>&lt;N&gt; STEPS</code>：指定跳数。如果没有指定跳数，默认值<code>N</code>为<code>1</code>。如果<code>N</code>为<code>0</code>，Nebula Graph不会检索任何边。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>GO</code>语句采用的路径类型是<code>walk</code>，即遍历时点和边可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
+<p><code>GO</code>语句采用的路径类型是<code>walk</code>，即遍历时点和边可以重复。详情参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
 </div>
 </li>
 </ul>
@@ -5598,7 +5613,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <li><code>M TO N STEPS</code>：遍历<code>M~N</code>跳的边。如果<code>M</code>为<code>0</code>，输出结果和<code>M</code>为<code>1</code>相同，即<code>GO 0 TO 2</code>和<code>GO 1 TO 2</code>是相同的。</li>
 </ul>
 <ul>
-<li><code>&lt;vertex_list&gt;</code>：用逗号分隔的点ID列表，或特殊的引用符<code>$-.id</code>。详情请参见<a href="../../5.operators/4.pipe/">管道符</a>。</li>
+<li><code>&lt;vertex_list&gt;</code>：用逗号分隔的点ID列表，或特殊的引用符<code>$-.id</code>。详情参见<a href="../../5.operators/4.pipe/">管道符</a>。</li>
 </ul>
 <ul>
 <li><code>&lt;edge_type_list&gt;</code>：遍历的Edge type列表。</li>
@@ -5608,7 +5623,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </ul>
 <ul>
 <li>
-<p><code>WHERE &lt;conditions&gt;</code>：指定遍历的过滤条件。用户可以在起始点、目的点和边使用<code>WHERE</code>子句，还可以结合<code>AND</code>、<code>OR</code>、<code>NOT</code>、<code>XOR</code>一起使用。详情请参见<a href="../../8.clauses-and-options/where/">WHERE</a>。</p>
+<p><code>WHERE &lt;conditions&gt;</code>：指定遍历的过滤条件。用户可以在起始点、目的点和边使用<code>WHERE</code>子句，还可以结合<code>AND</code>、<code>OR</code>、<code>NOT</code>、<code>XOR</code>一起使用。详情参见<a href="../../8.clauses-and-options/where/">WHERE</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>遍历多个Edge type时，<code>WHERE</code>子句有一些限制。例如不支持<code>WHERE edge1.prop1 &gt; edge2.prop2</code>。</p>
@@ -5616,14 +5631,20 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用<a href="../../6.functions-and-expressions/4.schema/">Schema函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>、<code>rank(edge)</code>、<code>properties(edge)</code>、<code>id(vertex)</code>、<code>properties(vertex)</code>，暂不支持嵌套函数。详情请参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
+<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用<a href="../../6.functions-and-expressions/4.schema/">Schema函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>、<code>rank(edge)</code>、<code>properties(edge)</code>、<code>id(vertex)</code>、<code>properties(vertex)</code>，暂不支持嵌套函数。详情参见<a href="../../8.clauses-and-options/yield/">YIELD</a>。如果没有指定，默认返回目的点ID。</li>
 </ul>
 <ul>
-<li><code>GROUP BY</code>：根据指定属性的值将输出分组。详情请参见<a href="../../8.clauses-and-options/group-by/">GROUP BY</a>。分组后需要再次使用<code>YIELD</code>定义需要返回的输出。</li>
+<li><code>SAMPLE &lt;sample_list&gt;</code>：用于在结果集中取样。详情参见<a href="../../8.clauses-and-options/sample/">SAMPLE</a>。</li>
+</ul>
+<ul>
+<li><code>LIMIT &lt;limit_list&gt;</code>：用于在遍历过程中逐步限制输出数量。详情参见<a href="../../8.clauses-and-options/limit/">LIMIT</a>。</li>
+</ul>
+<ul>
+<li><code>GROUP BY</code>：根据指定属性的值将输出分组。详情参见<a href="../../8.clauses-and-options/group-by/">GROUP BY</a>。分组后需要再次使用<code>YIELD</code>定义需要返回的输出。</li>
 </ul>
 <ul>
 <li>
-<p><code>ORDER BY</code>：指定输出结果的排序规则。详情请参见<a href="../../8.clauses-and-options/order-by/">ORDER BY</a>。</p>
+<p><code>ORDER BY</code>：指定输出结果的排序规则。详情参见<a href="../../8.clauses-and-options/order-by/">ORDER BY</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>没有指定排序规则时，输出结果的顺序不是固定的。</p>
@@ -5631,7 +5652,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li><code>LIMIT</code>：限制输出结果的行数。详情请参见<a href="../../8.clauses-and-options/limit/">LIMIT</a>。</li>
+<li><code>LIMIT  [&lt;offset&gt;,] &lt;number_rows&gt;]</code>：限制输出结果的行数。详情参见<a href="../../8.clauses-and-options/limit/">LIMIT</a>。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code># 返回player102所属队伍。
@@ -5830,7 +5851,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2021</span>
       
     
   </small>
