@@ -5889,11 +5889,11 @@ nebula&gt; INSERT EDGE like(likeness) \
 # 列出所有的 like 边。类似于 MATCH (s)-[e:like]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */。
 
 nebula)&gt; LOOKUP ON like;
-+-------------+----------+-------------+
-| VertexID    | DstVID   | _dst        |
-+-------------+----------+-------------+
-| &quot;player100&quot; | 0        | &quot;player101&quot; |
-+-------------+----------+-------------+
++-------------+-------------+---------+
+| SrcVID      | DstVID      | Ranking |
++-------------+-------------+---------+
+| &quot;player100&quot; | &quot;player101&quot; | 0       |
++-------------+-------------+---------+
 </code></pre></div>
 </li>
 </ul>
@@ -5927,7 +5927,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
       
     
   </small>
