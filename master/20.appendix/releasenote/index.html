@@ -5624,7 +5624,7 @@
 <li>修复了设置毫秒失败但微秒有效的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2781">#2781</a></li>
 <li>修复了批量插入过多数据（百万行）时Meta服务崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2813">#2813</a></li>
 <li>修复了当图空间中不存在边Schema时获取边信息导致崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2571">#2571</a></li>
-<li>修复了属性数据类型为<code>FIXED_STRING</code>时GO表达式的错误。<a href="https://github.com/vesoft-inc/nebula/pull/2762">#2762</a></li>
+<li>修复了属性数据类型为 <code>FIXED_STRING</code> 时 GO WHERE 子句表达式解析错误。<a href="https://github.com/vesoft-inc/nebula/pull/2762">#2762</a></li>
 <li>修复了FIND ALL PATH查询不到的错误。 <a href="https://github.com/vesoft-inc/nebula/pull/2773">#2773</a></li>
 <li>修复了没有配置角色的用户却有查找SPACE的角色权限问题。<a href="https://github.com/vesoft-inc/nebula/pull/2778">#2778</a></li>
 <li>修复了CASE表达式错误。 <a href="https://github.com/vesoft-inc/nebula/pull/2819">#2819</a></li>
@@ -5632,12 +5632,10 @@
 <li>修复了当节点被shutdown后，JOB仍显示为运行中的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2843">#2843</a></li>
 <li>修复了在多个副本的情况下，<code>Insert</code>语句可能导致副本之间属性值不一致的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/2862">#2862</a></li>
 <li>修复了USE后提交作业时图空间不对的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3010">#3010</a></li>
-<li>修复了存储挂起的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3014">#3014</a></li>
 <li>修复了当列不为空时获取thrift结构属性出错的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3012">#3012</a></li>
 <li>修复了Meta服务未同步，graphd也能运行的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3069">#3069</a></li>
 <li>修复了使用FIND PATH WITH PROP时，悬挂边会返回空顶点的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3008">#3008</a></li>
 <li>修复了YIELD DISTINCT map类型时的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3051">#3051</a></li>
-<li>修复了退出时存储内核的异常。<a href="https://github.com/vesoft-inc/nebula/pull/3050">#3050</a></li>
 <li>修复了设置错误的IP或者HOST时服务仍然可以启动的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3057">#3057</a></li>
 <li>修复了在一个语句中更改相同属性的错误。<a href="https://github.com/vesoft-inc/nebula/pull/3036">#3036</a></li>
 <li>修复了在边上多步过滤无效的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3144">#3144</a></li>
