@@ -5554,6 +5554,9 @@
 <ul>
 <li>从写入Nebula Graph，到写入listener，再到写入 Elasticsearch 并创建索引可能需要一段时间。如果访问全文索引时返回未找到索引，可等待索引生效（但是，该等待时间未知，也无返回码检查）。</li>
 </ul>
+<ul>
+<li>使用K8s方式部署的Nebula Graph集群不支持全文索引。</li>
+</ul>
                 
                   
                     
@@ -5562,7 +5565,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
       
     
   </small>
