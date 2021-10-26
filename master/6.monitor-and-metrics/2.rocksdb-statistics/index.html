@@ -2967,8 +2967,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-250/" class="md-nav__link">
-        升级历史版本至v2.5.0
+      <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-260/" class="md-nav__link">
+        升级历史版本至v2.6.0
       </a>
     </li>
   
@@ -2981,8 +2981,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-250/" class="md-nav__link">
-        升级v2.0.x至v2.5.0
+      <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-260/" class="md-nav__link">
+        升级v2.0.x至v2.6.0
       </a>
     </li>
   
@@ -5580,7 +5580,7 @@
 <p>RocksDB 统计功能默认关闭，启动 RocksDB 统计功能，你需要：</p>
 <ol>
 <li>
-<p>修改 <code>storaged.conf</code> 文件中 <code>--enable_rocksdb_statistics</code> 参数为 <code>true</code>。配置默认文件目录为 <code>/use/local/nebula/etc</code>。</p>
+<p>修改 <code>nebula-storaged.conf</code> 文件中 <code>--enable_rocksdb_statistics</code> 参数为 <code>true</code>。配置默认文件目录为 <code>/use/local/nebula/etc</code>。</p>
 </li>
 <li>
 <p>重启服务使修改生效。</p>
@@ -5614,12 +5614,19 @@ rocksdb.block.cache.add<span class="o">=</span><span class="m">14</span>
 rocksdb.bytes.read<span class="o">=</span><span class="m">1632</span>
 </code></pre></div></p>
 <p>使用以下命令获取部分 JSON 格式的 RocksDB 统计信息：
-<div class="highlight"><pre><span></span><code>curl -L <span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">storage_ip</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/rocksdb_stats?stats=</span><span class="si">${</span><span class="nv">stats_name</span><span class="si">}</span><span class="s2">.&amp;returnjson&quot;</span>
+<div class="highlight"><pre><span></span><code>curl -L <span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">storage_ip</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">port</span><span class="si">}</span><span class="s2">/rocksdb_stats?stats=</span><span class="si">${</span><span class="nv">stats_name</span><span class="si">}</span><span class="s2">&amp;format=json&quot;</span>
 </code></pre></div></p>
 <p>例如使用以下语句获取 <code>rocksdb.bytes.read</code> 和 <code>rocksdb.block.cache.add</code>的统计信息并返回 JSON 的格式数据。
-<div class="highlight"><pre><span></span><code>curl -L <span class="s2">&quot;http://172.28.2.1:19779/rocksdb_stats?stats=rocksdb.bytes.read,rocksdb.block.cache.add&amp;returnjson&quot;</span>
+<div class="highlight"><pre><span></span><code>curl -L <span class="s2">&quot;http://172.28.2.1:19779/rocksdb_stats?stats=rocksdb.bytes.read,rocksdb.block.cache.add&amp;format=json&quot;</span>
 
-<span class="o">[{</span><span class="s2">&quot;value&quot;</span>:14,<span class="s2">&quot;name&quot;</span>:rocksdb.block.cache.add<span class="o">}</span>,<span class="o">{</span><span class="s2">&quot;value&quot;</span>:1632,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;rocksdb.bytes.read&quot;</span><span class="o">}]</span>
+<span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">&quot;rocksdb.block.cache.add&quot;</span>: <span class="m">1</span>
+  <span class="o">}</span>,
+  <span class="o">{</span>
+    <span class="s2">&quot;rocksdb.bytes.read&quot;</span>: <span class="m">160</span>
+  <span class="o">}</span>
+<span class="o">]</span>
 </code></pre></div></p>
                 
                   
@@ -5629,7 +5636,7 @@ rocksdb.bytes.read<span class="o">=</span><span class="m">1632</span>
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 16, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
       
     
   </small>
