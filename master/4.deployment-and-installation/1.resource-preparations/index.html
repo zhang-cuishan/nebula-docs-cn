@@ -5135,16 +5135,16 @@ $ cmake --version
 <p>如果版本正确，用户可以跳过本小节。如果不正确，请根据如下步骤安装：</p>
 <ol>
 <li>
-<p>克隆仓库<code>nebula-common</code>到主机。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b vmaster https://github.com/vesoft-inc/nebula-common.git
+<p>克隆仓库<code>nebula</code>到主机。</p>
+<div class="highlight"><pre><span></span><code>$ git clone -b master https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 <p>如需安装特定版本的Nebula Graph，使用<code>--branch</code>或<code>-b</code>选项指定相应的nebula-common分支。 例如，指定master，命令如下：</p>
-<div class="highlight"><pre><span></span><code>$ git clone --branch vmaster https://github.com/vesoft-inc/nebula-common.git
+<div class="highlight"><pre><span></span><code>$ git clone --branch master https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
 <li>
-<p>进入目录<code>nebula-common</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-common
+<p>进入目录<code>nebula</code>。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula
 </code></pre></div>
 </li>
 <li>
@@ -5318,7 +5318,7 @@ $ <span class="nb">source</span> /opt/vesoft/toolset/gcc/7.5.0/enable
 </table>
 <p>有且仅有3个metad进程，每个metad进程会自动创建并维护meta数据的一个副本。</p>
 <p>storaged进程的数量不会影响图空间副本的数量。</p>
-<p>用户可以在一台机器上部署多个进程，例如五台机器构成的集群，用户可以按照如下方案部署Nebula Graph。</p>
+<p>用户可以在一台机器上部署多个不同进程，例如五台机器构成的集群，用户可以按照如下方案部署Nebula Graph。</p>
 <table>
 <thead>
 <tr>
@@ -5437,7 +5437,7 @@ $ <span class="nb">source</span> /opt/vesoft/toolset/gcc/7.5.0/enable
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>
