@@ -4706,7 +4706,8 @@
 </tbody>
 </table>
 <h2 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; UNWIND [true, false, &#39;true&#39;, &#39;false&#39;, NULL] AS b RETURN toBoolean(b) AS b;
+<div class="highlight"><pre><span></span><code>nebula&gt; UNWIND [true, false, &#39;true&#39;, &#39;false&#39;, NULL] AS b \
+        RETURN toBoolean(b) AS b;
 +----------+
 | b        |
 +----------+
@@ -4735,7 +4736,8 @@ nebula&gt; RETURN toInteger(1), toInteger(&#39;1&#39;), toInteger(&#39;1e3&#39;)
 | 1            | 1              | 1000             | __NULL__                  |
 +--------------+----------------+------------------+---------------------------+
 
-nebula&gt; MATCH (a:player)-[e]-() RETURN type(e);
+nebula&gt; MATCH (a:player)-[e]-() \
+        RETURN type(e);
 +----------+
 | type(e)  |
 +----------+
@@ -4743,14 +4745,18 @@ nebula&gt; MATCH (a:player)-[e]-() RETURN type(e);
 +----------+
 | &quot;follow&quot; |
 
-nebula&gt; MATCH (a:player {name: &quot;Tim Duncan&quot;}) WHERE toInteger(id(a)) == 100 RETURN a;
-+----------------------------------------------+
-| a                                            |
-+----------------------------------------------+
-| (&quot;100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) |
-+----------------------------------------------+
+nebula&gt; MATCH (a:player {name: &quot;Tim Duncan&quot;}) \
+        WHERE toInteger(right(id(a),3)) == 100 \
+        RETURN a;
++----------------------------------------------------+
+| a                                                  |
++----------------------------------------------------+
+| (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) |
++----------------------------------------------------+
 
-nebula&gt; MATCH (n:player) WITH n LIMIT toInteger(ceil(1.8)) RETURN count(*) AS count;
+nebula&gt; MATCH (n:player) \
+        WITH n LIMIT toInteger(ceil(1.8)) \
+        RETURN count(*) AS count;
 +-------+
 | count |
 +-------+
@@ -4765,7 +4771,7 @@ nebula&gt; MATCH (n:player) WITH n LIMIT toInteger(ceil(1.8)) RETURN count(*) AS
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>
