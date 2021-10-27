@@ -4754,11 +4754,8 @@ ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]
 | VertexID    | age | name                |
 +-------------+-----+---------------------+
 | &quot;player103&quot; | 32  | &quot;Rudy Gay&quot;          |
-+-------------+-----+---------------------+
 | &quot;player102&quot; | 33  | &quot;LaMarcus Aldridge&quot; |
-+-------------+-----+---------------------+
 | &quot;player101&quot; | 36  | &quot;Tony Parker&quot;       |
-+-------------+-----+---------------------+
 | &quot;player100&quot; | 42  | &quot;Tim Duncan&quot;        |
 +-------------+-----+---------------------+
 
@@ -4769,7 +4766,6 @@ nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow \
 | dst         |
 +-------------+
 | &quot;player125&quot; |
-+-------------+
 | &quot;player101&quot; |
 +-------------+
 </code></pre></div>
@@ -4784,13 +4780,9 @@ ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]
 | Name            | Age |
 +-----------------+-----+
 | &quot;Yao Ming&quot;      | 38  |
-+-----------------+-----+
 | &quot;Vince Carter&quot;  | 42  |
-+-----------------+-----+
 | &quot;Tracy McGrady&quot; | 39  |
-+-----------------+-----+
 | &quot;Tony Parker&quot;   | 36  |
-+-----------------+-----+
 | &quot;Tim Duncan&quot;    | 42  |
 +-----------------+-----+
 ...
@@ -4802,11 +4794,8 @@ nebula&gt; MATCH (v:player) RETURN v.age AS Age, v.name AS Name  \
 | Age | Name              |
 +-----+-------------------+
 | 47  | &quot;Shaquille O&#39;Neal&quot; |
-+-----+-------------------+
 | 46  | &quot;Grant Hill&quot;      |
-+-----+-------------------+
 | 45  | &quot;Jason Kidd&quot;      |
-+-----+-------------------+
 | 45  | &quot;Steve Nash&quot;      |
 +-----+-------------------+
 ...
@@ -4820,9 +4809,7 @@ nebula&gt; MATCH (v:player) RETURN v.age AS Age, v.name AS Name  \
 | Name            | Age      |
 +-----------------+----------+
 | &quot;Tony Parker&quot;   | 36       |
-+-----------------+----------+
 | &quot;Manu Ginobili&quot; | 41       |
-+-----------------+----------+
 | &quot;Spurs&quot;         | __NULL__ |
 +-----------------+----------+
 
@@ -4833,9 +4820,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
 | Name            | Age      |
 +-----------------+----------+
 | &quot;Spurs&quot;         | __NULL__ |
-+-----------------+----------+
 | &quot;Manu Ginobili&quot; | 41       |
-+-----------------+----------+
 | &quot;Tony Parker&quot;   | 36       |
 +-----------------+----------+
 </code></pre></div>
@@ -4847,7 +4832,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

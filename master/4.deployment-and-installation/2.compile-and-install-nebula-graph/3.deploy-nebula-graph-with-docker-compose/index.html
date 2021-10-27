@@ -4916,7 +4916,7 @@
 <p class="admonition-title">Danger</p>
 <p><code>master</code>分支包含最新的未测试代码。请<strong>不要</strong>在生产环境使用此版本。</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ git clone -b v2.5.0 https://github.com/vesoft-inc/nebula-docker-compose.git
+<div class="highlight"><pre><span></span><code>$ git clone -b v2.6.0 https://github.com/vesoft-inc/nebula-docker-compose.git
 </code></pre></div>
 </li>
 <li>
@@ -4951,7 +4951,7 @@ Creating nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
 <ol>
 <li>
 <p>使用Nebula Console镜像启动一个容器，并连接到Nebula Graph服务所在的网络（nebula-docker-compose_nebula-net）中。</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm -ti --network nebula-docker-compose_nebula-net --entrypoint<span class="o">=</span>/bin/sh vesoft/nebula-console:v2.5.0
+<div class="highlight"><pre><span></span><code>$ docker run --rm -ti --network nebula-docker-compose_nebula-net --entrypoint<span class="o">=</span>/bin/sh vesoft/nebula-console:v2.6.0
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4981,11 +4981,8 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 <span class="p">|</span> Host        <span class="p">|</span> Port <span class="p">|</span> Status   <span class="p">|</span> Leader count <span class="p">|</span> Leader distribution  <span class="p">|</span> Partition distribution <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+
 <span class="p">|</span> <span class="s2">&quot;storaged0&quot;</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">&quot;ONLINE&quot;</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span> <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
 <span class="p">|</span> <span class="s2">&quot;storaged1&quot;</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">&quot;ONLINE&quot;</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span> <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
 <span class="p">|</span> <span class="s2">&quot;storaged2&quot;</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">&quot;ONLINE&quot;</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span> <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span>   <span class="p">|</span>
-+-------------+------+----------+--------------+----------------------+------------------------+
 <span class="p">|</span> <span class="s2">&quot;Total&quot;</span>     <span class="p">|</span>      <span class="p">|</span>          <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span>                      <span class="p">|</span>                        <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+
 </code></pre></div>
@@ -5080,7 +5077,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="docker">如何固定Docker映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:v2.5.0
+    image: vesoft/nebula-graphd:master
     ...
     ports:
       - <span class="m">9669</span>:9669
@@ -5096,7 +5093,7 @@ Removing network nebula-docker-compose_nebula-net
 <p>以上错误表示已达到Docker Hub的速率限制。解决方案请参见<a href="https://www.docker.com/increase-rate-limit">Understanding Docker Hub Rate Limiting</a>。</p>
 <h3 id="nebula_console">如何更新Nebula Console？<a class="headerlink" href="#nebula_console" title="Permanent link">&para;</a></h3>
 <p>执行如下命令可以更新Nebula Console客户端镜像。</p>
-<div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v2.5.0
+<div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v2.6.0
 </code></pre></div>
 <h3 id="nebula_graph_4">如何升级Nebula Graph？<a class="headerlink" href="#nebula_graph_4" title="Permanent link">&para;</a></h3>
 <p>更新Nebula Graph的Docker镜像并重启服务：</p>
@@ -5129,7 +5126,7 @@ Removing network nebula-docker-compose_nebula-net
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

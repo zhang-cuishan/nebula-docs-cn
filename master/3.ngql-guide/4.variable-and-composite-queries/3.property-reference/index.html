@@ -4867,7 +4867,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD properties($^).name A
 | startName    | endAge |
 +--------------+--------+
 | &quot;Tim Duncan&quot; | 36     |
-+--------------+--------+
 | &quot;Tim Duncan&quot; | 33     |
 +--------------+--------+
 
@@ -4877,7 +4876,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD properties(edge).degr
 | follow.degree |
 +---------------+
 | 95            |
-+---------------+
 | 90            |
 +---------------+
 
@@ -4887,7 +4885,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD src(edge), dst(edge),
 | src(EDGE)   | dst(EDGE)   | type(EDGE) | rank(EDGE) |
 +-------------+-------------+------------+------------+
 | &quot;player100&quot; | &quot;player101&quot; | &quot;follow&quot;   | 0          |
-+-------------+-------------+------------+------------+
 | &quot;player100&quot; | &quot;player125&quot; | &quot;follow&quot;   | 0          |
 +-------------+-------------+------------+------------+
 </code></pre></div>
@@ -4899,7 +4896,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD src(edge), dst(edge),
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

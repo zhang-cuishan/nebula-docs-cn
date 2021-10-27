@@ -4667,56 +4667,69 @@
 <thead>
 <tr>
 <th align="left">函数</th>
+<th>返回类型</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">GEOGRAPHY ST_Point(longitude, latitude)</td>
+<td align="left">ST_Point(longitude, latitude)</td>
+<td><code>GEOGRAPHY</code></td>
 <td align="left">创建包含一个点的地理位置。</td>
 </tr>
 <tr>
-<td align="left">GEOGRAPHY ST_GeogFromText(wkt_string)</td>
+<td align="left">ST_GeogFromText(wkt_string)</td>
+<td><code>GEOGRAPHY</code></td>
 <td align="left">返回与传入的WKT字符串形式相对应的GEOGRAPHY。</td>
 </tr>
 <tr>
-<td align="left">STRING ST_ASText(geography)</td>
+<td align="left">ST_ASText(geography)</td>
+<td><code>STRING</code></td>
 <td align="left">返回传入的GEOGRAPHY的WKT字符串形式。</td>
 </tr>
 <tr>
-<td align="left">GEOGRAPHY ST_Centroid(geography)</td>
+<td align="left">ST_Centroid(geography)</td>
+<td><code>GEOGRAPHY</code></td>
 <td align="left">以单点GEOGRAPHY的形式返回传入的GEOGRAPHY的形心。</td>
 </tr>
 <tr>
-<td align="left">BOOL ST_ISValid(geography)</td>
+<td align="left">ST_ISValid(geography)</td>
+<td><code>BOOL</code></td>
 <td align="left">返回传入的GEOGRAPHY是否有效。</td>
 </tr>
 <tr>
-<td align="left">BOOL ST_Intersects(geography_1, geography_2)</td>
+<td align="left">ST_Intersects(geography_1, geography_2)</td>
+<td><code>BOOL</code></td>
 <td align="left">返回传入的两个GEOGRAPHY是否有交集。</td>
 </tr>
 <tr>
-<td align="left">BOOL ST_Covers(geography_1, geography_2)</td>
+<td align="left">ST_Covers(geography_1, geography_2)</td>
+<td><code>BOOL</code></td>
 <td align="left">返回geography_1是否完全包含geography_2。如果geography_2中没有位于geography_1外部的点，返回True。</td>
 </tr>
 <tr>
-<td align="left">BOOL ST_CoveredBy(geography_1, geography_2)</td>
+<td align="left">ST_CoveredBy(geography_1, geography_2)</td>
+<td><code>BOOL</code></td>
 <td align="left">返回geography_2是否完全包含geography_1。如果geography_1中没有位于geography_2外部的点，返回True。</td>
 </tr>
 <tr>
-<td align="left">BOOL ST_DWithin(geography_1, geography_2, distance)</td>
+<td align="left">ST_DWithin(geography_1, geography_2, distance)</td>
+<td><code>BOOL</code></td>
 <td align="left">如果geography_1中至少有一个点与geography_2中的一个点的距离小于或等于distance参数（以米为单位）指定的距离，则返回True。</td>
 </tr>
 <tr>
-<td align="left">FLOAT ST_Distance(geography_1, geography_2)</td>
+<td align="left">ST_Distance(geography_1, geography_2)</td>
+<td><code>FLOAT</code></td>
 <td align="left">返回两个非空GEOGRAPHY之间的最短距离（以米为单位）。</td>
 </tr>
 <tr>
-<td align="left">INT S2_CellIdFromPoint(point_geography)</td>
+<td align="left">S2_CellIdFromPoint(point_geography)</td>
+<td><code>INT</code></td>
 <td align="left">返回覆盖点GEOGRAPHY的<a href="https://s2geometry.io/devguide/s2cell_hierarchy">S2单元</a>ID。</td>
 </tr>
 <tr>
-<td align="left">ARRAY<INT64> S2_CoveringCellIds(geography)</td>
+<td align="left">S2_CoveringCellIds(geography)</td>
+<td><code>ARRAY&lt;INT64&gt;</code></td>
 <td align="left">返回覆盖传入的GEOGRAPHY的S2单元ID的数组。</td>
 </tr>
 </tbody>
@@ -4807,7 +4820,7 @@ nebula&gt; RETURN S2_CoveringCellIds(ST_GeogFromText(&quot;POLYGON((0 1, 1 2, 2 
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

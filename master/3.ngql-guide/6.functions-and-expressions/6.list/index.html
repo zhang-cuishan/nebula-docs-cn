@@ -4721,9 +4721,7 @@ nebula&gt; MATCH (a:player)-[r]-&gt;() \
 | labels(a)  | keys(r)                    |
 +------------+----------------------------+
 | [&quot;player&quot;] | [&quot;degree&quot;]                 |
-+------------+----------------------------+
 | [&quot;player&quot;] | [&quot;degree&quot;]                 |
-+------------+----------------------------+
 | [&quot;player&quot;] | [&quot;end_year&quot;, &quot;start_year&quot;] |
 +------------+----------------------------+
 
@@ -4734,7 +4732,6 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) \
 | nodes(p)                                                                                                                                      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
 | [(&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}), (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;}), (&quot;team204&quot; :team{name: &quot;Spurs&quot;})]   |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
 | [(&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}), (&quot;player125&quot; :player{age: 41, name: &quot;Manu Ginobili&quot;}), (&quot;team204&quot; :team{name: &quot;Spurs&quot;})] |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -4743,7 +4740,6 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.name == &quot
 | relationships(p)                                                                                                            |
 +-----------------------------------------------------------------------------------------------------------------------------+
 | [[:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}], [:serve &quot;player101&quot;-&gt;&quot;team204&quot; @0 {end_year: 2018, start_year: 1999}]] |
-+-----------------------------------------------------------------------------------------------------------------------------+
 | [[:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}], [:serve &quot;player125&quot;-&gt;&quot;team204&quot; @0 {end_year: 2018, start_year: 2002}]] |
 +-----------------------------------------------------------------------------------------------------------------------------+
 </code></pre></div>
@@ -4755,7 +4751,7 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.name == &quot
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

@@ -4896,9 +4896,7 @@ nebula&gt; LOOKUP ON player WHERE PREFIX(player.name, &quot;B&quot;);
 | _vid            |
 +-----------------+
 | &quot;Boris Diaw&quot;    |
-+-----------------+
 | &quot;Ben Simmons&quot;   |
-+-----------------+
 | &quot;Blake Griffin&quot; |
 +-----------------+
 
@@ -4907,9 +4905,7 @@ nebula&gt; LOOKUP ON player WHERE WILDCARD(player.name, &quot;*ri*&quot;) YIELD 
 | _vid            | name            | age |
 +-----------------+-----------------+-----+
 | &quot;Chris Paul&quot;    | &quot;Chris Paul&quot;    | 33  |
-+-----------------+-----------------+-----+
 | &quot;Boris Diaw&quot;    | &quot;Boris Diaw&quot;    | 36  |
-+-----------------+-----------------+-----+
 | &quot;Blake Griffin&quot; | &quot;Blake Griffin&quot; | 30  |
 +-----------------+-----------------+-----+
 
@@ -4932,9 +4928,7 @@ nebula&gt; LOOKUP ON player WHERE REGEXP(player.name, &quot;.*&quot;);
 | _vid                |
 +---------------------+
 | &quot;Danny Green&quot;       |
-+---------------------+
 | &quot;David West&quot;        |
-+---------------------+
 | &quot;Russell Westbrook&quot; |
 +---------------------+
 ...
@@ -4957,7 +4951,7 @@ nebula&gt; DROP FULLTEXT INDEX nebula_index_1;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

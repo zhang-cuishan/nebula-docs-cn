@@ -4707,12 +4707,11 @@ nebula&gt; SHOW ALL QUERIES;
 +------------------+-----------------+---------+----------------------+----------------------------+----------------+-----------+---------------------------------------------------------+
 
 # 返回耗时TOP 10的查询。
-nebula&gt; SHOW ALL QUERIES | ORDER BY $-.DurationInUSec DESC | LIMIT 10; 
+nebula&gt; SHOW ALL QUERIES | ORDER BY $-.DurationInUSec DESC | LIMIT 10;
 +------------------+-----------------+---------+----------------------+----------------------------+----------------+-----------+-------------------------------------------------------+
 | SessionID        | ExecutionPlanID | User    | Host                 | StartTime                  | DurationInUSec | Status    | Query                                                 |
 +------------------+-----------------+---------+----------------------+----------------------------+----------------+-----------+-------------------------------------------------------+
 | 1625471375320831 | 98              | &quot;user2&quot; | &quot;&quot;192.168.x.x&quot;:9669&quot; | 2021-07-05T07:50:24.461779 | 2608176        | &quot;RUNNING&quot; | &quot;MATCH (v:player)-[*1..4]-(v2) RETURN v2 AS Friends;&quot; |
-+------------------+-----------------+---------+----------------------+----------------------------+----------------+-----------+-------------------------------------------------------+
 | 1625456037718757 | 99              | &quot;user1&quot; | &quot;&quot;192.168.x.x&quot;:9669&quot; | 2021-07-05T07:50:24.910616 | 2159333        | &quot;RUNNING&quot; | &quot;MATCH (v:player)-[*1..4]-(v2) RETURN v2 AS Friends;&quot; |
 +------------------+-----------------+---------+----------------------+----------------------------+----------------+-----------+-------------------------------------------------------+
 </code></pre></div>
@@ -4767,7 +4766,7 @@ nebula&gt; SHOW ALL QUERIES | ORDER BY $-.DurationInUSec DESC | LIMIT 10;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 20, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

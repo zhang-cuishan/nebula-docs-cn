@@ -4873,9 +4873,9 @@
 <p>本文操作仅适用于原生nGQL。</p>
 <h2 id="_1">获取点的属性值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *} 
-&lt;vid&gt; [, vid ...] 
-[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]]; 
+<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *}
+&lt;vid&gt; [, vid ...]
+[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 </code></pre></div>
 <table>
 <thead>
@@ -4933,9 +4933,7 @@
 | vertices_                                                 |
 +-----------------------------------------------------------+
 | (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})       |
-+-----------------------------------------------------------+
 | (&quot;player102&quot; :player{age: 33, name: &quot;LaMarcus Aldridge&quot;}) |
-+-----------------------------------------------------------+
 | (&quot;player103&quot; :player{age: 32, name: &quot;Rudy Gay&quot;})          |
 +-----------------------------------------------------------+
 </code></pre></div>
@@ -4961,7 +4959,6 @@ nebula&gt; FETCH PROP ON player, t1 &quot;player100&quot;;
 | vertices_                                                                  |
 +----------------------------------------------------------------------------+
 | (&quot;player100&quot; :t1{a: &quot;Hello&quot;, b: 100} :player{age: 42, name: &quot;Tim Duncan&quot;}) |
-+----------------------------------------------------------------------------+
 | (&quot;player103&quot; :player{age: 32, name: &quot;Rudy Gay&quot;})                           |
 +----------------------------------------------------------------------------+
 </code></pre></div>
@@ -4972,9 +4969,7 @@ nebula&gt; FETCH PROP ON player, t1 &quot;player100&quot;;
 | vertices_                                                                  |
 +----------------------------------------------------------------------------+
 | (&quot;player106&quot; :player{age: 25, name: &quot;Kyle Anderson&quot;})                      |
-+----------------------------------------------------------------------------+
 | (&quot;team200&quot; :team{name: &quot;Warriors&quot;})                                        |
-+----------------------------------------------------------------------------+
 | (&quot;player100&quot; :t1{a: &quot;Hello&quot;, b: 100} :player{age: 42, name: &quot;Tim Duncan&quot;}) |
 +----------------------------------------------------------------------------+
 </code></pre></div>
@@ -5039,7 +5034,6 @@ nebula&gt; FETCH PROP ON serve &quot;player100&quot; -&gt; &quot;team204&quot;;
 | edges_                                                                |
 +-----------------------------------------------------------------------+
 | [:serve &quot;player100&quot;-&gt;&quot;team204&quot; @0 {end_year: 2016, start_year: 1997}] |
-+-----------------------------------------------------------------------+
 | [:serve &quot;player133&quot;-&gt;&quot;team202&quot; @0 {end_year: 2011, start_year: 2002}] |
 +-----------------------------------------------------------------------+
 </code></pre></div>
@@ -5079,9 +5073,7 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow \
 | follow._src | follow._dst | follow._rank | properties(EDGE).degree |
 +-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player100&quot; | 0            | 95                      |
-+-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player102&quot; | 0            | 90                      |
-+-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player125&quot; | 0            | 95                      |
 +-------------+-------------+--------------+-------------------------+
 </code></pre></div>
@@ -5094,9 +5086,7 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow \
 | follow._src | follow._dst | follow._rank | properties(EDGE).degree |
 +-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player100&quot; | 0            | 95                      |
-+-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player102&quot; | 0            | 90                      |
-+-------------+-------------+--------------+-------------------------+
 | &quot;player101&quot; | &quot;player125&quot; | 0            | 95                      |
 +-------------+-------------+--------------+-------------------------+
 </code></pre></div>
@@ -5109,7 +5099,7 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

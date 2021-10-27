@@ -4758,7 +4758,6 @@ nebula&gt; GO FROM &quot;player102&quot; OVER serve;
 | serve._dst |
 +------------+
 | &quot;team203&quot;  |
-+------------+
 | &quot;team204&quot;  |
 +------------+
 </code></pre></div>
@@ -4768,7 +4767,6 @@ nebula&gt; GO 2 STEPS FROM &quot;player102&quot; OVER follow;
 | follow._dst |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player125&quot; |
 +-------------+
 ...
@@ -4782,9 +4780,7 @@ nebula&gt; GO FROM &quot;player100&quot;, &quot;player102&quot; OVER serve \
 | team_name       | start_year | player_name         |
 +-----------------+------------+---------------------+
 | &quot;Spurs&quot;         | 1997       | &quot;Tim Duncan&quot;        |
-+-----------------+------------+---------------------+
 | &quot;Trail Blazers&quot; | 2006       | &quot;LaMarcus Aldridge&quot; |
-+-----------------+------------+---------------------+
 | &quot;Spurs&quot;         | 2015       | &quot;LaMarcus Aldridge&quot; |
 +-----------------+------------+---------------------+
 </code></pre></div>
@@ -4795,9 +4791,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow, serve \
 | properties(EDGE).degree | properties(EDGE).start_year |
 +-------------------------+-----------------------------+
 | 95                      | UNKNOWN_PROP                |
-+-------------------------+-----------------------------+
 | 95                      | UNKNOWN_PROP                |
-+-------------------------+-----------------------------+
 | UNKNOWN_PROP            | 1997                        |
 +-------------------------+-----------------------------+
 </code></pre></div>
@@ -4808,7 +4802,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
 | destination |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player102&quot; |
 +-------------+
 ...
@@ -4820,7 +4813,6 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2) WHERE id(v) == &#39;player100&#39; \
 | destination |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player102&quot; |
 +-------------+
 ...
@@ -4835,7 +4827,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
 | FriendOf            | Team            |
 +---------------------+-----------------+
 | &quot;Danny Green&quot;       | &quot;Spurs&quot;         |
-+---------------------+-----------------+
 | &quot;Danny Green&quot;       | &quot;Cavaliers&quot;     |
 +---------------------+-----------------+
 ...
@@ -4848,7 +4839,6 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2)-[e2:serve]-&gt;(v3)  \
 | FriendOf            | Team            |
 +---------------------+-----------------+
 | &quot;Tony Parker&quot;       | &quot;Spurs&quot;         |
-+---------------------+-----------------+
 | &quot;Tony Parker&quot;       | &quot;Hornets&quot;       |
 +---------------------+-----------------+
 ...
@@ -4860,7 +4850,6 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
 | both        |
 +-------------+
 | &quot;player100&quot; |
-+-------------+
 | &quot;player101&quot; |
 +-------------+
 ...
@@ -4873,7 +4862,6 @@ nebula&gt; MATCH (v) -[e:follow]-(v2) \
 | both        |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player103&quot; |
 +-------------+
 ...
@@ -4885,7 +4873,6 @@ nebula&gt; GO 1 TO 2 STEPS FROM &quot;player100&quot; OVER follow \
 | destination |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player125&quot; |
 +-------------+
 ...
@@ -4898,7 +4885,6 @@ nebula&gt; MATCH (v) -[e:follow*1..2]-&gt;(v2) \
 | destination |
 +-------------+
 | &quot;player100&quot; |
-+-------------+
 | &quot;player102&quot; |
 +-------------+
 </code></pre></div>
@@ -4911,9 +4897,7 @@ nebula&gt; GO 2 STEPS FROM &quot;player100&quot; OVER follow \
 | dst         | src                        | age      |
 +-------------+----------------------------+----------+
 | &quot;player125&quot; | [&quot;player101&quot;]              | [41]     |
-+-------------+----------------------------+----------+
 | &quot;player100&quot; | [&quot;player125&quot;, &quot;player101&quot;] | [42, 42] |
-+-------------+----------------------------+----------+
 | &quot;player102&quot; | [&quot;player101&quot;]              | [33]     |
 +-------------+----------------------------+----------+
 </code></pre></div>
@@ -4926,7 +4910,6 @@ nebula&gt; $a = GO FROM &quot;player100&quot; OVER follow YIELD src(edge) AS src
 | src         | $a.dst      | follow._src | follow._dst |
 +-------------+-------------+-------------+-------------+
 | &quot;player100&quot; | &quot;player125&quot; | &quot;player100&quot; | &quot;player101&quot; |
-+-------------+-------------+-------------+-------------+
 | &quot;player100&quot; | &quot;player101&quot; | &quot;player100&quot; | &quot;player125&quot; |
 +-------------+-------------+-------------+-------------+
 </code></pre></div>
@@ -4936,7 +4919,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
 | follow._dst |
 +-------------+
 | &quot;player125&quot; |
-+-------------+
 | &quot;player101&quot; |
 +-------------+
 </code></pre></div>
@@ -4948,7 +4930,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

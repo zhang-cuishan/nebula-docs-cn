@@ -4792,8 +4792,8 @@
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>请确保<code>LOOKUP</code>语句有至少一个索引可用。如果需要创建索引，但是已经有相关的点、边或属性，用户必须在创建索引后<a href="../../14.native-index-statements/4.rebuild-native-index/">重建索引</a>，才能使其生效。</p>
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
-[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
+<div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;}
+[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]]
 [YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 
 &lt;return_list&gt;
@@ -4857,7 +4857,6 @@ nebula&gt; LOOKUP ON player \
 | VertexID    |
 +-------------+
 | &quot;player144&quot; |
-+-------------+
 | &quot;player140&quot; |
 +-------------+
 
@@ -4869,7 +4868,6 @@ nebula&gt; LOOKUP ON player \
 | VertexID    | properties(VERTEX).name | properties(VERTEX).age |
 +-------------+-------------------------+------------------------+
 | &quot;player149&quot; | &quot;Ben Simmons&quot;           | 22                     |
-+-------------+-------------------------+------------------------+
 | &quot;player134&quot; | &quot;Blake Griffin&quot;         | 30                     |
 +-------------+-------------------------+------------------------+
 
@@ -4901,9 +4899,7 @@ nebula&gt; LOOKUP ON follow \
 | SrcVID      | DstVID      | Ranking |
 +-------------+-------------+---------+
 | &quot;player101&quot; | &quot;player102&quot; | 0       |
-+-------------+-------------+---------+
 | &quot;player133&quot; | &quot;player114&quot; | 0       |
-+-------------+-------------+---------+
 | &quot;player133&quot; | &quot;player144&quot; | 0       |
 +-------------+-------------+---------+
 ...
@@ -4915,9 +4911,7 @@ nebula&gt; LOOKUP ON follow \
 | SrcVID      | DstVID      | Ranking | properties(EDGE).degree |
 +-------------+-------------+---------+-------------------------+
 | &quot;player121&quot; | &quot;player116&quot; | 0       | 90                      |
-+-------------+-------------+---------+-------------------------+
 | &quot;player121&quot; | &quot;player128&quot; | 0       | 90                      |
-+-------------+-------------+---------+-------------------------+
 | &quot;player121&quot; | &quot;player129&quot; | 0       | 90                      |
 +-------------+-------------+---------+-------------------------+
 ...
@@ -4931,9 +4925,7 @@ nebula&gt; LOOKUP ON follow \
 | $-.DstVID   | serve.start_year | serve.end_year | $$.team.name |
 +-------------+------------------+----------------+--------------+
 | &quot;player105&quot; | 2010             | 2018           | &quot;Spurs&quot;      |
-+-------------+------------------+----------------+--------------+
 | &quot;player105&quot; | 2009             | 2010           | &quot;Cavaliers&quot;  |
-+-------------+------------------+----------------+--------------+
 | &quot;player105&quot; | 2018             | 2019           | &quot;Raptors&quot;    |
 +-------------+------------------+----------------+--------------+
 </code></pre></div>
@@ -4962,7 +4954,6 @@ nebula&gt; LOOKUP ON player;
 |  VertexID   |
 +-------------+
 | &quot;player100&quot; |
-+-------------+
 | &quot;player101&quot; |
 +-------------+
 </code></pre></div>
@@ -5024,7 +5015,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

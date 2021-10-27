@@ -5135,11 +5135,8 @@
 | Host        | Port      | Status    | Leader count | Leader distribution  | Partition distribution |
 +-------------+-----------+-----------+--------------+----------------------+------------------------+
 | &quot;storaged0&quot; | 9779      | &quot;ONLINE&quot;  | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-+-------------+-----------+-----------+--------------+----------------------+------------------------+
 | &quot;storaged1&quot; | 9779      | &quot;ONLINE&quot;  | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-+-------------+-----------+-----------+--------------+----------------------+------------------------+
 | &quot;storaged2&quot; | 9779      | &quot;ONLINE&quot;  | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-+-------------+-----------+-----------+--------------+----------------------+------------------------+
 | &quot;Total&quot;     | __EMPTY__ | __EMPTY__ | 0            | __EMPTY__            | __EMPTY__              |
 +-------------+-----------+-----------+--------------+----------------------+------------------------+
 Got 4 rows (time spent 1061/2251 us)
@@ -5174,7 +5171,7 @@ Got 4 rows (time spent 1061/2251 us)
 <h3 id="ngql">nGQL语法<a class="headerlink" href="#ngql" title="Permanent link">&para;</a></h3>
 <ul>
 <li>创建图空间<div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
-[partition_num = &lt;partition_number&gt;,] 
+[partition_num = &lt;partition_number&gt;,]
 [replica_factor = &lt;replica_number&gt;,]
 vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
 )
@@ -5212,11 +5209,8 @@ Execution succeeded (time spent 2817/3280 us)
 | Host        | Port      | Status    | Leader count | Leader distribution              | Partition distribution |
 +-------------+-----------+-----------+--------------+----------------------------------+------------------------+
 | &quot;storaged0&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
 | &quot;storaged1&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
 | &quot;storaged2&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
 | &quot;Total&quot;     |           |           | 15           | &quot;basketballplayer:15&quot;            | &quot;basketballplayer:15&quot;  |
 +-------------+-----------+-----------+--------------+----------------------------------+------------------------+
 Got 4 rows (time spent 1633/2867 us)
@@ -5374,9 +5368,9 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <ul>
 <li>
 <p>查询Tag属性</p>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *} 
-&lt;vid&gt; [, vid ...] 
-[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]]; 
+<div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *}
+&lt;vid&gt; [, vid ...]
+[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 </code></pre></div>
 </li>
 </ul>
@@ -5391,8 +5385,8 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li><code>LOOKUP</code><div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
-[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
+<li><code>LOOKUP</code><div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;}
+[WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]]
 [YIELD &lt;return_list&gt; [AS &lt;alias&gt;]];
 </code></pre></div>
 </li>
@@ -5409,7 +5403,6 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 | follow._dst |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player125&quot; |
 +-------------+
 Got 2 rows (time spent 12097/14220 us)
@@ -5423,7 +5416,6 @@ Got 2 rows (time spent 12097/14220 us)
 | Teammate        | Age |
 +-----------------+-----+
 | &quot;Tony Parker&quot;   | 36  |
-+-----------------+-----+
 | &quot;Manu Ginobili&quot; | 41  |
 +-----------------+-----+
 </code></pre></div>
@@ -5464,9 +5456,7 @@ Got 2 rows (time spent 12097/14220 us)
 | Team      | Player          |
 +-----------+-----------------+
 | &quot;Spurs&quot;   | &quot;Tony Parker&quot;   |
-+-----------+-----------------+
 | &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
-+-----------+-----------------+
 | &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
 +-----------+-----------------+
 </code></pre></div>
@@ -5508,9 +5498,7 @@ Got 2 rows (time spent 12097/14220 us)
 | Team      | Player          |
 +-----------+-----------------+
 | &quot;Spurs&quot;   | &quot;Tony Parker&quot;   |
-+-----------+-----------------+
 | &quot;Hornets&quot; | &quot;Tony Parker&quot;   |
-+-----------+-----------------+
 | &quot;Spurs&quot;   | &quot;Manu Ginobili&quot; |
 +-----------+-----------------+
 </code></pre></div>
@@ -5639,7 +5627,7 @@ Execution succeeded (time spent 3700/4101 us)
 </div>
 <h3 id="ngql_6">nGQL语法<a class="headerlink" href="#ngql_6" title="Permanent link">&para;</a></h3>
 <ul>
-<li>创建索引<div class="highlight"><pre><span></span><code>CREATE {TAG | EDGE} INDEX [IF NOT EXISTS] &lt;index_name&gt; 
+<li>创建索引<div class="highlight"><pre><span></span><code>CREATE {TAG | EDGE} INDEX [IF NOT EXISTS] &lt;index_name&gt;
 ON {&lt;tag_name&gt; | &lt;edge_name&gt;} ([&lt;prop_name_list&gt;]) [COMMENT = &#39;&lt;comment&gt;&#39;];
 </code></pre></div>
 </li>
@@ -5700,7 +5688,7 @@ Got 1 rows (time spent 5132/6246 us)
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

@@ -4748,7 +4748,7 @@
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">创建图空间<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
-    [partition_num = &lt;partition_number&gt;,] 
+    [partition_num = &lt;partition_number&gt;,]
     [replica_factor = &lt;replica_number&gt;,]
     vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
@@ -4840,13 +4840,13 @@
 </table>
 <h2 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code># 仅指定VID类型，其他选项使用默认值。
-nebula&gt; CREATE SPACE my_space_1 (vid_type=FIXED_STRING(30)); 
+nebula&gt; CREATE SPACE my_space_1 (vid_type=FIXED_STRING(30));
 
 # 指定分片数量、副本数量和VID类型。
 nebula&gt; CREATE SPACE my_space_2 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30));
 
 # 指定分片数量、副本数量和VID类型，并添加描述。
-nebula&gt; CREATE SPACE my_space_3 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30)) comment=&quot;测试图空间&quot;; 
+nebula&gt; CREATE SPACE my_space_3 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30)) comment=&quot;测试图空间&quot;;
 
 # 克隆图空间。
 nebula&gt; CREATE SPACE my_space_4 as my_space_3;
@@ -4877,11 +4877,8 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 | Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;Total&quot;     |      |          | 20           | &quot;basketballplayer:10, test:10&quot; | &quot;basketballplayer:30, test:30&quot; |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+
 </code></pre></div>
@@ -4891,11 +4888,8 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 | Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:3, test:4&quot;   | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:4, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 6            | &quot;basketballplayer:3, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
 | &quot;Total&quot;     |      |          | 20           | &quot;basketballplayer:10, test:10&quot; | &quot;basketballplayer:30, test:30&quot; |
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+
 </code></pre></div>
@@ -4907,7 +4901,7 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

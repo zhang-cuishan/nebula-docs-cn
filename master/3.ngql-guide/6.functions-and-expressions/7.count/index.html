@@ -4696,15 +4696,10 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow BIDIRECT \
 | $-.Name             | count(*) |
 +---------------------+----------+
 | &quot;Dejounte Murray&quot;   | 1        |
-+---------------------+----------+
 | &quot;LaMarcus Aldridge&quot; | 2        |
-+---------------------+----------+
 | &quot;Tim Duncan&quot;        | 2        |
-+---------------------+----------+
 | &quot;Marco Belinelli&quot;   | 1        |
-+---------------------+----------+
 | &quot;Manu Ginobili&quot;     | 1        |
-+---------------------+----------+
 | &quot;Boris Diaw&quot;        | 1        |
 +---------------------+----------+
 </code></pre></div>
@@ -4726,13 +4721,9 @@ nebula&gt; LOOKUP ON player \
 | age | number |
 +-----+--------+
 | 34  | 4      |
-+-----+--------+
 | 33  | 4      |
-+-----+--------+
 | 30  | 4      |
-+-----+--------+
 | 29  | 4      |
-+-----+--------+
 | 38  | 3      |
 +-----+--------+
 ...
@@ -4745,13 +4736,9 @@ nebula&gt; MATCH (n:player) \
 | age | number |
 +-----+--------+
 | 34  | 4      |
-+-----+--------+
 | 33  | 4      |
-+-----+--------+
 | 30  | 4      |
-+-----+--------+
 | 29  | 4      |
-+-----+--------+
 | 38  | 3      |
 +-----+--------+
 ...
@@ -4782,7 +4769,7 @@ nebula&gt; MATCH (n:player {name : &quot;Tim Duncan&quot;})-[]-&gt;(friend:playe
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

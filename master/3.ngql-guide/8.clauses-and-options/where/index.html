@@ -4909,13 +4909,9 @@
 | v.name                  | v.age |
 +-------------------------+-------+
 | &quot;Marco Belinelli&quot;       | 32    |
-+-------------------------+-------+
 | &quot;Aron Baynes&quot;           | 32    |
-+-------------------------+-------+
 | &quot;LeBron James&quot;          | 34    |
-+-------------------------+-------+
 | &quot;James Harden&quot;          | 29    |
-+-------------------------+-------+
 | &quot;Manu Ginobili&quot;         | 41    |
 +-------------------------+-------+
 ...
@@ -4942,9 +4938,7 @@
 | v2.name              | v2.age |
 +----------------------+--------+
 | &quot;Luka Doncic&quot;        | 20     |
-+----------------------+--------+
 | &quot;Kristaps Porzingis&quot; | 23     |
-+----------------------+--------+
 | &quot;Ben Simmons&quot;        | 22     |
 +----------------------+--------+
 </code></pre></div>
@@ -4955,7 +4949,6 @@
 | follow._dst |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player125&quot; |
 +-------------+
 </code></pre></div>
@@ -4969,13 +4962,9 @@
 | v.name             | v.age |
 +--------------------+-------+
 | &quot;Shaquille O&#39;Neal&quot; | 47    |
-+--------------------+-------+
 | &quot;Steve Nash&quot;       | 45    |
-+--------------------+-------+
 | &quot;Ray Allen&quot;        | 43    |
-+--------------------+-------+
 | &quot;Grant Hill&quot;       | 46    |
-+--------------------+-------+
 | &quot;Tony Parker&quot;      | 36    |
 +--------------------+-------+
 ...
@@ -4987,7 +4976,6 @@
 | follow._dst |
 +-------------+
 | &quot;player101&quot; |
-+-------------+
 | &quot;player125&quot; |
 +-------------+
 </code></pre></div>
@@ -5011,7 +4999,6 @@
 | v.name                  | v.age |
 +-------------------------+-------+
 | &quot;Boris Diaw&quot;            | 36    |
-+-------------------------+-------+
 | &quot;DeAndre Jordan&quot;        | 30    |
 +-------------------------+-------+
 </code></pre></div>
@@ -5042,11 +5029,8 @@ nebula&gt; GO FROM &quot;1&quot; \
 | src(EDGE) | dst(EDGE) | Rank | properties(EDGE).p1 |
 +-----------+-----------+------+---------------------+
 | &quot;1&quot;       | &quot;2&quot;       | 6    | 16                  |
-+-----------+-----------+------+---------------------+
 | &quot;1&quot;       | &quot;2&quot;       | 5    | 15                  |
-+-----------+-----------+------+---------------------+
 | &quot;1&quot;       | &quot;2&quot;       | 4    | 14                  |
-+-----------+-----------+------+---------------------+
 | &quot;1&quot;       | &quot;2&quot;       | 3    | 13                  |
 +-----------+-----------+------+---------------------+
 </code></pre></div>
@@ -5062,11 +5046,8 @@ nebula&gt; MATCH (v:player) \
 | v.name           | v.age |
 +------------------+-------+
 | &quot;Tracy McGrady&quot;  | 39    |
-+------------------+-------+
 | &quot;Tony Parker&quot;    | 36    |
-+------------------+-------+
 | &quot;Tim Duncan&quot;     | 42    |
-+------------------+-------+
 | &quot;Tiago Splitter&quot; | 34    |
 +------------------+-------+
 </code></pre></div>
@@ -5085,9 +5066,7 @@ Empty set (time spent 5080/6474 us)
 | v.name           | v.age |
 +------------------+-------+
 | &quot;Vince Carter&quot;   | 42    |
-+------------------+-------+
 | &quot;Tony Parker&quot;    | 36    |
-+------------------+-------+
 | &quot;Tiago Splitter&quot; | 34    |
 +------------------+-------+
 </code></pre></div>
@@ -5100,11 +5079,8 @@ Empty set (time spent 5080/6474 us)
 | v.name        | v.age |
 +---------------+-------+
 | &quot;Paul George&quot; | 28    |
-+---------------+-------+
 | &quot;Tony Parker&quot; | 36    |
-+---------------+-------+
 | &quot;Paul Gasol&quot;  | 38    |
-+---------------+-------+
 | &quot;Chris Paul&quot;  | 33    |
 +---------------+-------+
 </code></pre></div>
@@ -5117,13 +5093,9 @@ Empty set (time spent 5080/6474 us)
 | v.name                  | v.age |
 +-------------------------+-------+
 | &quot;Rajon Rondo&quot;           | 33    |
-+-------------------------+-------+
 | &quot;Rudy Gay&quot;              | 32    |
-+-------------------------+-------+
 | &quot;Dejounte Murray&quot;       | 29    |
-+-------------------------+-------+
 | &quot;Chris Paul&quot;            | 33    |
-+-------------------------+-------+
 | &quot;Carmelo Anthony&quot;       | 34    |
 +-------------------------+-------+
 ...
@@ -5152,15 +5124,10 @@ Empty set (time spent 5080/6474 us)
 | v.name                  | v.age |
 +-------------------------+-------+
 | &quot;Ben Simmons&quot;           | 22    |
-+-------------------------+-------+
 | &quot;Kristaps Porzingis&quot;    | 23    |
-+-------------------------+-------+
 | &quot;Luka Doncic&quot;           | 20    |
-+-------------------------+-------+
 | &quot;Kyle Anderson&quot;         | 25    |
-+-------------------------+-------+
 | &quot;Giannis Antetokounmpo&quot; | 24    |
-+-------------------------+-------+
 | &quot;Joel Embiid&quot;           | 25    |
 +-------------------------+-------+
 
@@ -5169,13 +5136,9 @@ nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex
 | VertexID    | properties(VERTEX).name | properties(VERTEX).age |
 +-------------+-------------------------+------------------------+
 | &quot;player106&quot; | &quot;Kyle Anderson&quot;         | 25                     |
-+-------------+-------------------------+------------------------+
 | &quot;player135&quot; | &quot;Damian Lillard&quot;        | 28                     |
-+-------------+-------------------------+------------------------+
 | &quot;player130&quot; | &quot;Joel Embiid&quot;           | 25                     |
-+-------------+-------------------------+------------------------+
 | &quot;player131&quot; | &quot;Paul George&quot;           | 28                     |
-+-------------+-------------------------+------------------------+
 | &quot;player123&quot; | &quot;Ricky Rubio&quot;           | 28                     |
 +-------------+-------------------------+------------------------+
 </code></pre></div>
@@ -5188,13 +5151,9 @@ nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex
 | Name                | Age |
 +---------------------+-----+
 | &quot;Kyrie Irving&quot;      | 26  |
-+---------------------+-----+
 | &quot;Cory Joseph&quot;       | 27  |
-+---------------------+-----+
 | &quot;Damian Lillard&quot;    | 28  |
-+---------------------+-----+
 | &quot;Paul George&quot;       | 28  |
-+---------------------+-----+
 | &quot;Ricky Rubio&quot;       | 28  |
 +---------------------+-----+
 ...
@@ -5207,7 +5166,7 @@ nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>

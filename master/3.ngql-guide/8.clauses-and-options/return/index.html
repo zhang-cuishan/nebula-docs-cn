@@ -4843,13 +4843,9 @@ nebula&gt; RETURN {zage: 32, name: &quot;Marco Belinelli&quot;};
 | v                                                             |
 +---------------------------------------------------------------+
 | (&quot;player104&quot; :player{age: 32, name: &quot;Marco Belinelli&quot;})       |
-+---------------------------------------------------------------+
 | (&quot;player107&quot; :player{age: 32, name: &quot;Aron Baynes&quot;})           |
-+---------------------------------------------------------------+
 | (&quot;player116&quot; :player{age: 34, name: &quot;LeBron James&quot;})          |
-+---------------------------------------------------------------+
 | (&quot;player120&quot; :player{age: 29, name: &quot;James Harden&quot;})          |
-+---------------------------------------------------------------+
 | (&quot;player125&quot; :player{age: 41, name: &quot;Manu Ginobili&quot;})         |
 +---------------------------------------------------------------+
 ...
@@ -4861,13 +4857,9 @@ nebula&gt; RETURN {zage: 32, name: &quot;Marco Belinelli&quot;};
 | e                                                                            |
 +------------------------------------------------------------------------------+
 | [:follow &quot;player104&quot;-&gt;&quot;player100&quot; @0 {degree: 55}]                           |
-+------------------------------------------------------------------------------+
 | [:follow &quot;player104&quot;-&gt;&quot;player101&quot; @0 {degree: 50}]                           |
-+------------------------------------------------------------------------------+
 | [:follow &quot;player104&quot;-&gt;&quot;player105&quot; @0 {degree: 60}]                           |
-+------------------------------------------------------------------------------+
 | [:serve &quot;player104&quot;-&gt;&quot;team200&quot; @0 {end_year: 2009, start_year: 2007}]        |
-+------------------------------------------------------------------------------+
 | [:serve &quot;player104&quot;-&gt;&quot;team208&quot; @0 {end_year: 2016, start_year: 2015}]        |
 +------------------------------------------------------------------------------+
 ...
@@ -4881,9 +4873,7 @@ nebula&gt; RETURN {zage: 32, name: &quot;Marco Belinelli&quot;};
 | v.name            | v.age |
 +-------------------+-------+
 | &quot;Rajon Rondo&quot;     | 33    |
-+-------------------+-------+
 | &quot;Rudy Gay&quot;        | 32    |
-+-------------------+-------+
 | &quot;Dejounte Murray&quot; | 29    |
 +-------------------+-------+
 </code></pre></div>
@@ -4903,9 +4893,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e]-&gt;(v2) \
 | v                                                  | e                                                                     | v2                                                    |
 +----------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) | [:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}]                    | (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})   |
-+----------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) | [:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}]                    | (&quot;player125&quot; :player{age: 41, name: &quot;Manu Ginobili&quot;}) |
-+----------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 | (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) | [:serve &quot;player100&quot;-&gt;&quot;team204&quot; @0 {end_year: 2016, start_year: 1997}] | (&quot;team204&quot; :team{name: &quot;Spurs&quot;})                      |
 +----------------------------------------------------+-----------------------------------------------------------------------+-------------------------------------------------------+
 </code></pre></div>
@@ -4934,9 +4922,7 @@ nebula&gt; RETURN &quot;Amber&quot; AS Name;
 | v2.name         | type(e)  | v2.age   |
 +-----------------+----------+----------+
 | &quot;Tony Parker&quot;   | &quot;follow&quot; | 36       |
-+-----------------+----------+----------+
 | &quot;Manu Ginobili&quot; | &quot;follow&quot; | 41       |
-+-----------------+----------+----------+
 | &quot;Spurs&quot;         | &quot;serve&quot;  | __NULL__ |
 +-----------------+----------+----------+
 </code></pre></div>
@@ -4948,9 +4934,7 @@ nebula&gt; RETURN &quot;Amber&quot; AS Name;
 | v2.name             | (Hello+ graphs!) | (v2.age&gt;35) |
 +---------------------+------------------+-------------+
 | &quot;Tim Duncan&quot;        | &quot;Hello graphs!&quot;  | true        |
-+---------------------+------------------+-------------+
 | &quot;LaMarcus Aldridge&quot; | &quot;Hello graphs!&quot;  | false       |
-+---------------------+------------------+-------------+
 | &quot;Manu Ginobili&quot;     | &quot;Hello graphs!&quot;  | true        |
 +---------------------+------------------+-------------+
 
@@ -4984,19 +4968,12 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
 | v2.name             | v2.age |
 +---------------------+--------+
 | &quot;Tim Duncan&quot;        | 42     |
-+---------------------+--------+
 | &quot;LaMarcus Aldridge&quot; | 33     |
-+---------------------+--------+
 | &quot;Marco Belinelli&quot;   | 32     |
-+---------------------+--------+
 | &quot;Boris Diaw&quot;        | 36     |
-+---------------------+--------+
 | &quot;Dejounte Murray&quot;   | 29     |
-+---------------------+--------+
 | &quot;Tim Duncan&quot;        | 42     |
-+---------------------+--------+
 | &quot;LaMarcus Aldridge&quot; | 33     |
-+---------------------+--------+
 | &quot;Manu Ginobili&quot;     | 41     |
 +---------------------+--------+
 
@@ -5007,15 +4984,10 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
 | v2.name             | v2.age |
 +---------------------+--------+
 | &quot;Tim Duncan&quot;        | 42     |
-+---------------------+--------+
 | &quot;LaMarcus Aldridge&quot; | 33     |
-+---------------------+--------+
 | &quot;Marco Belinelli&quot;   | 32     |
-+---------------------+--------+
 | &quot;Boris Diaw&quot;        | 36     |
-+---------------------+--------+
 | &quot;Dejounte Murray&quot;   | 29     |
-+---------------------+--------+
 | &quot;Manu Ginobili&quot;     | 41     |
 +---------------------+--------+
 </code></pre></div>
@@ -5027,7 +4999,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
       
     
   </small>
