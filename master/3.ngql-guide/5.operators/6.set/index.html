@@ -4844,8 +4844,9 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
 +-------------+
 | follow._dst |
 +-------------+
+| &quot;player100&quot; |
 | &quot;player101&quot; |
-| &quot;player102&quot; |
+| &quot;player125&quot; |
 +-------------+
 
 # 返回两个查询结果的并集，包含重复的元素。
@@ -4855,9 +4856,10 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
 +-------------+
 | follow._dst |
 +-------------+
+| &quot;player100&quot; |
 | &quot;player101&quot; |
 | &quot;player101&quot; |
-| &quot;player102&quot; |
+| &quot;player125&quot; |
 +-------------+
 
 # UNION也可以和YIELD语句一起使用，去重时会检查每一行的所有列，每列都相同时才会去重。
@@ -4890,7 +4892,10 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow \
         INTERSECT \
         GO FROM &quot;player100&quot; OVER follow \
         YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age;
-Empty set (time spent 2990/3511 us)
++----+--------+-----+
+| id | Degree | Age |
++----+--------+-----+
++----+--------+-----+
 </code></pre></div>
 <h2 id="minus">MINUS<a class="headerlink" href="#minus" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>&lt;left&gt; MINUS &lt;right&gt;
@@ -4903,13 +4908,17 @@ Empty set (time spent 2990/3511 us)
 +-------------+
 | follow._dst |
 +-------------+
-| &quot;player102&quot; |
+| &quot;player125&quot; |
 +-------------+
 
 nebula&gt; GO FROM &quot;player102&quot; OVER follow \
         MINUS \
         GO FROM &quot;player100&quot; OVER follow;
-Empty set (time spent 2243/3259 us)
++-------------+
+| follow._dst |
++-------------+
+| &quot;player100&quot; |
++-------------+
 </code></pre></div>
 <h2 id="_5">集合运算符和管道符的优先级<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a>的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
@@ -4949,7 +4958,7 @@ Empty set (time spent 2243/3259 us)
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2021</span>
       
     
   </small>
