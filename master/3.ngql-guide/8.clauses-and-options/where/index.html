@@ -5974,6 +5974,7 @@
 | &quot;Boris Diaw&quot;            | 36    |
 | &quot;DeAndre Jordan&quot;        | 30    |
 +-------------------------+-------+
+...
 </code></pre></div>
 <h3 id="rank">过滤rank<a class="headerlink" href="#rank" title="Permanent link">&para;</a></h3>
 <p>在nGQL中，如果多个边拥有相同的起始点、目的点和属性，则它们的唯一区别是rank值。在<code>WHERE</code>子句中可以使用rank过滤边。</p>
@@ -6104,7 +6105,9 @@ Empty set (time spent 5080/6474 us)
 | &quot;Joel Embiid&quot;           | 25    |
 +-------------------------+-------+
 
-nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex).name, properties(vertex).age;
+nebula&gt; LOOKUP ON player \
+        WHERE player.age IN [25,28]  \
+        YIELD properties(vertex).name, properties(vertex).age;
 +-------------+-------------------------+------------------------+
 | VertexID    | properties(VERTEX).name | properties(VERTEX).age |
 +-------------+-------------------------+------------------------+
@@ -6139,7 +6142,7 @@ nebula&gt; LOOKUP ON player WHERE player.age IN [25,28]  YIELD properties(vertex
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

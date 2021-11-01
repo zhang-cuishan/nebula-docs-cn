@@ -5640,18 +5640,19 @@
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>用户可以先运行<code>SHOW TAG INDEXES</code>查看有哪些Tag索引，然后用<code>SHOW CREATE TAG INDEX</code>查看指定索引的创建信息。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW TAG INDEXES;
-+------------------+--------------+-----------------+
-| &quot;player_index_0&quot; | &quot;player&quot;     | [&quot;name&quot;]        |
-+------------------+--------------+-----------------+
-| &quot;player_index_1&quot; | &quot;player&quot;     | [&quot;name&quot;, &quot;age&quot;] |
-+------------------+--------------+-----------------+
++------------------+----------+----------+
+| Index Name       | By Tag   | Columns  |
++------------------+----------+----------+
+| &quot;player_index_0&quot; | &quot;player&quot; | []       |
+| &quot;player_index_1&quot; | &quot;player&quot; | [&quot;name&quot;] |
++------------------+----------+----------+
 
 nebula&gt; SHOW CREATE TAG INDEX player_index_1;
 +------------------+--------------------------------------------------+
 | Tag Index Name   | Create Tag Index                                 |
 +------------------+--------------------------------------------------+
 | &quot;player_index_1&quot; | &quot;CREATE TAG INDEX `player_index_1` ON `player` ( |
-|                  |  `name(20)`                                      |
+|                  |  `name`(20)                                      |
 |                  | )&quot;                                               |
 +------------------+--------------------------------------------------+
 </code></pre></div>
@@ -5683,7 +5684,7 @@ nebula&gt; SHOW CREATE EDGE INDEX follow_index;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

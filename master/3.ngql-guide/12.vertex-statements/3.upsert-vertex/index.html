@@ -5760,6 +5760,10 @@ SET &lt;update_prop&gt;
 <p>示例如下：</p>
 <div class="highlight"><pre><span></span><code>// 查看三个点是否存在，结果“Empty set”表示顶点不存在。
 nebula&gt; FETCH PROP ON * &quot;player666&quot;, &quot;player667&quot;, &quot;player668&quot;;
++-----------+
+| vertices_ |
++-----------+
++-----------+
 Empty set
 
 nebula&gt; UPSERT VERTEX ON player &quot;player666&quot; \
@@ -5772,7 +5776,10 @@ nebula&gt; UPSERT VERTEX ON player &quot;player666&quot; \
 | __NULL__ | 30       |
 +----------+----------+
 
-nebula&gt; UPSERT VERTEX ON player &quot;player666&quot; SET age = 31 WHEN name == &quot;Joe&quot; YIELD name AS Name, age AS Age;
+nebula&gt; UPSERT VERTEX ON player &quot;player666&quot; \
+        SET age = 31 \
+        WHEN name == &quot;Joe&quot; \
+        YIELD name AS Name, age AS Age;
 +----------+-----+
 | Name     | Age |
 +----------+-----+
@@ -5856,7 +5863,7 @@ nebula&gt; UPSERT VERTEX ON player &quot;player101&quot; \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

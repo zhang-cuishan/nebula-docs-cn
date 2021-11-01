@@ -5639,7 +5639,7 @@
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>DROP SPACE [IF EXISTS] &lt;graph_space_name&gt;;
 </code></pre></div>
-<p><code>IF NOT EXISTS</code>关键字可以检测待删除的图空间是否存在，只有存在时，才会删除图空间。</p>
+<p><code>IF EXISTS</code>关键字可以检测待删除的图空间是否存在，只有存在时，才会删除图空间。</p>
 <p><code>DROP SPACE</code>语句不会立刻删除硬盘上对应图空间的目录和文件，请使用<code>USE</code>语句指定其他任意图空间，然后执行<code>SUBMIT JOB COMPACT</code>。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -5653,7 +5653,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 14, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

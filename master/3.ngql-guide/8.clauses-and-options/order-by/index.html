@@ -5778,24 +5778,24 @@ nebula&gt; MATCH (v:player) RETURN v.age AS Age, v.name AS Name  \
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
         RETURN v2.name AS Name, v2.age AS Age  \
         ORDER BY Age;
-+-----------------+----------+
-| Name            | Age      |
-+-----------------+----------+
-| &quot;Tony Parker&quot;   | 36       |
-| &quot;Manu Ginobili&quot; | 41       |
-| &quot;Spurs&quot;         | __NULL__ |
-+-----------------+----------+
++-----------------+--------------+
+| Name            | Age          |
++-----------------+--------------+
+| &quot;Tony Parker&quot;   | 36           |
+| &quot;Manu Ginobili&quot; | 41           |
+| &quot;Spurs&quot;         | UNKNOWN_PROP |
++-----------------+--------------+
 
 nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
         RETURN v2.name AS Name, v2.age AS Age  \
         ORDER BY Age DESC;
-+-----------------+----------+
-| Name            | Age      |
-+-----------------+----------+
-| &quot;Spurs&quot;         | __NULL__ |
-| &quot;Manu Ginobili&quot; | 41       |
-| &quot;Tony Parker&quot;   | 36       |
-+-----------------+----------+
++-----------------+--------------+
+| Name            | Age          |
++-----------------+--------------+
+| &quot;Spurs&quot;         | UNKNOWN_PROP |
+| &quot;Manu Ginobili&quot; | 41           |
+| &quot;Tony Parker&quot;   | 36           |
++-----------------+--------------+
 </code></pre></div>
                 
                   
@@ -5805,7 +5805,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) --&gt; (v2) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

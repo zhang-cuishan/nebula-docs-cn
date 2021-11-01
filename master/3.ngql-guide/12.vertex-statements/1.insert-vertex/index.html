@@ -5731,7 +5731,7 @@ nebula&gt; INSERT VERTEX t5(p1, p2, p3) VALUES &quot;001&quot;:(&quot;Abe&quot;,
 
 # 插入失败，因为属性p1不能为NULL。
 nebula&gt; INSERT VERTEX t5(p1, p2, p3) VALUES &quot;002&quot;:(NULL, 4, 5);
-[ERROR (-8)]: Storage Error: The not null field cannot be null.
+[ERROR (-1005)]: Storage Error: The not null field cannot be null.
 
 # 属性p3为默认值NULL。
 nebula&gt; INSERT VERTEX t5(p1, p2) VALUES &quot;003&quot;:(&quot;cd&quot;, 5);
@@ -5771,7 +5771,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot;;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
