@@ -5680,14 +5680,14 @@ nebula&gt; SUBMIT JOB STATS;
 
 # 确认作业执行成功。
 nebula&gt; SHOW JOB 98;
-+----------------+---------------+------------+------------+------------+
-| Job Id(TaskId) | Command(Dest) | Status     | Start Time | Stop Time  |
-+----------------+---------------+------------+------------+------------+
-| 98             | &quot;STATS&quot;       | &quot;FINISHED&quot; | 1606552675 | 1606552675 |
-| 0              | &quot;storaged2&quot;   | &quot;FINISHED&quot; | 1606552675 | 1606552675 |
-| 1              | &quot;storaged0&quot;   | &quot;FINISHED&quot; | 1606552675 | 1606552675 |
-| 2              | &quot;storaged1&quot;   | &quot;FINISHED&quot; | 1606552675 | 1606552675 |
-+----------------+---------------+------------+------------+------------+
++----------------+---------------+------------+----------------------------+----------------------------+
+| Job Id(TaskId) | Command(Dest) | Status     | Start Time                 | Stop Time                  |
++----------------+---------------+------------+----------------------------+----------------------------+
+| 98             | &quot;STATS&quot;       | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
+| 0              | &quot;storaged2&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
+| 1              | &quot;storaged0&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
+| 2              | &quot;storaged1&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
++----------------+---------------+------------+----------------------------+----------------------------+
 
 # 显示图空间统计信息。
 nebula&gt; SHOW STATS;
@@ -5696,7 +5696,7 @@ nebula&gt; SHOW STATS;
 +---------+------------+-------+
 | &quot;Tag&quot;   | &quot;player&quot;   | 51    |
 | &quot;Tag&quot;   | &quot;team&quot;     | 30    |
-| &quot;Edge&quot;  | &quot;like&quot;     | 81    |
+| &quot;Edge&quot;  | &quot;follow&quot;   | 81    |
 | &quot;Edge&quot;  | &quot;serve&quot;    | 152   |
 | &quot;Space&quot; | &quot;vertices&quot; | 81    |
 | &quot;Space&quot; | &quot;edges&quot;    | 233   |
@@ -5710,7 +5710,7 @@ nebula&gt; SHOW STATS;
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
