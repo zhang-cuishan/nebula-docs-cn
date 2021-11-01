@@ -574,6 +574,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.quick-start/6.cheatcheet-for-ngql-command.md" class="md-nav__link">
+        nGQL命令汇总
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2953,13 +2967,6 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     使用方法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#enable_build_storage" class="md-nav__link">
-    ENABLE_BUILD_STORAGE
   </a>
   
 </li>
@@ -5735,13 +5742,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#enable_build_storage" class="md-nav__link">
-    ENABLE_BUILD_STORAGE
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#cmake_install_prefix" class="md-nav__link">
     CMAKE_INSTALL_PREFIX
   </a>
@@ -5842,23 +5842,31 @@
 <li>待安装Nebula Graph的主机可以访问互联网。</li>
 </ul>
 <h2 id="_2">安装步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>从master版本开始，Nebula-Graph、Nebula-Storage、Nebula-Common的代码仓库合并为Nebula代码仓库，因此编译步骤与之前版本的步骤有所不同。</p>
+</div>
 <ol>
 <li>
 <p>克隆Nebula Graph的源代码到主机。</p>
 <ul>
-<li>[推荐]如果需要安装vmaster版本的Nebula Graph，执行如下命令：<div class="highlight"><pre><span></span><code>$ git clone --branch vmaster https://github.com/vesoft-inc/nebula-graph.git
+<li>
+<p>[推荐]如果需要安装master版本的Nebula Graph，执行如下命令：</p>
+<div class="highlight"><pre><span></span><code>$ git clone --branch master https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>如果需要安装最新的开发版本用于测试，执行如下命令克隆master分支的代码：<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula-graph.git
+<li>
+<p>如果需要安装最新的开发版本用于测试，执行如下命令克隆master分支的代码：</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
 </ul>
 </li>
 <li>
-<p>进入目录<code>nebula-graph</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-graph
+<p>进入目录<code>nebula</code>。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula
 </code></pre></div>
 </li>
 <li>
@@ -5873,17 +5881,8 @@
 <p>默认安装路径为<code>/usr/local/nebula</code>，如果需要修改路径，请在下方命令内增加参数 <code>-DCMAKE_INSTALL_PREFIX=&lt;installation_path&gt;</code>。</p>
 <p>更多CMake参数说明，请参见<a href="#cmake">CMake参数</a>。</p>
 </div>
-<ul>
-<li>如果在第1步下载了vmaster版本的源码，执行如下命令。选项<code>-DNEBULA_COMMON_REPO_TAG</code>和<code>-DNEBULA_STORAGE_REPO_TAG</code>用于指定<a href="https://github.com/vesoft-inc/nebula-common">nebula-common</a>和<a href="https://github.com/vesoft-inc/nebula-storage">nebula-storage</a>库的分支，以使各Nebula Graph组件的版本保持一致。<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\</span>
--DNEBULA_COMMON_REPO_TAG<span class="o">=</span>vmaster -DNEBULA_STORAGE_REPO_TAG<span class="o">=</span>vmaster ..
+<div class="highlight"><pre><span></span><code>$ cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local/nebula -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
 </code></pre></div>
-</li>
-</ul>
-<ul>
-<li>如果在第1步下载了master分支的代码，执行如下命令即可。<div class="highlight"><pre><span></span><code>$ cmake -DENABLE_BUILD_STORAGE<span class="o">=</span>on -DENABLE_TESTING<span class="o">=</span>OFF -DENABLE_MODULE_UPDATE<span class="o">=</span>ON -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
-</code></pre></div>
-</li>
-</ul>
 </li>
 <li>
 <p>编译Nebula Graph。</p>
@@ -5897,7 +5896,7 @@
 </li>
 <li>
 <p>安装Nebula Graph。</p>
-<div class="highlight"><pre><span></span><code>$ sudo make install-all
+<div class="highlight"><pre><span></span><code>$ sudo make install
 </code></pre></div>
 </li>
 <li>
@@ -5910,9 +5909,14 @@
 </ol>
 <h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">&para;</a></h2>
 <p>master分支的代码更新速度快，如果安装了master分支对应的开发版Nebula Graph，可根据以下步骤更新版本。</p>
-<p>1. 在目录<code>nebula-graph/</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
-<p>2. 在目录<code>nebula-graph/modules/common/</code>和<code>nebula-graph/modules/storage/</code>中，分别执行命令<code>git pull upstream master</code>。</p>
-<p>3. 在目录<code>nebula-graph/build/</code>中，重新执行<code>make -j{N}</code>和<code>make install-all</code>。</p>
+<ol>
+<li>
+<p>在目录<code>nebula</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
+</li>
+<li>
+<p>在目录<code>nebula/build</code>中，重新执行<code>make -j{N}</code>和<code>make install</code>。</p>
+</li>
+</ol>
 <h2 id="_3">下一步<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a></li>
@@ -5928,9 +5932,6 @@
 <div class="highlight"><pre><span></span><code>$ cmake -D&lt;variable&gt;<span class="o">=</span>&lt;value&gt; ...
 </code></pre></div>
 <p>下文的CMake参数可以在配置(CMake)阶段用来调整编译设置。</p>
-<h3 id="enable_build_storage">ENABLE_BUILD_STORAGE<a class="headerlink" href="#enable_build_storage" title="Permanent link">&para;</a></h3>
-<p>从master版本开始，Nebula Graph的graph和storage代码仓库分离，可以各自单独编译。<code>ENABLE_BUILD_STORAGE</code>默认值为<code>OFF</code>，表示Storage服务不会和Graph服务一起安装。</p>
-<p>如果单机部署Nebula Graph进行测试，可以设置<code>ENABLE_BUILD_STORAGE=ON</code>，安装时会自动下载和安装Storage服务。</p>
 <h3 id="cmake_install_prefix">CMAKE_INSTALL_PREFIX<a class="headerlink" href="#cmake_install_prefix" title="Permanent link">&para;</a></h3>
 <p><code>CMAKE_INSTALL_PREFIX</code>指定Nebula Graph服务模块、脚本和配置文件的安装路径，默认路径为<code>/usr/local/nebula</code>。</p>
 <h3 id="enable_werror">ENABLE_WERROR<a class="headerlink" href="#enable_werror" title="Permanent link">&para;</a></h3>
@@ -5971,7 +5972,7 @@
 $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt; -DCMAKE_CXX_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang++&gt; ..
 </code></pre></div>
 <h3 id="enable_ccache">ENABLE_CCACHE<a class="headerlink" href="#enable_ccache" title="Permanent link">&para;</a></h3>
-<p><code>ENABLE_CCACHE</code>默认值为<code>ON</code>，表示使用ccache（compiler cache）工具加速编译。</p>
+<p><code>ENABLE_CCACHE</code>默认值为<code>ON</code>，表示使用Ccache（compiler cache）工具加速编译。</p>
 <p>如果想要禁用ccache，仅仅设置<code>ENABLE_CCACHE=OFF</code>是不行的，因为在某些平台上，ccache会代理当前编译器，因此还需要设置环境变量<code>export CCACHE_DISABLE=true</code>，或者在文件<code>~/.ccache/ccache.conf</code>中添加<code>disable=true</code>。更多信息请参见<a href="https://ccache.dev/manual/3.7.6.html">ccache official documentation</a>。</p>
 <h3 id="nebula_thirdparty_root">NEBULA_THIRDPARTY_ROOT<a class="headerlink" href="#nebula_thirdparty_root" title="Permanent link">&para;</a></h3>
 <p><code>NEBULA_THIRDPARTY_ROOT</code>指定第三方软件的安装路径，默认路径为<code>/opt/vesoft/third-party</code>。</p>
@@ -5985,10 +5986,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <p>检查<a href="../../1.resource-preparations/#_5">third-party</a>是否正确安装。</p>
 </li>
 <li>
-<p>使用<code>make -j1</code>降低编译并发度。 </p>
-</li>
-<li>
-<p>更新代码：<code>git pull</code>，并再次编译，第4步加上CMake选项<code>-DENABLE_MODULE_UPDATE=ON</code>。</p>
+<p>使用<code>make -j1</code>降低编译并发度。</p>
 </li>
 </ol>
                 
@@ -5999,7 +5997,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
