@@ -13,14 +13,14 @@
         <meta name="author" content="Nebula Graph">
       
       
-        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/7.data-security/1.authentication/2.management-user/">
+        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/nebula-studio/deploy-connect/st-ug-deploy-by-helm/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
     
     
       
-        <title>用户管理 - Nebula Graph Database 手册</title>
+        <title>使用 Helm 部署 Studio - Nebula Graph Database 手册</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#helm_studio" class="md-skip">
           跳转至
         </a>
       
@@ -125,7 +125,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                用户管理
+                使用 Helm 部署 Studio
               
             </span>
           </div>
@@ -3310,14 +3310,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
       
       
       
@@ -3338,14 +3336,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
       
       
       
@@ -3368,7 +3364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.authentication/" class="md-nav__link">
+      <a href="../../../7.data-security/1.authentication/1.authentication/" class="md-nav__link">
         身份验证
       </a>
     </li>
@@ -3380,100 +3376,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          用户管理
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../7.data-security/1.authentication/2.management-user/" class="md-nav__link">
         用户管理
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create_user" class="md-nav__link">
-    创建用户（CREATE USER）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grant_role" class="md-nav__link">
-    授权用户（GRANT ROLE）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revoke_role" class="md-nav__link">
-    撤销用户权限（REVOKE ROLE）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show_roles" class="md-nav__link">
-    查看用户权限（SHOW ROLES）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#change_password" class="md-nav__link">
-    修改用户密码（CHANGE PASSWORD）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alter_user" class="md-nav__link">
-    修改用户密码（ALTER USER）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#drop_user" class="md-nav__link">
-    删除用户（DROP USER）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show_users" class="md-nav__link">
-    查看用户列表（SHOW USERS）
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3485,7 +3392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3.role-list/" class="md-nav__link">
+      <a href="../../../7.data-security/1.authentication/3.role-list/" class="md-nav__link">
         内置角色权限
       </a>
     </li>
@@ -3499,7 +3406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.ldap/" class="md-nav__link">
+      <a href="../../../7.data-security/1.authentication/4.ldap/" class="md-nav__link">
         OpenLDAP验证
       </a>
     </li>
@@ -3520,7 +3427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.manage-snapshot/" class="md-nav__link">
+      <a href="../../../7.data-security/3.manage-snapshot/" class="md-nav__link">
         管理快照
       </a>
     </li>
@@ -3534,7 +3441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../5.zone/" class="md-nav__link">
+      <a href="../../../7.data-security/5.zone/" class="md-nav__link">
         Group&Zone
       </a>
     </li>
@@ -3548,7 +3455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4.ssl/" class="md-nav__link">
+      <a href="../../../7.data-security/4.ssl/" class="md-nav__link">
         SSL加密
       </a>
     </li>
@@ -3818,12 +3725,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
       
       
       
@@ -3846,7 +3755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-release-note/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-release-note/" class="md-nav__link">
         Studio版本更新说明
       </a>
     </li>
@@ -3886,7 +3795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-what-is-graph-studio/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-what-is-graph-studio/" class="md-nav__link">
         什么是 Nebula Graph Studio
       </a>
     </li>
@@ -3900,7 +3809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-terms/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-terms/" class="md-nav__link">
         名词解释
       </a>
     </li>
@@ -3914,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-limitations/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-limitations/" class="md-nav__link">
         使用限制
       </a>
     </li>
@@ -3928,7 +3837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-check-updates/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-check-updates/" class="md-nav__link">
         版本更新
       </a>
     </li>
@@ -3942,7 +3851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/about-studio/st-ug-shortcuts/" class="md-nav__link">
+      <a href="../../about-studio/st-ug-shortcuts/" class="md-nav__link">
         快捷键
       </a>
     </li>
@@ -3961,12 +3870,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" type="checkbox" id="__nav_12_3" checked>
       
       
       
@@ -3989,7 +3900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy/" class="md-nav__link">
+      <a href="../st-ug-deploy/" class="md-nav__link">
         部署 Studio
       </a>
     </li>
@@ -4001,11 +3912,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 Helm 部署 Studio
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         使用 Helm 部署 Studio
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    卸载
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    后续操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nebula_graph_studio_chart" class="md-nav__link">
+    Nebula Graph Studio Chart配置参数说明
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4017,7 +3996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-connect/" class="md-nav__link">
+      <a href="../st-ug-connect/" class="md-nav__link">
         连接数据库
       </a>
     </li>
@@ -4031,7 +4010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-reset-connection/" class="md-nav__link">
+      <a href="../st-ug-reset-connection/" class="md-nav__link">
         清除连接
       </a>
     </li>
@@ -4078,7 +4057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/quick-start/st-ug-plan-schema/" class="md-nav__link">
+      <a href="../../quick-start/st-ug-plan-schema/" class="md-nav__link">
         规划 Schema
       </a>
     </li>
@@ -4092,7 +4071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/quick-start/st-ug-create-schema/" class="md-nav__link">
+      <a href="../../quick-start/st-ug-create-schema/" class="md-nav__link">
         创建 Schema
       </a>
     </li>
@@ -4106,7 +4085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/quick-start/st-ug-import-data/" class="md-nav__link">
+      <a href="../../quick-start/st-ug-import-data/" class="md-nav__link">
         导入数据
       </a>
     </li>
@@ -4120,7 +4099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/quick-start/st-ug-explore/" class="md-nav__link">
+      <a href="../../quick-start/st-ug-explore/" class="md-nav__link">
         查询图数据
       </a>
     </li>
@@ -4193,7 +4172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/manage-schema/st-ug-crud-space/" class="md-nav__link">
+      <a href="../../manage-schema/st-ug-crud-space/" class="md-nav__link">
         操作图空间
       </a>
     </li>
@@ -4207,7 +4186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/manage-schema/st-ug-crud-tag/" class="md-nav__link">
+      <a href="../../manage-schema/st-ug-crud-tag/" class="md-nav__link">
         操作Tag
       </a>
     </li>
@@ -4221,7 +4200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/manage-schema/st-ug-crud-edge-type/" class="md-nav__link">
+      <a href="../../manage-schema/st-ug-crud-edge-type/" class="md-nav__link">
         操作Edge type
       </a>
     </li>
@@ -4235,7 +4214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/manage-schema/st-ug-crud-index/" class="md-nav__link">
+      <a href="../../manage-schema/st-ug-crud-index/" class="md-nav__link">
         操作索引
       </a>
     </li>
@@ -4282,7 +4261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/use-console/st-ug-console/" class="md-nav__link">
+      <a href="../../use-console/st-ug-console/" class="md-nav__link">
         控制台界面
       </a>
     </li>
@@ -4296,7 +4275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/use-console/st-ug-open-in-explore/" class="md-nav__link">
+      <a href="../../use-console/st-ug-open-in-explore/" class="md-nav__link">
         导入图探索
       </a>
     </li>
@@ -4310,7 +4289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/use-console/st-ug-visualize-subgraph/" class="md-nav__link">
+      <a href="../../use-console/st-ug-visualize-subgraph/" class="md-nav__link">
         查看子图
       </a>
     </li>
@@ -4364,7 +4343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/troubleshooting/st-ug-config-server-errors/" class="md-nav__link">
+      <a href="../../troubleshooting/st-ug-config-server-errors/" class="md-nav__link">
         连接数据库错误
       </a>
     </li>
@@ -4378,7 +4357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/troubleshooting/st-ug-connection-errors/" class="md-nav__link">
+      <a href="../../troubleshooting/st-ug-connection-errors/" class="md-nav__link">
         无法访问 Studio
       </a>
     </li>
@@ -4392,7 +4371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/troubleshooting/st-ug-faq/" class="md-nav__link">
+      <a href="../../troubleshooting/st-ug-faq/" class="md-nav__link">
         Studio 常见问题
       </a>
     </li>
@@ -5630,57 +5609,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create_user" class="md-nav__link">
-    创建用户（CREATE USER）
+  <a href="#_1" class="md-nav__link">
+    前提条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#grant_role" class="md-nav__link">
-    授权用户（GRANT ROLE）
+  <a href="#_2" class="md-nav__link">
+    安装
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#revoke_role" class="md-nav__link">
-    撤销用户权限（REVOKE ROLE）
+  <a href="#_3" class="md-nav__link">
+    卸载
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#show_roles" class="md-nav__link">
-    查看用户权限（SHOW ROLES）
+  <a href="#_4" class="md-nav__link">
+    后续操作
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#change_password" class="md-nav__link">
-    修改用户密码（CHANGE PASSWORD）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alter_user" class="md-nav__link">
-    修改用户密码（ALTER USER）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#drop_user" class="md-nav__link">
-    删除用户（DROP USER）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show_users" class="md-nav__link">
-    查看用户列表（SHOW USERS）
+  <a href="#nebula_graph_studio_chart" class="md-nav__link">
+    Nebula Graph Studio Chart配置参数说明
   </a>
   
 </li>
@@ -5697,165 +5655,129 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/1.authentication/2.management-user.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">用户管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>用户管理是Nebula Graph访问控制中不可或缺的组成部分，本文将介绍用户管理的相关语法。</p>
-<p>开启<a href="../1.authentication/">身份验证</a>后，用户需要使用已创建的用户才能连接Nebula Graph，而且连接后可以进行的操作也取决于该用户拥有的<a href="../3.role-list/">角色权限</a>。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>默认情况下，身份验证功能是关闭的，用户可以使用root用户名和任意密码连接到Nebula Graph。</li>
-<li>修改权限后，对应的用户需要重新登录才能生效。</li>
-</ul>
-</div>
-<h2 id="create_user">创建用户（<code>CREATE USER</code>）<a class="headerlink" href="#create_user" title="Permanent link">&para;</a></h2>
-<p>执行<code>CREATE USER</code>语句可以创建新的Nebula Graph用户。当前仅<strong>God</strong>角色用户（即<code>root</code>用户）能够执行<code>CREATE USER</code>语句。</p>
-<ul>
+                <h1 id="helm_studio">使用 Helm 部署 Studio<a class="headerlink" href="#helm_studio" title="Permanent link">&para;</a></h1>
+<p>本文介绍如何在通过 Kubernetes 集群里用 Helm 来部署并启动 Studio。</p>
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>安装 Studio 前，用户需要安装以下软件并确保安装版本的正确性：
+| 软件                                                         | 版本要求  |
+| ------------------------------------------------------------ | --------- |
+| <a href="https://kubernetes.io">Kubernetes</a>                          | >= 1.14  |
+| <a href="https://helm.sh">Helm</a>                                      | >= 3.2.0 |</p>
+<h2 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
 <li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>CREATE USER [IF NOT EXISTS] &lt;user_name&gt; [WITH PASSWORD &#39;&lt;password&gt;&#39;];
+<p>克隆 Studio 的源代码到主机。</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula-studio.git
 </code></pre></div>
 </li>
-</ul>
-<ul>
 <li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE USER user1 WITH PASSWORD &#39;nebula&#39;;
+<p>进入<code>nebula-studio</code>目录。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-studio
 </code></pre></div>
 </li>
-</ul>
-<h2 id="grant_role">授权用户（<code>GRANT ROLE</code>）<a class="headerlink" href="#grant_role" title="Permanent link">&para;</a></h2>
-<p>执行<code>GRANT ROLE</code>语句可以将指定图空间的内置角色权限授予用户。当前仅<strong>God</strong>角色用户和<strong>Admin</strong>角色用户能够执行<code>GRANT ROLE</code>语句。角色权限的说明，请参见<a href="../3.role-list/">内置角色权限</a>。</p>
-<ul>
 <li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>GRANT ROLE &lt;role_type&gt; ON &lt;space_name&gt; TO &lt;user_name&gt;;
+<p>安装 Studio 到 Helm Chart，命名为 <code>my-studio</code>。</p>
+<div class="highlight"><pre><span></span><code>$ helm upgrade --install my-studio --set service.type<span class="o">=</span>NodePort --set service.port<span class="o">=</span><span class="m">30070</span> deployment/helm
 </code></pre></div>
 </li>
-</ul>
-<ul>
 <li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; GRANT ROLE USER ON basketballplayer TO user1;
-</code></pre></div>
+<p>启动成功后，在浏览器地址栏输入 <code>http://address-of-node:30070/</code>。
+   如果在浏览器窗口中能看到以下登录界面，表示已经成功部署并启动 Studio。</p>
+<p><img alt="Nebula Graph Studio 登录界面" src="../../figs/st-ug-001-1.png" title="Nebula Graph Studio 登录界面" /></p>
 </li>
-</ul>
-<h2 id="revoke_role">撤销用户权限（<code>REVOKE ROLE</code>）<a class="headerlink" href="#revoke_role" title="Permanent link">&para;</a></h2>
-<p>执行<code>REVOKE ROLE</code>语句可以撤销用户的指定图空间的内置角色权限。当前仅<strong>God</strong>角色用户和<strong>Admin</strong>角色用户能够执行<code>REVOKE ROLE</code>语句。角色权限的说明，请参见<a href="../3.role-list/">内置角色权限</a>。</p>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>REVOKE ROLE &lt;role_type&gt; ON &lt;space_name&gt; FROM &lt;user_name&gt;;
+</ol>
+<h2 id="_3">卸载<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>$ helm uninstall my-studio
 </code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; REVOKE ROLE USER ON basketballplayer FROM user1;
-</code></pre></div>
-</li>
-</ul>
-<h2 id="show_roles">查看用户权限（<code>SHOW ROLES</code>）<a class="headerlink" href="#show_roles" title="Permanent link">&para;</a></h2>
-<p>执行<code>SHOW ROLES</code>语句可以显示分配给用户的角色信息。</p>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>SHOW ROLES IN &lt;space_name&gt;;
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW ROLES IN basketballplayer;
-+---------+-----------+
-| Account | Role Type |
-+---------+-----------+
-| &quot;user1&quot; | &quot;ADMIN&quot;   |
-+---------+-----------+
-</code></pre></div>
-</li>
-</ul>
-<h2 id="change_password">修改用户密码（<code>CHANGE PASSWORD</code>）<a class="headerlink" href="#change_password" title="Permanent link">&para;</a></h2>
-<p>执行<code>CHANGE PASSWORD</code>语句可以修改用户密码，修改时需要提供旧密码和新密码。</p>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>CHANGE PASSWORD &lt;user_name&gt; FROM &#39;&lt;old_password&gt;&#39; TO &#39;&lt;new_password&gt;&#39;;
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CHANGE PASSWORD user1 FROM &#39;nebula&#39; TO &#39;nebula123&#39;;
-</code></pre></div>
-</li>
-</ul>
-<h2 id="alter_user">修改用户密码（<code>ALTER USER</code>）<a class="headerlink" href="#alter_user" title="Permanent link">&para;</a></h2>
-<p>执行<code>ALTER USER</code>语句可以修改用户密码，修改时不需要提供旧密码。当前仅<strong>God</strong>角色用户（即<code>root</code>用户）能够执行<code>ALTER USER</code>语句。</p>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>ALTER USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;password&gt;&#39;;
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; ALTER USER user1 WITH PASSWORD &#39;nebula&#39;;
-</code></pre></div>
-</li>
-</ul>
-<h2 id="drop_user">删除用户（<code>DROP USER</code>）<a class="headerlink" href="#drop_user" title="Permanent link">&para;</a></h2>
-<p>执行<code>DROP USER</code>语句可以删除用户。当前仅<strong>God</strong>角色用户能够执行<code>DROP USER</code>语句。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>删除用户不会自动断开该用户当前会话，而且权限仍在当前会话中生效。</p>
-</div>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>DROP USER [IF EXISTS] &lt;user_name&gt;;
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; DROP USER user1;
-</code></pre></div>
-</li>
-</ul>
-<h2 id="show_users">查看用户列表（<code>SHOW USERS</code>）<a class="headerlink" href="#show_users" title="Permanent link">&para;</a></h2>
-<p>执行<code>SHOW USERS</code>语句可以查看用户列表。当前仅<strong>God</strong>角色用户能够执行<code>SHOW USERS</code>语句。</p>
-<ul>
-<li>
-<p>语法</p>
-<div class="highlight"><pre><span></span><code>SHOW USERS;
-</code></pre></div>
-</li>
-</ul>
-<ul>
-<li>
-<p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW USERS;
-+-----------+
-| Account   |
-+-----------+
-| &quot;test1&quot;   |
-| &quot;test2&quot;   |
-| &quot;test3&quot;   |
-+-----------+
-</code></pre></div>
-</li>
-</ul>
+<h2 id="_4">后续操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>进入 Studio 登录界面后，用户需要连接 Nebula Graph。详细信息，参考<a href="../st-ug-connect/">连接数据库</a>。</p>
+<h2 id="nebula_graph_studio_chart">Nebula Graph Studio Chart配置参数说明<a class="headerlink" href="#nebula_graph_studio_chart" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">replicaCount</td>
+<td align="left">0</td>
+<td align="left">Deployment的副本数。</td>
+</tr>
+<tr>
+<td align="left">image.httpGateway.name</td>
+<td align="left">vesoft/nebula-http-gateway</td>
+<td align="left">nebula-http-gateway 镜像的仓库地址。</td>
+</tr>
+<tr>
+<td align="left">image.nebulaStudio.name</td>
+<td align="left">vesoft/nebula-graph-studio</td>
+<td align="left">nebula-graph-studio 镜像的仓库地址。</td>
+</tr>
+<tr>
+<td align="left">image.nginx.name</td>
+<td align="left">nginx</td>
+<td align="left">nginx 镜像的仓库地址。</td>
+</tr>
+<tr>
+<td align="left">image.httpGateway.version</td>
+<td align="left">v2.1.1</td>
+<td align="left">nebula-http-gateway 的版本。</td>
+</tr>
+<tr>
+<td align="left">image.nebulaStudio.version</td>
+<td align="left">v3.1.0</td>
+<td align="left">nebula-graph-studio 的版本。</td>
+</tr>
+<tr>
+<td align="left">image.nginx.version</td>
+<td align="left">alpine</td>
+<td align="left">nginx 的版本。</td>
+</tr>
+<tr>
+<td align="left">service.type</td>
+<td align="left">ClusterIP</td>
+<td align="left">服务类型，必须为<code>NodePort</code>，<code>ClusterIP</code>或<code>LoadBalancer</code>其中之一。</td>
+</tr>
+<tr>
+<td align="left">service.port</td>
+<td align="left">7001</td>
+<td align="left">nebula-graph-studio 中 web 服务的端口。</td>
+</tr>
+<tr>
+<td align="left">resources.httpGateway</td>
+<td align="left">{}</td>
+<td align="left">nebula-http-gateway 的资源限制/请求。</td>
+</tr>
+<tr>
+<td align="left">resources.nebulaStudio</td>
+<td align="left">{}</td>
+<td align="left">nebula-studio的资源限制/请求。</td>
+</tr>
+<tr>
+<td align="left">resources.nginx</td>
+<td align="left">{}</td>
+<td align="left">nginx 的资源限制/请求。</td>
+</tr>
+<tr>
+<td align="left">persistent.storageClassName</td>
+<td align="left">""</td>
+<td align="left">storageClass名称，如果不指定就使用默认值。</td>
+</tr>
+<tr>
+<td align="left">persistent.size</td>
+<td align="left">5Gi</td>
+<td align="left">存储盘大小。</td>
+</tr>
+</tbody>
+</table>
                 
                   
                     
@@ -5864,7 +5786,7 @@
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
@@ -5894,7 +5816,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../1.authentication/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 身份验证" rel="prev">
+        <a href="../st-ug-deploy/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 部署 Studio" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -5903,20 +5825,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              身份验证
+              部署 Studio
             </div>
           </div>
         </a>
       
       
         
-        <a href="../3.role-list/" class="md-footer__link md-footer__link--next" aria-label="下一页: 内置角色权限" rel="next">
+        <a href="../st-ug-connect/" class="md-footer__link md-footer__link--next" aria-label="下一页: 连接数据库" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              内置角色权限
+              连接数据库
             </div>
           </div>
           <div class="md-footer__button md-icon">
