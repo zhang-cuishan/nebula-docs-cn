@@ -4957,11 +4957,11 @@ nebula&gt; WITH 4 AS one, 3 AS two \
 </code></pre></div>
 <h3 id="_8"><code>!=</code><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; YIELD 1 != &#39;1&#39;;
-+--------+
-| (1!=1) |
-+--------+
-| true   |
-+--------+
++----------+
+| (1!=&quot;1&quot;) |
++----------+
+| true     |
++----------+
 </code></pre></div>
 <h3 id="is_not_null"><code>IS [NOT] NULL</code><a class="headerlink" href="#is_not_null" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; RETURN null IS NULL AS value1, null == null AS value2, null != null AS value3;
@@ -5038,7 +5038,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER * WHERE properties($$).name IS NOT
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
