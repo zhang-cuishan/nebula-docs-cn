@@ -5913,7 +5913,7 @@ if (!s.ok()) {
 </li>
 </ul>
 <ul>
-<li>已经<a href="../../ex-ug-compile/">编译Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>编译完成的.jar文件。本示例中使用Exchange 2.5.1。</li>
+<li>已经<a href="../../ex-ug-compile/">编译Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>编译完成的.jar文件。本示例中使用Exchange 2.6.0。</li>
 </ul>
 <ul>
 <li>已经安装Spark。</li>
@@ -6290,14 +6290,14 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 <h3 id="4sst">步骤 4：生成SST文件<a class="headerlink" href="#4sst" title="Permanent link">&para;</a></h3>
 <p>运行如下命令将CSV源文件生成为SST文件。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">命令参数</a>。</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">&quot;local&quot;</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.5.1.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">&quot;local&quot;</span> --conf spark.sql.shuffle.partition<span class="o">=</span>&lt;shuffle_concurrency&gt; --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.6.0.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JAR包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从maven仓库下载。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">&quot;local&quot;</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-exchange/nebula-exchange/target/nebula-exchange-2.5.1.jar  -c /root/nebula-exchange/nebula-exchange/target/classes/sst_application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit  --master <span class="s2">&quot;local&quot;</span> --conf spark.sql.shuffle.partition<span class="o">=</span><span class="m">200</span> --class com.vesoft.nebula.exchange.Exchange  /root/nebula-exchange/nebula-exchange/target/nebula-exchange-2.6.0.jar  -c /root/nebula-exchange/nebula-exchange/target/classes/sst_application.conf
 </code></pre></div>
 <p>任务执行完成后，可以在HDFS上的<code>/sst</code>目录（<code>nebula.path.remote</code>参数指定）内查看到生成的SST文件。</p>
 <div class="admonition note">
@@ -6363,7 +6363,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
