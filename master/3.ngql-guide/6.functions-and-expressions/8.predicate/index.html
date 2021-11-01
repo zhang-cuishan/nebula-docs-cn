@@ -5727,13 +5727,14 @@ nebula&gt; MATCH (n:player) \
 ...
 
 nebula&gt; MATCH (n:player) \
-        WHERE exists(n[&#39;name&#39;]) RETURN n;
-+-------------------------------------------------------------------------------------------------------------+
-| n                                                                                                           |
-+-------------------------------------------------------------------------------------------------------------+
-| (&quot;Grant Hill&quot; :player{age: 46, name: &quot;Grant Hill&quot;})                                                         |
-| (&quot;Marc Gasol&quot; :player{age: 34, name: &quot;Marc Gasol&quot;})                                                         |
-+-------------------------------------------------------------------------------------------------------------+
+        WHERE exists(n[&#39;name&#39;]) \
+        RETURN n;
++---------------------------------------------------------------+
+| n                                                             |
++---------------------------------------------------------------+
+| (&quot;player105&quot; :player{age: 31, name: &quot;Danny Green&quot;})           |
+| (&quot;player109&quot; :player{age: 34, name: &quot;Tiago Splitter&quot;})        |
+| (&quot;player111&quot; :player{age: 38, name: &quot;David West&quot;})            |
 ...
 </code></pre></div>
                 
@@ -5744,7 +5745,7 @@ nebula&gt; MATCH (n:player) \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
