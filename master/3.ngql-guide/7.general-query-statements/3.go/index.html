@@ -5799,9 +5799,9 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
 +---------------------+-----------------+
 | FriendOf            | Team            |
 +---------------------+-----------------+
-| &quot;Danny Green&quot;       | &quot;Spurs&quot;         |
-| &quot;Danny Green&quot;       | &quot;Cavaliers&quot;     |
-+---------------------+-----------------+
+| &quot;Boris Diaw&quot;        | &quot;Spurs&quot;         |
+| &quot;Boris Diaw&quot;        | &quot;Jazz&quot;          |
+| &quot;Boris Diaw&quot;        | &quot;Suns&quot;          |
 ...
 
 # 该MATCH查询与上一个GO查询具有相同的语义。
@@ -5811,32 +5811,9 @@ nebula&gt; MATCH (v)&lt;-[e:follow]- (v2)-[e2:serve]-&gt;(v3)  \
 +---------------------+-----------------+
 | FriendOf            | Team            |
 +---------------------+-----------------+
-| &quot;Tony Parker&quot;       | &quot;Spurs&quot;         |
-| &quot;Tony Parker&quot;       | &quot;Hornets&quot;       |
-+---------------------+-----------------+
-...
-</code></pre></div>
-<div class="highlight"><pre><span></span><code># 返回player102所有邻居点。
-nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD dst(edge) AS both;
-+-------------+
-| both        |
-+-------------+
-| &quot;player100&quot; |
-| &quot;player101&quot; |
-+-------------+
-...
-
-# 该MATCH查询与上一个GO查询具有相同的语义。
-nebula&gt; MATCH (v) -[e:follow]-(v2) \
-        WHERE id(v)== &quot;player102&quot; \
-        RETURN id(v2) AS both;
-+-------------+
-| both        |
-+-------------+
-| &quot;player101&quot; |
-| &quot;player103&quot; |
-+-------------+
+| &quot;Boris Diaw&quot;        | &quot;Spurs&quot;         |
+| &quot;Boris Diaw&quot;        | &quot;Jazz&quot;          |
+| &quot;Boris Diaw&quot;        | &quot;Suns&quot;          |
 ...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 查询player100 1~2跳内的朋友。
@@ -5847,7 +5824,6 @@ nebula&gt; GO 1 TO 2 STEPS FROM &quot;player100&quot; OVER follow \
 +-------------+
 | &quot;player101&quot; |
 | &quot;player125&quot; |
-+-------------+
 ...
 
 # 该MATCH查询与上一个GO查询具有相同的语义。
@@ -5859,7 +5835,7 @@ nebula&gt; MATCH (v) -[e:follow*1..2]-&gt;(v2) \
 +-------------+
 | &quot;player100&quot; |
 | &quot;player102&quot; |
-+-------------+
+...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 根据年龄分组。
 nebula&gt; GO 2 STEPS FROM &quot;player100&quot; OVER follow \
@@ -5903,7 +5879,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

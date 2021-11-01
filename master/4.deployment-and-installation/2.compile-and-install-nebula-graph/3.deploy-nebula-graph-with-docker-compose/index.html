@@ -3029,7 +3029,7 @@
         
           <li class="md-nav__item">
   <a href="#nebula_graphdocker" class="md-nav__link">
-    如何更新Nebula Graph服务的Docker镜像？
+    如何升级/更新Nebula Graph服务的Docker镜像？
   </a>
   
 </li>
@@ -3044,13 +3044,6 @@
           <li class="md-nav__item">
   <a href="#nebula_console" class="md-nav__link">
     如何更新Nebula Console？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nebula_graph_4" class="md-nav__link">
-    如何升级Nebula Graph？
   </a>
   
 </li>
@@ -5764,7 +5757,7 @@
         
           <li class="md-nav__item">
   <a href="#nebula_graphdocker" class="md-nav__link">
-    如何更新Nebula Graph服务的Docker镜像？
+    如何升级/更新Nebula Graph服务的Docker镜像？
   </a>
   
 </li>
@@ -5779,13 +5772,6 @@
           <li class="md-nav__item">
   <a href="#nebula_console" class="md-nav__link">
     如何更新Nebula Console？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nebula_graph_4" class="md-nav__link">
-    如何升级Nebula Graph？
   </a>
   
 </li>
@@ -6019,24 +6005,24 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 <div class="highlight"><pre><span></span><code>$ docker-compose down
 </code></pre></div>
 <p>如果返回如下信息，表示已经成功停止服务。</p>
-<div class="highlight"><pre><span></span><code>Stopping nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
+<div class="highlight"><pre><span></span><code>Stopping nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
 Stopping nebula-docker-compose_graphd1_1   ... <span class="k">done</span>
 Stopping nebula-docker-compose_graphd_1    ... <span class="k">done</span>
 Stopping nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
-Stopping nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
 Stopping nebula-docker-compose_storaged2_1 ... <span class="k">done</span>
+Stopping nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
 Stopping nebula-docker-compose_metad0_1    ... <span class="k">done</span>
-Stopping nebula-docker-compose_metad2_1    ... <span class="k">done</span>
 Stopping nebula-docker-compose_metad1_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
+Stopping nebula-docker-compose_metad2_1    ... <span class="k">done</span>
+Removing nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
 Removing nebula-docker-compose_graphd1_1   ... <span class="k">done</span>
 Removing nebula-docker-compose_graphd_1    ... <span class="k">done</span>
 Removing nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
-Removing nebula-docker-compose_graphd2_1   ... <span class="k">done</span>
 Removing nebula-docker-compose_storaged2_1 ... <span class="k">done</span>
+Removing nebula-docker-compose_storaged0_1 ... <span class="k">done</span>
 Removing nebula-docker-compose_metad0_1    ... <span class="k">done</span>
-Removing nebula-docker-compose_metad2_1    ... <span class="k">done</span>
 Removing nebula-docker-compose_metad1_1    ... <span class="k">done</span>
+Removing nebula-docker-compose_metad2_1    ... <span class="k">done</span>
 Removing network nebula-docker-compose_nebula-net
 </code></pre></div>
 <div class="admonition danger">
@@ -6058,8 +6044,25 @@ Removing network nebula-docker-compose_nebula-net
       - <span class="m">19670</span>
 </code></pre></div>
 <p><code>9669:9669</code>表示内部的9669映射到外部的端口也是9669，下方的<code>19669</code>表示内部的19669映射到外部的端口是随机的。</p>
-<h3 id="nebula_graphdocker">如何更新Nebula Graph服务的Docker镜像？<a class="headerlink" href="#nebula_graphdocker" title="Permanent link">&para;</a></h3>
-<p>在目录<code>nebula-docker-compose</code>内执行命令<code>docker-compose pull</code>，可以更新Graph服务、Storage服务和Meta服务的镜像。</p>
+<h3 id="nebula_graphdocker">如何升级/更新Nebula Graph服务的Docker镜像？<a class="headerlink" href="#nebula_graphdocker" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>在文件<code>nebula-docker-compose/docker-compose.yaml</code>中，找到所有服务的<code>image</code>并修改其值为相应的镜像版本。</p>
+</li>
+<li>
+<p>在目录<code>nebula-docker-compose</code>内执行命令<code>docker-compose pull</code>，更新Graph服务、Storage服务和Meta服务的镜像。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>执行<code>docker-compose pull</code>命令更新服务镜像前，确保已停止Nebula Graph。</p>
+</div>
+</li>
+<li>
+<p>执行命令<code>docker-compose up -d</code>启动Nebula Graph服务。</p>
+</li>
+<li>
+<p>通过Nebula Console连接Nebula Graph后，分别执行命令<code>show hosts graph</code>、<code>show hosts storage</code>、<code>show hosts meta</code>查看各服务版本。</p>
+</li>
+</ol>
 <h3 id="docker-compose_pullerror_toomanyrequests">执行命令<code>docker-compose pull</code>报错<code>ERROR: toomanyrequests</code><a class="headerlink" href="#docker-compose_pullerror_toomanyrequests" title="Permanent link">&para;</a></h3>
 <p>可能遇到如下错误：</p>
 <p><code>ERROR: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit</code></p>
@@ -6068,19 +6071,6 @@ Removing network nebula-docker-compose_nebula-net
 <p>执行如下命令可以更新Nebula Console客户端镜像。</p>
 <div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v2.6.0
 </code></pre></div>
-<h3 id="nebula_graph_4">如何升级Nebula Graph？<a class="headerlink" href="#nebula_graph_4" title="Permanent link">&para;</a></h3>
-<p>更新Nebula Graph的Docker镜像并重启服务：</p>
-<ol>
-<li>
-<p>在目录<code>nebula-docker-compose</code>内，执行命令<code>docker-compose pull</code>更新Nebula Graph的Docker镜像。</p>
-</li>
-<li>
-<p>执行命令<code>docker-compose down</code>停止Nebula Graph服务。</p>
-</li>
-<li>
-<p>执行命令<code>docker-compose up -d</code>启动Nebula Graph服务。</p>
-</li>
-</ol>
 <h3 id="nebula-docker-composenebula_graph_200-rc3699nebula_graph">为什么更新nebula-docker-compose仓库（Nebula Graph 2.0.0-RC）后，无法通过端口<code>3699</code>连接Nebula Graph？<a class="headerlink" href="#nebula-docker-composenebula_graph_200-rc3699nebula_graph" title="Permanent link">&para;</a></h3>
 <p>在 Nebula Graph 2.0.0-RC 版本，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
 <h3 id="nebula-docker-compose20210104">为什么更新nebula-docker-compose仓库后，无法访问数据？（2021年01月04日）<a class="headerlink" href="#nebula-docker-compose20210104" title="Permanent link">&para;</a></h3>
@@ -6099,7 +6089,7 @@ Removing network nebula-docker-compose_nebula-net
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>

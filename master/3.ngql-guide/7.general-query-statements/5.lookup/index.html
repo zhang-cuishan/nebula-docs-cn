@@ -5829,8 +5829,8 @@ nebula&gt; LOOKUP ON player \
 +-------------+
 | VertexID    |
 +-------------+
-| &quot;player144&quot; |
 | &quot;player140&quot; |
+| &quot;player144&quot; |
 +-------------+
 
 nebula&gt; LOOKUP ON player \
@@ -5840,8 +5840,8 @@ nebula&gt; LOOKUP ON player \
 +-------------+-------------------------+------------------------+
 | VertexID    | properties(VERTEX).name | properties(VERTEX).age |
 +-------------+-------------------------+------------------------+
-| &quot;player149&quot; | &quot;Ben Simmons&quot;           | 22                     |
 | &quot;player134&quot; | &quot;Blake Griffin&quot;         | 30                     |
+| &quot;player149&quot; | &quot;Ben Simmons&quot;           | 22                     |
 +-------------+-------------------------+------------------------+
 
 nebula&gt; LOOKUP ON player \
@@ -5849,11 +5849,11 @@ nebula&gt; LOOKUP ON player \
         YIELD properties(vertex).name AS name |\
         GO FROM $-.VertexID OVER serve \
         YIELD $-.name, properties(edge).start_year, properties(edge).end_year, properties($$).name;
-+---------------+------------------+----------------+--------------+
-| $-.name       | serve.start_year | serve.end_year | $$.team.name |
-+---------------+------------------+----------------+--------------+
-| &quot;Kobe Bryant&quot; | 1996             | 2016           | &quot;Lakers&quot;     |
-+---------------+------------------+----------------+--------------+
++---------------+-----------------------------+---------------------------+---------------------+
+| $-.name       | properties(EDGE).start_year | properties(EDGE).end_year | properties($$).name |
++---------------+-----------------------------+---------------------------+---------------------+
+| &quot;Kobe Bryant&quot; | 1996                        | 2016                      | &quot;Lakers&quot;            |
++---------------+-----------------------------+---------------------------+---------------------+
 </code></pre></div>
 <h2 id="_5">检索边<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>返回Edge type为<code>follow</code>且<code>degree</code>为<code>90</code>的边。</p>
@@ -5871,10 +5871,9 @@ nebula&gt; LOOKUP ON follow \
 +-------------+-------------+---------+
 | SrcVID      | DstVID      | Ranking |
 +-------------+-------------+---------+
-| &quot;player101&quot; | &quot;player102&quot; | 0       |
-| &quot;player133&quot; | &quot;player114&quot; | 0       |
-| &quot;player133&quot; | &quot;player144&quot; | 0       |
-+-------------+-------------+---------+
+| &quot;player150&quot; | &quot;player143&quot; | 0       |
+| &quot;player150&quot; | &quot;player137&quot; | 0       |
+| &quot;player148&quot; | &quot;player136&quot; | 0       |
 ...
 
 nebula&gt; LOOKUP ON follow \
@@ -5883,10 +5882,9 @@ nebula&gt; LOOKUP ON follow \
 +-------------+-------------+---------+-------------------------+
 | SrcVID      | DstVID      | Ranking | properties(EDGE).degree |
 +-------------+-------------+---------+-------------------------+
-| &quot;player121&quot; | &quot;player116&quot; | 0       | 90                      |
-| &quot;player121&quot; | &quot;player128&quot; | 0       | 90                      |
-| &quot;player121&quot; | &quot;player129&quot; | 0       | 90                      |
-+-------------+-------------+---------+-------------------------+
+| &quot;player150&quot; | &quot;player143&quot; | 0       | 90                      |
+| &quot;player150&quot; | &quot;player137&quot; | 0       | 90                      |
+| &quot;player148&quot; | &quot;player136&quot; | 0       | 90                      |
 ...
 
 nebula&gt; LOOKUP ON follow \
@@ -5933,23 +5931,23 @@ nebula&gt; LOOKUP ON player;
 </li>
 </ul>
 <ul>
-<li>查找Edge type为<code>like</code>的所有边的信息。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE like(likeness int);
+<li>查找Edge type为<code>follow</code>的所有边的信息。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE follow(degree int);
 
-nebula&gt; CREATE EDGE INDEX like_index on like();
+nebula&gt; CREATE EDGE INDEX follow_index on follow();
 
-nebula&gt; REBUILD EDGE INDEX like_index;
+nebula&gt; REBUILD EDGE INDEX follow_index;
 +------------+
 | New Job Id |
 +------------+
 | 88         |
 +------------+
 
-nebula&gt; INSERT EDGE like(likeness) \
+nebula&gt; INSERT EDGE follow(degree) \
         VALUES &quot;player100&quot;-&gt;&quot;player101&quot;:(95);
 
-# 列出所有的 like 边。类似于 MATCH (s)-[e:like]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */。
+# 列出所有的 follow 边。类似于 MATCH (s)-[e:follow]-&gt;(d) RETURN id(s), rank(e), id(d) /*, type(e) */。
 
-nebula)&gt; LOOKUP ON like;
+nebula)&gt; LOOKUP ON follow;
 +-------------+-------------+---------+
 | SrcVID      | DstVID      | Ranking |
 +-------------+-------------+---------+
@@ -5959,26 +5957,26 @@ nebula)&gt; LOOKUP ON like;
 </li>
 </ul>
 <h2 id="_6">统计点或边<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>统计Tag为<code>player</code>的点和Edge type为<code>like</code>的边。</p>
+<p>统计Tag为<code>player</code>的点和Edge type为<code>follow</code>的边。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player |\
         YIELD COUNT(*) AS Player_Number;
 +---------------+
 | Player_Number |
 +---------------+
-| 2             |
+| 51            |
 +---------------+
 
-nebula&gt; LOOKUP ON like | \
-        YIELD COUNT(*) AS Like_Number;
-+-------------+
-| Like_Number |
-+-------------+
-| 1           |
-+-------------+
+nebula&gt; LOOKUP ON follow | \
+        YIELD COUNT(*) AS Follow_Number;
++---------------+
+| Follow_Number |
++---------------+
+| 81            |
++---------------+
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>使用<a href="../6.show/14.show-stats/"><code>show-stats</code>命令</a>也可以统计点和边。</p>
+<p>使用<a href="../6.show/14.show-stats/"><code>SHOW STATS</code>命令</a>也可以统计点和边。</p>
 </div>
                 
                   
@@ -5988,7 +5986,7 @@ nebula&gt; LOOKUP ON like | \
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
