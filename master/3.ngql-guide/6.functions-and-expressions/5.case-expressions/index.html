@@ -5863,12 +5863,12 @@ END
         ELSE &quot;No&quot; \
         END \
         AS Age_above_35;
-+---------------------+-----+--------------+
-| Name                | Age | Age_above_35 |
-+---------------------+-----+--------------+
-| &quot;Tony Parker&quot;       | 36  | &quot;No&quot;         |
-| &quot;LaMarcus Aldridge&quot; | 33  | &quot;No&quot;         |
-+---------------------+-----+--------------+
++-----------------+-----+--------------+
+| Name            | Age | Age_above_35 |
++-----------------+-----+--------------+
+| &quot;Tony Parker&quot;   | 36  | &quot;No&quot;         |
+| &quot;Manu Ginobili&quot; | 41  | &quot;No&quot;         |
++-----------------+-----+--------------+
 </code></pre></div>
 <p>示例本意为当玩家年龄大于35时输出<code>Yes</code>。但是查看输出结果，年龄为36时输出的却是<code>No</code>。</p>
 <p>这是因为查询使用了简单形式的<code>CASE</code>表达式，比较对象是<code>$$.player.age</code>和<code>$$.player.age &gt; 35</code>。当年龄为36时：</p>
@@ -5887,7 +5887,7 @@ END
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
       
     
   </small>
