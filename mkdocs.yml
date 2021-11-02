@@ -521,13 +521,6 @@ plugins:
       back_cover: true
       cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
       output_path: pdf/NebulaGraph-CN.pdf
-      show_anchors: true
-      render_js: true
-      headless_chrome_path: headless-chromium
-      enabled_if_env: 1
-      #debug_html: true
-      show_anchors: true
-      verbose: true
 
 extra_javascript:
   - js/version-select.js
