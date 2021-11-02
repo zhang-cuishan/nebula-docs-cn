@@ -20,7 +20,7 @@
     
     
       
-        <title>使用RPM/DEB包部署集群 - Nebula Graph Database 手册</title>
+        <title>使用RPM/DEB包部署多机集群 - Nebula Graph Database 手册</title>
       
     
     
@@ -125,7 +125,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                使用RPM/DEB包部署集群
+                使用RPM/DEB包部署多机集群
               
             </span>
           </div>
@@ -2962,12 +2962,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          使用RPM/DEB包部署集群
+          使用RPM/DEB包部署多机集群
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        使用RPM/DEB包部署集群
+        使用RPM/DEB包部署多机集群
       </a>
       
         
@@ -5714,7 +5714,7 @@
                   </a>
                 
                 
-                <h1 id="rpmdebnebula_graph">使用RPM/DEB包部署Nebula Graph集群<a class="headerlink" href="#rpmdebnebula_graph" title="Permanent link">&para;</a></h1>
+                <h1 id="rpmdebnebula_graph">使用RPM/DEB包部署Nebula Graph多机集群<a class="headerlink" href="#rpmdebnebula_graph" title="Permanent link">&para;</a></h1>
 <p>Nebula Graph不提供官方的集群部署工具，用户可以使用RPM或DEB文件手动部署集群。本文提供了部署集群的示例。</p>
 <h2 id="_1">部署方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
@@ -6054,7 +6054,7 @@
 </li>
 </ul>
 <h3 id="3">3.启动集群<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>依次启动各个服务器上的对应进程。说明如下。</p>
+<p>依次启动<strong>各个服务器</strong>上的对应进程。</p>
 <table>
 <thead>
 <tr>
@@ -6091,7 +6091,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>graphd、storaged和metad都启动时，可以用all代替。</li>
+<li>确保每个服务器中的对应进程都已启动，否则服务将启动失败。</li>
+</ul>
+<ul>
+<li>当需都启动graphd、storaged和metad时，可以用all代替。</li>
 </ul>
 <ul>
 <li><code>/usr/local/nebula</code>是Nebula Graph的默认安装路径，如果修改过安装路径，请使用实际路径。更多启停服务的内容，请参见<a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a>。</li>
@@ -6124,7 +6127,7 @@ Welcome to Nebula Graph!
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2021</span>
       
     
   </small>
