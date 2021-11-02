@@ -580,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.quick-start/6.cheatcheet-for-ngql-command.md" class="md-nav__link">
+      <a href="../../../2.quick-start/6.cheatsheet-for-ngql-command/" class="md-nav__link">
         nGQL命令汇总
       </a>
     </li>
@@ -5787,12 +5787,22 @@ wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-gr
 
 <h2 id="nebula_graph">安装Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h2>
 <ul>
-<li>安装RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
+<li>
+<p>安装RPM包</p>
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
+</code></pre></div>
+<p>例如在默认路径下安装master版本的RPM包：</p>
+<div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-graph-master.el7.x86_64.rpm
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>安装DEB包<div class="highlight"><pre><span></span><code>$ sudo dpkg -i --instdir<span class="o">==</span>&lt;installation_path&gt; &lt;package_name&gt;
+<li>
+<p>安装DEB包</p>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg -i --instdir<span class="o">==</span>&lt;installation_path&gt; &lt;package_name&gt;
+</code></pre></div>
+<p>例如在默认路径下安装master版本的DEB包：</p>
+<div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-graph-master.ubuntu1804.amd64.deb
 </code></pre></div>
 </li>
 </ul>

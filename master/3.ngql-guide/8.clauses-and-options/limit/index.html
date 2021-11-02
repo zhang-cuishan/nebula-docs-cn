@@ -580,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../2.quick-start/6.cheatcheet-for-ngql-command.md" class="md-nav__link">
+      <a href="../../../2.quick-start/6.cheatsheet-for-ngql-command/" class="md-nav__link">
         nGQL命令汇总
       </a>
     </li>
@@ -5817,6 +5817,17 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow REVERSELY \
 | &quot;Tony Parker&quot;   | 36           |
 | &quot;Manu Ginobili&quot; | 41           |
 +-----------------+--------------+
+
+nebula&gt; GO 3 STEPS FROM &quot;player102&quot; \
+        OVER * \
+        LIMIT [rand32(5),rand32(5),rand32(5)];
++------------+-------------+---------------------+
+| serve._dst | follow._dst | any_shape_edge._dst |
++------------+-------------+---------------------+
+| &quot;team204&quot;  |             |                     |
+| &quot;team215&quot;  |             |                     |
+|            | &quot;player100&quot; |                     |
++------------+-------------+---------------------+
 </code></pre></div>
 <h2 id="opencypherlimit">openCypher兼容语句中的LIMIT<a class="headerlink" href="#opencypherlimit" title="Permanent link">&para;</a></h2>
 <p>在<code>MATCH</code>等openCypher兼容语句中使用LIMIT不需要加管道符。语法和说明如下：</p>
@@ -5915,7 +5926,7 @@ Nebula Graph master 未实现 `LIMIT` 语句的存储层下推优化, 类似 `MA
 <div class="md-source-date">
   <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2021</span>
       
     
   </small>
