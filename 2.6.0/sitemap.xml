@@ -1235,4 +1235,19 @@
          <lastmod>2021-11-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/2.6.0/reuse/source_connect-to-nebula-graph/</loc>
+         <lastmod>2021-11-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/2.6.0/reuse/source_install-nebula-graph-by-rpm-or-deb/</loc>
+         <lastmod>2021-11-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/2.6.0/reuse/source_manage-service/</loc>
+         <lastmod>2021-11-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
