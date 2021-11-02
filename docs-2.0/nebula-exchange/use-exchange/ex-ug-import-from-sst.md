@@ -446,6 +446,10 @@ ${SPARK_HOME}/bin/spark-submit --master "local" --conf spark.sql.shuffle.partiti
 
 !!! note
 
+    生成SST文件时，会涉及到Spark的shuffle操作，请注意在提交命令中增加`spark.sql.shuffle.partition`的配置。
+
+!!! note
+
     JAR包有两种获取方式：[自行编译](../ex-ug-compile.md)或者从maven仓库下载。
 
 示例：
