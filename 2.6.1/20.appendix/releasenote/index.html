@@ -1935,41 +1935,9 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Release Note
-          <span class="md-nav__icon md-icon"></span>
-</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Release Note
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#feature">
-    Feature
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enhancement">
-    Enhancement
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug_fix">
-    Bug fix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    历史版本
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../0.FAQ/">
@@ -2013,32 +1981,6 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#feature">
-    Feature
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enhancement">
-    Enhancement
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug_fix">
-    Bug fix
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    历史版本
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
@@ -2049,64 +1991,67 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="nebula_graph_261_release_notes">Nebula Graph 2.6.1 release notes<a class="headerlink" href="#nebula_graph_261_release_notes" title="Permanent link">¶</a></h1>
-<h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">¶</a></h2>
-<ul>
-<li>新增TOSS功能。<a href="https://github.com/vesoft-inc/nebula/pull/2525">#2525</a></li>
-<li>新增Group&amp;Zone功能。<a href="https://github.com/vesoft-inc/nebula-storage/pull/181">#181</a></li>
-<li>新增Geo Spatial功能。<a href="https://github.com/vesoft-inc/nebula/pull/2954">#2954</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2979">#2979</a>、<a href="https://github.com/vesoft-inc/nebula/pull/3043">#3043</a></li>
-<li>新增传输加密功能。<a href="https://github.com/vesoft-inc/nebula/pull/2584">#2584</a></li>
-<li>新增服务端返回JSON格式的查询结果。<a href="https://github.com/vesoft-inc/nebula/pull/2824">#2824</a></li>
-<li>新增图空间的meta克隆。<a href="https://github.com/vesoft-inc/nebula/pull/2763">#2763</a></li>
-<li>新增LOOKUP中使用IN表达式。<a href="https://github.com/vesoft-inc/nebula/pull/2906">#2906</a></li>
-<li>集成Breakpad。<a href="https://github.com/vesoft-inc/nebula/pull/2536">#2536</a></li>
-<li>新增将metad的本地文件夹复制到远程。 <a href="https://github.com/vesoft-inc/nebula/pull/2532">#2532</a></li>
-<li>新增DELETE TAG。<a href="https://github.com/vesoft-inc/nebula/pull/2520">#2520</a></li>
-<li>新增concat函数。 <a href="https://github.com/vesoft-inc/nebula/pull/2540">#2540</a></li>
-<li>新增SHOW META LEADER。<a href="https://github.com/vesoft-inc/nebula/pull/2542">#2542</a></li>
-</ul>
-<h2 id="enhancement">Enhancement<a class="headerlink" href="#enhancement" title="Permanent link">¶</a></h2>
-<ul>
-<li>优化indexscan的Limit下推计算。<a href="https://github.com/vesoft-inc/nebula/pull/2905">#2905</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2823">#2823</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2796">#2796</a></li>
-<li>优化GO语句每步采样和Limit下推计算。<a href="https://github.com/vesoft-inc/nebula/pull/2904">#2904</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2853">#2853</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2831">#2831</a></li>
-<li>优化YIELD语句的格式。<a href="https://github.com/vesoft-inc/nebula/pull/2555">#2555</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2572">#2572</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2779">#2779</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2895">#2895</a>、<a href="https://github.com/vesoft-inc/nebula/pull/2944">#2944</a></li>
-<li>默认开启prefix bloom filter以提升性能。<a href="https://github.com/vesoft-inc/nebula/pull/2860">#2860</a></li>
-<li>支持服务端验证客户端版本，可配套使用的客户端版本才允许连接（客户端版本从2.6.0开始）。<a href="https://github.com/vesoft-inc/nebula/pull/2965">#2965</a></li>
-<li>优化流量控制。<a href="https://github.com/vesoft-inc/nebula/pull/2557">#2557</a></li>
-<li>SHOW JOBS只显示本SPACE的JOB。<a href="https://github.com/vesoft-inc/nebula/pull/2872">#2872</a></li>
-<li>为除GUEST之外的所有角色授予作业权限。<a href="https://github.com/vesoft-inc/nebula/pull/2928">#2928</a></li>
-<li>优化内存水位检测。<a href="https://github.com/vesoft-inc/nebula/pull/2885">#2885</a></li>
-<li>支持Storage的慢查询终止。<a href="https://github.com/vesoft-inc/nebula/pull/2534">#2534</a></li>
-</ul>
-<h2 id="bug_fix">Bug fix<a class="headerlink" href="#bug_fix" title="Permanent link">¶</a></h2>
-<ul>
-<li>修复<code>raftpart::reset</code>时清理部分RocksDB数据的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2522">#2522</a></li>
-<li>修复了插入不匹配的日期时间类型的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2527">#2527</a></li>
-<li>修复了设置毫秒失败但微秒有效的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2781">#2781</a></li>
-<li>修复了批量插入过多数据（百万行）时Meta服务崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2813">#2813</a></li>
-<li>修复了当图空间中不存在边Schema时获取边信息导致崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2571">#2571</a></li>
-<li>修复了属性数据类型为 <code>FIXED_STRING</code> 时 GO WHERE 子句表达式解析错误。<a href="https://github.com/vesoft-inc/nebula/pull/2762">#2762</a></li>
-<li>修复了FIND ALL PATH查询不到的错误。 <a href="https://github.com/vesoft-inc/nebula/pull/2773">#2773</a></li>
-<li>修复了没有配置角色的用户却有查找SPACE的角色权限问题。<a href="https://github.com/vesoft-inc/nebula/pull/2778">#2778</a></li>
-<li>修复了CASE表达式错误。 <a href="https://github.com/vesoft-inc/nebula/pull/2819">#2819</a></li>
-<li>修复了使用time函数时死循环问题。<a href="https://github.com/vesoft-inc/nebula/pull/2820">#2820</a></li>
-<li>修复了当节点被shutdown后，JOB仍显示为运行中的问题。<a href="https://github.com/vesoft-inc/nebula/pull/2843">#2843</a></li>
-<li>修复了在多个副本的情况下，<code>Insert</code>语句可能导致副本之间属性值不一致的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/2862">#2862</a></li>
-<li>修复了USE后提交作业时图空间不对的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3010">#3010</a></li>
-<li>修复了当列不为空时获取thrift结构属性出错的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3012">#3012</a></li>
-<li>修复了Meta服务未同步，graphd也能运行的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3069">#3069</a></li>
-<li>修复了使用FIND PATH WITH PROP时，悬挂边会返回空顶点的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3008">#3008</a></li>
-<li>修复了YIELD DISTINCT map类型时的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3051">#3051</a></li>
-<li>修复了设置错误的IP或者HOST时服务仍然可以启动的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3057">#3057</a></li>
-<li>修复了在一个语句中更改相同属性的错误。<a href="https://github.com/vesoft-inc/nebula/pull/3036">#3036</a></li>
-<li>修复了在边上多步过滤无效的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3144">#3144</a></li>
-</ul>
-<h2 id="_1">历史版本<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><a href="https://nebula-graph.com.cn/tags/release-note/">历史版本</a></p>
+<!--
+## Feature
+
+- 新增TOSS功能。[#2525](https://github.com/vesoft-inc/nebula/pull/2525)
+- 新增Group&Zone功能。[#181](https://github.com/vesoft-inc/nebula-storage/pull/181)
+- 新增Geo Spatial功能。[#2954](https://github.com/vesoft-inc/nebula/pull/2954)、[#2979](https://github.com/vesoft-inc/nebula/pull/2979)、[#3043](https://github.com/vesoft-inc/nebula/pull/3043)
+- 新增传输加密功能。[#2584](https://github.com/vesoft-inc/nebula/pull/2584)
+- 新增服务端返回JSON格式的查询结果。[#2824](https://github.com/vesoft-inc/nebula/pull/2824)
+- 新增图空间的meta克隆。[#2763](https://github.com/vesoft-inc/nebula/pull/2763)
+- 新增LOOKUP中使用IN表达式。[#2906](https://github.com/vesoft-inc/nebula/pull/2906)
+- 集成Breakpad。[#2536](https://github.com/vesoft-inc/nebula/pull/2536)
+- 新增将metad的本地文件夹复制到远程。 [#2532](https://github.com/vesoft-inc/nebula/pull/2532)
+- 新增DELETE TAG。[#2520](https://github.com/vesoft-inc/nebula/pull/2520)
+- 新增concat函数。 [#2540](https://github.com/vesoft-inc/nebula/pull/2540)
+- 新增SHOW META LEADER。[#2542](https://github.com/vesoft-inc/nebula/pull/2542)
+
+## Enhancement
+
+- 优化indexscan的Limit下推计算。[#2905](https://github.com/vesoft-inc/nebula/pull/2905)、[#2823](https://github.com/vesoft-inc/nebula/pull/2823)、[#2796](https://github.com/vesoft-inc/nebula/pull/2796)
+- 优化GO语句每步采样和Limit下推计算。[#2904](https://github.com/vesoft-inc/nebula/pull/2904)、[#2853](https://github.com/vesoft-inc/nebula/pull/2853)、[#2831](https://github.com/vesoft-inc/nebula/pull/2831)
+- 优化YIELD语句的格式。[#2555](https://github.com/vesoft-inc/nebula/pull/2555)、[#2572](https://github.com/vesoft-inc/nebula/pull/2572)、[#2779](https://github.com/vesoft-inc/nebula/pull/2779)、[#2895](https://github.com/vesoft-inc/nebula/pull/2895)、[#2944](https://github.com/vesoft-inc/nebula/pull/2944)
+- 默认开启prefix bloom filter以提升性能。[#2860](https://github.com/vesoft-inc/nebula/pull/2860)
+- 支持服务端验证客户端版本，可配套使用的客户端版本才允许连接（客户端版本从2.6.0开始）。[#2965](https://github.com/vesoft-inc/nebula/pull/2965)
+- 优化流量控制。[#2557](https://github.com/vesoft-inc/nebula/pull/2557)
+- SHOW JOBS只显示本SPACE的JOB。[#2872](https://github.com/vesoft-inc/nebula/pull/2872)
+- 为除GUEST之外的所有角色授予作业权限。[#2928](https://github.com/vesoft-inc/nebula/pull/2928)
+- 优化内存水位检测。[#2885](https://github.com/vesoft-inc/nebula/pull/2885)
+- 支持Storage的慢查询终止。[#2534](https://github.com/vesoft-inc/nebula/pull/2534)
+
+## Bug fix
+
+- 修复`raftpart::reset`时清理部分RocksDB数据的问题。[#2522](https://github.com/vesoft-inc/nebula/pull/2522)
+- 修复了插入不匹配的日期时间类型的问题。[#2527](https://github.com/vesoft-inc/nebula/pull/2527)
+- 修复了设置毫秒失败但微秒有效的问题。[#2781](https://github.com/vesoft-inc/nebula/pull/2781)
+- 修复了批量插入过多数据（百万行）时Meta服务崩溃的问题。[#2813](https://github.com/vesoft-inc/nebula/pull/2813)
+- 修复了当图空间中不存在边Schema时获取边信息导致崩溃的问题。[#2571](https://github.com/vesoft-inc/nebula/pull/2571)
+- 修复了属性数据类型为 `FIXED_STRING` 时 GO WHERE 子句表达式解析错误。[#2762](https://github.com/vesoft-inc/nebula/pull/2762)
+- 修复了FIND ALL PATH查询不到的错误。 [#2773](https://github.com/vesoft-inc/nebula/pull/2773)
+- 修复了没有配置角色的用户却有查找SPACE的角色权限问题。[#2778](https://github.com/vesoft-inc/nebula/pull/2778)
+- 修复了CASE表达式错误。 [#2819](https://github.com/vesoft-inc/nebula/pull/2819)
+- 修复了使用time函数时死循环问题。[#2820](https://github.com/vesoft-inc/nebula/pull/2820)
+- 修复了当节点被shutdown后，JOB仍显示为运行中的问题。[#2843](https://github.com/vesoft-inc/nebula/pull/2843)
+- 修复了在多个副本的情况下，`Insert`语句可能导致副本之间属性值不一致的问题。 [#2862](https://github.com/vesoft-inc/nebula/pull/2862)
+- 修复了USE后提交作业时图空间不对的问题。 [#3010](https://github.com/vesoft-inc/nebula/pull/3010)
+- 修复了当列不为空时获取thrift结构属性出错的问题。[#3012](https://github.com/vesoft-inc/nebula/pull/3012)
+- 修复了Meta服务未同步，graphd也能运行的问题。 [#3069](https://github.com/vesoft-inc/nebula/pull/3069)
+- 修复了使用FIND PATH WITH PROP时，悬挂边会返回空顶点的问题。 [#3008](https://github.com/vesoft-inc/nebula/pull/3008)
+- 修复了YIELD DISTINCT map类型时的崩溃问题。 [#3051](https://github.com/vesoft-inc/nebula/pull/3051)
+- 修复了设置错误的IP或者HOST时服务仍然可以启动的问题。 [#3057](https://github.com/vesoft-inc/nebula/pull/3057)
+- 修复了在一个语句中更改相同属性的错误。[#3036](https://github.com/vesoft-inc/nebula/pull/3036)
+- 修复了在边上多步过滤无效的问题。[#3144](https://github.com/vesoft-inc/nebula/pull/3144)
+
+## 历史版本
+
+[历史版本](https://nebula-graph.com.cn/tags/release-note/)
+-->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2021</span>
 </small>
 </div>
 </article>
