@@ -94,7 +94,7 @@ $ bash ./stop.sh #停止服务
 
 ### 卸载
 
-使用以下的命令卸载 Explorer 。
+使用以下的命令卸载 Explorer。
 
 ```bash
 $ sudo rpm -e nebula-explorer-<version>.x86_64
@@ -110,7 +110,7 @@ $ sudo rpm -e nebula-explorer-<version>.x86_64
 - 以下端口未被使用。
 
   | 端口号 | 说明 |
-  | ---- | ---- |
+  | :---- | :---- |
   | 7002 | Explorer 提供的 web 服务 |
 
   !!! caution
