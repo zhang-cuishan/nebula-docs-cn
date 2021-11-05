@@ -79,7 +79,7 @@
 
 ### 启停服务
 
-支持使用 systemctl 服务控制项目启停。默认 rpm 安装后以 systemctl 启动，可使用以下命令：
+支持使用 systemctl 服务控制项目启停。
 ```bash
 $ systemctl status nebula-explorer #查看服务状态
 $ systemctl stop nebula-explorer #停止服务
