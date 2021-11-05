@@ -2033,7 +2033,13 @@
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>SHOW HOSTS [GRAPH | STORAGE | META];
 </code></pre></div>
-<p>不添加服务名，直接使用<code>SHOW HOSTS</code>，会显示Storage服务主机信息，以及leader总数、leader分布和分片分布。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>不添加服务名，直接使用<code>SHOW HOSTS</code>时，会显示Storage服务主机信息，以及leader总数、leader分布和分片分布。</li>
+<li>对于使用源码安装的Nebula Graph，执行添加了服务名的命令后，输出的信息中不显示版本信息。</li>
+</ul>
+</div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 +-------------+-------+----------+--------------+----------------------------------+------------------------------+
@@ -2075,7 +2081,7 @@ nebula&gt; SHOW HOSTS META;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2021</span>
 </small>
 </div>
 </article>
