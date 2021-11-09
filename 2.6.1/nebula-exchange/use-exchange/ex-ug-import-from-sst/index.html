@@ -2427,7 +2427,7 @@ if (!s.ok()) {
 <li>如果只需要生成SST文件，不需要在部署Storage服务的机器上安装Hadoop服务。</li>
 </ul>
 <ul>
-<li>如果希望在Ingest（数据导入）结束后自动移除SST文件，请在Storage服务配置文件中增加<code>--move_files=true</code>，该配置会将SST文件移动到<code>data</code>目录下。</li>
+<li>如需在INGEST（数据导入）结束后自动移除SST文件，在Storage服务配置文件中增加<code>--move_files=true</code>，该配置会让Nebula Graph在INGEST后将SST文件移动（<code>mv</code>）到<code>data</code>目录下。<code>--move_files</code>的默认值为<code>false</code>，此时Nebula Graph会复制（<code>cp</code>）SST文件而不是移动。</li>
 </ul>
 </div>
 </li>
