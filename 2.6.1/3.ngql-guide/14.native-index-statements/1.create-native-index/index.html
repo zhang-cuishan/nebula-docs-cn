@@ -2324,22 +2324,22 @@
 </code></pre></div>
 <p>为Tag或Edge type创建索引后，用户可以使用 <code>LOOKUP</code> 语句查找<code>带有该Tag的</code>所有点的VID，或者<code>所有该类型的边</code>的<code>对应起始点VID、目的点VID、以及rank</code>。详情请参见<a href="../../7.general-query-statements/5.lookup/">LOOKUP</a>。</p>
 <h2 id="_4">创建单属性索引<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX player_index_0 on player(name(10));
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_0 on player(name(10));
 </code></pre></div>
 <p>上述示例是为所有包含Tag<code>player</code>的点创建属性<code>name</code>的索引，索引长度为10。即只使用属性<code>name</code>的前10个字符来创建索引。</p>
 <div class="highlight"><pre><span></span><code># 变长字符串需要指定索引长度。
-nebula&gt; CREATE TAG var_string(p1 string);
-nebula&gt; CREATE TAG INDEX var ON var_string(p1(10));
+nebula&gt; CREATE TAG IF NOT EXISTS var_string(p1 string);
+nebula&gt; CREATE TAG INDEX IF NOT EXISTS var ON var_string(p1(10));
 
 # 定长字符串不需要指定索引长度。
-nebula&gt; CREATE TAG fix_string(p1 FIXED_STRING(10));
-nebula&gt; CREATE TAG INDEX fix ON fix_string(p1);
+nebula&gt; CREATE TAG IF NOT EXISTS fix_string(p1 FIXED_STRING(10));
+nebula&gt; CREATE TAG INDEX IF NOT EXISTS fix ON fix_string(p1);
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX follow_index_0 on follow(degree);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX IF NOT EXISTS follow_index_0 on follow(degree);
 </code></pre></div>
 <h2 id="_5">创建复合属性索引<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p><code>复合属性索引</code>用于查找一个Tag(或者Edge type)中的多个属性（的组合）。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX player_index_1 on player(name(10), age);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_1 on player(name(10), age);
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -2379,7 +2379,7 @@ nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2 and t.p3 == 3;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

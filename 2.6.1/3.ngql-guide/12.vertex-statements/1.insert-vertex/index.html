@@ -2233,10 +2233,10 @@ prop_value_list:
 <p>参考以下示例。</p>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code># 插入不包含属性的点。
-nebula&gt; CREATE TAG t1();                   
+nebula&gt; CREATE TAG IF NOT EXISTS t1();                   
 nebula&gt; INSERT VERTEX t1() VALUE "10":(); 
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t2 (name string, age int);                
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t2 (name string, age int);                
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES "11":("n1", 12);
 
 # 创建失败，因为"a13"不是int类型。
@@ -2245,8 +2245,8 @@ nebula&gt; INSERT VERTEX t2 (name, age) VALUES "12":("n1", "a13");
 # 一次插入2个点。
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES "13":("n3", 12), "14":("n4", 8); 
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t3(p1 int);
-nebula&gt; CREATE TAG t4(p2 string);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t3(p1 int);
+nebula&gt; CREATE TAG IF NOT EXISTS t4(p2 string);
 
 # 一次插入两个Tag的属性到同一个点。
 nebula&gt; INSERT VERTEX  t3 (p1), t4(p2) VALUES "21": (321, "hello");
@@ -2263,7 +2263,7 @@ nebula&gt; FETCH PROP ON t2 "11";
 | ("11" :t2{age: 15, name: "n4"}) |
 +---------------------------------+
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG t5(p1 fixed_string(5) NOT NULL, p2 int, p3 int DEFAULT NULL);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t5(p1 fixed_string(5) NOT NULL, p2 int, p3 int DEFAULT NULL);
 nebula&gt; INSERT VERTEX t5(p1, p2, p3) VALUES "001":("Abe", 2, 3);
 
 # 插入失败，因为属性p1不能为NULL。
@@ -2304,7 +2304,7 @@ nebula&gt; FETCH PROP ON t2 "1";
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

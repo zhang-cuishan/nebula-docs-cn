@@ -2210,14 +2210,14 @@
 <li><code>tag_name</code>：指定要删除的Tag名称。一次只能删除一个Tag。</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG test(p1 string, p2 int);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS test(p1 string, p2 int);
 nebula&gt; DROP TAG test;
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

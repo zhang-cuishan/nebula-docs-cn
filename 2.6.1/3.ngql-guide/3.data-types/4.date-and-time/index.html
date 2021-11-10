@@ -2285,7 +2285,7 @@ nebula&gt; RETURN timestamp("2021-07-05T06:18:43.984000");
 <ol>
 <li>
 <p>创建Tag，名称为<code>date1</code>，包含<code>DATE</code>、<code>TIME</code>和<code>DATETIME</code>三种类型。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG date1(p1 date, p2 time, p3 datetime);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS date1(p1 date, p2 time, p3 datetime);
 </code></pre></div>
 </li>
 <li>
@@ -2295,7 +2295,7 @@ nebula&gt; RETURN timestamp("2021-07-05T06:18:43.984000");
 </li>
 <li>
 <p>获取<code>test1</code>的属性<code>p1</code>的月份。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX date1_index ON date1(p1);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS date1_index ON date1(p1);
 nebula&gt; REBUILD TAG INDEX date1_index;
 nebula&gt; MATCH (v:date1) RETURN v.p1.month;
 +------------+
@@ -2307,7 +2307,7 @@ nebula&gt; MATCH (v:date1) RETURN v.p1.month;
 </li>
 <li>
 <p>创建Tag，名称为<code>school</code>，包含<code>TIMESTAMP</code>类型。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG school(name string , found_time timestamp);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS school(name string , found_time timestamp);
 </code></pre></div>
 </li>
 <li>
@@ -2348,7 +2348,7 @@ nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

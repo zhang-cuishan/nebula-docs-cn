@@ -2223,13 +2223,13 @@
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code># 插入不包含属性的边。
-nebula&gt; CREATE EDGE e1();                 
+nebula&gt; CREATE EDGE IF NOT EXISTS e1();                 
 nebula&gt; INSERT EDGE e1 () VALUES "10"-&gt;"11":();  
 
 # 插入rank为1的边。
 nebula&gt; INSERT EDGE e1 () VALUES "10"-&gt;"11"@1:(); 
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE e2 (name string, age int); 
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE IF NOT EXISTS e2 (name string, age int); 
 nebula&gt; INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", 1);
 
 # 一次插入2条边。
@@ -2276,7 +2276,7 @@ nebula&gt; FETCH PROP ON e2 "14"-&gt;"15"@1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 2, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

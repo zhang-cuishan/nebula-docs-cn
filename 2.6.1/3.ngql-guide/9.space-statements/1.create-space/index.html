@@ -2330,16 +2330,16 @@
 </table>
 <h2 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code># 仅指定VID类型，其他选项使用默认值。
-nebula&gt; CREATE SPACE my_space_1 (vid_type=FIXED_STRING(30));
+nebula&gt; CREATE SPACE IF NOT EXISTS my_space_1 (vid_type=FIXED_STRING(30));
 
 # 指定分片数量、副本数量和VID类型。
-nebula&gt; CREATE SPACE my_space_2 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30));
+nebula&gt; CREATE SPACE IF NOT EXISTS my_space_2 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30));
 
 # 指定分片数量、副本数量和VID类型，并添加描述。
-nebula&gt; CREATE SPACE my_space_3 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30)) comment="测试图空间";
+nebula&gt; CREATE SPACE IF NOT EXISTS my_space_3 (partition_num=15, replica_factor=1, vid_type=FIXED_STRING(30)) comment="测试图空间";
 
 # 克隆图空间。
-nebula&gt; CREATE SPACE my_space_4 as my_space_3;
+nebula&gt; CREATE SPACE IF NOT EXISTS my_space_4 as my_space_3;
 nebula&gt; SHOW CREATE SPACE my_space_4;
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Space        | Create Space                                                                                                                                                            |
@@ -2387,7 +2387,7 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

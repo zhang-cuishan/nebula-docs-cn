@@ -2661,7 +2661,7 @@ Got 1 rows (time spent 1235/1934 us)
 <ol>
 <li>
 <p>建立并重建索引。</p>
-<div class="highlight"><pre><span></span><code>&gt; CREATE TAG INDEX i_player ON player();
+<div class="highlight"><pre><span></span><code>&gt; CREATE TAG INDEX IF NOT EXISTS i_player ON player();
 &gt; REBUILD TAG INDEX i_player;
 </code></pre></div>
 </li>
@@ -2686,7 +2686,7 @@ Got 1 rows (time spent 1235/1934 us)
 # 开始图遍历的VID通过如上办法指定
 </code></pre></div>
 <p>或者通过一个属性索引来得到，例如：</p>
-<div class="highlight"><pre><span></span><code># CREATE TAG INDEX i_player ON player(name(20));
+<div class="highlight"><pre><span></span><code># CREATE TAG INDEX IF NOT EXISTS i_player ON player(name(20));
 # REBUILD TAG INDEX i_player;
 
 &gt; LOOKUP ON player WHERE player.name == "abc" | ... YIELD ...

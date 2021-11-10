@@ -2310,7 +2310,7 @@
 </ul>
 <h2 id="_4">检索点<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>返回Tag为<code>player</code>且<code>name</code>为<code>Tony Parker</code>的点。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX index_player ON player(name(30), age);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS index_player ON player(name(30), age);
 
 nebula&gt; REBUILD TAG INDEX index_player;
 +------------+
@@ -2369,7 +2369,7 @@ nebula&gt; LOOKUP ON player \
 </code></pre></div>
 <h2 id="_5">检索边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>返回Edge type为<code>follow</code>且<code>degree</code>为<code>90</code>的边。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX index_follow ON follow(degree);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX IF NOT EXISTS index_follow ON follow(degree);
 
 nebula&gt; REBUILD EDGE INDEX index_follow;
 +------------+
@@ -2404,21 +2404,21 @@ nebula&gt; LOOKUP ON follow \
         YIELD properties(edge).degree AS Degree |\
         GO FROM $-.DstVID OVER serve \
         YIELD $-.DstVID, properties(edge).start_year, properties(edge).end_year, properties($$).name;
-+-------------+------------------+----------------+--------------+
-| $-.DstVID   | serve.start_year | serve.end_year | $$.team.name |
-+-------------+------------------+----------------+--------------+
-| "player105" | 2010             | 2018           | "Spurs"      |
-| "player105" | 2009             | 2010           | "Cavaliers"  |
-| "player105" | 2018             | 2019           | "Raptors"    |
-+-------------+------------------+----------------+--------------+
++-------------+------------------------------+---------------------------+---------------------+
+| $-.DstVID   |  properties(EDGE).start_year | properties(EDGE).end_year | properties($$).name |
++-------------+------------------------------+---------------------------+---------------------+
+| "player105" | 2010                         | 2018                      | "Spurs"             |
+| "player105" | 2009                         | 2010                      | "Cavaliers"         |
+| "player105" | 2018                         | 2019                      | "Raptors"           |
++-------------+------------------------------+---------------------------+---------------------+
 </code></pre></div>
 <h2 id="tagedge_type">通过Tag列出所有的对应的点/通过Edge type列出边<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h2>
 <p>如果需要通过Tag列出所有的点，或通过Edge type列出边，则Tag、Edge type或属性上必须有至少一个索引。</p>
 <p>例如一个Tag <code>player</code>有属性<code>name</code>和<code>age</code>，为了遍历所有包含Tag <code>player</code>的点ID，Tag <code>player</code>、属性<code>name</code>或属性<code>age</code>中必须有一个已经创建索引。</p>
 <ul>
-<li>查找所有Tag为<code>player</code>的点 VID。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player(name string,age int);
+<li>查找所有Tag为<code>player</code>的点 VID。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string,age int);
 
-nebula&gt; CREATE TAG INDEX player_index on player();
+nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index on player();
 
 nebula&gt; REBUILD TAG INDEX player_index;
 +------------+
@@ -2443,9 +2443,9 @@ nebula&gt; LOOKUP ON player;
 </li>
 </ul>
 <ul>
-<li>查找Edge type为<code>follow</code>的所有边的信息。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE follow(degree int);
+<li>查找Edge type为<code>follow</code>的所有边的信息。<div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE IF NOT EXISTS follow(degree int);
 
-nebula&gt; CREATE EDGE INDEX follow_index on follow();
+nebula&gt; CREATE EDGE INDEX IF NOT EXISTS follow_index on follow();
 
 nebula&gt; REBUILD EDGE INDEX follow_index;
 +------------+
@@ -2494,7 +2494,7 @@ nebula&gt; LOOKUP ON follow | \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

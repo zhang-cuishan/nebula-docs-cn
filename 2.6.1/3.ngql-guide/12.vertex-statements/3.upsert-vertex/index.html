@@ -2342,7 +2342,7 @@ nebula&gt; UPSERT VERTEX ON player "player668" \
 +---------+----------+
 </code></pre></div>
 <p>上面最后一个示例中，因为<code>age</code>没有默认值，插入点时，<code>age</code>默认值为<code>NULL</code>，执行<code>age = age + 1</code>后仍为<code>NULL</code>。如果<code>age</code>有默认值，则<code>age = age + 1</code>可以正常执行，例如：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player_with_default(name string, age int DEFAULT 20);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player_with_default(name string, age int DEFAULT 20);
 Execution succeeded
 
 nebula&gt; UPSERT VERTEX ON player_with_default "player101" \
@@ -2396,7 +2396,7 @@ nebula&gt; UPSERT VERTEX ON player "player101" \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

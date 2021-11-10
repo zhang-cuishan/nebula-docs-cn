@@ -2334,7 +2334,7 @@
 <h3 id="tagedge_type">Tag或Edge type已存在<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h3>
 <p>如果Tag和Edge type已经创建，请使用<code>ALTER</code>语句更新Tag或Edge type。</p>
 <div class="highlight"><pre><span></span><code># 创建Tag。
-nebula&gt; CREATE TAG t1 (a timestamp);
+nebula&gt; CREATE TAG IF NOT EXISTS t1 (a timestamp);
 
 # ALTER修改Tag，添加TTL选项。
 nebula&gt; ALTER TAG t1 ttl_col = "a", ttl_duration = 5;
@@ -2345,7 +2345,7 @@ nebula&gt; INSERT VERTEX t1(a) values "101":(now());
 <h3 id="tagedge_type_1">Tag或Edge type不存在<a class="headerlink" href="#tagedge_type_1" title="Permanent link">¶</a></h3>
 <p>创建Tag或Edge type时可以同时设置TTL选项。详情请参见<a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>和<a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
 <div class="highlight"><pre><span></span><code># 创建Tag并设置TTL选项。
-nebula&gt; CREATE TAG t2(a int, b int, c string) ttl_duration= 100, ttl_col = "a";
+nebula&gt; CREATE TAG IF NOT EXISTS t2(a int, b int, c string) ttl_duration= 100, ttl_col = "a";
 
 # 插入点。过期时间戳为1612778164774（1612778164674 + 100）。
 nebula&gt; INSERT VERTEX t2(a, b, c) values "102":(1612778164674, 30, "Hello");
@@ -2371,7 +2371,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) values "102":(1612778164674, 30, "Hello");
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

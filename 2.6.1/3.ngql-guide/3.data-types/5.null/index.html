@@ -2338,7 +2338,7 @@
 <h2 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <h3 id="not_null">使用NOT NULL<a class="headerlink" href="#not_null" title="Permanent link">¶</a></h3>
 <p>创建Tag，名称为<code>player</code>，指定属性<code>name</code>为<code>NOT NULL</code>。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player(name string NOT NULL, age int);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string NOT NULL, age int);
 </code></pre></div>
 <p>使用<code>SHOW</code>命令查看创建Tag语句，属性<code>name</code>为<code>NOT NULL</code>，属性<code>age</code>为默认的<code>NULL</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW CREATE TAG player;
@@ -2356,7 +2356,7 @@
 </code></pre></div>
 <h3 id="not_null_1">使用NOT NULL并设置默认值<a class="headerlink" href="#not_null_1" title="Permanent link">¶</a></h3>
 <p>创建Tag，名称为<code>player</code>，指定属性<code>age</code>为<code>NOT NULL</code>，并设置默认值<code>18</code>。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG player(name string, age int NOT NULL DEFAULT 18);
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string, age int NOT NULL DEFAULT 18);
 </code></pre></div>
 <p>插入点<code>Kobe</code>，只设置属性<code>name</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name) VALUES "Kobe":("Kobe");
@@ -2373,7 +2373,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

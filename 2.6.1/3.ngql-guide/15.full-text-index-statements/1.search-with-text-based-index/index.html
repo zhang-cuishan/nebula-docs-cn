@@ -2320,7 +2320,7 @@
 </ul>
 <h2 id="_11">示例<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>//创建图空间。
-nebula&gt; CREATE SPACE basketballplayer (partition_num=3,replica_factor=1, vid_type=fixed_string(30));
+nebula&gt; CREATE SPACE IF NOT EXISTS basketballplayer (partition_num=3,replica_factor=1, vid_type=fixed_string(30));
 
 //登录文本搜索客户端。
 nebula&gt; SIGN IN TEXT SERVICE (127.0.0.1:9200);
@@ -2332,10 +2332,10 @@ nebula&gt; USE basketballplayer;
 nebula&gt; ADD LISTENER ELASTICSEARCH 192.168.8.5:9789;
 
 //创建Tag。
-nebula&gt; CREATE TAG player(name string, age int);
+nebula&gt; CREATE TAG IF NOT EXISTS player(name string, age int);
 
 //创建原生索引。
-nebula&gt; CREATE TAG INDEX name ON player(name(20));
+nebula&gt; CREATE TAG INDEX IF NOT EXISTS name ON player(name(20));
 
 //重建原生索引。
 nebula&gt; REBUILD TAG INDEX;
@@ -2425,7 +2425,7 @@ nebula&gt; DROP FULLTEXT INDEX nebula_index_1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>

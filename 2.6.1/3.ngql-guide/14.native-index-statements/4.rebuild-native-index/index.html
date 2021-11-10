@@ -2203,8 +2203,8 @@
 <li>重建完成后，用户可以使用命令<code>SHOW {TAG | EDGE} INDEX STATUS</code>检查索引是否重建完成。详情请参见<a href="../5.show-native-index-status/">SHOW INDEX STATUS</a>。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG person(name string, age int, gender string, email string);
-nebula&gt; CREATE TAG INDEX single_person_index ON person(name(10));
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS person(name string, age int, gender string, email string);
+nebula&gt; CREATE TAG INDEX IF NOT EXISTS single_person_index ON person(name(10));
 
 # 重建索引，返回任务ID。
 nebula&gt; REBUILD TAG INDEX single_person_index;
@@ -2240,7 +2240,7 @@ nebula&gt; SHOW JOB 31;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>
