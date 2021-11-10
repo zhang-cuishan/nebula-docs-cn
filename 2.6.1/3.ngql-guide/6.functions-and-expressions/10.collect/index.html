@@ -2183,7 +2183,7 @@ nebula&gt; UNWIND [1, 2, 1] AS a \
 nebula&gt; UNWIND [1, 2, 1] AS a \
         RETURN a, collect(a), size(collect(a));
 +---+------------+------------------+
-| a | collect(a) | size(COLLECT(a)) |
+| a | collect(a) | size(collect(a)) |
 +---+------------+------------------+
 | 2 | [2]        | 1                |
 | 1 | [1, 1]     | 2                |
@@ -2234,7 +2234,7 @@ nebula&gt; MATCH (n:player) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
 </small>
 </div>
 </article>
