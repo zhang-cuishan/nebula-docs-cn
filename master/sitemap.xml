@@ -1226,6 +1226,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/9.upgrade-nebula-cluster/</loc>
+         <lastmod>2021-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/</loc>
          <lastmod>2021-11-11</lastmod>
          <changefreq>daily</changefreq>
