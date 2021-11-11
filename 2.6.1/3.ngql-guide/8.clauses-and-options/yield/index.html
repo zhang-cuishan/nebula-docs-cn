@@ -2526,11 +2526,11 @@ nebula&gt; YIELD "Hel" + "\tlo" AS string1, ", World!" AS string2;
 +-------------+------------+
 
 nebula&gt; YIELD hash("Tim") % 100;
-+-----------------+
-| (hash(Tim)%100) |
-+-----------------+
-| 42              |
-+-----------------+
++-------------------+
+| (hash("Tim")%100) |
++-------------------+
+| 42                |
++-------------------+
 
 nebula&gt; YIELD \
       CASE 2+3 \
@@ -2549,7 +2549,7 @@ nebula&gt; YIELD \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2021</span>
 </small>
 </div>
 </article>
