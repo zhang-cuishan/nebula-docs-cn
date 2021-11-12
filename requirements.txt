@@ -1,11 +1,11 @@
-mkdocs==1.2.2
+mkdocs
 mkdocs-material
 mkdocs-macros-plugin
 mike
 mdx_truly_sane_lists
 mkdocs_latest_release_plugin
-mkdocs-git-revision-date-localized-plugin==0.9.3
-weasyprint==52.5
+mkdocs-git-revision-date-localized-plugin
+weasyprint
 mkdocs-with-pdf
 qrcode
 mkdocs-exclude
