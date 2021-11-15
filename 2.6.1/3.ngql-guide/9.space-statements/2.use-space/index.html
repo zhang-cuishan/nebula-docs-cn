@@ -2306,7 +2306,11 @@
 <div class="highlight"><pre><span></span><code>USE &lt;graph_space_name&gt;;
 </code></pre></div>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code># 指定图空间space1作为工作空间。
+<div class="highlight"><pre><span></span><code># 创建示例空间。
+nebula&gt; CREATE SPACE IF NOT EXISTS space1 (vid_type=FIXED_STRING(30));
+nebula&gt; CREATE SPACE IF NOT EXISTS space2 (vid_type=FIXED_STRING(30));
+
+# 指定图空间space1作为工作空间。
 nebula&gt; USE space1;
 
 # 检索图空间space1。
@@ -2327,7 +2331,7 @@ nebula&gt; GO FROM 2 OVER edge2;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2021</span>
 </small>
 </div>
 </article>
