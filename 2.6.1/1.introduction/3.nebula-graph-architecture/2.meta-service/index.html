@@ -243,7 +243,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ttl">
-    管理基于TTL的数据回收
+    管理TTL信息
   </a>
 </li>
 <li class="md-nav__item">
@@ -2335,7 +2335,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ttl">
-    管理基于TTL的数据回收
+    管理TTL信息
   </a>
 </li>
 <li class="md-nav__item">
@@ -2383,15 +2383,15 @@
 <p>Nebula Graph 是强类型图数据库，它的 Schema 包括 Tag、Edge type、Tag 属性和 Edge type 属性。</p>
 <p>Meta 服务中存储了 Schema 信息，同时还负责 Schema 的添加、修改和删除，并记录它们的版本。</p>
 <p>更多 Nebula Graph 的 Schema 信息，请参见<a href="../../2.data-model/">数据模型</a>。</p>
-<h3 id="ttl">管理基于TTL的数据回收<a class="headerlink" href="#ttl" title="Permanent link">¶</a></h3>
-<p>Meta 服务提供基于 TTL(Time To Live) 的自动数据回收和空间回收。</p>
+<h3 id="ttl">管理TTL信息<a class="headerlink" href="#ttl" title="Permanent link">¶</a></h3>
+<p>Meta 服务存储TTL（Time To Live）定义信息，可以用于设置数据生命周期。数据过期后，会由Storage 服务进行处理，具体过程参见<a href="../../../3.ngql-guide/8.clauses-and-options/ttl-options/">TTL</a>。</p>
 <h3 id="_4">管理作业<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <p>Meta 服务中的作业管理模块负责作业的创建、排队、查询和删除。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2021</span>
 </small>
 </div>
 </article>
