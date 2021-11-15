@@ -2691,7 +2691,7 @@
 <p>这是Nebula Console 2.6.0版本的变动造成的，不是Nebula Graph内核的变更，不影响返回数据本身的内容。</p>
 <h3 id="_5">关于悬挂边<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <p>悬挂边 (Dangling edge) 是指一条边的起点或者终点在数据库中不存在。</p>
-<p>Nebula Graph 2.6.1 的数据模型中，允许存在"悬挂边"；也没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。详见<a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
+<p>Nebula Graph 2.6.1 的数据模型中，异常情况下可能会存在"悬挂边"；也没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。详见<a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
 <h3 id="error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory">如何处理错误信息 <code>[ERROR (-1005)]: Used memory hits the high watermark(0.800000) of total system memory.</code><a class="headerlink" href="#error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory" title="Permanent link">¶</a></h3>
 <p>报错原因：Nebula Graph的<code>system_memory_high_watermark_ratio</code>参数指定了内存高水位报警机制的触发阈值，默认为<code>0.8</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph会停止接受查询。</p>
 <p>解决方案：</p>
@@ -2962,7 +2962,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2021</span>
 </small>
 </div>
 </article>
