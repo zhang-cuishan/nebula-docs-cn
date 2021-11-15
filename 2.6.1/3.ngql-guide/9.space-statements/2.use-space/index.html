@@ -2313,14 +2313,8 @@ nebula&gt; CREATE SPACE IF NOT EXISTS space2 (vid_type=FIXED_STRING(30));
 # 指定图空间space1作为工作空间。
 nebula&gt; USE space1;
 
-# 检索图空间space1。
-nebula&gt; GO FROM 1 OVER edge1;
-
-# 切换到图空间space2。
+# 切换到图空间space2。检索space2时，无法从space1读取任何数据，检索的点和边与space1无关。
 nebula&gt; USE space2;
-
-# 检索图空间space2。无法从space1读取任何数据，检索的点和边与space1无关。
-nebula&gt; GO FROM 2 OVER edge2;
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
