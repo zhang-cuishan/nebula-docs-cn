@@ -2562,30 +2562,6 @@ If you don<span class="err">'</span>t see a <span class="nb">command</span> prom
   <span class="c1"># update </span>
   <span class="nt">9769</span><span class="p">:</span> <span class="s">"default/nebula-graphd-svc:9669"</span>
 </code></pre></div>
-<p>在配置了名为<code>tcp-services</code>的ConfigMap后，其配置中的端口需要在定义了Nginx Ingress的服务中公开。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Service</span>
-<span class="nt">metadata</span><span class="p">:</span>
-  <span class="nt">labels</span><span class="p">:</span>
-    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-ingress</span>
-    <span class="nt">component</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default-backend</span>
-  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-ingress-proxy-tcp</span>
-  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-ingress</span>
-<span class="nt">spec</span><span class="p">:</span>
-  <span class="nt">ports</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">proxied-tcp</span>
-      <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9769</span>
-      <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
-      <span class="nt">targetPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9669</span>
-  <span class="nt">selector</span><span class="p">:</span>
-    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx-ingress</span>
-    <span class="nt">component</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default-backend</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="s">"ClusterIP"</span>
-</code></pre></div>
-<ul>
-<li><code>port</code>的值<code>9769</code>指外部端口，用户可自行设置。</li>
-<li><code>targetPort</code>的值<code>9669</code>指要连接的graphd服务的端口。</li>
-</ul>
 <p>操作步骤如下：</p>
 <ol>
 <li>
@@ -2647,7 +2623,7 @@ daemonset.apps/nginx-ingress-controller created
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2021</span>
 </small>
 </div>
 </article>

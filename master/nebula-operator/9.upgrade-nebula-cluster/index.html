@@ -2273,18 +2273,46 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    前提条件
+    使用限制
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#kubectlnebula_graph">
+    使用Kubectl升级Nebula Graph集群。
+  </a>
+<nav aria-label="使用Kubectl升级Nebula Graph集群。" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    使用限制
+    前提条件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
     操作步骤
   </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helmnebula_graph">
+    使用Helm升级Nebula Graph集群
+  </a>
+<nav aria-label="使用Helm升级Nebula Graph集群" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2393,18 +2421,46 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    前提条件
+    使用限制
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#kubectlnebula_graph">
+    使用Kubectl升级Nebula Graph集群。
+  </a>
+<nav aria-label="使用Kubectl升级Nebula Graph集群。" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    使用限制
+    前提条件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
     操作步骤
   </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#helmnebula_graph">
+    使用Helm升级Nebula Graph集群
+  </a>
+<nav aria-label="使用Helm升级Nebula Graph集群" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    前提条件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    操作步骤
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2418,17 +2474,21 @@
 </a>
 <h1 id="nebula_graph">升级Nebula Graph集群<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
 <p>本文介绍如何升级通过Nebula Operator创建的Nebula Graph集群。</p>
-<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>已创建Nebula Graph集群。具体步骤，参见<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用Kubectl创建Nebula Graph集群</a>。</p>
-<p>本文示例中待升级的Nebula Graph版本为2.5.1，其YAML文件名为<code>apps_v1alpha1_nebulacluster.yaml</code>。</p>
-<h2 id="_2">使用限制<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h2 id="_1">使用限制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ul>
 <li>只支持使用Nebula Operator创建的Nebula Graph集群。</li>
 </ul>
 <ul>
 <li>只支持升级Nebula Graph 2.5.x至2.6.x版本。</li>
 </ul>
-<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li>不支持升级通过0.8.0版Operator创建的集群。</li>
+</ul>
+<h2 id="kubectlnebula_graph">使用Kubectl升级Nebula Graph集群。<a class="headerlink" href="#kubectlnebula_graph" title="Permanent link">¶</a></h2>
+<h3 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>已创建Nebula Graph集群。具体步骤，参见<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用Kubectl创建Nebula Graph集群</a>。</p>
+<p>本文示例中待升级的Nebula Graph版本为2.5.1，其YAML文件名为<code>apps_v1alpha1_nebulacluster.yaml</code>。</p>
+<h3 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>查看集群中服务的镜像版本。</p>
@@ -2532,11 +2592,59 @@
 </code></pre></div>
 </li>
 </ol>
+<h2 id="helmnebula_graph">使用Helm升级Nebula Graph集群<a class="headerlink" href="#helmnebula_graph" title="Permanent link">¶</a></h2>
+<h3 id="_4">前提条件<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>已创建Nebula Graph集群。具体步骤，参见<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用Helm创建Nebula Graph集群</a>。</p>
+<h3 id="_5">操作步骤<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>更新Helm仓库，拉取最新的仓库资源。</p>
+<div class="highlight"><pre><span></span><code>helm repo update
+</code></pre></div>
+</li>
+<li>
+<p>配置Helm的环境变量。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">NEBULA_CLUSTER_NAME</span><span class="o">=</span>nebula         <span class="c1"># Nebula Graph集群的名字。</span>
+<span class="nb">export</span> <span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="o">=</span>nebula    <span class="c1"># Nebula Graph集群所处的命名空间的名字。</span>
+</code></pre></div>
+</li>
+<li>
+<p>升级Nebula Graph集群。</p>
+<p>例如升级至masterNebula Graph集群的命令如下。</p>
+<div class="highlight"><pre><span></span><code>helm upgrade <span class="s2">"</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">"</span> nebula-operator/nebula-cluster <span class="se">\</span>
+    --namespace<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">"</span> <span class="se">\</span>
+    --set <span class="nv">nameOverride</span><span class="o">=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span> <span class="se">\</span>
+    --set nebula.version<span class="o">=</span>master
+</code></pre></div>
+<p><code>--set nebula.version</code>的值指需要升级集群的目标版本号。</p>
+</li>
+<li>
+<p>等待一会后，执行以下命令查看集群状态及集群版本。</p>
+<p>查看集群状态：</p>
+<div class="highlight"><pre><span></span><code>$ kubectl -n <span class="s2">"</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">"</span> get pod -l <span class="s2">"app.kubernetes.io/cluster=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">"</span>
+NAME                READY   STATUS    RESTARTS   AGE
+nebula-graphd-0     <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-graphd-1     <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-metad-0      <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-metad-1      <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-metad-2      <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-storaged-0   <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-storaged-1   <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</span>          2m
+</code></pre></div>
+<p>查看集群版本：</p>
+<div class="highlight"><pre><span></span><code>$ kubectl get pods -l app.kubernetes.io/cluster<span class="o">=</span>nebula  -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">"{.items[*].spec.containers[*].image}"</span> <span class="p">|</span>tr -s <span class="s1">'[[:space:]]'</span> <span class="s1">'\n'</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c
+      <span class="m">1</span> vesoft/nebula-graphd:master
+      <span class="m">1</span> vesoft/nebula-metad:master
+      <span class="m">3</span> vesoft/nebula-storaged:master
+</code></pre></div>
+</li>
+</ol>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2021</span>
 </small>
 </div>
 </article>

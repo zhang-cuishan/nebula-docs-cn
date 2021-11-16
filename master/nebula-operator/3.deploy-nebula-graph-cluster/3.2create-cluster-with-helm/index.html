@@ -2560,16 +2560,6 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 <td>为Nebula Graph引用的工作负载。</td>
 </tr>
 <tr>
-<td align="left"><code>nebula.podLabels</code></td>
-<td align="left"><code>{}</code></td>
-<td>Nebula Graph服务Pod的标签。</td>
-</tr>
-<tr>
-<td align="left"><code>nebula.podAnnotations</code></td>
-<td align="left"><code>{}</code></td>
-<td>Nebula Graph服务的注解。</td>
-</tr>
-<tr>
 <td align="left"><code>nebula.graphd.image</code></td>
 <td align="left"><code>vesoft/nebula-graphd</code></td>
 <td>Graphd容器镜像名称。使用 <code>nebula.version</code>中的值作为版本。</td>
@@ -2590,9 +2580,49 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 <td>Graphd资源配置。</td>
 </tr>
 <tr>
-<td align="left"><code>nebula.graphd.storage</code></td>
-<td align="left"><code>1Gi</code></td>
-<td>Graphd服务的存储大小值。</td>
+<td align="left"><code>nebula.graphd.logStorage</code></td>
+<td align="left"><code>500Mi</code></td>
+<td>Graphd服务的日志盘大小。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.podLabels</code></td>
+<td align="left"><code>{}</code></td>
+<td>Graphd服务Pod的标签。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.podAnnotations</code></td>
+<td align="left"><code>{}</code></td>
+<td>Graphd服务Pod的注解。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.nodeSelector</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置节点标签以分配至指定的节点中。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.tolerations</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置容忍度。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.affinity</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置亲和性。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.readinessProbe</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置就绪探针以检测容器的状态。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.sidecarContainers</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置Sidecar Containers。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.graphd.sidecarVolumes</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Graphd pod设置Sidecar Volumes。</td>
 </tr>
 <tr>
 <td align="left"><code>nebula.metad.image</code></td>
@@ -2615,9 +2645,54 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 <td>Metad服务的资源配置。</td>
 </tr>
 <tr>
-<td align="left"><code>nebula.metad.storage</code></td>
+<td align="left"><code>nebula.metad.logStorage</code></td>
+<td align="left"><code>500Mi</code></td>
+<td>Metad服务的日志盘大小。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.dataStorage</code></td>
 <td align="left"><code>1Gi</code></td>
-<td>Graphd服务的存储大小值。</td>
+<td>Metad服务的数据盘大小。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.podLabels</code></td>
+<td align="left"><code>{}</code></td>
+<td>Metad服务Pod的标签。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.podAnnotations</code></td>
+<td align="left"><code>{}</code></td>
+<td>Metad服务Pod的注解。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.nodeSelector</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置节点标签以分配至指定的节点中。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.tolerations</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置容忍度。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.affinity</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置亲和性。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.readinessProbe</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置就绪探针以检测容器的状态。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.sidecarContainers</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置Sidecar Containers。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.metad.sidecarVolumes</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Metad pod设置Sidecar Volumes。</td>
 </tr>
 <tr>
 <td align="left"><code>nebula.storaged.image</code></td>
@@ -2640,9 +2715,54 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 <td>Storaged服务的资源配置。</td>
 </tr>
 <tr>
-<td align="left"><code>nebula.storaged.storage</code></td>
+<td align="left"><code>nebula.storaged.logStorage</code></td>
+<td align="left"><code>500Mi</code></td>
+<td>Storaged服务的日志盘大小。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.dataStorage</code></td>
 <td align="left"><code>1Gi</code></td>
-<td>Storaged服务的存储空间值。</td>
+<td>Storaged服务的数据盘大小。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.podLabels</code></td>
+<td align="left"><code>{}</code></td>
+<td>Storaged服务Pod的标签。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.podAnnotations</code></td>
+<td align="left"><code>{}</code></td>
+<td>Storaged服务Pod的注解。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.nodeSelector</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged pod设置节点标签以分配至指定的节点中。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.tolerations</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged pod设置容忍度。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.affinity</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged pod设置亲和性。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.readinessProbe</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged pod设置就绪探针以检测容器的状态。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.sidecarContainers</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged pod设置Sidecar Containers。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.storaged.sidecarVolumes</code></td>
+<td align="left"><code>{}</code></td>
+<td>为Storaged Pod设置Sidecar Volumes。</td>
 </tr>
 <tr>
 <td align="left"><code>imagePullSecrets</code></td>
@@ -2655,7 +2775,7 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2021</span>
 </small>
 </div>
 </article>
