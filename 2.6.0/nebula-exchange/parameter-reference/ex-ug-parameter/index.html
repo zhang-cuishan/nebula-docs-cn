@@ -2636,6 +2636,62 @@
 <td align="left">需要导入数据的的图空间名称。</td>
 </tr>
 <tr>
+<td align="left"><code>nebula.ssl.enable.graph</code></td>
+<td align="left">bool</td>
+<td align="left"><code>false</code></td>
+<td align="left">是</td>
+<td align="left">开启Exchange与Graph服务之间的<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">SSL加密</a>传输。当值为<code>true</code>时开启，下方的SSL相关参数生效。如果Exchange运行在多机集群上，在设置以下SSL相关路径时，需要在每台机器的相同路径都存储相应的文件。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.sign</code></td>
+<td align="left">string</td>
+<td align="left"><code>ca</code></td>
+<td align="left">是</td>
+<td align="left">签名方式，可选值：<code>ca</code>（CA签名）或<code>self</code>（自签名）。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.ca.param.caCrtFilePath</code></td>
+<td align="left">string</td>
+<td align="left"><code>"/path/caCrtFilePath"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>ca</code>时生效，用于指定CA证书的存储路径。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.ca.param.crtFilePath</code></td>
+<td align="left">string</td>
+<td align="left"><code>"/path/crtFilePath"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>ca</code>时生效，用于指定CRT证书的存储路径。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.ca.param.keyFilePath</code></td>
+<td align="left">string</td>
+<td align="left"><code>"/path/keyFilePath"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>ca</code>时生效，用于指定私钥文件的存储路径。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.self.param.crtFilePath</code></td>
+<td align="left">string</td>
+<td align="left"><code>"/path/crtFilePath"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>self</code>时生效，用于指定CRT证书的存储路径。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.self.param.keyFilePath</code></td>
+<td align="left">string</td>
+<td align="left"><code>"/path/keyFilePath"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>self</code>时生效，用于指定私钥文件的存储路径。</td>
+</tr>
+<tr>
+<td align="left"><code>nebula.ssl.self.param.password</code></td>
+<td align="left">string</td>
+<td align="left"><code>"nebula"</code></td>
+<td align="left">是</td>
+<td align="left"><code>nebula.ssl.sign</code>的值为<code>self</code>时生效，用于指定密码文件的存储路径。</td>
+</tr>
+<tr>
 <td align="left"><code>nebula.path.local</code></td>
 <td align="left">string</td>
 <td align="left"><code>"/tmp"</code></td>
@@ -3399,7 +3455,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2021</span>
 </small>
 </div>
 </article>
