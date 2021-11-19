@@ -2344,6 +2344,41 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_operator">
+    Nebula Operator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_importer">
+    Nebula Importer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_spark_connector">
+    Nebula Spark Connector
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_flink_connector">
+    Nebula Flink Connector
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_algorithm">
+    Nebula Algorithm
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_console">
+    Nebula Console
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_docker_compose">
+    Nebula Docker Compose
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#nebula_bench">
     Nebula Bench
   </a>
@@ -2426,6 +2461,41 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#nebula_exchange">
     Nebula Exchange
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_operator">
+    Nebula Operator
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_importer">
+    Nebula Importer
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_spark_connector">
+    Nebula Spark Connector
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_flink_connector">
+    Nebula Flink Connector
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_algorithm">
+    Nebula Algorithm
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_console">
+    Nebula Console
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nebula_docker_compose">
+    Nebula Docker Compose
   </a>
 </li>
 <li class="md-nav__item">
@@ -2573,63 +2643,118 @@
 </tr>
 </tbody>
 </table>
-<!--
-## Nebula Operator
-
-Nebula Operator（简称Operator）是用于在Kubernetes系统上自动化部署和运维Nebula Graph集群的工具。依托于Kubernetes扩展机制，Nebula Graph将其运维领域的知识全面注入至Kubernetes系统中，让Nebula Graph成为真正的云原生图数据库。详情请参考[什么是Nebula Operator](../nebula-operator/1.introduction-to-nebula-operator.md)。
-
-|Nebula Graph版本|Operator版本（commit id）|
-|:---|:---|
-| 2.6.1  | 0.9.0（ba88e28） |
-
-## Nebula Importer
-
-Nebula Importer（简称Importer）是一款Nebula Graph的CSV文件导入工具。Importer可以读取本地的CSV文件，然后导入数据至Nebula Graph图数据库中。详情请参见[什么是Nebula Importer](../nebula-importer/use-importer.md)。
-
-|Nebula Graph版本|[Importer](https://github.com/vesoft-inc/nebula-importer/tree/v2.6.0)版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.6.0（43234f3） |
-
-## Nebula Spark Connector
-
-Nebula Spark Connector是一个Spark连接器，提供通过Spark标准形式读写Nebula Graph数据的能力。Nebula Spark Connector由Reader和Writer两部分组成。详情请参见[什么是Nebula Spark Connector](../nebula-spark-connector.md)。
-
-|Nebula Graph版本|Spark Connector版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.6.0（cfe8ffc） |
-
-## Nebula Flink Connector
-
-Nebula Flink Connector是一款帮助Flink用户快速访问Nebula Graph的连接器，支持从Nebula Graph图数据库中读取数据，或者将其他外部数据源读取的数据写入Nebula Graph图数据库。详情请参见[什么是Nebula Flink Connector](../nebula-flink-connector.md)。
-
-|Nebula Graph版本|Flink Connector版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.6.0（32b5225） |
-
-## Nebula Algorithm
-
-Nebula Algorithm（简称Algorithm）是一款基于[GraphX](https://spark.apache.org/graphx/)的Spark应用程序，通过提交Spark任务的形式使用完整的算法工具对Nebula Graph数据库中的数据执行图计算，也可以通过编程形式调用lib库下的算法针对DataFrame执行图计算。详情请参见[什么是Nebula Algorithm](../nebula-algorithm.md)。
-
-|Nebula Graph版本|Algorithm版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.5.1（2c61ca5） |
-
-## Nebula Console
-
-Nebula Console是Nebula Graph的原生CLI客户端。如何使用请参见[连接Nebula Graph](../2.quick-start/3.connect-to-nebula-graph.md)。
-
-|Nebula Graph版本|Console版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.6.0（0834198） |
-
-## Nebula Docker Compose
-
-Docker Compose可以快速部署Nebula Graph集群。如何使用请参见[Docker Compose部署Nebula Graph](../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md)。
-
-|Nebula Graph版本|Docker Compose版本（commit id）|
-|:---|:---|
-| 2.6.1 | 2.6.0（a6e9d78） |
-
+<h2 id="nebula_operator">Nebula Operator<a class="headerlink" href="#nebula_operator" title="Permanent link">¶</a></h2>
+<p>Nebula Operator（简称Operator）是用于在Kubernetes系统上自动化部署和运维Nebula Graph集群的工具。依托于Kubernetes扩展机制，Nebula Graph将其运维领域的知识全面注入至Kubernetes系统中，让Nebula Graph成为真正的云原生图数据库。详情请参考<a href="../../nebula-operator/1.introduction-to-nebula-operator/">什么是Nebula Operator</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Operator版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">0.9.0（ba88e28）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_importer">Nebula Importer<a class="headerlink" href="#nebula_importer" title="Permanent link">¶</a></h2>
+<p>Nebula Importer（简称Importer）是一款Nebula Graph的CSV文件导入工具。Importer可以读取本地的CSV文件，然后导入数据至Nebula Graph图数据库中。详情请参见<a href="../../nebula-importer/use-importer/">什么是Nebula Importer</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left"><a href="https://github.com/vesoft-inc/nebula-importer/tree/v2.6.0">Importer</a>版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.6.0（43234f3）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_spark_connector">Nebula Spark Connector<a class="headerlink" href="#nebula_spark_connector" title="Permanent link">¶</a></h2>
+<p>Nebula Spark Connector是一个Spark连接器，提供通过Spark标准形式读写Nebula Graph数据的能力。Nebula Spark Connector由Reader和Writer两部分组成。详情请参见<a href="../../nebula-spark-connector/">什么是Nebula Spark Connector</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Spark Connector版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.6.0（cfe8ffc）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_flink_connector">Nebula Flink Connector<a class="headerlink" href="#nebula_flink_connector" title="Permanent link">¶</a></h2>
+<p>Nebula Flink Connector是一款帮助Flink用户快速访问Nebula Graph的连接器，支持从Nebula Graph图数据库中读取数据，或者将其他外部数据源读取的数据写入Nebula Graph图数据库。详情请参见<a href="../../nebula-flink-connector/">什么是Nebula Flink Connector</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Flink Connector版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.6.0（32b5225）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_algorithm">Nebula Algorithm<a class="headerlink" href="#nebula_algorithm" title="Permanent link">¶</a></h2>
+<p>Nebula Algorithm（简称Algorithm）是一款基于<a href="https://spark.apache.org/graphx/">GraphX</a>的Spark应用程序，通过提交Spark任务的形式使用完整的算法工具对Nebula Graph数据库中的数据执行图计算，也可以通过编程形式调用lib库下的算法针对DataFrame执行图计算。详情请参见<a href="../../nebula-algorithm/">什么是Nebula Algorithm</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Algorithm版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.5.1（2c61ca5）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_console">Nebula Console<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
+<p>Nebula Console是Nebula Graph的原生CLI客户端。如何使用请参见<a href="../../2.quick-start/3.connect-to-nebula-graph/">连接Nebula Graph</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Console版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.6.0（0834198）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_docker_compose">Nebula Docker Compose<a class="headerlink" href="#nebula_docker_compose" title="Permanent link">¶</a></h2>
+<p>Docker Compose可以快速部署Nebula Graph集群。如何使用请参见<a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署Nebula Graph</a>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Nebula Graph版本</th>
+<th align="left">Docker Compose版本（commit id）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2.6.1</td>
+<td align="left">2.6.0（a6e9d78）</td>
+</tr>
+</tbody>
+</table>
 <!--
 ## Backup & Restore
 
@@ -2730,7 +2855,7 @@ Docker Compose可以快速部署Nebula Graph集群。如何使用请参见[Docke
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2021</span>
 </small>
 </div>
 </article>
