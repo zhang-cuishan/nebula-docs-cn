@@ -2560,28 +2560,34 @@
 <tr>
 <th align="left">目录名称</th>
 <th align="left">说明</th>
+<th align="left">端口号</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left">node-exporter</td>
 <td align="left">收集集群中机器的资源信息，包括CPU、内存、负载、磁盘和流量。</td>
+<td align="left">9100</td>
 </tr>
 <tr>
 <td align="left">nebula-stats-exporter</td>
 <td align="left">收集集群的性能指标，包括服务IP地址、版本和监控指标（例如查询数量、查询延迟、心跳延迟等）。</td>
+<td align="left">9200</td>
 </tr>
 <tr>
 <td align="left">prometheus</td>
 <td align="left">存储监控数据的时间序列数据库。</td>
+<td align="left">9090</td>
 </tr>
 <tr>
 <td align="left">nebula-http-gateway</td>
 <td align="left">为集群服务提供HTTP接口，执行nGQL语句与Nebula Graph数据库进行交互。</td>
+<td align="left">8090</td>
 </tr>
 <tr>
 <td align="left">nebula-graph-dashboard</td>
 <td align="left">提供Dashboard服务。该目录名称与根目录相同，请注意区分，后文所述<code>nebula-graph-dashboard</code>是指子目录。</td>
+<td align="left">7003</td>
 </tr>
 </tbody>
 </table>
@@ -2739,7 +2745,7 @@ $ npm run stop <span class="c1"># 停止nebula-graph-dashboard服务</span>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2021</span>
 </small>
 </div>
 </article>
