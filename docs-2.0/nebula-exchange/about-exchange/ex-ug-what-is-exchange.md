@@ -82,7 +82,7 @@ Exchange {{exchange.release}} 支持将以下格式或来源的数据转换为Ne
 
 ## 更新说明
 
-[Release](https://github.com/vesoft-inc/nebula-exchange/releases/tag/{{exchange.branch}})
+[Release](https://github.com/vesoft-inc/nebula-exchange/releases/tag/{{exchange.tag}})
 
 ## 视频
 
