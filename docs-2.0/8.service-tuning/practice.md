@@ -24,7 +24,7 @@ Nebula Graph在各行各业都有应用，本文介绍部分实践案例。更�
 
 - [基于全文搜索引擎的文本搜索](https://nebula-graph.com.cn/posts/how-fulltext-index-works/)
 
-- [实操 - LDBC 数据导入及 nGQL 实践](https://nebula-graph.com.cn/posts/query-graph-with-ldbc-dataset/)
+- [实操 | LDBC 数据导入及 nGQL 实践](https://nebula-graph.com.cn/posts/query-graph-with-ldbc-dataset/)
 
 ## 周边工具
 
@@ -34,7 +34,7 @@ Nebula Graph在各行各业都有应用，本文介绍部分实践案例。更�
 
 - [Nebula Graph支持JDBC协议](https://nebula-graph.com.cn/posts/what-is-nebula-jdbc/)
 
-- [Nebula·利器 - Norm 知乎开源的 ORM 工具](https://nebula-graph.com.cn/posts/zhihu-open-source-orm-tool/)
+- [Nebula·利器 | Norm 知乎开源的 ORM 工具](https://nebula-graph.com.cn/posts/zhihu-open-source-orm-tool/)
 
 - [基于 Nebula Graph 的 Betweenness Centrality 算法](https://nebula-graph.com.cn/posts/introduction-to-betweenness-centrality-algorithm/)
 
