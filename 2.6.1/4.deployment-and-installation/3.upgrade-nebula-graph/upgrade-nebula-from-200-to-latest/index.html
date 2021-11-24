@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#nebula_graph_v20xv261">
+<a class="md-skip" href="#nebula_graph_v20x_v261">
           跳转至
         </a>
 </div>
@@ -1222,7 +1222,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#rpmdeb">
-    RPM/DEB包升级步骤
+    RPM/DEB 包升级步骤
   </a>
 </li>
 <li class="md-nav__item">
@@ -1232,7 +1232,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#docker_compose">
-    Docker Compose部署升级步骤
+    Docker Compose 部署升级步骤
   </a>
 </li>
 </ul>
@@ -2380,7 +2380,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#rpmdeb">
-    RPM/DEB包升级步骤
+    RPM/DEB 包升级步骤
   </a>
 </li>
 <li class="md-nav__item">
@@ -2390,7 +2390,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#docker_compose">
-    Docker Compose部署升级步骤
+    Docker Compose 部署升级步骤
   </a>
 </li>
 </ul>
@@ -2403,52 +2403,52 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_graph_v20xv261">升级Nebula Graph v2.0.x至v2.6.1<a class="headerlink" href="#nebula_graph_v20xv261" title="Permanent link">¶</a></h1>
-<p>Nebula Graph v2.0.x升级至v2.6.1，只需要使用v2.6.1的RPM/DEB包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译v2.6.1</a>之后重新安装。</p>
+<h1 id="nebula_graph_v20x_v261">升级 Nebula Graph v2.0.x 至 v2.6.1<a class="headerlink" href="#nebula_graph_v20x_v261" title="Permanent link">¶</a></h1>
+<p>Nebula Graph v2.0.x 升级至 v2.6.1，只需要使用 v2.6.1的 RPM/DEB 包进行升级操作即可，或者 <a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译 v2.6.1</a> 之后重新安装。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Nebula Graph v2.0.x指v2.0.0-GA和v2.0.1版本。如果Nebula Graph版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见<a href="../upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至 v2.6.1</a>。</p>
+<p>Nebula Graph v2.0.x 指 v2.0.0-GA 和 v2.0.1 版本。如果 Nebula Graph 版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见 <a href="../upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至 v2.6.1</a>。</p>
 </div>
-<h2 id="rpmdeb">RPM/DEB包升级步骤<a class="headerlink" href="#rpmdeb" title="Permanent link">¶</a></h2>
+<h2 id="rpmdeb">RPM/DEB 包升级步骤<a class="headerlink" href="#rpmdeb" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>下载<a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/v2.6.1">RPM/DEB包</a>。</p>
+<p>下载 <a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/v2.6.1">RPM/DEB 包</a>。</p>
 </li>
 <li>
-<p>停止所有Nebula Graph服务。详情请参见<a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a>。建议更新前备份配置文件。</p>
+<p>停止所有 Nebula Graph 服务。详情请参见 <a href="../../../2.quick-start/5.start-stop-service/">管理 Nebula Graph 服务</a>。建议更新前备份配置文件。</p>
 </li>
 <li>
 <p>执行如下命令升级：</p>
 <ul>
-<li>RPM包<div class="highlight"><pre><span></span><code>$ sudo rpm -Uvh &lt;package_name&gt;
+<li>RPM 包<div class="highlight"><pre><span></span><code>$ sudo rpm -Uvh &lt;package_name&gt;
 </code></pre></div>
 <p>若安装时指定路径，那么升级时也需要指定路径</p>
 <p><div class="highlight"><pre><span></span><code>$ sudo rpm  -Uvh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt; 
 </code></pre></div>
-   - DEB包</p>
+   - DEB 包</p>
 <div class="highlight"><pre><span></span><code>$ sudo dpkg -i &lt;package_name&gt;
 </code></pre></div>
 </li>
 </ul>
 </li>
 <li>
-<p>在每台服务器上启动所需的服务。详情请参见<a href="../../../2.quick-start/5.start-stop-service/#_1">管理Nebula Graph服务</a>。</p>
+<p>在每台服务器上启动所需的服务。详情请参见 <a href="../../../2.quick-start/5.start-stop-service/#_1">管理 Nebula Graph 服务</a>。</p>
 </li>
 </ol>
 <h2 id="_1">编译新版本源码升级步骤<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>备份旧版本的配置文件。配置文件保存在Nebula Graph安装路径的<code>etc</code>目录内。</p>
+<p>备份旧版本的配置文件。配置文件保存在 Nebula Graph 安装路径的<code>etc</code>目录内。</p>
 </li>
 <li>
-<p>更新仓库并编译源码。详情请参见<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装Nebula Graph</a>。</p>
+<p>更新仓库并编译源码。详情请参见 <a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装 Nebula Graph</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>编译时注意设置安装路径，和旧版本的安装路径保持一致。</p>
 </div>
 </li>
 </ol>
-<h2 id="docker_compose">Docker Compose部署升级步骤<a class="headerlink" href="#docker_compose" title="Permanent link">¶</a></h2>
+<h2 id="docker_compose">Docker Compose 部署升级步骤<a class="headerlink" href="#docker_compose" title="Permanent link">¶</a></h2>
 <ol>
 <li>
 <p>修改目录<code>nebula-docker-compose</code>内的文件<code>docker-compose.yaml</code>，将<code>image</code>后的所有版本都修改为<code>v2.6.1</code>。</p>
@@ -2457,17 +2457,17 @@
 <p>在目录<code>nebula-docker-compose</code>内执行命令<code>docker-compose pull</code>，更新所有服务的镜像版本。</p>
 </li>
 <li>
-<p>执行命令<code>docker-compose down</code>停止Nebula Graph服务。</p>
+<p>执行命令<code>docker-compose down</code>停止 Nebula Graph 服务。</p>
 </li>
 <li>
-<p>执行命令<code>docker-compose up -d</code>启动Nebula Graph服务。</p>
+<p>执行命令<code>docker-compose up -d</code>启动 Nebula Graph 服务。</p>
 </li>
 </ol>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 5, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

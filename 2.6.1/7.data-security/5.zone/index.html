@@ -2542,118 +2542,118 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="groupzone">Group&amp;Zone<a class="headerlink" href="#groupzone" title="Permanent link">¶</a></h1>
-<p>Nebula Graph提供Group&amp;Zone功能，可以将Storage节点进行分组管理，实现资源隔离。</p>
+<p>Nebula Graph 提供 Group&amp;Zone 功能，可以将 Storage 节点进行分组管理，实现资源隔离。</p>
 <h2 id="_1">背景信息<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>用户可以将Storage节点加入某个Zone中，多个Zone构成一个Group。创建图空间时指定Group，就会在Group内的Storage节点上创建及存储图空间。分片及其副本会均匀存储在各个Zone中。如下图所示。</p>
-<p><img alt="Group&amp;Zone示意图" src="../zone1.png"/></p>
-<p>8台启动Storage服务的机器两两组合，加入4个Zone。然后将Zone1、Zone2、Zone3加入Group1，Zone3、Zone4加入Group2。</p>
-<p>指定Group1创建图空间S1，分片及其副本会均匀存储在Zone1~Zone3，不会存储到Zone4的机器上。</p>
-<p>指定Group2创建图空间S2，分片及其副本会均匀存储在Zone3~Zone4。不会存储到Zone1和Zone2的机器上。</p>
-<p>上述例子简单介绍了Zone功能，用户可以通过合理规划Zone和Group，实现资源隔离。</p>
+<p>用户可以将 Storage 节点加入某个 Zone 中，多个 Zone 构成一个 Group。创建图空间时指定 Group，就会在 Group 内的 Storage 节点上创建及存储图空间。分片及其副本会均匀存储在各个 Zone 中。如下图所示。</p>
+<p><img alt="Group&amp;Zone 示意图" src="../zone1.png"/></p>
+<p>8 台启动 Storage 服务的机器两两组合，加入 4 个 Zone。然后将 Zone1、Zone2、Zone3 加入 Group1，Zone3、Zone4 加入 Group2。</p>
+<p>指定 Group1 创建图空间 S1，分片及其副本会均匀存储在 Zone1~Zone3，不会存储到 Zone4 的机器上。</p>
+<p>指定 Group2 创建图空间 S2，分片及其副本会均匀存储在 Zone3~Zone4。不会存储到 Zone1 和 Zone2 的机器上。</p>
+<p>上述例子简单介绍了 Zone 功能，用户可以通过合理规划 Zone 和 Group，实现资源隔离。</p>
 <h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
-<li>期望将图空间创建在某些指定的Storage节点上，从而达到资源隔离的目的。</li>
+<li>期望将图空间创建在某些指定的 Storage 节点上，从而达到资源隔离的目的。</li>
 </ul>
 <ul>
 <li>集群滚动升级。需要停止一个或多个服务器并更新，然后重新投入使用，直到集群中所有的节点都更新为新版本。</li>
 </ul>
 <h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li>Zone是Storage节点的集合，每个Storage节点只能加入一个Zone。</li>
+<li>Zone 是 Storage 节点的集合，每个 Storage 节点只能加入一个 Zone。</li>
 </ul>
 <ul>
-<li>Zone中可以存储分片的副本，但同一个分片在一个Zone中只能有一个副本。</li>
+<li>Zone 中可以存储分片的副本，但同一个分片在一个 Zone 中只能有一个副本。</li>
 </ul>
 <ul>
-<li>多个Zone可以组成一个Group，方便管理，并且可以进行资源隔离。</li>
+<li>多个 Zone 可以组成一个 Group，方便管理，并且可以进行资源隔离。</li>
 </ul>
 <ul>
-<li>一个Zone可以加入多个Group。</li>
+<li>一个 Zone 可以加入多个 Group。</li>
 </ul>
 <ul>
-<li>创建Space时如果指定Group，该图空间的副本将均匀分布在该Group的各个Zone中。</li>
+<li>创建 Space 时如果指定 Group，该图空间的副本将均匀分布在该 Group 的各个 Zone 中。</li>
 </ul>
 <ul>
-<li>一个Group可以创建多个图空间，但是Group中Zone的数量需要大于等于创建图空间时指定的副本数（<code>replica_factor</code>）。</li>
+<li>一个 Group 可以创建多个图空间，但是 Group 中 Zone 的数量需要大于等于创建图空间时指定的副本数（<code>replica_factor</code>）。</li>
 </ul>
 <h2 id="_4">基本语法<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <h3 id="add_zone">ADD ZONE<a class="headerlink" href="#add_zone" title="Permanent link">¶</a></h3>
-<p>创建Zone，并将Storage节点加入Zone。</p>
+<p>创建 Zone，并将 Storage 节点加入 Zone。</p>
 <div class="highlight"><pre><span></span><code>ADD ZONE &lt;zone_name&gt; &lt;host1&gt;:&lt;port1&gt; [,&lt;host2&gt;:&lt;port2&gt;...];
 </code></pre></div>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ADD ZONE zone1 192.168.8.111:9779, 192.168.8.129:9779;
 </code></pre></div>
 <h3 id="add_hostinto_zone">ADD HOST...INTO ZONE<a class="headerlink" href="#add_hostinto_zone" title="Permanent link">¶</a></h3>
-<p>将单个Storage节点加入已创建的Zone。</p>
+<p>将单个 Storage 节点加入已创建的 Zone。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>加入之后请使用<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a>命令实现负载均衡。</p>
+<p>加入之后请使用 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a> 命令实现负载均衡。</p>
 </div>
 <div class="highlight"><pre><span></span><code>ADD HOST &lt;host1&gt;:&lt;port1&gt; INTO ZONE &lt;zone_name&gt;;
 </code></pre></div>
 <h3 id="drop_hostfrom_zone">DROP HOST...FROM ZONE<a class="headerlink" href="#drop_hostfrom_zone" title="Permanent link">¶</a></h3>
-<p>从Zone中删除单个Storage节点。</p>
+<p>从 Zone 中删除单个 Storage 节点。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Group中正在使用的Storage节点无法直接删除，需要先删除关联的图空间，才能删除Storage节点。</p>
+<p>Group 中正在使用的 Storage 节点无法直接删除，需要先删除关联的图空间，才能删除 Storage 节点。</p>
 </div>
 <div class="highlight"><pre><span></span><code>DROP HOST &lt;host1&gt;:&lt;port1&gt; FROM ZONE &lt;zone_name&gt;;
 </code></pre></div>
 <h3 id="show_zones">SHOW ZONES<a class="headerlink" href="#show_zones" title="Permanent link">¶</a></h3>
-<p>查看所有Zone。</p>
+<p>查看所有 Zone。</p>
 <div class="highlight"><pre><span></span><code>SHOW ZONES;
 </code></pre></div>
 <h3 id="describe_zone">DESCRIBE ZONE<a class="headerlink" href="#describe_zone" title="Permanent link">¶</a></h3>
-<p>查看指定Zone。</p>
+<p>查看指定 Zone。</p>
 <div class="highlight"><pre><span></span><code>DESCRIBE ZONE &lt;zone_name&gt;;
 DESC ZONE &lt;zone_name&gt;;
 </code></pre></div>
 <h3 id="drop_zone">DROP ZONE<a class="headerlink" href="#drop_zone" title="Permanent link">¶</a></h3>
-<p>删除Zone。</p>
+<p>删除 Zone。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>已加入Group的Zone无法直接删除，需要先从Group中剔除该Zone，或删除所属的Group后，才能删除Zone。</p>
+<p>已加入 Group 的 Zone 无法直接删除，需要先从 Group 中剔除该 Zone，或删除所属的 Group 后，才能删除 Zone。</p>
 </div>
 <div class="highlight"><pre><span></span><code>DROP ZONE &lt;zone_name&gt;;
 </code></pre></div>
 <h3 id="add_group">ADD GROUP<a class="headerlink" href="#add_group" title="Permanent link">¶</a></h3>
-<p>创建Group，并将Zone加入Group。</p>
+<p>创建 Group，并将 Zone 加入 Group。</p>
 <div class="highlight"><pre><span></span><code>ADD GROUP &lt;group_name&gt; &lt;zone_name&gt; [,&lt;zone_name&gt;...];
 </code></pre></div>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ADD GROUP group1 zone1,zone2;
 </code></pre></div>
 <h3 id="add_zoneinto_group">ADD ZONE...INTO GROUP<a class="headerlink" href="#add_zoneinto_group" title="Permanent link">¶</a></h3>
-<p>将单个Zone加入已创建的Group。</p>
+<p>将单个 Zone 加入已创建的 Group。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>加入之后请使用<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a>命令实现负载均衡。</p>
+<p>加入之后请使用 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a> 命令实现负载均衡。</p>
 </div>
 <div class="highlight"><pre><span></span><code>ADD ZONE &lt;zone_name&gt; INTO GROUP &lt;group_name&gt;;
 </code></pre></div>
 <h3 id="drop_zonefrom_group">DROP ZONE...FROM GROUP<a class="headerlink" href="#drop_zonefrom_group" title="Permanent link">¶</a></h3>
-<p>从GROUP中删除单个Zone。</p>
+<p>从 GROUP 中删除单个 Zone。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Group中正在使用的Zone无法直接删除，需要先删除关联的图空间，才能删除Zone。</p>
+<p>Group 中正在使用的 Zone 无法直接删除，需要先删除关联的图空间，才能删除 Zone。</p>
 </div>
 <div class="highlight"><pre><span></span><code>DROP ZONE &lt;zone_name&gt; FROM GROUP &lt;group_name&gt;;
 </code></pre></div>
 <h3 id="show_groups">SHOW GROUPS<a class="headerlink" href="#show_groups" title="Permanent link">¶</a></h3>
-<p>查看所有Group。</p>
+<p>查看所有 Group。</p>
 <div class="highlight"><pre><span></span><code>SHOW GROUPS;
 </code></pre></div>
 <h3 id="describe_group">DESCRIBE GROUP<a class="headerlink" href="#describe_group" title="Permanent link">¶</a></h3>
-<p>查看指定Group。</p>
+<p>查看指定 Group。</p>
 <div class="highlight"><pre><span></span><code>DESCRIBE GROUP &lt;group_name&gt;;
 DESC GROUP &lt;group_name&gt;;
 </code></pre></div>
 <h3 id="drop_group">DROP GROUP<a class="headerlink" href="#drop_group" title="Permanent link">¶</a></h3>
-<p>删除Group。</p>
+<p>删除 Group。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>正在使用的Group无法直接删除，需要先删除关联的图空间，才能删除Group。</p>
+<p>正在使用的 Group 无法直接删除，需要先删除关联的图空间，才能删除 Group。</p>
 </div>
 <div class="highlight"><pre><span></span><code>DROP GROUP &lt;group_name&gt;;
 </code></pre></div>
@@ -2661,7 +2661,7 @@ DESC GROUP &lt;group_name&gt;;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

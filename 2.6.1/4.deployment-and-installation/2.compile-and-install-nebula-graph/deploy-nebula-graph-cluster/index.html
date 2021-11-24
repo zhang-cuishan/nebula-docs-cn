@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#rpmdebnebula_graph">
+<a class="md-skip" href="#rpmdeb_nebula_graph">
           跳转至
         </a>
 </div>
@@ -1197,23 +1197,23 @@
 <nav aria-label="手动部署流程" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1nebula_graph">
-    1.安装Nebula Graph
+<a class="md-nav__link" href="#1_nebula_graph">
+    1. 安装 Nebula Graph
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2">
-    2.修改配置文件
+    2. 修改配置文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3">
-    3.启动集群
+    3. 启动集群
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4">
-    4.检查集群
+    4. 检查集群
   </a>
 </li>
 </ul>
@@ -2419,23 +2419,23 @@
 <nav aria-label="手动部署流程" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1nebula_graph">
-    1.安装Nebula Graph
+<a class="md-nav__link" href="#1_nebula_graph">
+    1. 安装 Nebula Graph
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#2">
-    2.修改配置文件
+    2. 修改配置文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#3">
-    3.启动集群
+    3. 启动集群
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#4">
-    4.检查集群
+    4. 检查集群
   </a>
 </li>
 </ul>
@@ -2451,17 +2451,17 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="rpmdebnebula_graph">使用RPM/DEB包部署Nebula Graph多机集群<a class="headerlink" href="#rpmdebnebula_graph" title="Permanent link">¶</a></h1>
-<p>Nebula Graph不提供官方的集群部署工具，用户可以使用RPM或DEB文件手动部署集群。本文提供了部署集群的示例。</p>
+<h1 id="rpmdeb_nebula_graph">使用 RPM/DEB 包部署 Nebula Graph 多机集群<a class="headerlink" href="#rpmdeb_nebula_graph" title="Permanent link">¶</a></h1>
+<p>Nebula Graph 不提供官方的集群部署工具，用户可以使用 RPM 或 DEB 文件手动部署集群。本文提供了部署集群的示例。</p>
 <h2 id="_1">部署方案<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
 <th align="left">机器名称</th>
-<th align="left">IP地址</th>
-<th align="left">graphd进程数量</th>
-<th align="left">storaged进程数量</th>
-<th align="left">metad进程数量</th>
+<th align="left">IP 地址</th>
+<th align="left">graphd 进程数量</th>
+<th align="left">storaged 进程数量</th>
+<th align="left">metad 进程数量</th>
 </tr>
 </thead>
 <tbody>
@@ -2503,19 +2503,19 @@
 </tbody>
 </table>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>准备5台用于部署集群的机器。</p>
+<p>准备 5 台用于部署集群的机器。</p>
 <h2 id="_3">手动部署流程<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="1nebula_graph">1.安装Nebula Graph<a class="headerlink" href="#1nebula_graph" title="Permanent link">¶</a></h3>
-<p>在集群的每一台服务器上都安装Nebula Graph，安装后暂不需要启动服务。安装方式请参见：</p>
+<h3 id="1_nebula_graph">1. 安装 Nebula Graph<a class="headerlink" href="#1_nebula_graph" title="Permanent link">¶</a></h3>
+<p>在集群的每一台服务器上都安装 Nebula Graph，安装后暂不需要启动服务。安装方式请参见：</p>
 <ul>
-<li><a href="../2.install-nebula-graph-by-rpm-or-deb/">使用RPM或DEB包安装Nebula Graph</a></li>
+<li><a href="../2.install-nebula-graph-by-rpm-or-deb/">使用 RPM 或 DEB 包安装 Nebula Graph</a></li>
 </ul>
 <ul>
-<li><a href="../1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装Nebula Graph</a></li>
+<li><a href="../1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装 Nebula Graph</a></li>
 </ul>
-<h3 id="2">2.修改配置文件<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p>修改每个服务器上的Nebula Graph配置文件。</p>
-<p>Nebula Graph的所有配置文件均位于安装目录的<code>etc</code>目录内，包括<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>，用户可以只修改所需服务的配置文件。各个机器需要修改的配置文件如下。</p>
+<h3 id="2">2. 修改配置文件<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>修改每个服务器上的 Nebula Graph 配置文件。</p>
+<p>Nebula Graph 的所有配置文件均位于安装目录的<code>etc</code>目录内，包括<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>，用户可以只修改所需服务的配置文件。各个机器需要修改的配置文件如下。</p>
 <table>
 <thead>
 <tr>
@@ -2549,20 +2549,20 @@
 <p>用户可以参考如下配置文件的内容，仅展示集群通信的部分设置，未展示的内容为默认设置，便于用户了解集群间各个服务器的关系。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>主要修改的配置是<code>meta_server_addrs</code>，所有配置文件都需要填写所有Meta服务的IP地址和端口，同时需要修改<code>local_ip</code>为机器本身的联网IP地址。配置参数的详细说明请参见：</p>
+<p>主要修改的配置是<code>meta_server_addrs</code>，所有配置文件都需要填写所有 Meta 服务的 IP 地址和端口，同时需要修改<code>local_ip</code>为机器本身的联网 IP 地址。配置参数的详细说明请参见：</p>
 <ul>
-<li><a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta服务配置</a></li>
+<li><a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta 服务配置</a></li>
 </ul>
 <ul>
-<li><a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph服务配置</a></li>
+<li><a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a></li>
 </ul>
 <ul>
-<li><a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage服务配置</a></li>
+<li><a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a></li>
 </ul>
 </div>
 <ul>
 <li>
-<p>机器A配置</p>
+<p>机器 A 配置</p>
 <ul>
 <li>
 <p><code>nebula-graphd.conf</code></p>
@@ -2614,7 +2614,7 @@
 </ul>
 <ul>
 <li>
-<p>机器B配置</p>
+<p>机器 B 配置</p>
 <ul>
 <li>
 <p><code>nebula-graphd.conf</code></p>
@@ -2666,7 +2666,7 @@
 </ul>
 <ul>
 <li>
-<p>机器C配置</p>
+<p>机器 C 配置</p>
 <ul>
 <li>
 <p><code>nebula-graphd.conf</code></p>
@@ -2718,7 +2718,7 @@
 </ul>
 <ul>
 <li>
-<p>机器D配置</p>
+<p>机器 D 配置</p>
 <ul>
 <li>
 <p><code>nebula-graphd.conf</code></p>
@@ -2755,7 +2755,7 @@
 </ul>
 <ul>
 <li>
-<p>机器E配置</p>
+<p>机器 E 配置</p>
 <ul>
 <li>
 <p><code>nebula-graphd.conf</code></p>
@@ -2790,7 +2790,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="3">3.启动集群<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<h3 id="3">3. 启动集群<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
 <p>依次启动<strong>各个服务器</strong>上的对应进程。</p>
 <table>
 <thead>
@@ -2822,7 +2822,7 @@
 </tr>
 </tbody>
 </table>
-<p>启动Nebula Graph进程的命令如下：</p>
+<p>启动 Nebula Graph 进程的命令如下：</p>
 <div class="highlight"><pre><span></span><code>sudo /usr/local/nebula/scripts/nebula.service start &lt;metad<span class="p">|</span>graphd<span class="p">|</span>storaged<span class="p">|</span>all&gt;
 </code></pre></div>
 <div class="admonition note">
@@ -2831,14 +2831,14 @@
 <li>确保每个服务器中的对应进程都已启动，否则服务将启动失败。</li>
 </ul>
 <ul>
-<li>当需都启动graphd、storaged和metad时，可以用all代替。</li>
+<li>当需都启动 graphd、storaged 和 metad 时，可以用 all 代替。</li>
 </ul>
 <ul>
-<li><code>/usr/local/nebula</code>是Nebula Graph的默认安装路径，如果修改过安装路径，请使用实际路径。更多启停服务的内容，请参见<a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a>。</li>
+<li><code>/usr/local/nebula</code>是 Nebula Graph 的默认安装路径，如果修改过安装路径，请使用实际路径。更多启停服务的内容，请参见 <a href="../../../2.quick-start/5.start-stop-service/">管理 Nebula Graph 服务</a>。</li>
 </ul>
 </div>
-<h3 id="4">4.检查集群<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
-<p>安装原生CLI客户端<a href="../../../2.quick-start/3.connect-to-nebula-graph/#_1">Nebula Console</a>，然后连接任何一个已启动graphd进程的机器，执行命令<code>SHOW HOSTS</code>检查集群状态。例如：</p>
+<h3 id="4">4. 检查集群<a class="headerlink" href="#4" title="Permanent link">¶</a></h3>
+<p>安装原生 CLI 客户端 <a href="../../../2.quick-start/3.connect-to-nebula-graph/#_1">Nebula Console</a>，然后连接任何一个已启动 graphd 进程的机器，执行命令<code>SHOW HOSTS</code>检查集群状态。例如：</p>
 <div class="highlight"><pre><span></span><code>$ ./nebula-console --addr <span class="m">192</span>.168.10.111 --port <span class="m">9669</span> -u root -p nebula
 
 <span class="m">2021</span>/05/25 <span class="m">01</span>:41:19 <span class="o">[</span>INFO<span class="o">]</span> connection pool is initialized successfully
@@ -2860,7 +2860,7 @@ Welcome to Nebula Graph!
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

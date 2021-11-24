@@ -1172,7 +1172,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#master">
-    更新master版本
+    更新 master 版本
   </a>
 </li>
 <li class="md-nav__item">
@@ -1182,9 +1182,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cmake">
-    CMake参数
+    CMake 参数
   </a>
-<nav aria-label="CMake参数" class="md-nav">
+<nav aria-label="CMake 参数" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
@@ -2454,7 +2454,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#master">
-    更新master版本
+    更新 master 版本
   </a>
 </li>
 <li class="md-nav__item">
@@ -2464,9 +2464,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#cmake">
-    CMake参数
+    CMake 参数
   </a>
-<nav aria-label="CMake参数" class="md-nav">
+<nav aria-label="CMake 参数" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
@@ -2531,39 +2531,39 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="nebula_graph">使用源码安装Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
-<p>使用源码安装Nebula Graph允许自定义编译和安装设置，并测试最新特性。</p>
+<h1 id="nebula_graph">使用源码安装 Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
+<p>使用源码安装 Nebula Graph 允许自定义编译和安装设置，并测试最新特性。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p>准备正确的编译环境。参见<a href="../../1.resource-preparations/">软硬件要求和安装三方库依赖包</a>。</p>
+<p>准备正确的编译环境。参见 <a href="../../1.resource-preparations/">软硬件要求和安装三方库依赖包</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>暂不支持离线编译Nebula Graph。</p>
+<p>暂不支持离线编译 Nebula Graph。</p>
 </div>
 </li>
 </ul>
 <ul>
-<li>待安装Nebula Graph的主机可以访问互联网。</li>
+<li>待安装 Nebula Graph 的主机可以访问互联网。</li>
 </ul>
 <h2 id="_2">安装步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>从2.6.1版本开始，Nebula-Graph、Nebula-Storage、Nebula-Common的代码仓库合并为Nebula代码仓库，因此编译步骤与之前版本的步骤有所不同。</p>
+<p>从2.6.1版本开始，Nebula-Graph、Nebula-Storage、Nebula-Common 的代码仓库合并为 Nebula 代码仓库，因此编译步骤与之前版本的步骤有所不同。</p>
 </div>
 <ol>
 <li>
-<p>克隆Nebula Graph的源代码到主机。</p>
+<p>克隆 Nebula Graph 的源代码到主机。</p>
 <ul>
 <li>
-<p>[推荐]如果需要安装2.6.1版本的Nebula Graph，执行如下命令：</p>
+<p>[推荐] 如果需要安装2.6.1版本的 Nebula Graph，执行如下命令：</p>
 <div class="highlight"><pre><span></span><code>$ git clone --branch v2.6.1 https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
-<p>如果需要安装最新的开发版本用于测试，执行如下命令克隆master分支的代码：</p>
+<p>如果需要安装最新的开发版本用于测试，执行如下命令克隆 master 分支的代码：</p>
 <div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
@@ -2580,27 +2580,27 @@
 </code></pre></div>
 </li>
 <li>
-<p>使用CMake生成makefile文件。</p>
+<p>使用 CMake 生成 makefile 文件。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>默认安装路径为<code>/usr/local/nebula</code>，如果需要修改路径，请在下方命令内增加参数 <code>-DCMAKE_INSTALL_PREFIX=&lt;installation_path&gt;</code>。</p>
-<p>更多CMake参数说明，请参见<a href="#cmake">CMake参数</a>。</p>
+<p>更多 CMake 参数说明，请参见 <a href="#cmake">CMake 参数</a>。</p>
 </div>
 <div class="highlight"><pre><span></span><code>$ cmake -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local/nebula -DENABLE_TESTING<span class="o">=</span>OFF -DCMAKE_BUILD_TYPE<span class="o">=</span>Release ..
 </code></pre></div>
 </li>
 <li>
-<p>编译Nebula Graph。</p>
+<p>编译 Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>检查<a href="../../1.resource-preparations/">软硬件要求和安装三方库依赖包</a>。</p>
+<p>检查 <a href="../../1.resource-preparations/">软硬件要求和安装三方库依赖包</a>。</p>
 </div>
-<p>为了适当地加快编译速度，可以使用选项<code>-j</code>并行编译。并行数量<code>N</code>建议为<span class="arithmatex">\(\min(\text{CPU}核数,\frac{内存(GB)}{2})\)</span>。</p>
+<p>为了适当地加快编译速度，可以使用选项<code>-j</code>并行编译。并行数量<code>N</code>建议为<span class="arithmatex">\(\min(\text{CPU}核数，\frac{内存 (GB)}{2})\)</span>。</p>
 <div class="highlight"><pre><span></span><code>$ make -j<span class="o">{</span>N<span class="o">}</span> <span class="c1"># E.g., make -j2</span>
 </code></pre></div>
 </li>
 <li>
-<p>安装Nebula Graph。</p>
+<p>安装 Nebula Graph。</p>
 <div class="highlight"><pre><span></span><code>$ sudo make install
 </code></pre></div>
 </li>
@@ -2612,8 +2612,8 @@
 </div>
 </li>
 </ol>
-<h2 id="master">更新master版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
-<p>master分支的代码更新速度快，如果安装了master分支对应的开发版Nebula Graph，可根据以下步骤更新版本。</p>
+<h2 id="master">更新 master 版本<a class="headerlink" href="#master" title="Permanent link">¶</a></h2>
+<p>master 分支的代码更新速度快，如果安装了 master 分支对应的开发版 Nebula Graph，可根据以下步骤更新版本。</p>
 <ol>
 <li>
 <p>在目录<code>nebula</code>中，执行命令<code>git pull upstream master</code>更新源码。</p>
@@ -2624,58 +2624,58 @@
 </ol>
 <h2 id="_3">下一步<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li>(企业版)<a href="../../deploy-license/">设置License</a></li>
+<li>（企业版）<a href="../../deploy-license/">设置 License</a></li>
 </ul>
 <ul>
-<li><a href="../../../2.quick-start/5.start-stop-service/">管理Nebula Graph服务</a></li>
+<li><a href="../../../2.quick-start/5.start-stop-service/">管理 Nebula Graph 服务</a></li>
 </ul>
-<h2 id="cmake">CMake参数<a class="headerlink" href="#cmake" title="Permanent link">¶</a></h2>
+<h2 id="cmake">CMake 参数<a class="headerlink" href="#cmake" title="Permanent link">¶</a></h2>
 <h3 id="_4">使用方法<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>$ cmake -D&lt;variable&gt;<span class="o">=</span>&lt;value&gt; ...
 </code></pre></div>
-<p>下文的CMake参数可以在配置(CMake)阶段用来调整编译设置。</p>
+<p>下文的 CMake 参数可以在配置 (CMake) 阶段用来调整编译设置。</p>
 <h3 id="cmake_install_prefix">CMAKE_INSTALL_PREFIX<a class="headerlink" href="#cmake_install_prefix" title="Permanent link">¶</a></h3>
-<p><code>CMAKE_INSTALL_PREFIX</code>指定Nebula Graph服务模块、脚本和配置文件的安装路径，默认路径为<code>/usr/local/nebula</code>。</p>
+<p><code>CMAKE_INSTALL_PREFIX</code>指定 Nebula Graph 服务模块、脚本和配置文件的安装路径，默认路径为<code>/usr/local/nebula</code>。</p>
 <h3 id="enable_werror">ENABLE_WERROR<a class="headerlink" href="#enable_werror" title="Permanent link">¶</a></h3>
 <p><code>ENABLE_WERROR</code>默认值为<code>ON</code>，表示将所有警告（warning）变为错误（error）。如果有必要，用户可以设置为<code>OFF</code>。</p>
 <h3 id="enable_testing">ENABLE_TESTING<a class="headerlink" href="#enable_testing" title="Permanent link">¶</a></h3>
-<p><code>ENABLE_TESTING</code>默认值为<code>ON</code>，表示单元测试服务由Nebula Graph服务构建。如果只需要服务模块，可以设置为<code>OFF</code>。</p>
+<p><code>ENABLE_TESTING</code>默认值为<code>ON</code>，表示单元测试服务由 Nebula Graph 服务构建。如果只需要服务模块，可以设置为<code>OFF</code>。</p>
 <h3 id="enable_asan">ENABLE_ASAN<a class="headerlink" href="#enable_asan" title="Permanent link">¶</a></h3>
-<p><code>ENABLE_ASAN</code>默认值为<code>OFF</code>，表示关闭内存问题检测工具ASan（AddressSanitizer）。该工具是为Nebula Graph开发者准备的，如果需要开启，可以设置为<code>ON</code>。</p>
+<p><code>ENABLE_ASAN</code>默认值为<code>OFF</code>，表示关闭内存问题检测工具 ASan（AddressSanitizer）。该工具是为 Nebula Graph 开发者准备的，如果需要开启，可以设置为<code>ON</code>。</p>
 <h3 id="cmake_build_type">CMAKE_BUILD_TYPE<a class="headerlink" href="#cmake_build_type" title="Permanent link">¶</a></h3>
-<p><code>CMAKE_BUILD_TYPE</code>控制Nebula Graph的build方法，取值说明如下：</p>
+<p><code>CMAKE_BUILD_TYPE</code>控制 Nebula Graph 的 build 方法，取值说明如下：</p>
 <ul>
 <li>
 <p><code>Debug</code></p>
-<p><code>CMAKE_BUILD_TYPE</code>的默认值，build过程中只记录debug信息，不使用优化选项。</p>
+<p><code>CMAKE_BUILD_TYPE</code>的默认值，build 过程中只记录 debug 信息，不使用优化选项。</p>
 </li>
 </ul>
 <ul>
 <li>
 <p><code>Release</code></p>
-<p>build过程中使用优化选项，不记录debug信息。</p>
+<p>build 过程中使用优化选项，不记录 debug 信息。</p>
 </li>
 </ul>
 <ul>
 <li>
 <p><code>RelWithDebInfo</code></p>
-<p>build过程中既使用优化选项，也记录debug信息。</p>
+<p>build 过程中既使用优化选项，也记录 debug 信息。</p>
 </li>
 </ul>
 <ul>
 <li>
 <p><code>MinSizeRel</code></p>
-<p>build过程中仅通过优化选项控制代码大小，不记录debug信息。</p>
+<p>build 过程中仅通过优化选项控制代码大小，不记录 debug 信息。</p>
 </li>
 </ul>
 <h3 id="cmake_c_compilercmake_cxx_compiler">CMAKE_C_COMPILER/CMAKE_CXX_COMPILER<a class="headerlink" href="#cmake_c_compilercmake_cxx_compiler" title="Permanent link">¶</a></h3>
-<p>通常情况下，CMake会自动查找并使用主机上的C/C++编译器，但是如果编译器没有安装在标准路径，或者想使用其他编译器，请执行如下命令指定目标编译器的安装路径：</p>
+<p>通常情况下，CMake 会自动查找并使用主机上的 C/C++编译器，但是如果编译器没有安装在标准路径，或者想使用其他编译器，请执行如下命令指定目标编译器的安装路径：</p>
 <div class="highlight"><pre><span></span><code>$ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_gcc/bin/gcc&gt; -DCMAKE_CXX_COMPILER<span class="o">=</span>&lt;path_to_gcc/bin/g++&gt; ..
 $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt; -DCMAKE_CXX_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang++&gt; ..
 </code></pre></div>
 <h3 id="enable_ccache">ENABLE_CCACHE<a class="headerlink" href="#enable_ccache" title="Permanent link">¶</a></h3>
-<p><code>ENABLE_CCACHE</code>默认值为<code>ON</code>，表示使用Ccache（compiler cache）工具加速编译。</p>
-<p>如果想要禁用ccache，仅仅设置<code>ENABLE_CCACHE=OFF</code>是不行的，因为在某些平台上，ccache会代理当前编译器，因此还需要设置环境变量<code>export CCACHE_DISABLE=true</code>，或者在文件<code>~/.ccache/ccache.conf</code>中添加<code>disable=true</code>。更多信息请参见<a href="https://ccache.dev/manual/3.7.6.html">ccache official documentation</a>。</p>
+<p><code>ENABLE_CCACHE</code>默认值为<code>ON</code>，表示使用 Ccache（compiler cache）工具加速编译。</p>
+<p>如果想要禁用 ccache，仅仅设置<code>ENABLE_CCACHE=OFF</code>是不行的，因为在某些平台上，ccache 会代理当前编译器，因此还需要设置环境变量<code>export CCACHE_DISABLE=true</code>，或者在文件<code>~/.ccache/ccache.conf</code>中添加<code>disable=true</code>。更多信息请参见 <a href="https://ccache.dev/manual/3.7.6.html">ccache official documentation</a>。</p>
 <h3 id="nebula_thirdparty_root">NEBULA_THIRDPARTY_ROOT<a class="headerlink" href="#nebula_thirdparty_root" title="Permanent link">¶</a></h3>
 <p><code>NEBULA_THIRDPARTY_ROOT</code>指定第三方软件的安装路径，默认路径为<code>/opt/vesoft/third-party</code>。</p>
 <h2 id="_5">问题排查<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
@@ -2685,7 +2685,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <p>检查操作系统版本是否符合要求、内存和硬盘空间是否足够。</p>
 </li>
 <li>
-<p>检查<a href="../../1.resource-preparations/#_5">third-party</a>是否正确安装。</p>
+<p>检查 <a href="../../1.resource-preparations/#_5">third-party</a> 是否正确安装。</p>
 </li>
 <li>
 <p>使用<code>make -j1</code>降低编译并发度。</p>
@@ -2695,7 +2695,7 @@ $ cmake -DCMAKE_C_COMPILER<span class="o">=</span>&lt;path_to_clang/bin/clang&gt
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

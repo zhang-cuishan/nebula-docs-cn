@@ -1058,17 +1058,17 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage">
-    第一步：安装Storage服务
+    第一步：安装 Storage 服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener">
-    第二步：准备listener的配置文件
+    第二步：准备 listener 的配置文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener_1">
-    第三步：启动listener
+    第三步：启动 listener
   </a>
 </li>
 <li class="md-nav__item">
@@ -1095,9 +1095,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener_3">
-    删除listener
+    删除 listener
   </a>
-<nav aria-label="删除listener" class="md-nav">
+<nav aria-label="删除 listener" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
@@ -2453,17 +2453,17 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage">
-    第一步：安装Storage服务
+    第一步：安装 Storage 服务
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener">
-    第二步：准备listener的配置文件
+    第二步：准备 listener 的配置文件
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener_1">
-    第三步：启动listener
+    第三步：启动 listener
   </a>
 </li>
 <li class="md-nav__item">
@@ -2490,9 +2490,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#listener_3">
-    删除listener
+    删除 listener
   </a>
-<nav aria-label="删除listener" class="md-nav">
+<nav aria-label="删除 listener" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
@@ -2517,34 +2517,34 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="raft_listener">部署Raft listener<a class="headerlink" href="#raft_listener" title="Permanent link">¶</a></h1>
-<p>全文索引的数据是异步写入Elasticsearch集群的。流程是通过Storage服务的 Raft listener（简称listener）这个单独部署的进程，从Storage服务读取数据，然后将它们写入Elasticsearch集群。</p>
+<h1 id="raft_listener">部署 Raft listener<a class="headerlink" href="#raft_listener" title="Permanent link">¶</a></h1>
+<p>全文索引的数据是异步写入 Elasticsearch 集群的。流程是通过 Storage 服务的 Raft listener（简称 listener）这个单独部署的进程，从 Storage 服务读取数据，然后将它们写入 Elasticsearch 集群。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ul>
-<li>已经了解全文索引的<a href="../1.text-based-index-restrictions/">使用限制</a>。</li>
+<li>已经了解全文索引的 <a href="../1.text-based-index-restrictions/">使用限制</a>。</li>
 </ul>
 <ul>
-<li>已经<a href="../../2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">部署Nebula Graph集群</a>。</li>
+<li>已经 <a href="../../2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">部署 Nebula Graph 集群</a>。</li>
 </ul>
 <ul>
-<li>完成<a href="../2.deploy-es/">部署Elasticsearch集群</a>。</li>
+<li>完成 <a href="../2.deploy-es/">部署 Elasticsearch 集群</a>。</li>
 </ul>
 <ul>
-<li>准备一台或者多台额外的服务器，来部署Raft listener。</li>
+<li>准备一台或者多台额外的服务器，来部署 Raft listener。</li>
 </ul>
 <h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
-<li>请保证Nebula 各组件（Metad、Storaged、Graphd、listener）有相同的版本。</li>
+<li>请保证 Nebula 各组件（Metad、Storaged、Graphd、listener）有相同的版本。</li>
 </ul>
 <ul>
 <li>只能为一个图空间“一次性添加所有的 listener 机器”。尝试向已经存在有 listener 的图空间再添加新 listener 会失败。因此，需在一个命令语句里完整地添加全部的 listener。</li>
 </ul>
 <h2 id="_3">部署流程<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<h3 id="storage">第一步：安装Storage服务<a class="headerlink" href="#storage" title="Permanent link">¶</a></h3>
-<p>listener进程与storaged进程使用相同的二进制文件，但是二者配置文件不同，进程使用端口也不同，可以在所有需要部署listener的服务器上都安装Nebula Graph，但是仅使用Storage服务。详情请参见<a href="../../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用RPM或DEB安装包安装Nebula Graph</a>。</p>
-<h3 id="listener">第二步：准备listener的配置文件<a class="headerlink" href="#listener" title="Permanent link">¶</a></h3>
-<p>用户必须在需要部署listener的机器上准备对应的配置文件，文件名称必须为<code>nebula-storaged-listener.conf</code>，并保存在安装路径下的<code>etc</code>目录内。用户可以参考提供的<a href="https://github.com/vesoft-inc/nebula/blob/master/conf/nebula-storaged-listener.conf.production">模板</a>。注意去掉文件后缀<code>.production</code>。</p>
-<p>大部分配置与<a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage服务</a>的配置文件相同，本文仅介绍差异部分。</p>
+<h3 id="storage">第一步：安装 Storage 服务<a class="headerlink" href="#storage" title="Permanent link">¶</a></h3>
+<p>listener 进程与 storaged 进程使用相同的二进制文件，但是二者配置文件不同，进程使用端口也不同，可以在所有需要部署 listener 的服务器上都安装 Nebula Graph，但是仅使用 Storage 服务。详情请参见 <a href="../../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用 RPM 或 DEB 安装包安装 Nebula Graph</a>。</p>
+<h3 id="listener">第二步：准备 listener 的配置文件<a class="headerlink" href="#listener" title="Permanent link">¶</a></h3>
+<p>用户必须在需要部署 listener 的机器上准备对应的配置文件，文件名称必须为<code>nebula-storaged-listener.conf</code>，并保存在安装路径下的<code>etc</code>目录内。用户可以参考提供的 <a href="https://github.com/vesoft-inc/nebula/blob/master/conf/nebula-storaged-listener.conf.production">模板</a>。注意去掉文件后缀<code>.production</code>。</p>
+<p>大部分配置与 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务</a> 的配置文件相同，本文仅介绍差异部分。</p>
 <table>
 <thead>
 <tr>
@@ -2562,32 +2562,32 @@
 <tr>
 <td align="left"><code>pid_file</code></td>
 <td align="left"><code>pids_listener/nebula-storaged.pid</code></td>
-<td align="left">记录进程ID的文件。</td>
+<td align="left">记录进程 ID 的文件。</td>
 </tr>
 <tr>
 <td align="left"><code>meta_server_addrs</code></td>
 <td align="left">-</td>
-<td align="left">全部Meta服务的IP地址和端口。多个Meta服务用英文逗号（,）分隔。</td>
+<td align="left">全部 Meta 服务的 IP 地址和端口。多个 Meta 服务用英文逗号（,）分隔。</td>
 </tr>
 <tr>
 <td align="left"><code>local_ip</code></td>
 <td align="left">-</td>
-<td align="left">listener服务的本地IP地址。</td>
+<td align="left">listener 服务的本地 IP 地址。</td>
 </tr>
 <tr>
 <td align="left"><code>port</code></td>
 <td align="left">-</td>
-<td align="left">listener服务的RPC守护进程监听端口。</td>
+<td align="left">listener 服务的 RPC 守护进程监听端口。</td>
 </tr>
 <tr>
 <td align="left"><code>heartbeat_interval_secs</code></td>
 <td align="left"><code>10</code></td>
-<td align="left">Meta服务的心跳间隔。单位：秒（s）。</td>
+<td align="left">Meta 服务的心跳间隔。单位：秒（s）。</td>
 </tr>
 <tr>
 <td align="left"><code>listener_path</code></td>
 <td align="left"><code>data/listener</code></td>
-<td align="left">listener的WAL目录。只允许使用一个目录。</td>
+<td align="left">listener 的 WAL 目录。只允许使用一个目录。</td>
 </tr>
 <tr>
 <td align="left"><code>data_path</code></td>
@@ -2607,7 +2607,7 @@
 <tr>
 <td align="left"><code>rocksdb_block_cache</code></td>
 <td align="left"><code>4</code></td>
-<td align="left">BlockBasedTable的默认块缓存大小。单位：兆字节（MB）。</td>
+<td align="left">BlockBasedTable 的默认块缓存大小。单位：兆字节（MB）。</td>
 </tr>
 <tr>
 <td align="left"><code>engine_type</code></td>
@@ -2623,20 +2623,20 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>在配置文件中请使用真实的（listener机器）IP地址替换<code>127.0.0.1</code>。</p>
+<p>在配置文件中请使用真实的（listener 机器）IP 地址替换<code>127.0.0.1</code>。</p>
 </div>
-<h3 id="listener_1">第三步：启动listener<a class="headerlink" href="#listener_1" title="Permanent link">¶</a></h3>
-<p>执行如下命令启动启动listener：</p>
+<h3 id="listener_1">第三步：启动 listener<a class="headerlink" href="#listener_1" title="Permanent link">¶</a></h3>
+<p>执行如下命令启动启动 listener：</p>
 <div class="highlight"><pre><span></span><code>./bin/nebula-storaged --flagfile &lt;listener_config_path&gt;/nebula-storaged-listener.conf
 </code></pre></div>
 <p><code>listener_config_path</code>是存放 listener 配置文件的路径。</p>
 <h3 id="listener_nebula_graph">第四步：添加 listener 到 Nebula Graph 集群<a class="headerlink" href="#listener_nebula_graph" title="Permanent link">¶</a></h3>
-<p><a href="../../../2.quick-start/3.connect-to-nebula-graph/">用命令行连接到Nebula Graph</a>，然后执行<a href="../../../3.ngql-guide/9.space-statements/2.use-space/"><code>USE &lt;space&gt;</code></a>进入需要创建全文索引的图空间。然后执行如下命令添加 listener：</p>
+<p><a href="../../../2.quick-start/3.connect-to-nebula-graph/">用命令行连接到 Nebula Graph</a>，然后执行 <a href="../../../3.ngql-guide/9.space-statements/2.use-space/"><code>USE &lt;space&gt;</code></a> 进入需要创建全文索引的图空间。然后执行如下命令添加 listener：</p>
 <div class="highlight"><pre><span></span><code>ADD LISTENER ELASTICSEARCH &lt;listener_ip:port&gt; [,&lt;listener_ip:port&gt;, ...]
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>listener 必须使用真实的IP地址。</p>
+<p>listener 必须使用真实的 IP 地址。</p>
 <p>请在一个语句里完整地添加所有 listener。例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ADD LISTENER ELASTICSEARCH 192.168.8.5:9789,192.168.8.6:9789;
 </code></pre></div>
@@ -2653,22 +2653,22 @@
 | 3      | "ELASTICSEARCH" | "[192.168.8.5:46780]" | "ONLINE" |
 +--------+-----------------+-----------------------+----------+
 </code></pre></div>
-<h2 id="listener_3">删除listener<a class="headerlink" href="#listener_3" title="Permanent link">¶</a></h2>
-<p>执行<code>REMOVE LISTENER ELASTICSEARCH</code>语句可以删除图空间的所有listener。</p>
+<h2 id="listener_3">删除 listener<a class="headerlink" href="#listener_3" title="Permanent link">¶</a></h2>
+<p>执行<code>REMOVE LISTENER ELASTICSEARCH</code>语句可以删除图空间的所有 listener。</p>
 <h3 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; REMOVE LISTENER ELASTICSEARCH;
 </code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>删除 listener 后，将不能重新添加 listener，因此也无法继续向ES集群同步，文本索引数据将不完整。如果确实需要，只能重新创建图空间。</p>
+<p>删除 listener 后，将不能重新添加 listener，因此也无法继续向 ES 集群同步，文本索引数据将不完整。如果确实需要，只能重新创建图空间。</p>
 </div>
 <h2 id="_6">下一步<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<p>部署<a href="../2.deploy-es/">全文索引</a>和 listener 后，全文索引会在 Elasticsearch 集群中自动创建，用户可以开始进行全文搜索。详情请参见<a href="../../../3.ngql-guide/15.full-text-index-statements/1.search-with-text-based-index/">全文搜索</a>。</p>
+<p>部署 <a href="../2.deploy-es/">全文索引</a> 和 listener 后，全文索引会在 Elasticsearch 集群中自动创建，用户可以开始进行全文搜索。详情请参见 <a href="../../../3.ngql-guide/15.full-text-index-statements/1.search-with-text-based-index/">全文搜索</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

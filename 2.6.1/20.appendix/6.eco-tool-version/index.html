@@ -2527,9 +2527,9 @@
 <p><img alt="Nebula Graph 鸟瞰图" src="../../1.introduction/nebula-birdview.png"/></p>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
-<p>内核版本号命名规则为 <code>X.Y.Z</code>，表示<code>大版本X</code>,<code>中版本Y</code>,<code>小版本Z</code>。对于客户端的升级要求为：</p>
+<p>内核版本号命名规则为 <code>X.Y.Z</code>，表示<code>大版本 X</code>,<code>中版本 Y</code>,<code>小版本 Z</code>。对于客户端的升级要求为：</p>
 <ul>
-<li>内核从<code>X.Y.Z1</code>升级成<code>X.Y.Z2</code>: 表示内核完全前向兼容，通常用于bugfix，建议尽快升级内核小版本。此时客户端可以<strong>不升级</strong>；</li>
+<li>内核从<code>X.Y.Z1</code>升级成<code>X.Y.Z2</code>: 表示内核完全前向兼容，通常用于 bugfix，建议尽快升级内核小版本。此时客户端可以<strong>不升级</strong>；</li>
 </ul>
 <ul>
 <li>内核从<code>X.Y1.*</code>升级成<code>X.Y2.*</code>: 表示存在 API、语法、返回值部分不兼容，通常用于增加功能、提升性能、代码优化等。需要客户端相应升级至<code>X.Y2.*</code>；</li>
@@ -2541,13 +2541,13 @@
 <li>默认内核及客户端都不支持降级：不可从<code>X.Y.Z2</code>降级成<code>X.Y.Z1</code>；</li>
 </ul>
 <ul>
-<li>一个<code>Y</code>版本的发布周期大约为6个月，其维护与支持周期为6个月；</li>
+<li>一个<code>Y</code>版本的发布周期大约为 6 个月，其维护与支持周期为 6 个月；</li>
 </ul>
 <ul>
 <li>年初版本通常命名为<code>X.0.0</code>, 年中版本命名为<code>X.5.0</code>。</li>
 </ul>
 <ul>
-<li>文件命名中含有<code>RC</code>表示仅用于预览的非正式版本(<code>Release Candidate</code>)，其维护周期仅至下个RC或者正式版本发布，其客户端、数据兼容性等均无保证。</li>
+<li>文件命名中含有<code>RC</code>表示仅用于预览的非正式版本 (<code>Release Candidate</code>)，其维护周期仅至下个 RC 或者正式版本发布，其客户端、数据兼容性等均无保证。</li>
 </ul>
 <ul>
 <li>文件命名中含有<code>nightly</code>、<code>SNAPSHOT</code>或者日期的为日常开发版本，无质量保证和维护周期。</li>
@@ -2555,10 +2555,10 @@
 </div>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
-<p>1.x版本的生态工具完全不支持在Nebula Graph 2.x版本中使用。</p>
+<p>1.x 版本的生态工具完全不支持在 Nebula Graph 2.x 版本中使用。</p>
 </div>
 <h2 id="nebula_graph_studio">Nebula Graph Studio<a class="headerlink" href="#nebula_graph_studio" title="Permanent link">¶</a></h2>
-<p>Nebula Graph Studio（简称 Studio）是一款可以通过Web访问的图数据库可视化工具，搭配Nebula Graph DBMS使用，提供构图、数据导入、编写nGQL查询、图探索等一站式服务。详情请参见<a href="../../nebula-studio/about-studio/st-ug-what-is-graph-studio/">什么是Nebula Graph Studio</a>。</p>
+<p>Nebula Graph Studio（简称 Studio）是一款可以通过 Web 访问的图数据库可视化工具，搭配 Nebula Graph DBMS 使用，提供构图、数据导入、编写 nGQL 查询、图探索等一站式服务。详情请参见 <a href="../../nebula-studio/about-studio/st-ug-what-is-graph-studio/">什么是 Nebula Graph Studio</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Studio 版本发布节奏独立于 Nebula Graph 内核，其命名方式也不参照内核命名规则，两者兼容对应关系如下表。</p>
@@ -2566,8 +2566,8 @@
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Studio版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Studio 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2578,12 +2578,12 @@
 </tbody>
 </table>
 <h2 id="nebula_dashboard">Nebula Dashboard（社区版）<a class="headerlink" href="#nebula_dashboard" title="Permanent link">¶</a></h2>
-<p>Nebula Dashboard（简称Dashboard）是一款用于监控Nebula Graph集群中机器和服务状态的可视化工具。详情参见<a href="../../nebula-dashboard/1.what-is-dashboard/">什么是Nebula Dashboard</a>。</p>
+<p>Nebula Dashboard（简称 Dashboard）是一款用于监控 Nebula Graph 集群中机器和服务状态的可视化工具。详情参见 <a href="../../nebula-dashboard/1.what-is-dashboard/">什么是 Nebula Dashboard</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Dashboard版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Dashboard 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2594,12 +2594,12 @@
 </tbody>
 </table>
 <h2 id="nebula_dashboard_1">Nebula Dashboard（企业版）<a class="headerlink" href="#nebula_dashboard_1" title="Permanent link">¶</a></h2>
-<p>Nebula Dashboard（简称Dashboard）是一款用于监控和管理Nebula Graph多集群中机器和服务状态的可视化工具，支持在可视化界面进行集群创建、集群导入、数据平衡、扩容缩容等操作。详情参见<a href="../../nebula-dashboard-ent/1.what-is-dashboard-ent/">什么是Nebula Dashboard</a>。</p>
+<p>Nebula Dashboard（简称 Dashboard）是一款用于监控和管理 Nebula Graph 多集群中机器和服务状态的可视化工具，支持在可视化界面进行集群创建、集群导入、数据平衡、扩容缩容等操作。详情参见 <a href="../../nebula-dashboard-ent/1.what-is-dashboard-ent/">什么是 Nebula Dashboard</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Dashboard企业版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Dashboard 企业版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2610,12 +2610,12 @@
 </tbody>
 </table>
 <h2 id="nebula_explorer">Nebula Explorer<a class="headerlink" href="#nebula_explorer" title="Permanent link">¶</a></h2>
-<p>Nebula Explorer（简称Explorer）是一款可以通过Web访问的图探索可视化工具，搭配Nebula Graph内核使用，用于与图数据进行可视化交互。即使没有图数据操作经验，用户也可以快速成为图专家。详情参见<a href="../../nebula-explorer/about-explorer/ex-ug-what-is-explorer/">什么是Nebula Explorer</a>。</p>
+<p>Nebula Explorer（简称 Explorer）是一款可以通过 Web 访问的图探索可视化工具，搭配 Nebula Graph 内核使用，用于与图数据进行可视化交互。即使没有图数据操作经验，用户也可以快速成为图专家。详情参见 <a href="../../nebula-explorer/about-explorer/ex-ug-what-is-explorer/">什么是 Nebula Explorer</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Explorer版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Explorer 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2626,13 +2626,13 @@
 </tbody>
 </table>
 <h2 id="nebula_exchange">Nebula Exchange<a class="headerlink" href="#nebula_exchange" title="Permanent link">¶</a></h2>
-<p>Nebula Exchange（简称Exchange）是一款Apache Spark™应用，用于在分布式环境中将集群中的数据批量迁移到Nebula Graph中，能支持多种不同格式的批式数据和流式数据的迁移。详情请参见<a href="../../nebula-exchange/about-exchange/ex-ug-what-is-exchange/">什么是Nebula Exchange</a>。</p>
+<p>Nebula Exchange（简称 Exchange）是一款 Apache Spark™ 应用，用于在分布式环境中将集群中的数据批量迁移到 Nebula Graph 中，能支持多种不同格式的批式数据和流式数据的迁移。详情请参见 <a href="../../nebula-exchange/about-exchange/ex-ug-what-is-exchange/">什么是 Nebula Exchange</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Exchange社区版版本（commit id）</th>
-<th align="left">Exchange企业版版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Exchange 社区版版本（commit id）</th>
+<th align="left">Exchange 企业版版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2644,12 +2644,12 @@
 </tbody>
 </table>
 <h2 id="nebula_operator">Nebula Operator<a class="headerlink" href="#nebula_operator" title="Permanent link">¶</a></h2>
-<p>Nebula Operator（简称Operator）是用于在Kubernetes系统上自动化部署和运维Nebula Graph集群的工具。依托于Kubernetes扩展机制，Nebula Graph将其运维领域的知识全面注入至Kubernetes系统中，让Nebula Graph成为真正的云原生图数据库。详情请参考<a href="../../nebula-operator/1.introduction-to-nebula-operator/">什么是Nebula Operator</a>。</p>
+<p>Nebula Operator（简称 Operator）是用于在 Kubernetes 系统上自动化部署和运维 Nebula Graph 集群的工具。依托于 Kubernetes 扩展机制，Nebula Graph 将其运维领域的知识全面注入至 Kubernetes 系统中，让 Nebula Graph 成为真正的云原生图数据库。详情请参考 <a href="../../nebula-operator/1.introduction-to-nebula-operator/">什么是 Nebula Operator</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Operator版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Operator 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2660,12 +2660,12 @@
 </tbody>
 </table>
 <h2 id="nebula_importer">Nebula Importer<a class="headerlink" href="#nebula_importer" title="Permanent link">¶</a></h2>
-<p>Nebula Importer（简称Importer）是一款Nebula Graph的CSV文件导入工具。Importer可以读取本地的CSV文件，然后导入数据至Nebula Graph图数据库中。详情请参见<a href="../../nebula-importer/use-importer/">什么是Nebula Importer</a>。</p>
+<p>Nebula Importer（简称 Importer）是一款 Nebula Graph 的 CSV 文件导入工具。Importer 可以读取本地的 CSV 文件，然后导入数据至 Nebula Graph 图数据库中。详情请参见 <a href="../../nebula-importer/use-importer/">什么是 Nebula Importer</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left"><a href="https://github.com/vesoft-inc/nebula-importer/tree/v2.6.0">Importer</a>版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left"><a href="https://github.com/vesoft-inc/nebula-importer/tree/v2.6.0">Importer</a> 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2676,12 +2676,12 @@
 </tbody>
 </table>
 <h2 id="nebula_spark_connector">Nebula Spark Connector<a class="headerlink" href="#nebula_spark_connector" title="Permanent link">¶</a></h2>
-<p>Nebula Spark Connector是一个Spark连接器，提供通过Spark标准形式读写Nebula Graph数据的能力。Nebula Spark Connector由Reader和Writer两部分组成。详情请参见<a href="../../nebula-spark-connector/">什么是Nebula Spark Connector</a>。</p>
+<p>Nebula Spark Connector 是一个 Spark 连接器，提供通过 Spark 标准形式读写 Nebula Graph 数据的能力。Nebula Spark Connector 由 Reader 和 Writer 两部分组成。详情请参见 <a href="../../nebula-spark-connector/">什么是 Nebula Spark Connector</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Spark Connector版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Spark Connector 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2692,12 +2692,12 @@
 </tbody>
 </table>
 <h2 id="nebula_flink_connector">Nebula Flink Connector<a class="headerlink" href="#nebula_flink_connector" title="Permanent link">¶</a></h2>
-<p>Nebula Flink Connector是一款帮助Flink用户快速访问Nebula Graph的连接器，支持从Nebula Graph图数据库中读取数据，或者将其他外部数据源读取的数据写入Nebula Graph图数据库。详情请参见<a href="../../nebula-flink-connector/">什么是Nebula Flink Connector</a>。</p>
+<p>Nebula Flink Connector 是一款帮助 Flink 用户快速访问 Nebula Graph 的连接器，支持从 Nebula Graph 图数据库中读取数据，或者将其他外部数据源读取的数据写入 Nebula Graph 图数据库。详情请参见 <a href="../../nebula-flink-connector/">什么是 Nebula Flink Connector</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Flink Connector版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Flink Connector 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2708,12 +2708,12 @@
 </tbody>
 </table>
 <h2 id="nebula_algorithm">Nebula Algorithm<a class="headerlink" href="#nebula_algorithm" title="Permanent link">¶</a></h2>
-<p>Nebula Algorithm（简称Algorithm）是一款基于<a href="https://spark.apache.org/graphx/">GraphX</a>的Spark应用程序，通过提交Spark任务的形式使用完整的算法工具对Nebula Graph数据库中的数据执行图计算，也可以通过编程形式调用lib库下的算法针对DataFrame执行图计算。详情请参见<a href="../../nebula-algorithm/">什么是Nebula Algorithm</a>。</p>
+<p>Nebula Algorithm（简称 Algorithm）是一款基于 <a href="https://spark.apache.org/graphx/">GraphX</a> 的 Spark 应用程序，通过提交 Spark 任务的形式使用完整的算法工具对 Nebula Graph 数据库中的数据执行图计算，也可以通过编程形式调用 lib 库下的算法针对 DataFrame 执行图计算。详情请参见 <a href="../../nebula-algorithm/">什么是 Nebula Algorithm</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Algorithm版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Algorithm 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2724,12 +2724,12 @@
 </tbody>
 </table>
 <h2 id="nebula_console">Nebula Console<a class="headerlink" href="#nebula_console" title="Permanent link">¶</a></h2>
-<p>Nebula Console是Nebula Graph的原生CLI客户端。如何使用请参见<a href="../../2.quick-start/3.connect-to-nebula-graph/">连接Nebula Graph</a>。</p>
+<p>Nebula Console 是 Nebula Graph 的原生 CLI 客户端。如何使用请参见 <a href="../../2.quick-start/3.connect-to-nebula-graph/">连接 Nebula Graph</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Console版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Console 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2740,12 +2740,12 @@
 </tbody>
 </table>
 <h2 id="nebula_docker_compose">Nebula Docker Compose<a class="headerlink" href="#nebula_docker_compose" title="Permanent link">¶</a></h2>
-<p>Docker Compose可以快速部署Nebula Graph集群。如何使用请参见<a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose部署Nebula Graph</a>。</p>
+<p>Docker Compose 可以快速部署 Nebula Graph 集群。如何使用请参见 <a href="../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose 部署 Nebula Graph</a>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Docker Compose版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Docker Compose 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2758,19 +2758,19 @@
 <!--
 ## Backup & Restore
 
-[Backup&Restore](https://github.com/vesoft-inc/nebula-br)（简称BR）是一款命令行界面（CLI）工具，可以帮助备份Nebula Graph的图空间数据，或者通过备份文件恢复数据。
+[Backup&Restore](https://github.com/vesoft-inc/nebula-br)（简称 BR）是一款命令行界面（CLI）工具，可以帮助备份 Nebula Graph 的图空间数据，或者通过备份文件恢复数据。
 
-|Nebula Graph版本|[Backup&Restore](https://github.com/vesoft-inc/nebula-br)版本（commit id）|
+|Nebula Graph 版本|[Backup&Restore](https://github.com/vesoft-inc/nebula-br) 版本（commit id）|
 |:---|:---|
 | 2.6.1 | 0.5.0（TODO:coding） |
 -->
 <h2 id="nebula_bench">Nebula Bench<a class="headerlink" href="#nebula_bench" title="Permanent link">¶</a></h2>
-<p><a href="https://github.com/vesoft-inc/nebula-bench">Nebula Bench</a> 用于测试Nebula Graph的基线性能数据，使用LDBC v0.3.3的标准数据集。</p>
+<p><a href="https://github.com/vesoft-inc/nebula-bench">Nebula Bench</a> 用于测试 Nebula Graph 的基线性能数据，使用 LDBC v0.3.3 的标准数据集。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
-<th align="left">Nebula Bench版本（commit id）</th>
+<th align="left">Nebula Graph 版本</th>
+<th align="left">Nebula Bench 版本（commit id）</th>
 </tr>
 </thead>
 <tbody>
@@ -2788,7 +2788,7 @@
 <table>
 <thead>
 <tr>
-<th align="left">Nebula Graph版本</th>
+<th align="left">Nebula Graph 版本</th>
 <th align="left">语言（commit id）</th>
 </tr>
 </thead>
@@ -2855,7 +2855,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

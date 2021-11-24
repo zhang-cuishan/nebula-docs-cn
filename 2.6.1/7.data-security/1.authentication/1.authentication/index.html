@@ -1376,13 +1376,13 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#openldap">
-    OpenLDAP验证
+    OpenLDAP 验证
   </a>
-<nav aria-label="OpenLDAP验证" class="md-nav">
+<nav aria-label="OpenLDAP 验证" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#openldap_1">
-    启用OpenLDAP验证
+    启用 OpenLDAP 验证
   </a>
 </li>
 </ul>
@@ -2407,13 +2407,13 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#openldap">
-    OpenLDAP验证
+    OpenLDAP 验证
   </a>
-<nav aria-label="OpenLDAP验证" class="md-nav">
+<nav aria-label="OpenLDAP 验证" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#openldap_1">
-    启用OpenLDAP验证
+    启用 OpenLDAP 验证
   </a>
 </li>
 </ul>
@@ -2431,39 +2431,39 @@
 </a>
 <h1 id="_1">身份验证<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <p>身份验证用于将会话映射到特定用户，从而实现访问控制。</p>
-<p>当客户端连接到Nebula Graph时，Nebula Graph会创建一个会话，会话中存储连接的各种信息，如果开启了身份验证，就会将会话映射到对应的用户。</p>
+<p>当客户端连接到 Nebula Graph 时，Nebula Graph 会创建一个会话，会话中存储连接的各种信息，如果开启了身份验证，就会将会话映射到对应的用户。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>默认情况下，身份验证功能是关闭的，用户可以使用root用户名和任意密码连接到Nebula Graph。</p>
+<p>默认情况下，身份验证功能是关闭的，用户可以使用 root 用户名和任意密码连接到 Nebula Graph。</p>
 </div>
-<p>Nebula Graph支持两种身份验证方式：本地身份验证和LDAP验证。</p>
+<p>Nebula Graph 支持两种身份验证方式：本地身份验证和 LDAP 验证。</p>
 <h2 id="_2">本地身份验证<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>本地身份验证是指在服务器本地存储用户名、加密密码，当用户尝试访问Nebula Graph时，将进行身份验证。</p>
+<p>本地身份验证是指在服务器本地存储用户名、加密密码，当用户尝试访问 Nebula Graph 时，将进行身份验证。</p>
 <h3 id="_3">启用本地身份验证<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>），设置<code>--enable_authorize=true</code>并保存退出。</p>
 </li>
 <li>
-<p>重启Nebula Graph服务。</p>
+<p>重启 Nebula Graph 服务。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>开启身份验证后，默认的God角色账号为<code>root</code>，密码为<code>nebula</code>。角色详情请参见<a href="../3.role-list/">内置角色权限</a>。</p>
+<p>开启身份验证后，默认的 God 角色账号为<code>root</code>，密码为<code>nebula</code>。角色详情请参见 <a href="../3.role-list/">内置角色权限</a>。</p>
 </div>
-<h2 id="openldap">OpenLDAP验证<a class="headerlink" href="#openldap" title="Permanent link">¶</a></h2>
-<p>OpenLDAP是轻型目录访问协议（LDAP）的开源实现，可以实现账号集中管理。</p>
-<h3 id="openldap_1">启用OpenLDAP验证<a class="headerlink" href="#openldap_1" title="Permanent link">¶</a></h3>
+<h2 id="openldap">OpenLDAP 验证<a class="headerlink" href="#openldap" title="Permanent link">¶</a></h2>
+<p>OpenLDAP 是轻型目录访问协议（LDAP）的开源实现，可以实现账号集中管理。</p>
+<h3 id="openldap_1">启用 OpenLDAP 验证<a class="headerlink" href="#openldap_1" title="Permanent link">¶</a></h3>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
-<p>当前仅企业版支持集成OpenLDAP进行身份验证，详情请参见<a href="../4.ldap/">使用OpenLDAP进行身份验证</a>。</p>
+<p>当前仅企业版支持集成 OpenLDAP 进行身份验证，详情请参见 <a href="../4.ldap/">使用 OpenLDAP 进行身份验证</a>。</p>
 </div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

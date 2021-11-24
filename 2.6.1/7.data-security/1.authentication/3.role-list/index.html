@@ -2394,18 +2394,18 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">内置角色权限<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>所谓角色，就是一组相关权限的集合。用户可以把角色分配给<a href="../2.management-user/">创建的用户</a>，从而实现访问控制。</p>
+<p>所谓角色，就是一组相关权限的集合。用户可以把角色分配给 <a href="../2.management-user/">创建的用户</a>，从而实现访问控制。</p>
 <h2 id="_2">内置角色<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Nebula Graph内置了多种角色，说明如下：</p>
+<p>Nebula Graph 内置了多种角色，说明如下：</p>
 <ul>
 <li>
 <p>God</p>
 <ul>
-<li>初始最高权限角色，拥有<strong>所有操作</strong>的权限。类似于Linux中的<code>root</code>和Windows中的<code>administrator</code>。</li>
+<li>初始最高权限角色，拥有<strong>所有操作</strong>的权限。类似于 Linux 中的<code>root</code>和 Windows 中的<code>administrator</code>。</li>
 </ul>
 <ul>
 <li>
-<p>Meta服务初始化时，会自动创建God角色用户<code>root</code>，密码为<code>nebula</code>。</p>
+<p>Meta 服务初始化时，会自动创建 God 角色用户<code>root</code>，密码为<code>nebula</code>。</p>
 <div class="admonition caution">
 <p class="admonition-title">注意</p>
 <p>请及时修改<code>root</code>用户的密码，保证数据安全。</p>
@@ -2413,10 +2413,10 @@
 </li>
 </ul>
 <ul>
-<li>一个集群只能有一个God角色用户，该用户可以管理集群内所有图空间。</li>
+<li>一个集群只能有一个 God 角色用户，该用户可以管理集群内所有图空间。</li>
 </ul>
 <ul>
-<li>不支持手动授权God角色，只能使用默认God角色用户<code>root</code>。</li>
+<li>不支持手动授权 God 角色，只能使用默认 God 角色用户<code>root</code>。</li>
 </ul>
 </li>
 </ul>
@@ -2424,14 +2424,14 @@
 <li>
 <p>Admin</p>
 <ul>
-<li>对权限内的图空间拥有Schema和data的<strong>读写</strong>权限。</li>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>读写</strong>权限。</li>
 </ul>
 <ul>
 <li>
 <p>可以将权限内的图空间授权给其他用户。</p>
 <div class="admonition caution">
 <p class="admonition-title">注意</p>
-<p>只能授权低于ADMIN级别的角色给其他用户。</p>
+<p>只能授权低于 ADMIN 级别的角色给其他用户。</p>
 </div>
 </li>
 </ul>
@@ -2441,7 +2441,7 @@
 <li>
 <p>DBA</p>
 <ul>
-<li>对权限内的图空间拥有Schema和data的<strong>读写</strong>权限。</li>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>读写</strong>权限。</li>
 </ul>
 <ul>
 <li>无法将权限内的图空间授权给其他用户。</li>
@@ -2452,10 +2452,10 @@
 <li>
 <p>User</p>
 <ul>
-<li>对权限内的图空间拥有Schema的<strong>只读</strong>权限。</li>
+<li>对权限内的图空间拥有 Schema 的<strong>只读</strong>权限。</li>
 </ul>
 <ul>
-<li>对权限内的图空间拥有data的<strong>读写</strong>权限。</li>
+<li>对权限内的图空间拥有 data 的<strong>读写</strong>权限。</li>
 </ul>
 </li>
 </ul>
@@ -2463,7 +2463,7 @@
 <li>
 <p>Guest</p>
 <ul>
-<li>对权限内的图空间拥有Schema和data的<strong>只读</strong>权限。</li>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>只读</strong>权限。</li>
 </ul>
 </li>
 </ul>
@@ -2471,7 +2471,7 @@
 <p class="admonition-title">Note</p>
 <ul>
 <li>不支持自行创建角色，只能使用默认的内置角色。</li>
-<li>一个用户在一个图空间内只能拥有一个角色权限。授权用户请参见<a href="../2.management-user/">用户管理</a>。</li>
+<li>一个用户在一个图空间内只能拥有一个角色权限。授权用户请参见 <a href="../2.management-user/">用户管理</a>。</li>
 </ul>
 </div>
 <h2 id="_3">角色权限<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
@@ -2583,14 +2583,14 @@
 </table>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Show operations为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
-只有God角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</p>
+<p>Show operations 为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
+只有 God 角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</p>
 </div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

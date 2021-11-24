@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#targznebula_graph">
+<a class="md-skip" href="#targz_nebula_graph">
           跳转至
         </a>
 </div>
@@ -2393,16 +2393,16 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="targznebula_graph">使用tar.gz文件安装Nebula Graph<a class="headerlink" href="#targznebula_graph" title="Permanent link">¶</a></h1>
-<p>用户可以下载打包好的tar.gz文件快速安装Nebula Graph。</p>
+<h1 id="targz_nebula_graph">使用 tar.gz 文件安装 Nebula Graph<a class="headerlink" href="#targz_nebula_graph" title="Permanent link">¶</a></h1>
+<p>用户可以下载打包好的 tar.gz 文件快速安装 Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Nebula Graph从2.6.0版本起提供tar.gz文件。</p>
+<p>Nebula Graph 从 2.6.0 版本起提供 tar.gz 文件。</p>
 </div>
 <h2 id="_1">操作步骤<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>使用如下地址下载Nebula Graph的tar.gz文件。</p>
+<p>使用如下地址下载 Nebula Graph 的 tar.gz 文件。</p>
 <p>下载前需将<code>&lt;release_version&gt;</code>替换为需要下载的版本。</p>
 <div class="highlight"><pre><span></span><code>//Centos <span class="m">7</span>
 https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el7.x86_64.tar.gz
@@ -2429,16 +2429,16 @@ https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph
 //Checksum
 https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.tar.gz.sha256sum.txt
 </code></pre></div>
-<p>例如，要下载适用于<code>CentOS 7.5</code>的Nebula Graph v2.6.1 tar.gz文件，运行以下命令：</p>
+<p>例如，要下载适用于<code>CentOS 7.5</code>的 Nebula Graph v2.6.1 tar.gz 文件，运行以下命令：</p>
 <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/2.6.1/nebula-graph-2.6.1.el7.x86_64.tar.gz
 </code></pre></div>
 </li>
 <li>
-<p>解压tar.gz文件到Nebula Graph安装目录。</p>
+<p>解压 tar.gz 文件到 Nebula Graph 安装目录。</p>
 <div class="highlight"><pre><span></span><code>tar -xvzf &lt;tar.gz_file_name&gt; -C &lt;install_path&gt;
 </code></pre></div>
 <ul>
-<li><code>tar.gz_file_name</code>表示tar.gz文件的名称。</li>
+<li><code>tar.gz_file_name</code>表示 tar.gz 文件的名称。</li>
 <li><code>install_path</code>表示安装路径。</li>
 </ul>
 <p>例如：</p>
@@ -2447,22 +2447,22 @@ https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph
 </li>
 <li>
 <p>修改配置文件名以应用配置。</p>
-<p>进入解压出的目录，将子目录<code>etc</code>中的文件<code>nebula-graphd.conf.default</code>、<code>nebula-metad.conf.default</code>和<code>nebula-storaged.conf.default</code>重命名，删除<code>.default</code>，即可应用Nebula Graph的默认配置。如需修改配置，参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
+<p>进入解压出的目录，将子目录<code>etc</code>中的文件<code>nebula-graphd.conf.default</code>、<code>nebula-metad.conf.default</code>和<code>nebula-storaged.conf.default</code>重命名，删除<code>.default</code>，即可应用 Nebula Graph 的默认配置。如需修改配置，参见 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
 </li>
 </ol>
-<p>至此，Nebula Graph安装完毕。</p>
+<p>至此，Nebula Graph 安装完毕。</p>
 <h2 id="_2">下一步<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
-<li>(企业版)<a href="../../deploy-license/">设置License</a></li>
+<li>（企业版）<a href="../../deploy-license/">设置 License</a></li>
 </ul>
 <ul>
-<li><a href="../../manage-service/">管理Nebula Graph服务</a></li>
+<li><a href="../../manage-service/">管理 Nebula Graph 服务</a></li>
 </ul>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

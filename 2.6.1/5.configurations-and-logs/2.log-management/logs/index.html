@@ -2424,20 +2424,20 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">日志配置<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph使用<a href="https://github.com/google/glog">glog</a>打印日志，使用<a href="https://gflags.github.io/gflags/">gflags</a>控制日志级别，并在运行时通过HTTP接口动态修改日志级别，方便跟踪问题。</p>
+<p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志，使用 <a href="https://gflags.github.io/gflags/">gflags</a> 控制日志级别，并在运行时通过 HTTP 接口动态修改日志级别，方便跟踪问题。</p>
 <h2 id="_2">日志目录<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>日志的默认目录为<code>/usr/local/nebula/logs/</code>。</p>
-<p>如果在Nebula Graph运行过程中删除日志目录，日志不会继续打印，但是不会影响业务。重启服务可以恢复正常。</p>
+<p>如果在 Nebula Graph 运行过程中删除日志目录，日志不会继续打印，但是不会影响业务。重启服务可以恢复正常。</p>
 <h2 id="_3">配置说明<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li><code>minloglevel</code>：最小日志级别，即不会记录低于这个级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，Nebula Graph不会记录任何日志。</li>
+<li><code>minloglevel</code>：最小日志级别，即不会记录低于这个级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，Nebula Graph 不会记录任何日志。</li>
 </ul>
 <ul>
 <li><code>v</code>：日志详细级别，值越大，日志记录越详细。可选值为<code>0</code>、<code>1</code>、<code>2</code>、<code>3</code>。</li>
 </ul>
-<p>Meta服务、Graph服务和Storage服务的日志级别可以在各自的配置文件中查看，默认路径为<code>/usr/local/nebula/etc/</code>。</p>
+<p>Meta 服务、Graph 服务和 Storage 服务的日志级别可以在各自的配置文件中查看，默认路径为<code>/usr/local/nebula/etc/</code>。</p>
 <h2 id="_4">查看日志级别<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<p>使用如下命令查看当前所有的gflags参数（包括日志参数）：</p>
+<p>使用如下命令查看当前所有的 gflags 参数（包括日志参数）：</p>
 <div class="highlight"><pre><span></span><code>$ curl &lt;ws_ip&gt;:&lt;ws_port&gt;/flags
 </code></pre></div>
 <table>
@@ -2450,22 +2450,22 @@
 <tbody>
 <tr>
 <td align="left"><code>ws_ip</code></td>
-<td align="left">HTTP服务的IP地址，可以在配置文件中查看。默认值为<code>127.0.0.1</code>。</td>
+<td align="left">HTTP 服务的 IP 地址，可以在配置文件中查看。默认值为<code>127.0.0.1</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>ws_port</code></td>
-<td align="left">HTTP服务的端口，可以在配置文件中查看。默认值分别为<code>19559</code>（Meta）、<code>19669</code>（Graph）<code>19779</code>（Storage）。</td>
+<td align="left">HTTP 服务的端口，可以在配置文件中查看。默认值分别为<code>19559</code>（Meta）、<code>19669</code>（Graph）<code>19779</code>（Storage）。</td>
 </tr>
 </tbody>
 </table>
 <p>示例如下：</p>
 <ul>
-<li>查看Meta服务当前的最小日志级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19559/flags <span class="p">|</span> grep <span class="s1">'minloglevel'</span>
+<li>查看 Meta 服务当前的最小日志级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19559/flags <span class="p">|</span> grep <span class="s1">'minloglevel'</span>
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>查看Storage服务当前的日志详细级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19779/flags <span class="p">|</span> grep -w <span class="s1">'v'</span>
+<li>查看 Storage 服务当前的日志详细级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19779/flags <span class="p">|</span> grep -w <span class="s1">'v'</span>
 </code></pre></div>
 </li>
 </ul>
@@ -2483,19 +2483,19 @@
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
-<td align="left">待修改的日志类型，可选值请参见<a href="#_3">配置说明</a>。</td>
+<td align="left">待修改的日志类型，可选值请参见 <a href="#_3">配置说明</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>value</code></td>
-<td align="left">日志级别，可选值请参见<a href="#_3">配置说明</a>。</td>
+<td align="left">日志级别，可选值请参见 <a href="#_3">配置说明</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>ws_ip</code></td>
-<td align="left">HTTP服务的IP地址，可以在配置文件中查看。默认值为<code>127.0.0.1</code>。</td>
+<td align="left">HTTP 服务的 IP 地址，可以在配置文件中查看。默认值为<code>127.0.0.1</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>ws_port</code></td>
-<td align="left">HTTP服务的端口，可以在配置文件中查看。默认值分别为<code>19559</code>（Meta）、<code>19669</code>（Graph）<code>19779</code>（Storage）。</td>
+<td align="left">HTTP 服务的端口，可以在配置文件中查看。默认值分别为<code>19559</code>（Meta）、<code>19669</code>（Graph）<code>19779</code>（Storage）。</td>
 </tr>
 </tbody>
 </table>
@@ -2504,14 +2504,14 @@
 $ curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"minloglevel":0,"v":3}'</span> <span class="s2">"127.0.0.1:19669/flags"</span> <span class="c1"># graphd</span>
 $ curl -X PUT -H <span class="s2">"Content-Type: application/json"</span> -d <span class="s1">'{"minloglevel":0,"v":3}'</span> <span class="s2">"127.0.0.1:19559/flags"</span> <span class="c1"># metad</span>
 </code></pre></div>
-<p>如果在Nebula Graph运行时修改了日志级别，重启服务后会恢复为配置文件中设置的级别，如果需要永久修改，请修改<a href="../../1.configurations/1.configurations/">配置文件</a>。</p>
+<p>如果在 Nebula Graph 运行时修改了日志级别，重启服务后会恢复为配置文件中设置的级别，如果需要永久修改，请修改 <a href="../../1.configurations/1.configurations/">配置文件</a>。</p>
 <h2 id="rocksdb">RocksDB 日志<a class="headerlink" href="#rocksdb" title="Permanent link">¶</a></h2>
 <p>RocksDB 的日志通常在 <code>/usr/local/nebula/data/storage/nebula/$id/data/LOG</code>, 其中 <code>$id</code> 为实例号。该日志通常用于调试 RocksDB 参数。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

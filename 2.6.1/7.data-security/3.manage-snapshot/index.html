@@ -2444,10 +2444,10 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">管理快照<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph提供快照（snapshot）功能，用于保存集群当前时间点的数据状态，当出现数据丢失或误操作时，可以通过快照恢复数据。</p>
+<p>Nebula Graph 提供快照（snapshot）功能，用于保存集群当前时间点的数据状态，当出现数据丢失或误操作时，可以通过快照恢复数据。</p>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Nebula Graph的<a href="../1.authentication/1.authentication/">身份认证</a>功能默认是关闭的，此时任何用户都能使用快照功能。</p>
-<p>如果身份认证开启，仅God角色用户可以使用快照功能。关于角色说明，请参见<a href="../1.authentication/3.role-list/">内置角色权限</a>。</p>
+<p>Nebula Graph 的 <a href="../1.authentication/1.authentication/">身份认证</a> 功能默认是关闭的，此时任何用户都能使用快照功能。</p>
+<p>如果身份认证开启，仅 God 角色用户可以使用快照功能。关于角色说明，请参见 <a href="../1.authentication/3.role-list/">内置角色权限</a>。</p>
 <h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
 <li>系统结构发生变化后，建议立刻创建快照，例如在<code>add host</code>、<code>drop host</code>、<code>create space</code>、<code>drop space</code>、<code>balance</code>等操作之后。</li>
@@ -2459,9 +2459,9 @@
 <li>不支持指定快照保存路径，默认路径为<code>/usr/local/nebula/data</code>。</li>
 </ul>
 <h2 id="_4">快照路径<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<p>Nebula Graph创建的快照以目录的形式存储，例如<code>SNAPSHOT_2021_03_09_08_43_12</code>，后缀<code>2021_03_09_08_43_12</code>根据创建时间（UTC）自动生成。</p>
-<p>创建快照时，快照目录会自动在leader Meta服务器和所有Storage服务器的目录<code>checkpoints</code>内创建。</p>
-<p>为了快速定位快照所在路径，可以使用Linux命令<code>find</code>。例如：</p>
+<p>Nebula Graph 创建的快照以目录的形式存储，例如<code>SNAPSHOT_2021_03_09_08_43_12</code>，后缀<code>2021_03_09_08_43_12</code>根据创建时间（UTC）自动生成。</p>
+<p>创建快照时，快照目录会自动在 leader Meta 服务器和所有 Storage 服务器的目录<code>checkpoints</code>内创建。</p>
+<p>为了快速定位快照所在路径，可以使用 Linux 命令<code>find</code>。例如：</p>
 <div class="highlight"><pre><span></span><code>$ find <span class="p">|</span>grep <span class="s1">'SNAPSHOT_2021_03_09_08_43_12'</span>
 ./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12
 ./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12/data
@@ -2472,7 +2472,7 @@
 <p>命令<code>CREATE SNAPSHOT</code>可以创建集群当前时间点的快照。只支持创建所有图空间的快照，不支持创建指定图空间的快照。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果快照创建失败，请<a href="#_7">删除快照</a>重新创建。</p>
+<p>如果快照创建失败，请 <a href="#_7">删除快照</a> 重新创建。</p>
 </div>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE SNAPSHOT;
 </code></pre></div>
@@ -2497,7 +2497,7 @@
 <tbody>
 <tr>
 <td align="left"><code>Name</code></td>
-<td align="left">快照名称，前缀为<code>SNAPSHOT</code>，表示该文件为快照文件，后缀为快照创建的时间点（UTC时间）。</td>
+<td align="left">快照名称，前缀为<code>SNAPSHOT</code>，表示该文件为快照文件，后缀为快照创建的时间点（UTC 时间）。</td>
 </tr>
 <tr>
 <td align="left"><code>Status</code></td>
@@ -2505,7 +2505,7 @@
 </tr>
 <tr>
 <td align="left"><code>Hosts</code></td>
-<td align="left">创建快照时所有Storage服务器的IP地址和端口。</td>
+<td align="left">创建快照时所有 Storage 服务器的 IP 地址和端口。</td>
 </tr>
 </tbody>
 </table>
@@ -2523,10 +2523,10 @@ nebula&gt; SHOW SNAPSHOTS;
 +--------------------------------+---------+------------------+
 </code></pre></div>
 <h2 id="_8">恢复快照<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
-<p>当前未提供恢复快照命令，需要手动拷贝快照文件到对应的文件夹内，也可以通过shell脚本进行操作。实现逻辑如下：</p>
+<p>当前未提供恢复快照命令，需要手动拷贝快照文件到对应的文件夹内，也可以通过 shell 脚本进行操作。实现逻辑如下：</p>
 <ol>
 <li>
-<p>创建快照后，会在leader Meta服务器和所有Storage服务器的安装目录内生成<code>checkpoints</code>目录，保存创建的快照。以本文为例，当存在2个图空间时，创建的快照分别保存在<code>/usr/local/nebula/data/meta/nebula/0/checkpoints</code>、<code>/usr/local/nebula/data/storage/nebula/3/checkpoints</code>和<code>/usr/local/nebula/data/storage/nebula/4/checkpoints</code>中。</p>
+<p>创建快照后，会在 leader Meta 服务器和所有 Storage 服务器的安装目录内生成<code>checkpoints</code>目录，保存创建的快照。以本文为例，当存在 2 个图空间时，创建的快照分别保存在<code>/usr/local/nebula/data/meta/nebula/0/checkpoints</code>、<code>/usr/local/nebula/data/storage/nebula/3/checkpoints</code>和<code>/usr/local/nebula/data/storage/nebula/4/checkpoints</code>中。</p>
 <div class="highlight"><pre><span></span><code>$ ls /usr/local/nebula/data/meta/nebula/0/checkpoints/
 SNAPSHOT_2021_03_09_09_10_52
 $ ls /usr/local/nebula/data/storage/nebula/3/checkpoints/
@@ -2539,7 +2539,7 @@ SNAPSHOT_2021_03_09_09_10_52
 <p>当数据丢失需要通过快照恢复时，用户可以找到合适的时间点快照，将内部的文件夹<code>data</code>和<code>wal</code>分别拷贝到各自的上级目录（和<code>checkpoints</code>平级），覆盖之前的<code>data</code>和<code>wal</code>，然后重启集群即可。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>需要同时覆盖所有Meta节点的data和wal目录，因为存在重启集群后发生Meta重新选举leader的情况，如果不覆盖所有Meta节点，新的leader使用的还是最新的Meta数据，导致恢复失败。</p>
+<p>需要同时覆盖所有 Meta 节点的 data 和 wal 目录，因为存在重启集群后发生 Meta 重新选举 leader 的情况，如果不覆盖所有 Meta 节点，新的 leader 使用的还是最新的 Meta 数据，导致恢复失败。</p>
 </div>
 </li>
 </ol>
@@ -2547,13 +2547,13 @@ SNAPSHOT_2021_03_09_09_10_52
 
 ## 相关文档
 
-除了使用快照，用户还可以使用备份恢复工具Backup&Restore（BR）备份或恢复Nebula Graph数据。详情请参见[Backup&Restore](2.backup-restore/1.what-is-br.md)。
+除了使用快照，用户还可以使用备份恢复工具 Backup&Restore（BR）备份或恢复 Nebula Graph 数据。详情请参见 [Backup&Restore](2.backup-restore/1.what-is-br.md)。
 -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

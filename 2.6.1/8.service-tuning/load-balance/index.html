@@ -1444,9 +1444,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage_1">
-    移除Storage服务器
+    移除 Storage 服务器
   </a>
-<nav aria-label="移除Storage服务器" class="md-nav">
+<nav aria-label="移除 Storage 服务器" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
@@ -1458,9 +1458,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#leader">
-    均衡leader分布
+    均衡 leader 分布
   </a>
-<nav aria-label="均衡leader分布" class="md-nav">
+<nav aria-label="均衡 leader 分布" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
@@ -2441,9 +2441,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#storage_1">
-    移除Storage服务器
+    移除 Storage 服务器
   </a>
-<nav aria-label="移除Storage服务器" class="md-nav">
+<nav aria-label="移除 Storage 服务器" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
@@ -2455,9 +2455,9 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#leader">
-    均衡leader分布
+    均衡 leader 分布
   </a>
-<nav aria-label="均衡leader分布" class="md-nav">
+<nav aria-label="均衡 leader 分布" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
@@ -2477,19 +2477,19 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/8.service-tuning/load-balance.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="storage">Storage负载均衡<a class="headerlink" href="#storage" title="Permanent link">¶</a></h1>
-<p>用户可以使用<code>BALANCE</code>语句平衡分片和Raft leader的分布，或者删除冗余的Storage服务器。</p>
+<h1 id="storage">Storage 负载均衡<a class="headerlink" href="#storage" title="Permanent link">¶</a></h1>
+<p>用户可以使用<code>BALANCE</code>语句平衡分片和 Raft leader 的分布，或者删除冗余的 Storage 服务器。</p>
 <h2 id="_1">均衡分片分布<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p><code>BALANCE DATA</code>语句会开始一个任务，将Nebula Graph集群中的分片平均分配到所有Storage服务器。通过创建和执行一组子任务来迁移数据和均衡分片分布。</p>
+<p><code>BALANCE DATA</code>语句会开始一个任务，将 Nebula Graph 集群中的分片平均分配到所有 Storage 服务器。通过创建和执行一组子任务来迁移数据和均衡分片分布。</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>不要停止集群中的任何机器或改变机器的IP地址，直到所有子任务完成，否则后续子任务会失败。</p>
+<p>不要停止集群中的任何机器或改变机器的 IP 地址，直到所有子任务完成，否则后续子任务会失败。</p>
 </div>
 <h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<p>以横向扩容Nebula Graph为例，集群中增加新的Storage服务器后，新服务器上没有分片。</p>
+<p>以横向扩容 Nebula Graph 为例，集群中增加新的 Storage 服务器后，新服务器上没有分片。</p>
 <ol>
 <li>
-<p>执行命令<a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/"><code>SHOW HOSTS</code></a>检查分片的分布。</p>
+<p>执行命令 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/"><code>SHOW HOSTS</code></a> 检查分片的分布。</p>
 <div class="highlight"><pre><span></span><code>nebual&gt; SHOW HOSTS;
 +-------------+------+----------+--------------+-----------------------------------+------------------------+
 | Host        | Port | Status   | Leader count | Leader distribution               | Partition distribution |
@@ -2514,7 +2514,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>根据返回的任务ID，执行命令<code>BALANCE DATA &lt;balance_id&gt;</code>检查任务状态。</p>
+<p>根据返回的任务 ID，执行命令<code>BALANCE DATA &lt;balance_id&gt;</code>检查任务状态。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; BALANCE DATA 1614237867;
 +--------------------------------------------------------------+-------------------+
 | balanceId, spaceId:partId, src-&gt;dst                          | status            |
@@ -2531,7 +2531,7 @@
 <p>等待所有子任务完成，负载均衡进程结束，执行命令<code>SHOW HOSTS</code>确认分片已经均衡分布。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>BALANCE DATA</code>不会均衡leader的分布。均衡leader请参见<a href="#leader">均衡leader分布</a>。</p>
+<p><code>BALANCE DATA</code>不会均衡 leader 的分布。均衡 leader 请参见 <a href="#leader">均衡 leader 分布</a>。</p>
 </div>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 +-------------+------+----------+--------------+-----------------------------------+------------------------+
@@ -2547,34 +2547,34 @@
 </code></pre></div>
 </li>
 </ol>
-<p>如果有子任务失败，请重新执行<code>BALANCE DATA</code>。如果重做负载均衡仍然不能解决问题，请到<a href="https://discuss.nebula-graph.com.cn/">Nebula Graph社区</a>寻求帮助。</p>
+<p>如果有子任务失败，请重新执行<code>BALANCE DATA</code>。如果重做负载均衡仍然不能解决问题，请到 <a href="https://discuss.nebula-graph.com.cn/">Nebula Graph 社区</a> 寻求帮助。</p>
 <h2 id="_3">停止负载均衡任务<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>停止负载均衡任务，请执行命令<code>BALANCE DATA STOP</code>。</p>
 <ul>
 <li>如果没有正在执行的负载均衡任务，会返回错误。</li>
 </ul>
 <ul>
-<li>如果有正在执行的负载均衡任务，会返回停止的任务ID（<code>balance_id</code>）。</li>
+<li>如果有正在执行的负载均衡任务，会返回停止的任务 ID（<code>balance_id</code>）。</li>
 </ul>
 <p><code>BALANCE DATA STOP</code>不会停止正在执行的子任务，而是取消所有后续子任务。用户可以执行命令<code>BALANCE DATA &lt;balance_id&gt;</code>检查停止的任务状态。</p>
 <p>一旦所有子任务都完成或停止，用户可以再次执行命令<code>BALANCE DATA</code>。</p>
 <ul>
-<li>如果前一个负载均衡任务的任何一个子任务失败，Nebula Graph会重新启动之前的负载均衡任务。</li>
+<li>如果前一个负载均衡任务的任何一个子任务失败，Nebula Graph 会重新启动之前的负载均衡任务。</li>
 </ul>
 <ul>
-<li>如果前一个负载均衡任务的任何一个子任务都没有失败，Nebula Graph会启动一个新的的负载均衡任务。</li>
+<li>如果前一个负载均衡任务的任何一个子任务都没有失败，Nebula Graph 会启动一个新的的负载均衡任务。</li>
 </ul>
 <h2 id="_4">重置负载均衡任务<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>如果停止负载均衡任务后重新执行仍然失败，可以尝试用命令<code>BALANCE DATA RESET PLAN</code>重置负载均衡任务，该操作会清空旧的任务。之后再使用<code>BALANCE DATA</code>命令，会新建负载均衡任务，而不是执行旧的任务。</p>
-<h2 id="storage_1">移除Storage服务器<a class="headerlink" href="#storage_1" title="Permanent link">¶</a></h2>
-<p>移除指定的Storage服务器来缩小集群规模，可以使用命令<code>BALANCE DATA REMOVE &lt;host_list&gt;</code>。</p>
+<h2 id="storage_1">移除 Storage 服务器<a class="headerlink" href="#storage_1" title="Permanent link">¶</a></h2>
+<p>移除指定的 Storage 服务器来缩小集群规模，可以使用命令<code>BALANCE DATA REMOVE &lt;host_list&gt;</code>。</p>
 <h3 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<p>如果需要移除以下两台Storage服务器。</p>
+<p>如果需要移除以下两台 Storage 服务器。</p>
 <table>
 <thead>
 <tr>
 <th align="left">服务器名称</th>
-<th align="left">IP地址</th>
+<th align="left">IP 地址</th>
 <th align="left">端口</th>
 </tr>
 </thead>
@@ -2594,13 +2594,13 @@
 <p>请执行如下命令：</p>
 <div class="highlight"><pre><span></span><code>BALANCE DATA REMOVE 192.168.0.8:9779,192.168.0.9:9779;
 </code></pre></div>
-<p>Nebula Graph将启动一个负载均衡任务，迁移storage3和storage4中的分片，然后将服务器从集群中移除。</p>
+<p>Nebula Graph 将启动一个负载均衡任务，迁移 storage3 和 storage4 中的分片，然后将服务器从集群中移除。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>已下线节点状态会显示为 OFFLINE。该记录一天后删除，或更改 meta 配置项 <code>removed_threshold_sec</code>。</p>
 </div>
-<h2 id="leader">均衡leader分布<a class="headerlink" href="#leader" title="Permanent link">¶</a></h2>
-<p><code>BALANCE DATA</code>只能均衡分片分布，不能均衡Raft leader分布。用户可以使用命令<code>BALANCE LEADER</code>均衡leader分布。</p>
+<h2 id="leader">均衡 leader 分布<a class="headerlink" href="#leader" title="Permanent link">¶</a></h2>
+<p><code>BALANCE DATA</code>只能均衡分片分布，不能均衡 Raft leader 分布。用户可以使用命令<code>BALANCE LEADER</code>均衡 leader 分布。</p>
 <h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; BALANCE LEADER;
 </code></pre></div>
@@ -2619,13 +2619,13 @@
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>在 Nebula Graph 2.6.1 中，Leader 切换会导致短时的大量请求错误（Storage Error <code>E_RPC_FAILURE</code>），处理方法见<a href="../../20.appendix/0.FAQ/">FAQ</a>。</p>
+<p>在 Nebula Graph 2.6.1 中，Leader 切换会导致短时的大量请求错误（Storage Error <code>E_RPC_FAILURE</code>），处理方法见 <a href="../../20.appendix/0.FAQ/">FAQ</a>。</p>
 </div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

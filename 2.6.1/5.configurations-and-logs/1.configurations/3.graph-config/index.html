@@ -1282,48 +1282,48 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#basics">
-    basics配置
+    basics 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#logging">
-    logging配置
+    logging 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#query">
-    query配置
+    query 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#networking">
-    networking配置
+    networking 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#charset_and_collate">
-    charset and collate配置
+    charset and collate 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#authorization">
-    authorization配置
+    authorization 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#memory">
-    memory配置
+    memory 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#experimental">
-    experimental配置
+    experimental 配置
   </a>
-<nav aria-label="experimental配置" class="md-nav">
+<nav aria-label="experimental 配置" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#experimental_1">
-    experimental功能说明
+    experimental 功能说明
   </a>
 </li>
 </ul>
@@ -2434,48 +2434,48 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#basics">
-    basics配置
+    basics 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#logging">
-    logging配置
+    logging 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#query">
-    query配置
+    query 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#networking">
-    networking配置
+    networking 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#charset_and_collate">
-    charset and collate配置
+    charset and collate 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#authorization">
-    authorization配置
+    authorization 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#memory">
-    memory配置
+    memory 配置
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#experimental">
-    experimental配置
+    experimental 配置
   </a>
-<nav aria-label="experimental配置" class="md-nav">
+<nav aria-label="experimental 配置" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#experimental_1">
-    experimental功能说明
+    experimental 功能说明
   </a>
 </li>
 </ul>
@@ -2491,21 +2491,21 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/5.configurations-and-logs/1.configurations/3.graph-config.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="graph">Graph服务配置<a class="headerlink" href="#graph" title="Permanent link">¶</a></h1>
-<p>Graph服务提供了两份初始配置文件<code>nebula-graphd.conf.default</code>和<code>nebula-graphd.conf.production</code>，方便在不同场景中使用。文件的默认路径为<code>/usr/local/nebula/etc/</code>。</p>
+<h1 id="graph">Graph 服务配置<a class="headerlink" href="#graph" title="Permanent link">¶</a></h1>
+<p>Graph 服务提供了两份初始配置文件<code>nebula-graphd.conf.default</code>和<code>nebula-graphd.conf.production</code>，方便在不同场景中使用。文件的默认路径为<code>/usr/local/nebula/etc/</code>。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <ul>
-<li>不建议修改<code>local_config</code>的值为<code>false</code>。修改后Nebula Graph服务启动后会先尝试从Meta服务获取缓存的配置信息，可能导致集群配置不一致，造成未知风险。</li>
+<li>不建议修改<code>local_config</code>的值为<code>false</code>。修改后 Nebula Graph 服务启动后会先尝试从 Meta 服务获取缓存的配置信息，可能导致集群配置不一致，造成未知风险。</li>
 <li>不建议修改文档未介绍的配置项，除非已经熟悉源代码并完全了解配置项的作用。</li>
 </ul>
 </div>
 <h2 id="_1">配置文件使用方式<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>如需使用初始配置文件，从上述两个文件选择其一，删除后缀<code>.default</code>或<code>.production</code>，Meta服务才能将其识别为配置文件并从中获取配置信息。</p>
+<p>如需使用初始配置文件，从上述两个文件选择其一，删除后缀<code>.default</code>或<code>.production</code>，Meta 服务才能将其识别为配置文件并从中获取配置信息。</p>
 <h2 id="_2">配置文件参数值说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>配置文件内没有设置某个参数表示参数使用的是默认值。文件内只预设了部分参数的值，而且两份初始配置文件内的参数值也略有不同，本文的预设值以<code>nebula-metad.conf.default</code>为准。</p>
-<p>如需查看所有的参数及其当前值，参见<a href="../1.configurations/">配置管理</a>。</p>
-<h2 id="basics">basics配置<a class="headerlink" href="#basics" title="Permanent link">¶</a></h2>
+<p>如需查看所有的参数及其当前值，参见 <a href="../1.configurations/">配置管理</a>。</p>
+<h2 id="basics">basics 配置<a class="headerlink" href="#basics" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2523,7 +2523,7 @@
 <tr>
 <td><code>pid_file</code></td>
 <td><code>pids/nebula-graphd.pid</code></td>
-<td>记录进程ID的文件。</td>
+<td>记录进程 ID 的文件。</td>
 </tr>
 <tr>
 <td><code>enable_optimizer</code></td>
@@ -2533,7 +2533,7 @@
 <tr>
 <td><code>timezone_name</code></td>
 <td>-</td>
-<td>指定Nebula Graph的时区。初始配置文件中未设置该参数，使用需手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见<a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
+<td>指定 Nebula Graph 的时区。初始配置文件中未设置该参数，使用需手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见 <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
 </tr>
 <tr>
 <td><code>local_config</code></td>
@@ -2545,11 +2545,11 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a>的属性值时，Nebula Graph会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP类型例外）转换成相应的UTC时间，因此在查询中返回的时间类型属性值为UTC时间。</li>
-<li><code>timezone_name</code>参数只用于转换Nebula Graph中存储的数据，Nebula Graph进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
+<li>在插入 <a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a> 的属性值时，Nebula Graph 会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP 类型例外）转换成相应的 UTC 时间，因此在查询中返回的时间类型属性值为 UTC 时间。</li>
+<li><code>timezone_name</code>参数只用于转换 Nebula Graph 中存储的数据，Nebula Graph 进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
 </ul>
 </div>
-<h2 id="logging">logging配置<a class="headerlink" href="#logging" title="Permanent link">¶</a></h2>
+<h2 id="logging">logging 配置<a class="headerlink" href="#logging" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2562,12 +2562,12 @@
 <tr>
 <td><code>log_dir</code></td>
 <td><code>logs</code></td>
-<td>存放Graph服务日志的目录，建议和数据保存在不同硬盘。</td>
+<td>存放 Graph 服务日志的目录，建议和数据保存在不同硬盘。</td>
 </tr>
 <tr>
 <td><code>minloglevel</code></td>
 <td><code>0</code></td>
-<td>最小日志级别，即不会记录低于这个级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，Nebula Graph不会记录任何日志。</td>
+<td>最小日志级别，即不会记录低于这个级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，Nebula Graph 不会记录任何日志。</td>
 </tr>
 <tr>
 <td><code>v</code></td>
@@ -2601,7 +2601,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="query">query配置<a class="headerlink" href="#query" title="Permanent link">¶</a></h2>
+<h2 id="query">query 配置<a class="headerlink" href="#query" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2619,16 +2619,16 @@
 <tr>
 <td><code>session_reclaim_interval_secs</code></td>
 <td><code>10</code></td>
-<td>将Session信息发送给Meta服务的间隔。单位：秒。</td>
+<td>将 Session 信息发送给 Meta 服务的间隔。单位：秒。</td>
 </tr>
 <tr>
 <td><code>max_allowed_query_size</code></td>
 <td><code>4194304</code></td>
-<td>最大查询语句长度。单位：字节。默认为<code>4194304</code>，即4MB。</td>
+<td>最大查询语句长度。单位：字节。默认为<code>4194304</code>，即 4MB。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="networking">networking配置<a class="headerlink" href="#networking" title="Permanent link">¶</a></h2>
+<h2 id="networking">networking 配置<a class="headerlink" href="#networking" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2641,12 +2641,12 @@
 <tr>
 <td><code>meta_server_addrs</code></td>
 <td><code>127.0.0.1:9559</code></td>
-<td>全部Meta服务的IP地址和端口。多个Meta服务用英文逗号（,）分隔。</td>
+<td>全部 Meta 服务的 IP 地址和端口。多个 Meta 服务用英文逗号（,）分隔。</td>
 </tr>
 <tr>
 <td><code>local_ip</code></td>
 <td><code>127.0.0.1</code></td>
-<td>Graph服务的本地IP地址。本地IP地址用于识别nebula-graphd进程，如果是分布式集群或需要远程访问，请修改为对应地址。</td>
+<td>Graph 服务的本地 IP 地址。本地 IP 地址用于识别 nebula-graphd 进程，如果是分布式集群或需要远程访问，请修改为对应地址。</td>
 </tr>
 <tr>
 <td><code>listen_netdev</code></td>
@@ -2656,17 +2656,17 @@
 <tr>
 <td><code>port</code></td>
 <td><code>9669</code></td>
-<td>Graph服务的RPC守护进程监听端口。</td>
+<td>Graph 服务的 RPC 守护进程监听端口。</td>
 </tr>
 <tr>
 <td><code>reuse_port</code></td>
 <td><code>false</code></td>
-<td>是否启用SO_REUSEPORT。</td>
+<td>是否启用 SO_REUSEPORT。</td>
 </tr>
 <tr>
 <td><code>listen_backlog</code></td>
 <td><code>1024</code></td>
-<td>socket监听的连接队列最大长度，调整本参数需要同时调整<code>net.core.somaxconn</code>。</td>
+<td>socket 监听的连接队列最大长度，调整本参数需要同时调整<code>net.core.somaxconn</code>。</td>
 </tr>
 <tr>
 <td><code>client_idle_timeout_secs</code></td>
@@ -2686,27 +2686,27 @@
 <tr>
 <td><code>num_netio_threads</code></td>
 <td><code>0</code></td>
-<td>网络IO线程数。<code>0</code>表示CPU核数。</td>
+<td>网络 IO 线程数。<code>0</code>表示 CPU 核数。</td>
 </tr>
 <tr>
 <td><code>num_worker_threads</code></td>
 <td><code>0</code></td>
-<td>执行用户查询的线程数。<code>0</code>表示CPU核数。</td>
+<td>执行用户查询的线程数。<code>0</code>表示 CPU 核数。</td>
 </tr>
 <tr>
 <td><code>ws_ip</code></td>
 <td><code>0.0.0.0</code></td>
-<td>HTTP服务的IP地址。</td>
+<td>HTTP 服务的 IP 地址。</td>
 </tr>
 <tr>
 <td><code>ws_http_port</code></td>
 <td><code>19669</code></td>
-<td>HTTP服务的端口。</td>
+<td>HTTP 服务的端口。</td>
 </tr>
 <tr>
 <td><code>ws_h2_port</code></td>
 <td><code>19670</code></td>
-<td>HTTP2服务的端口。</td>
+<td>HTTP2 服务的端口。</td>
 </tr>
 <tr>
 <td><code>heartbeat_interval_secs</code></td>
@@ -2716,20 +2716,20 @@
 <tr>
 <td><code>storage_client_timeout_ms</code></td>
 <td>-</td>
-<td>Graph服务与Storage服务的RPC连接超时时间。初始配置文件中未设置该参数，使用需手动添加。默认值为<code>60000</code>毫秒。</td>
+<td>Graph 服务与 Storage 服务的 RPC 连接超时时间。初始配置文件中未设置该参数，使用需手动添加。默认值为<code>60000</code>毫秒。</td>
 </tr>
 <tr>
 <td><code>ws_meta_http_port</code></td>
 <td><code>19559</code></td>
-<td>HTTP协议监听Meta服务的端口，需要和Meta服务配置文件中的<code>ws_http_port</code>保持一致。</td>
+<td>HTTP 协议监听 Meta 服务的端口，需要和 Meta 服务配置文件中的<code>ws_http_port</code>保持一致。</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>必须在配置文件中使用真实的IP地址。否则某些情况下<code>127.0.0.1/0.0.0.0</code>无法正确解析。</p>
+<p>必须在配置文件中使用真实的 IP 地址。否则某些情况下<code>127.0.0.1/0.0.0.0</code>无法正确解析。</p>
 </div>
-<h2 id="charset_and_collate">charset and collate配置<a class="headerlink" href="#charset_and_collate" title="Permanent link">¶</a></h2>
+<h2 id="charset_and_collate">charset and collate 配置<a class="headerlink" href="#charset_and_collate" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2751,7 +2751,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="authorization">authorization配置<a class="headerlink" href="#authorization" title="Permanent link">¶</a></h2>
+<h2 id="authorization">authorization 配置<a class="headerlink" href="#authorization" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2764,7 +2764,7 @@
 <tr>
 <td><code>enable_authorize</code></td>
 <td><code>false</code></td>
-<td>用户登录时是否进行身份验证。身份验证详情请参见<a href="../../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</td>
+<td>用户登录时是否进行身份验证。身份验证详情请参见 <a href="../../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</td>
 </tr>
 <tr>
 <td><code>auth_type</code></td>
@@ -2773,7 +2773,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="memory">memory配置<a class="headerlink" href="#memory" title="Permanent link">¶</a></h2>
+<h2 id="memory">memory 配置<a class="headerlink" href="#memory" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2786,11 +2786,11 @@
 <tr>
 <td><code>system_memory_high_watermark_ratio</code></td>
 <td>-</td>
-<td>内存高水位报警机制的触发阈值，默认为<code>0.9</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph会停止接受查询。</td>
+<td>内存高水位报警机制的触发阈值，默认为<code>0.9</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph 会停止接受查询。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="experimental">experimental配置<a class="headerlink" href="#experimental" title="Permanent link">¶</a></h2>
+<h2 id="experimental">experimental 配置<a class="headerlink" href="#experimental" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2807,7 +2807,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="experimental_1">experimental功能说明<a class="headerlink" href="#experimental_1" title="Permanent link">¶</a></h3>
+<h3 id="experimental_1">experimental 功能说明<a class="headerlink" href="#experimental_1" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -2818,7 +2818,7 @@
 <tbody>
 <tr>
 <td>TOSS</td>
-<td>TOSS（Transaction on Storage Side）功能，用于保证对边进行<code>INSERT</code>、<code>UPDATE</code>或<code>UPSERT</code>操作的最终一致性（因为逻辑上的一条边对应着硬盘上的两个键值对）。暂不支持<code>DELETE</code>操作。开启后会增加相关操作的时延约1倍。</td>
+<td>TOSS（Transaction on Storage Side）功能，用于保证对边进行<code>INSERT</code>、<code>UPDATE</code>或<code>UPSERT</code>操作的最终一致性（因为逻辑上的一条边对应着硬盘上的两个键值对）。暂不支持<code>DELETE</code>操作。开启后会增加相关操作的时延约 1 倍。</td>
 </tr>
 </tbody>
 </table>
@@ -2826,7 +2826,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 15, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>
