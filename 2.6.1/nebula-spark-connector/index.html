@@ -2681,6 +2681,10 @@
 </li>
 </ul>
 <h3 id="nebula_graph_1">向 Nebula Graph 写入数据<a class="headerlink" href="#nebula_graph_1" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DataFrame 中的列会自动作为属性写入 Nebula Graph。</p>
+</div>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="n">config</span> <span class="o">=</span> <span class="nc">NebulaConnectionConfig</span>
   <span class="p">.</span><span class="n">builder</span><span class="p">()</span>
   <span class="p">.</span><span class="n">withMetaAddress</span><span class="p">(</span><span class="s">"127.0.0.1:9559"</span><span class="p">)</span>
