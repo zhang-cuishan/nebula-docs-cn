@@ -2384,7 +2384,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">列表函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持以下列表（List）函数。</p>
+<p>Nebula Graph 支持以下列表（List）函数。</p>
 <table>
 <thead>
 <tr>
@@ -2399,7 +2399,7 @@
 </tr>
 <tr>
 <td align="left">labels(vertex)</td>
-<td align="left">返回点的Tag列表。</td>
+<td align="left">返回点的 Tag 列表。</td>
 </tr>
 <tr>
 <td align="left">nodes(path)</td>
@@ -2407,7 +2407,7 @@
 </tr>
 <tr>
 <td align="left">range(start, end [, step])</td>
-<td align="left">返回<code>[start,end]</code>范围内固定步长的列表，默认步长<code>step</code>为1。</td>
+<td align="left">返回<code>[start,end]</code>范围内固定步长的列表，默认步长<code>step</code>为 1。</td>
 </tr>
 <tr>
 <td align="left">relationships(path)</td>
@@ -2419,7 +2419,7 @@
 </tr>
 <tr>
 <td align="left">tail(list)</td>
-<td align="left">返回不包含原列表第一个元素的新列表.</td>
+<td align="left">返回不包含原列表第一个元素的新列表。</td>
 </tr>
 <tr>
 <td align="left">head(list)</td>
@@ -2435,7 +2435,7 @@
 </tr>
 <tr>
 <td align="left">reduce()</td>
-<td align="left">请参见<a href="../11.reduce/">reduce函数</a>。</td>
+<td align="left">请参见 <a href="../11.reduce/">reduce 函数</a>。</td>
 </tr>
 </tbody>
 </table>
@@ -2458,7 +2458,6 @@ nebula&gt; MATCH (a:player)-[r]-&gt;() \
 +------------+----------------------------+
 | labels(a)  | keys(r)                    |
 +------------+----------------------------+
-| ["player"] | ["degree"]                 |
 | ["player"] | ["degree"]                 |
 | ["player"] | ["end_year", "start_year"] |
 +------------+----------------------------+
@@ -2485,7 +2484,7 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.name == "Tim 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

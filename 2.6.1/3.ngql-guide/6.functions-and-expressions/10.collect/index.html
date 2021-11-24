@@ -2383,9 +2383,9 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/6.functions-and-expressions/10.collect.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="collect">collect函数<a class="headerlink" href="#collect" title="Permanent link">¶</a></h1>
+<h1 id="collect">collect 函数<a class="headerlink" href="#collect" title="Permanent link">¶</a></h1>
 <p><code>collect()</code>函数返回一个符合表达式返回结果的列表。该函数可以将多条记录或值合并进一个列表，实现数据聚合。</p>
-<p><code>collect()</code>是一个聚合函数，类似SQL中的<code>GROUP BY</code>。</p>
+<p><code>collect()</code>是一个聚合函数，类似 SQL 中的<code>GROUP BY</code>。</p>
 <h2 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; UNWIND [1, 2, 1] AS a \
         RETURN a;
@@ -2414,7 +2414,7 @@ nebula&gt; UNWIND [1, 2, 1] AS a \
 | 1 | [1, 1]     | 2                |
 +---+------------+------------------+
 
-# 降序排列，限制输出行数为3，然后将结果输出到列表中。
+# 降序排列，限制输出行数为 3，然后将结果输出到列表中。
 nebula&gt; UNWIND ["c", "b", "a", "d" ] AS p \
         WITH p AS q \
         ORDER BY q DESC LIMIT 3 \
@@ -2459,7 +2459,7 @@ nebula&gt; MATCH (n:player) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

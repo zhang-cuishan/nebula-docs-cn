@@ -2452,7 +2452,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">字符串运算符<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持使用字符串运算符进行连接、搜索、匹配运算。支持的运算符如下。</p>
+<p>Nebula Graph 支持使用字符串运算符进行连接、搜索、匹配运算。支持的运算符如下。</p>
 <table>
 <thead>
 <tr>
@@ -2567,9 +2567,9 @@ nebula&gt; RETURN 'apple' STARTS WITH 'b','apple' NOT STARTS WITH 'app';
 <h3 id="_4">正则表达式<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>当前仅opencypher兼容语句（<code>MATCH</code>、<code>WITH</code>等）支持正则表达式，原生nGQL语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等）不支持正则表达式。</p>
+<p>当前仅 opencypher 兼容语句（<code>MATCH</code>、<code>WITH</code>等）支持正则表达式，原生 nGQL 语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等）不支持正则表达式。</p>
 </div>
-<p>Nebula Graph支持使用正则表达式进行过滤，正则表达式的语法是继承自<code>std::regex</code>，用户可以使用语法<code>=~ '&lt;regexp&gt;'</code>进行正则表达式匹配。例如：</p>
+<p>Nebula Graph 支持使用正则表达式进行过滤，正则表达式的语法是继承自<code>std::regex</code>，用户可以使用语法<code>=~ '&lt;regexp&gt;'</code>进行正则表达式匹配。例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; RETURN "384748.39" =~ "\\d+(\\.\\d{2})?";
 +--------------------------------+
 | ("384748.39"=~"\d+(\.\d{2})?") |
@@ -2588,7 +2588,7 @@ nebula&gt; MATCH (v:player) WHERE v.name =~ 'Tony.*' RETURN v.name;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

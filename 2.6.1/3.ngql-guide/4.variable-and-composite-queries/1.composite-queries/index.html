@@ -407,7 +407,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2380,7 +2380,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2405,37 +2405,37 @@
 </a>
 <h1 id="_1">复合查询（子句结构）<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <p>复合查询将来自不同请求的数据放在一起，然后进行过滤、分组或者排序等，最后返回结果。</p>
-<p>Nebula Graph支持三种方式进行复合查询（或子查询）：</p>
+<p>Nebula Graph 支持三种方式进行复合查询（或子查询）：</p>
 <ul>
-<li>（opencypher兼容语句）连接各个子句，让它们在彼此之间提供中间结果集。</li>
+<li>（opencypher 兼容语句）连接各个子句，让它们在彼此之间提供中间结果集。</li>
 </ul>
 <ul>
-<li>（原生nGQL）多个查询可以合并处理，以英文分号（;）分隔，返回最后一个查询的结果。</li>
+<li>（原生 nGQL）多个查询可以合并处理，以英文分号（;）分隔，返回最后一个查询的结果。</li>
 </ul>
 <ul>
-<li>（原生nGQL）可以用管道符（|）将多个查询连接起来，上一个查询的结果可以作为下一个查询的输入。</li>
+<li>（原生 nGQL）可以用管道符（|）将多个查询连接起来，上一个查询的结果可以作为下一个查询的输入。</li>
 </ul>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
-<p>在复合查询中，请<strong>不要</strong>混用opencypher兼容语句和原生nGQL语句，例如<code>MATCH ... | GO ... | YIELD ...</code>，混用两种语句，行为是未定义的。</p>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>在复合查询中，请<strong>不要</strong>混用 opencypher 兼容语句和原生 nGQL 语句，例如<code>MATCH ... | GO ... | YIELD ...</code>，混用两种语句，行为是未定义的。</p>
 <ul>
-<li>如果使用openCypher兼容语句（<code>MATCH</code>、<code>RETURN</code>、<code>WITH</code>等），请不要使用管道符或分号组合子句。</li>
+<li>如果使用 openCypher 兼容语句（<code>MATCH</code>、<code>RETURN</code>、<code>WITH</code>等），请不要使用管道符或分号组合子句。</li>
 </ul>
 <ul>
-<li>如果使用原生nGQL语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等），必须使用管道符或分号组合子句。</li>
+<li>如果使用原生 nGQL 语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等），必须使用管道符或分号组合子句。</li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">行为未定义</p>
-<p>不要混用 openCypher 兼容语句和原生 nGQL语句，行为是未定义的。</p>
+<p>不要混用 openCypher 兼容语句和原生 nGQL 语句，行为是未定义的。</p>
 </div>
 <h2 id="_2">复合查询不支持事务<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>例如一个查询由三个子查询A、B、C组成，A是一个读操作，B是一个计算操作，C是一个写操作，如果在执行过程中，任何一个操作执行失败，则整个结果是未定义的：没有回滚，而且写入的内容取决于执行程序。</p>
+<p>例如一个查询由三个子查询 A、B、C 组成，A 是一个读操作，B 是一个计算操作，C 是一个写操作，如果在执行过程中，任何一个操作执行失败，则整个结果是未定义的：没有回滚，而且写入的内容取决于执行程序。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>openCypher没有事务要求。</p>
+<p>openCypher 没有事务要求。</p>
 </div>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
-<li>opencypher兼容语句<div class="highlight"><pre><span></span><code># 子句连接多个查询。
+<li>opencypher 兼容语句<div class="highlight"><pre><span></span><code># 子句连接多个查询。
 nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})--() \
         WITH nodes(p) AS n \
         UNWIND n AS n1 \
@@ -2444,7 +2444,7 @@ nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})--() \
 </li>
 </ul>
 <ul>
-<li>原生nGQL（分号）<div class="highlight"><pre><span></span><code># 只返回边。
+<li>原生 nGQL（分号）<div class="highlight"><pre><span></span><code># 只返回边。
 nebula&gt; SHOW TAGS; SHOW EDGES;
 
 # 插入多个点。
@@ -2455,7 +2455,7 @@ nebula&gt; INSERT VERTEX player(name, age) VALUES "player100":("Tim Duncan", 42)
 </li>
 </ul>
 <ul>
-<li>原生nGQL（管道符）<div class="highlight"><pre><span></span><code># 管道符连接多个查询。
+<li>原生 nGQL（管道符）<div class="highlight"><pre><span></span><code># 管道符连接多个查询。
 nebula&gt; GO FROM "player100" OVER follow YIELD dst(edge) AS id | \
         GO FROM $-.id OVER serve YIELD properties($$).name AS Team, \
         properties($^).name AS Player;
@@ -2473,7 +2473,7 @@ nebula&gt; GO FROM "player100" OVER follow YIELD dst(edge) AS id | \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

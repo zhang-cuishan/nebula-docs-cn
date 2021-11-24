@@ -457,7 +457,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2426,7 +2426,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2497,20 +2497,20 @@
 </a>
 <h1 id="_1">集合运算符<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <p>合并多个请求时，可以使用集合运算符，包括<code>UNION</code>、<code>UNION ALL</code>、<code>INTERSECT</code>和<code>MINUS</code>。</p>
-<p>所有集合运算符的优先级相同，如果一个nGQL语句中有多个集合运算符，Nebula Graph会从左到右进行计算，除非用括号指定顺序。</p>
-<h2 id="opencypher">openCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
-<p>集合运算符仅适用于原生nGQL。</p>
+<p>所有集合运算符的优先级相同，如果一个 nGQL 语句中有多个集合运算符，Nebula Graph 会从左到右进行计算，除非用括号指定顺序。</p>
+<h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>集合运算符仅适用于原生 nGQL。</p>
 <h2 id="unionunion_distinctunion_all">UNION、UNION DISTINCT、UNION ALL<a class="headerlink" href="#unionunion_distinctunion_all" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>&lt;left&gt; UNION [DISTINCT | ALL] &lt;right&gt; [ UNION [DISTINCT | ALL] &lt;right&gt; ...]
 </code></pre></div>
 <ul>
-<li>运算符<code>UNION DISTINCT</code>（或使用缩写<code>UNION</code>）返回两个集合A和B的并集，不包含重复的元素。</li>
+<li>运算符<code>UNION DISTINCT</code>（或使用缩写<code>UNION</code>）返回两个集合 A 和 B 的并集，不包含重复的元素。</li>
 </ul>
 <ul>
-<li>运算符<code>UNION ALL</code>返回两个集合A和B的并集，包含重复的元素。</li>
+<li>运算符<code>UNION ALL</code>返回两个集合 A 和 B 的并集，包含重复的元素。</li>
 </ul>
 <ul>
-<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见<a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
+<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见 <a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
 </ul>
 <h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code># 返回两个查询结果的并集，不包含重复的元素。
@@ -2534,11 +2534,10 @@ nebula&gt; GO FROM "player102" OVER follow \
 +-------------+
 | "player100" |
 | "player101" |
-| "player101" |
 | "player125" |
 +-------------+
 
-# UNION也可以和YIELD语句一起使用，去重时会检查每一行的所有列，每列都相同时才会去重。
+# UNION 也可以和 YIELD 语句一起使用，去重时会检查每一行的所有列，每列都相同时才会去重。
 nebula&gt; GO FROM "player102" OVER follow \
         YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age \
         UNION /* DISTINCT */ \
@@ -2557,10 +2556,10 @@ nebula&gt; GO FROM "player102" OVER follow \
 <div class="highlight"><pre><span></span><code>&lt;left&gt; INTERSECT &lt;right&gt;
 </code></pre></div>
 <ul>
-<li>运算符<code>INTERSECT</code>返回两个集合A和B的交集。</li>
+<li>运算符<code>INTERSECT</code>返回两个集合 A 和 B 的交集。</li>
 </ul>
 <ul>
-<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见<a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
+<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见 <a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
 </ul>
 <h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player102" OVER follow \
@@ -2571,12 +2570,11 @@ nebula&gt; GO FROM "player102" OVER follow \
 +----+--------+-----+
 | id | Degree | Age |
 +----+--------+-----+
-+----+--------+-----+
 </code></pre></div>
 <h2 id="minus">MINUS<a class="headerlink" href="#minus" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>&lt;left&gt; MINUS &lt;right&gt;
 </code></pre></div>
-<p>运算符<code>MINUS</code>返回两个集合A和B的差异，即<code>A-B</code>。请注意<code>left</code>和<code>right</code>的顺序，<code>A-B</code>表示在集合A中，但是不在集合B中的元素。</p>
+<p>运算符<code>MINUS</code>返回两个集合 A 和 B 的差异，即<code>A-B</code>。请注意<code>left</code>和<code>right</code>的顺序，<code>A-B</code>表示在集合 A 中，但是不在集合 B 中的元素。</p>
 <h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player100" OVER follow \
         MINUS \
@@ -2597,7 +2595,7 @@ nebula&gt; GO FROM "player102" OVER follow \
 +-------------+
 </code></pre></div>
 <h2 id="_5">集合运算符和管道符的优先级<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a>的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
+<p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a> 的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
 <h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player102" OVER follow \
         YIELD dst(edge) AS play_dst  \
@@ -2630,7 +2628,7 @@ nebula&gt; GO FROM "player102" OVER follow \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 29, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

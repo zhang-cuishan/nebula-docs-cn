@@ -2484,7 +2484,7 @@
 </li>
 </ul>
 <ul>
-<li>校验 <code>*</code> 代表的信息<p>查询语句中包含 <code>*</code> 时，校验子句时需要将 <code>*</code> 涉及的Schema都进行校验。</p>
+<li>校验 <code>*</code> 代表的信息<p>查询语句中包含 <code>*</code> 时，校验子句时需要将 <code>*</code> 涉及的 Schema 都进行校验。</p>
 <p>例如语句<code>GO FROM "Tim" OVER * YIELD dst(edge), properties(edge).likeness, dst(edge)</code>，校验<code>OVER</code>子句时需要校验所有的 Edge type，如果 Edge type 包含 <code>like</code>和<code>serve</code>，该语句会展开为<code>GO FROM "Tim" OVER like,serve YIELD dst(edge), properties(edge).likeness, dst(edge)</code>。</p>
 </li>
 </ul>
@@ -2500,7 +2500,7 @@
 <p><img alt="Optimizer" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/optimizer.png"/></p>
 <ul>
 <li>优化前<p>如上图右侧未优化的执行计划，每个节点依赖另一个节点，例如根节点 <code>Project</code> 依赖 <code>Filter</code>、<code>Filter</code> 依赖 <code>GetNeighbor</code>，最终找到叶子节点 <code>Start</code>，才能开始执行（并非真正执行）。</p>
-<p>在这个过程中，每个节点会有对应的输入变量和输出变量，这些变量存储在一个哈希表中。由于执行计划不是真正执行，所以哈希表中每个key的value值都为空（除了 <code>Start</code> 节点，起始数据会存储在该节点的输入变量中）。哈希表定义在仓库 <code>nebula-graph</code> 内的 <code>src/context/ExecutionContext.cpp</code> 中。</p>
+<p>在这个过程中，每个节点会有对应的输入变量和输出变量，这些变量存储在一个哈希表中。由于执行计划不是真正执行，所以哈希表中每个 key 的 value 值都为空（除了 <code>Start</code> 节点，起始数据会存储在该节点的输入变量中）。哈希表定义在仓库 <code>nebula-graph</code> 内的 <code>src/context/ExecutionContext.cpp</code> 中。</p>
 <p>例如哈希表的名称为 <code>ResultMap</code>，在建立 <code>Filter</code> 这个节点时，定义该节点从 <code>ResultMap["GN1"]</code> 中读取数据，然后将结果存储在 <code>ResultMap["Filter2"]</code> 中，依次类推，将每个节点的输入输出都确定好。</p>
 </li>
 </ul>
@@ -2537,14 +2537,14 @@
 <h2 id="_2">视频<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>用户也可以通过视频全方位了解 Nebula Graph 的查询引擎。</p>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1xV411n7DD">nMeetup·上海 ｜全面解析 2.0 Query Engine</a>（33分30秒）</li>
+<li><a href="https://www.bilibili.com/video/BV1xV411n7DD">nMeetup·上海 ｜全面解析 2.0 Query Engine</a>（33 分 30 秒）</li>
 </ul>
 <iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="480px" scrolling="no" src="//player.bilibili.com/player.html?aid=417369444&amp;bvid=BV1xV411n7DD&amp;cid=317029694&amp;page=1" width="720px"> </iframe>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

@@ -312,7 +312,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tag">
-    Tag模式
+    Tag 模式
   </a>
 </li>
 <li class="md-nav__item">
@@ -2410,7 +2410,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tag">
-    Tag模式
+    Tag 模式
   </a>
 </li>
 <li class="md-nav__item">
@@ -2462,23 +2462,23 @@
 <p>只有在涉及某个点时，才需要命名这个点。如果不涉及这个点，则可以省略名称，例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[]-&gt;()&lt;-[]-(c)
 </code></pre></div>
-<h2 id="tag">Tag模式<a class="headerlink" href="#tag" title="Permanent link">¶</a></h2>
+<h2 id="tag">Tag 模式<a class="headerlink" href="#tag" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>nGQL中的<code>Tag</code>概念与openCypher中的<code>Label</code>有一些不同。例如，必须创建一个<code>Tag</code>之后才能使用它，而且<code>Tag</code>还定义了属性的类型。</p>
+<p>nGQL 中的<code>Tag</code>概念与 openCypher 中的<code>Label</code>有一些不同。例如，必须创建一个<code>Tag</code>之后才能使用它，而且<code>Tag</code>还定义了属性的类型。</p>
 </div>
-<p>模式除了简单地描述图中的点之外，还可以描述点的Tag。例如：</p>
+<p>模式除了简单地描述图中的点之外，还可以描述点的 Tag。例如：</p>
 <div class="highlight"><pre><span></span><code>(a:User)-[]-&gt;(b)
 </code></pre></div>
-<p>模式也可以描述有多个Tag的点，例如：</p>
+<p>模式也可以描述有多个 Tag 的点，例如：</p>
 <div class="highlight"><pre><span></span><code>(a:User:Admin)-[]-&gt;(b)
 </code></pre></div>
 <div class="admonition compatibility">
-<p class="admonition-title">openCypher兼容性</p>
-<p>nGQL中的<code>MATCH</code>语句不支持用<code>(a:User:Admin)</code>匹配多个标签。如需匹配多标签可使用过滤条件，如<code>WHERE "User" IN tags(n) AND "Admin" IN tags(n)</code>。</p>
+<p class="admonition-title">openCypher 兼容性</p>
+<p>nGQL 中的<code>MATCH</code>语句不支持用<code>(a:User:Admin)</code>匹配多个标签。如需匹配多标签可使用过滤条件，如<code>WHERE "User" IN tags(n) AND "Admin" IN tags(n)</code>。</p>
 </div>
 <h2 id="_4">属性模式<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
-<p>点和边是图的基本结构。nGQL在这两种结构上都可以增加属性，方便实现更丰富的模型。</p>
+<p>点和边是图的基本结构。nGQL 在这两种结构上都可以增加属性，方便实现更丰富的模型。</p>
 <p>在模式中，属性的表示方式为：用花括号括起一些键值对，用英文逗号分隔。例如一个点有两个属性：</p>
 <div class="highlight"><pre><span></span><code>(a {name: 'Andres', sport: 'Brazilian Ju-Jitsu'})
 </code></pre></div>
@@ -2493,10 +2493,10 @@
 <p>和点一样，边也可以命名。一对方括号用于分隔箭头，变量放在两者之间。例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[r]-&gt;(b)
 </code></pre></div>
-<p>和点上的Tag一样，边也可以有类型。描述边的类型，例如：</p>
+<p>和点上的 Tag 一样，边也可以有类型。描述边的类型，例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[r:REL_TYPE]-&gt;(b)
 </code></pre></div>
-<p>和点上的Tag不同，一条边只能有一种Edge type。但是如果我们想描述多个可选Edge type，可以用管道符号（|）将可选值分开，例如：</p>
+<p>和点上的 Tag 不同，一条边只能有一种 Edge type。但是如果我们想描述多个可选 Edge type，可以用管道符号（|）将可选值分开，例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[r:TYPE1|TYPE2]-&gt;(b)
 </code></pre></div>
 <p>和点一样，边的名称可以省略，例如：</p>
@@ -2506,14 +2506,14 @@
 <p>在图中指定边的长度来描述多条边（以及中间的点）组成的一条长路径，不需要使用多个点和边来描述。例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[*2]-&gt;(b)
 </code></pre></div>
-<p>该模式描述了3点2边组成的图，它们都在一条路径上（长度为2），等价于:</p>
+<p>该模式描述了 3 点 2 边组成的图，它们都在一条路径上（长度为 2），等价于：</p>
 <div class="highlight"><pre><span></span><code>(a)-[]-&gt;()-[]-&gt;(b)
 </code></pre></div>
 <p>也可以指定长度范围，这样的边模式称为<code>variable-length edges</code>，例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[*3..5]-&gt;(b)
 </code></pre></div>
-<p><code>*3..5</code>表示最小长度为3，最大长度为5。</p>
-<p>该模式描述了4点3边、5点4边或6点5边组成的图。</p>
+<p><code>*3..5</code>表示最小长度为 3，最大长度为 5。</p>
+<p>该模式描述了 4 点 3 边、5 点 4 边或 6 点 5 边组成的图。</p>
 <p>也可以忽略最小长度，只指定最大长度，例如：</p>
 <div class="highlight"><pre><span></span><code>(a)-[*..5]-&gt;(b)
 </code></pre></div>
@@ -2522,15 +2522,15 @@
 <p>必须指定最大长度，<strong>不支持</strong>仅指定最小长度（<code>(a)-[*3..]-&gt;(b)</code>）或都不指定（<code>(a)-[*]-&gt;(b)</code>）。</p>
 </div>
 <h2 id="_7">路径变量<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
-<p>一系列连接的点和边称为<code>路径</code>。nGQL允许使用变量来命名路径，例如：</p>
+<p>一系列连接的点和边称为<code>路径</code>。nGQL 允许使用变量来命名路径，例如：</p>
 <div class="highlight"><pre><span></span><code>p = (a)-[*3..5]-&gt;(b)
 </code></pre></div>
-<p>可以在MATCH语句中使用路径变量。</p>
+<p>可以在 MATCH 语句中使用路径变量。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

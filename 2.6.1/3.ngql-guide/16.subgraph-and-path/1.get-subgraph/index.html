@@ -2432,7 +2432,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="get_subgraph">GET SUBGRAPH<a class="headerlink" href="#get_subgraph" title="Permanent link">¶</a></h1>
-<p><code>GET SUBGRAPH</code>语句检索指定Edge type的起始点可以到达的点和边的信息，返回子图信息。</p>
+<p><code>GET SUBGRAPH</code>语句检索指定 Edge type 的起始点可以到达的点和边的信息，返回子图信息。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>GET SUBGRAPH [WITH PROP] [&lt;step_count&gt; STEPS] FROM {&lt;vid&gt;, &lt;vid&gt;...}
 [{IN | OUT | BOTH} &lt;edge_type&gt;, &lt;edge_type&gt;...]
@@ -2442,20 +2442,20 @@
 <li><code>WITH PROP</code>：展示属性。不添加本参数则隐藏属性。</li>
 </ul>
 <ul>
-<li><code>step_count</code>：指定从起始点开始的跳数，返回从0到<code>step_count</code>跳的子图。必须是非负整数。默认值为1。</li>
+<li><code>step_count</code>：指定从起始点开始的跳数，返回从 0 到<code>step_count</code>跳的子图。必须是非负整数。默认值为 1。</li>
 </ul>
 <ul>
-<li><code>vid</code>：指定起始点ID。</li>
+<li><code>vid</code>：指定起始点 ID。</li>
 </ul>
 <ul>
-<li><code>edge_type</code>：指定Edge type。可以用<code>IN</code>、<code>OUT</code>和<code>BOTH</code>来指定起始点上该Edge type的方向。默认为<code>BOTH</code>。</li>
+<li><code>edge_type</code>：指定 Edge type。可以用<code>IN</code>、<code>OUT</code>和<code>BOTH</code>来指定起始点上该 Edge type 的方向。默认为<code>BOTH</code>。</li>
 </ul>
 <ul>
 <li><code>YIELD</code>：定义需要返回的输出。可以仅返回点或边。必须设置别名。不使用<code>YIELD</code>定义输出结果时，默认返回<code>_vertices</code>和<code>_edges</code>。</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>GET SUBGRAPH</code>语句检索的路径类型为<code>trail</code>，即检索的路径只有点可以重复，边不可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
+<p><code>GET SUBGRAPH</code>语句检索的路径类型为<code>trail</code>，即检索的路径只有点可以重复，边不可以重复。详情请参见 <a href="../../../1.introduction/2.1.path/">路径</a>。</p>
 </div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>以下面的示例图进行演示。</p>
@@ -2477,7 +2477,7 @@ nebula&gt; INSERT EDGE follow(degree) VALUES "player102" -&gt; "player100":(75);
 nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES "player101" -&gt; "team204":(1999, 2018),"player102" -&gt; "team203":(2006,  2015);
 </code></pre></div>
 <ul>
-<li>查询从点<code>player101</code>开始、0~1跳、所有Edge type的子图。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH 1 STEPS FROM "player101" YIELD VERTICES AS nodes, EDGES AS relationships;
+<li>查询从点<code>player101</code>开始、0~1 跳、所有 Edge type 的子图。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH 1 STEPS FROM "player101" YIELD VERTICES AS nodes, EDGES AS relationships;
 +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | nodes                                                                   | relationships                                                                                                               |
 +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -2490,7 +2490,7 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES "player101" -&gt; "tea
 </li>
 </ul>
 <ul>
-<li>查询从点<code>player101</code>开始、0~1跳、<code>follow</code>类型的入边的子图。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH 1 STEPS FROM "player101" IN follow YIELD VERTICES AS nodes, EDGES AS relationships;
+<li>查询从点<code>player101</code>开始、0~1 跳、<code>follow</code>类型的入边的子图。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH 1 STEPS FROM "player101" IN follow YIELD VERTICES AS nodes, EDGES AS relationships;
 +---------------------------+---------------+
 | nodes                     | relationships |
 +---------------------------+---------------+
@@ -2502,7 +2502,7 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES "player101" -&gt; "tea
 </li>
 </ul>
 <ul>
-<li>查询从点<code>player101</code>开始、0~1跳、<code>serve</code>类型的出边的子图，同时展示边的属性。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH WITH PROP 1 STEPS FROM "player101" OUT serve YIELD VERTICES AS nodes, EDGES AS relationships;
+<li>查询从点<code>player101</code>开始、0~1 跳、<code>serve</code>类型的出边的子图，同时展示边的属性。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH WITH PROP 1 STEPS FROM "player101" OUT serve YIELD VERTICES AS nodes, EDGES AS relationships;
 +-------------------------------------------------------+-------------------------------------------------------------------------+
 | nodes                                                 | relationships                                                           |
 +-------------------------------------------------------+-------------------------------------------------------------------------+
@@ -2524,7 +2524,7 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES "player101" -&gt; "tea
 <ul>
 <li>用<code>GET SUBGRAPH 1 STEPS FROM "A" IN follow;</code>查询的满足结果的路径是<code>B-&gt;A</code>，在满足结果的点上额外查询一跳，即<code>A-&gt;B</code>。</li>
 </ul>
-<p>如果只是查询满足条件的路径或点，建议使用<a href="../../7.general-query-statements/2.match/">MATCH</a>或<a href="../../7.general-query-statements/3.go/">GO</a>语句。例如：</p>
+<p>如果只是查询满足条件的路径或点，建议使用 <a href="../../7.general-query-statements/2.match/">MATCH</a> 或 <a href="../../7.general-query-statements/3.go/">GO</a> 语句。例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; match p= (v:player) -- (v2) where id(v)=="A" return p;
 
 nebula&gt; go 1 steps from "A" over follow;
@@ -2543,7 +2543,7 @@ nebula&gt; go 1 steps from "A" over follow;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

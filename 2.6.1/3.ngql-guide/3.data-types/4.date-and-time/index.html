@@ -357,7 +357,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2395,7 +2395,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2435,7 +2435,7 @@
 </a>
 <h1 id="_1">日期和时间类型<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <p>本文介绍日期和时间的类型，包括<code>DATE</code>、<code>TIME</code>、<code>DATETIME</code>和<code>TIMESTAMP</code>。</p>
-<p>在插入时间类型的属性值时，Nebula Graph会根据<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a>中<code>timezone_name</code>参数指定的时区，将该时间值（<code>TIMESTAMP</code>类型例外）转换成相应的世界协调时间（UTC）时间。在查询中返回的时间类型值为UTC时间。</p>
+<p>在插入时间类型的属性值时，Nebula Graph 会根据 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中<code>timezone_name</code>参数指定的时区，将该时间值（<code>TIMESTAMP</code>类型例外）转换成相应的世界协调时间（UTC）时间。在查询中返回的时间类型值为 UTC 时间。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如需修改当前时区，请同时修改所有服务的配置文件中的<code>timezone_name</code>参数。</p>
@@ -2446,7 +2446,7 @@
 <ul>
 <li>函数<code>date()</code>、<code>time()</code>和<code>datetime()</code>可以用属性名称获取自身的某一个具体属性值，例如<code>date().month</code>获取当前月份、<code>time("02:59:40").minute</code>获取传入时间的分钟数。</li>
 </ul>
-<h2 id="opencypher">openCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <ul>
 <li>支持年、月、日、时、分、秒，不支持毫秒。</li>
 </ul>
@@ -2457,16 +2457,16 @@
 <li>不支持大部分字符串时间格式，支持<code>YYYY-MM-DDThh:mm:ss</code>和<code>YYYY-MM-DD hh:mm:ss</code>。</li>
 </ul>
 <h2 id="date">DATE<a class="headerlink" href="#date" title="Permanent link">¶</a></h2>
-<p><code>DATE</code>包含日期，但是不包含时间。Nebula Graph检索和显示<code>DATE</code>的格式为<code>YYYY-MM-DD</code>。支持的范围是<code>-32768-01-01</code>到<code>32767-12-31</code>。</p>
+<p><code>DATE</code>包含日期，但是不包含时间。Nebula Graph 检索和显示<code>DATE</code>的格式为<code>YYYY-MM-DD</code>。支持的范围是<code>-32768-01-01</code>到<code>32767-12-31</code>。</p>
 <p><code>date()</code>支持的属性名称包括<code>year</code>、<code>month</code>和<code>day</code>。</p>
 <h2 id="time">TIME<a class="headerlink" href="#time" title="Permanent link">¶</a></h2>
-<p><code>TIME</code>包含时间，但是不包含日期。Nebula Graph检索和显示<code>TIME</code>的格式为<code>hh:mm:ss.msmsmsususus</code>。支持的范围是<code>00:00:00.000000</code>到<code>23:59:59.999999</code>。</p>
+<p><code>TIME</code>包含时间，但是不包含日期。Nebula Graph 检索和显示<code>TIME</code>的格式为<code>hh:mm:ss.msmsmsususus</code>。支持的范围是<code>00:00:00.000000</code>到<code>23:59:59.999999</code>。</p>
 <p><code>time()</code>支持的属性名称包括<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
 <h2 id="datetime">DATETIME<a class="headerlink" href="#datetime" title="Permanent link">¶</a></h2>
-<p><code>DATETIME</code>包含日期和时间。Nebula Graph检索和显示<code>DATETIME</code>的格式为<code>YYYY-MM-DDThh:mm:ss.msmsmsususus</code>。支持的范围是<code>-32768-01-01T00:00:00.000000</code>到<code>32767-12-31T23:59:59.999999</code>。</p>
+<p><code>DATETIME</code>包含日期和时间。Nebula Graph 检索和显示<code>DATETIME</code>的格式为<code>YYYY-MM-DDThh:mm:ss.msmsmsususus</code>。支持的范围是<code>-32768-01-01T00:00:00.000000</code>到<code>32767-12-31T23:59:59.999999</code>。</p>
 <p><code>datetime()</code>支持的属性名称包括<code>year</code>、<code>month</code>、<code>day</code>、<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
 <h2 id="timestamp">TIMESTAMP<a class="headerlink" href="#timestamp" title="Permanent link">¶</a></h2>
-<p><code>TIMESTAMP</code>包含日期和时间。支持的范围是UTC时间的<code>1970-01-01T00:00:01</code>到<code>2262-04-11T23:47:16</code>。</p>
+<p><code>TIMESTAMP</code>包含日期和时间。支持的范围是 UTC 时间的<code>1970-01-01T00:00:01</code>到<code>2262-04-11T23:47:16</code>。</p>
 <p><code>TIMESTAMP</code>还有以下特点：</p>
 <ul>
 <li>以时间戳形式存储和显示。例如<code>1615974839</code>，表示<code>2021-03-17T17:53:59</code>。</li>
@@ -2479,7 +2479,7 @@
 </ul>
 <ul>
 <li>
-<p><code>timestamp()</code>函数支持传入空值获取当前时区的时间戳，还接受string类型的参数。</p>
+<p><code>timestamp()</code>函数支持传入空值获取当前时区的时间戳，还接受 string 类型的参数。</p>
 <div class="highlight"><pre><span></span><code># 传入当前时间。
 nebula&gt; RETURN timestamp();
 +-------------+
@@ -2499,12 +2499,12 @@ nebula&gt; RETURN timestamp("2021-07-05T06:18:43.984000");
 </li>
 </ul>
 <ul>
-<li>底层存储的数据格式为<strong>64位int</strong>。</li>
+<li>底层存储的数据格式为<strong> 64 位 int</strong>。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>创建Tag，名称为<code>date1</code>，包含<code>DATE</code>、<code>TIME</code>和<code>DATETIME</code>三种类型。</p>
+<p>创建 Tag，名称为<code>date1</code>，包含<code>DATE</code>、<code>TIME</code>和<code>DATETIME</code>三种类型。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS date1(p1 date, p2 time, p3 datetime);
 </code></pre></div>
 </li>
@@ -2526,13 +2526,13 @@ nebula&gt; MATCH (v:date1) RETURN v.p1.month;
 </code></pre></div>
 </li>
 <li>
-<p>创建Tag，名称为<code>school</code>，包含<code>TIMESTAMP</code>类型。</p>
+<p>创建 Tag，名称为<code>school</code>，包含<code>TIMESTAMP</code>类型。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS school(name string , found_time timestamp);
 </code></pre></div>
 </li>
 <li>
 <p>插入点，名称为<code>DUT</code>，存储时间为<code>"1988-03-01T08:00:00"</code>。</p>
-<div class="highlight"><pre><span></span><code># 时间戳形式插入，1988-03-01T08:00:00对应的时间戳为573177600，转换为UTC时间为573206400。
+<div class="highlight"><pre><span></span><code># 时间戳形式插入，1988-03-01T08:00:00 对应的时间戳为 573177600，转换为 UTC 时间为 573206400。
 nebula&gt; INSERT VERTEX school(name, found_time) VALUES "DUT":("DUT", 573206400);
 
 # 日期和时间格式插入。
@@ -2541,10 +2541,10 @@ nebula&gt; INSERT VERTEX school(name, found_time) VALUES "DUT":("DUT", timestamp
 </li>
 <li>
 <p>插入点，名称为<code>dut</code>，用<code>now()</code>或<code>timestamp()</code>函数存储时间。</p>
-<div class="highlight"><pre><span></span><code># 用now()函数存储时间
+<div class="highlight"><pre><span></span><code># 用 now() 函数存储时间
 nebula&gt; INSERT VERTEX school(name, found_time) VALUES "dut":("dut", now());
 
-# 用timestamp()函数存储时间
+# 用 timestamp() 函数存储时间
 nebula&gt; INSERT VERTEX school(name, found_time) VALUES "dut":("dut", timestamp());
 </code></pre></div>
 </li>
@@ -2568,7 +2568,7 @@ nebula&gt; WITH date({year: 1984, month: 10, day: 11}) AS x RETURN x + 1;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

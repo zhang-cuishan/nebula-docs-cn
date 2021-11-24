@@ -437,7 +437,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2419,7 +2419,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2482,7 +2482,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">比较符<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持的比较符如下。</p>
+<p>Nebula Graph 支持的比较符如下。</p>
 <table>
 <thead>
 <tr>
@@ -2545,11 +2545,11 @@
 </tr>
 <tr>
 <td align="left"><code>IS NULL</code></td>
-<td align="center">为NULL</td>
+<td align="center">为 NULL</td>
 </tr>
 <tr>
 <td align="left"><code>IS NOT NULL</code></td>
-<td align="center">不为NULL</td>
+<td align="center">不为 NULL</td>
 </tr>
 <tr>
 <td align="left"><code>IS EMPTY</code></td>
@@ -2571,19 +2571,19 @@
 <li><code>EMPTY</code>当前仅用于判断，不支持函数或者运算操作，包括且不限于<code>GROUP BY</code>、<code>count()</code>、<code>sum()</code>、<code>max()</code>、<code>hash()</code>、<code>collect()</code>、<code>+</code>、<code>*</code>。</li>
 </ul>
 </div>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <ul>
-<li><code>NULL</code>的比较操作和openCypher不同，行为也可能会改变。在openCypher中，<code>IS [NOT] NULL</code>通常与<code>OPTIONAL MATCH</code>一起使用，但是nGQL不支持<code>OPTIONAL MATCH</code>。</li>
+<li><code>NULL</code>的比较操作和 openCypher 不同，行为也可能会改变。在 openCypher 中，<code>IS [NOT] NULL</code>通常与<code>OPTIONAL MATCH</code>一起使用，但是 nGQL 不支持<code>OPTIONAL MATCH</code>。</li>
 </ul>
 <ul>
-<li>openCypher中没有<code>EMPTY</code>，因此不支持在MATCH语句中使用<code>EMPTY</code>。</li>
+<li>openCypher 中没有<code>EMPTY</code>，因此不支持在 MATCH 语句中使用<code>EMPTY</code>。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="_3"><code>==</code><a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <p>字符串比较时，会区分大小写。不同类型的值不相等。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>nGQL中的相等符号是<code>==</code>，openCypher中的相等符号是<code>=</code>。</p>
+<p>nGQL 中的相等符号是<code>==</code>，openCypher 中的相等符号是<code>=</code>。</p>
 </div>
 <div class="highlight"><pre><span></span><code>nebula&gt; RETURN 'A' == 'a', toUpper('A') == toUpper('a'), toLower('A') == toLower('a');
 +------------+------------------------------+------------------------------+
@@ -2685,8 +2685,6 @@ nebula&gt; MATCH (n:player) \
 | n.age IS NULL | n.name IS NOT NULL | n.empty IS NULL |
 +---------------+--------------------+-----------------+
 | false         | true               | true            |
-| false         | true               | true            |
-| false         | true               | true            |
 +---------------+--------------------+-----------------+
 ...
 </code></pre></div>
@@ -2718,7 +2716,7 @@ nebula&gt; GO FROM "player100" OVER * WHERE properties($$).name IS NOT EMPTY YIE
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

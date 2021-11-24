@@ -362,23 +362,23 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_1">
-    NULL的逻辑操作
+    NULL 的逻辑操作
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
-<nav aria-label="OpenCypher兼容性" class="md-nav">
+<nav aria-label="OpenCypher 兼容性" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_2">
-    NULL的比较
+    NULL 的比较
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_3">
-    NULL的操作和返回
+    NULL 的操作和返回
   </a>
 </li>
 </ul>
@@ -392,12 +392,12 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_null">
-    使用NOT NULL
+    使用 NOT NULL
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_null_1">
-    使用NOT NULL并设置默认值
+    使用 NOT NULL 并设置默认值
   </a>
 </li>
 </ul>
@@ -2408,23 +2408,23 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_1">
-    NULL的逻辑操作
+    NULL 的逻辑操作
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
-<nav aria-label="OpenCypher兼容性" class="md-nav">
+<nav aria-label="OpenCypher 兼容性" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_2">
-    NULL的比较
+    NULL 的比较
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null_3">
-    NULL的操作和返回
+    NULL 的操作和返回
   </a>
 </li>
 </ul>
@@ -2438,12 +2438,12 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_null">
-    使用NOT NULL
+    使用 NOT NULL
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_null_1">
-    使用NOT NULL并设置默认值
+    使用 NOT NULL 并设置默认值
   </a>
 </li>
 </ul>
@@ -2461,7 +2461,7 @@
 </a>
 <h1 id="null">NULL<a class="headerlink" href="#null" title="Permanent link">¶</a></h1>
 <p>默认情况下，插入点或边时，属性值可以为<code>NULL</code>，用户也可以设置属性值不允许为<code>NULL</code>（<code>NOT NULL</code>），即插入点或边时必须设置该属性的值，除非创建属性时已经设置默认值。</p>
-<h2 id="null_1">NULL的逻辑操作<a class="headerlink" href="#null_1" title="Permanent link">¶</a></h2>
+<h2 id="null_1">NULL 的逻辑操作<a class="headerlink" href="#null_1" title="Permanent link">¶</a></h2>
 <p><code>AND</code>、<code>OR</code>、<code>XOR</code>和<code>NOT</code>的真值表如下。</p>
 <table>
 <thead>
@@ -2549,18 +2549,18 @@
 </tr>
 </tbody>
 </table>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
-<p>Nebula Graph中，NULL的比较和操作与openCypher不同，后续也可能会有变化。</p>
-<h3 id="null_2">NULL的比较<a class="headerlink" href="#null_2" title="Permanent link">¶</a></h3>
-<p>Nebula Graph中，NULL的比较操作不兼容openCypher。</p>
-<h3 id="null_3">NULL的操作和返回<a class="headerlink" href="#null_3" title="Permanent link">¶</a></h3>
-<p>Nebula Graph中，对NULL的操作以及返回结果不兼容openCypher。</p>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>Nebula Graph 中，NULL 的比较和操作与 openCypher 不同，后续也可能会有变化。</p>
+<h3 id="null_2">NULL 的比较<a class="headerlink" href="#null_2" title="Permanent link">¶</a></h3>
+<p>Nebula Graph 中，NULL 的比较操作不兼容 openCypher。</p>
+<h3 id="null_3">NULL 的操作和返回<a class="headerlink" href="#null_3" title="Permanent link">¶</a></h3>
+<p>Nebula Graph 中，对 NULL 的操作以及返回结果不兼容 openCypher。</p>
 <h2 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<h3 id="not_null">使用NOT NULL<a class="headerlink" href="#not_null" title="Permanent link">¶</a></h3>
-<p>创建Tag，名称为<code>player</code>，指定属性<code>name</code>为<code>NOT NULL</code>。</p>
+<h3 id="not_null">使用 NOT NULL<a class="headerlink" href="#not_null" title="Permanent link">¶</a></h3>
+<p>创建 Tag，名称为<code>player</code>，指定属性<code>name</code>为<code>NOT NULL</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string NOT NULL, age int);
 </code></pre></div>
-<p>使用<code>SHOW</code>命令查看创建Tag语句，属性<code>name</code>为<code>NOT NULL</code>，属性<code>age</code>为默认的<code>NULL</code>。</p>
+<p>使用<code>SHOW</code>命令查看创建 Tag 语句，属性<code>name</code>为<code>NOT NULL</code>，属性<code>age</code>为默认的<code>NULL</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW CREATE TAG player;
 +-----------+-----------------------------------+
 | Tag       | Create Tag                        |
@@ -2574,8 +2574,8 @@
 <p>插入点<code>Kobe</code>，属性<code>age</code>可以为<code>NULL</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; INSERT VERTEX player(name, age) VALUES "Kobe":("Kobe",null);
 </code></pre></div>
-<h3 id="not_null_1">使用NOT NULL并设置默认值<a class="headerlink" href="#not_null_1" title="Permanent link">¶</a></h3>
-<p>创建Tag，名称为<code>player</code>，指定属性<code>age</code>为<code>NOT NULL</code>，并设置默认值<code>18</code>。</p>
+<h3 id="not_null_1">使用 NOT NULL 并设置默认值<a class="headerlink" href="#not_null_1" title="Permanent link">¶</a></h3>
+<p>创建 Tag，名称为<code>player</code>，指定属性<code>age</code>为<code>NOT NULL</code>，并设置默认值<code>18</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string, age int NOT NULL DEFAULT 18);
 </code></pre></div>
 <p>插入点<code>Kobe</code>，只设置属性<code>name</code>。</p>
@@ -2593,7 +2593,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

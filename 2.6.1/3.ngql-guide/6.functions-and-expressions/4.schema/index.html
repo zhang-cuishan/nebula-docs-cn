@@ -507,12 +507,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ngql">
-    原生nGQL语句适用
+    原生 nGQL 语句适用
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容语句适用
+    openCypher 兼容语句适用
   </a>
 </li>
 <li class="md-nav__item">
@@ -2380,12 +2380,12 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#ngql">
-    原生nGQL语句适用
+    原生 nGQL 语句适用
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容语句适用
+    openCypher 兼容语句适用
   </a>
 </li>
 <li class="md-nav__item">
@@ -2403,15 +2403,15 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/6.functions-and-expressions/4.schema.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="schema">Schema函数<a class="headerlink" href="#schema" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持以下Schema函数。</p>
-<h2 id="ngql">原生nGQL语句适用<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h2>
+<h1 id="schema">Schema 函数<a class="headerlink" href="#schema" title="Permanent link">¶</a></h1>
+<p>Nebula Graph 支持以下 Schema 函数。</p>
+<h2 id="ngql">原生 nGQL 语句适用<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>GO语句中，WHERE子句和YIELD子句中可以使用如下函数。</li>
-<li>LOOKUP语句中，YIELD子句中可以使用如下函数。</li>
-<li>FETCH语句中，YIELD子句中可以使用如下函数。</li>
+<li>GO 语句中，WHERE 子句和 YIELD 子句中可以使用如下函数。</li>
+<li>LOOKUP 语句中，YIELD 子句中可以使用如下函数。</li>
+<li>FETCH 语句中，YIELD 子句中可以使用如下函数。</li>
 </ul>
 </div>
 <table>
@@ -2424,7 +2424,7 @@
 <tbody>
 <tr>
 <td align="left">id(vertex)</td>
-<td align="left">返回点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">map properties(vertex)</td>
@@ -2436,23 +2436,23 @@
 </tr>
 <tr>
 <td align="left">string type(edge)</td>
-<td align="left">返回边的Edge type。</td>
+<td align="left">返回边的 Edge type。</td>
 </tr>
 <tr>
 <td align="left">src(edge)</td>
-<td align="left">返回边的起始点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回边的起始点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">dst(edge)</td>
-<td align="left">返回边的目的点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回边的目的点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">int rank(edge)</td>
-<td align="left">返回边的rank。</td>
+<td align="left">返回边的 rank。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="opencypher">openCypher兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<h2 id="opencypher">openCypher 兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2463,15 +2463,15 @@
 <tbody>
 <tr>
 <td align="left">id(&lt;vertex&gt;)</td>
-<td align="left">返回点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">list tags(&lt;vertex&gt;)</td>
-<td align="left">返回点的Tag，与labels()作用相同。</td>
+<td align="left">返回点的 Tag，与 labels() 作用相同。</td>
 </tr>
 <tr>
 <td align="left">list labels(&lt;vertex&gt;)</td>
-<td align="left">返回点的Tag，与tags()作用相同，用于兼容openCypher语法。</td>
+<td align="left">返回点的 Tag，与 tags() 作用相同，用于兼容 openCypher 语法。</td>
 </tr>
 <tr>
 <td align="left">map properties(&lt;vertex_or_edge&gt;)</td>
@@ -2479,27 +2479,27 @@
 </tr>
 <tr>
 <td align="left">string type(&lt;edge&gt;)</td>
-<td align="left">返回边的Edge type。</td>
+<td align="left">返回边的 Edge type。</td>
 </tr>
 <tr>
 <td align="left">src(&lt;edge&gt;)</td>
-<td align="left">返回边的起始点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回边的起始点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">dst(&lt;edge&gt;)</td>
-<td align="left">返回边的目的点ID。数据类型和点ID的类型保持一致。</td>
+<td align="left">返回边的目的点 ID。数据类型和点 ID 的类型保持一致。</td>
 </tr>
 <tr>
 <td align="left">vertex startNode(&lt;path&gt;)</td>
-<td align="left">获取一条边或一条路径并返回它的起始点ID。</td>
+<td align="left">获取一条边或一条路径并返回它的起始点 ID。</td>
 </tr>
 <tr>
 <td align="left">string endNode(&lt;path&gt;)</td>
-<td align="left">获取一条边或一条路径并返回它的目的点ID。</td>
+<td align="left">获取一条边或一条路径并返回它的目的点 ID。</td>
 </tr>
 <tr>
 <td align="left">int rank(&lt;edge&gt;)</td>
-<td align="left">返回边的rank。</td>
+<td align="left">返回边的 rank。</td>
 </tr>
 </tbody>
 </table>
@@ -2520,7 +2520,6 @@ nebula&gt; LOOKUP ON player WHERE player.age  &gt; 45 YIELD id(vertex);
 | "player144" | "player144" |
 | "player140" | "player140" |
 +-------------+-------------+
-
 
 nebula&gt; MATCH (a:player) WHERE id(a) == "player100" \
         RETURN tags(a), labels(a), properties(a);
@@ -2550,7 +2549,7 @@ nebula&gt; MATCH p = (a :player {name : "Tim Duncan"})-[r:serve]-(t) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

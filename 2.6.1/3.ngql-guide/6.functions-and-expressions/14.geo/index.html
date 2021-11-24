@@ -2393,9 +2393,9 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/6.functions-and-expressions/14.geo.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="geo">geo函数<a class="headerlink" href="#geo" title="Permanent link">¶</a></h1>
-<p>geo函数用于生成地理位置（GEOGRAPHY）数据类型的值或对其执行操作。</p>
-<p>关于地理位置数据类型说明请参见<a href="../../3.data-types/10.geography/">地理位置</a>。</p>
+<h1 id="geo">geo 函数<a class="headerlink" href="#geo" title="Permanent link">¶</a></h1>
+<p>geo 函数用于生成地理位置（GEOGRAPHY）数据类型的值或对其执行操作。</p>
+<p>关于地理位置数据类型说明请参见 <a href="../../3.data-types/10.geography/">地理位置</a>。</p>
 <h2 id="_1">函数说明<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <table>
 <thead>
@@ -2414,57 +2414,57 @@
 <tr>
 <td align="left">ST_GeogFromText(wkt_string)</td>
 <td><code>GEOGRAPHY</code></td>
-<td align="left">返回与传入的WKT字符串形式相对应的GEOGRAPHY。</td>
+<td align="left">返回与传入的 WKT 字符串形式相对应的 GEOGRAPHY。</td>
 </tr>
 <tr>
 <td align="left">ST_ASText(geography)</td>
 <td><code>STRING</code></td>
-<td align="left">返回传入的GEOGRAPHY的WKT字符串形式。</td>
+<td align="left">返回传入的 GEOGRAPHY 的 WKT 字符串形式。</td>
 </tr>
 <tr>
 <td align="left">ST_Centroid(geography)</td>
 <td><code>GEOGRAPHY</code></td>
-<td align="left">以单点GEOGRAPHY的形式返回传入的GEOGRAPHY的形心。</td>
+<td align="left">以单点 GEOGRAPHY 的形式返回传入的 GEOGRAPHY 的形心。</td>
 </tr>
 <tr>
 <td align="left">ST_ISValid(geography)</td>
 <td><code>BOOL</code></td>
-<td align="left">返回传入的GEOGRAPHY是否有效。</td>
+<td align="left">返回传入的 GEOGRAPHY 是否有效。</td>
 </tr>
 <tr>
 <td align="left">ST_Intersects(geography_1, geography_2)</td>
 <td><code>BOOL</code></td>
-<td align="left">返回传入的两个GEOGRAPHY是否有交集。</td>
+<td align="left">返回传入的两个 GEOGRAPHY 是否有交集。</td>
 </tr>
 <tr>
 <td align="left">ST_Covers(geography_1, geography_2)</td>
 <td><code>BOOL</code></td>
-<td align="left">返回geography_1是否完全包含geography_2。如果geography_2中没有位于geography_1外部的点，返回True。</td>
+<td align="left">返回 geography_1 是否完全包含 geography_2。如果 geography_2 中没有位于 geography_1 外部的点，返回 True。</td>
 </tr>
 <tr>
 <td align="left">ST_CoveredBy(geography_1, geography_2)</td>
 <td><code>BOOL</code></td>
-<td align="left">返回geography_2是否完全包含geography_1。如果geography_1中没有位于geography_2外部的点，返回True。</td>
+<td align="left">返回 geography_2 是否完全包含 geography_1。如果 geography_1 中没有位于 geography_2 外部的点，返回 True。</td>
 </tr>
 <tr>
 <td align="left">ST_DWithin(geography_1, geography_2, distance)</td>
 <td><code>BOOL</code></td>
-<td align="left">如果geography_1中至少有一个点与geography_2中的一个点的距离小于或等于distance参数（以米为单位）指定的距离，则返回True。</td>
+<td align="left">如果 geography_1 中至少有一个点与 geography_2 中的一个点的距离小于或等于 distance 参数（以米为单位）指定的距离，则返回 True。</td>
 </tr>
 <tr>
 <td align="left">ST_Distance(geography_1, geography_2)</td>
 <td><code>FLOAT</code></td>
-<td align="left">返回两个非空GEOGRAPHY之间的最短距离（以米为单位）。</td>
+<td align="left">返回两个非空 GEOGRAPHY 之间的最短距离（以米为单位）。</td>
 </tr>
 <tr>
 <td align="left">S2_CellIdFromPoint(point_geography)</td>
 <td><code>INT</code></td>
-<td align="left">返回覆盖点GEOGRAPHY的<a href="https://s2geometry.io/devguide/s2cell_hierarchy">S2单元</a>ID。</td>
+<td align="left">返回覆盖点 GEOGRAPHY 的 <a href="https://s2geometry.io/devguide/s2cell_hierarchy">S2 单元</a>ID。</td>
 </tr>
 <tr>
 <td align="left">S2_CoveringCellIds(geography)</td>
 <td><code>ARRAY&lt;INT64&gt;</code></td>
-<td align="left">返回覆盖传入的GEOGRAPHY的S2单元ID的数组。</td>
+<td align="left">返回覆盖传入的 GEOGRAPHY 的 S2 单元 ID 的数组。</td>
 </tr>
 </tbody>
 </table>
@@ -2550,7 +2550,7 @@ nebula&gt; RETURN S2_CoveringCellIds(ST_GeogFromText("POLYGON((0 1, 1 2, 2 3, 0 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

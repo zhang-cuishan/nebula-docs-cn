@@ -367,7 +367,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 </ul>
@@ -2400,7 +2400,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 </ul>
@@ -2414,19 +2414,19 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">字符串<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持定长字符串和变长字符串。</p>
+<p>Nebula Graph 支持定长字符串和变长字符串。</p>
 <h2 id="_2">声明与表示方式<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>nGQL中的字符串声明方式如下：</p>
+<p>nGQL 中的字符串声明方式如下：</p>
 <ul>
 <li>使用关键字<code>STRING</code>声明变长字符串。</li>
 <li>使用关键字<code>FIXED_STRING(&lt;length&gt;)</code>声明定长字符串，<code>&lt;length&gt;</code>为字符串长度，例如<code>FIXED_STRING(32)</code>。</li>
 </ul>
 <p>字符串的表示方式为用双引号或单引号包裹，例如<code>"Hello, Cooper"</code>或<code>'Hello, Cooper'</code>。</p>
 <h2 id="_3">字符串读写<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>nGQL支持以如下方式使用字符串：</p>
+<p>nGQL 支持以如下方式使用字符串：</p>
 <ul>
-<li>将<a href="../../../1.introduction/3.vid/">VID</a>的数据类型定义为定长字符串。</li>
-<li>将变长字符串设置为Schema名称，包括图空间、Tag、Edge type和属性的名称。</li>
+<li>将 <a href="../../../1.introduction/3.vid/">VID</a> 的数据类型定义为定长字符串。</li>
+<li>将变长字符串设置为 Schema 名称，包括图空间、Tag、Edge type 和属性的名称。</li>
 <li>将属性值的数据类型定义为定长或变长字符串。</li>
 </ul>
 <p>例如：</p>
@@ -2442,8 +2442,8 @@
 </ul>
 <p>如果尝试写入的定长字符串超出长度限制：</p>
 <ul>
-<li>当该定长字符串为属性值时，写入会成功，Nebula Graph将截断字符串，仅存入符合长度限制的部分。</li>
-<li>当该定长字符串为VID时，写入会失败，Nebula Graph将报错。</li>
+<li>当该定长字符串为属性值时，写入会成功，Nebula Graph 将截断字符串，仅存入符合长度限制的部分。</li>
+<li>当该定长字符串为 VID 时，写入会失败，Nebula Graph 将报错。</li>
 </ul>
 <h2 id="_4">转义字符<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>字符串中不支持直接换行，可以使用转义字符实现，例如：</p>
@@ -2453,8 +2453,8 @@
 <ul>
 <li><code>"\110ello world"</code></li>
 </ul>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
-<p>openCypher、Cypher和nGQL之间有一些细微区别，例如下面openCypher的示例，不能将单引号替换为双引号。</p>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>openCypher、Cypher 和 nGQL 之间有一些细微区别，例如下面 openCypher 的示例，不能将单引号替换为双引号。</p>
 <div class="highlight"><pre><span></span><code># File: Literals.feature
 Feature: Literals
 
@@ -2470,7 +2470,7 @@ Background:
       | ''      |    # Note: it should return single-quotes as openCypher required.
     And no side effects
 </code></pre></div>
-<p>Cypher的返回结果同时支持单引号和双引号，nGQL遵循Cypher的方式。</p>
+<p>Cypher 的返回结果同时支持单引号和双引号，nGQL 遵循 Cypher 的方式。</p>
 <div class="highlight"><pre><span></span><code>nebula &gt; YIELD '' AS quote1, "" AS quote2, "'" AS quote3, '"' AS quote4
 +--------+--------+--------+--------+
 | quote1 | quote2 | quote3 | quote4 |
@@ -2482,7 +2482,7 @@ Background:
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

@@ -2423,11 +2423,11 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/1.nGQL-overview/ngql-style-guide.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="ngql">nGQL风格指南<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h1>
-<p>nGQL没有严格的构建格式要求，但根据恰当而统一的风格创建nGQL语句有利于提高可读性、避免歧义。在同一组织或项目中使用相同的nGQL风格有利于降低维护成本，规避因格式混乱或误解造成的问题。本文为写作nGQL语句提供了风格参考。</p>
+<h1 id="ngql">nGQL 风格指南<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h1>
+<p>nGQL 没有严格的构建格式要求，但根据恰当而统一的风格创建 nGQL 语句有利于提高可读性、避免歧义。在同一组织或项目中使用相同的 nGQL 风格有利于降低维护成本，规避因格式混乱或误解造成的问题。本文为写作 nGQL 语句提供了风格参考。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
-<p>nGQL 风格与<a href="https://s3.amazonaws.com/artifacts.opencypher.org/M15/docs/style-guide.pdf">Cypher Style Guide</a>不同。</p>
+<p>nGQL 风格与 <a href="https://s3.amazonaws.com/artifacts.opencypher.org/M15/docs/style-guide.pdf">Cypher Style Guide</a> 不同。</p>
 </div>
 <h2 id="_1">换行<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ol>
@@ -2458,7 +2458,7 @@ YIELD properties($^).name AS FriendOf, properties($$).name AS Team;
 </code></pre></div>
 </li>
 <li>
-<p>子句长度超过80个字符时，在合适的位置换行。</p>
+<p>子句长度超过 80 个字符时，在合适的位置换行。</p>
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>MATCH (v:player{name:"Tim Duncan"})-[e]-&gt;(v2) \
 WHERE (v2.name STARTS WITH "Y" AND v2.age &gt; 35 AND v2.age &lt; v.age) OR (v2.name STARTS WITH "T" AND v2.age &lt; 45 AND v2.age &gt; v.age) \
@@ -2474,13 +2474,13 @@ RETURN v2;
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>即使子句不超过80个字符，如需换行后有助于理解，也可将子句再次分行。</p>
+<p>即使子句不超过 80 个字符，如需换行后有助于理解，也可将子句再次分行。</p>
 </div>
 <h2 id="_2">标识符命名<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>在nGQL语句中，关键字、标点符号、空格以外的字符内容都是标识符。推荐的标识符命名方式如下。</p>
+<p>在 nGQL 语句中，关键字、标点符号、空格以外的字符内容都是标识符。推荐的标识符命名方式如下。</p>
 <ol>
 <li>
-<p>使用单数名词命名Tag，用原型动词或动词短语构成Edge type。</p>
+<p>使用单数名词命名 Tag，用原型动词或动词短语构成 Edge type。</p>
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>MATCH p=(v:players)-[e:are_following]-(v2) \
 RETURN nodes(p);
@@ -2506,7 +2506,7 @@ RETURN v;
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>go from "player100" over Follow
 </code></pre></div>
-<p>推荐:</p>
+<p>推荐：</p>
 <div class="highlight"><pre><span></span><code>GO FROM "player100" OVER follow
 </code></pre></div>
 </li>
@@ -2514,7 +2514,7 @@ RETURN v;
 <h2 id="pattern">Pattern<a class="headerlink" href="#pattern" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>分行写Pattern时，在表示边的箭头右侧换行，而不是左侧。</p>
+<p>分行写 Pattern 时，在表示边的箭头右侧换行，而不是左侧。</p>
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>MATCH (v:player{name: "Tim Duncan", age: 42}) \
 -[e:follow]-&gt;()-[e:serve]-&gt;()&lt;--(v3) \
@@ -2559,7 +2559,7 @@ RETURN v;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>字符串中需要嵌套单引号或双引号时，用反斜线（\）转义。例如:</p>
+<p>字符串中需要嵌套单引号或双引号时，用反斜线（\）转义。例如：</p>
 <div class="highlight"><pre><span></span><code>RETURN "\"Nebula Graph is amazing,\" the user says.";
 </code></pre></div>
 </div>
@@ -2567,7 +2567,7 @@ RETURN v;
 <h2 id="_4">结束语句<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p>用英文分号（;）结束nGQL语句。</p>
+<p>用英文分号（;）结束 nGQL 语句。</p>
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>FETCH PROP ON player "player100"
 </code></pre></div>
@@ -2626,7 +2626,7 @@ YIELD properties($$).name AS Team, properties($^).name AS Player;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

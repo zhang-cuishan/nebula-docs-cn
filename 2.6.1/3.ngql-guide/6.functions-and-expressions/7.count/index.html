@@ -2393,22 +2393,22 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/6.functions-and-expressions/7.count.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="count">count函数<a class="headerlink" href="#count" title="Permanent link">¶</a></h1>
+<h1 id="count">count 函数<a class="headerlink" href="#count" title="Permanent link">¶</a></h1>
 <p><code>count()</code>函数可以计数指定的值或行数。</p>
 <ul>
-<li>（原生nGQL）用户可以同时使用<code>count()</code>和<code>GROUP BY</code>对指定的值进行分组和计数，再使用<code>YIELD</code>返回结果。</li>
+<li>（原生 nGQL）用户可以同时使用<code>count()</code>和<code>GROUP BY</code>对指定的值进行分组和计数，再使用<code>YIELD</code>返回结果。</li>
 </ul>
 <ul>
-<li>（openCypher方式）用户可以使用<code>count()</code>对指定的值进行计数，再使用<code>RETURN</code>返回结果。不需要使用<code>GROUP BY</code>。</li>
+<li>（openCypher 方式）用户可以使用<code>count()</code>对指定的值进行计数，再使用<code>RETURN</code>返回结果。不需要使用<code>GROUP BY</code>。</li>
 </ul>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>count({expr | *})
 </code></pre></div>
 <ul>
-<li>count(*)返回总行数（包括NULL）。</li>
+<li>count(*) 返回总行数（包括 NULL）。</li>
 </ul>
 <ul>
-<li>count(expr)返回满足表达式的非空值的总数。</li>
+<li>count(expr) 返回满足表达式的非空值的总数。</li>
 </ul>
 <ul>
 <li><code>count()</code>和<code>size()</code>是不同的。</li>
@@ -2422,7 +2422,7 @@
 | 4        | 5        | 2                 |
 +----------+----------+-------------------+
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 返回player101 follow的人，以及follow player101的人，即双向查询。
+<div class="highlight"><pre><span></span><code># 返回 player101 follow 的人，以及 follow player101 的人，即双向查询。
 nebula&gt; GO FROM "player101" OVER follow BIDIRECT \
         YIELD properties($$).name AS Name \
         | GROUP BY $-.Name YIELD $-.Name, count(*);
@@ -2477,7 +2477,7 @@ nebula&gt; MATCH (n:player) \
 +-----+--------+
 ...
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 统计Tim Duncan关联的边数。
+<div class="highlight"><pre><span></span><code># 统计 Tim Duncan 关联的边数。
 nebula&gt; MATCH (v:player{name:"Tim Duncan"}) -- (v2) \
         RETURN count(DISTINCT v2);
 +--------------------+
@@ -2486,7 +2486,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"}) -- (v2) \
 | 11                 |
 +--------------------+
 
-# 多跳查询，统计Tim Duncan关联的边数，返回两列（不去重和去重）。
+# 多跳查询，统计 Tim Duncan 关联的边数，返回两列（不去重和去重）。
 nebula&gt; MATCH (n:player {name : "Tim Duncan"})-[]-&gt;(friend:player)-[]-&gt;(fof:player) \
         RETURN count(fof), count(DISTINCT fof);
 +------------+---------------------+
@@ -2499,7 +2499,7 @@ nebula&gt; MATCH (n:player {name : "Tim Duncan"})-[]-&gt;(friend:player)-[]-&gt;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

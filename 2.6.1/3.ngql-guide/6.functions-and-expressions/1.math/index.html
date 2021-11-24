@@ -2395,7 +2395,7 @@
 </a>
 <h1 id="_1">内置数学函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <h2 id="_2">函数说明<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>Nebula Graph支持以下内置数学函数。</p>
+<p>Nebula Graph 支持以下内置数学函数。</p>
 <table>
 <thead>
 <tr>
@@ -2406,31 +2406,31 @@
 <tbody>
 <tr>
 <td align="left">double abs(double x)</td>
-<td align="left">返回x的绝对值。</td>
+<td align="left">返回 x 的绝对值。</td>
 </tr>
 <tr>
 <td align="left">double floor(double x)</td>
-<td align="left">返回小于或等于x的最大整数。</td>
+<td align="left">返回小于或等于 x 的最大整数。</td>
 </tr>
 <tr>
 <td align="left">double ceil(double x)</td>
-<td align="left">返回大于或等于x的最小整数。</td>
+<td align="left">返回大于或等于 x 的最小整数。</td>
 </tr>
 <tr>
 <td align="left">double round(double x)</td>
-<td align="left">返回离x最近的整数值，如果x恰好在中间，则返回离0较远的整数。</td>
+<td align="left">返回离 x 最近的整数值，如果 x 恰好在中间，则返回离 0 较远的整数。</td>
 </tr>
 <tr>
 <td align="left">double sqrt(double x)</td>
-<td align="left">返回x的平方根。</td>
+<td align="left">返回 x 的平方根。</td>
 </tr>
 <tr>
 <td align="left">double cbrt(double x)</td>
-<td align="left">返回x的立方根。</td>
+<td align="left">返回 x 的立方根。</td>
 </tr>
 <tr>
 <td align="left">double hypot(double x, double y)</td>
-<td align="left">返回直角三角形（直角边长为x和y）的斜边长。</td>
+<td align="left">返回直角三角形（直角边长为 x 和 y）的斜边长。</td>
 </tr>
 <tr>
 <td align="left">double pow(double x, double y)</td>
@@ -2446,51 +2446,51 @@
 </tr>
 <tr>
 <td align="left">double log(double x)</td>
-<td align="left">返回以自然数e为底x的对数。</td>
+<td align="left">返回以自然数 e 为底 x 的对数。</td>
 </tr>
 <tr>
 <td align="left">double log2(double x)</td>
-<td align="left">返回以2为底x的对数。</td>
+<td align="left">返回以 2 为底 x 的对数。</td>
 </tr>
 <tr>
 <td align="left">double log10(double x)</td>
-<td align="left">返回以10为底x的对数。</td>
+<td align="left">返回以 10 为底 x 的对数。</td>
 </tr>
 <tr>
 <td align="left">double sin(double x)</td>
-<td align="left">返回x的正弦值。</td>
+<td align="left">返回 x 的正弦值。</td>
 </tr>
 <tr>
 <td align="left">double asin(double x)</td>
-<td align="left">返回x的反正弦值。</td>
+<td align="left">返回 x 的反正弦值。</td>
 </tr>
 <tr>
 <td align="left">double cos(double x)</td>
-<td align="left">返回x的余弦值。</td>
+<td align="left">返回 x 的余弦值。</td>
 </tr>
 <tr>
 <td align="left">double acos(double x)</td>
-<td align="left">返回x的反余弦值。</td>
+<td align="left">返回 x 的反余弦值。</td>
 </tr>
 <tr>
 <td align="left">double tan(double x)</td>
-<td align="left">返回x的正切值。</td>
+<td align="left">返回 x 的正切值。</td>
 </tr>
 <tr>
 <td align="left">double atan(double x)</td>
-<td align="left">返回x的反正切值。</td>
+<td align="left">返回 x 的反正切值。</td>
 </tr>
 <tr>
 <td align="left">double rand()</td>
-<td align="left">返回[0,1)内的随机浮点数。</td>
+<td align="left">返回 [0,1) 内的随机浮点数。</td>
 </tr>
 <tr>
 <td align="left">int rand32(int min, int max)</td>
-<td align="left">返回<code>[min, max)</code>内的一个随机32位整数。<br/>用户可以只传入一个参数，该参数会判定为<code>max</code>，此时<code>min</code>默认为<code>0</code>。<br/>如果不传入参数，此时会从带符号的32位int范围内随机返回。</td>
+<td align="left">返回<code>[min, max)</code>内的一个随机 32 位整数。<br/>用户可以只传入一个参数，该参数会判定为<code>max</code>，此时<code>min</code>默认为<code>0</code>。<br/>如果不传入参数，此时会从带符号的 32 位 int 范围内随机返回。</td>
 </tr>
 <tr>
 <td align="left">int rand64(int min, int max)</td>
-<td align="left">返回<code>[min, max)</code>内的一个随机64位整数。<br/>用户可以只传入一个参数，该参数会判定为<code>max</code>，此时<code>min</code>默认为<code>0</code>。<br/>如果不传入参数，此时会从带符号的64位int范围内随机返回。</td>
+<td align="left">返回<code>[min, max)</code>内的一个随机 64 位整数。<br/>用户可以只传入一个参数，该参数会判定为<code>max</code>，此时<code>min</code>默认为<code>0</code>。<br/>如果不传入参数，此时会从带符号的 64 位 int 范围内随机返回。</td>
 </tr>
 <tr>
 <td align="left">collect()</td>
@@ -2522,15 +2522,15 @@
 </tr>
 <tr>
 <td align="left">bit_and()</td>
-<td align="left">逐位做AND操作。</td>
+<td align="left">逐位做 AND 操作。</td>
 </tr>
 <tr>
 <td align="left">bit_or()</td>
-<td align="left">逐位做OR操作。</td>
+<td align="left">逐位做 OR 操作。</td>
 </tr>
 <tr>
 <td align="left">bit_xor()</td>
-<td align="left">逐位做XOR操作。</td>
+<td align="left">逐位做 XOR 操作。</td>
 </tr>
 <tr>
 <td align="left">int size()</td>
@@ -2538,15 +2538,15 @@
 </tr>
 <tr>
 <td align="left">int range(int start, int end, int step)</td>
-<td align="left">返回<code>[start,end]</code>中指定步长的值组成的列表。步长<code>step</code>默认为1。</td>
+<td align="left">返回<code>[start,end]</code>中指定步长的值组成的列表。步长<code>step</code>默认为 1。</td>
 </tr>
 <tr>
 <td align="left">int sign(double x)</td>
-<td align="left">返回x的正负号。<br/>如果x为<code>0</code>，则返回<code>0</code>。<br/>如果x为负数，则返回<code>-1</code>。<br/>如果x为正数，则返回<code>1</code>。</td>
+<td align="left">返回 x 的正负号。<br/>如果 x 为<code>0</code>，则返回<code>0</code>。<br/>如果 x 为负数，则返回<code>-1</code>。<br/>如果 x 为正数，则返回<code>1</code>。</td>
 </tr>
 <tr>
 <td align="left">double e()</td>
-<td align="left">返回自然对数的底e（2.718281828459045）。</td>
+<td align="left">返回自然对数的底 e（2.718281828459045）。</td>
 </tr>
 <tr>
 <td align="left">double pi()</td>
@@ -2581,7 +2581,7 @@ Got 2 rows (time spent 4739/5064 us)
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

@@ -317,7 +317,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 </ul>
@@ -2390,7 +2390,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 </ul>
@@ -2404,11 +2404,11 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">注释<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>本文介绍nGQL中的注释方式。</p>
+<p>本文介绍 nGQL 中的注释方式。</p>
 <h2 id="_2">历史版本兼容性<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
-<li>Nebula Graph 1.0支持四种注释方式: <code>#</code>、<code>--</code>、<code>//</code>、<code>/* */</code>。</li>
-<li>Nebula Graph 2.0中，<code>--</code>不再是注释符，而是代表<a href="../3.graph-patterns/">边模式</a>。</li>
+<li>Nebula Graph 1.0 支持四种注释方式：<code>#</code>、<code>--</code>、<code>//</code>、<code>/* */</code>。</li>
+<li>Nebula Graph 2.0 中，<code>--</code>不再是注释符，而是代表 <a href="../3.graph-patterns/">边模式</a>。</li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; # 这行什么都不做。
@@ -2420,20 +2420,20 @@ nebula&gt; RETURN 11 +            \
 用反斜线来换行。   \
 */ 12;
 </code></pre></div>
-<p>nGQL语句中的反斜线（\）代表换行。</p>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>nGQL 语句中的反斜线（\）代表换行。</p>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <ul>
-<li>在nGQL中，用户必须在行末使用反斜线（\）来换行，即使是在使用<code>/* */</code>符号的多行注释内。</li>
-<li>在openCypher中不需要使用反斜线换行。</li>
+<li>在 nGQL 中，用户必须在行末使用反斜线（\）来换行，即使是在使用<code>/* */</code>符号的多行注释内。</li>
+<li>在 openCypher 中不需要使用反斜线换行。</li>
 </ul>
-<div class="highlight"><pre><span></span><code>/* openCypher风格：
+<div class="highlight"><pre><span></span><code>/* openCypher 风格：
 这条注释
 延续了不止
 一行 */
 MATCH (n:label)
 RETURN n;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>/* 原生nGQL风格：  \
+<div class="highlight"><pre><span></span><code>/* 原生 nGQL 风格：  \
 这条注释       \
 延续了不止     \
 一行 */       \
@@ -2444,7 +2444,7 @@ RETURN n;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>
