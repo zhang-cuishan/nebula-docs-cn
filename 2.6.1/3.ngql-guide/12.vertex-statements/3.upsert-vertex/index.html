@@ -2407,7 +2407,7 @@
 <p><code>UPSERT VERTEX</code>语句结合<code>UPDATE</code>和<code>INSERT</code>，如果点存在，会修改点的属性值；如果点不存在，会插入新的点。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>UPSERT VERTEX</code>一次只能修改一个Tag。</p>
+<p><code>UPSERT VERTEX</code>一次只能修改一个 Tag。</p>
 </div>
 <p><code>UPSERT VERTEX</code>性能远低于<code>INSERT</code>，因为<code>UPSERT</code>是一组分片级别的读取、修改、写入操作。</p>
 <div class="admonition danger">
@@ -2433,13 +2433,13 @@ SET &lt;update_prop&gt;
 <tr>
 <td><code>ON &lt;tag&gt;</code></td>
 <td>是</td>
-<td>指定点的Tag。要修改的属性必须在这个Tag内。</td>
+<td>指定点的 Tag。要修改的属性必须在这个 Tag 内。</td>
 <td><code>ON player</code></td>
 </tr>
 <tr>
 <td><code>&lt;vid&gt;</code></td>
 <td>是</td>
-<td>指定要修改或插入的点ID。</td>
+<td>指定要修改或插入的点 ID。</td>
 <td><code>"player100"</code></td>
 </tr>
 <tr>
@@ -2472,7 +2472,7 @@ SET &lt;update_prop&gt;
 </ul>
 <p>例如：</p>
 <ul>
-<li>要插入的点包含基于Tag<code>player</code>的属性<code>name</code>和<code>age</code>。</li>
+<li>要插入的点包含基于 Tag<code>player</code>的属性<code>name</code>和<code>age</code>。</li>
 </ul>
 <ul>
 <li><code>SET</code>子句指定<code>age=30</code>。</li>
@@ -2515,11 +2515,10 @@ SET &lt;update_prop&gt;
 </tbody>
 </table>
 <p>示例如下：</p>
-<div class="highlight"><pre><span></span><code>// 查看三个点是否存在，结果“Empty set”表示顶点不存在。
+<div class="highlight"><pre><span></span><code>// 查看三个点是否存在，结果 “Empty set” 表示顶点不存在。
 nebula&gt; FETCH PROP ON * "player666", "player667", "player668";
 +-----------+
 | vertices_ |
-+-----------+
 +-----------+
 Empty set
 
@@ -2616,7 +2615,7 @@ nebula&gt; UPSERT VERTEX ON player "player101" \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

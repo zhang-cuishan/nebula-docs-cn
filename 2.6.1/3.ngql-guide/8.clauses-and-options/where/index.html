@@ -747,7 +747,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -778,7 +778,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#rank">
-    过滤rank
+    过滤 rank
   </a>
 </li>
 </ul>
@@ -807,7 +807,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not">
-    结合NOT使用
+    结合 NOT 使用
   </a>
 </li>
 </ul>
@@ -826,7 +826,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_1">
-    结合NOT使用
+    结合 NOT 使用
   </a>
 </li>
 </ul>
@@ -2452,7 +2452,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    openCypher兼容性
+    openCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2483,7 +2483,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#rank">
-    过滤rank
+    过滤 rank
   </a>
 </li>
 </ul>
@@ -2512,7 +2512,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not">
-    结合NOT使用
+    结合 NOT 使用
   </a>
 </li>
 </ul>
@@ -2531,7 +2531,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#not_1">
-    结合NOT使用
+    结合 NOT 使用
   </a>
 </li>
 </ul>
@@ -2551,25 +2551,25 @@
 <p><code>WHERE</code>子句可以根据条件过滤输出结果。</p>
 <p><code>WHERE</code>子句通常用于如下查询：</p>
 <ul>
-<li>原生nGQL，例如<code>GO</code>和<code>LOOKUP</code>语句。</li>
+<li>原生 nGQL，例如<code>GO</code>和<code>LOOKUP</code>语句。</li>
 </ul>
 <ul>
-<li>openCypher方式，例如<code>MATCH</code>和<code>WITH</code>语句。</li>
+<li>openCypher 方式，例如<code>MATCH</code>和<code>WITH</code>语句。</li>
 </ul>
-<h2 id="opencypher">openCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <ul>
-<li>不支持在<code>WHERE</code>子句中使用Pattern（TODO: planning），例如<code>WHERE (v)--&gt;(v2)</code>。</li>
+<li>不支持在<code>WHERE</code>子句中使用 Pattern（TODO: planning），例如<code>WHERE (v)--&gt;(v2)</code>。</li>
 </ul>
 <ul>
-<li><a href="#rank">过滤Rank</a>是原生nGQL功能。如需在openCypher兼容语句中直接获取Rank值，可以使用rank()函数，例如<code>MATCH (:player)-[e:follow]-&gt;() RETURN rank(e);</code>。</li>
+<li><a href="#rank">过滤 Rank</a> 是原生 nGQL 功能。如需在 openCypher 兼容语句中直接获取 Rank 值，可以使用 rank() 函数，例如<code>MATCH (:player)-[e:follow]-&gt;() RETURN rank(e);</code>。</li>
 </ul>
 <h2 id="_1">基础用法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>下文示例中的<code>$$</code>、<code>$^</code>等是引用符号，详情请参见<a href="../../5.operators/5.property-reference/">引用符</a>。</p>
+<p>下文示例中的<code>$$</code>、<code>$^</code>等是引用符号，详情请参见 <a href="../../5.operators/5.property-reference/">引用符</a>。</p>
 </div>
 <h3 id="_2">用布尔运算符定义条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
-<p>在<code>WHERE</code>子句中使用布尔运算符<code>NOT</code>、<code>AND</code>、<code>OR</code>和<code>XOR</code>定义条件。关于运算符的优先级，请参见<a href="../../5.operators/9.precedence/">运算符优先级</a>。</p>
+<p>在<code>WHERE</code>子句中使用布尔运算符<code>NOT</code>、<code>AND</code>、<code>OR</code>和<code>XOR</code>定义条件。关于运算符的优先级，请参见 <a href="../../5.operators/9.precedence/">运算符优先级</a>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
         WHERE v.name == "Tim Duncan" \
         XOR (v.age &lt; 30 AND v.name == "Yao Ming") \
@@ -2673,8 +2673,8 @@
 +-------------------------+-------+
 ...
 </code></pre></div>
-<h3 id="rank">过滤rank<a class="headerlink" href="#rank" title="Permanent link">¶</a></h3>
-<p>在nGQL中，如果多个边拥有相同的起始点、目的点和属性，则它们的唯一区别是rank值。在<code>WHERE</code>子句中可以使用rank过滤边。</p>
+<h3 id="rank">过滤 rank<a class="headerlink" href="#rank" title="Permanent link">¶</a></h3>
+<p>在 nGQL 中，如果多个边拥有相同的起始点、目的点和属性，则它们的唯一区别是 rank 值。在<code>WHERE</code>子句中可以使用 rank 过滤边。</p>
 <div class="highlight"><pre><span></span><code># 创建测试数据。
 nebula&gt; CREATE SPACE IF NOT EXISTS test (vid_type=FIXED_STRING(30));
 nebula&gt; USE test;
@@ -2690,7 +2690,7 @@ nebula&gt; INSERT EDGE e1(p1) VALUES "1"-&gt;"2"@4:(14);
 nebula&gt; INSERT EDGE e1(p1) VALUES "1"-&gt;"2"@5:(15);
 nebula&gt; INSERT EDGE e1(p1) VALUES "1"-&gt;"2"@6:(16);
 
-# 通过rank过滤边，查找rank大于2的边。
+# 通过 rank 过滤边，查找 rank 大于 2 的边。
 nebula&gt; GO FROM "1" \
         OVER e1 \
         WHERE rank(edge) &gt; 2 \
@@ -2709,7 +2709,7 @@ nebula&gt; GO FROM "1" \
 <p>在<code>WHERE</code>子句中使用<code>STARTS WITH</code>、<code>ENDS WITH</code>或<code>CONTAINS</code>可以匹配字符串的特定部分。匹配时区分大小写。</p>
 <h3 id="starts_with"><code>STARTS WITH</code><a class="headerlink" href="#starts_with" title="Permanent link">¶</a></h3>
 <p><code>STARTS WITH</code>会从字符串的起始位置开始匹配。</p>
-<div class="highlight"><pre><span></span><code># 查询姓名以T开头的player信息。
+<div class="highlight"><pre><span></span><code># 查询姓名以 T 开头的 player 信息。
 nebula&gt; MATCH (v:player) \
         WHERE v.name STARTS WITH "T" \
         RETURN v.name, v.age;
@@ -2755,7 +2755,7 @@ Empty set (time spent 5080/6474 us)
 | "Chris Paul"  | 33    |
 +---------------+-------+
 </code></pre></div>
-<h3 id="not">结合NOT使用<a class="headerlink" href="#not" title="Permanent link">¶</a></h3>
+<h3 id="not">结合 NOT 使用<a class="headerlink" href="#not" title="Permanent link">¶</a></h3>
 <p>用户可以结合布尔运算符<code>NOT</code>一起使用，否定字符串匹配条件。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
         WHERE NOT v.name ENDS WITH "R" \
@@ -2814,7 +2814,7 @@ nebula&gt; LOOKUP ON player \
 | "player123" | "Ricky Rubio"           | 28                     |
 +-------------+-------------------------+------------------------+
 </code></pre></div>
-<h3 id="not_1">结合NOT使用<a class="headerlink" href="#not_1" title="Permanent link">¶</a></h3>
+<h3 id="not_1">结合 NOT 使用<a class="headerlink" href="#not_1" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
         WHERE v.age NOT IN range(20,25) \
         RETURN v.name AS Name, v.age AS Age \
@@ -2834,7 +2834,7 @@ nebula&gt; LOOKUP ON player \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

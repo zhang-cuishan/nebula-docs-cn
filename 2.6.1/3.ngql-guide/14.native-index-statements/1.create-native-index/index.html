@@ -997,7 +997,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tagedge_type">
-    创建Tag/Edge type索引
+    创建 Tag/Edge type 索引
   </a>
 </li>
 <li class="md-nav__item">
@@ -2410,7 +2410,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tagedge_type">
-    创建Tag/Edge type索引
+    创建 Tag/Edge type 索引
   </a>
 </li>
 <li class="md-nav__item">
@@ -2435,18 +2435,18 @@
 </a>
 <h1 id="create_index">CREATE INDEX<a class="headerlink" href="#create_index" title="Permanent link">¶</a></h1>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>创建索引之前，请确保相关的Tag或Edge type已经创建。如何创建Tag和Edge type，请参见<a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>和<a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
-<p>如何创建全文索引，请参见<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>。</p>
+<p>创建索引之前，请确保相关的 Tag 或 Edge type 已经创建。如何创建 Tag 和 Edge type，请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a> 和 <a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
+<p>如何创建全文索引，请参见 <a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>。</p>
 <h2 id="_2">使用索引必读<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>索引的概念和使用限制都较为复杂。索引配合<code>LOOKUP</code>和<code>MATCH</code>语句使用。</p>
-<p><code>CREATE INDEX</code>语句用于对Tag、EdgeType或其属性创建原生索引。通常分别称为“Tag索引”、“Edge type索引”和“属性索引”。</p>
+<p><code>CREATE INDEX</code>语句用于对 Tag、EdgeType 或其属性创建原生索引。通常分别称为“Tag 索引”、“Edge type 索引”和“属性索引”。</p>
 <ul>
-<li>Tag索引和Edge type索引应用于和Tag、Edge type自身相关的查询，例如用<code>LOOKUP</code>查找有Tag <code>player</code>的所有点。</li>
+<li>Tag 索引和 Edge type 索引应用于和 Tag、Edge type 自身相关的查询，例如用<code>LOOKUP</code>查找有 Tag <code>player</code>的所有点。</li>
 </ul>
 <ul>
 <li>“属性索引”应用于基于属性的查询，例如基于属性<code>age</code>找到<code>age == 19</code>的所有的点。</li>
 </ul>
-<p>如果已经为Tag <code>T</code>的属性<code>A</code>建立过属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type索引同理）：</p>
+<p>如果已经为 Tag <code>T</code>的属性<code>A</code>建立过属性索引<code>i_TA</code>，索引之间的可替代关系如下（Edge type 索引同理）：</p>
 <ul>
 <li>查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。</li>
 </ul>
@@ -2458,21 +2458,21 @@
 <p>在<code>LOOKUP</code>语句中<code>i_T</code>可能替代<code>i_TA</code>用于属性查找。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>在此前的版本中，<code>LOOKUP</code>语句中的Tag或Edge type索引不可替代属性索引用于属性查找。</p>
+<p>在此前的版本中，<code>LOOKUP</code>语句中的 Tag 或 Edge type 索引不可替代属性索引用于属性查找。</p>
 </div>
 </li>
 </ul>
 <p>使用替代索引进行查询虽然能获得相同的结果，但查询性能会根据选择的索引有所区别。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>不要任意在生产环境中使用索引，除非很清楚使用索引对业务的影响。索引会导致写性能下降90%甚至更多。</p>
+<p>不要任意在生产环境中使用索引，除非很清楚使用索引对业务的影响。索引会导致写性能下降 90%甚至更多。</p>
 <p>索引并不用于查询加速。只用于：根据属性定位到点或边，或者统计点边数量。</p>
-<p>长索引会降低Storage服务的扫描性能，以及占用更多内存。建议将索引长度设置为和要被索引的最长字符串相同。索引长度最长为255，超过部分会被截断。</p>
+<p>长索引会降低 Storage 服务的扫描性能，以及占用更多内存。建议将索引长度设置为和要被索引的最长字符串相同。索引长度最长为 255，超过部分会被截断。</p>
 </div>
 <p>如果必须使用索引，通常按照如下步骤：</p>
 <ol>
 <li>
-<p>初次导入数据至Nebula Graph。</p>
+<p>初次导入数据至 Nebula Graph。</p>
 </li>
 <li>
 <p>创建索引。</p>
@@ -2481,19 +2481,19 @@
 <p><a href="../4.rebuild-native-index/">重建索引</a>。</p>
 </li>
 <li>
-<p>使用<a href="../../7.general-query-statements/5.lookup/">LOOKUP</a>或<a href="../../7.general-query-statements/2.match/">MATCH</a>语句查询数据。不需要(也无法)指定使用哪个索引，Nebula Graph会自动计算。</p>
+<p>使用 <a href="../../7.general-query-statements/5.lookup/">LOOKUP</a> 或 <a href="../../7.general-query-statements/2.match/">MATCH</a> 语句查询数据。不需要（也无法）指定使用哪个索引，Nebula Graph 会自动计算。</p>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果先创建索引再导入数据，会因为写性能的下降导致导入速度极慢。</p>
 <p>日常增量写入时保持 <code>--disable_auto_compaction = false</code>。</p>
-<p>新创建的索引并不会立刻生效。创建新的索引并尝试立刻使用(例如<code>LOOKUP</code>或者<code>REBUILD INDEX</code>)通常会失败（报错<code>can't find xxx in the space</code>）。因为创建步骤是异步实现的，Nebula Graph要在下一个心跳周期才能完成索引的创建。可以使用如下方法之一：</p>
+<p>新创建的索引并不会立刻生效。创建新的索引并尝试立刻使用（例如<code>LOOKUP</code>或者<code>REBUILD INDEX</code>) 通常会失败（报错<code>can't find xxx in the space</code>）。因为创建步骤是异步实现的，Nebula Graph 要在下一个心跳周期才能完成索引的创建。可以使用如下方法之一：</p>
 <ul>
-<li>在<a href="../2.show-native-indexes/"><code>SHOW TAG/EDGE INDEXES</code></a>语句的结果中查找到新的索引。或者，</li>
+<li>在 <a href="../2.show-native-indexes/"><code>SHOW TAG/EDGE INDEXES</code></a> 语句的结果中查找到新的索引。或者，</li>
 </ul>
 <ul>
-<li>等待两个心跳周期，例如20秒。如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a>修改参数<code>heartbeat_interval_secs</code>。</li>
+<li>等待两个心跳周期，例如 20 秒。如果需要修改心跳间隔，请为 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。</li>
 </ul>
 </div>
 <div class="admonition danger">
@@ -2521,32 +2521,32 @@
 </tr>
 <tr>
 <td align="left"><code>&lt;index_name&gt;</code></td>
-<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用 <a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;tag_name&gt; \| &lt;edge_name&gt;</code></td>
-<td align="left">指定索引关联的Tag或Edge名称。</td>
+<td align="left">指定索引关联的 Tag 或 Edge 名称。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;prop_name_list&gt;</code></td>
-<td align="left">为<strong>变长</strong>字符串属性创建索引时，必须用<code>prop_name(length)</code>指定索引长度；为Tag或Edge type本身创建索引时，忽略<code>&lt;prop_name_list&gt;</code>。</td>
+<td align="left">为<strong>变长</strong>字符串属性创建索引时，必须用<code>prop_name(length)</code>指定索引长度；为 Tag 或 Edge type 本身创建索引时，忽略<code>&lt;prop_name_list&gt;</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
-<td align="left">索引的描述。最大为256字节。默认无描述。</td>
+<td align="left">索引的描述。最大为 256 字节。默认无描述。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tagedge_type">创建Tag/Edge type索引<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h2>
+<h2 id="tagedge_type">创建 Tag/Edge type 索引<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX player_index on player();
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX follow_index on follow();
 </code></pre></div>
-<p>为Tag或Edge type创建索引后，用户可以使用 <code>LOOKUP</code> 语句查找<code>带有该Tag的</code>所有点的VID，或者<code>所有该类型的边</code>的<code>对应起始点VID、目的点VID、以及rank</code>。详情请参见<a href="../../7.general-query-statements/5.lookup/">LOOKUP</a>。</p>
+<p>为 Tag 或 Edge type 创建索引后，用户可以使用 <code>LOOKUP</code> 语句查找<code>带有该 Tag 的</code>所有点的 VID，或者<code>所有该类型的边</code>的<code>对应起始点 VID、目的点 VID、以及 rank</code>。详情请参见 <a href="../../7.general-query-statements/5.lookup/">LOOKUP</a>。</p>
 <h2 id="_4">创建单属性索引<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_0 on player(name(10));
 </code></pre></div>
-<p>上述示例是为所有包含Tag<code>player</code>的点创建属性<code>name</code>的索引，索引长度为10。即只使用属性<code>name</code>的前10个字符来创建索引。</p>
+<p>上述示例是为所有包含 Tag<code>player</code>的点创建属性<code>name</code>的索引，索引长度为 10。即只使用属性<code>name</code>的前 10 个字符来创建索引。</p>
 <div class="highlight"><pre><span></span><code># 变长字符串需要指定索引长度。
 nebula&gt; CREATE TAG IF NOT EXISTS var_string(p1 string);
 nebula&gt; CREATE TAG INDEX IF NOT EXISTS var ON var_string(p1(10));
@@ -2558,12 +2558,12 @@ nebula&gt; CREATE TAG INDEX IF NOT EXISTS fix ON fix_string(p1);
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX IF NOT EXISTS follow_index_0 on follow(degree);
 </code></pre></div>
 <h2 id="_5">创建复合属性索引<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<p><code>复合属性索引</code>用于查找一个Tag(或者Edge type)中的多个属性（的组合）。</p>
+<p><code>复合属性索引</code>用于查找一个 Tag（或者 Edge type) 中的多个属性（的组合）。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_1 on player(name(10), age);
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>不支持跨Tag或Edge type创建复合索引。</p>
+<p>不支持跨 Tag 或 Edge type 创建复合索引。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2578,10 +2578,10 @@ nebula&gt; CREATE TAG INDEX IF NOT EXISTS fix ON fix_string(p1);
 
     请参见下方示例。
 
-    <div class="highlight"><pre><span></span><code># 为标签t的前三个属性创建复合属性索引。
+    <div class="highlight"><pre><span></span><code># 为标签 t 的前三个属性创建复合属性索引。
 nebula&gt; CREATE TAG INDEX example_index ON TAG t(p1, p2, p3);
 
-# 注意：无法匹配到索引，因为不是从p1开始，会返回找不到有效索引的报错。
+# 注意：无法匹配到索引，因为不是从 p1 开始，会返回找不到有效索引的报错。
 nebula&gt; MATCH (v:t) WHERE t.p2 == 2 and t.p3 == 3; 
 
 # 注意：无法匹配到索引，但是退化为全表扫描进行查询。
@@ -2589,9 +2589,9 @@ nebula&gt; LOOKUP ON t2 where t.p2 == 2;
 
 # 可以匹配到索引。
 nebula&gt; MATCH (v:t) WHERE t.p1 == 1;  
-# 可以匹配到索引，因为p1和p2是连续的。
+# 可以匹配到索引，因为 p1 和 p2 是连续的。
 nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2;  
-# 可以匹配到索引，因为p1、p2、p3是连续的。
+# 可以匹配到索引，因为 p1、p2、p3 是连续的。
 nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2 and t.p3 == 3; 
 </code></pre></div>
 -->
@@ -2599,7 +2599,7 @@ nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2 and t.p3 == 3;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

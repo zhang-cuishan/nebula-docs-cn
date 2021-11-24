@@ -721,43 +721,43 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ngqllimit">
-    原生nGQL语句中的LIMIT
+<a class="md-nav__link" href="#ngql_limit">
+    原生 nGQL 语句中的 LIMIT
   </a>
-<nav aria-label="原生nGQL语句中的LIMIT" class="md-nav">
+<nav aria-label="原生 nGQL 语句中的 LIMIT" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ngqllimit_1">
-    原生nGQL中的通用LIMIT语法
+<a class="md-nav__link" href="#ngql_limit_1">
+    原生 nGQL 中的通用 LIMIT 语法
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#golimit">
-    GO语句中的LIMIT
+<a class="md-nav__link" href="#go_limit">
+    GO 语句中的 LIMIT
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#opencypherlimit">
-    openCypher兼容语句中的LIMIT
+<a class="md-nav__link" href="#opencypher_limit">
+    openCypher 兼容语句中的 LIMIT
   </a>
-<nav aria-label="openCypher兼容语句中的LIMIT" class="md-nav">
+<nav aria-label="openCypher 兼容语句中的 LIMIT" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#limit_1">
-    单独使用LIMIT
+    单独使用 LIMIT
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#skip">
-    单独使用SKIP
+    单独使用 SKIP
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#skiplimit">
-    同时使用SKIP与LIMIT
+<a class="md-nav__link" href="#skip_limit">
+    同时使用 SKIP 与 LIMIT
   </a>
 </li>
 </ul>
@@ -2407,43 +2407,43 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ngqllimit">
-    原生nGQL语句中的LIMIT
+<a class="md-nav__link" href="#ngql_limit">
+    原生 nGQL 语句中的 LIMIT
   </a>
-<nav aria-label="原生nGQL语句中的LIMIT" class="md-nav">
+<nav aria-label="原生 nGQL 语句中的 LIMIT" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ngqllimit_1">
-    原生nGQL中的通用LIMIT语法
+<a class="md-nav__link" href="#ngql_limit_1">
+    原生 nGQL 中的通用 LIMIT 语法
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#golimit">
-    GO语句中的LIMIT
+<a class="md-nav__link" href="#go_limit">
+    GO 语句中的 LIMIT
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#opencypherlimit">
-    openCypher兼容语句中的LIMIT
+<a class="md-nav__link" href="#opencypher_limit">
+    openCypher 兼容语句中的 LIMIT
   </a>
-<nav aria-label="openCypher兼容语句中的LIMIT" class="md-nav">
+<nav aria-label="openCypher 兼容语句中的 LIMIT" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#limit_1">
-    单独使用LIMIT
+    单独使用 LIMIT
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#skip">
-    单独使用SKIP
+    单独使用 SKIP
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#skiplimit">
-    同时使用SKIP与LIMIT
+<a class="md-nav__link" href="#skip_limit">
+    同时使用 SKIP 与 LIMIT
   </a>
 </li>
 </ul>
@@ -2460,27 +2460,27 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="limit">LIMIT<a class="headerlink" href="#limit" title="Permanent link">¶</a></h1>
-<p><code>LIMIT</code>子句限制输出结果的行数。<code>LIMIT</code>在原生nGQL语句和openCypher兼容语句中的用法有所不同。</p>
+<p><code>LIMIT</code>子句限制输出结果的行数。<code>LIMIT</code>在原生 nGQL 语句和 openCypher 兼容语句中的用法有所不同。</p>
 <ul>
-<li>在原生nGQL语句中，一般需要在<code>LIMIT</code>子句前使用管道符，可以直接在LIMIT语句后设置或者省略偏移量参数。</li>
+<li>在原生 nGQL 语句中，一般需要在<code>LIMIT</code>子句前使用管道符，可以直接在 LIMIT 语句后设置或者省略偏移量参数。</li>
 </ul>
 <ul>
 <li>
-<p>在openCypher兼容语句中，不允许在<code>LIMIT</code>子句前使用管道符，可以使用<code>SKIP</code>指明偏移量。</p>
+<p>在 openCypher 兼容语句中，不允许在<code>LIMIT</code>子句前使用管道符，可以使用<code>SKIP</code>指明偏移量。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>在原生nGQL或openCypher方式中使用<code>LIMIT</code>时，使用<code>ORDER BY</code>子句限制输出顺序非常重要，否则会输出一个不可预知的子集。</p>
+<p>在原生 nGQL 或 openCypher 方式中使用<code>LIMIT</code>时，使用<code>ORDER BY</code>子句限制输出顺序非常重要，否则会输出一个不可预知的子集。</p>
 </div>
 </li>
 </ul>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>Nebula Graph 2.6.0中，<code>GO</code>语句支持了新的<code>LIMIT</code>语法。部分<code>LIMIT</code>相关的算子支持计算下推。</p>
+<p>Nebula Graph 2.6.0 中，<code>GO</code>语句支持了新的<code>LIMIT</code>语法。部分<code>LIMIT</code>相关的算子支持计算下推。</p>
 </div>
-<h2 id="ngqllimit">原生nGQL语句中的LIMIT<a class="headerlink" href="#ngqllimit" title="Permanent link">¶</a></h2>
-<p>在原生nGQL中，<code>LIMIT</code>有通用语法和<code>GO</code>语句中的专属语法。</p>
-<h3 id="ngqllimit_1">原生nGQL中的通用LIMIT语法<a class="headerlink" href="#ngqllimit_1" title="Permanent link">¶</a></h3>
-<p>原生nGQL中的通用<code>LIMIT</code>语法与<code>SQL</code>中的<code>LIMIT</code>原理相同。<code>LIMIT</code>子句接收一个或两个参数，参数的值必须是非负整数，且必须用在管道符之后。语法和说明如下：</p>
+<h2 id="ngql_limit">原生 nGQL 语句中的 LIMIT<a class="headerlink" href="#ngql_limit" title="Permanent link">¶</a></h2>
+<p>在原生 nGQL 中，<code>LIMIT</code>有通用语法和<code>GO</code>语句中的专属语法。</p>
+<h3 id="ngql_limit_1">原生 nGQL 中的通用 LIMIT 语法<a class="headerlink" href="#ngql_limit_1" title="Permanent link">¶</a></h3>
+<p>原生 nGQL 中的通用<code>LIMIT</code>语法与<code>SQL</code>中的<code>LIMIT</code>原理相同。<code>LIMIT</code>子句接收一个或两个参数，参数的值必须是非负整数，且必须用在管道符之后。语法和说明如下：</p>
 <div class="highlight"><pre><span></span><code>... | LIMIT [&lt;offset&gt;,] &lt;number_rows&gt;;
 </code></pre></div>
 <table>
@@ -2502,7 +2502,7 @@
 </tbody>
 </table>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code># 从结果中返回最前面的3行数据。
+<div class="highlight"><pre><span></span><code># 从结果中返回最前面的 3 行数据。
 nebula&gt; LOOKUP ON player |\
         LIMIT 3;
 +-------------+
@@ -2513,7 +2513,7 @@ nebula&gt; LOOKUP ON player |\
 | "player102" |
 +-------------+
 
-# 从排序后结果中返回第2行开始的3行数据。
+# 从排序后结果中返回第 2 行开始的 3 行数据。
 nebula&gt; GO FROM "player100" OVER follow REVERSELY \
         YIELD properties($$).name AS Friend, properties($$).age AS Age \
         | ORDER BY $-.Age, $-.Friend \
@@ -2526,19 +2526,19 @@ nebula&gt; GO FROM "player100" OVER follow REVERSELY \
 | "Marco Belinelli" | 32  |
 +-------------------+-----+
 </code></pre></div>
-<h3 id="golimit">GO语句中的LIMIT<a class="headerlink" href="#golimit" title="Permanent link">¶</a></h3>
-<p><code>GO</code>语句中的<code>LIMIT</code>除了支持原生nGQL中的通用语法外，还支持根据边限制输出结果数量。</p>
+<h3 id="go_limit">GO 语句中的 LIMIT<a class="headerlink" href="#go_limit" title="Permanent link">¶</a></h3>
+<p><code>GO</code>语句中的<code>LIMIT</code>除了支持原生 nGQL 中的通用语法外，还支持根据边限制输出结果数量。</p>
 <p>语法：</p>
 <div class="highlight"><pre><span></span><code>&lt;go_statement&gt; LIMIT &lt;limit_list&gt;;
 </code></pre></div>
 <p><code>limit_list</code>是一个列表，列表中的元素必须为自然数，且元素数量必须与<code>GO</code>语句中的<code>STEPS</code>的最大数相同。下文以<code>GO 1 TO 3 STEPS FROM "A" OVER * LIMIT &lt;limit_list&gt;</code>为例详细介绍<code>LIMIT</code>的这种用法。</p>
 <ul>
-<li>列表<code>limit_list</code>必须包含3个自然数元素，例如<code>GO 1 TO 3 STEPS FROM "A" OVER * LIMIT [1,2,4]</code>。</li>
-<li><code>LIMIT [1,2,4]</code>中的<code>1</code>表示系统在第一步时自动选择1条边继续遍历，<code>2</code>表示在第二步时选择2条边继续遍历，<code>4</code>表示在第三步时选择4条边继续遍历。</li>
+<li>列表<code>limit_list</code>必须包含 3 个自然数元素，例如<code>GO 1 TO 3 STEPS FROM "A" OVER * LIMIT [1,2,4]</code>。</li>
+<li><code>LIMIT [1,2,4]</code>中的<code>1</code>表示系统在第一步时自动选择 1 条边继续遍历，<code>2</code>表示在第二步时选择 2 条边继续遍历，<code>4</code>表示在第三步时选择 4 条边继续遍历。</li>
 <li>因为<code>GO 1 TO 3 STEPS</code>表示返回第一到第三步的所有遍历结果，因此下图中所有红色边和它们的原点与目的点都会被这条<code>GO</code>语句匹配上，而黄色边表示<code>GO</code>语句遍历时没有选择的路径。如果不是<code>GO 1 TO 3 STEPS</code>而是<code>GO 3 STEPS</code>，则只会匹配上第三步的红色边和它们两端的点。</li>
 </ul>
 <p><img alt="LIMIT in GO" src="../limit_in_go_1.png"/></p>
-<p>在basketballplayer数据集中的执行示例如下：</p>
+<p>在 basketballplayer 数据集中的执行示例如下：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO 3 STEPS FROM "player100" \
         OVER * \
         YIELD properties($$).name AS NAME, properties($$).age AS Age \
@@ -2562,8 +2562,8 @@ nebula&gt; GO 3 STEPS FROM "player102" \
 |            | "player100" |
 +------------+-------------+
 </code></pre></div>
-<h2 id="opencypherlimit">openCypher兼容语句中的LIMIT<a class="headerlink" href="#opencypherlimit" title="Permanent link">¶</a></h2>
-<p>在<code>MATCH</code>等openCypher兼容语句中使用LIMIT不需要加管道符。语法和说明如下：</p>
+<h2 id="opencypher_limit">openCypher 兼容语句中的 LIMIT<a class="headerlink" href="#opencypher_limit" title="Permanent link">¶</a></h2>
+<p>在<code>MATCH</code>等 openCypher 兼容语句中使用 LIMIT 不需要加管道符。语法和说明如下：</p>
 <div class="highlight"><pre><span></span><code>... [SKIP &lt;offset&gt;] [LIMIT &lt;number_rows&gt;];
 </code></pre></div>
 <table>
@@ -2587,9 +2587,9 @@ nebula&gt; GO 3 STEPS FROM "player102" \
 <p><code>offset</code>和<code>number_rows</code>可以使用表达式，但是表达式的结果必须是非负整数。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>两个整数组成的分数表达式会自动向下取整。例如<code>8/6</code>向下取整为1。</p>
+<p>两个整数组成的分数表达式会自动向下取整。例如<code>8/6</code>向下取整为 1。</p>
 </div>
-<h3 id="limit_1">单独使用LIMIT<a class="headerlink" href="#limit_1" title="Permanent link">¶</a></h3>
+<h3 id="limit_1">单独使用 LIMIT<a class="headerlink" href="#limit_1" title="Permanent link">¶</a></h3>
 <p><code>LIMIT</code>可以单独使用，返回指定数量的结果。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) RETURN v.name AS Name, v.age AS Age \
         ORDER BY Age LIMIT 5;
@@ -2614,7 +2614,7 @@ nebula&gt; MATCH (v:player) RETURN v.name AS Name, v.age AS Age \
 | "Giannis Antetokounmpo" | 24  |
 +-------------------------+-----+
 </code></pre></div>
-<h3 id="skip">单独使用SKIP<a class="headerlink" href="#skip" title="Permanent link">¶</a></h3>
+<h3 id="skip">单独使用 SKIP<a class="headerlink" href="#skip" title="Permanent link">¶</a></h3>
 <p><code>SKIP</code>可以单独使用，用于设置偏移量，返回指定位置之后的数据。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tim Duncan"}) --&gt; (v2) \
         RETURN v2.name AS Name, v2.age AS Age \
@@ -2635,7 +2635,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"}) --&gt; (v2) \
 | "Tony Parker" | 36  |
 +---------------+-----+
 </code></pre></div>
-<h3 id="skiplimit">同时使用SKIP与LIMIT<a class="headerlink" href="#skiplimit" title="Permanent link">¶</a></h3>
+<h3 id="skip_limit">同时使用 SKIP 与 LIMIT<a class="headerlink" href="#skip_limit" title="Permanent link">¶</a></h3>
 <p>同时使用<code>SKIP</code>与<code>LIMIT</code>可以返回从指定位置开始的指定数量的数据。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tim Duncan"}) --&gt; (v2) \
         RETURN v2.name AS Name, v2.age AS Age \
@@ -2649,13 +2649,13 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"}) --&gt; (v2) \
 <!--
 ## 性能提示
 
-Nebula Graph 2.6.1 未实现 `LIMIT` 语句的存储层下推优化, 类似 `MATCH (n:T) RETURN n LIMIT 10` 语句或者 `LOOKUP on i_T | LIMIT 10` 语句会发生 graphd 资源占用过大的问题：一个 graphd 会从所有的 storaged 获取全部T类型的点，然后返回 10 个。如果全部数据量很大，graphd 此时通常会消耗大量内存，甚至 OOM。
+Nebula Graph 2.6.1 未实现 `LIMIT` 语句的存储层下推优化，类似 `MATCH (n:T) RETURN n LIMIT 10` 语句或者 `LOOKUP on i_T | LIMIT 10` 语句会发生 graphd 资源占用过大的问题：一个 graphd 会从所有的 storaged 获取全部 T 类型的点，然后返回 10 个。如果全部数据量很大，graphd 此时通常会消耗大量内存，甚至 OOM。
 -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

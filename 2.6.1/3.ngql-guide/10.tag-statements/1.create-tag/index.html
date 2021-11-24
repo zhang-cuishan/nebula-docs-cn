@@ -817,7 +817,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -837,7 +837,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tag">
-    创建Tag说明
+    创建 Tag 说明
   </a>
 </li>
 </ul>
@@ -2390,7 +2390,7 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#opencypher">
-    OpenCypher兼容性
+    OpenCypher 兼容性
   </a>
 </li>
 <li class="md-nav__item">
@@ -2410,7 +2410,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#tag">
-    创建Tag说明
+    创建 Tag 说明
   </a>
 </li>
 </ul>
@@ -2424,17 +2424,17 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="create_tag">CREATE TAG<a class="headerlink" href="#create_tag" title="Permanent link">¶</a></h1>
-<p><code>CREATE TAG</code>语句可以通过指定名称创建一个Tag。</p>
-<h2 id="opencypher">OpenCypher兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
-<p>nGQL中的Tag和openCypher中的Label相似，但又有所不同，例如它们的创建方式。</p>
+<p><code>CREATE TAG</code>语句可以通过指定名称创建一个 Tag。</p>
+<h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<p>nGQL 中的 Tag 和 openCypher 中的 Label 相似，但又有所不同，例如它们的创建方式。</p>
 <ul>
-<li>openCypher中的Label需要在<code>CREATE</code>语句中与点一起创建。</li>
-<li>nGQL中的Tag需要使用<code>CREATE TAG</code>语句独立创建。Tag更像是MySQL中的表。</li>
+<li>openCypher 中的 Label 需要在<code>CREATE</code>语句中与点一起创建。</li>
+<li>nGQL 中的 Tag 需要使用<code>CREATE TAG</code>语句独立创建。Tag 更像是 MySQL 中的表。</li>
 </ul>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>执行<code>CREATE TAG</code>语句需要当前登录的用户拥有指定图空间的<a href="../../../7.data-security/1.authentication/3.role-list/">创建Tag权限</a>，否则会报错。</p>
+<p>执行<code>CREATE TAG</code>语句需要当前登录的用户拥有指定图空间的 <a href="../../../7.data-security/1.authentication/3.role-list/">创建 Tag 权限</a>，否则会报错。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>创建Tag前，需要先用<code>USE</code>语句指定工作空间。</p>
+<p>创建 Tag 前，需要先用<code>USE</code>语句指定工作空间。</p>
 <div class="highlight"><pre><span></span><code>CREATE TAG [IF NOT EXISTS] &lt;tag_name&gt;
     (
       &lt;prop_name&gt; &lt;data_type&gt; [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT '&lt;comment&gt;']
@@ -2454,19 +2454,19 @@
 <tbody>
 <tr>
 <td align="left"><code>IF NOT EXISTS</code></td>
-<td align="left">检测待创建的Tag是否存在，只有不存在时，才会创建Tag。仅检测Tag的名称，不会检测具体属性。</td>
+<td align="left">检测待创建的 Tag 是否存在，只有不存在时，才会创建 Tag。仅检测 Tag 的名称，不会检测具体属性。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;tag_name&gt;</code></td>
-<td align="left">每个图空间内的Tag必须是唯一的。Tag名称设置后无法修改。Tag名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">每个图空间内的 Tag 必须是唯一的。Tag 名称设置后无法修改。Tag 名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用 <a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;prop_name&gt;</code></td>
-<td align="left">属性名称。每个Tag中的属性名称必须唯一。属性的命名规则与Tag相同。</td>
+<td align="left">属性名称。每个 Tag 中的属性名称必须唯一。属性的命名规则与 Tag 相同。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;data_type&gt;</code></td>
-<td align="left">属性的数据类型，目前支持<a href="../../3.data-types/1.numeric/">数值</a>、<a href="../../3.data-types/2.boolean/">布尔</a>、<a href="../../3.data-types/3.string/">字符串</a>以及<a href="../../3.data-types/4.date-and-time/">日期与时间</a>。</td>
+<td align="left">属性的数据类型，目前支持 <a href="../../3.data-types/1.numeric/">数值</a>、<a href="../../3.data-types/2.boolean/">布尔</a>、<a href="../../3.data-types/3.string/">字符串</a> 以及 <a href="../../3.data-types/4.date-and-time/">日期与时间</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>NULL \| NOT NULL</code></td>
@@ -2474,11 +2474,11 @@
 </tr>
 <tr>
 <td align="left"><code>DEFAULT</code></td>
-<td align="left">指定属性的默认值。默认值可以是一个文字值或Nebula Graph支持的表达式。如果插入点时没有指定某个属性的值，则使用默认值。</td>
+<td align="left">指定属性的默认值。默认值可以是一个文字值或 Nebula Graph 支持的表达式。如果插入点时没有指定某个属性的值，则使用默认值。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
-<td align="left">对单个属性或Tag的描述。最大为256字节。默认无描述。</td>
+<td align="left">对单个属性或 Tag 的描述。最大为 256 字节。默认无描述。</td>
 </tr>
 <tr>
 <td align="left"><code>TTL_DURATION</code></td>
@@ -2486,39 +2486,39 @@
 </tr>
 <tr>
 <td align="left"><code>TTL_COL</code></td>
-<td align="left">指定要设置存活时间的属性。属性的数据类型必须是<code>int</code>或者<code>timestamp</code>。一个Tag只能指定一个字段为<code>TTL_COL</code>。更多TTL的信息请参见<a href="../../8.clauses-and-options/ttl-options/">TTL</a>。</td>
+<td align="left">指定要设置存活时间的属性。属性的数据类型必须是<code>int</code>或者<code>timestamp</code>。一个 Tag 只能指定一个字段为<code>TTL_COL</code>。更多 TTL 的信息请参见 <a href="../../8.clauses-and-options/ttl-options/">TTL</a>。</td>
 </tr>
 </tbody>
 </table>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string, age int);
 
-# 创建没有属性的Tag。
+# 创建没有属性的 Tag。
 nebula&gt; CREATE TAG IF NOT EXISTS no_property(); 
 
-# 创建包含默认值的Tag。
+# 创建包含默认值的 Tag。
 nebula&gt; CREATE TAG IF NOT EXISTS player_with_default(name string, age int DEFAULT 20);
 
-# 对字段create_time设置TTL为100秒。
+# 对字段 create_time 设置 TTL 为 100 秒。
 nebula&gt; CREATE TAG IF NOT EXISTS woman(name string, age int, \
         married bool, salary double, create_time timestamp) \
         TTL_DURATION = 100, TTL_COL = "create_time";
 </code></pre></div>
-<h2 id="tag">创建Tag说明<a class="headerlink" href="#tag" title="Permanent link">¶</a></h2>
-<p>尝试使用新创建的Tag可能会失败，因为创建是异步实现的。</p>
-<p>Nebula Graph将在下一个心跳周期内完成Tag的创建，为了确保创建成功，可以使用如下方法之一：</p>
+<h2 id="tag">创建 Tag 说明<a class="headerlink" href="#tag" title="Permanent link">¶</a></h2>
+<p>尝试使用新创建的 Tag 可能会失败，因为创建是异步实现的。</p>
+<p>Nebula Graph 将在下一个心跳周期内完成 Tag 的创建，为了确保创建成功，可以使用如下方法之一：</p>
 <ul>
-<li>在<a href="../4.show-tags/"><code>SHOW TAGS</code></a>语句的结果中查找新的Tag，如果找不到，请等待几秒重试。</li>
+<li>在 <a href="../4.show-tags/"><code>SHOW TAGS</code></a> 语句的结果中查找新的 Tag，如果找不到，请等待几秒重试。</li>
 </ul>
 <ul>
-<li>等待两个心跳周期，例如20秒。</li>
+<li>等待两个心跳周期，例如 20 秒。</li>
 </ul>
-<p>如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a>修改参数<code>heartbeat_interval_secs</code>。</p>
+<p>如果需要修改心跳间隔，请为 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

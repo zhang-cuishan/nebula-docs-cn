@@ -2384,19 +2384,19 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">增加和删除标签<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>在openCypher中，有增加标签（<code>SET label</code>）和移除标签（<code>REMOVE label</code>）的功能，可以用于加速查询或者标记过程。</p>
-<p>在Nebula Graph中，可以通过Tag变相实现相同操作，创建Tag并将Tag插入到已有的点上，就可以根据Tag名称快速查找点，也可以通过<code>DELETE TAG</code>删除某些点上不再需要的Tag。</p>
+<p>在 openCypher 中，有增加标签（<code>SET label</code>）和移除标签（<code>REMOVE label</code>）的功能，可以用于加速查询或者标记过程。</p>
+<p>在 Nebula Graph 中，可以通过 Tag 变相实现相同操作，创建 Tag 并将 Tag 插入到已有的点上，就可以根据 Tag 名称快速查找点，也可以通过<code>DELETE TAG</code>删除某些点上不再需要的 Tag。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>请确保点上已经有另一个Tag，否则删除点上最后一个Tag时，会导致点也被删除。</p>
+<p>请确保点上已经有另一个 Tag，否则删除点上最后一个 Tag 时，会导致点也被删除。</p>
 </div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>例如在basketballplayer数据集中，部分篮球运动员同时也是球队股东，可以为股东Tag<code>shareholder</code>创建索引，方便快速查找。如果不再是股东，可以通过<code>DELETE TAG</code>语句删除相应运动员的股东Tag。</p>
-<div class="highlight"><pre><span></span><code>//创建股东Tag和索引
+<p>例如在 basketballplayer 数据集中，部分篮球运动员同时也是球队股东，可以为股东 Tag<code>shareholder</code>创建索引，方便快速查找。如果不再是股东，可以通过<code>DELETE TAG</code>语句删除相应运动员的股东 Tag。</p>
+<div class="highlight"><pre><span></span><code>//创建股东 Tag 和索引
 nebula&gt; CREATE TAG IF NOT EXISTS shareholder();
 nebula&gt; CREATE TAG INDEX IF NOT EXISTS shareholder_tag on shareholder();
 
-//为点添加Tag
+//为点添加 Tag
 nebula&gt; INSERT VERTEX shareholder() VALUES "player100":();
 nebula&gt; INSERT VERTEX shareholder() VALUES "player101":();
 
@@ -2416,7 +2416,7 @@ nebula&gt; LOOKUP ON shareholder;
 | "player101" |
 +-------------+
 
-//如果player100不再是股东
+//如果 player100 不再是股东
 nebula&gt; DELETE TAG shareholder FROM "player100";
 nebula&gt; LOOKUP ON shareholder;
 +-------------+
@@ -2433,7 +2433,7 @@ nebula&gt; LOOKUP ON shareholder;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 10, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

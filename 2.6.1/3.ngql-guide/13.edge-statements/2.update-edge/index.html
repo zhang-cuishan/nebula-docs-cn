@@ -2394,8 +2394,8 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="update_edge">UPDATE EDGE<a class="headerlink" href="#update_edge" title="Permanent link">¶</a></h1>
-<p><code>UPDATE EDGE</code>语句可以修改边上Edge type的属性。</p>
-<p>Nebula Graph支持CAS（compare and set）操作。</p>
+<p><code>UPDATE EDGE</code>语句可以修改边上 Edge type 的属性。</p>
+<p>Nebula Graph 支持 CAS（compare and set）操作。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>UPDATE EDGE ON &lt;edge_type&gt;
 &lt;src_vid&gt; -&gt; &lt;dst_vid&gt; [@&lt;rank&gt;]
@@ -2416,25 +2416,25 @@ SET &lt;update_prop&gt;
 <tr>
 <td><code>ON &lt;edge_type&gt;</code></td>
 <td>是</td>
-<td>指定Edge type。要修改的属性必须在这个Edge type内。</td>
+<td>指定 Edge type。要修改的属性必须在这个 Edge type 内。</td>
 <td><code>ON serve</code></td>
 </tr>
 <tr>
 <td><code>&lt;src_vid&gt;</code></td>
 <td>是</td>
-<td>指定边的起始点ID。</td>
+<td>指定边的起始点 ID。</td>
 <td><code>"player100"</code></td>
 </tr>
 <tr>
 <td><code>&lt;dst_vid&gt;</code></td>
 <td>是</td>
-<td>指定边的目的点ID。</td>
+<td>指定边的目的点 ID。</td>
 <td><code>"team204"</code></td>
 </tr>
 <tr>
 <td><code>&lt;rank&gt;</code></td>
 <td>否</td>
-<td>指定边的rank值。</td>
+<td>指定边的 rank 值。</td>
 <td><code>10</code></td>
 </tr>
 <tr>
@@ -2458,7 +2458,7 @@ SET &lt;update_prop&gt;
 </tbody>
 </table>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>// 用GO语句查看边的属性值。
+<div class="highlight"><pre><span></span><code>// 用 GO 语句查看边的属性值。
 nebula&gt; GO FROM "player100" \
         OVER serve \
         YIELD properties(edge).start_year, properties(edge).end_year;
@@ -2468,7 +2468,7 @@ nebula&gt; GO FROM "player100" \
 | 1997             | 2016           |
 +------------------+----------------+
 
-// 修改属性start_year的值，并返回end_year和新的start_year。
+// 修改属性 start_year 的值，并返回 end_year 和新的 start_year。
 
 nebula&gt; UPDATE EDGE ON serve "player100" -&gt; "team204"@0 \
         SET start_year = start_year + 1 \
@@ -2484,7 +2484,7 @@ nebula&gt; UPDATE EDGE ON serve "player100" -&gt; "team204"@0 \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

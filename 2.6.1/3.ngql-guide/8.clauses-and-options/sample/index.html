@@ -2359,19 +2359,19 @@
 <p><code>SAMPLE</code>子句用于在结果集中均匀取样并返回指定数量的数据。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p><code>SAMPLE</code>是Nebula Graph 2.6.0 新增的子句。</p>
+<p><code>SAMPLE</code>是 Nebula Graph 2.6.0 新增的子句。</p>
 </div>
 <p><code>SAMPLE</code>仅能在<code>GO</code>语句中使用，语法如下：</p>
 <div class="highlight"><pre><span></span><code>&lt;go_statement&gt; SAMPLE &lt;sample_list&gt;;
 </code></pre></div>
 <p><code>sample_list</code>是一个列表，列表中的元素必须为自然数，且元素数量必须与<code>GO</code>语句中的<code>STEPS</code>的最大数相同。下文以<code>GO 1 TO 3 STEPS FROM "A" OVER * SAMPLE &lt;sample_list&gt;</code>为例详细介绍<code>SAMPLE</code>的用法。</p>
 <ul>
-<li>列表<code>sample_list</code>必须包含3个自然数元素，例如<code>GO 1 TO 3 STEPS FROM "A" OVER * SAMPLE [1,2,4]</code>。</li>
-<li><code>SAMPLE [1,2,4]</code>中的<code>1</code>表示系统在第一步时自动选择1条边继续遍历，<code>2</code>表示在第二步时选择2条边继续遍历，<code>4</code>表示在第三步时选择4条边继续遍历。如果某一步没有匹配的边或者匹配到的边数量小于指定数量，则按实际数量返回。</li>
+<li>列表<code>sample_list</code>必须包含 3 个自然数元素，例如<code>GO 1 TO 3 STEPS FROM "A" OVER * SAMPLE [1,2,4]</code>。</li>
+<li><code>SAMPLE [1,2,4]</code>中的<code>1</code>表示系统在第一步时自动选择 1 条边继续遍历，<code>2</code>表示在第二步时选择 2 条边继续遍历，<code>4</code>表示在第三步时选择 4 条边继续遍历。如果某一步没有匹配的边或者匹配到的边数量小于指定数量，则按实际数量返回。</li>
 <li>因为<code>GO 1 TO 3 STEPS</code>表示返回第一到第三步的所有遍历结果，因此下图中所有红色边和它们的原点与目的点都会被这条<code>GO</code>语句匹配上，而黄色边表示<code>GO</code>语句遍历时没有选择的路径。如果不是<code>GO 1 TO 3 STEPS</code>而是<code>GO 3 STEPS</code>，则只会匹配上第三步的红色边和它们两端的点。</li>
 </ul>
 <p><img alt="SAMPLE in GO" src="../sample_in_go.png"/></p>
-<p>在basketballplayer数据集中的执行示例如下：</p>
+<p>在 basketballplayer 数据集中的执行示例如下：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO 3 STEPS FROM "player100" \
         OVER * \
         YIELD properties($$).name AS NAME, properties($$).age AS Age \
@@ -2403,7 +2403,7 @@ nebula&gt; GO 1 TO 3 STEPS FROM "player100" \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>
