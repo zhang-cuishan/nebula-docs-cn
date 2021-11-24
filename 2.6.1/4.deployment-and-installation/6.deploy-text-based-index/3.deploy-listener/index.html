@@ -2544,7 +2544,7 @@
 <p>listener 进程与 storaged 进程使用相同的二进制文件，但是二者配置文件不同，进程使用端口也不同，可以在所有需要部署 listener 的服务器上都安装 Nebula Graph，但是仅使用 Storage 服务。详情请参见<a href="../../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">使用 RPM 或 DEB 安装包安装 Nebula Graph</a>。</p>
 <h3 id="listener">第二步：准备 listener 的配置文件<a class="headerlink" href="#listener" title="Permanent link">¶</a></h3>
 <p>用户必须在需要部署 listener 的机器上准备对应的配置文件，文件名称必须为<code>nebula-storaged-listener.conf</code>，并保存在安装路径下的<code>etc</code>目录内。用户可以参考提供的<a href="https://github.com/vesoft-inc/nebula/blob/master/conf/nebula-storaged-listener.conf.production">模板</a>。注意去掉文件后缀<code>.production</code>。</p>
-<p>大部分配置与 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务</a> 的配置文件相同，本文仅介绍差异部分。</p>
+<p>大部分配置与 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务</a>的配置文件相同，本文仅介绍差异部分。</p>
 <table>
 <thead>
 <tr>
@@ -2663,7 +2663,7 @@
 <p>删除 listener 后，将不能重新添加 listener，因此也无法继续向 ES 集群同步，文本索引数据将不完整。如果确实需要，只能重新创建图空间。</p>
 </div>
 <h2 id="_6">下一步<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<p>部署<a href="../2.deploy-es/">全文索引</a> 和 listener 后，全文索引会在 Elasticsearch 集群中自动创建，用户可以开始进行全文搜索。详情请参见<a href="../../../3.ngql-guide/15.full-text-index-statements/1.search-with-text-based-index/">全文搜索</a>。</p>
+<p>部署<a href="../2.deploy-es/">全文索引</a>和 listener 后，全文索引会在 Elasticsearch 集群中自动创建，用户可以开始进行全文搜索。详情请参见<a href="../../../3.ngql-guide/15.full-text-index-statements/1.search-with-text-based-index/">全文搜索</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>

@@ -2946,7 +2946,7 @@ Got 1 rows (time spent 1235/1934 us)
 <h3 id="tagedge_type">能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h3>
 <p>不能。</p>
 <p>图空间、Tag、Edge type、属性以及索引的名称都需由大小写英文字母、数字或下划线组成，暂不支持使用中文字符。</p>
-<p>同时，上述标识符区分大小写，且不可使用<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a> 。</p>
+<p>同时，上述标识符区分大小写，且不可使用<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</p>
 <h3 id="_7">获取指定点的出度（或者入度）?<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>一个点的“出度”是指从该点出发的“边”的条数。入度，是指指向该点的边的条数。</p>
 <div class="highlight"><pre><span></span><code>nebula &gt; MATCH (s)-[e]-&gt;() WHERE id(s) == "given" RETURN count(e); #出度

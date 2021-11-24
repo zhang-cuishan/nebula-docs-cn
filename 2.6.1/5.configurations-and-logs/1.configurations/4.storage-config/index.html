@@ -2536,7 +2536,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a> 的属性值时，Nebula Graph 会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP 类型例外）转换成相应的 UTC 时间，因此在查询中返回的时间类型属性值为 UTC 时间。</li>
+<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a>的属性值时，Nebula Graph 会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP 类型例外）转换成相应的 UTC 时间，因此在查询中返回的时间类型属性值为 UTC 时间。</li>
 <li><code>timezone_name</code>参数只用于转换 Nebula Graph 中存储的数据，Nebula Graph 进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
 </ul>
 </div>

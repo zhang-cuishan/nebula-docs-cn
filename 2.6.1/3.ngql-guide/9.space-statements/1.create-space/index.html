@@ -2579,7 +2579,7 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <ul>
 <li>等待两个心跳周期，例如 20 秒。</li>
 </ul>
-<p>如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
+<p>如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a>修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
 <h2 id="_7">检查分片分布情况<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <p>在大型集群中，由于启动时间不同，分片的分布可能不均衡。用户可以执行如下命令检查分片的分布情况：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;

@@ -2483,7 +2483,7 @@
 <li>如果用 hash 方式生成 int64 VID：在有 10 亿个点的情况下，发生 hash 冲突的概率大约是 1/10。边的数量与碰撞的概率无关。</li>
 </ul>
 <h2 id="vid_4">定义和修改 VID 的数据类型<a class="headerlink" href="#vid_4" title="Permanent link">¶</a></h2>
-<p>VID 的数据类型必须在<a href="../../3.ngql-guide/9.space-statements/1.create-space/">创建图空间</a> 时定义，且一旦定义无法修改。</p>
+<p>VID 的数据类型必须在<a href="../../3.ngql-guide/9.space-statements/1.create-space/">创建图空间</a>时定义，且一旦定义无法修改。</p>
 <h2 id="start_vid">"查询起始点"(<code>start vid</code>) 与全局扫描<a class="headerlink" href="#start_vid" title="Permanent link">¶</a></h2>
 <p>绝大多数情况下，Nebula Graph 的查询语句（<code>MATCH</code>、<code>GO</code>、<code>LOOKUP</code>）的执行计划，必须要通过一定方式找到查询起始点的 VID（<code>start vid</code>）。</p>
 <p>定位 <code>start vid</code> 只有两种方式：</p>
