@@ -1005,7 +1005,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null">
-    NULL值说明
+    NULL 值说明
   </a>
 </li>
 <li class="md-nav__item">
@@ -2431,7 +2431,7 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#null">
-    NULL值说明
+    NULL 值说明
   </a>
 </li>
 <li class="md-nav__item">
@@ -2450,17 +2450,17 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">索引介绍<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph支持两种类型索引：原生索引和全文索引。</p>
+<p>Nebula Graph 支持两种类型索引：原生索引和全文索引。</p>
 <h2 id="_2">原生索引<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>原生索引可以基于指定的属性查询数据，有如下特点：</p>
 <ul>
-<li>包括Tag索引和Edge type索引。</li>
+<li>包括 Tag 索引和 Edge type 索引。</li>
 </ul>
 <ul>
 <li>必须手动重建索引（<code>REBUILD INDEX</code>）。</li>
 </ul>
 <ul>
-<li>支持创建同一个Tag或Edge type的多个属性的索引（复合索引），但是不能跨Tag或Edge type。</li>
+<li>支持创建同一个 Tag 或 Edge type 的多个属性的索引（复合索引），但是不能跨 Tag 或 Edge type。</li>
 </ul>
 <h3 id="_3">原生索引操作<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <ul>
@@ -2496,7 +2496,7 @@
 <li>只允许创建一个属性的索引。</li>
 </ul>
 <ul>
-<li>只能创建指定长度（不超过256字节）字符串的索引。</li>
+<li>只能创建指定长度（不超过 256 字节）字符串的索引。</li>
 </ul>
 <ul>
 <li>不支持逻辑操作，例如<code>AND</code>、<code>OR</code>、<code>NOT</code>。</li>
@@ -2506,18 +2506,18 @@
 <p>如果需要进行整个字符串的匹配，请使用原生索引。</p>
 </div>
 <h3 id="_5">全文索引操作<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
-<p>在对全文索引执行任何操作之前，请确保已经部署全文索引。详情请参见<a href="../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>和<a href="../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">部署listener</a>。</p>
-<p>部署完成后，Elasticsearch集群上会自动创建全文索引。不支持重建或修改全文索引。如果需要删除全文索引，请在Elasticsearch集群上手动删除。</p>
-<p>使用全文索引请参见<a href="../15.full-text-index-statements/1.search-with-text-based-index/">使用全文索引查询</a>。</p>
-<h2 id="null">NULL值说明<a class="headerlink" href="#null" title="Permanent link">¶</a></h2>
-<p>不支持对值为NULL的属性创建索引。</p>
+<p>在对全文索引执行任何操作之前，请确保已经部署全文索引。详情请参见 <a href="../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a> 和 <a href="../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">部署 listener</a>。</p>
+<p>部署完成后，Elasticsearch 集群上会自动创建全文索引。不支持重建或修改全文索引。如果需要删除全文索引，请在 Elasticsearch 集群上手动删除。</p>
+<p>使用全文索引请参见 <a href="../15.full-text-index-statements/1.search-with-text-based-index/">使用全文索引查询</a>。</p>
+<h2 id="null">NULL 值说明<a class="headerlink" href="#null" title="Permanent link">¶</a></h2>
+<p>不支持对值为 NULL 的属性创建索引。</p>
 <h2 id="_6">范围查询<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <p>原生索引除了可以查询单个结果之外，还可以执行范围查询。当前仅支持对数字、日期和时间类型的属性进行范围查询。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

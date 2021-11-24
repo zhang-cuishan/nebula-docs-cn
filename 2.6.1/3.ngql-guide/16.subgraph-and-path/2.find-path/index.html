@@ -1093,7 +1093,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#where">
-    是否支持WHERE子句，以实现图遍历过程中的条件过滤?
+    是否支持 WHERE 子句，以实现图遍历过程中的条件过滤？
   </a>
 </li>
 </ul>
@@ -2415,7 +2415,7 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#where">
-    是否支持WHERE子句，以实现图遍历过程中的条件过滤?
+    是否支持 WHERE 子句，以实现图遍历过程中的条件过滤？
   </a>
 </li>
 </ul>
@@ -2453,10 +2453,10 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 <li><code>WITH PROP</code>：展示点和边的属性。不添加本参数则隐藏属性。</li>
 </ul>
 <ul>
-<li><code>&lt;vertex_id_list&gt;</code>：点ID列表。多个点用英文逗号（,）分隔。支持<code>$-</code>和<code>$var</code>。</li>
+<li><code>&lt;vertex_id_list&gt;</code>：点 ID 列表。多个点用英文逗号（,）分隔。支持<code>$-</code>和<code>$var</code>。</li>
 </ul>
 <ul>
-<li><code>&lt;edge_type_list&gt;</code>：Edge type列表。多个Edge type用英文逗号（,）分隔。<code>*</code>表示所有Edge type。</li>
+<li><code>&lt;edge_type_list&gt;</code>：Edge type 列表。多个 Edge type 用英文逗号（,）分隔。<code>*</code>表示所有 Edge type。</li>
 </ul>
 <ul>
 <li><code>REVERSELY | BIDIRECT</code>：<code>REVERSELY</code>表示反向，<code>BIDIRECT</code>表示双向。</li>
@@ -2472,7 +2472,7 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>FIND PATH</code>语句检索的路径类型为<code>trail</code>，即检索的路径只有点可以重复，边不可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
+<p><code>FIND PATH</code>语句检索的路径类型为<code>trail</code>，即检索的路径只有点可以重复，边不可以重复。详情请参见 <a href="../../../1.introduction/2.1.path/">路径</a>。</p>
 </div>
 <h2 id="_2">限制<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
@@ -2526,14 +2526,14 @@ OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO 
 +--------------------------------------------------------------------------------------------------------+
 </code></pre></div>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
-<h3 id="where">是否支持WHERE子句，以实现图遍历过程中的条件过滤?<a class="headerlink" href="#where" title="Permanent link">¶</a></h3>
+<h3 id="where">是否支持 WHERE 子句，以实现图遍历过程中的条件过滤？<a class="headerlink" href="#where" title="Permanent link">¶</a></h3>
 <p>支持使用<code>WHERE</code>子句过滤，但目前只能过滤边属性，如示例中的<code>FIND ALL PATH FROM "player100" TO "team204" OVER * WHERE follow.degree is EMPTY or follow.degree &gt;=0;</code>。</p>
 <p>暂不支持过滤点属性。</p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

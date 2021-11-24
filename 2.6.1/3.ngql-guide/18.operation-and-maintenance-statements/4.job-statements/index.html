@@ -2608,14 +2608,14 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">作业管理<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>在Storage服务上长期运行的任务称为作业，例如<code>COMPACT</code>、<code>FLUSH</code>和<code>STATS</code>。 如果图空间的数据量很大，这些作业可能耗时很长。作业管理可以帮助执行、查看、停止和恢复作业。</p>
+<p>在 Storage 服务上长期运行的任务称为作业，例如<code>COMPACT</code>、<code>FLUSH</code>和<code>STATS</code>。 如果图空间的数据量很大，这些作业可能耗时很长。作业管理可以帮助执行、查看、停止和恢复作业。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>所有作业管理命令都需要先选择图空间后才能执行。</p>
 </div>
 <h2 id="submit_job_compact">SUBMIT JOB COMPACT<a class="headerlink" href="#submit_job_compact" title="Permanent link">¶</a></h2>
 <p><code>SUBMIT JOB COMPACT</code> 语句会触发 RocksDB 的长耗时 <code>compact</code> 操作。</p>
-<p><code>compact</code>配置详情请参见<a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage服务配置</a>。</p>
+<p><code>compact</code>配置详情请参见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a>。</p>
 <h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB COMPACT;
 +------------+
@@ -2625,7 +2625,7 @@
 +------------+
 </code></pre></div>
 <h2 id="submit_job_flush">SUBMIT JOB FLUSH<a class="headerlink" href="#submit_job_flush" title="Permanent link">¶</a></h2>
-<p><code>SUBMIT JOB FLUSH</code>语句将内存中的RocksDB memfile写入硬盘。</p>
+<p><code>SUBMIT JOB FLUSH</code>语句将内存中的 RocksDB memfile 写入硬盘。</p>
 <h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB FLUSH;
 +------------+
@@ -2635,10 +2635,10 @@
 +------------+
 </code></pre></div>
 <h2 id="submit_job_stats">SUBMIT JOB STATS<a class="headerlink" href="#submit_job_stats" title="Permanent link">¶</a></h2>
-<p><code>SUBMIT JOB STATS</code>语句启动一个作业，该作业对当前图空间进行统计。作业完成后，用户可以使用<code>SHOW STATS</code>语句列出统计结果。详情请参见<a href="../../7.general-query-statements/6.show/14.show-stats/">SHOW STATS</a>。</p>
+<p><code>SUBMIT JOB STATS</code>语句启动一个作业，该作业对当前图空间进行统计。作业完成后，用户可以使用<code>SHOW STATS</code>语句列出统计结果。详情请参见 <a href="../../7.general-query-statements/6.show/14.show-stats/">SHOW STATS</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果存储在Nebula Graph中的数据有变化，为了获取最新的统计结果，请重新执行<code>SUBMIT JOB STATS</code>。</p>
+<p>如果存储在 Nebula Graph 中的数据有变化，为了获取最新的统计结果，请重新执行<code>SUBMIT JOB STATS</code>。</p>
 </div>
 <h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB STATS;
@@ -2649,7 +2649,7 @@
 +------------+
 </code></pre></div>
 <h2 id="show_job">SHOW JOB<a class="headerlink" href="#show_job" title="Permanent link">¶</a></h2>
-<p>Meta服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
+<p>Meta 服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程 nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
 <p><code>job_id</code>在执行<code>SUBMIT JOB</code>语句时会返回。</p>
 <h3 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 34;
@@ -2670,15 +2670,15 @@
 <tbody>
 <tr>
 <td align="left">Job Id(TaskId)</td>
-<td align="left">第一行显示作业ID，其他行显示作业相关的任务ID。</td>
+<td align="left">第一行显示作业 ID，其他行显示作业相关的任务 ID。</td>
 </tr>
 <tr>
 <td align="left">Command(Dest)</td>
-<td align="left">第一行显示执行的作业命令名称，其他行显示任务对应的nebula-storaged进程。</td>
+<td align="left">第一行显示执行的作业命令名称，其他行显示任务对应的 nebula-storaged 进程。</td>
 </tr>
 <tr>
 <td align="left">Status</td>
-<td align="left">显示作业或任务的状态。详情请参见<a href="#_6">作业状态</a>。</td>
+<td align="left">显示作业或任务的状态。详情请参见 <a href="#_6">作业状态</a>。</td>
 </tr>
 <tr>
 <td align="left">Start Time</td>
@@ -2735,7 +2735,7 @@
 </code></pre></div>
 <h2 id="show_jobs">SHOW JOBS<a class="headerlink" href="#show_jobs" title="Permanent link">¶</a></h2>
 <p><code>SHOW JOBS</code>语句列出当前图空间内所有未过期的作业。</p>
-<p>作业的默认过期时间为一周。如果需要修改过期时间，请修改Meta服务的参数<code>job_expired_secs</code>。详情请参见<a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta服务配置</a>。</p>
+<p>作业的默认过期时间为一周。如果需要修改过期时间，请修改 Meta 服务的参数<code>job_expired_secs</code>。详情请参见 <a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta 服务配置</a>。</p>
 <h3 id="_7">示例<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOBS;
 +--------+---------------------+------------+----------------------------+----------------------------+
@@ -2770,14 +2770,14 @@
 </code></pre></div>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
 <h3 id="_10">如何排查作业问题？<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
-<p><code>SUBMIT JOB</code>操作使用的是HTTP端口，请检查Storage服务机器上的HTTP端口是否正常工作。用户可以执行如下命令调试：</p>
+<p><code>SUBMIT JOB</code>操作使用的是 HTTP 端口，请检查 Storage 服务机器上的 HTTP 端口是否正常工作。用户可以执行如下命令调试：</p>
 <div class="highlight"><pre><span></span><code>curl <span class="s2">"http://{storaged-ip}:19779/admin?space={space_name}&amp;op=compact"</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>

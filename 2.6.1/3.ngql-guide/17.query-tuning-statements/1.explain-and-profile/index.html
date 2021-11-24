@@ -30,7 +30,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#explainprofile">
+<a class="md-skip" href="#explain_profile">
           跳转至
         </a>
 </div>
@@ -2423,13 +2423,13 @@
 <a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v2.6.1/docs-2.0/3.ngql-guide/17.query-tuning-statements/1.explain-and-profile.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="explainprofile">EXPLAIN和PROFILE<a class="headerlink" href="#explainprofile" title="Permanent link">¶</a></h1>
-<p><code>EXPLAIN</code>语句输出nGQL语句的执行计划，但不会执行nGQL语句。</p>
-<p><code>PROFILE</code>语句执行nGQL语句，然后输出执行计划和执行概要。用户可以根据执行计划和执行概要优化查询性能。</p>
+<h1 id="explain_profile">EXPLAIN 和 PROFILE<a class="headerlink" href="#explain_profile" title="Permanent link">¶</a></h1>
+<p><code>EXPLAIN</code>语句输出 nGQL 语句的执行计划，但不会执行 nGQL 语句。</p>
+<p><code>PROFILE</code>语句执行 nGQL 语句，然后输出执行计划和执行概要。用户可以根据执行计划和执行概要优化查询性能。</p>
 <h2 id="_1">执行计划<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>执行计划由Nebula Graph查询引擎中的执行计划器决定。</p>
-<p>执行计划器将解析后的nGQL语句处理为<code>action</code>。<code>action</code>是最小的执行单元。典型的<code>action</code>包括获取指定点的所有邻居、获取边的属性、根据条件过滤点或边等。每个<code>action</code>都被分配给一个<code>operator</code>。</p>
-<p>例如<code>SHOW TAGS</code>语句分为两个<code>action</code>，<code>operator</code>为<code>Start</code>和<code>ShowTags</code>。更复杂的<code>GO</code>语句可能会被处理成10个以上的<code>action</code>。</p>
+<p>执行计划由 Nebula Graph 查询引擎中的执行计划器决定。</p>
+<p>执行计划器将解析后的 nGQL 语句处理为<code>action</code>。<code>action</code>是最小的执行单元。典型的<code>action</code>包括获取指定点的所有邻居、获取边的属性、根据条件过滤点或边等。每个<code>action</code>都被分配给一个<code>operator</code>。</p>
+<p>例如<code>SHOW TAGS</code>语句分为两个<code>action</code>，<code>operator</code>为<code>Start</code>和<code>ShowTags</code>。更复杂的<code>GO</code>语句可能会被处理成 10 个以上的<code>action</code>。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
 <li><code>EXPLAIN</code><div class="highlight"><pre><span></span><code>EXPLAIN [format="row" | "dot"] &lt;your_nGQL_statement&gt;;
@@ -2495,7 +2495,7 @@ Execution Plan
 <tbody>
 <tr>
 <td align="left"><code>id</code></td>
-<td align="left"><code>operator</code>的ID。</td>
+<td align="left"><code>operator</code>的 ID。</td>
 </tr>
 <tr>
 <td align="left"><code>name</code></td>
@@ -2503,7 +2503,7 @@ Execution Plan
 </tr>
 <tr>
 <td align="left"><code>dependencies</code></td>
-<td align="left">当前<code>operator</code>所依赖的<code>operator</code>的ID。</td>
+<td align="left">当前<code>operator</code>所依赖的<code>operator</code>的 ID。</td>
 </tr>
 <tr>
 <td align="left"><code>profiling data</code></td>
@@ -2516,10 +2516,10 @@ Execution Plan
 </tbody>
 </table>
 <h2 id="dot"><code>dot</code>格式<a class="headerlink" href="#dot" title="Permanent link">¶</a></h2>
-<p><code>dot</code>格式将返回DOT语言的信息，然后用户可以使用Graphviz生成计划图。</p>
+<p><code>dot</code>格式将返回 DOT 语言的信息，然后用户可以使用 Graphviz 生成计划图。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Graphviz是一款开源可视化图工具，可以绘制DOT语言脚本描述的图。Graphviz提供一个在线工具，可以预览DOT语言文件，并将它们导出为SVG或JSON等其他格式。详情请参见<a href="https://dreampuf.github.io/GraphvizOnline/">Graphviz Online</a>。</p>
+<p>Graphviz 是一款开源可视化图工具，可以绘制 DOT 语言脚本描述的图。Graphviz 提供一个在线工具，可以预览 DOT 语言文件，并将它们导出为 SVG 或 JSON 等其他格式。详情请参见 <a href="https://dreampuf.github.io/GraphvizOnline/">Graphviz Online</a>。</p>
 </div>
 <div class="highlight"><pre><span></span><code>nebula&gt; EXPLAIN format="dot" SHOW TAGS;
 Execution succeeded (time spent 161/665 us)
@@ -2535,13 +2535,13 @@ Execution Plan
   }
 ---------------------------------------------------------------------------------------------------------------------------------------------  -------------
 </code></pre></div>
-<p>将上述示例的DOT语言转换为Graphviz图，如下所示。</p>
+<p>将上述示例的 DOT 语言转换为 Graphviz 图，如下所示。</p>
 <p><img alt="Graphviz graph of EXPLAIN SHOW TAGS" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/3.ngql-guide/16.query-tuning-statements/explain-show-tags.png"/></p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
 </small>
 </div>
 </article>
