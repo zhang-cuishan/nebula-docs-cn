@@ -2590,7 +2590,7 @@
 <p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
-<p>已经 <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署 Nebula Graph</a> 并获取如下信息：</p>
+<p>已经<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署 Nebula Graph</a> 并获取如下信息：</p>
 <ul>
 <li>Graph 服务和 Meta 服务的的 IP 地址和端口。</li>
 </ul>
@@ -2600,7 +2600,7 @@
 </li>
 </ul>
 <ul>
-<li>已经编译 Exchange。详情请参见 <a href="../../ex-ug-compile/">编译 Exchange</a>。本示例中使用 Exchange 2.6.1。</li>
+<li>已经编译 Exchange。详情请参见<a href="../../ex-ug-compile/">编译 Exchange</a>。本示例中使用 Exchange 2.6.1。</li>
 </ul>
 <ul>
 <li>已经安装 Spark。</li>
@@ -2671,11 +2671,11 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 </li>
 </ol>
-<p>更多信息，请参见 <a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
+<p>更多信息，请参见<a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
 <h3 id="2">步骤 2：配置源数据<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
 <p>为了提高 Neo4j 数据的导出速度，在 Neo4j 数据库中为相应属性创建索引。详细信息，参考 <a href="https://neo4j.com/docs/cypher-manual/current/query-tuning/indexes/">Neo4j 用户手册</a>。</p>
 <h3 id="3">步骤 3：修改配置文件<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p>编译 Exchange 后，复制<code>target/classes/application.conf</code>文件设置数据源相关的配置。在本示例中，复制的文件名为<code>neo4j_application.conf</code>。各个配置项的详细说明请参见 <a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
+<p>编译 Exchange 后，复制<code>target/classes/application.conf</code>文件设置数据源相关的配置。在本示例中，复制的文件名为<code>neo4j_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
 <div class="highlight"><pre><span></span><code>{
   # Spark 相关配置
   spark: {
@@ -2840,7 +2840,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <h4 id="check_point_path">check_point_path 配置说明<a class="headerlink" href="#check_point_path" title="Permanent link">¶</a></h4>
 <p>如果启用了断点续传功能，为避免数据丢失，在断点和续传之间，数据库不应该改变状态，例如不能添加数据或删除数据，同时，不能更改<code>partition</code>数量配置。</p>
 <h3 id="4_nebula_graph">步骤 4：向 Nebula Graph 导入数据<a class="headerlink" href="#4_nebula_graph" title="Permanent link">¶</a></h3>
-<p>运行如下命令将文件数据导入到 Nebula Graph 中。关于参数的说明，请参见 <a href="../../parameter-reference/ex-ug-para-import-command/">导入命令参数</a>。</p>
+<p>运行如下命令将文件数据导入到 Nebula Graph 中。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">导入命令参数</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.6.1.jar_path&gt; -c &lt;neo4j_application.conf_path&gt; 
 </code></pre></div>
 <div class="admonition note">
@@ -2857,7 +2857,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 <p>用户也可以使用命令 <a href="../../../3.ngql-guide/7.general-query-statements/6.show/14.show-stats/"><code>SHOW STATS</code></a> 查看统计数据。</p>
 <h3 id="6_nebula_graph">步骤 6：（如有）在 Nebula Graph 中重建索引<a class="headerlink" href="#6_nebula_graph" title="Permanent link">¶</a></h3>
-<p>导入数据后，用户可以在 Nebula Graph 中重新创建并重建索引。详情请参见 <a href="../../../3.ngql-guide/14.native-index-statements/">索引介绍</a>。</p>
+<p>导入数据后，用户可以在 Nebula Graph 中重新创建并重建索引。详情请参见<a href="../../../3.ngql-guide/14.native-index-statements/">索引介绍</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>

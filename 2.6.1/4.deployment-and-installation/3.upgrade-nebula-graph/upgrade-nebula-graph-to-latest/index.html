@@ -2561,12 +2561,12 @@
 <div class="highlight"><pre><span></span><code># sudo rpm --force -i --prefix=${nebula-new}  ${nebula-package-name.rpm} # for centos/redhat
 # sudo dpkg -i --instdir==${nebula-new} ${nebula-package-name.deb} # for ubuntu
 </code></pre></div>
-<p>具体步骤请参见 <a href="../../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">从 RPM/DEB 安装</a>。</p>
+<p>具体步骤请参见<a href="../../2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">从 RPM/DEB 安装</a>。</p>
 </li>
 </ul>
 <ul>
 <li>
-<p>如果从源代码安装。具体步骤请参见 <a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">从源代码安装</a>。这里列出几个关键命令：</p>
+<p>如果从源代码安装。具体步骤请参见<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">从源代码安装</a>。这里列出几个关键命令：</p>
 <ul>
 <li>
 <p>clone 源代码</p>
@@ -2624,7 +2624,7 @@
 <li>
 <p>[可选] 增加配置项：</p>
 <p><code>--null_type=false</code>: 升级后的 Schema 的属性是否要支持 <a href="../../../3.ngql-guide/3.data-types/5.null/"><code>NULL</code></a>，<strong>默认为 true</strong>。不希望支持 NULL 的话，设置为 false。此时，升级后的 Schema 如果要增加属性（ALTER TAG/EDGE）必须指定 <a href="../../../3.ngql-guide/10.tag-statements/1.create-tag/">default 值</a>，否则会读不出数据。</p>
-<p><code>--string_index_limit=32</code>: 升级后 string 对应的 <a href="../../../3.ngql-guide/14.native-index-statements/1.create-native-index/">索引的长度</a>，不加的话系统默认为 64。</p>
+<p><code>--string_index_limit=32</code>: 升级后 string 对应的<a href="../../../3.ngql-guide/14.native-index-statements/1.create-native-index/">索引的长度</a>，不加的话系统默认为 64。</p>
 </li>
 </ul>
 <div class="admonition note">
@@ -2740,7 +2740,7 @@
 </div>
 </li>
 <li>
-<p>使用 <a href="https://github.com/vesoft-inc/nebula-console">新版本 Nebula Console</a> 连接新的 Nebula Graph，验证服务是否可用、数据是否正常。命令行参数，如 graphd 的 IP、端口都不变。</p>
+<p>使用<a href="https://github.com/vesoft-inc/nebula-console">新版本 Nebula Console</a> 连接新的 Nebula Graph，验证服务是否可用、数据是否正常。命令行参数，如 graphd 的 IP、端口都不变。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 nebula&gt; SHOW SPACES;
 nebula&gt; USE &lt;space_name&gt;

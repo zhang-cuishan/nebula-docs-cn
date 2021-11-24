@@ -2539,9 +2539,9 @@
 <h3 id="_7">正确使用索引<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>使用属性索引可以通过属性查找到 VID。但是索引会导致写性能下降 90%甚至更多，只有在根据点或边的属性定位点或边时才使用索引。</p>
 <h3 id="vid">合理设计 VID<a class="headerlink" href="#vid" title="Permanent link">¶</a></h3>
-<p>参考 <a href="../../1.introduction/3.vid/">点 VID 一节</a>。</p>
+<p>参考<a href="../../1.introduction/3.vid/">点 VID 一节</a>。</p>
 <h3 id="_8">长文本<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
-<p>为边创建属性时请勿使用长文本：这些属性会被 <a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">存储 2 份</a>，导致写入放大问题（write amplification）。此时建议将长文本放在 HBase/ES 中，将其地址存放在 Nebula Graph 中。</p>
+<p>为边创建属性时请勿使用长文本：这些属性会被<a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">存储 2 份</a>，导致写入放大问题（write amplification）。此时建议将长文本放在 HBase/ES 中，将其地址存放在 Nebula Graph 中。</p>
 <h2 id="_9">不能支持动态图（时序图）<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
 <p>在某些场景下，图需要同时带有时序信息，以描述整个图的结构随着时间变化的情况 <sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>。</p>
 <p>Nebula Graph 2.6.1 的边可以使用 Rank 字段存放时间信息 (int64)，但是点上没有字段可以存放时间信息（存放在属性会被新写入覆盖）。因此不能支持动态时序图。</p>

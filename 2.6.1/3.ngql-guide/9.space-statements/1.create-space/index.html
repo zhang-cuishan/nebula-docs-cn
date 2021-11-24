@@ -2454,7 +2454,7 @@
 <h1 id="create_space">CREATE SPACE<a class="headerlink" href="#create_space" title="Permanent link">¶</a></h1>
 <p>图空间是 Nebula Graph 中彼此隔离的图数据集合，与 MySQL 中的 database 概念类似。<code>CREATE SPACE</code>语句可以创建一个新的图空间，或者克隆现有图空间的 Schema。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>只有 God 角色的用户可以执行<code>CREATE SPACE</code>语句。详情请参见 <a href="../../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</p>
+<p>只有 God 角色的用户可以执行<code>CREATE SPACE</code>语句。详情请参见<a href="../../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <h3 id="_3">创建图空间<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
@@ -2479,7 +2479,7 @@
 </tr>
 <tr>
 <td align="left"><code>&lt;graph_space_name&gt;</code></td>
-<td align="left">在 Nebula Graph 实例中唯一标识一个图空间。图空间名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用 <a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">在 Nebula Graph 实例中唯一标识一个图空间。图空间名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>partition_num</code></td>
@@ -2540,7 +2540,7 @@
 <tbody>
 <tr>
 <td align="left"><code>&lt;new_graph_space_name&gt;</code></td>
-<td align="left">目标图空间名称。该图空间必须未创建。图空间名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用 <a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。创建时会克隆<code>&lt;old_graph_space_name&gt;</code>图空间的 Schema，包括图空间本身参数（分片数量、副本数量等），以及 Tag、Edge type 和原生索引。</td>
+<td align="left">目标图空间名称。该图空间必须未创建。图空间名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。创建时会克隆<code>&lt;old_graph_space_name&gt;</code>图空间的 Schema，包括图空间本身参数（分片数量、副本数量等），以及 Tag、Edge type 和原生索引。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;old_graph_space_name&gt;</code></td>
@@ -2579,7 +2579,7 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <ul>
 <li>等待两个心跳周期，例如 20 秒。</li>
 </ul>
-<p>如果需要修改心跳间隔，请为 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
+<p>如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
 <h2 id="_7">检查分片分布情况<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <p>在大型集群中，由于启动时间不同，分片的分布可能不均衡。用户可以执行如下命令检查分片的分布情况：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;

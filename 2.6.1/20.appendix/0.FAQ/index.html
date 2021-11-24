@@ -2784,8 +2784,8 @@
 <div class="admonition compatibility">
 <p class="admonition-title"><code>X</code>版本兼容性</p>
 <p>Nebula Graph 2.6.1 与 历史版本 （包括 Nebula Graph 1.x 和 2.0-RC) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
-数据格式升级参见 <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至当前版本</a>。
-客户端与工具均需要 <a href="../6.eco-tool-version/">下载对应版本</a>。</p>
+数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至当前版本</a>。
+客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
 </div>
 <div class="admonition compatibility">
 <p class="admonition-title"><code>Y</code>版本兼容性</p>
@@ -2845,7 +2845,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>建议在生产环境中设置<code>replica_factor=3</code>，测试环境中设置<code>replica_factor=1</code>，不要使用偶数。</p>
 <h3 id="_6">是否支持停止或者中断慢查询<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>支持。</p>
-<p>详情请参见 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a>。</p>
+<p>详情请参见<a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a>。</p>
 <h3 id="gomatch">使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，查询结果为什么不同？<a class="headerlink" href="#gomatch" title="Permanent link">¶</a></h3>
 <p>原因可能有以下几种：</p>
 <ul>
@@ -2872,7 +2872,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p><img alt="路径示例" src="../../images/path1.png"/></p>
 <p>从点 A 开始查询距离 5 跳的点，都会查询到点 C（<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C</code>），查询 6 跳的点时，<code>GO</code>语句会查询到点 D（<code>A-&gt;B-&gt;C-&gt;D-&gt;E-&gt;C-&gt;D</code>），因为边<code>C-&gt;D</code>可以重复查询，而<code>MATCH</code>语句查询为空，因为边不可以重复。</p>
 <p>所以使用<code>GO</code>和<code>MATCH</code>执行相同语义的查询，可能会出现<code>MATCH</code>语句的查询结果比<code>GO</code>语句少。</p>
-<p>关于路径的详细说明，请参见 <a href="https://en.wikipedia.org/wiki/Path_(graph_theory)#Walk,_trail,_path">维基百科</a>。</p>
+<p>关于路径的详细说明，请参见<a href="https://en.wikipedia.org/wiki/Path_(graph_theory)#Walk,_trail,_path">维基百科</a>。</p>
 <h3 id="error_-7_syntaxerror_syntax_error_near">如何处理错误信息<code>[ERROR (-7)]: SyntaxError: syntax error near</code>？<a class="headerlink" href="#error_-7_syntaxerror_syntax_error_near" title="Permanent link">¶</a></h3>
 <p>大部分情况下，查询语句需要有<code>YIELD</code>或<code>RETURN</code>，请检查查询语句是否包含。</p>
 <h3 id="tag_edge_type">如何统计每种 Tag 有多少个点，每个 Edge type 有多少条边？<a class="headerlink" href="#tag_edge_type" title="Permanent link">¶</a></h3>
@@ -2946,7 +2946,7 @@ Got 1 rows (time spent 1235/1934 us)
 <h3 id="tagedge_type">能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？<a class="headerlink" href="#tagedge_type" title="Permanent link">¶</a></h3>
 <p>不能。</p>
 <p>图空间、Tag、Edge type、属性以及索引的名称都需由大小写英文字母、数字或下划线组成，暂不支持使用中文字符。</p>
-<p>同时，上述标识符区分大小写，且不可使用 <a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a> 。</p>
+<p>同时，上述标识符区分大小写，且不可使用<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a> 。</p>
 <h3 id="_7">获取指定点的出度（或者入度）?<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>一个点的“出度”是指从该点出发的“边”的条数。入度，是指指向该点的边的条数。</p>
 <div class="highlight"><pre><span></span><code>nebula &gt; MATCH (s)-[e]-&gt;() WHERE id(s) == "given" RETURN count(e); #出度
@@ -2961,7 +2961,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == "given" RETURN count(e); #入度
 <li>Schema 中是否存在该 Tag 或 Edge type。</li>
 </ul>
 <ul>
-<li>Tag 或 Edge type 的名称是否为关键字，如果是关键字，请使用反引号（`）将它们括起来。详情请参见 <a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字</a>。</li>
+<li>Tag 或 Edge type 的名称是否为关键字，如果是关键字，请使用反引号（`）将它们括起来。详情请参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字</a>。</li>
 </ul>
 <h2 id="_9">关于运维<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
 <h3 id="_10">日志文件过大时如何回收日志？<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
@@ -2990,14 +2990,14 @@ nebula-graphd version <span class="m">2</span>.5.0, Git: c397299c, Build Time: A
 </li>
 </ul>
 <h3 id="_11">如何扩缩容<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
-<p>用户可以使用 Dashboard（企业版），在可视化页面对 graphd 和 storaged 进行快速扩缩容，详情参见 <a href="../../nebula-dashboard-ent/4.cluster-operator/4.manage/">集群操作-扩缩容</a>。</p>
+<p>用户可以使用 Dashboard（企业版），在可视化页面对 graphd 和 storaged 进行快速扩缩容，详情参见<a href="../../nebula-dashboard-ent/4.cluster-operator/4.manage/">集群操作-扩缩容</a>。</p>
 <p>Nebula Graph 2.6.1 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
 <ul>
 <li>
 <p>metad 的扩容和缩容： metad 不支持扩缩容，也不支持迁移到新机器，也不要增加新的 metad 进程。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>用户可以使用 <a href="https://github.com/vesoft-inc/nebula/blob/master/scripts/meta-transfer-tools.sh">脚本工具</a> 迁移 meta 服务，但是需要自行修改 Graph 服务和 Storage 服务的配置文件中的 Meta 设置。</p>
+<p>用户可以使用<a href="https://github.com/vesoft-inc/nebula/blob/master/scripts/meta-transfer-tools.sh">脚本工具</a> 迁移 meta 服务，但是需要自行修改 Graph 服务和 Storage 服务的配置文件中的 Meta 设置。</p>
 </div>
 </li>
 </ul>
@@ -3008,7 +3008,7 @@ nebula-graphd version <span class="m">2</span>.5.0, Git: c397299c, Build Time: A
 <li>graphd 的扩容： 在新机器上准备 graphd 二进制文件和配置文件，在配置文件中修改或增加已在运行的 metad 地址，启动 graphd 进程。</li>
 </ul>
 <ul>
-<li>storaged 的缩容：（副本数都必须大于 1），参考 <a href="../../8.service-tuning/load-balance/#storage_1">缩容命令</a>。完成后关闭 storaged 进程。</li>
+<li>storaged 的缩容：（副本数都必须大于 1），参考<a href="../../8.service-tuning/load-balance/#storage_1">缩容命令</a>。完成后关闭 storaged 进程。</li>
 </ul>
 <ul>
 <li>storaged 的扩容：（副本数都必须大于 1） 在新机器上准备 storaged 二进制文件和配置文件，在配置文件中修改或增加已在运行的 metad 地址，启动 storaged 进程。</li>
@@ -3018,7 +3018,7 @@ nebula-graphd version <span class="m">2</span>.5.0, Git: c397299c, Build Time: A
 <p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
 <h2 id="_12">关于连接<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
 <h3 id="_13">防火墙中需要开放哪些端口<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
-<p>如果没有修改过 <a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
+<p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
 <table>
 <thead>
 <tr>

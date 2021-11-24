@@ -2574,7 +2574,7 @@
 <li>高可用性（Raft）</li>
 </ul>
 <ul>
-<li>支持向第三方系统进行同步（例如 <a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">全文索引</a>）</li>
+<li>支持向第三方系统进行同步（例如<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">全文索引</a>）</li>
 </ul>
 <h2 id="storage_1">Storage 服务架构<a class="headerlink" href="#storage_1" title="Permanent link">¶</a></h2>
 <p><img alt="image" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/nebula-reading-storage-architecture.png"/></p>
@@ -2583,7 +2583,7 @@
 <ul>
 <li>
 <p>Storage interface 层</p>
-<p>Storage 服务的最上层，定义了一系列和图相关的 API。API 请求会在这一层被翻译成一组针对 <a href="#数据分片">分片</a>的 KV 操作，例如：</p>
+<p>Storage 服务的最上层，定义了一系列和图相关的 API。API 请求会在这一层被翻译成一组针对<a href="#数据分片">分片</a>的 KV 操作，例如：</p>
 <ul>
 <li><code>getNeighbors</code>：查询一批点的出边或者入边，返回边以及对应的属性，并且支持条件过滤。</li>
 </ul>
@@ -2753,7 +2753,7 @@
 <p>创建图空间时需指定分片数量，分片数量设置后无法修改，建议设置时提前满足业务将来的扩容需求。</p>
 </div>
 <p>点和边分布在不同的分片，分片分布在不同的机器。分片数量在 CREATE SPACE 语句中指定，此后不可更改。</p>
-<p>如果需要将某些点放置在相同的分片（例如在一台机器上），可以参考 <a href="https://github.com/vesoft-inc/nebula-common/blob/master/src/common/clients/meta/MetaClient.cpp">公式或代码</a>。</p>
+<p>如果需要将某些点放置在相同的分片（例如在一台机器上），可以参考<a href="https://github.com/vesoft-inc/nebula-common/blob/master/src/common/clients/meta/MetaClient.cpp">公式或代码</a>。</p>
 <p>下文用简单代码说明 VID 和分片的关系。</p>
 <div class="highlight"><pre><span></span><code>// 如果 ID 长度为 8，为了兼容 1.0，将数据类型视为 int64。
 uint64_t vid = 0;
@@ -2835,10 +2835,10 @@ Listener 角色的存在主要是为了应对**扩容**，扩容时新增的机�
 
 新增 Listener 角色后，会写入 command 类型的 WAL，leader 在写 WAL 时如果发现有`add learner`的 command，会将 learner 加入自己的 peers，并将它标记为 Listener，在统计多数派的时候，不会算上 Listener，但是日志还是会照常发送给它们，Listener 本身也不会主动发起选举。
 
-Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 Elasticsearch 集群，以便实现全文搜索。详情请参见 [部署 Raft Listener](../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener.md)。
+Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 Elasticsearch 集群，以便实现全文搜索。详情请参见[部署 Raft Listener](../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener.md)。
 -->
 <h3 id="leader_transfer_leadership">leader 切换（Transfer Leadership）<a class="headerlink" href="#leader_transfer_leadership" title="Permanent link">¶</a></h3>
-<p>leader 切换对于负载均衡至关重要，当把某个分片从一台机器迁移到另一台机器时，首先会检查分片是不是 leader，如果是的话，需要先切换 leader，数据迁移完毕之后，通常还要重新 <a href="../../../8.service-tuning/load-balance/">均衡 leader 分布</a>。</p>
+<p>leader 切换对于负载均衡至关重要，当把某个分片从一台机器迁移到另一台机器时，首先会检查分片是不是 leader，如果是的话，需要先切换 leader，数据迁移完毕之后，通常还要重新<a href="../../../8.service-tuning/load-balance/">均衡 leader 分布</a>。</p>
 <p>对于 leader 来说，提交 leader 切换命令时，就会放弃自己的 leader 身份，当 follower 收到 leader 切换命令时，就会发起选举。</p>
 <h3 id="_7">成员变更<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <p>为了避免脑裂，当一个 Raft group 的成员发生变化时，需要有一个中间状态，该状态下新旧 group 的多数派需要有重叠的部分，这样就防止了新的 group 或旧的 group 单方面做出决定。为了更加简化，Diego Ongaro 在自己的博士论文中提出每次只增减一个 peer 的方式，以保证新旧 group 的多数派总是有重叠。Nebula Graph 也采用了这个方式，只不过增加成员和移除成员的实现有所区别。具体实现方式请参见 Raft Part class 里 addPeer/removePeer 的实现。</p>

@@ -2453,23 +2453,23 @@
 </a>
 <h1 id="nebula_operator">什么是 Nebula Operator<a class="headerlink" href="#nebula_operator" title="Permanent link">¶</a></h1>
 <h2 id="_1">基本概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>Nebula Operator 是用于在 <a href="https://kubernetes.io">Kubernetes</a> 系统上自动化部署和运维 <a href="https://github.com/vesoft-inc/nebula">Nebula Graph</a> 集群的工具。依托于 Kubernetes 扩展机制，Nebula Graph 将其运维领域的知识全面注入至 Kubernetes 系统中，让 Nebula Graph 成为真正的 <a href="https://www.nebula-cloud.io/">云原生图数据库</a>。</p>
+<p>Nebula Operator 是用于在 <a href="https://kubernetes.io">Kubernetes</a> 系统上自动化部署和运维 <a href="https://github.com/vesoft-inc/nebula">Nebula Graph</a> 集群的工具。依托于 Kubernetes 扩展机制，Nebula Graph 将其运维领域的知识全面注入至 Kubernetes 系统中，让 Nebula Graph 成为真正的<a href="https://www.nebula-cloud.io/">云原生图数据库</a>。</p>
 <h2 id="_2">工作原理<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>对于 Kubernetes 系统内不存在的资源类型，用户可以通过添加自定义 API 对象的方式注册，常见的方法是使用 <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions">CustomResourceDefinition（CRD）</a> 。</p>
 <p>Nebula Operator 将 Nebula Graph 集群的部署管理抽象为 CRD。通过结合多个内置的 API 对象，包括 StatefulSet、Service 和 ConfigMap，Nebula Graph 集群的日常管理和维护被编码为一个控制循环。在 Kubernetes 系统内，每一种内置资源对象，都运行着一个特定的控制循环，将它的实际状态通过事先规定好的编排动作，逐步调整为最终的期望状态。当一个 CR 实例被提交时，Nebula Operator 会根据控制流程驱动数据库集群进入最终状态。</p>
 <h2 id="_3">功能介绍<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>Nebula Operator 已具备的功能如下：</p>
 <ul>
-<li><strong>集群创建和卸载</strong>：Nebula Operator 简化了用户部署和卸载集群的过程。用户只需提供对应的 CR 文件，Nebula Operator 即可快速创建或者删除一个对应的 Nebula Graph 集群。更多信息参考 <a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者 <a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</li>
+<li><strong>集群创建和卸载</strong>：Nebula Operator 简化了用户部署和卸载集群的过程。用户只需提供对应的 CR 文件，Nebula Operator 即可快速创建或者删除一个对应的 Nebula Graph 集群。更多信息参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</li>
 </ul>
 <ul>
-<li><strong>集群扩容和缩容</strong>：通过在控制循环中调用 Nebula Graph 原生提供的扩缩容接口，Nebula Graph 封装 Nebula Operator 实现了扩缩容的逻辑，用户可以通过 YAML 配置进行简单的扩缩容，且保证数据的稳定性。更多信息参考 <a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/#_3">使用 Kubeclt 扩缩容集群</a> 或 <a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/#_2">使用 Helm 扩缩容集群</a>。</li>
+<li><strong>集群扩容和缩容</strong>：通过在控制循环中调用 Nebula Graph 原生提供的扩缩容接口，Nebula Graph 封装 Nebula Operator 实现了扩缩容的逻辑，用户可以通过 YAML 配置进行简单的扩缩容，且保证数据的稳定性。更多信息参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/#_3">使用 Kubeclt 扩缩容集群</a> 或<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/#_2">使用 Helm 扩缩容集群</a>。</li>
 </ul>
 <ul>
 <li><strong>集群升级</strong>：支持升级 2.5.x 版的 Nebula Graph 集群至 2.6.x 版。</li>
 </ul>
 <ul>
-<li><strong>故障自愈</strong>：Nebula Operator 调用 Nebula Graph 集群提供的接口，动态地感知服务状态。一旦发现异常，Nebula Operator 自动进行容错处理。更多信息参考 <a href="../5.operator-failover/">故障自愈</a>。</li>
+<li><strong>故障自愈</strong>：Nebula Operator 调用 Nebula Graph 集群提供的接口，动态地感知服务状态。一旦发现异常，Nebula Operator 自动进行容错处理。更多信息参考<a href="../5.operator-failover/">故障自愈</a>。</li>
 </ul>
 <ul>
 <li><strong>均衡调度</strong>：基于调度器扩展接口，Nebula Operator 提供的调度器可以将应用 Pods 均匀地分布在 Nebula Graph 集群中。</li>

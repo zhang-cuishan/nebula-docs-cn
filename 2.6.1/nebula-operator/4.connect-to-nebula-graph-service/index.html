@@ -2416,7 +2416,7 @@
 <h1 id="nebular_operator_nebula_graph">通过 Nebular Operator 连接 Nebula Graph 数据库<a class="headerlink" href="#nebular_operator_nebula_graph" title="Permanent link">¶</a></h1>
 <p>使用 Nebula Operator 创建 Nebula Graph 集群后，用户可在 Nebula Graph 集群内部访问 Nebula Graph 数据库，也可在集群外访问 Nebula Graph 数据库。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>使用 Nebula Operator 创建 Nebula Graph 集群。具体步骤参考 <a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者 <a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</p>
+<p>使用 Nebula Operator 创建 Nebula Graph 集群。具体步骤参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</p>
 <h2 id="nebula_graph_nebula_graph">在 Nebula Graph 集群内连接 Nebula Graph 数据库<a class="headerlink" href="#nebula_graph_nebula_graph" title="Permanent link">¶</a></h2>
 <p>当使用 Nebula Operator 创建 Nebula Graph 集群后，Nebula Operator 会自动在同一命名空间下，创建名为<code>&lt;cluster-name&gt;-graphd-svc</code>、类型为<code>ClusterIP</code>的 Service。通过该 Service 的 IP 和数据库的端口号，用户可连接 Nebula Graph 数据库。</p>
 <ol>

@@ -2607,7 +2607,7 @@ Creating nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>上述服务的更多信息，请参见 <a href="../../../1.introduction/3.nebula-graph-architecture/1.architecture-overview/">架构总览</a>。</p>
+<p>上述服务的更多信息，请参见<a href="../../../1.introduction/3.nebula-graph-architecture/1.architecture-overview/">架构总览</a>。</p>
 </div>
 </li>
 <li>
@@ -2635,7 +2635,7 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>默认情况下，身份认证功能是关闭的，只能使用已存在的用户名（默认为<code>root</code>）和任意密码登录。如果想使用身份认证，请参见 <a href="../../../7.data-security/1.authentication/1.authentication/">身份认证</a>。</p>
+<p>默认情况下，身份认证功能是关闭的，只能使用已存在的用户名（默认为<code>root</code>）和任意密码登录。如果想使用身份认证，请参见<a href="../../../7.data-security/1.authentication/1.authentication/">身份认证</a>。</p>
 </div>
 </li>
 <li>
@@ -2736,7 +2736,7 @@ Removing network nebula-docker-compose_nebula-net
 </div>
 <h2 id="_2">修改配置<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>Docker Compose 部署的 Nebula Graph，配置文件位置为<code>nebula-docker-compose/docker-compose.yaml</code>，修改该文件内的配置并重启服务即可使新配置生效。</p>
-<p>具体的配置说明请参见 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
+<p>具体的配置说明请参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
 <h2 id="_3">常见问题<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <h3 id="docker">如何固定 Docker 映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">¶</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
@@ -2779,7 +2779,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph">为什么更新 nebula-docker-compose 仓库（Nebula Graph 2.0.0-RC）后，无法通过端口<code>3699</code>连接 Nebula Graph？<a class="headerlink" href="#nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph" title="Permanent link">¶</a></h3>
 <p>在 Nebula Graph 2.0.0-RC 版本，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
 <h3 id="nebula-docker-compose_2021_01_04">为什么更新 nebula-docker-compose 仓库后，无法访问数据？（2021 年 01 月 04 日）<a class="headerlink" href="#nebula-docker-compose_2021_01_04" title="Permanent link">¶</a></h3>
-<p>如果在 2021 年 01 月 04 日后更新过 nebula-docker-compose 仓库，而且之前已经有数据，请修改文件<code>docker-compose.yaml</code>，将端口修改为之前使用的端口。详情请参见 <a href="https://github.com/vesoft-inc/nebula-docker-compose/commit/2a612f1c4f0e2c31515e971b24b355b3be69420a">修改默认端口</a>。</p>
+<p>如果在 2021 年 01 月 04 日后更新过 nebula-docker-compose 仓库，而且之前已经有数据，请修改文件<code>docker-compose.yaml</code>，将端口修改为之前使用的端口。详情请参见<a href="https://github.com/vesoft-inc/nebula-docker-compose/commit/2a612f1c4f0e2c31515e971b24b355b3be69420a">修改默认端口</a>。</p>
 <h3 id="nebula-docker-compose_2021_01_27">为什么更新 nebula-docker-compose 仓库后，无法访问数据？（2021 年 01 月 27 日）<a class="headerlink" href="#nebula-docker-compose_2021_01_27" title="Permanent link">¶</a></h3>
 <p>2021 年 01 月 27 日修改了数据格式，无法兼容之前的数据，请执行命令<code>docker-compose down -v</code>删除所有本地数据。</p>
 <h2 id="_4">相关视频<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>

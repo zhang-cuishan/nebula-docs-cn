@@ -2398,7 +2398,7 @@
 <p>Nebula Graph 的 Storage 服务的扩容分为两个阶段，第一个阶段等待所有扩容的 Pods 为<code>Ready</code>的状态；第二个阶段执行<code>BALANCE DATA</code>和<code>BALANCE LEADER</code>命令均衡数据。这两个阶段将控制器副本的扩容过程与均衡数据过程解耦，使用户可以选择在低流量时进行均衡数据操作，有效降低数据迁移对在线服务的影响。</p>
 <p>用户可以在集群的 CR 实例的配置文件中通过参数<code>enableAutoBalance</code>来控制是否自动均衡数据。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>已使用 K8s 创建一个集群。具体步骤，参见 <a href="../../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 创建 Nebula Graph 集群</a>。</p>
+<p>已使用 K8s 创建一个集群。具体步骤，参见<a href="../../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 创建 Nebula Graph 集群</a>。</p>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>以下示例使用名为<code>nebula</code>的集群说明如何设置<code>enableAutoBalance</code>：</p>
 <ol>

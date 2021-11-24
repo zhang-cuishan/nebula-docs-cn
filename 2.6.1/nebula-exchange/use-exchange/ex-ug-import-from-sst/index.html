@@ -2573,7 +2573,7 @@
 <p>Reader 从数据源中读取数据。</p>
 </li>
 <li>
-<p>sstProcessor 根据 Nebula Graph 的 Schema 信息生成 SST 文件，然后上传至 HDFS。SST 文件的格式请参见 <a href="../../../1.introduction/3.nebula-graph-architecture/4.storage-service/">数据存储格式</a>。</p>
+<p>sstProcessor 根据 Nebula Graph 的 Schema 信息生成 SST 文件，然后上传至 HDFS。SST 文件的格式请参见<a href="../../../1.introduction/3.nebula-graph-architecture/4.storage-service/">数据存储格式</a>。</p>
 </li>
 <li>
 <p>sstWriter 打开一个文件并插入数据。生成 SST 文件时，Key 必须按照顺序写入。</p>
@@ -2616,7 +2616,7 @@ if (!s.ok()) {
 <p>开始导入数据之前，用户需要确认以下信息：</p>
 <ul>
 <li>
-<p>已经 <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署 Nebula Graph 2.6.1</a> 并获取如下信息：</p>
+<p>已经<a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">安装部署 Nebula Graph 2.6.1</a> 并获取如下信息：</p>
 <ul>
 <li>Graph 服务和 Meta 服务的的 IP 地址和端口。</li>
 </ul>
@@ -2635,7 +2635,7 @@ if (!s.ok()) {
 </li>
 </ul>
 <ul>
-<li>已经 <a href="../../ex-ug-compile/">编译 Exchange</a>，或者直接 <a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a> 编译完成的。jar 文件。本示例中使用 Exchange 2.6.1。</li>
+<li>已经<a href="../../ex-ug-compile/">编译 Exchange</a>，或者直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a> 编译完成的。jar 文件。本示例中使用 Exchange 2.6.1。</li>
 </ul>
 <ul>
 <li>已经安装 Spark。</li>
@@ -2723,7 +2723,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 </li>
 </ol>
-<p>更多信息，请参见 <a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
+<p>更多信息，请参见<a href="../../../2.quick-start/1.quick-start-workflow/">快速开始</a>。</p>
 <h3 id="2_csv">步骤 2：处理 CSV 文件<a class="headerlink" href="#2_csv" title="Permanent link">¶</a></h3>
 <p>确认以下信息：</p>
 <ol>
@@ -2739,7 +2739,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </li>
 </ol>
 <h3 id="3">步骤 3：修改配置文件<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p>编译 Exchange 后，复制<code>target/classes/application.conf</code>文件设置相关配置。在本示例中，复制的文件名为<code>sst_application.conf</code>。各个配置项的详细说明请参见 <a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
+<p>编译 Exchange 后，复制<code>target/classes/application.conf</code>文件设置相关配置。在本示例中，复制的文件名为<code>sst_application.conf</code>。各个配置项的详细说明请参见<a href="../../parameter-reference/ex-ug-parameter/">配置说明</a>。</p>
 <div class="highlight"><pre><span></span><code>{
   # Spark 相关配置
   spark: {
@@ -3012,7 +3012,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 }
 </code></pre></div>
 <h3 id="4_sst">步骤 4：生成 SST 文件<a class="headerlink" href="#4_sst" title="Permanent link">¶</a></h3>
-<p>运行如下命令将 CSV 源文件生成为 SST 文件。关于参数的说明，请参见 <a href="../../parameter-reference/ex-ug-para-import-command/">命令参数</a>。</p>
+<p>运行如下命令将 CSV 源文件生成为 SST 文件。关于参数的说明，请参见<a href="../../parameter-reference/ex-ug-para-import-command/">命令参数</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">"local"</span> --conf spark.sql.shuffle.partition<span class="o">=</span>&lt;shuffle_concurrency&gt; --class com.vesoft.nebula.exchange.Exchange &lt;nebula-exchange-2.6.1.jar_path&gt; -c &lt;sst_application.conf_path&gt; 
 </code></pre></div>
 <div class="admonition note">
@@ -3081,7 +3081,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </code></pre></div>
 <p>用户也可以使用命令 <a href="../../../3.ngql-guide/7.general-query-statements/6.show/14.show-stats/"><code>SHOW STATS</code></a> 查看统计数据。</p>
 <h3 id="7_nebula_graph">步骤 7：（如有）在 Nebula Graph 中重建索引<a class="headerlink" href="#7_nebula_graph" title="Permanent link">¶</a></h3>
-<p>导入数据后，用户可以在 Nebula Graph 中重新创建并重建索引。详情请参见 <a href="../../../3.ngql-guide/14.native-index-statements/">索引介绍</a>。</p>
+<p>导入数据后，用户可以在 Nebula Graph 中重新创建并重建索引。详情请参见<a href="../../../3.ngql-guide/14.native-index-statements/">索引介绍</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>

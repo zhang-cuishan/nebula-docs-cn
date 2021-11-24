@@ -2545,7 +2545,7 @@
 <ul>
 <li>
 <p><a href="https://coredns.io/">CoreDNS</a></p>
-<p>CoreDNS 是一个灵活的、可扩展的 DNS 服务器，被 <a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a> 在集群内作为集群内 Pods 的 DNS 服务器。</p>
+<p>CoreDNS 是一个灵活的、可扩展的 DNS 服务器，被<a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a> 在集群内作为集群内 Pods 的 DNS 服务器。</p>
 <p>Nebula Graph 集群中的每个组件通过 DNS 解析类似<code>x.default.svc.cluster.local</code>这样的域名相互通信。</p>
 </li>
 </ul>
@@ -2705,7 +2705,7 @@
 </tr>
 </tbody>
 </table>
-<p>执行<code>helm install [NAME] [CHART] [flags]</code>命令安装 Chart 时，可指定 Chart 配置。更多信息，参考 <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">安装前自定义 Chart</a>。</p>
+<p>执行<code>helm install [NAME] [CHART] [flags]</code>命令安装 Chart 时，可指定 Chart 配置。更多信息，参考<a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">安装前自定义 Chart</a>。</p>
 <p>以下示例为在安装 Nebula Operator 时，指定 Nebula Operator 的 AdmissionWebhook 机制为关闭状态（默认开启 AdmissionWebhook）：</p>
 <div class="highlight"><pre><span></span><code>helm install nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>&lt;nebula-operator-system&gt; --set admissionWebhook.create<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
@@ -2793,7 +2793,7 @@ Nebula Operator installed!
 </li>
 </ol>
 <h2 id="_6">后续操作<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
-<p>使用 Nebula Operator 自动化部署 Nebula Graph 集群。更多信息，请参考 <a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者 <a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</p>
+<p>使用 Nebula Operator 自动化部署 Nebula Graph 集群。更多信息，请参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</p>
 <hr/>
 <div class="md-source-date">
 <small>

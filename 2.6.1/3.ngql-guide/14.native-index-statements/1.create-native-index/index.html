@@ -2436,7 +2436,7 @@
 <h1 id="create_index">CREATE INDEX<a class="headerlink" href="#create_index" title="Permanent link">¶</a></h1>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>创建索引之前，请确保相关的 Tag 或 Edge type 已经创建。如何创建 Tag 和 Edge type，请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a> 和 <a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
-<p>如何创建全文索引，请参见 <a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>。</p>
+<p>如何创建全文索引，请参见<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>。</p>
 <h2 id="_2">使用索引必读<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>索引的概念和使用限制都较为复杂。索引配合<code>LOOKUP</code>和<code>MATCH</code>语句使用。</p>
 <p><code>CREATE INDEX</code>语句用于对 Tag、EdgeType 或其属性创建原生索引。通常分别称为“Tag 索引”、“Edge type 索引”和“属性索引”。</p>
@@ -2493,7 +2493,7 @@
 <li>在 <a href="../2.show-native-indexes/"><code>SHOW TAG/EDGE INDEXES</code></a> 语句的结果中查找到新的索引。或者，</li>
 </ul>
 <ul>
-<li>等待两个心跳周期，例如 20 秒。如果需要修改心跳间隔，请为 <a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。</li>
+<li>等待两个心跳周期，例如 20 秒。如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a> 修改参数<code>heartbeat_interval_secs</code>。</li>
 </ul>
 </div>
 <div class="admonition danger">
@@ -2521,7 +2521,7 @@
 </tr>
 <tr>
 <td align="left"><code>&lt;index_name&gt;</code></td>
-<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用 <a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;tag_name&gt; \| &lt;edge_name&gt;</code></td>

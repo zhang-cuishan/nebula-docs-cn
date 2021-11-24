@@ -2691,7 +2691,7 @@
 </a>
 <h1 id="match">MATCH<a class="headerlink" href="#match" title="Permanent link">¶</a></h1>
 <p><code>MATCH</code>语句提供基于模式（pattern）匹配的搜索功能。</p>
-<p>一个<code>MATCH</code>语句定义了一个 <a href="../../1.nGQL-overview/3.graph-patterns/">搜索模式</a>，用该模式匹配存储在 Nebula Graph 中的数据，然后用<code>RETURN</code>子句检索数据。</p>
+<p>一个<code>MATCH</code>语句定义了一个<a href="../../1.nGQL-overview/3.graph-patterns/">搜索模式</a>，用该模式匹配存储在 Nebula Graph 中的数据，然后用<code>RETURN</code>子句检索数据。</p>
 <p>本文示例使用测试数据集 <a href="../../1.nGQL-overview/1.overview/#basketballplayer">basketballplayer</a> 进行演示。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>与<code>GO</code>或<code>LOOKUP</code>等其他查询语句相比，<code>MATCH</code>的语法更灵活。<code>MATCH</code>语法可以概括如下：</p>
@@ -2700,13 +2700,13 @@
 <h2 id="match_1">MATCH 工作流程<a class="headerlink" href="#match_1" title="Permanent link">¶</a></h2>
 <ol>
 <li>
-<p><code>MATCH</code>语句使用原生索引查找起始点或边，起始点或边可以在模式的任何位置。即一个有效的<code>MATCH</code>语句，<strong>必须有一个属性、Tag 或 Edge type 已经创建索引，或者在<code>WHERE</code>子句中用 id() 函数指定了特定点的 VID</strong>。如何创建索引，请参见 <a href="../../14.native-index-statements/1.create-native-index/">创建原生索引</a>。</p>
+<p><code>MATCH</code>语句使用原生索引查找起始点或边，起始点或边可以在模式的任何位置。即一个有效的<code>MATCH</code>语句，<strong>必须有一个属性、Tag 或 Edge type 已经创建索引，或者在<code>WHERE</code>子句中用 id() 函数指定了特定点的 VID</strong>。如何创建索引，请参见<a href="../../14.native-index-statements/1.create-native-index/">创建原生索引</a>。</p>
 </li>
 <li>
 <p><code>MATCH</code>语句在模式中搜索，寻找匹配的边或点。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>MATCH</code>语句采用的路径类型是<code>trail</code>，即遍历时只有点可以重复，边不可以重复。详情请参见 <a href="../../../1.introduction/2.1.path/">路径</a>。</p>
+<p><code>MATCH</code>语句采用的路径类型是<code>trail</code>，即遍历时只有点可以重复，边不可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
 </div>
 </li>
 <li>
