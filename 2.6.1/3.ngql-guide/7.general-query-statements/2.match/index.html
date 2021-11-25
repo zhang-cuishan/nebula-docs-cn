@@ -2987,6 +2987,25 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})--&gt;(v2) \
 | ("player100" :player{age: 42, name: "Tim Duncan"}) |
 +----------------------------------------------------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果想要通过描述多跳的边的过滤条件，比如<code>-[e:follow*2]-&gt;</code>，这时候 <code>e</code> 不再是单条边时候的数据类型了，而是一列边组成的列表，例如：
+以下语句可以运行但是没有返回数据，因为<code>e</code>是一个列表，没有<code>.degree</code>的属性。
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*2]-&gt;(v2) \
+        WHERE e.degree &gt; 1 \
+        RETURN DISTINCT v2 AS Friends;
+</code></pre></div>
+这是正确的表达：
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*2]-&gt;(v2) \
+        WHERE ALL(e_ in e WHERE e_.degree &gt; 0) \
+        RETURN DISTINCT v2 AS Friends;
+</code></pre></div>
+进一步，这是表达对多跳边的第一跳的边属性过滤的表达：
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*2]-&gt;(v2) \
+        WHERE e[0].degree &gt; 98 \
+        RETURN DISTINCT v2 AS Friends;
+</code></pre></div></p>
+</div>
 <h3 id="_11">匹配变长路径<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
 <p>用户可以在模式中使用<code>:&lt;edge_type&gt;*[minHop]..&lt;maxHop&gt;</code>匹配变长路径。</p>
 <table>
@@ -3215,7 +3234,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})-[e]-&gt;(v2) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>
