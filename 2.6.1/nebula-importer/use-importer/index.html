@@ -2021,11 +2021,16 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    源码编译运行
+    下载二进制包运行
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
+    源码编译运行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     无网络编译方式
   </a>
 </li>
@@ -2038,29 +2043,29 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
     配置文件说明
   </a>
 <nav aria-label="配置文件说明" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_10">
     基本配置
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_11">
     客户端配置
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_12">
     文件配置
   </a>
 <nav aria-label="文件配置" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_13">
     文件和日志配置
   </a>
 </li>
@@ -2081,7 +2086,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_14">
     视频
   </a>
 </li>
@@ -2483,11 +2488,16 @@
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_6">
-    源码编译运行
+    下载二进制包运行
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_7">
+    源码编译运行
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
     无网络编译方式
   </a>
 </li>
@@ -2500,29 +2510,29 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_9">
     配置文件说明
   </a>
 <nav aria-label="配置文件说明" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
+<a class="md-nav__link" href="#_10">
     基本配置
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
+<a class="md-nav__link" href="#_11">
     客户端配置
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
+<a class="md-nav__link" href="#_12">
     文件配置
   </a>
 <nav aria-label="文件配置" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
+<a class="md-nav__link" href="#_13">
     文件和日志配置
   </a>
 </li>
@@ -2543,7 +2553,7 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
+<a class="md-nav__link" href="#_14">
     视频
   </a>
 </li>
@@ -2594,7 +2604,18 @@
 </ul>
 <h2 id="_5">操作步骤<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <p>配置 yaml 文件并准备好待导入的 CSV 文件，即可使用本工具向 Nebula Graph 批量写入数据。</p>
-<h3 id="_6">源码编译运行<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h3 id="_6">下载二进制包运行<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<ol>
+<li>
+<p>在<a href="https://github.com/vesoft-inc/nebula-importer/releases/tag/v2.6.0">Release</a>页面下载二进制包，并添加执行权限。</p>
+</li>
+<li>
+<p>启动服务。</p>
+<div class="highlight"><pre><span></span><code>$ ./&lt;binary_package_name&gt; --config &lt;yaml_config_file_path&gt;
+</code></pre></div>
+</li>
+</ol>
+<h3 id="_7">源码编译运行<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>克隆仓库。</p>
@@ -2626,11 +2647,11 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>yaml 配置文件说明请参见<a href="#_7">配置文件</a>。</p>
+<p>yaml 配置文件说明请参见下文的配置文件说明。</p>
 </div>
 </li>
 </ol>
-<h3 id="_7">无网络编译方式<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h3 id="_8">无网络编译方式<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <p>如果服务器不能联网，建议在能联网的机器上将源码和各种依赖打包上传到对应的服务器上编译即可，操作步骤如下：</p>
 <ol>
 <li>
@@ -2674,9 +2695,13 @@ $ go build -mod vendor cmd/importer.go
 <p class="admonition-title">Note</p>
 <p>建议使用相对路径。如果使用本地绝对路径，请检查路径映射到 Docker 中的路径。</p>
 </div>
-<h2 id="_8">配置文件说明<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<h2 id="_9">配置文件说明<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
 <p>Nebula Importer 通过<code>nebula-importer/examples/v2/example.yaml</code>配置文件来描述待导入文件信息、Nebula Graph 服务器信息等。用户可以参考示例配置文件：<a href="../config-without-header/">无表头配置</a>/<a href="../config-with-header/">有表头配置</a>。下文将分类介绍配置文件内的字段。</p>
-<h3 id="_9">基本配置<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果用户下载的是二进制包，请手动创建配置文件。</p>
+</div>
+<h3 id="_10">基本配置<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
 <p>示例配置如下：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v2</span>
 <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
@@ -2712,7 +2737,7 @@ $ go build -mod vendor cmd/importer.go
 </tr>
 </tbody>
 </table>
-<h3 id="_10">客户端配置<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h3 id="_11">客户端配置<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
 <p>客户端配置存储客户端连接 Nebula Graph 相关的配置。</p>
 <p>示例配置如下：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">clientSettings</span><span class="p">:</span>
@@ -2807,9 +2832,9 @@ $ go build -mod vendor cmd/importer.go
 </tr>
 </tbody>
 </table>
-<h3 id="_11">文件配置<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<h3 id="_12">文件配置<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
 <p>文件配置存储数据文件和日志的相关配置，以及 Schema 的具体信息。</p>
-<h4 id="_12">文件和日志配置<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<h4 id="_13">文件和日志配置<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
 <p>示例配置如下：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">logPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./err/test.log</span>
 <span class="nt">files</span><span class="p">:</span>
@@ -3081,7 +3106,7 @@ $ go build -mod vendor cmd/importer.go
 <ul>
 <li><a href="../config-with-header/">有表头配置说明</a></li>
 </ul>
-<h2 id="_13">视频<a class="headerlink" href="#_13" title="Permanent link">¶</a></h2>
+<h2 id="_14">视频<a class="headerlink" href="#_14" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.bilibili.com/video/BV1ny4y1u7i4">数据库导入工具——Nebula Importer 简介</a>（3 分 09 秒）</li>
 </ul>
@@ -3090,7 +3115,7 @@ $ go build -mod vendor cmd/importer.go
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>
