@@ -2484,7 +2484,7 @@
 <h1 id="hive">导入 Hive 数据<a class="headerlink" href="#hive" title="Permanent link">¶</a></h1>
 <p>本文以一个示例说明如何使用 Exchange 将存储在 Hive 上的数据导入 Nebula Graph。</p>
 <h2 id="_1">数据集<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>本文以 <a href="https://docs-cdn.nebula-graph.com.cn/dataset/dataset.zip">basketballplayer 数据集</a> 为例。</p>
+<p>本文以 <a href="https://docs-cdn.nebula-graph.com.cn/dataset/dataset.zip">basketballplayer 数据集</a>为例。</p>
 <p>在本示例中，该数据集已经存入 Hive 中名为<code>basketball</code>的数据库中，以<code>player</code>、<code>team</code>、<code>follow</code>和<code>serve</code>四个表存储了所有点和边的信息。以下为各个表的结构。</p>
 <div class="highlight"><pre><span></span><code><span class="n">scala</span><span class="o">&gt;</span> <span class="n">spark</span><span class="p">.</span><span class="k">sql</span><span class="p">(</span><span class="ss">"describe basketball.player"</span><span class="p">).</span><span class="k">show</span>
 <span class="o">+</span><span class="c1">--------+---------+-------+</span>
@@ -2849,7 +2849,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>

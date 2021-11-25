@@ -2545,7 +2545,7 @@
 <ul>
 <li>
 <p><a href="https://coredns.io/">CoreDNS</a></p>
-<p>CoreDNS 是一个灵活的、可扩展的 DNS 服务器，被<a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a> 在集群内作为集群内 Pods 的 DNS 服务器。</p>
+<p>CoreDNS 是一个灵活的、可扩展的 DNS 服务器，被<a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a>在集群内作为集群内 Pods 的 DNS 服务器。</p>
 <p>Nebula Graph 集群中的每个组件通过 DNS 解析类似<code>x.default.svc.cluster.local</code>这样的域名相互通信。</p>
 </li>
 </ul>
@@ -2578,7 +2578,7 @@
 <p>拉取最新的 Helm 仓库。</p>
 <div class="highlight"><pre><span></span><code>helm repo update
 </code></pre></div>
-<p>参考 <a href="https://helm.sh/docs/helm/helm_repo/">Helm 仓库</a> 获取更多<code>helm repo</code>相关信息。</p>
+<p>参考 <a href="https://helm.sh/docs/helm/helm_repo/">Helm 仓库</a>获取更多<code>helm repo</code>相关信息。</p>
 </li>
 <li>
 <p>安装 Nebula Operator。</p>
@@ -2709,7 +2709,7 @@
 <p>以下示例为在安装 Nebula Operator 时，指定 Nebula Operator 的 AdmissionWebhook 机制为关闭状态（默认开启 AdmissionWebhook）：</p>
 <div class="highlight"><pre><span></span><code>helm install nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>&lt;nebula-operator-system&gt; --set admissionWebhook.create<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<p>参考 <a href="https://helm.sh/docs/helm/helm_install/">Helm 安装</a> 获取更多<code>helm install</code>相关信息。</p>
+<p>参考 <a href="https://helm.sh/docs/helm/helm_install/">Helm 安装</a>获取更多<code>helm install</code>相关信息。</p>
 <h3 id="nebula_operator_2">更新 Nebula Operator<a class="headerlink" href="#nebula_operator_2" title="Permanent link">¶</a></h3>
 <p>用户安装 Nebula Operator 后，可通过修改<code>${HOME}/nebula-operator/charts/nebula-operator/values.yaml</code>文件中参数的值来更新 Nebula Operator。操作步骤如下：</p>
 <ol>
@@ -2798,7 +2798,7 @@ Nebula Operator installed!
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>

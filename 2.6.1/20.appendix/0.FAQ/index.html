@@ -2813,7 +2813,7 @@
 <h3 id="storage_error_e_rpc_failure">如何处理错误信息 <code>Storage Error E_RPC_FAILURE</code><a class="headerlink" href="#storage_error_e_rpc_failure" title="Permanent link">¶</a></h3>
 <p>报错原因通常为 Graph 服务向 Storage 服务请求了过多的数据，导致 Storage 服务超时。请尝试以下解决方案：</p>
 <ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>: 在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加 Storage client 的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true 再重启服务。</li>
+<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>：在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加 Storage client 的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true 再重启服务。</li>
 <li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
 <li>检查 Storaged 是否发生过 OOM。(<code>dmesg |grep nebula</code>)。</li>
 <li>为 Storage 服务器提供性能更好的 SSD 或者内存。</li>
@@ -3067,7 +3067,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>

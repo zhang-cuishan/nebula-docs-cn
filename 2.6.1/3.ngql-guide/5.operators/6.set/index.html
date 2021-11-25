@@ -2595,7 +2595,7 @@ nebula&gt; GO FROM "player102" OVER follow \
 +-------------+
 </code></pre></div>
 <h2 id="_5">集合运算符和管道符的优先级<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a> 的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
+<p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a>的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
 <h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player102" OVER follow \
         YIELD dst(edge) AS play_dst  \
@@ -2628,7 +2628,7 @@ nebula&gt; GO FROM "player102" OVER follow \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
 </small>
 </div>
 </article>
