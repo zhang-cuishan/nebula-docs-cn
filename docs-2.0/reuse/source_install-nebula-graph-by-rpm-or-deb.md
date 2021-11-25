@@ -61,32 +61,32 @@ RPM 和 DEB 是 Linux 系统下常见的两种安装包格式，本文介绍如�
 
     ```bash
     //Centos 7
-    https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.el7.x86_64.rpm
+    https://oss-cdn.nebula-graph.com.cn/package/nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.el7.x86_64.rpm
 
     //Centos 8
-    https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.el8.x86_64.rpm
+    https://oss-cdn.nebula-graph.com.cn/package/nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.el8.x86_64.rpm
 
     //Ubuntu 1604
-    https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu1604.amd64.deb
+    https://oss-cdn.nebula-graph.com.cn/package/nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu1604.amd64.deb
 
     //Ubuntu 1804
-    https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu1804.amd64.deb
+    https://oss-cdn.nebula-graph.com.cn/package/nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu1804.amd64.deb
 
     //Ubuntu 2004
-    https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu2004.amd64.deb
+    https://oss-cdn.nebula-graph.com.cn/package/nightly/<yyyy.mm.dd>/nebula-graph-<yyyy.mm.dd>-nightly.ubuntu2004.amd64.deb
     ```
 
-    例如要下载`2021.03.28`适用于`Centos 7.5`的`2.x`安装包：
+    例如要下载`2021.10.28`适用于`Centos 7.5`的`2.x`安装包：
 
     ```bash
-    wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm
-    wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.el7.x86_64.rpm.sha256sum.txt
+    wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.10.28/nebula-graph-2021.10.28-nightly.el7.x86_64.rpm
+    wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.10.28/nebula-graph-2021.10.28-nightly.el7.x86_64.rpm.sha256sum.txt
     ```
 
-    要下载`2021.03.28`适用于`Ubuntu 1804`的`2.x`安装包：
+    要下载`2021.10.28`适用于`Ubuntu 1804`的`2.x`安装包：
     ```bash
-    wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb
-    wget https://oss-cdn.nebula-graph.com.cn/package/v2-nightly/2021.03.28/nebula-graph-2021.03.28-nightly.ubuntu1804.amd64.deb.sha256sum.txt
+    wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.10.28/nebula-graph-2021.10.28-nightly.ubuntu1804.amd64.deb
+    wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.10.28/nebula-graph-2021.10.28-nightly.ubuntu1804.amd64.deb.sha256sum.txt
     ```
 
 <!--
