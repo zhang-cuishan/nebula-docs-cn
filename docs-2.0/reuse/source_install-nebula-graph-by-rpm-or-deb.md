@@ -83,7 +83,7 @@ RPM 和 DEB 是 Linux 系统下常见的两种安装包格式，本文介绍如�
     wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.el7.x86_64.rpm.sha256sum.txt
     ```
 
-    要下载`2021.10.28`适用于`Ubuntu 1804`的`2.x`安装包：
+    要下载`2021.11.24`适用于`Ubuntu 1804`的`2.x`安装包：
     ```bash
     wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.ubuntu1804.amd64.deb
     wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.ubuntu1804.amd64.deb.sha256sum.txt
