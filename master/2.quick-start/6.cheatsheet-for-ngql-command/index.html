@@ -3188,17 +3188,17 @@ END
 <tr>
 <td>匹配定长路径</td>
 <td><code>MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*2]-&gt;(v2) RETURN DISTINCT v2 AS Friends</code></td>
-<td>用户可以在模式中使用<code>:&lt;edge_type&gt;*&lt;hop&gt;</code>匹配定长路径。<code>hop</code>必须是一个非负整数。</td>
+<td>用户可以在模式中使用<code>:&lt;edge_type&gt;*&lt;hop&gt;</code>匹配定长路径。<code>hop</code>必须是一个非负整数。<code>e</code>的数据类型是列表。</td>
 </tr>
 <tr>
 <td>匹配变长路径</td>
 <td><code>MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*1..3]-&gt;(v2) RETURN v2 AS Friends</code></td>
-<td><code>minHop</code>：可选项。表示路径的最小长度。<code>minHop</code>必须是一个非负整数，默认值为 1。<br/><code>maxHop</code>：必选项。表示路径的最大长度。<code>maxHop</code>必须是一个非负整数，没有默认值。</td>
+<td><code>minHop</code>：可选项。表示路径的最小长度。<code>minHop</code>必须是一个非负整数，默认值为 1。<br/><code>maxHop</code>：必选项。表示路径的最大长度。<code>maxHop</code>必须是一个非负整数，没有默认值。<code>e</code>的数据类型是列表。</td>
 </tr>
 <tr>
 <td>匹配多个 Edge type 的变长路径</td>
 <td><code>MATCH p=(v:player{name:"Tim Duncan"})-[e:follow | serve*2]-&gt;(v2) RETURN DISTINCT v2</code></td>
-<td>用户可以在变长或定长模式中指定多个 Edge type。<code>hop</code>、<code>minHop</code>和<code>maxHop</code>对所有 Edge type 都生效。</td>
+<td>用户可以在变长或定长模式中指定多个 Edge type。<code>hop</code>、<code>minHop</code>和<code>maxHop</code>对所有 Edge type 都生效。<code>e</code>的数据类型是列表。</td>
 </tr>
 <tr>
 <td>检索点或边的信息</td>
@@ -4135,7 +4135,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2021</span>
 </small>
 </div>
 </article>
