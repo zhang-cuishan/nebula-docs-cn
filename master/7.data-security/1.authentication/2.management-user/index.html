@@ -3466,8 +3466,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#describe_user" class="md-nav__link">
+    查看指定用户权限（DESCRIBE USER）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show_roles" class="md-nav__link">
-    查看用户权限（SHOW ROLES）
+    查看指定空间内用户权限（SHOW ROLES）
   </a>
   
 </li>
@@ -5934,6 +5941,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/learning-path/" class="md-nav__link">
+        学习路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/0.FAQ/" class="md-nav__link">
         常见问题 FAQ
       </a>
@@ -6082,8 +6103,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#describe_user" class="md-nav__link">
+    查看指定用户权限（DESCRIBE USER）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show_roles" class="md-nav__link">
-    查看用户权限（SHOW ROLES）
+    查看指定空间内用户权限（SHOW ROLES）
   </a>
   
 </li>
@@ -6191,8 +6219,30 @@
 </code></pre></div>
 </li>
 </ul>
-<h2 id="show_roles">查看用户权限（<code>SHOW ROLES</code>）<a class="headerlink" href="#show_roles" title="Permanent link">&para;</a></h2>
-<p>执行<code>SHOW ROLES</code>语句可以显示分配给用户的角色信息。</p>
+<h2 id="describe_user">查看指定用户权限（<code>DESCRIBE USER</code>）<a class="headerlink" href="#describe_user" title="Permanent link">&para;</a></h2>
+<p>执行<code>DESCRIBE USER</code>语句可以查看指定用户的角色权限信息。</p>
+<ul>
+<li>
+<p>语法</p>
+<div class="highlight"><pre><span></span><code>DESCRIBE USER &lt;user_name&gt;;
+DESC USER &lt;user_name&gt;;
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>示例</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; DESCRIBE USER user1;
++---------+--------------------+
+| role    | space              |
++---------+--------------------+
+| &quot;ADMIN&quot; | &quot;basketballplayer&quot; |
++---------+--------------------+
+</code></pre></div>
+</li>
+</ul>
+<h2 id="show_roles">查看指定空间内用户权限（<code>SHOW ROLES</code>）<a class="headerlink" href="#show_roles" title="Permanent link">&para;</a></h2>
+<p>执行<code>SHOW ROLES</code>语句可以查看指定空间内的所有用户（除<code>root</code>以外）和对应角色权限的信息。</p>
 <ul>
 <li>
 <p>语法</p>
@@ -6293,7 +6343,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2021</span>
       
     
   </small>

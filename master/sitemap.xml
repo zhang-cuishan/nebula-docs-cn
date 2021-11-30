@@ -136,6 +136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/learning-path/</loc>
+         <lastmod>2021-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/20.appendix/mind-map/</loc>
          <lastmod>2021-11-30</lastmod>
          <changefreq>daily</changefreq>
