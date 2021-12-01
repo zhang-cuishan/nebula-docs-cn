@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/8.service-tuning/2.graph-modeling/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
     
     
       
@@ -3633,13 +3633,20 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    广度优先大于深度优先
+    自环
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    广度优先大于深度优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     边的方向
   </a>
   
@@ -3653,7 +3660,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     正确使用索引
   </a>
   
@@ -3667,7 +3674,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     长文本
   </a>
   
@@ -3679,7 +3686,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     不能支持动态图（时序图）
   </a>
   
@@ -6144,13 +6151,20 @@
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    广度优先大于深度优先
+    自环
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
+    广度优先大于深度优先
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     边的方向
   </a>
   
@@ -6164,7 +6178,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     正确使用索引
   </a>
   
@@ -6178,7 +6192,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     长文本
   </a>
   
@@ -6190,7 +6204,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     不能支持动态图（时序图）
   </a>
   
@@ -6233,14 +6247,42 @@
 <p>而 Nebula Graph master 是强 Schema 的（行存型）系统，这意味着业务数据模型中的部分是“不应该经常改变的”，例如属性 Schema 应该避免改变。类似于 MySQL 中 ALTER TABLE 是应该尽量避免的操作。</p>
 <p>而点及邻边可以非常低成本的增删，因此可以将业务模型中“经常改变的部分”建模成点或边（关系），而不是属性 Schema。</p>
 <p>例如，在一个业务模型中，人的属性是相对固定的，例如“年龄”，“性别”，“姓名”。而“通信好友”，“出入场所”，“交易账号”，“登录设备”等是相对容易改变的。前者适合建模为属性，后者适合建模为点或边。</p>
-<h3 id="_5">广度优先大于深度优先<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_5">自环<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Nebula Graph是强Schema类型系统，使用<code>ALTER TAG</code>的开销很大，而且也不支持List类型属性，当用户需要为点添加一些临时属性或者List类型的属性时，可以先创建包含所需属性的边类型，然后为点插入一条或多条指向自身的边。查询时只需要查询指向自己的边属性。如下图所示。</p>
+<p><img alt="loop property" src="../loop-property.png" /></p>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>//创建边类型并插入自环属性。
+nebula&gt; CREATE EDGE IF NOT EXISTS temp(tmp int);
+nebula&gt; INSERT EDGE temp(tmp) VALUES &quot;player100&quot;-&gt;&quot;player100&quot;@1:(1);
+nebula&gt; INSERT EDGE temp(tmp) VALUES &quot;player100&quot;-&gt;&quot;player100&quot;@2:(2);
+nebula&gt; INSERT EDGE temp(tmp) VALUES &quot;player100&quot;-&gt;&quot;player100&quot;@3:(3);
+
+//插入数据后，可以通过查询语句查询，例如：
+nebula&gt; GO FROM &quot;player100&quot; OVER temp YIELD properties(edge).tmp;
++----------------------+
+| properties(EDGE).tmp |
++----------------------+
+| 1                    |
+| 2                    |
+| 3                    |
++----------------------+
+
+//如果需要返回结果为List，可以通过函数实现，例如：
+nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
++----------------+
+| collect(e.tmp) |
++----------------+
+| [1, 2, 3]      |
++----------------+
+</code></pre></div>
+<h3 id="_6">广度优先大于深度优先<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Nebula Graph 基于图拓扑结构进行深度图遍历的性能较低，广度优先遍历以及获取属性的性能较好。例如，模型 a 包括姓名、年龄、眼睛颜色三种属性，建议创建一个 Tag<code>person</code>，然后为它添加姓名、年龄、眼睛颜色的属性。如果创建一个包含眼睛颜色的 Tag 和一个 Edge type<code>has</code>，然后创建一个边用来表示人拥有的眼睛颜色，这种建模方法会降低遍历性能。</li>
 </ul>
 <ul>
 <li>“通过边属性获取边”的性能与“通过点属性获取点”的性能是接近的。在一些数据库中，会建议将边上的属性重新建模为中间节点的属性：例如 <code>(src)-[edge {P1, P2}]-&gt;(dst)</code>，<code>edge</code> 上有属性 <code>P1, P2</code>，会建议建模为 <code>(src)-[edge1]-&gt;(i_node {P1, P2})-[edge2]-&gt;(dst)</code>。在 Nebula Graph master 中可以直接使用 <code>(src)-[edge {P1, P2}]-&gt;(dst)</code>，减少遍历深度有助于性能。</li>
 </ul>
-<h3 id="_6">边的方向<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">边的方向<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>查询时，如果需要使用边的逆向查询，可以用如下语法：</p>
 <p><code>(dst)&lt;-[edge]-(src)</code> 或者 <code>GO FROM dst REVERSELY</code>;</p>
 <p>如果不关心边的方向，可以使用如下语法：</p>
@@ -6248,13 +6290,13 @@
 <p>因此，通常同一条边没有必要反向再冗余插入一次。</p>
 <h3 id="tag">合理设置 Tag 属性<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h3>
 <p>在图建模中，请将一组类似的平级属性放入同一个 Tag，即按不同概念进行分组。</p>
-<h3 id="_7">正确使用索引<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_8">正确使用索引<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>使用属性索引可以通过属性查找到 VID。但是索引会导致写性能下降 90%甚至更多，只有在根据点或边的属性定位点或边时才使用索引。</p>
 <h3 id="vid">合理设计 VID<a class="headerlink" href="#vid" title="Permanent link">&para;</a></h3>
 <p>参考<a href="../../1.introduction/3.vid/">点 VID 一节</a>。</p>
-<h3 id="_8">长文本<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_9">长文本<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>为边创建属性时请勿使用长文本：这些属性会被<a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">存储 2 份</a>，导致写入放大问题（write amplification）。此时建议将长文本放在 HBase/ES 中，将其地址存放在 Nebula Graph 中。</p>
-<h2 id="_9">不能支持动态图（时序图）<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_10">不能支持动态图（时序图）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>在某些场景下，图需要同时带有时序信息，以描述整个图的结构随着时间变化的情况 <sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>。</p>
 <p>Nebula Graph master 的边可以使用 Rank 字段存放时间信息 (int64)，但是点上没有字段可以存放时间信息（存放在属性会被新写入覆盖）。因此不能支持动态时序图。</p>
 <p><img alt="image" src="../sequence.png" /></p>
@@ -6272,7 +6314,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 1, 2021</span>
       
     
   </small>
@@ -6367,7 +6409,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.01824240.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a87c2adc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ff0eccb3.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       

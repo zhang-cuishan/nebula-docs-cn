@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/20.appendix/0.FAQ/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.1">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
     
     
       
@@ -5960,6 +5960,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#semanticerror_missing_yield_clause" class="md-nav__link">
+    如何处理错误信息 SemanticError: Missing yield clause.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
   </a>
@@ -6363,6 +6370,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#semanticerror_missing_yield_clause" class="md-nav__link">
+    如何处理错误信息 SemanticError: Missing yield clause.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
   </a>
@@ -6641,6 +6655,8 @@
 </ul>
 <h3 id="the_leader_has_changed_try_again_later">如何处理错误信息 <code>The leader has changed. Try again later</code><a class="headerlink" href="#the_leader_has_changed_try_again_later" title="Permanent link">&para;</a></h3>
 <p>已知问题，通常需要重试 1-N 次 (N==partition 数量）。原因为 meta client 更新 leader 缓存需要 1-2 个心跳或者通过错误触发强制更新。</p>
+<h3 id="semanticerror_missing_yield_clause">如何处理错误信息 <code>SemanticError: Missing yield clause.</code><a class="headerlink" href="#semanticerror_missing_yield_clause" title="Permanent link">&para;</a></h3>
+<p>从 Nebula Graph 3.0 开始，查询语句<code>LOOKUP</code>、<code>GO</code>、<code>FETCH</code>必须用<code>YIELD</code>子句指定输出结果。详情请参见<a href="../../3.ngql-guide/8.clauses-and-options/yield/">YIELD</a>。</p>
 <h3 id="time_spent">返回消息中 <code>time spent</code> 的含义是什么？<a class="headerlink" href="#time_spent" title="Permanent link">&para;</a></h3>
 <p>将命令<code>SHOW SPACES</code>返回的消息作为示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW SPACES;
@@ -6890,7 +6906,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 1, 2021</span>
       
     
   </small>
@@ -6985,7 +7001,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.01824240.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a87c2adc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ff0eccb3.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       
