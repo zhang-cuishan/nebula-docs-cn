@@ -42,6 +42,10 @@ Nebula Spark Connector {{sparkconnector.release}}版本特性如下：
 
 - 支持与 Nebula Graph 之间的 SSL 加密连接。
 
+## Spark 兼容性
+
+Nebula Spark Connector {{sparkconnector.release}} 仅与 2.4.x 版本的 Apache Spark 兼容。
+
 ## 更新说明
 
 [Release notes](https://github.com/vesoft-inc/nebula-spark-connector/releases/tag/{{sparkconnector.tag}})
@@ -49,10 +53,6 @@ Nebula Spark Connector {{sparkconnector.release}}版本特性如下：
 ## 获取 Nebula Spark Connector
 
 ### 编译打包
-
-!!! note
-
-     安装 Spark 2.4.x 版本。
 
 1. 克隆仓库`nebula-spark-connector`。
 
