@@ -6378,7 +6378,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       table:&quot;player&quot;
       user:&quot;test&quot;
       password:&quot;123456&quot;
-      sentence:&quot;select playerid, age, name from basketball.player order by playerid;&quot;
+      sentence:&quot;select playerid, age, name from basketball order by playerid;&quot;
 
       # 在 fields 里指定 player 表中的列名称，其对应的 value 会作为 Nebula Graph 中指定属性。
       # fields 和 nebula.fields 里的配置必须一一对应。
@@ -6411,7 +6411,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       table:&quot;team&quot;
       user:&quot;test&quot;
       password:&quot;123456&quot;
-      sentence:&quot;select teamid, name from basketball.team order by teamid;&quot;
+      sentence:&quot;select teamid, name from basketball order by teamid;&quot;
 
       fields: [name]
       nebula.fields: [name]
@@ -6446,7 +6446,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       table:&quot;follow&quot;
       user:&quot;test&quot;
       password:&quot;123456&quot;
-      sentence:&quot;select src_player,dst_player,degree from basketball.follow order by src_player;&quot;
+      sentence:&quot;select src_player,dst_player,degree from basketball order by src_player;&quot;
 
       # 在 fields 里指定 follow 表中的列名称，其对应的 value 会作为 Nebula Graph 中指定属性。
       # fields 和 nebula.fields 里的配置必须一一对应。
@@ -6485,7 +6485,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       table:&quot;serve&quot;
       user:&quot;test&quot;
       password:&quot;123456&quot;
-      sentence:&quot;select playerid,teamid,start_year,end_year from basketball.serve order by playerid;&quot;
+      sentence:&quot;select playerid,teamid,start_year,end_year from basketball order by playerid;&quot;
       fields: [start_year,end_year]
       nebula.fields: [start_year,end_year]
       source: {
@@ -6525,7 +6525,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2021</span>
       
     
   </small>

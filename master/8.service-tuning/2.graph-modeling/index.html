@@ -6239,6 +6239,7 @@
 <p>Nebula Graph是强Schema类型系统，使用<code>ALTER TAG</code>的开销很大，而且也不支持List类型属性，当用户需要为点添加一些临时属性或者List类型的属性时，可以先创建包含所需属性的边类型，然后为点插入一条或多条指向自身的边。查询时只需要查询指向自己的边属性。如下图所示。</p>
 <p><img alt="loop property" src="../loop-property.png" /></p>
 <p>示例：</p>
+<p>如果要检索点的临时属性，请从自环边中获取。例如：</p>
 <div class="highlight"><pre><span></span><code>//创建边类型并插入自环属性。
 nebula&gt; CREATE EDGE IF NOT EXISTS temp(tmp int);
 nebula&gt; INSERT EDGE temp(tmp) VALUES &quot;player100&quot;-&gt;&quot;player100&quot;@1:(1);
@@ -6302,7 +6303,7 @@ nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 1, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2021</span>
       
     
   </small>
