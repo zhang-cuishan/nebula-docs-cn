@@ -6058,7 +6058,7 @@
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>已使用 K8s 创建一个集群。具体步骤，参见<a href="../../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 创建 Nebula Graph 集群</a>。</p>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>以下示例使用名为<code>nebula</code>的集群说明如何设置<code>enableAutoBalance</code>：</p>
+<p>以下示例使用名为<code>nebula</code>的集群、名为<code>nebula_cluster.yaml</code>的 YAML 配置文件，说明如何设置<code>enableAutoBalance</code>：</p>
 <ol>
 <li>
 <p>执行以下命令进入<code>nebula</code>集群的编辑页面。</p>
@@ -6150,6 +6150,9 @@
 <li>当不设置<code>enableAutoBalance</code>参数时，默认扩容 Storage 后系统不会自动均衡 Storage 数据。</li>
 </ul>
 </li>
+<li>
+<p>执行<code>kubectl apply -f nebula_cluster.yaml</code>使上述更新生效。</p>
+</li>
 </ol>
 
   <hr>
@@ -6157,7 +6160,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2021</span>
       
     
   </small>
