@@ -2400,7 +2400,7 @@
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>已使用 K8s 创建一个集群。具体步骤，参见<a href="../../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 创建 Nebula Graph 集群</a>。</p>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>以下示例使用名为<code>nebula</code>的集群说明如何设置<code>enablePVReclaim</code>：</p>
+<p>以下示例使用名为<code>nebula</code>的集群、名为<code>nebula_cluster.yaml</code>的 YAML 配置文件，说明如何设置<code>enablePVReclaim</code>：</p>
 <ol>
 <li>
 <p>执行以下命令进入<code>nebula</code>集群的编辑页面。</p>
@@ -2482,13 +2482,16 @@
     <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v2.6.1</span>
 <span class="nn">...</span>    
 </code></pre></div>
+<ol>
+<li>执行<code>kubectl apply -f nebula_cluster.yaml</code>使上述更新生效。</li>
+</ol>
 </li>
 </ol>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2021</span>
 </small>
 </div>
 </article>
