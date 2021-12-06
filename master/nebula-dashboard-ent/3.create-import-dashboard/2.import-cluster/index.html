@@ -6062,7 +6062,13 @@
 </ul>
 </div>
 <ol>
-<li>在集群管理页面，点击 <strong>导入集群</strong> 标签。</li>
+<li>
+<p>在各个服务的配置文件中，将<code>&lt;meta|graph|storage&gt;_server_addrs</code>和<code>local_ip</code>中的IP地址改为本机的IP地址，然后启动服务。</p>
+<p>具体步骤，参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>和<a href="../../../4.deployment-and-installation/manage-service/">管理服务</a>。</p>
+</li>
+<li>
+<p>在集群管理页面，点击 <strong>导入集群</strong> 标签。</p>
+</li>
 <li>
 <p>在导入集群页面，输入连接 Nebula Graph 的信息：</p>
 <ul>
@@ -6082,10 +6088,16 @@
 <ul>
 <li>输入集群的名称，最大可输入 15 个字符，本示例设置为<code>create_1027</code>。</li>
 <li>对节点进行 <strong>授权</strong>，授权需输入每个节点的 SSH 用户名及密码。</li>
-<li><strong>批量授权</strong>需要上传 CSV 文件。请根据下载的 CSV 文件，编辑每个节点授权信息，尽量确保节点信息正确，否则容易造成上传失败。
-  <img alt="批量授权" src="../../figs/ds-026.png" /></li>
-<li>页面中节点状态变为 <strong>已授权</strong>，则该节点授权成功。
-  <img alt="授权" src="../../figs/ds-027.png" /></li>
+<li>
+<p><strong>批量授权</strong>需要上传 CSV 文件。请根据下载的 CSV 文件，编辑每个节点授权信息，尽量确保节点信息正确，否则容易造成上传失败。</p>
+<p><img alt="批量授权" src="../../figs/ds-026.png" /></p>
+</li>
+</ul>
+<ul>
+<li>
+<p>页面中节点状态变为 <strong>已授权</strong>，则该节点授权成功。</p>
+<p><img alt="授权" src="../../figs/ds-027.png" /></p>
+</li>
 </ul>
 </li>
 <li>
@@ -6100,7 +6112,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2021</span>
       
     
   </small>
