@@ -2703,7 +2703,7 @@ nebula&gt; RETURN "a" IS NOT EMPTY;
 | true             |
 +------------------+
 
-nebula&gt; GO FROM "player100" OVER * WHERE properties($$).name IS NOT EMPTY YIELD dst(edge);
+nebula&gt; GO FROM "player100" OVER * WHERE $$.player.name IS NOT EMPTY YIELD dst(edge);
 +-------------+
 | dst(EDGE)   |
 +-------------+
@@ -2716,7 +2716,7 @@ nebula&gt; GO FROM "player100" OVER * WHERE properties($$).name IS NOT EMPTY YIE
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>

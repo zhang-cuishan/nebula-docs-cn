@@ -2595,7 +2595,7 @@ nebula&gt; RETURN size([1,2,3]);
 +---------------+
 
 # 将列表 [92,90] 中的元素做运算，然后在 where 子句中进行条件判断。
-nebula&gt; GO FROM "player100" OVER follow WHERE properties(edge).degree NOT IN [x IN [92, 90] | x + $$.player.age] \
+nebula&gt; GO FROM "player100" OVER follow WHERE follow.degree NOT IN [x IN [92, 90] | x + $$.player.age] \
         YIELD dst(edge) AS id, properties(edge).degree AS degree;
 +-------------+--------+
 | id          | degree |
@@ -2640,7 +2640,7 @@ nebula&gt; MATCH p = (n:player{name:"Tim Duncan"})-[:follow]-&gt;(m) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>

@@ -2990,7 +2990,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 </li>
 </ul>
 <ul>
-<li>从 VID 为<code>player101</code>的球员开始，沿着边<code>follow</code>查找年龄大于或等于 35 岁的球员，并返回他们的姓名和年龄，同时重命名对应的列。<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player101" OVER follow WHERE properties($$).age &gt;= 35 \
+<li>从 VID 为<code>player101</code>的球员开始，沿着边<code>follow</code>查找年龄大于或等于 35 岁的球员，并返回他们的姓名和年龄，同时重命名对应的列。<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM "player101" OVER follow WHERE $$.player.age &gt;= 35 \
         YIELD properties($$).name AS Teammate, properties($$).age AS Age;
 +--------------+-----+
 | Teammate     | Age |
@@ -3241,7 +3241,7 @@ nebula&gt; MATCH (v:player{name:"Tony Parker"}) RETURN v;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>

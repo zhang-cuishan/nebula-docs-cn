@@ -2446,14 +2446,14 @@ YIELD src(edge) AS id;
 <p>换行写复合语句中的不同语句。</p>
 <p>不推荐：</p>
 <div class="highlight"><pre><span></span><code>GO FROM "player100" OVER follow REVERSELY YIELD src(edge) AS id | GO FROM $-.id \
-OVER serve WHERE properties($^).age &gt; 20 YIELD properties($^).name AS FriendOf, properties($$).name AS Team;
+OVER serve WHERE $^.player.age &gt; 20 YIELD properties($^).name AS FriendOf, properties($$).name AS Team;
 </code></pre></div>
 <p>推荐：</p>
 <div class="highlight"><pre><span></span><code>GO FROM "player100" \
 OVER follow REVERSELY \
 YIELD src(edge) AS id | \
 GO FROM $-.id OVER serve \
-WHERE properties($^).age &gt; 20 \
+WHERE $^.player.age &gt; 20 \
 YIELD properties($^).name AS FriendOf, properties($$).name AS Team;
 </code></pre></div>
 </li>
@@ -2626,7 +2626,7 @@ YIELD properties($$).name AS Team, properties($^).name AS Player;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>

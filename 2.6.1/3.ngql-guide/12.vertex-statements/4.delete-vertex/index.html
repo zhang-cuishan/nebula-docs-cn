@@ -2422,7 +2422,7 @@
 <div class="highlight"><pre><span></span><code>nebula&gt; DELETE VERTEX "team1";
 </code></pre></div>
 <div class="highlight"><pre><span></span><code># 结合管道符，删除符合条件的点。
-nebula&gt; GO FROM "player100" OVER serve WHERE properties(edge).start_year == "2021" YIELD dst(edge) AS id | DELETE VERTEX $-.id;
+nebula&gt; GO FROM "player100" OVER serve WHERE serve.start_year == "2021" YIELD dst(edge) AS id | DELETE VERTEX $-.id;
 </code></pre></div>
 <h2 id="_3">删除过程与删除邻边<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>Nebula Graph 先找到并删除目标点的所有邻边（出边和入边），然后删除目标点。</p>
@@ -2437,7 +2437,7 @@ nebula&gt; GO FROM "player100" OVER serve WHERE properties(edge).start_year == "
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>

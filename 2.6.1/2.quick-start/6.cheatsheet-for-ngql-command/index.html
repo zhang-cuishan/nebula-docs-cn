@@ -3309,7 +3309,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <td>返回距离 player102 两跳的朋友。</td>
 </tr>
 <tr>
-<td><code>GO FROM "player100", "player102" OVER serve WHERE properties(edge).start_year &gt; 1995 YIELD DISTINCT properties($$).name AS team_name, properties(edge).start_year AS start_year, properties($^).name AS player_name</code></td>
+<td><code>GO FROM "player100", "player102" OVER serve WHERE serve.start_year &gt; 1995 YIELD DISTINCT properties($$).name AS team_name, properties(edge).start_year AS start_year, properties($^).name AS player_name</code></td>
 <td>添加过滤条件。</td>
 </tr>
 <tr>
@@ -3321,7 +3321,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <td>返回 player100 入方向的邻居点。</td>
 </tr>
 <tr>
-<td><code>GO FROM "player100" OVER follow REVERSELY YIELD src(edge) AS id | GO FROM $-.id OVER serve WHERE properties($^).age &gt; 20 YIELD properties($^).name AS FriendOf, properties($$).name AS Team</code></td>
+<td><code>GO FROM "player100" OVER follow REVERSELY YIELD src(edge) AS id | GO FROM $-.id OVER serve WHERE $^.player.age &gt; 20 YIELD properties($^).name AS FriendOf, properties($$).name AS Team</code></td>
 <td>查询 player100 的朋友和朋友所属队伍。</td>
 </tr>
 <tr>
@@ -4112,7 +4112,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2021</span>
 </small>
 </div>
 </article>
