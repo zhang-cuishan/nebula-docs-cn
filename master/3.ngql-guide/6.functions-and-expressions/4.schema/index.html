@@ -6070,11 +6070,7 @@
 <h2 id="ngql">原生 nGQL 语句适用<a class="headerlink" href="#ngql" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul>
-<li>GO 语句中，WHERE 子句和 YIELD 子句中可以使用如下函数。</li>
-<li>LOOKUP 语句中，YIELD 子句中可以使用如下函数。</li>
-<li>FETCH 语句中，YIELD 子句中可以使用如下函数。</li>
-</ul>
+<p>YIELD 和 WHERE 子句中可以使用如下函数。</p>
 </div>
 <table>
 <thead>
@@ -6112,8 +6108,32 @@
 <td align="left">int rank(edge)</td>
 <td align="left">返回边的 rank。</td>
 </tr>
+<tr>
+<td align="left">vertex</td>
+<td align="left">返回点的信息。包括点 ID、Tag、属性和值。</td>
+</tr>
+<tr>
+<td align="left">edge</td>
+<td align="left">返回边的信息。包括 Edge type、起始点 ID、目的点 ID、rank、属性和值。</td>
+</tr>
+<tr>
+<td align="left">vertices</td>
+<td align="left">返回子图中的点的信息。详情参见 <a href="../../16.subgraph-and-path/1.get-subgraph/">GET SUBGRAPH</a>。</td>
+</tr>
+<tr>
+<td align="left">edges</td>
+<td align="left">返回子图中的边的信息。详情参见 <a href="../../16.subgraph-and-path/1.get-subgraph/">GET SUBGRAPH</a>。</td>
+</tr>
+<tr>
+<td align="left">path</td>
+<td align="left">返回路径信息。详情参见 <a href="../../16.subgraph-and-path/2.find-path/">FIND PATH</a>。</td>
+</tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>由于 vertex、edge、vertices、edges、path 属于关键字，使用时需要用<code>AS &lt;alias&gt;</code>设置别名才能正常使用。例如<code>GO FROM "player100" OVER follow YIELD edge AS e;</code>。</p>
+</div>
 <h2 id="opencypher">openCypher 兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
