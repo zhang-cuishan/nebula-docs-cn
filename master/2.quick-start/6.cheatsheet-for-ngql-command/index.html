@@ -6932,7 +6932,7 @@ END
 <p><a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a></p>
 <div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
 [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]] 
-[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]]
+YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </code></pre></div>
 <table>
 <thead>
@@ -6983,7 +6983,7 @@ END
 <div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; STEPS ] FROM &lt;vertex_list&gt;
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
-[YIELD [DISTINCT] &lt;return_list&gt;]
+YIELD [DISTINCT] &lt;return_list&gt;
 [| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
 [| ORDER BY &lt;expression&gt; [{ASC | DESC}]]
 [| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;]
@@ -7037,7 +7037,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <p><a href="../../3.ngql-guide/7.general-query-statements/4.fetch/">FETCH</a></p>
 <div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *} 
 &lt;vid&gt; [, vid ...] 
-[YIELD &lt;return_list&gt; [AS &lt;alias&gt;]]
+YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </code></pre></div>
 <table>
 <thead>
@@ -7474,7 +7474,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a></td>
-<td><code>INSERT VERTEX [IF NOT EXISTS] &lt;tag_name&gt; (&lt;prop_name_list&gt;) [, &lt;tag_name&gt; (&lt;prop_name_list&gt;), ...]  {VALUES | VALUE} VID: (&lt;prop_value_list&gt;[, &lt;prop_value_list&gt;])</code></td>
+<td><code>INSERT VERTEX [IF NOT EXISTS] &lt;tag_name&gt; (&lt;prop_name_list&gt;) [, &lt;tag_name&gt; (&lt;prop_name_list&gt;), ...]  VALUES VID: (&lt;prop_value_list&gt;[, &lt;prop_value_list&gt;])</code></td>
 <td><code>INSERT VERTEX t2 (name, age) VALUES "13":("n3", 12), "14":("n4", 8)</code></td>
 <td>在 Nebula Graph 实例的指定图空间中插入一个或多个点。</td>
 </tr>
@@ -7511,7 +7511,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a></td>
-<td><code>INSERT EDGE [IF NOT EXISTS] &lt;edge_type&gt; ( &lt;prop_name_list&gt; ) {VALUES | VALUE} &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; ) [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; ), ...]</code></td>
+<td><code>INSERT EDGE [IF NOT EXISTS] &lt;edge_type&gt; ( &lt;prop_name_list&gt; ) VALUES &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; ) [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] : ( &lt;prop_value_list&gt; ), ...]</code></td>
 <td><code>INSERT EDGE e2 (name, age) VALUES "11"-&gt;"13":("n1", 1)</code></td>
 <td>在 Nebula Graph 实例的指定图空间中插入一条或多条边。</td>
 </tr>
@@ -7810,7 +7810,7 @@ OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2021</span>
       
     
   </small>
