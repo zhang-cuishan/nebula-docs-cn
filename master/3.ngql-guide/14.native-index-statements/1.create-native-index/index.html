@@ -6195,7 +6195,7 @@
 </tr>
 <tr>
 <td align="left"><code>&lt;index_name&gt;</code></td>
-<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称由大小写英文字母、数字或下划线组成，区分大写小，且不可使用<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">索引名。索引名在一个图空间中必须是唯一的。推荐的命名方式为<code>i_tagName_propName</code>。索引名称支持 1~4 字节的 UTF-8 编码字符，包括英文字母（区分大小写）、数字、中文等，但是不包括除下划线外的特殊字符。使用保留关键字时，需要用反引号（`）包围，详情参见<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;tag_name&gt; \| &lt;edge_name&gt;</code></td>
@@ -6275,7 +6275,7 @@ nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2 and t.p3 == 3;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2021</span>
       
     
   </small>
