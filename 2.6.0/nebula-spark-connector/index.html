@@ -2565,7 +2565,7 @@
   <span class="p">.</span><span class="n">withVidAsProp</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withUser</span><span class="p">(</span><span class="s">"root"</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withPasswd</span><span class="p">(</span><span class="s">"nebula"</span><span class="p">)</span>
-  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
   <span class="p">.</span><span class="n">build</span><span class="p">()</span>    
 <span class="n">df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="n">nebula</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">nebulaWriteVertexConfig</span><span class="p">).</span><span class="n">writeVertices</span><span class="p">()</span>
 
@@ -2583,7 +2583,7 @@
   <span class="p">.</span><span class="n">withRankAsProperty</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withUser</span><span class="p">(</span><span class="s">"root"</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withPasswd</span><span class="p">(</span><span class="s">"nebula"</span><span class="p">)</span>
-  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
   <span class="p">.</span><span class="n">build</span><span class="p">()</span>
 <span class="n">df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="n">nebula</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">nebulaWriteEdgeConfig</span><span class="p">).</span><span class="n">writeEdges</span><span class="p">()</span>
 </code></pre></div>
@@ -2599,7 +2599,7 @@
   <span class="p">.</span><span class="n">withTag</span><span class="p">(</span><span class="s">"person"</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withVidField</span><span class="p">(</span><span class="s">"id"</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withVidAsProp</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+  <span class="p">.</span><span class="n">withBatch</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
   <span class="p">.</span><span class="n">withWriteMode</span><span class="p">(</span><span class="nc">WriteMode</span><span class="p">.</span><span class="nc">UPDATE</span><span class="p">)</span>
   <span class="p">.</span><span class="n">build</span><span class="p">()</span>
 <span class="n">df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="n">nebula</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">nebulaWriteVertexConfig</span><span class="p">).</span><span class="n">writeVertices</span><span class="p">()</span>
@@ -2685,7 +2685,7 @@
 <tr>
 <td align="left"><code>withBatch</code></td>
 <td align="left">是</td>
-<td align="left">一次写入的数据行数。默认值为<code>1000</code>.</td>
+<td align="left">一次写入的数据行数，默认值为<code>1000</code>。当<code>withWriteMode</code>为<code>update</code>时，该参数的最大值为<code>512</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>withWriteMode</code></td>
@@ -2771,7 +2771,7 @@
 <tr>
 <td align="left"><code>withBatch</code></td>
 <td align="left">是</td>
-<td align="left">一次写入的数据行数。默认值为<code>1000</code>.</td>
+<td align="left">一次写入的数据行数，默认值为<code>1000</code>。当<code>withWriteMode</code>为<code>update</code>时，该参数的最大值为<code>512</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>withWriteMode</code></td>
@@ -2786,7 +2786,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 23, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 14, 2021</span>
 </small>
 </div>
 </article>
