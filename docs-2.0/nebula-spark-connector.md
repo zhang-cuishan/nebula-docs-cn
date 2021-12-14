@@ -223,7 +223,7 @@ df.write.nebula(config, nebulaWriteVertexConfig).writeVertices()
   |`withVidAsProp`  |否|  DataFrame中作为点ID的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Tag中有和`VidField`相同的属性名。  |
   |`withUser`  |否|  Nebula Graph用户名。若未开启[身份验证](7.data-security/1.authentication/1.authentication.md)，无需配置用户名和密码。   |
   |`withPasswd`  |否|  Nebula Graph用户名对应的密码。  |
-  |`withBatch`  |是|  一次写入的数据行数，上限为512。默认值为`512`。  |
+  |`withBatch`  |是|  一次写入的数据行数，默认值为`1000`。当`withWriteMode`为`update`时，该参数的最大值为`512`。 |
   |`withWriteMode`|否|写入模式。可选值为`insert`和`update`。默认为`insert`。|
 
 - `WriteNebulaEdgeConfig`是写入边的配置，说明如下。
@@ -242,5 +242,5 @@ df.write.nebula(config, nebulaWriteVertexConfig).writeVertices()
   |`withRankAsProperty`  |否| DataFrame中作为rank的列是否也作为属性写入。默认值为`false`。如果配置为`true`，请确保Edge type中有和`RankField`相同的属性名。   |
   |`withUser`  |否|  Nebula Graph用户名。若未开启[身份验证](7.data-security/1.authentication/1.authentication.md)，无需配置用户名和密码。  |
   |`withPasswd`  |否|  Nebula Graph用户名对应的密码。  |
-  |`withBatch`  |是|  一次写入的数据行数，上限为512。默认值为`512`。  |
+  |`withBatch`  |是|  一次写入的数据行数，默认值为`1000`。当`withWriteMode`为`update`时，该参数的最大值为`512`。  |
   |`withWriteMode`|否|写入模式。可选值为`insert`和`update`。默认为`insert`。|
