@@ -3675,7 +3675,7 @@
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    不能支持动态图（时序图）
+    关于支持动态图（时序图）
   </a>
   
 </li>
@@ -6193,7 +6193,7 @@
       
         <li class="md-nav__item">
   <a href="#_10" class="md-nav__link">
-    不能支持动态图（时序图）
+    关于支持动态图（时序图）
   </a>
   
 </li>
@@ -6285,9 +6285,9 @@ nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
 <p>参考<a href="../../1.introduction/3.vid/">点 VID 一节</a>。</p>
 <h3 id="_9">长文本<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>为边创建属性时请勿使用长文本：这些属性会被<a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">存储 2 份</a>，导致写入放大问题（write amplification）。此时建议将长文本放在 HBase/ES 中，将其地址存放在 Nebula Graph 中。</p>
-<h2 id="_10">不能支持动态图（时序图）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_10">关于支持动态图（时序图）<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>在某些场景下，图需要同时带有时序信息，以描述整个图的结构随着时间变化的情况 <sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>。</p>
-<p>Nebula Graph master 的边可以使用 Rank 字段存放时间信息 (int64)，但是点上没有字段可以存放时间信息（存放在属性会被新写入覆盖）。因此不能支持动态时序图。</p>
+<p>Nebula Graph master 的边可以使用 Rank 字段存放时间信息 (int64)，但是点上没有字段可以存放时间信息（存放在属性会被新写入覆盖）。一个折中的办法是在点上设计自己指向自己的自环，并将时间信息放置在自环上。但 Rank 字段目前缺少 <code>next()</code> 语法功能，需要取得全部的 Rank 然后应用程序自己拼接。 </p>
 <p><img alt="image" src="../sequence.png" /></p>
 <div class="footnote">
 <hr />
@@ -6303,7 +6303,7 @@ nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 3, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2021</span>
       
     
   </small>
