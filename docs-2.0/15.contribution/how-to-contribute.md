@@ -136,7 +136,7 @@ Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebul
 
   !!! Note
 
-        请确保已设置`-DENABLE_TESTING = ON`启用构建单元测试。
+        请确保已设置`-DENABLE_TESTING=ON`启用构建单元测试。
 
 - 运行所有单元测试
 
