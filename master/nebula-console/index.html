@@ -6179,6 +6179,8 @@
 <li>会话释放后，参数不会保留。</li>
 </ul>
 </div>
+<ul>
+<li>
 <p>保存参数命令如下：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; :param &lt;param_name&gt; =&gt; &lt;param_value&gt;;
 </code></pre></div>
@@ -6200,9 +6202,29 @@ nebula&gt; RETURN $p2.b AS b;
 | false |
 +-------+
 </code></pre></div>
-<p>查看当前保存的参数命令如下：</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>查看当前保存的所有参数，命令如下：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; :params;
 </code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>查看指定参数，命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :params &lt;param_name&gt;;
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>删除指定参数，命令如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :param &lt;param_name&gt; =&gt;;
+</code></pre></div>
+</li>
+</ul>
 <h2 id="_2">导出执行结果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>导出命令执行的返回结果，可以保存为 CSV 文件或 DOT 文件。</p>
 <div class="admonition note">
@@ -6299,7 +6321,7 @@ Bye root!
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 31, 2021</span>
       
     
   </small>

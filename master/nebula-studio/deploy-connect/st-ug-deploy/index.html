@@ -6519,13 +6519,13 @@ $ npm run stop <span class="c1"># stop nebula-graph-studio</span>
 <ul>
 <li>
 <p>（可选）在中国大陆从 Docker Hub 拉取 Docker 镜像的速度可能比较慢，用户可以使用 <code>registry-mirrors</code> 参数配置加速镜像。例如，如果要使用 Docker 中国区官方镜像、网易镜像和中国科技大学的镜像，则按以下格式配置 <code>registry-mirrors</code> 参数：</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;https://registry.docker-cn.com&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;http://hub-mirror.c.163.com&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;https://registry.docker-cn.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;http://hub-mirror.c.163.com&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>配置文件的路径和方法因操作系统和/或 Docker Desktop 版本而异。详细信息参考 <a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file" title="点击前往 Docker 文档中心">Docker Daemon 配置文档</a>。</p>
 </li>
