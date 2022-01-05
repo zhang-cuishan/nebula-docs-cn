@@ -6068,7 +6068,7 @@
 
 <h1 id="_1">关键字<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>关键字在 nGQL 中有重要意义，分为保留关键字和非保留关键字。</p>
-<p>非保留关键字作为标识符时可以不使用引号。保留关键字作为标识符时，需要用反引号（`）包围，例如 `AND`。</p>
+<p>非保留关键字作为标识符时可以不使用引号。保留关键字或特殊字符作为标识符时，需要用反引号（`）包围，例如 `AND`。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>关键字不区分大小写。</p>
@@ -6084,13 +6084,10 @@ Execution succeeded
 
 nebula&gt; CREATE TAG 中文(简体 string);
 Execution succeeded
+
+nebula&gt; CREATE TAG `￥%特殊 字符&amp;*+-*/` (`q~！（）=  wer` string);
+Execution succeeded
 </code></pre></div>
-<ul>
-<li><code>TAG</code>是保留关键字，要将<code>TAG</code>作为标识符，用户必须使用反引号（`）括起来。</li>
-</ul>
-<ul>
-<li><code>SPACE</code>是非保留关键字，可以直接作为标识符使用。</li>
-</ul>
 <h2 id="_2">保留关键字<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ADD
 ALTER
@@ -6302,7 +6299,7 @@ TRUE
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 10, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2022</span>
       
     
   </small>
