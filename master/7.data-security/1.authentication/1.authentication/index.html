@@ -6131,7 +6131,16 @@
 <h3 id="_3">启用本地身份验证<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>），设置<code>--enable_authorize=true</code>并保存退出。</p>
+<p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>），设置如下参数：</p>
+<ul>
+<li><code>--enable_authorize</code>：是否启用身份验证，可选值：<code>true</code>、<code>false</code>。</li>
+</ul>
+<ul>
+<li><code>--failed_login_attempts</code>：可选项，需要手动添加该参数。单个 Graph 节点允许连续输入错误密码的次数。超过该次数时，账户会被锁定。如果有多个 Graph 节点，允许的次数为<code>节点数 * 次数</code>。</li>
+</ul>
+<ul>
+<li><code>--password_lock_time_in_secs</code>：可选项，需要手动添加该参数。多次输入错误密码后，账户被锁定的时间。单位：秒。</li>
+</ul>
 </li>
 <li>
 <p>重启 Nebula Graph 服务。</p>
@@ -6154,7 +6163,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2022</span>
       
     
   </small>
