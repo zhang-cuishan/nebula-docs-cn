@@ -12,14 +12,14 @@
         <meta name="author" content="Nebula Graph">
       
       
-        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/5.operators/6.set/">
+        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/7.general-query-statements/optional-match/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
-        <title>集合运算符 - Nebula Graph Database 手册</title>
+        <title>OPTIONAL MATCH - Nebula Graph Database 手册</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#optional_match" class="md-skip">
           跳转至
         </a>
       
@@ -118,7 +118,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                集合运算符
+                OPTIONAL MATCH
               
             </span>
           </div>
@@ -968,14 +968,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
       
       
       
@@ -998,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.comparison/" class="md-nav__link">
+      <a href="../../5.operators/1.comparison/" class="md-nav__link">
         比较符
       </a>
     </li>
@@ -1012,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2.boolean/" class="md-nav__link">
+      <a href="../../5.operators/2.boolean/" class="md-nav__link">
         布尔符
       </a>
     </li>
@@ -1026,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4.pipe/" class="md-nav__link">
+      <a href="../../5.operators/4.pipe/" class="md-nav__link">
         管道符
       </a>
     </li>
@@ -1040,7 +1038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5.property-reference/" class="md-nav__link">
+      <a href="../../5.operators/5.property-reference/" class="md-nav__link">
         属性引用符
       </a>
     </li>
@@ -1052,132 +1050,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          集合运算符
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../5.operators/6.set/" class="md-nav__link">
         集合运算符
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#opencypher" class="md-nav__link">
-    openCypher 兼容性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unionunion_distinctunion_all" class="md-nav__link">
-    UNION、UNION DISTINCT、UNION ALL
-  </a>
-  
-    <nav class="md-nav" aria-label="UNION、UNION DISTINCT、UNION ALL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intersect" class="md-nav__link">
-    INTERSECT
-  </a>
-  
-    <nav class="md-nav" aria-label="INTERSECT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minus" class="md-nav__link">
-    MINUS
-  </a>
-  
-    <nav class="md-nav" aria-label="MINUS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    集合运算符和管道符的优先级
-  </a>
-  
-    <nav class="md-nav" aria-label="集合运算符和管道符的优先级">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1189,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../7.string/" class="md-nav__link">
+      <a href="../../5.operators/7.string/" class="md-nav__link">
         字符串运算符
       </a>
     </li>
@@ -1203,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../8.list/" class="md-nav__link">
+      <a href="../../5.operators/8.list/" class="md-nav__link">
         列表运算符
       </a>
     </li>
@@ -1217,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../9.precedence/" class="md-nav__link">
+      <a href="../../5.operators/9.precedence/" class="md-nav__link">
         运算符优先级
       </a>
     </li>
@@ -1465,12 +1342,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" checked>
       
       
       
@@ -1493,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/2.match/" class="md-nav__link">
+      <a href="../2.match/" class="md-nav__link">
         MATCH
       </a>
     </li>
@@ -1505,11 +1384,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../7.general-query-statements/optional-match/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          OPTIONAL MATCH
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         OPTIONAL MATCH
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opencypher" class="md-nav__link">
+    openCypher 兼容性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1521,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/5.lookup/" class="md-nav__link">
+      <a href="../5.lookup/" class="md-nav__link">
         LOOKUP
       </a>
     </li>
@@ -1535,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/3.go/" class="md-nav__link">
+      <a href="../3.go/" class="md-nav__link">
         GO
       </a>
     </li>
@@ -1549,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/4.fetch/" class="md-nav__link">
+      <a href="../4.fetch/" class="md-nav__link">
         FETCH
       </a>
     </li>
@@ -1589,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/1.show-charset/" class="md-nav__link">
+      <a href="../6.show/1.show-charset/" class="md-nav__link">
         SHOW CHARSET
       </a>
     </li>
@@ -1603,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/2.show-collation/" class="md-nav__link">
+      <a href="../6.show/2.show-collation/" class="md-nav__link">
         SHOW COLLATION
       </a>
     </li>
@@ -1617,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/4.show-create-space/" class="md-nav__link">
+      <a href="../6.show/4.show-create-space/" class="md-nav__link">
         SHOW CREATE SPACE
       </a>
     </li>
@@ -1631,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/5.show-create-tag-edge/" class="md-nav__link">
+      <a href="../6.show/5.show-create-tag-edge/" class="md-nav__link">
         SHOW CREATE TAG/EDGE
       </a>
     </li>
@@ -1645,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/6.show-hosts/" class="md-nav__link">
+      <a href="../6.show/6.show-hosts/" class="md-nav__link">
         SHOW HOSTS
       </a>
     </li>
@@ -1659,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/7.show-index-status/" class="md-nav__link">
+      <a href="../6.show/7.show-index-status/" class="md-nav__link">
         SHOW INDEX STATUS
       </a>
     </li>
@@ -1673,7 +1600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/8.show-indexes/" class="md-nav__link">
+      <a href="../6.show/8.show-indexes/" class="md-nav__link">
         SHOW INDEXES
       </a>
     </li>
@@ -1687,7 +1614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/9.show-parts/" class="md-nav__link">
+      <a href="../6.show/9.show-parts/" class="md-nav__link">
         SHOW PARTS
       </a>
     </li>
@@ -1701,7 +1628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/10.show-roles/" class="md-nav__link">
+      <a href="../6.show/10.show-roles/" class="md-nav__link">
         SHOW ROLES
       </a>
     </li>
@@ -1715,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/11.show-snapshots/" class="md-nav__link">
+      <a href="../6.show/11.show-snapshots/" class="md-nav__link">
         SHOW SNAPSHOTS
       </a>
     </li>
@@ -1729,7 +1656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/12.show-spaces/" class="md-nav__link">
+      <a href="../6.show/12.show-spaces/" class="md-nav__link">
         SHOW SPACES
       </a>
     </li>
@@ -1743,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/14.show-stats/" class="md-nav__link">
+      <a href="../6.show/14.show-stats/" class="md-nav__link">
         SHOW STATS
       </a>
     </li>
@@ -1757,7 +1684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/15.show-tags-edges/" class="md-nav__link">
+      <a href="../6.show/15.show-tags-edges/" class="md-nav__link">
         SHOW TAGS/EDGES
       </a>
     </li>
@@ -1771,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/16.show-users/" class="md-nav__link">
+      <a href="../6.show/16.show-users/" class="md-nav__link">
         SHOW USERS
       </a>
     </li>
@@ -1785,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/17.show-sessions/" class="md-nav__link">
+      <a href="../6.show/17.show-sessions/" class="md-nav__link">
         SHOW SESSIONS
       </a>
     </li>
@@ -1799,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/18.show-queries/" class="md-nav__link">
+      <a href="../6.show/18.show-queries/" class="md-nav__link">
         SHOW QUERIES
       </a>
     </li>
@@ -1813,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.general-query-statements/6.show/19.show-meta-leader/" class="md-nav__link">
+      <a href="../6.show/19.show-meta-leader/" class="md-nav__link">
         SHOW META LEADER
       </a>
     </li>
@@ -6130,82 +6057,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unionunion_distinctunion_all" class="md-nav__link">
-    UNION、UNION DISTINCT、UNION ALL
-  </a>
-  
-    <nav class="md-nav" aria-label="UNION、UNION DISTINCT、UNION ALL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     示例
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intersect" class="md-nav__link">
-    INTERSECT
-  </a>
-  
-    <nav class="md-nav" aria-label="INTERSECT">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minus" class="md-nav__link">
-    MINUS
-  </a>
-  
-    <nav class="md-nav" aria-label="MINUS">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    集合运算符和管道符的优先级
-  </a>
-  
-    <nav class="md-nav" aria-label="集合运算符和管道符的优先级">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6221,149 +6075,47 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/5.operators/6.set.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/7.general-query-statements/optional-match.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="_1">集合运算符<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>合并多个请求时，可以使用集合运算符，包括<code>UNION</code>、<code>UNION ALL</code>、<code>INTERSECT</code>和<code>MINUS</code>。</p>
-<p>所有集合运算符的优先级相同，如果一个 nGQL 语句中有多个集合运算符，Nebula Graph 会从左到右进行计算，除非用括号指定顺序。</p>
+<h1 id="optional_match">OPTIONAL MATCH<a class="headerlink" href="#optional_match" title="Permanent link">&para;</a></h1>
+<p><code>OPTIONAL MATCH</code>通常用于<code>MATCH</code>语句中，作为<code>MATCH</code>语句的可选项去匹配图数据库中的模式，如果图数据库中没有对应的模式，对应的列返回<code>NULL</code>。</p>
 <h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
-<p>集合运算符仅适用于原生 nGQL。</p>
-<h2 id="unionunion_distinctunion_all">UNION、UNION DISTINCT、UNION ALL<a class="headerlink" href="#unionunion_distinctunion_all" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>&lt;left&gt; UNION [DISTINCT | ALL] &lt;right&gt; [ UNION [DISTINCT | ALL] &lt;right&gt; ...]
+<p>本文操作仅适用于 nGQL 中的 openCypher 方式。</p>
+<h2 id="_1">示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>MATCH</code>语句中使用<code>OPTIONAL MATCH</code>的示例如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (m)-[]-&gt;(n) WHERE id(m)==&quot;player100&quot; \
+        OPTIONAL MATCH (n)-[]-&gt;(l) WHERE id(n)==&quot;player125&quot; \
+        RETURN id(m),id(n),id(l);
++-------------+-------------+-------------+
+| id(m)       | id(n)       | id(l)       |
++-------------+-------------+-------------+
+| &quot;player100&quot; | &quot;team204&quot;   | __NULL__    |
+| &quot;player100&quot; | &quot;player101&quot; | __NULL__    |
+| &quot;player100&quot; | &quot;player125&quot; | &quot;team204&quot;   |
+| &quot;player100&quot; | &quot;player125&quot; | &quot;player100&quot; |
++-------------+-------------+-------------+
 </code></pre></div>
-<ul>
-<li>运算符<code>UNION DISTINCT</code>（或使用缩写<code>UNION</code>）返回两个集合 A 和 B 的并集，不包含重复的元素。</li>
-</ul>
-<ul>
-<li>运算符<code>UNION ALL</code>返回两个集合 A 和 B 的并集，包含重复的元素。</li>
-</ul>
-<ul>
-<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见<a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
-</ul>
-<h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code># 返回两个查询结果的并集，不包含重复的元素。
-nebula&gt; GO FROM &quot;player102&quot; OVER follow YIELD dst(edge) \
-        UNION \
-        GO FROM &quot;player100&quot; OVER follow YIELD dst(edge);
-+-------------+
-| dst(EDGE)   |
-+-------------+
-| &quot;player100&quot; |
-| &quot;player101&quot; |
-| &quot;player125&quot; |
-+-------------+
-
-# 返回两个查询结果的并集，包含重复的元素。
-nebula&gt; GO FROM &quot;player102&quot; OVER follow YIELD dst(edge) \
-        UNION ALL \
-        GO FROM &quot;player100&quot; OVER follow YIELD dst(edge);
-+-------------+
-| dst(EDGE)   |
-+-------------+
-| &quot;player100&quot; |
-| &quot;player101&quot; |
-| &quot;player101&quot; |
-| &quot;player125&quot; |
-+-------------+
-
-# UNION 也可以和 YIELD 语句一起使用，去重时会检查每一行的所有列，每列都相同时才会去重。
-nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age \
-        UNION /* DISTINCT */ \
-        GO FROM &quot;player100&quot; OVER follow \
-        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age;
-+-------------+--------+-----+
-| id          | Degree | Age |
-+-------------+--------+-----+
-| &quot;player100&quot; | 75     | 42  |
-| &quot;player101&quot; | 75     | 36  |
-| &quot;player101&quot; | 95     | 36  |
-| &quot;player125&quot; | 95     | 41  |
-+-------------+--------+-----+
+<p>而使用多<code>MATCH</code>，不使用<code>OPTIONAL MATCH</code>时，会返回模式完全匹配的行。示例如下：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (m)-[]-&gt;(n) WHERE id(m)==&quot;player100&quot; \
+        MATCH (n)-[]-&gt;(l) WHERE id(n)==&quot;player125&quot; \
+        RETURN id(m),id(n),id(l);
++-------------+-------------+-------------+
+| id(m)       | id(n)       | id(l)       |
++-------------+-------------+-------------+
+| &quot;player100&quot; | &quot;player125&quot; | &quot;team204&quot;   |
+| &quot;player100&quot; | &quot;player125&quot; | &quot;player100&quot; |
++-------------+-------------+-------------+
 </code></pre></div>
-<h2 id="intersect">INTERSECT<a class="headerlink" href="#intersect" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>&lt;left&gt; INTERSECT &lt;right&gt;
-</code></pre></div>
-<ul>
-<li>运算符<code>INTERSECT</code>返回两个集合 A 和 B 的交集。</li>
-</ul>
-<ul>
-<li><code>left</code>和<code>right</code>必须有相同数量的列和数据类型。如果需要转换数据类型，请参见<a href="../../3.data-types/9.type-conversion/">类型转换</a>。</li>
-</ul>
-<h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age \
-        INTERSECT \
-        GO FROM &quot;player100&quot; OVER follow \
-        YIELD dst(edge) AS id, properties(edge).degree AS Degree, properties($$).age AS Age;
-+----+--------+-----+
-| id | Degree | Age |
-+----+--------+-----+
-+----+--------+-----+
-</code></pre></div>
-<h2 id="minus">MINUS<a class="headerlink" href="#minus" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>&lt;left&gt; MINUS &lt;right&gt;
-</code></pre></div>
-<p>运算符<code>MINUS</code>返回两个集合 A 和 B 的差异，即<code>A-B</code>。请注意<code>left</code>和<code>right</code>的顺序，<code>A-B</code>表示在集合 A 中，但是不在集合 B 中的元素。</p>
-<h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) \
-        MINUS \
-        GO FROM &quot;player102&quot; OVER follow YIELD dst(edge);
-+-------------+
-| dst(EDGE)   |
-+-------------+
-| &quot;player125&quot; |
-+-------------+
-
-nebula&gt; GO FROM &quot;player102&quot; OVER follow YIELD dst(edge) \
-        MINUS \
-        GO FROM &quot;player100&quot; OVER follow YIELD dst(edge);
-+-------------+
-| dst(EDGE)   |
-+-------------+
-| &quot;player100&quot; |
-+-------------+
-</code></pre></div>
-<h2 id="_5">集合运算符和管道符的优先级<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>当查询包含集合运算符和管道符（|）时，<a href="../4.pipe/">管道符</a>的优先级高。例如<code>GO FROM 1 UNION GO FROM 2 | GO FROM 3</code>相当于<code>GO FROM 1 UNION (GO FROM 2 | GO FROM 3)</code>。</p>
-<h3 id="_6">示例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player102&quot; OVER follow \
-        YIELD dst(edge) AS play_dst  \
-        UNION \
-        GO FROM &quot;team200&quot; OVER serve REVERSELY \
-        YIELD src(edge) AS play_src \
-        | GO FROM $-.play_src OVER follow YIELD dst(edge) AS play_dst;
-
-+-------------+
-| play_dst    |
-+-------------+
-| &quot;player100&quot; |
-| &quot;player101&quot; |
-| &quot;player117&quot; |
-| &quot;player105&quot; |
-+-------------+
-</code></pre></div>
-<p><img alt="image" src="https://user-images.githubusercontent.com/42762957/97955863-3a213000-1de2-11eb-8de3-2c78da30747c.png" /></p>
-<p>该查询会先执行红框内的语句，然后执行绿框的<code>UNION</code>操作。</p>
-<p>圆括号可以修改执行的优先级，例如：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; (GO FROM &quot;player102&quot; OVER follow \
-        YIELD dst(edge) AS play_dst  \
-        UNION \
-        GO FROM &quot;team200&quot; OVER serve REVERSELY \
-        YIELD src(edge) AS play_dst) \
-        | GO FROM $-.play_dst OVER follow YIELD dst(edge) AS play_dst;
-</code></pre></div>
-<p>该查询中，圆括号包裹的部分先执行，即先执行<code>UNION</code>操作，再将结果结合管道符进行下一步操作。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
       
     
   </small>
@@ -6386,7 +6138,7 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow YIELD dst(edge) \
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../5.property-reference/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 属性引用符" rel="prev">
+        <a href="../2.match/" class="md-footer__link md-footer__link--prev" aria-label="上一页: MATCH" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -6395,20 +6147,20 @@ nebula&gt; GO FROM &quot;player102&quot; OVER follow YIELD dst(edge) \
               <span class="md-footer__direction">
                 上一页
               </span>
-              属性引用符
+              MATCH
             </div>
           </div>
         </a>
       
       
         
-        <a href="../7.string/" class="md-footer__link md-footer__link--next" aria-label="下一页: 字符串运算符" rel="next">
+        <a href="../5.lookup/" class="md-footer__link md-footer__link--next" aria-label="下一页: LOOKUP" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              字符串运算符
+              LOOKUP
             </div>
           </div>
           <div class="md-footer__button md-icon">

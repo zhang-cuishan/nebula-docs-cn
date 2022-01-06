@@ -1496,6 +1496,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../7.general-query-statements/optional-match/" class="md-nav__link">
+        OPTIONAL MATCH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../7.general-query-statements/5.lookup/" class="md-nav__link">
         LOOKUP
       </a>
@@ -1526,20 +1540,6 @@
     <li class="md-nav__item">
       <a href="../../7.general-query-statements/4.fetch/" class="md-nav__link">
         FETCH
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../7.general-query-statements/7.unwind/" class="md-nav__link">
-        UNWIND
       </a>
     </li>
   
@@ -1970,6 +1970,20 @@
     <li class="md-nav__item">
       <a href="../../8.clauses-and-options/with/" class="md-nav__link">
         WITH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8.clauses-and-options/unwind/" class="md-nav__link">
+        UNWIND
       </a>
     </li>
   
@@ -6281,12 +6295,7 @@
 </ul>
 </div>
 <h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>NULL</code>的比较操作和 openCypher 不同，行为也可能会改变。在 openCypher 中，<code>IS [NOT] NULL</code>通常与<code>OPTIONAL MATCH</code>一起使用，但是 nGQL 不支持<code>OPTIONAL MATCH</code>。</li>
-</ul>
-<ul>
-<li>openCypher 中没有<code>EMPTY</code>，因此不支持在 MATCH 语句中使用<code>EMPTY</code>。</li>
-</ul>
+<p>openCypher 中没有<code>EMPTY</code>，因此不支持在 MATCH 语句中使用<code>EMPTY</code>。</p>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3"><code>==</code><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>字符串比较时，会区分大小写。不同类型的值不相等。</p>
@@ -6427,7 +6436,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER * WHERE properties($$).name IS NOT
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
       
     
   </small>

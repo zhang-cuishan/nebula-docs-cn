@@ -1469,6 +1469,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../7.general-query-statements/optional-match/" class="md-nav__link">
+        OPTIONAL MATCH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../7.general-query-statements/5.lookup/" class="md-nav__link">
         LOOKUP
       </a>
@@ -1499,20 +1513,6 @@
     <li class="md-nav__item">
       <a href="../../7.general-query-statements/4.fetch/" class="md-nav__link">
         FETCH
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../7.general-query-statements/7.unwind/" class="md-nav__link">
-        UNWIND
       </a>
     </li>
   
@@ -1943,6 +1943,20 @@
     <li class="md-nav__item">
       <a href="../../8.clauses-and-options/with/" class="md-nav__link">
         WITH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8.clauses-and-options/unwind/" class="md-nav__link">
+        UNWIND
       </a>
     </li>
   
@@ -6166,10 +6180,6 @@
 <p>模式也可以描述有多个 Tag 的点，例如：</p>
 <div class="highlight"><pre><span></span><code>(a:User:Admin)-[]-&gt;(b)
 </code></pre></div>
-<div class="admonition compatibility">
-<p class="admonition-title">openCypher 兼容性</p>
-<p>nGQL 中的<code>MATCH</code>语句不支持用<code>(a:User:Admin)</code>匹配多个标签。如需匹配多标签可使用过滤条件，如<code>WHERE "User" IN tags(n) AND "Admin" IN tags(n)</code>。</p>
-</div>
 <h2 id="_4">属性模式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>点和边是图的基本结构。nGQL 在这两种结构上都可以增加属性，方便实现更丰富的模型。</p>
 <p>在模式中，属性的表示方式为：用花括号括起一些键值对，用英文逗号分隔。例如一个点有两个属性：</p>
@@ -6225,7 +6235,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
       
     
   </small>
