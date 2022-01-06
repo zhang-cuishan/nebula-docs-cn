@@ -6116,7 +6116,7 @@ prop_value_list:
 <li><code>VID</code>：点 ID。在 Nebula Graph 2.0 中支持字符串和整数，需要在创建图空间时设置，详情请参见 <a href="../../9.space-statements/1.create-space/">CREATE SPACE</a>。</li>
 </ul>
 <ul>
-<li><code>prop_value_list</code>：根据<code>prop_name_list</code>填写属性值。如果属性值和 Tag 中的数据类型不匹配，会返回错误。如果没有填写属性值，而 Tag 中对应的属性设置为<code>NOT NULL</code>，也会返回错误。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</li>
+<li><code>prop_value_list</code>：根据<code>prop_name_list</code>填写属性值。如果没有填写属性值，而 Tag 中对应的属性设置为<code>NOT NULL</code>，会返回错误。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</li>
 </ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -6203,7 +6203,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
       
     
   </small>
