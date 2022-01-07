@@ -874,6 +874,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6285,6 +6292,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6303,16 +6317,65 @@
 
 
 <h1 id="_1">集合<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>集合（Set）是复合数据类型。</p>
+<p>集合（Set）是复合数据类型，集合中是一组元素，与列表（List）不同的是，集合中的元素是无序的，且不允许重复。</p>
+<p>集合用左花括号（{）和右花括号（}）包裹多个元素，各个元素之间用英文逗号（,）隔开。元素前后的空格在集合中被忽略，因此可以使用换行符、制表符和空格调整格式。</p>
 <h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
-<p>在 OpenCypher 中，集合不是一个数据类型，而在 nGQL 中，集合仍在设计阶段。</p>
+<ul>
+<li>复合数据类型（例如 List、Set、Map）<strong>不能</strong>存储为点或边的属性。</li>
+</ul>
+<ul>
+<li>在 OpenCypher 中，集合不是一个数据类型，而在 nGQL 中，用户可以使用集合。</li>
+</ul>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code># 返回集合 {1,2,3}。
+nebula&gt; RETURN set{1, 2, 3} AS a;
++-----------+
+| a         |
++-----------+
+| {3, 2, 1} |
++-----------+
+
+# 返回集合 {1,2,1}，因为集合不允许重复元素，会返回 {1,2}，且顺序是无序的。
+nebula&gt; RETURN set{1, 2, 1} AS a;
++--------+
+| a      |
++--------+
+| {2, 1} |
++--------+
+
+# 判断集合中是否有指定元素 1。
+nebula&gt; RETURN 1 IN set{1, 2} AS a;
++------+
+| a    |
++------+
+| true |
++------+
+
+# 计算集合中的元素数量。
+nebula&gt; YIELD size(set{1, 2, 1}) AS a;
++---+
+| a |
++---+
+| 2 |
++---+
+
+# 返回目标点属性值组成的集合。
+nebula&gt; GO FROM &quot;player100&quot; OVER follow \
+        YIELD set{properties($$).name,properties($$).age} as a;
++-----------------------+
+| a                     |
++-----------------------+
+| {36, &quot;Tony Parker&quot;}   |
+| {41, &quot;Manu Ginobili&quot;} |
++-----------------------+
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>

@@ -882,15 +882,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    字面值映射
+  <a href="#opencypher" class="md-nav__link">
+    OpenCypher 兼容性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opencypher" class="md-nav__link">
-    OpenCypher 兼容性
+  <a href="#_2" class="md-nav__link">
+    示例
   </a>
   
 </li>
@@ -6286,15 +6286,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    字面值映射
+  <a href="#opencypher" class="md-nav__link">
+    OpenCypher 兼容性
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#opencypher" class="md-nav__link">
-    OpenCypher 兼容性
+  <a href="#_2" class="md-nav__link">
+    示例
   </a>
   
 </li>
@@ -6318,28 +6318,62 @@
 
 <h1 id="_1">映射<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>映射（Map）是复合数据类型。一个映射是一组键值对（Key-Value）的无序集合。在映射中，Key 是字符串类型，Value 可以是任何数据类型。用户可以通过<code>map['&lt;key&gt;']</code>的方法获取映射中的元素。</p>
-<h2 id="_2">字面值映射<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; YIELD {key: &#39;Value&#39;, listKey: [{inner: &#39;Map1&#39;}, {inner: &#39;Map2&#39;}]};
-+-------------------------------------------------------------+
-| {key:Value,listKey:[{inner:Map1},{inner:Map2}]}             |
-+-------------------------------------------------------------+
-| {key: &quot;Value&quot;, listKey: [{inner: &quot;Map1&quot;}, {inner: &quot;Map2&quot;}]} |
-+-------------------------------------------------------------+
-</code></pre></div>
+<p>映射用左花括号（{）和右花括号（}）包裹多个键值对，各个键值对之间用英文逗号（,）隔开。键值对前后的空格在映射中被忽略，因此可以使用换行符、制表符和空格调整格式。</p>
 <h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <ul>
-<li>复合数据类型（例如 set、map、list）<strong>不能</strong>存储为点或边的属性。</li>
+<li>复合数据类型（例如 List、Set、Map）<strong>不能</strong>存储为点或边的属性。</li>
 </ul>
 <ul>
 <li>不支持映射投影（map projection）。</li>
 </ul>
+<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code># 返回简单的映射。
+nebula&gt; YIELD map{key1: &#39;Value1&#39;, Key2: &#39;Value2&#39;} as a;
++----------------------------------+
+| a                                |
++----------------------------------+
+| {Key2: &quot;Value2&quot;, key1: &quot;Value1&quot;} |
++----------------------------------+
+
+# 返回列表类型的映射。
+nebula&gt; YIELD map{listKey: [{inner: &#39;Map1&#39;}, {inner: &#39;Map2&#39;}]} as a;
++-----------------------------------------------+
+| a                                             |
++-----------------------------------------------+
+| {listKey: [{inner: &quot;Map1&quot;}, {inner: &quot;Map2&quot;}]} |
++-----------------------------------------------+
+
+# 返回混合类型的映射。
+nebula&gt; RETURN map{a: LIST[1,2], b: SET{1,2,1}, c: &quot;hee&quot;} as a;
++----------------------------------+
+| a                                |
++----------------------------------+
+| {a: [1, 2], b: {2, 1}, c: &quot;hee&quot;} |
++----------------------------------+
+
+# 返回映射中的指定元素。
+nebula&gt; RETURN map{a: LIST[1,2], b: SET{1,2,1}, c: &quot;hee&quot;}[&quot;b&quot;] AS b;
++--------+
+| b      |
++--------+
+| {2, 1} |
++--------+
+
+# 判断映射中是否有指定key，暂不支持判断value。
+nebula&gt; RETURN &quot;a&quot; IN MAP{a:1, b:2} AS a;
++------+
+| a    |
++------+
+| true |
++------+
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>
