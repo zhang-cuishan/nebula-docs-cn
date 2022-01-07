@@ -7503,7 +7503,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a></td>
-<td><code>INSERT VERTEX [IF NOT EXISTS] &lt;tag_name&gt; (&lt;prop_name_list&gt;) [, &lt;tag_name&gt; (&lt;prop_name_list&gt;), ...]  VALUES VID: (&lt;prop_value_list&gt;[, &lt;prop_value_list&gt;])</code></td>
+<td><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...] VALUES VID: ([prop_value_list]) &lt;br&gt; tag_props: tag_name ([prop_name_list]) &lt;br&gt; prop_name_list: [prop_name [, prop_name] ...] &lt;br&gt; prop_value_list: [prop_value [, prop_value] ...]</code></td>
 <td><code>INSERT VERTEX t2 (name, age) VALUES "13":("n3", 12), "14":("n4", 8)</code></td>
 <td>在 Nebula Graph 实例的指定图空间中插入一个或多个点。</td>
 </tr>
@@ -7839,7 +7839,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>

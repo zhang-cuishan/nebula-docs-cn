@@ -6687,7 +6687,7 @@
 <p>这是 Nebula Console 2.6.0 版本的变动造成的，不是 Nebula Graph 内核的变更，不影响返回数据本身的内容。</p>
 <h3 id="_5">关于悬挂边<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>悬挂边 (Dangling edge) 是指一条边的起点或者终点在数据库中不存在。</p>
-<p>Nebula Graph master 的数据模型中，异常情况下可能会存在"悬挂边"；也没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。详见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
+<p>Nebula Graph master 的数据模型中，由于设计允许图中存在“悬挂边”；没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。详见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
 <h3 id="error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory">如何处理错误信息 <code>[ERROR (-1005)]: Used memory hits the high watermark(0.800000) of total system memory.</code><a class="headerlink" href="#error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory" title="Permanent link">&para;</a></h3>
 <p>报错原因：Nebula Graph 的<code>system_memory_high_watermark_ratio</code>参数指定了内存高水位报警机制的触发阈值，默认为<code>0.8</code>。系统内存占用率高于该值会触发报警机制，Nebula Graph 会停止接受查询。</p>
 <p>解决方案：</p>
@@ -6838,9 +6838,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>报错的原因可能是用户修改了 metad 的 ip 或者端口信息，或者 storage 之前加入过其他集群。请尝试以下解决方法：</p>
 <p>用户到 storage 部署的机器所在的安装目录（默认安装目录为 <code>/usr/local/nebula</code>）下面将<code>cluster.id</code>文件删除，然后重启 storaged 服务。</p>
 <h3 id="tagedge_type">能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？<a class="headerlink" href="#tagedge_type" title="Permanent link">&para;</a></h3>
-<p>不能。</p>
-<p>图空间、Tag、Edge type、属性以及索引的名称都需由大小写英文字母、数字或下划线组成，暂不支持使用中文字符。</p>
-<p>同时，上述标识符区分大小写，且不可使用<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</p>
+<p>能，详情参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</p>
 <h3 id="_7">获取指定点的出度（或者入度）?<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>一个点的“出度”是指从该点出发的“边”的条数。入度，是指指向该点的边的条数。</p>
 <div class="highlight"><pre><span></span><code>nebula &gt; MATCH (s)-[e]-&gt;() WHERE id(s) == &quot;given&quot; RETURN count(e); #出度
@@ -6997,7 +6995,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>

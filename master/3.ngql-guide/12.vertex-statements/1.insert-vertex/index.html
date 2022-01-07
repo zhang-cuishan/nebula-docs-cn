@@ -6099,14 +6099,17 @@
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>执行<code>INSERT VERTEX</code>语句需要当前登录的用户拥有指定图空间的<a href="../../../7.data-security/1.authentication/3.role-list/">插入点权限</a>，否则会报错。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] &lt;tag_name&gt; (&lt;prop_name_list&gt;) [, &lt;tag_name&gt; (&lt;prop_name_list&gt;), ...] 
-VALUES VID: (&lt;prop_value_list&gt;[, &lt;prop_value_list&gt;])
+<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...]
+VALUES VID: ([prop_value_list])
+
+tag_props:
+  tag_name ([prop_name_list])
 
 prop_name_list:
-  [prop_name [, prop_name] ...]
+   [prop_name [, prop_name] ...]
 
 prop_value_list:
-  [prop_value [, prop_value] ...]
+   [prop_value [, prop_value] ...]   
 </code></pre></div>
 <ul>
 <li>
@@ -6121,16 +6124,22 @@ prop_value_list:
 </li>
 </ul>
 <ul>
-<li><code>tag_name</code>：点关联的 Tag（点类型）。Tag 必须提前创建，详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</li>
+<li>
+<p><code>tag_name</code>：点关联的 Tag（点类型）。Tag 的创建，详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Nebula Graph master 中支持插入无 Tag 的点。</p>
+</div>
+</li>
 </ul>
 <ul>
-<li><code>prop_name_list</code>：需要设置的属性名称列表。</li>
+<li><code>property_name</code>：需要设置的属性名称。</li>
 </ul>
 <ul>
-<li><code>VID</code>：点 ID。在 Nebula Graph 2.0 中支持字符串和整数，需要在创建图空间时设置，详情请参见 <a href="../../9.space-statements/1.create-space/">CREATE SPACE</a>。</li>
+<li><code>vid</code>：点 ID。在 Nebula Graph master 中支持字符串和整数，需要在创建图空间时设置，详情请参见 <a href="../../9.space-statements/1.create-space/">CREATE SPACE</a>。</li>
 </ul>
 <ul>
-<li><code>prop_value_list</code>：根据<code>prop_name_list</code>填写属性值。如果没有填写属性值，而 Tag 中对应的属性设置为<code>NOT NULL</code>，会返回错误。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</li>
+<li><code>property_value</code>：根据<code>prop_name_list</code>填写属性值。如果没有填写属性值，而 Tag 中对应的属性设置为<code>NOT NULL</code>，会返回错误。详情请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a>。</li>
 </ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -6143,7 +6152,10 @@ prop_value_list:
 </div>
 <p>参考以下示例。</p>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code># 插入不包含属性的点。
+<div class="highlight"><pre><span></span><code># 插入不包含 Tag 的点。
+nebula&gt; INSERT VERTEX VALUES &quot;1&quot;:();
+
+# 插入不包含属性的点。
 nebula&gt; CREATE TAG IF NOT EXISTS t1();                   
 nebula&gt; INSERT VERTEX t1() VALUES &quot;10&quot;:(); 
 </code></pre></div>
@@ -6202,6 +6214,7 @@ nebula&gt; FETCH PROP on t5 &quot;004&quot; YIELD properties(vertex);
 <p>使用<code>IF NOT EXISTS</code>插入已存在的点时，不会进行修改。</p>
 <div class="highlight"><pre><span></span><code># 插入点 1。
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;1&quot;:(&quot;n2&quot;, 13);
+
 # 使用 IF NOT EXISTS 修改点 1，因为点 1 已存在，不会进行修改。
 nebula&gt; INSERT VERTEX IF NOT EXISTS t2 (name, age) VALUES &quot;1&quot;:(&quot;n3&quot;, 14);
 nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
@@ -6217,7 +6230,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>

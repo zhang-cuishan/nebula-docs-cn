@@ -6513,7 +6513,7 @@
 <tbody>
 <tr>
 <td align="left">点（Vertex）</td>
-<td align="left">表示现实世界中的实体。一个点可以有一个或多个标签。</td>
+<td align="left">表示现实世界中的实体。一个点可以有 0 到多个标签。</td>
 </tr>
 <tr>
 <td align="left">标签（Tag）</td>
@@ -6680,10 +6680,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <p>用户可以使用<code>INSERT</code>语句，基于现有的 Tag 插入点，或者基于现有的 Edge type 插入边。</p>
 <h3 id="ngql_2">nGQL 语法<a class="headerlink" href="#ngql_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>插入点<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] &lt;tag_name&gt; (&lt;property_name&gt;[, &lt;property_name&gt;...])
+<li>插入点<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [&lt;tag_name&gt; (&lt;property_name&gt;] [, &lt;property_name&gt;...])
 [, &lt;tag_name&gt; (&lt;property_name&gt;[, &lt;property_name&gt;...]), ...]
-VALUES &lt;vid&gt;: (&lt;property_value&gt;[, &lt;property_value&gt;...])
-[, &lt;vid&gt;: (&lt;property_value&gt;[, &lt;property_value&gt;...];
+VALUES &lt;vid&gt;: ([&lt;property_value&gt;[, &lt;property_value&gt;...]]);
 </code></pre></div>
 <p><code>VID</code>是 Vertex ID 的缩写，<code>VID</code>在一个图空间中是唯一的。参数详情请参见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>。</p>
 </li>
@@ -7053,7 +7052,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>
