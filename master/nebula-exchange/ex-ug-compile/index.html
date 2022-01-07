@@ -6135,7 +6135,7 @@
 <h1 id="nebula_exchange">获取 Nebula Exchange<a class="headerlink" href="#nebula_exchange" title="Permanent link">&para;</a></h1>
 <p>本文介绍如何获取 Nebula Exchange 的 JAR 文件。</p>
 <h2 id="jar">直接下载 JAR 文件<a class="headerlink" href="#jar" title="Permanent link">&para;</a></h2>
-<p>社区版 Exchange 的 JAR 文件可以直接<a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">下载</a>。</p>
+<p>社区版 Exchange 的 JAR 文件可以直接<a href="https://github.com/vesoft-inc/nebula-exchange/releases">下载</a>。</p>
 <p>要下载企业版 Exchange，需先<a href="https://nebula-graph.com.cn/pricing/">获取 Nebula Graph 企业版套餐</a>。</p>
 <h2 id="jar_1">编译源代码获取 JAR 文件<a class="headerlink" href="#jar_1" title="Permanent link">&para;</a></h2>
 <p>社区版 Exchange 的 JAR 文件还可以通过编译源代码获取。下文介绍如何编译 Exchange 源代码。</p>
@@ -6146,10 +6146,7 @@
 <h3 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>安装 <a href="https://maven.apache.org/download.cgi">Maven</a>。</li>
-</ul>
-<!-- pulsar 所在的 maven 库 5 月 31 日被官方关闭，还没找到迁移位置，找到后这里可以删掉-->
-<ul>
-<li>下载 <a href="https://oss-cdn.nebula-graph.com.cn/jar-packages/pulsar-spark-connector_2.11.zip">pulsar-spark-connector_2.11</a>，解压到本地 Maven 库的目录<code>io/streamnative/connectors</code>中。</li>
+<li>根据数据源安装需要的 Spark 版本，从各数据源导出数据支持的 Spark 版本参见<a href="../about-exchange/ex-ug-limitations/">软件依赖</a>。</li>
 </ul>
 <h3 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
@@ -6160,34 +6157,38 @@
 </li>
 <li>
 <p>切换到目录<code>nebula-exchange</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-exchange/nebula-exchange
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-exchange
 </code></pre></div>
 </li>
 <li>
-<p>打包 Nebula Exchange。</p>
-<div class="highlight"><pre><span></span><code>mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span> -Dgpg.skip -Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span>
+<p>根据 Exchange 使用环境中的 Spark 版本打包 Exchange。</p>
+<ul>
+<li>
+<p>Spark 2.2：</p>
+<div class="highlight"><pre><span></span><code>mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span> -Dgpg.skip -Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+-pl nebula-exchange_spark_2.2 -am -Pscala-2.11 -Pspark-2.2
 </code></pre></div>
 </li>
-</ol>
-<p>编译成功后，用户可以在当前目录里查看到类似如下目录结构。</p>
-<div class="highlight"><pre><span></span><code>.
-├── README-CN.md
-├── README.md
-├── pom.xml
-├── src
-│   ├── main
-│   └── test
-└── target
-    ├── classes
-    ├── classes.timestamp
-    ├── maven-archiver
-    ├── nebula-exchange-2.x.y-javadoc.jar
-    ├── nebula-exchange-2.x.y-sources.jar
-    ├── nebula-exchange-2.x.y.jar
-    ├── original-nebula-exchange-2.x.y.jar
-    └── site
+</ul>
+<ul>
+<li>
+<p>Spark 2.4：</p>
+<div class="highlight"><pre><span></span><code>mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span> -Dgpg.skip -Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+-pl nebula-exchange_spark_2.4 -am -Pscala-2.11 -Pspark-2.4
 </code></pre></div>
-<p>在<code>target</code>目录下，用户可以找到<code>exchange-2.x.y.jar</code>文件。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Spark 3.0：</p>
+<div class="highlight"><pre><span></span><code>mvn clean package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span> -Dgpg.skip -Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+-pl nebula-exchange_spark_3.0 -am -Pscala-2.12 -Pspark-3.0
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<p>编译成功后，可以在<code>nebula-exchange_spark_x.x/target/</code>目录里找到<code>nebula-exchange_spark_x.x-v2.6.jar</code>文件。<code>x.x</code>代表 Spark 版本，例如<code>2.4</code>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>JAR 文件版本号会因 Nebula Java Client 的发布版本而变化。用户可以在 <a href="https://github.com/vesoft-inc/nebula-java/releases">Releases 页面</a>查看最新版本。</p>
@@ -6216,7 +6217,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>
