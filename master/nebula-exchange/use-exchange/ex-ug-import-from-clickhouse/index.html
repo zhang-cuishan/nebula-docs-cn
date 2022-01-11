@@ -6608,6 +6608,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # ClickHouse 分区数
       numPartition:&quot;5&quot;
 
+      table:&quot;player&quot;
       sentence:&quot;select * from player&quot;
 
       # 在 fields 里指定 player 表中的列名称，其对应的 value 会作为 Nebula Graph 中指定属性。
@@ -6640,6 +6641,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       user:&quot;user&quot;
       password:&quot;123456&quot;
       numPartition:&quot;5&quot;
+      table:&quot;team&quot;
       sentence:&quot;select * from team&quot;
       fields: [name]
       nebula.fields: [name]
@@ -6676,6 +6678,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # ClickHouse 分区数
       numPartition:&quot;5&quot;
 
+      table:&quot;follow&quot;
       sentence:&quot;select * from follow&quot;
 
       # 在 fields 里指定 follow 表中的列名称，其对应的 value 会作为 Nebula Graph 中指定属性。
@@ -6752,7 +6755,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2022</span>
       
     
   </small>

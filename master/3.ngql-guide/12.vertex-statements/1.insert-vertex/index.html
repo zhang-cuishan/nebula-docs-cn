@@ -6347,9 +6347,31 @@ prop_name_list:
 prop_value_list:
    [prop_value [, prop_value] ...]   
 </code></pre></div>
+<!---
+// 忽略已存在索引插入点
+<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [IGNORE_EXISTED_INDEX] [tag_props, [tag_props] ...]
+VALUES VID: ([prop_value_list])
+
+tag_props:
+  tag_name ([prop_name_list])
+
+prop_name_list:
+   [prop_name [, prop_name] ...]
+
+prop_value_list:
+   [prop_value [, prop_value] ...]   
+</code></pre></div>
+
+- `IGNORE_EXISTED_INDEX`：插入点后不更新索引。建议在第一次导入时使用`IGNORE_EXISTED_INDEX`，可大幅度提升性能。
+
+  !!! danger
+
+        使用`IGNORE_EXISTED_INDEX`关键字时不删除旧索引，查找时可能会读取到错误数据。需要重新创建索引，详情信息见 [REBUILD INDEX](../3/../14.native-index-statements/4.rebuild-native-index.md。
+--->
+
 <ul>
 <li>
-<p><code>IF NOT EXISTS</code>：用户可以使用<code>IF NOT EXISTS</code>关键字检测待插入的 VID 是否存在，只有不存在时，才会插入，如果已经存在，不会进行修改。</p>
+<p><code>IF NOT EXISTS</code>：检测待插入的 VID 是否存在，只有不存在时，才会插入，如果已经存在，不会进行修改。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -6395,7 +6417,42 @@ nebula&gt; INSERT VERTEX VALUES &quot;1&quot;:();
 nebula&gt; CREATE TAG IF NOT EXISTS t1();                   
 nebula&gt; INSERT VERTEX t1() VALUES &quot;10&quot;:(); 
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t2 (name string, age int);                
+<p>&lt;!---
+<div class="highlight"><pre><span></span><code># 插入点 VID 为&quot;100&quot;和&quot;200&quot;，id 为 1 的点。
+nebula&gt; INSERT VERTEX person(id) VALUES &quot;100&quot;:(1), &quot;200&quot;:(1);
+
+# 查询 id 为 1 的点，VID 为&quot;100&quot;和&quot;200&quot;的点都能查到。
+nebula&gt; LOOKUP ON person WHERE person.id == 1 YIELD id(vertex) as id;
++-------------+
+| id          |
++-------------+
+| &quot;100&quot;       |
+| &quot;200&quot;       |
++-------------+
+
+# 忽略索引插入 VID 为&quot;200&quot;，id 为 2 的点。
+nebula&gt; INSERT VERTEX IGNORE_EXISTED_INDEX person(id) VALUES &quot;200&quot;:(2);
+
+# 查询 id 为 1 的点，VID 为&quot;100&quot;和&quot;200&quot;的点都能查到。
+nebula&gt; LOOKUP ON person WHERE person.id == 1 YIELD id(vertex) as id;
++-------------+
+| id          |
++-------------+
+| &quot;100&quot;       |
+| &quot;200&quot;       |
++-------------+
+
+# 查询 id 为 2 的点，仅能查到 VID 为&quot;200&quot;的点。
+nebula&gt; LOOKUP ON person WHERE person.id == 2 YIELD id(vertex) as id;
++-------+
+| id    |
++-------+
+| &quot;200&quot; |
++-------+
+---&gt;
+
+```ngql
+nebula&gt; CREATE TAG IF NOT EXISTS t2 (name string, age int);                
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;11&quot;:(&quot;n1&quot;, 12);
 
 # 创建失败，因为&quot;a13&quot;不是 int 类型。
@@ -6403,7 +6460,7 @@ nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;12&quot;:(&quot;n1&quot;, &
 
 # 一次插入 2 个点。
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;13&quot;:(&quot;n3&quot;, 12), &quot;14&quot;:(&quot;n4&quot;, 8); 
-</code></pre></div>
+</code></pre></div></p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t3(p1 int);
 nebula&gt; CREATE TAG IF NOT EXISTS t4(p2 string);
 
@@ -6466,7 +6523,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2022</span>
       
     
   </small>
