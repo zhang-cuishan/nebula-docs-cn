@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/8.clauses-and-options/return/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ee0f47ba.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -68,7 +68,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -6524,15 +6524,15 @@ nebula&gt; RETURN {zage: 32, name: &quot;Marco Belinelli&quot;};
 <h2 id="_4">返回属性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用语法<code>{&lt;vertex_name&gt;|&lt;edge_name&gt;}.&lt;property&gt;</code>返回点或边的属性。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        RETURN v.name, v.age \
+        RETURN v.player.name, v.player.age \
         LIMIT 3;
-+-------------------+-------+
-| v.name            | v.age |
-+-------------------+-------+
-| &quot;Rajon Rondo&quot;     | 33    |
-| &quot;Rudy Gay&quot;        | 32    |
-| &quot;Dejounte Murray&quot; | 29    |
-+-------------------+-------+
++------------------+--------------+
+| v.player.name    | v.player.age |
++------------------+--------------+
+| &quot;Danny Green&quot;    | 31           |
+| &quot;Tiago Splitter&quot; | 34           |
+| &quot;David West&quot;     | 38           |
++------------------+--------------+
 </code></pre></div>
 <h2 id="_5">返回所有元素<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>使用星号（*）返回匹配模式中的所有元素。</p>
@@ -6557,7 +6557,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e]-&gt;(v2) \
 <h2 id="_6">重命名字段<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>使用语法<code>AS &lt;alias&gt;</code>重命名输出结果中的字段。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[:serve]-&gt;(v2) \
-        RETURN v2.name AS Team;
+        RETURN v2.team.name AS Team;
 +---------+
 | Team    |
 +---------+
@@ -6574,26 +6574,26 @@ nebula&gt; RETURN &quot;Amber&quot; AS Name;
 <h2 id="_7">返回不存在的属性<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>如果匹配的结果中，某个属性不存在，会返回<code>NULL</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e]-&gt;(v2) \
-        RETURN v2.name, type(e), v2.age;
-+-----------------+----------+--------------+
-| v2.name         | type(e)  | v2.age       |
-+-----------------+----------+--------------+
-| &quot;Tony Parker&quot;   | &quot;follow&quot; | 36           |
-| &quot;Manu Ginobili&quot; | &quot;follow&quot; | 41           |
-| &quot;Spurs&quot;         | &quot;serve&quot;  | UNKNOWN_PROP |
-+-----------------+----------+--------------+
+        RETURN v2.player.name, type(e), v2.player.age;
++-----------------+----------+---------------+
+| v2.player.name  | type(e)  | v2.player.age |
++-----------------+----------+---------------+
+| &quot;Manu Ginobili&quot; | &quot;follow&quot; | 41            |
+| __NULL__        | &quot;serve&quot;  | __NULL__      |
+| &quot;Tony Parker&quot;   | &quot;follow&quot; | 36            |
++-----------------+----------+---------------+
 </code></pre></div>
 <h2 id="_8">返回表达式结果<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p><code>RETURN</code>语句可以返回字面量、函数或谓词等表达式的结果。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--&gt;(v2:player) \
-        RETURN DISTINCT v2.name, &quot;Hello&quot;+&quot; graphs!&quot;, v2.age &gt; 35;
-+---------------------+----------------------+-------------+
-| v2.name             | (&quot;Hello&quot;+&quot; graphs!&quot;) | (v2.age&gt;35) |
-+---------------------+----------------------+-------------+
-| &quot;Tim Duncan&quot;        | &quot;Hello graphs!&quot;      | true        |
-| &quot;LaMarcus Aldridge&quot; | &quot;Hello graphs!&quot;      | false       |
-| &quot;Manu Ginobili&quot;     | &quot;Hello graphs!&quot;      | true        |
-+---------------------+----------------------+-------------+
+        RETURN DISTINCT v2.player.name, &quot;Hello&quot;+&quot; graphs!&quot;, v2.player.age &gt; 35;
++---------------------+----------------------+--------------------+
+| v2.player.name      | (&quot;Hello&quot;+&quot; graphs!&quot;) | (v2.player.age&gt;35) |
++---------------------+----------------------+--------------------+
+| &quot;LaMarcus Aldridge&quot; | &quot;Hello graphs!&quot;      | false              |
+| &quot;Tim Duncan&quot;        | &quot;Hello graphs!&quot;      | true               |
+| &quot;Manu Ginobili&quot;     | &quot;Hello graphs!&quot;      | true               |
++---------------------+----------------------+--------------------+
 
 nebula&gt; RETURN 1+1;
 +-------+
@@ -6620,7 +6620,7 @@ nebula&gt; RETURN 1+1, rand32(1, 5);
 <p>使用<code>DISTINCT</code>可以删除结果集中的重复字段。</p>
 <div class="highlight"><pre><span></span><code># 未使用 DISTINCT。
 nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
-        RETURN v2.name, v2.age;
+        RETURN v2.player.name, v2.player.age;
 +---------------------+--------+
 | v2.name             | v2.age |
 +---------------------+--------+
@@ -6636,7 +6636,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
 
 # 使用 DISTINCT。
 nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
-        RETURN DISTINCT v2.name, v2.age;
+        RETURN DISTINCT v2.player.name, v2.player.age;
 +---------------------+--------+
 | v2.name             | v2.age |
 +---------------------+--------+
@@ -6654,7 +6654,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>
@@ -6746,10 +6746,10 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"method": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.b6ff8c07.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5e13d264.min.js"></script>
       
         <script src="../../../js/version-select.js"></script>
       

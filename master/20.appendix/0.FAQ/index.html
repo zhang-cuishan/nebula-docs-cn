@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/20.appendix/0.FAQ/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ee0f47ba.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -68,7 +68,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -6220,6 +6220,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
+    如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
   </a>
@@ -6650,6 +6657,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
+    如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
   </a>
@@ -6950,6 +6964,8 @@
 <p>已知问题，通常需要重试 1-N 次 (N==partition 数量）。原因为 meta client 更新 leader 缓存需要 1-2 个心跳或者通过错误触发强制更新。</p>
 <h3 id="semanticerror_missing_yield_clause">如何处理错误信息 <code>SemanticError: Missing yield clause.</code><a class="headerlink" href="#semanticerror_missing_yield_clause" title="Permanent link">&para;</a></h3>
 <p>从 Nebula Graph 3.0 开始，查询语句<code>LOOKUP</code>、<code>GO</code>、<code>FETCH</code>必须用<code>YIELD</code>子句指定输出结果。详情请参见<a href="../../3.ngql-guide/8.clauses-and-options/yield/">YIELD</a>。</p>
+<h3 id="to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop">如何处理错误信息 <code>To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'</code><a class="headerlink" href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" title="Permanent link">&para;</a></h3>
+<p>从 3.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag，所以返回属性时，需要额外指定 Tag 名称。即从<code>RETURN 变量名.属性名</code>改为<code>RETURN 变量名.Tag.属性名</code>。</p>
 <h3 id="time_spent">返回消息中 <code>time spent</code> 的含义是什么？<a class="headerlink" href="#time_spent" title="Permanent link">&para;</a></h3>
 <p>将命令<code>SHOW SPACES</code>返回的消息作为示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW SPACES;
@@ -7024,8 +7040,8 @@ Got 1 rows (time spent 1235/1934 us)
 <p>更多详情请参见 <a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">INDEX</a>、<a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a> 和 <a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a>。</p>
 <h3 id="tagedgetype">如何在不指定 Tag/EdgeType 的情况下，获取所有的点和边？<a class="headerlink" href="#tagedgetype" title="Permanent link">&para;</a></h3>
 <p>nGQL 没有该功能。</p>
-<p>你必须先指定 Tag/EdgeType，才能获取对应类型的所有的点和边。</p>
-<p>例如执行 <code>MATCH (n) RETURN (n)</code>. 会返回错误 <code>can’t solve the start vids from the sentence</code>。</p>
+<p>你必须先指定 Tag/EdgeType，或者用<code>LIMIT</code>子句限制返回数量，才能获取对应类型的所有的点和边。</p>
+<p>例如执行 <code>MATCH (n) RETURN (n)</code>. 会返回错误 <code>Scan vertices or edges need to specify a limit number, or limit number can not push down.</code>。</p>
 <p>一个办法是使用 <a href="../../nebula-algorithm/">Nebula Algorithm</a>.</p>
 <p>或者指定各 Tag/Edge Type，然后再自己通过 <code>Union</code> 拼装。</p>
 <h3 id="cant_solve_the_start_vids_from_the_sentence">如何处理错误信息<code>can’t solve the start vids from the sentence</code><a class="headerlink" href="#cant_solve_the_start_vids_from_the_sentence" title="Permanent link">&para;</a></h3>
@@ -7323,10 +7339,10 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"method": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.b6ff8c07.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5e13d264.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       

@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/8.clauses-and-options/where/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bb3983ee.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ee0f47ba.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -68,7 +68,7 @@
   
     
     
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -6558,19 +6558,16 @@
 <h3 id="_2">用布尔运算符定义条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>在<code>WHERE</code>子句中使用布尔运算符<code>NOT</code>、<code>AND</code>、<code>OR</code>和<code>XOR</code>定义条件。关于运算符的优先级，请参见<a href="../../5.operators/9.precedence/">运算符优先级</a>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.name == &quot;Tim Duncan&quot; \
-        XOR (v.age &lt; 30 AND v.name == &quot;Yao Ming&quot;) \
-        OR NOT (v.name == &quot;Yao Ming&quot; OR v.name == &quot;Tim Duncan&quot;) \
-        RETURN v.name, v.age;
-+-------------------------+-------+
-| v.name                  | v.age |
-+-------------------------+-------+
-| &quot;Marco Belinelli&quot;       | 32    |
-| &quot;Aron Baynes&quot;           | 32    |
-| &quot;LeBron James&quot;          | 34    |
-| &quot;James Harden&quot;          | 29    |
-| &quot;Manu Ginobili&quot;         | 41    |
-+-------------------------+-------+
+        WHERE v.player.name == &quot;Tim Duncan&quot; \
+        XOR (v.player.age &lt; 30 AND v.player.name == &quot;Yao Ming&quot;) \
+        OR NOT (v.player.name == &quot;Yao Ming&quot; OR v.player.name == &quot;Tim Duncan&quot;) \
+        RETURN v.player.name, v.player.age;
++-------------------------+--------------+
+| v.player.name           | v.player.age |
++-------------------------+--------------+
+| &quot;Danny Green&quot;           | 31           |
+| &quot;Tiago Splitter&quot;        | 34           |
+| &quot;David West&quot;            | 38           |
 ...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; \
@@ -6589,15 +6586,15 @@
 <p>在<code>WHERE</code>子句中使用点或边的属性定义条件。</p>
 <ul>
 <li>过滤点属性：<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e]-&gt;(v2) \
-        WHERE v2.age &lt; 25 \
-        RETURN v2.name, v2.age;
-+----------------------+--------+
-| v2.name              | v2.age |
-+----------------------+--------+
-| &quot;Luka Doncic&quot;        | 20     |
-| &quot;Kristaps Porzingis&quot; | 23     |
-| &quot;Ben Simmons&quot;        | 22     |
-+----------------------+--------+
+        WHERE v2.player.age &lt; 25 \
+        RETURN v2.player.name, v2.player.age;
++----------------------+---------------+
+| v2.player.name       | v2.player.age |
++----------------------+---------------+
+| &quot;Ben Simmons&quot;        | 22            |
+| &quot;Luka Doncic&quot;        | 20            |
+| &quot;Kristaps Porzingis&quot; | 23            |
++----------------------+---------------+
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow \
         WHERE $^.player.age &gt;= 42 \
@@ -6614,16 +6611,13 @@
 <ul>
 <li>过滤边属性：<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e]-&gt;() \
         WHERE e.start_year &lt; 2000 \
-        RETURN DISTINCT v.name, v.age;
-+--------------------+-------+
-| v.name             | v.age |
-+--------------------+-------+
-| &quot;Shaquille O&#39;Neal&quot; | 47    |
-| &quot;Steve Nash&quot;       | 45    |
-| &quot;Ray Allen&quot;        | 43    |
-| &quot;Grant Hill&quot;       | 46    |
-| &quot;Tony Parker&quot;      | 36    |
-+--------------------+-------+
+        RETURN DISTINCT v.player.name, v.player.age;
++--------------------+--------------+
+| v.player.name      | v.player.age |
++--------------------+--------------+
+| &quot;Tony Parker&quot;      | 36           |
+| &quot;Tim Duncan&quot;       | 42           |
+| &quot;Grant Hill&quot;       | 46           |
 ...
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; GO FROM &quot;player100&quot; OVER follow \
@@ -6641,7 +6635,7 @@
 <h3 id="_4">过滤动态计算属性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
         WHERE v[toLower(&quot;AGE&quot;)] &lt; 21 \
-        RETURN v.name, v.age;
+        RETURN v.player.name, v.player.age;
 +---------------+-------+
 | v.name        | v.age |
 +---------------+-------+
@@ -6650,14 +6644,14 @@
 </code></pre></div>
 <h3 id="_5">过滤现存属性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE exists(v.age) \
-        RETURN v.name, v.age;
-+-------------------------+-------+
-| v.name                  | v.age |
-+-------------------------+-------+
-| &quot;Boris Diaw&quot;            | 36    |
-| &quot;DeAndre Jordan&quot;        | 30    |
-+-------------------------+-------+
+        WHERE exists(v.player.age) \
+        RETURN v.player.name, v.player.age;
++-------------------------+--------------+
+| v.player.name           | v.player.age |
++-------------------------+--------------+
+| &quot;Danny Green&quot;           | 31           |
+| &quot;Tiago Splitter&quot;        | 34           |
+| &quot;David West&quot;            | 38           |
 ...
 </code></pre></div>
 <h3 id="rank">过滤 rank<a class="headerlink" href="#rank" title="Permanent link">&para;</a></h3>
@@ -6698,64 +6692,62 @@ nebula&gt; GO FROM &quot;1&quot; \
 <p><code>STARTS WITH</code>会从字符串的起始位置开始匹配。</p>
 <div class="highlight"><pre><span></span><code># 查询姓名以 T 开头的 player 信息。
 nebula&gt; MATCH (v:player) \
-        WHERE v.name STARTS WITH &quot;T&quot; \
-        RETURN v.name, v.age;
-+------------------+-------+
-| v.name           | v.age |
-+------------------+-------+
-| &quot;Tracy McGrady&quot;  | 39    |
-| &quot;Tony Parker&quot;    | 36    |
-| &quot;Tim Duncan&quot;     | 42    |
-| &quot;Tiago Splitter&quot; | 34    |
-+------------------+-------+
+        WHERE v.player.name STARTS WITH &quot;T&quot; \
+        RETURN v.player.name, v.player.age;
++------------------+--------------+
+| v.player.name    | v.player.age |
++------------------+--------------+
+| &quot;Tony Parker&quot;    | 36           |
+| &quot;Tiago Splitter&quot; | 34           |
+| &quot;Tim Duncan&quot;     | 42           |
+| &quot;Tracy McGrady&quot;  | 39           |
++------------------+--------------+
 </code></pre></div>
 <p>如果使用小写<code>t</code>（<code>STARTS WITH "t"</code>），会返回空集，因为数据库中没有以小写<code>t</code>开头的姓名。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.name STARTS WITH &quot;t&quot; \
-        RETURN v.name, v.age;
+        WHERE v.player.name STARTS WITH &quot;t&quot; \
+        RETURN v.player.name, v.player.age;
 Empty set (time spent 5080/6474 us)
 </code></pre></div>
 <h3 id="ends_with"><code>ENDS WITH</code><a class="headerlink" href="#ends_with" title="Permanent link">&para;</a></h3>
 <p><code>ENDS WITH</code>会从字符串的结束位置开始匹配。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.name ENDS WITH &quot;r&quot; \
-        RETURN v.name, v.age;
-+------------------+-------+
-| v.name           | v.age |
-+------------------+-------+
-| &quot;Vince Carter&quot;   | 42    |
-| &quot;Tony Parker&quot;    | 36    |
-| &quot;Tiago Splitter&quot; | 34    |
-+------------------+-------+
+        WHERE v.player.name ENDS WITH &quot;r&quot; \
+        RETURN v.player.name, v.player.age;
++------------------+--------------+
+| v.player.name    | v.player.age |
++------------------+--------------+
+| &quot;Tony Parker&quot;    | 36           |
+| &quot;Tiago Splitter&quot; | 34           |
+| &quot;Vince Carter&quot;   | 42           |
++------------------+--------------+
 </code></pre></div>
 <h3 id="contains"><code>CONTAINS</code><a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
 <p><code>CONTAINS</code>会检查关键字是否匹配字符串的某一部分。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.name CONTAINS &quot;Pa&quot; \
-        RETURN v.name, v.age;
-+---------------+-------+
-| v.name        | v.age |
-+---------------+-------+
-| &quot;Paul George&quot; | 28    |
-| &quot;Tony Parker&quot; | 36    |
-| &quot;Paul Gasol&quot;  | 38    |
-| &quot;Chris Paul&quot;  | 33    |
-+---------------+-------+
+        WHERE v.player.name CONTAINS &quot;Pa&quot; \
+        RETURN v.player.name, v.player.age;
++---------------+--------------+
+| v.player.name | v.player.age |
++---------------+--------------+
+| &quot;Paul George&quot; | 28           |
+| &quot;Tony Parker&quot; | 36           |
+| &quot;Paul Gasol&quot;  | 38           |
+| &quot;Chris Paul&quot;  | 33           |
++---------------+--------------+
 </code></pre></div>
 <h3 id="not">结合 NOT 使用<a class="headerlink" href="#not" title="Permanent link">&para;</a></h3>
 <p>用户可以结合布尔运算符<code>NOT</code>一起使用，否定字符串匹配条件。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE NOT v.name ENDS WITH &quot;R&quot; \
-        RETURN v.name, v.age;
-+-------------------------+-------+
-| v.name                  | v.age |
-+-------------------------+-------+
-| &quot;Rajon Rondo&quot;           | 33    |
-| &quot;Rudy Gay&quot;              | 32    |
-| &quot;Dejounte Murray&quot;       | 29    |
-| &quot;Chris Paul&quot;            | 33    |
-| &quot;Carmelo Anthony&quot;       | 34    |
-+-------------------------+-------+
+        WHERE NOT v.player.name ENDS WITH &quot;R&quot; \
+        RETURN v.player.name, v.player.age;
++-------------------------+--------------+
+| v.player.name           | v.player.age |
++-------------------------+--------------+
+| &quot;Danny Green&quot;           | 31           |
+| &quot;Tiago Splitter&quot;        | 34           |
+| &quot;David West&quot;            | 38           |
+| &quot;Russell Westbrook&quot;     | 30           |
 ...
 </code></pre></div>
 <!--
@@ -6776,18 +6768,18 @@ Empty set (time spent 5080/6474 us)
 <h3 id="_8">匹配列表中的值<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>使用<code>IN</code>运算符检查某个值是否在指定列表中。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.age IN range(20,25) \
-        RETURN v.name, v.age;
-+-------------------------+-------+
-| v.name                  | v.age |
-+-------------------------+-------+
-| &quot;Ben Simmons&quot;           | 22    |
-| &quot;Kristaps Porzingis&quot;    | 23    |
-| &quot;Luka Doncic&quot;           | 20    |
-| &quot;Kyle Anderson&quot;         | 25    |
-| &quot;Giannis Antetokounmpo&quot; | 24    |
-| &quot;Joel Embiid&quot;           | 25    |
-+-------------------------+-------+
+        WHERE v.player.age IN range(20,25) \
+        RETURN v.player.name, v.player.age;
++-------------------------+--------------+
+| v.player.name           | v.player.age |
++-------------------------+--------------+
+| &quot;Ben Simmons&quot;           | 22           |
+| &quot;Giannis Antetokounmpo&quot; | 24           |
+| &quot;Kyle Anderson&quot;         | 25           |
+| &quot;Joel Embiid&quot;           | 25           |
+| &quot;Kristaps Porzingis&quot;    | 23           |
+| &quot;Luka Doncic&quot;           | 20           |
++-------------------------+--------------+
 
 nebula&gt; LOOKUP ON player \
         WHERE player.age IN [25,28]  \
@@ -6804,8 +6796,8 @@ nebula&gt; LOOKUP ON player \
 </code></pre></div>
 <h3 id="not_1">结合 NOT 使用<a class="headerlink" href="#not_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
-        WHERE v.age NOT IN range(20,25) \
-        RETURN v.name AS Name, v.age AS Age \
+        WHERE v.player.age NOT IN range(20,25) \
+        RETURN v.player.name AS Name, v.player.age AS Age \
         ORDER BY Age;
 +---------------------+-----+
 | Name                | Age |
@@ -6815,7 +6807,6 @@ nebula&gt; LOOKUP ON player \
 | &quot;Damian Lillard&quot;    | 28  |
 | &quot;Paul George&quot;       | 28  |
 | &quot;Ricky Rubio&quot;       | 28  |
-+---------------------+-----+
 ...
 </code></pre></div>
 
@@ -6824,7 +6815,7 @@ nebula&gt; LOOKUP ON player \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
       
     
   </small>
@@ -6916,10 +6907,10 @@ nebula&gt; LOOKUP ON player \
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"method": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.b6ff8c07.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5e13d264.min.js"></script>
       
         <script src="../../../js/version-select.js"></script>
       
