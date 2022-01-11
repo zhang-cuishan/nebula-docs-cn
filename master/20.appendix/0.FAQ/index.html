@@ -3013,22 +3013,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../4.deployment-and-installation/5.zone/" class="md-nav__link">
+        管理集群（Zone）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_6">
+        <label class="md-nav__link" for="__nav_5_7">
           升级版本
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="升级版本" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -3460,20 +3474,6 @@
     <li class="md-nav__item">
       <a href="../../7.data-security/3.manage-snapshot/" class="md-nav__link">
         管理快照
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../7.data-security/5.zone/" class="md-nav__link">
-        Group&Zone
       </a>
     </li>
   
@@ -6220,6 +6220,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone_not_enough" class="md-nav__link">
+    如何处理错误信息 Zone not enough!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
     如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
   </a>
@@ -6657,6 +6664,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone_not_enough" class="md-nav__link">
+    如何处理错误信息 Zone not enough!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
     如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
   </a>
@@ -6964,8 +6978,10 @@
 <p>已知问题，通常需要重试 1-N 次 (N==partition 数量）。原因为 meta client 更新 leader 缓存需要 1-2 个心跳或者通过错误触发强制更新。</p>
 <h3 id="semanticerror_missing_yield_clause">如何处理错误信息 <code>SemanticError: Missing yield clause.</code><a class="headerlink" href="#semanticerror_missing_yield_clause" title="Permanent link">&para;</a></h3>
 <p>从 Nebula Graph 3.0 开始，查询语句<code>LOOKUP</code>、<code>GO</code>、<code>FETCH</code>必须用<code>YIELD</code>子句指定输出结果。详情请参见<a href="../../3.ngql-guide/8.clauses-and-options/yield/">YIELD</a>。</p>
+<h3 id="zone_not_enough">如何处理错误信息 <code>Zone not enough!</code><a class="headerlink" href="#zone_not_enough" title="Permanent link">&para;</a></h3>
+<p>从 3.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。详情参见<a href="../../4.deployment-and-installation/5.zone/">管理逻辑机架（Zone）</a>。</p>
 <h3 id="to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop">如何处理错误信息 <code>To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'</code><a class="headerlink" href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" title="Permanent link">&para;</a></h3>
-<p>从 3.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag，所以返回属性时，需要额外指定 Tag 名称。即从<code>RETURN 变量名.属性名</code>改为<code>RETURN 变量名.Tag.属性名</code>。</p>
+<p>从 3.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag，所以返回属性时，需要额外指定 Tag 名称。即从<code>RETURN 变量名.属性名</code>改为<code>RETURN 变量名.Tag名.属性名</code>。</p>
 <h3 id="time_spent">返回消息中 <code>time spent</code> 的含义是什么？<a class="headerlink" href="#time_spent" title="Permanent link">&para;</a></h3>
 <p>将命令<code>SHOW SPACES</code>返回的消息作为示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW SPACES;
@@ -7247,7 +7263,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2022</span>
       
     
   </small>

@@ -3106,22 +3106,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../4.deployment-and-installation/5.zone/" class="md-nav__link">
+        管理集群（Zone）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_6">
+        <label class="md-nav__link" for="__nav_5_7">
           升级版本
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="升级版本" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_6">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -3553,20 +3567,6 @@
     <li class="md-nav__item">
       <a href="../../../7.data-security/3.manage-snapshot/" class="md-nav__link">
         管理快照
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../7.data-security/5.zone/" class="md-nav__link">
-        Group&Zone
       </a>
     </li>
   
@@ -6409,8 +6409,11 @@
     [replica_factor = &lt;replica_number&gt;,]
     vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
-    [ON &lt;group_name&gt;]
+    [ON zone_list]
     [COMMENT = &#39;&lt;comment&gt;&#39;];
+
+zone_list:
+    &quot;zone_name&quot; [,&quot;zone_name&quot; ...]
 </code></pre></div>
 <table>
 <thead>
@@ -6441,8 +6444,8 @@
 <td align="left">必选参数。指定点 ID 的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
 </tr>
 <tr>
-<td align="left"><code>ON &lt;group_name&gt;</code></td>
-<td align="left">指定图空间所属的 Group。详情请参见 <a href="../../../7.data-security/5.zone/">Group&amp;Zone</a>。</td>
+<td align="left"><code>zone_list</code></td>
+<td align="left">指定图空间所属的 Zone 列表，将在这些 Zone 中创建分片和对应副本。副本数量不能超过指定 Zone 数量。不指定<code>zone_list</code>时，默认属于所有 Zone。详情请参见 <a href="../../7.data-security/5.zone.md">Zone</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
@@ -6487,7 +6490,7 @@
 <tbody>
 <tr>
 <td align="left"><code>&lt;new_graph_space_name&gt;</code></td>
-<td align="left">目标图空间名称。该图空间必须未创建。图空间名称支持 1~4 字节的 UTF-8 编码字符，包括英文字母（区分大小写）、数字、中文等，但是不包括除下划线外的特殊字符。使用保留关键字时，需要用反引号（`）包围，详情参见<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。创建时会克隆<code>&lt;old_graph_space_name&gt;</code>图空间的 Schema，包括图空间本身参数（分片数量、副本数量等），以及 Tag、Edge type 和原生索引。</td>
+<td align="left">目标图空间名称。该图空间必须未创建。图空间名称支持 1~4 字节的 UTF-8 编码字符，包括英文字母（区分大小写）、数字、中文等，但是不包括除下划线外的特殊字符。使用保留关键字时，需要用反引号（`）包围，详情参见<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。创建时会克隆<code>&lt;old_graph_space_name&gt;</code>图空间的 Schema，包括图空间本身参数（分片数量、副本数量等）、Tag、Edge type、原生索引和 Zone。</td>
 </tr>
 <tr>
 <td align="left"><code>&lt;old_graph_space_name&gt;</code></td>
@@ -6549,7 +6552,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2022</span>
       
     
   </small>

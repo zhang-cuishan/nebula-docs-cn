@@ -741,6 +741,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/5.zone/</loc>
+         <lastmod>2022-01-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/connect-to-nebula-graph/</loc>
          <lastmod>2022-01-11</lastmod>
          <changefreq>daily</changefreq>
@@ -852,11 +857,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/7.data-security/4.ssl/</loc>
-         <lastmod>2022-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/7.data-security/5.zone/</loc>
          <lastmod>2022-01-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
