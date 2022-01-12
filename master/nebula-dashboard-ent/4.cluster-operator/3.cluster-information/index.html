@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4827,14 +4827,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4860,6 +4860,20 @@
     <li class="md-nav__item">
       <a href="../2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -5025,8 +5039,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../../6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6387,7 +6415,8 @@
 
 
 <h1 id="_1">集群信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文主要介绍 Dashboard 的集群信息，主要为以下六个部分：</p>
+<p>本文主要介绍 Dashboard 的集群信息。</p>
+<p>在 Dashboard 顶部导航栏，单击<strong>集群管理</strong>，单击目标集群右侧<strong>详情</strong>，然后在左侧导航栏，单击<strong>集群信息</strong>，看到以下六个部分：</p>
 <ul>
 <li>版本</li>
 <li>Leader</li>
@@ -6402,18 +6431,13 @@
 <p class="admonition-title">Caution</p>
 <p>用户需要保证 Nebula Graph 服务已经部署并启动。详细信息，参考 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</p>
 </div>
-<p><img alt="information" src="../../figs/ds-006.png" /></p>
 <h2 id="_2">版本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><img alt="版本" src="../../figs/ds-014.png" /></p>
 <p>显示所有服务及对应的 Nebula 版本。</p>
 <h2 id="leader">Leader<a class="headerlink" href="#leader" title="Permanent link">&para;</a></h2>
-<p><img alt="Leader" src="../../figs/ds-013.png" /></p>
 <p>显示 Leader 数量及 Leader 的分布，点击右上角的 <strong>Balance Leader</strong> 按钮可以快速在 Nebula Graph 集群中均衡分布 Leader。</p>
 <h2 id="partition">Partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
-<p><img alt="partition" src="../../figs/ds-012.png" /></p>
 <p>选择指定图空间，查看指定图空间的 Partition 分布情况。</p>
 <h2 id="_3">服务信息<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><img alt="服务信息" src="../../figs/ds-011.png" /></p>
 <p>展示 Storage 服务的基本信息。用户可以通过右上角的 <strong>Balance Date</strong> 按钮启动任务，均衡分布集群中的所有分片。参数说明如下：</p>
 <table>
 <thead>
@@ -6454,7 +6478,6 @@
 </tbody>
 </table>
 <h2 id="_4">分片信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><img alt="分片信息" src="../../figs/ds-010.png" /></p>
 <p>显示分片信息。用户需要在左上角选择图空间，查看分片信息。也可以通过右上角的输入框，输入分片 ID，筛选展示的数据。参数说明如下：</p>
 <table>
 <thead>
@@ -6483,7 +6506,6 @@
 </tbody>
 </table>
 <h2 id="_5">长时任务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><img alt="长时任务" src="../../figs/ds-009.png" /></p>
 <p>展示所有作业的信息。查看作业信息之前，用户需要在右上角选择图空间。暂不支持在线管理作业，详情请参见<a href="../../../3.ngql-guide/18.operation-and-maintenance-statements/4.job-statements/">作业管理</a>。参数说明如下：</p>
 <table>
 <thead>
@@ -6521,7 +6543,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>
@@ -6544,7 +6566,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../2.monitor/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 集群监控" rel="prev">
+        <a href="../../9.alerts/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 监控告警" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -6553,7 +6575,7 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              集群监控
+              监控告警
             </div>
           </div>
         </a>

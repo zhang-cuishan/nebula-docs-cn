@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4823,14 +4823,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4856,6 +4856,20 @@
     <li class="md-nav__item">
       <a href="../../nebula-dashboard-ent/4.cluster-operator/2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-dashboard-ent/9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -4945,8 +4959,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-dashboard-ent/6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../../nebula-dashboard-ent/6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-dashboard-ent/10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6380,6 +6408,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exchangeconnectorsalgorithm_snapshot" class="md-nav__link">
+    编译 Exchange、Connectors、Algorithm 时无法下载 SNAPSHOT 包
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6824,6 +6859,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#exchangeconnectorsalgorithm_snapshot" class="md-nav__link">
+    编译 Exchange、Connectors、Algorithm 时无法下载 SNAPSHOT 包
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7137,6 +7179,25 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <ul>
 <li>Tag 或 Edge type 的名称是否为关键字，如果是关键字，请使用反引号（`）将它们括起来。详情请参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字</a>。</li>
 </ul>
+<h3 id="exchangeconnectorsalgorithm_snapshot">编译 Exchange、Connectors、Algorithm 时无法下载 SNAPSHOT 包<a class="headerlink" href="#exchangeconnectorsalgorithm_snapshot" title="Permanent link">&para;</a></h3>
+<p>现象：编译时提示<code>Could not find artifact com.vesoft:client:jar:xxx-SNAPSHOT</code>。</p>
+<p>原因：本地 maven 没有配置用于下载 SNAPSHOT 的仓库。maven 中默认的 central 仓库用于存放正式发布版本，而不是开发版本（SNAPSHOT）。</p>
+<p>解决方案：在 maven 的 setting.xml文件的<code>profiles</code>作用域内中增加以下配置：</p>
+<div class="highlight"><pre><span></span><code>  &lt;profile&gt;
+     &lt;activation&gt;
+        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+     &lt;/activation&gt;
+     &lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;snapshots&lt;/id&gt;
+            &lt;url&gt;https://oss.sonatype.org/content/repositories/snapshots/&lt;/url&gt;
+            &lt;snapshots&gt;
+               &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+      &lt;/repository&gt;
+     &lt;/repositories&gt;
+  &lt;/profile&gt;
+</code></pre></div>
 <h2 id="_9">关于运维<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">日志文件过大时如何回收日志？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph 的日志默认在 <code>/usr/local/nebula/logs/</code> 下，正常 INFO 级别日志文件为 <code>nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO</code>，报警和错误级别后缀为 <code>.WARNING</code> 和 <code>.ERROR</code>。</p>
@@ -7277,7 +7338,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>

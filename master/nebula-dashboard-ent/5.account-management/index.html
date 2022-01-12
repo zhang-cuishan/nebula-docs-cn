@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4825,14 +4825,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4858,6 +4858,20 @@
     <li class="md-nav__item">
       <a href="../4.cluster-operator/2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -4942,9 +4956,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          权限管理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         权限管理
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    账户类型
+  </a>
+  
+    <nav class="md-nav" aria-label="账户类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP 账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    普通账户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    账户角色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    查看账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    其他操作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4957,8 +5050,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6253,6 +6360,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    账户类型
+  </a>
+  
+    <nav class="md-nav" aria-label="账户类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP 账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    普通账户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    账户角色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    创建账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    查看账户
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    其他操作
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6269,17 +6439,163 @@
 
 
 <h1 id="_1">权限管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>用户使用默认 GOD 用户（默认账号为<code>nebula</code>，密码为<code>nebula</code>）登录，可在权限管理页面，创建或删除 ADMIN 权限的账号。下图为 GOD 用户的权限管理页面。</p>
-<p><img alt="god" src="../figs/ds-032.png" /></p>
-<p>用户使用创建的 ADMIN 账号登陆，不能对其他的账号进行操作，仅能查看用户名、角色、创建时间。下图为 ADMIN 用户的权限管理页面。</p>
-<p><img alt="admin" src="../figs/ds-031.png" /></p>
+<p>用户可以使用不同账户登录 Nebula Dashboard 企业版，不同账户拥有不同权限。本文介绍账户类型、账户角色及角色权限等。</p>
+<h2 id="_2">账户类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Dashboard 企业版的初始化账户名为<code>nebula</code>和密码为<code>nebula</code>。使用初始化账户名和密码登录 Dashboard 企业版后，即可创建不同类型的账户：LDAP 账户和普通账户。</p>
+<h3 id="ldap">LDAP 账户<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
+<p>Dashboard 企业版通过对接 <a href="https://ldap.com/">LDAP（Lightweight Directory Access Protocol）</a>，使得用户可以使用企业内部账户体系登录 Dashboard 企业版。</p>
+<p>使用 LDAP 账户前，需要进行 LDAP 配置：</p>
+<ol>
+<li>在 Dashboard 企业版的安装路径中，如<code>nebula-graph-dashboard-ent/nebula-dashboard-ent/config</code>，找到配置文件<code>config.yaml</code>。</li>
+<li>
+<p>在<code>config.yaml</code>中，添加以下内容。
+  <div class="highlight"><pre><span></span><code>ldap:
+  server: ldap://127.0.0.1
+  bindDN: cn=admin,dc=vesoft,dc=com
+  bindPassword: kenshin
+  baseDN: dc=vesoft,dc=com
+  userFilter: &quot;&amp;(objectClass=*)&quot;
+  emailKey: mail    
+</code></pre></div></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server</td>
+<td>LDAP 服务器地址。</td>
+</tr>
+<tr>
+<td>bindDN</td>
+<td>LDAP 服务器登录用户名。</td>
+</tr>
+<tr>
+<td>bindPassword</td>
+<td>LDAP 服务器登录密码。</td>
+</tr>
+<tr>
+<td>baseDN</td>
+<td>查询用户数据的路径。</td>
+</tr>
+<tr>
+<td>userFilter</td>
+<td>查询条件。</td>
+</tr>
+<tr>
+<td>emailKey</td>
+<td>LDAP 数据库存放邮箱信息的字段名。</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>重启 Dashboard 企业版生效配置。</p>
+</li>
+</ol>
+<p>成功配置 LDAP 后，使用 Dashboard 企业版的初始化账户名<code>nebula</code>和密码<code>nebula</code> 登录 Dashboard 企业版，然后可创建 LDAP 账户。关于如何创建账户，参见<a href="#_5">创建账户</a>。</p>
+<h3 id="_3">普通账户<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>除了 LDAP 账户，其他账户均为普通账户。</p>
+<h2 id="_4">账户角色<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>用户可以为账户设置不同的角色，不同的角色拥有的权限不同。Dashboard 企业版中的账户角色有两种类型：系统角色（<code>admin</code>和<code>user</code>）和集群角色（<code>owner</code>和<code>operator</code>）。</p>
+<p>系统角色和集群角色的关系及介绍如下。</p>
+<p><img alt="roles" src="../figs/ds_roles.png" /></p>
+<p><strong>系统角色</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>角色名</th>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>1. 创建账户。<br>2. 修改已有账户的角色。<br>3. 进行平台设置、系统级别告警设置。<br>4. 删除账户。</td>
+<td>1. 系统中可以有多个<code>admin</code>角色，即系统管理员角色。<br/> 2. 默认<code>admin</code>是所有集群的<code>operator</code>，即可以看到所有集群。<br/>3. 默认显示在集群成员列表中。<code>owner</code>无法将<code>admin</code>成员移除，除非将<code>admin</code>成员转换成<code>user</code>，系统将从集群中自动移除<code>admin</code>成员。</td>
+</tr>
+<tr>
+<td>user</td>
+<td>1. 系统维度只有只读权限。 <br/>2. <code>admin</code>新建一个<code>user</code>角色的账户后，若没有分配对应的集群，则该账户无法查看任何集群。  <br/>3. 可以创建集群，成为该集群的<code>owner</code>。</td>
+<td>1. 普通用户角色。 <br/>2. 系统中可以有多个<code>user</code>。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>集群角色</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>角色名</th>
+<th>权限</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>operator</code></td>
+<td>1. 扩缩容集群。 <br/>2. 设置集群告警。 <br/>3. 进行节点管理。<br/>4. 进行服务管理。</td>
+<td>1. 集群操作者角色。<br/> 2. 一个集群可以有多个<code>operator</code>。</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td>1. 拥有<code>operator</code>的所有权限。<br/>2. 解绑和删除集群。<br/>3. 添加和移除<code>operator</code>账户。 <br/>4. 转移<code>owner</code>角色。</td>
+<td>1. 集群所有者角色。 <br/>2. 一个集群只能有一个<code>owner</code>。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">创建账户<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>角色为<code>admin</code>的账户可以创建账户。步骤如下：</p>
+<ol>
+<li>在 Dashboard 企业版页面的顶部，单击<strong>权限管理</strong>，然后单击<strong>创建</strong>。</li>
+<li>
+<p>选择创建方式并填入信息，然后单击<strong>确定</strong>。</p>
+<ul>
+<li>
+<p>邀请：设置被邀请人的企业邮箱和角色。被邀请人单击邮件中的 <strong>Accept</strong> 按钮激活账户后，然后单击<strong>登录</strong>自动跳转至 Dashboard 企业版登录页面。被邀请人使用企业邮箱账号和邮箱密码即可登录 Dashboard 企业版。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>选择<strong>邀请</strong>方式添加账户时，确保企业 LDAP 服务器中已添加被邀请人的邮箱。</p>
+</div>
+</li>
+</ul>
+<ul>
+<li>创建账户：设置新账户的登录名称、密码、角色。关于角色的详情，参见<a href="#_4">账户角色</a>。</li>
+</ul>
+</li>
+</ol>
+<h2 id="_6">查看账户<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>已创建的账户会显示在<strong>权限管理</strong>页面中。</p>
+<ul>
+<li>
+<p>用户可以查看账户的用户名、账号类型、角色、关联集群、创建时间。</p>
+<ul>
+<li><strong>账号类型</strong>：包括 <strong>platform</strong> 和 <strong>ldap</strong>。<strong>platform</strong> 为普通账户；<strong>ldap</strong> 为 LDAP 账户。</li>
+<li><strong>角色</strong>：显示角色名，包括 <strong>admin</strong> 和 <strong>user</strong>。关于角色的详情，参见上文。</li>
+<li><strong>关联集群</strong>：显示该账户可以操作的所有集群。如果集群为该账户所创建，相关集群附带<code>owner</code>标签。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>用户可以在搜索框中搜索账户，也可以通过选择关联集群来筛选账户。</li>
+</ul>
+<h2 id="_7">其他操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在<strong>权限管理</strong>页面的<strong>操作</strong>列下，单击<img alt="alert-edit" src="../figs/alert_edit.png" />编辑账户信息。</li>
+</ul>
+<ul>
+<li>在<strong>权限管理</strong>页面的<strong>操作</strong>列下，单击<img alt="alert-delete" src="../figs/alert_delete.png" />删除账户。</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>
@@ -6318,13 +6634,13 @@
       
       
         
-        <a href="../6.system-settings/" class="md-footer__link md-footer__link--next" aria-label="下一页: 系统设置" rel="next">
+        <a href="../6.global-config/" class="md-footer__link md-footer__link--next" aria-label="下一页: 全局配置" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              系统设置
+              全局配置
             </div>
           </div>
           <div class="md-footer__button md-icon">

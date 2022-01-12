@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4827,14 +4827,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4860,6 +4860,20 @@
     <li class="md-nav__item">
       <a href="../2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -4947,6 +4961,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    成员管理
+  </a>
+  
+    <nav class="md-nav" aria-label="成员管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    添加集群管理员
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5011,8 +5052,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../../6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6341,6 +6396,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    成员管理
+  </a>
+  
+    <nav class="md-nav" aria-label="成员管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    添加集群管理员
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他操作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6359,49 +6441,41 @@
 
 
 <h1 id="_1">集群操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文主要介绍 Dashboard 的集群操作，主要为以下四个部分：</p>
-<ul>
-<li>节点管理</li>
-<li>服务管理</li>
-<li>扩缩容</li>
-<li>更新配置</li>
-</ul>
+<p>本文主要介绍 Dashboard 企业版的集群操作，包括集群节点、集群服务、集群扩缩容、服务配置、集群成员管理。</p>
 <h2 id="_2">节点管理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在节点管理页面中，展示所有的节点详情信息，包括节点名称、Host 及 SSH 用户名称、CPU 核等信息。</p>
 <ul>
-<li>点击 <strong>添加节点</strong> 输入 Host 信息、SSH 端口号、用户、密码信息，选择 Nebula Graph 安装包，可快速添加节点。</li>
+<li>单击<strong>添加节点</strong>输入 Host 信息、SSH 端口号、用户、密码信息，选择 Nebula Graph 安装包，可快速添加节点。</li>
 </ul>
 <ul>
 <li>
-<p>点击 <img alt="plus" src="../../figs/Plus.png" /> 按钮，查看对应节点服务名、服务类型、服务状态、运行路径等信息。</p>
+<p>在节点列表中，单击 <img alt="plus" src="../../figs/Plus.png" /> 按钮，查看对应节点服务名、服务类型、服务状态、运行路径等信息。</p>
 <ul>
-<li>点击 <strong>节点监控</strong> 可快速跳转至节点监控页面，详情信息见<a href="../2.monitor/">集群监控</a>。</li>
+<li>单击<strong>节点监控</strong>可快速跳转至节点监控页面，详情信息见<a href="../2.monitor/">集群监控</a>。</li>
 </ul>
 <ul>
-<li>点击 <strong>编辑节点</strong> 可修改 SSH 端口号、用户名、密码。</li>
+<li>单击<strong>编辑节点</strong>可修改 SSH 端口号、用户名、密码。</li>
 </ul>
 <ul>
-<li>当节点上无服务时，可点击 <strong>删除节点</strong>。</li>
+<li>当节点上无服务时，可单击<strong>删除节点</strong>。</li>
 </ul>
 </li>
 </ul>
-<p><img alt="vertex manage" src="../../figs/ds-008.png" /></p>
 <h2 id="_3">服务管理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>在服务管理页面，用户可以选择服务类型、服务状态、Host 对展示的数据进行筛选，快速选中一个或多个服务，一键启动/停止/重启服务。</li>
 </ul>
 <ul>
-<li>点击 <img alt="nav" src="../../figs/nav-dashboard.png" /> 图标，可快速查看<a href="../2.monitor/">服务监控</a>。</li>
+<li>单击 <img alt="nav" src="../../figs/nav-dashboard.png" /> 图标，可快速查看<a href="../2.monitor/">服务监控</a>。</li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>单击<strong>停止</strong>/<strong>重启</strong>，会立即中断进行中的任务，可能会导致数据不一致，请在业务低峰期执行该操作。</p>
 </div>
-<p><img alt="服务管理" src="../../figs/ds-015.png" /></p>
 <h2 id="_4">扩缩容<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>在扩缩容页面，用户可以快速<strong>添加节点</strong>、<strong>批量导入节点</strong>，并对已存在的节点添加 <strong>Graph 服务</strong> 及 <strong>Storage 服务</strong>。</li>
-<li>点击 <strong>重置</strong> 按钮，可以恢复到初始状态。</li>
+<li>在扩缩容页面，用户可以快速<strong>添加节点</strong>、<strong>批量导入节点</strong>，并对已存在的节点添加 <strong>Graph 服务</strong>及 <strong>Storage 服务</strong>。</li>
+<li>单击<strong>重置</strong>按钮，可以恢复到初始状态。</li>
 </ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -6409,29 +6483,46 @@
 </div>
 <p>在该示例中，新增了节点为<code>192.168.8.143</code>和<code>192.168.8.167</code>的 Storage 服务，删除了节点为<code>192.168.8.169</code>的 Graph 服务。虚线框并置灰服务名表示移除的服务，实线框表示添加的服务。</p>
 <p>在下方的<strong>服务</strong>中，绿色表示即将新增的服务，红色表示即将移除的服务。可以修改新增服务的端口号、HTTP 端口号、HTTP2 端口号信息。</p>
-<p><img alt="扩缩容" src="../../figs/ds-016.png" /></p>
+<p><img alt="扩缩容" src="../../figs/scaling-ds.png" /></p>
 <h2 id="_5">更新配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>更新配置页面可以修改 Storage 及 Graph 服务的配置文件，具体参数及描述见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a>和 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>。更新配置文件为批量操作，将会修改每一个 Storage/Graph 的配置文件。</p>
+<p>更新配置页面可以修改 Storage 及 Graph 服务的配置文件，具体参数及说明见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a>和 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>。更新配置文件为批量操作，将会修改每一个 Storage/Graph 的配置文件。</p>
 <ul>
-<li>点击保存后，在下一次服务重启后配置即生效。</li>
+<li>单击保存后，在下一次服务重启后配置即生效。</li>
 </ul>
 <ul>
 <li>
-<p>点击 <strong>保存并重启</strong> 可直接重启服务使配置立即生效。</p>
+<p>单击<strong>保存并重启</strong> 可直接重启服务使配置立即生效。</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>单击<strong>保存并重启</strong>，会立即中断进行中的任务重启集群，可能会导致数据不一致，请在业务低峰期执行该操作。</p>
 </div>
 </li>
 </ul>
-<p><img alt="更新配置" src="../../figs/ds-017.png" /></p>
+<h2 id="_6">成员管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>所有角色为<code>admin</code>的账户和角色为<code>user</code>的集群创建者可以为集群添加管理员。默认集群创建者为集群的<code>owner</code>角色，并显示在<strong>成员管理</strong>页面。添加的集群管理员为集群的<code>operator</code>角色。</p>
+<p>关于账户的角色详情，参见<a href="../../5.account-management/">权限管理</a>。</p>
+<h3 id="_7">添加集群管理员<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>集群管理员必需是用户创建的 Dashboard 企业版账户。关于如何创建账户，参见<a href="../../5.account-management/">权限管理</a>。</p>
+<p>添加集群管理员步骤如下：</p>
+<ol>
+<li>在 Dashboard 企业版顶部导航栏，单击<strong>集群管理</strong>。</li>
+<li>在目标集群右侧，单击<strong>详情</strong>。</li>
+<li>在左侧导航栏，单击<strong>集群操作</strong>-&gt;<strong>成员管理</strong>。</li>
+<li>在<strong>成员管理</strong>页面，单击左上方的搜索框。</li>
+<li>在下拉列表中，选择需要添加的账户，然后单击右侧的<strong>添加</strong>。</li>
+</ol>
+<h3 id="_8">其他操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在<strong>成员管理</strong>页面右上方的搜索框中，搜索集群管理员。</li>
+<li>单击<img alt="delete" src="../../figs/alert_delete.png" />删除集群管理员。</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>

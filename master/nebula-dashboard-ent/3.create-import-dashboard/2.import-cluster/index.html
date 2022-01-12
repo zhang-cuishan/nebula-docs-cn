@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4875,14 +4875,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4908,6 +4908,20 @@
     <li class="md-nav__item">
       <a href="../../4.cluster-operator/2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -4997,8 +5011,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../../6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6343,7 +6371,7 @@
 <p>具体步骤，参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>和<a href="../../../4.deployment-and-installation/manage-service/">管理服务</a>。</p>
 </li>
 <li>
-<p>在集群管理页面，点击 <strong>导入集群</strong> 标签。</p>
+<p>在集群管理页面，单击<strong>导入集群</strong>标签。</p>
 </li>
 <li>
 <p>在导入集群页面，输入连接 Nebula Graph 的信息：</p>
@@ -6355,29 +6383,25 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>因为 Nebula Graph 默认不启用身份验证，所以，一般情况下用户可以使用 <code>root</code> 账号和任意密码连接 Nebula。
-  当 Nebula Graph 启用了身份验证后，用户只能使用指定的账号和密码连接 Nebula。关于 Nebula Graph 的身份验证功能，参考 <a href="../../../7.data-security/1.authentication/1.authentication/" title="点击前往 Nebula Graph 官网">Nebula Graph 用户手册</a>。</p>
+  当 Nebula Graph 启用了身份验证后，用户只能使用指定的账号和密码连接 Nebula。关于 Nebula Graph 的身份验证功能，参考 <a href="../../../7.data-security/1.authentication/1.authentication/" title="单击前往 Nebula Graph 官网">Nebula Graph 用户手册</a>。</p>
 </div>
-<p><img alt="connect" src="../../figs/ds-025.png" /></p>
 </li>
 <li>
 <p>在连接服务节点页面完成以下配置：</p>
 <ul>
 <li>输入集群的名称，最大可输入 15 个字符，本示例设置为<code>create_1027</code>。</li>
-<li>对节点进行 <strong>授权</strong>，授权需输入每个节点的 SSH 用户名及密码。</li>
-<li>
-<p><strong>批量授权</strong>需要上传 CSV 文件。请根据下载的 CSV 文件，编辑每个节点授权信息，尽量确保节点信息正确，否则容易造成上传失败。</p>
-<p><img alt="批量授权" src="../../figs/ds-026.png" /></p>
-</li>
+<li>对节点进行<strong>授权</strong>，授权需输入每个节点的 SSH 用户名及密码。</li>
+<li><strong>批量授权</strong>需要上传 CSV 文件。请根据下载的 CSV 文件，编辑每个节点授权信息，尽量确保节点信息正确，否则容易造成上传失败。</li>
 </ul>
 <ul>
 <li>
-<p>页面中节点状态变为 <strong>已授权</strong>，则该节点授权成功。</p>
+<p>页面中节点状态变为<strong>已授权</strong>，则该节点授权成功。</p>
 <p><img alt="授权" src="../../figs/ds-027.png" /></p>
 </li>
 </ul>
 </li>
 <li>
-<p>确保所有节点都授权成功，点击 <strong>导入集群</strong>。</p>
+<p>确保所有节点都授权成功，单击<strong>导入集群</strong>。</p>
 </li>
 </ol>
 <h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -6388,7 +6412,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>

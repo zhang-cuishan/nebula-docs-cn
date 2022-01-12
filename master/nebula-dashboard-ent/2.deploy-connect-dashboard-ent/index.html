@@ -4622,7 +4622,7 @@
   
     <li class="md-nav__item">
       <a href="../../nebula-dashboard/1.what-is-dashboard/" class="md-nav__link">
-        什么 是Nebula Dashboard
+        什么是Nebula Dashboard
       </a>
     </li>
   
@@ -4816,8 +4816,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    后续操作
+  <a href="#dashboard_2" class="md-nav__link">
+    连接 Dashboard
   </a>
   
 </li>
@@ -4907,14 +4907,14 @@
       
       
         <label class="md-nav__link" for="__nav_15_4">
-          集群操作
+          集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="集群操作" data-md-level="2">
+      <nav class="md-nav" aria-label="集群管理" data-md-level="2">
         <label class="md-nav__title" for="__nav_15_4">
           <span class="md-nav__icon md-icon"></span>
-          集群操作
+          集群管理
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -4940,6 +4940,20 @@
     <li class="md-nav__item">
       <a href="../4.cluster-operator/2.monitor/" class="md-nav__link">
         集群监控
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9.alerts/" class="md-nav__link">
+        监控告警
       </a>
     </li>
   
@@ -5029,8 +5043,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../6.system-settings/" class="md-nav__link">
-        系统设置
+      <a href="../6.global-config/" class="md-nav__link">
+        全局配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.tasks/" class="md-nav__link">
+        任务中心
       </a>
     </li>
   
@@ -6373,8 +6401,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    后续操作
+  <a href="#dashboard_2" class="md-nav__link">
+    连接 Dashboard
   </a>
   
 </li>
@@ -6468,8 +6496,8 @@ database:
   dialect: mysql <span class="c1"># 使用的数据库类型，目前仅支持 MySql</span>
   host: <span class="m">192</span>.168.8.157 <span class="c1"># 连接的 MySql 数据库的 ip 地址</span>
   port: <span class="m">3306</span> <span class="c1"># 连接的 MySql 数据库的端口号</span>
-  username: root <span class="c1"># 登录 MySql 的账号</span>
-  password: nebula <span class="c1"># 登录 MySql 的密码</span>
+  username: root <span class="c1"># 登陆 MySql 的账户</span>
+  password: nebula <span class="c1"># 登陆 MySql 的密码</span>
   name: dashboard <span class="c1"># 对应的数据库名称</span>
   autoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true</span>
 <span class="c1"># exporter 端口信息</span>
@@ -6574,17 +6602,18 @@ $ sudo ./dashboard.service start gateway <span class="c1">#启动 gateway 服务
 $ sudo /dashboard/scripts/dashboard.service stop all <span class="c1">#停止 Dashboard 所有服务</span>
 $ sudo /dashboard/scripts/dashboard.service status all <span class="c1">#查看 Dashboard 所有服务状态</span>
 </code></pre></div></p>
-<h2 id="_5">后续操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>启动成功后，在浏览器地址栏输入<code>http://&lt;ip_address&gt;:7005</code>。</p>
-<p>在浏览器窗口中看到以下登录界面表示已经成功部署并启动了 Dashboard，用户可以通过默认用户名<code>nebula</code>和密码<code>nebula</code>登陆 Dashboard 的 GOD 用户。可以在<a href="../6.system-settings/">系统设置</a>中修改密码，也可以在<a href="../5.account-management/">权限管理</a>页面创建权限为 ADMIN 的账号用来登陆 Dashboard。</p>
-<p><img alt="start-page" src="../figs/ds-028.png" /></p>
+<h2 id="dashboard_2">连接 Dashboard<a class="headerlink" href="#dashboard_2" title="Permanent link">&para;</a></h2>
+<p>成功启动 Dashboard 后，在浏览器地址栏输入<code>http://&lt;ip_address&gt;:7005</code>。</p>
+<p>如在浏览器窗口中看到以下登录界面，则表示已经成功部署并启动了 Dashboard。</p>
+<p><img alt="dashboard-login-cn" src="../figs/dashboard-login-cn.png" /></p>
+<p>用户可以使用初始化用户名<code>nebula</code>和密码<code>nebula</code>登录 Dashboard。登录 Dashboard 后可创建 LDAP 账户和普通账户，然后使用不同的账户登录 Dashboard。关于账户的详情，参见<a href="../5.account-management/">权限管理</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>
