@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/2.quick-start/4.nebula-graph-crud/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.6">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ee0f47ba.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cd566b2a.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
@@ -6783,7 +6783,7 @@
 <p>本文将使用下图的数据集演示基础操作的语法。</p>
 <p><img alt="The demo dataset" src="../dataset-for-crud.png" /></p>
 <h2 id="nebula_graph_storage">管理 Nebula Graph 集群的 Storage 节点<a class="headerlink" href="#nebula_graph_storage" title="Permanent link">&para;</a></h2>
-<p>首先将 Storage 节点加入 Nebula Graph 集群。更多管理集群命令请参见 <a href="../../4.deployment-and-installation/5.zone/">管理集群（Zone）</a>。</p>
+<p>首先将 Storage 节点加入 Nebula Graph 集群。更多管理集群命令请参见 <a href="../../4.deployment-and-installation/5.zone/">管理逻辑机架（Zone）</a>。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
 <p>从 3.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。</p>
@@ -7406,10 +7406,10 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.b6ff8c07.min.js", "version": {"method": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.22074ed6.min.js", "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5e13d264.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1514a9a0.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       
