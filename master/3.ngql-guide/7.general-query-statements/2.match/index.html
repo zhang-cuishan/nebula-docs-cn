@@ -6671,10 +6671,13 @@
 <li><code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
 </ul>
 <ul>
-<li>当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT &lt;number_rows&gt;</code>，和当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:T1) RETURN v LIMIT &lt;number_rows&gt;</code>，不需要创建索引，但需要使用<code>LIMIT</code>限制输出结果数量。</li>
+<li>当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但需要使用<code>LIMIT</code>限制输出结果数量。</li>
 </ul>
 <ul>
-<li>除以上两种情况之外，请确保<code>MATCH</code>语句有至少一个索引可用。如果需要创建索引，但是已经有相关的点、边或属性，用户必须在创建索引后重建索引，索引才能生效。如何创建索引，请参见<a href="../../14.native-index-statements/1.create-native-index/">创建原生索引</a>。</li>
+<li>当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但需要使用<code>LIMIT</code>限制输出结果数量。</li>
+</ul>
+<ul>
+<li>除以上三种情况之外，请确保<code>MATCH</code>语句有至少一个索引可用。如何使用索引，请参见<a href="../../14.native-index-statements/1.create-native-index/">创建原生索引</a>。</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">创建索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>

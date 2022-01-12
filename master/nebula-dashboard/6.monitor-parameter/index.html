@@ -6732,30 +6732,98 @@
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
-<th align="left">说明</th>
+<th>参数</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>num_queries</code></td>
-<td align="left">查询数量</td>
+<td>num_active_queries</td>
+<td>当前正在执行的查询数。</td>
 </tr>
 <tr>
-<td align="left"><code>num_slow_queries</code></td>
-<td align="left">慢查询数量</td>
+<td>num_active_sessions</td>
+<td>当前活跃的会话数量。</td>
 </tr>
 <tr>
-<td align="left"><code>query_latency_us</code></td>
-<td align="left">查询平均延迟</td>
+<td>num_aggregate_executors</td>
+<td>聚合（Aggregate）算子执行时间。</td>
 </tr>
 <tr>
-<td align="left"><code>slow_query_latency_us</code></td>
-<td align="left">慢查询平均延迟</td>
+<td>num_auth_failed_sessions_bad_username_password</td>
+<td>因用户名密码错误导验证失败的会话数量。</td>
 </tr>
 <tr>
-<td align="left"><code>num_query_errors</code></td>
-<td align="left">查询错误数量</td>
+<td>num_auth_failed_sessions</td>
+<td>登录验证失败的会话数量。</td>
+</tr>
+<tr>
+<td>num_indexscan_executors</td>
+<td>索引扫描（IndexScan）算子执行时间。</td>
+</tr>
+<tr>
+<td>num_killed_queries</td>
+<td>被终止的查询数量。</td>
+</tr>
+<tr>
+<td>num_opened_sessions</td>
+<td>服务端建立过的会话数量。</td>
+</tr>
+<tr>
+<td>num_queries</td>
+<td>查询次数。</td>
+</tr>
+<tr>
+<td>num_query_errors_leader_changes</td>
+<td>因查询错误而导致的 Leader 变更的次数。</td>
+</tr>
+<tr>
+<td>num_query_errors</td>
+<td>查询错误次数。</td>
+</tr>
+<tr>
+<td>num_reclaimed_expired_sessions</td>
+<td>服务端主动回收的过期的会话数量。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_metad_failed</td>
+<td>Graphd 服务发给 Metad 的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_metad</td>
+<td>Graphd 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_storaged_failed</td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_storaged</td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td>num_sentences</td>
+<td>Graphd 服务接收的语句数。</td>
+</tr>
+<tr>
+<td>num_slow_queries</td>
+<td>慢查询次数。</td>
+</tr>
+<tr>
+<td>num_sort_executors</td>
+<td>排序（Sort）算子执行时间。</td>
+</tr>
+<tr>
+<td>optimizer_latency_us</td>
+<td>优化器阶段延时。</td>
+</tr>
+<tr>
+<td>query_latency_us</td>
+<td>查询平均延迟时间。</td>
+</tr>
+<tr>
+<td>slow_query_latency_us</td>
+<td>慢查询平均延迟时间。</td>
 </tr>
 </tbody>
 </table>
@@ -6763,18 +6831,34 @@
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
-<th align="left">说明</th>
+<th>参数</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>heartbeat_latency_us</code></td>
-<td align="left">心跳延迟</td>
+<td>commit_log_latency_us</td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>num_heartbeats</code></td>
-<td align="left">心跳次数</td>
+<td>commit_snapshot_latency_us</td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
+</tr>
+<tr>
+<td>heartbeat_latency_us</td>
+<td>心跳延迟时间。</td>
+</tr>
+<tr>
+<td>num_heartbeats</td>
+<td>心跳次数。</td>
+</tr>
+<tr>
+<td>num_raft_votes</td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td>transfer_leader_latency_us</td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
 </tr>
 </tbody>
 </table>
@@ -6782,34 +6866,74 @@
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
-<th align="left">说明</th>
+<th>参数</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>add_edges_latency_us</code></td>
-<td align="left">添加边的平均延迟</td>
+<td>add_edges_latency_us</td>
+<td>添加边的平均延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>add_vertices_latency_us</code></td>
-<td align="left">添加点的平均延迟</td>
+<td>add_vertices_latency_us</td>
+<td>添加点的平均延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>delete_edges_latency_us</code></td>
-<td align="left">删除边的平均延迟</td>
+<td>commit_log_latency_us</td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>delete_vertices_latency_us</code></td>
-<td align="left">删除点的平均延迟</td>
+<td>commit_snapshot_latency_us</td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>forward_tranx_latency_us</code></td>
-<td align="left">传输平均延迟</td>
+<td>delete_edges_latency_us</td>
+<td>删除边的平均延迟时间。</td>
 </tr>
 <tr>
-<td align="left"><code>get_neighbors_latency_us</code></td>
-<td align="left">查询邻居平均延迟</td>
+<td>delete_vertices_latency_us</td>
+<td>删除点的平均延迟时间。</td>
+</tr>
+<tr>
+<td>get_neighbors_latency_us</td>
+<td>查询邻居平均延迟时间。</td>
+</tr>
+<tr>
+<td>num_edges_deleted</td>
+<td>删除的边数量。</td>
+</tr>
+<tr>
+<td>num_edges_inserted</td>
+<td>插入的边数量。</td>
+</tr>
+<tr>
+<td>num_raft_votes</td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_metad_failed</td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td>num_rpc_sent_to_metad</td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td>num_tags_deleted</td>
+<td>删除的 Tag 数量。</td>
+</tr>
+<tr>
+<td>num_vertices_deleted</td>
+<td>删除的点数量。</td>
+</tr>
+<tr>
+<td>num_vertices_inserted</td>
+<td>插入的点数量。</td>
+</tr>
+<tr>
+<td>transfer_leader_latency_us</td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
 </tr>
 </tbody>
 </table>
@@ -6819,7 +6943,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 31, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2022</span>
       
     
   </small>
