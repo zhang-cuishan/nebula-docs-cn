@@ -6509,13 +6509,17 @@ nebula&gt; RETURN timestamp();
 +-------------+
 
 # 传入指定时间。
-nebula&gt; RETURN timestamp(&quot;2021-07-05T06:18:43.984000&quot;);
-+-----------------------------------------+
-| timestamp(&quot;2021-07-05T06:18:43.984000&quot;) |
-+-----------------------------------------+
-| 1625465923                              |
-+-----------------------------------------+
+nebula&gt; RETURN timestamp(&quot;2022-01-05T06:18:43&quot;);
++----------------------------------+
+| timestamp(&quot;2022-01-05T06:18:43&quot;) |
++----------------------------------+
+| 1641363523                       |
++----------------------------------+
 </code></pre></div>
+<div class="admonition compatibility">
+<p class="admonition-title">历史版本兼容性</p>
+<p>在 Nebula Graph 3.0.0 版本前，传入 timestamp() 函数的时间字符串可包含毫秒和微秒；从 3.0.0 版本起，传入 timestamp() 函数的时间字符串不支持包含毫秒和微秒。</p>
+</div>
 </li>
 </ul>
 <ul>
@@ -6607,7 +6611,7 @@ nebula&gt; WITH date(&#39;1984-10-11&#39;) as x, duration({years: 12, days: 14, 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2022</span>
       
     
   </small>
