@@ -6516,7 +6516,7 @@
 <p>从 3.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。</p>
 </div>
 <p>用户可以将 Storage 节点加入某个 Zone 中，创建图空间时指定 Zone，就会在 Zone 内的 Storage 节点上创建及存储图空间。分片及其副本会均匀存储在各个 Zone 中。如下图所示。</p>
-<p><img alt="Zone 示意图" src="../zone.png" /></p>
+<p><img alt="Zone 示意图" src="../zone1.png" /></p>
 <p>6 台启动 Storage 服务的机器两两组合，加入 3 个 Zone。指定这三个 Zone 创建图空间 S1，分片及其副本会均匀存储在 Zone1~Zone3。</p>
 <h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
