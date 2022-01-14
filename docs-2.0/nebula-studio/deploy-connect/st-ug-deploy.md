@@ -17,24 +17,13 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
 
 - Nebula Graph 服务已经部署并启动。详细信息，参考 [Nebula Graph 安装部署](../../4.deployment-and-installation/1.resource-preparations.md "点击前往 Nebula Graph 安装部署")。
 
-- 使用的 Linux 发行版为 CentOS ，安装有 lsof 和版本为 v10.16.0 + 以上的 [Node.js](https://nodejs.org/zh-cn/)。
-  
-  !!! note
-
-        `node` 及 `npm` 命令需要安装在 `/usr/bin/`目录下，以防出现 RPM 安装时 node 命令找不到的情况。
-        例如 nodejs12 默认目录为`/opt/rh/rh-nodejs12`，用户可以使用以下命令建立软连接：
-
-        ```bash
-        $ sudo ln -s /opt/rh/rh-nodejs12/root/usr/bin/node /usr/bin/node
-        $ sudo ln -s /opt/rh/rh-nodejs12/root/usr/bin/npm /usr/bin/npm
-        ```
+- 使用的 Linux 发行版为 CentOS ，安装有 lsof。
 
 - 确保在安装开始前，以下端口处于未被使用状态。
   
   | 端口号 | 说明 |
   | ---- | ---- |
   | 7001 | Studio 提供 web 服务使用。 |
-  | 8080 | Nebula HTTP Gateway Client 进行 HTTP 通信使用。 |
 
 ### 安装
 
@@ -55,8 +44,7 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
    当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。
 
    ```bash
-   egg started on http://0.0.0.0:7001
-   nohup: 把输出追加到"nohup.out"
+   Created symlink from /etc/systemd/system/multi-user.target.wants/nebula-graph-studio.service to /usr/lib/systemd/system/nebula-graph-studio.service.
    ```
 
 3. 启动成功后，在浏览器地址栏输入 `http://ip address:7001`。

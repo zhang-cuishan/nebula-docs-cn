@@ -18,17 +18,12 @@ theme:
   custom_dir: overrides
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
   favicon: 'assets/images/favicon.ico'
+  # Change color in `stylesheets > extra.css`
   palette:
-    - scheme: default
-      primary: teal
-      accent: light green
-      toggle:
+    - scheme: nebula
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: deep orange
-      accent: red
-      toggle:
         icon: material/toggle-switch
         name: Switch to light mode
   features:
@@ -58,7 +53,7 @@ extra:
     base111b: 1.1.1-beta
     base220: 2.2.1
     base300: 3.0.0
-    release: 3.1.0
+    release: 3.2.0
   explorer:
     base100: 1.0.0
     release: 2.1.0
