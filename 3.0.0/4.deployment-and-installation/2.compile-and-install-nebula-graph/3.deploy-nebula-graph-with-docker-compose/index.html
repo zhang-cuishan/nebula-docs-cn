@@ -6547,7 +6547,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.0.0/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
@@ -6612,7 +6612,7 @@
 <li>
 <p>执行如下命令启动 Nebula Graph 服务。</p>
 <!-- 支持ARM架构docker image后再发布
-  从 master 开始，Nebula Graph 在 Docker Hub 上的 Docker 支持 ARM64 架构。用户可以在 ARM macOS 的 Docker Desktop 上或者 ARM Linux Server 上运行容器化的 Nebula Graph。
+  从 3.0.0 开始，Nebula Graph 在 Docker Hub 上的 Docker 支持 ARM64 架构。用户可以在 ARM macOS 的 Docker Desktop 上或者 ARM Linux Server 上运行容器化的 Nebula Graph。
   -->
 
 <div class="admonition note">
@@ -6766,7 +6766,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="docker">如何固定 Docker 映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:master
+    image: vesoft/nebula-graphd:3.0.0
     ...
     ports:
       - <span class="m">9669</span>:9669
@@ -6873,7 +6873,7 @@ Removing network nebula-docker-compose_nebula-net
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2021 Nebula Graph - 浙ICP备20010487号
+      Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
     </div>
   
   

@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula_graph_v20x_vmaster" class="md-skip">
+        <a href="#nebula_graph_v20x_v300" class="md-skip">
           跳转至
         </a>
       
@@ -6367,21 +6367,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.0.0/docs-2.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="nebula_graph_v20x_vmaster">升级 Nebula Graph v2.0.x 至 vmaster<a class="headerlink" href="#nebula_graph_v20x_vmaster" title="Permanent link">&para;</a></h1>
-<p>Nebula Graph v2.0.x 升级至 vmaster，只需要使用 vmaster的 RPM/DEB 包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译 vmaster</a> 之后重新安装。</p>
+<h1 id="nebula_graph_v20x_v300">升级 Nebula Graph v2.0.x 至 v3.0.0<a class="headerlink" href="#nebula_graph_v20x_v300" title="Permanent link">&para;</a></h1>
+<p>Nebula Graph v2.0.x 升级至 v3.0.0，只需要使用 v3.0.0的 RPM/DEB 包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译 v3.0.0</a> 之后重新安装。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Nebula Graph v2.0.x 指 v2.0.0-GA 和 v2.0.1 版本。如果 Nebula Graph 版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见<a href="../upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至 vmaster</a>。</p>
+<p>Nebula Graph v2.0.x 指 v2.0.0-GA 和 v2.0.1 版本。如果 Nebula Graph 版本过低（v2.0.0-RC、v2.0.0-beta、v1.x），请参见<a href="../upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至 v3.0.0</a>。</p>
 </div>
 <h2 id="rpmdeb">RPM/DEB 包升级步骤<a class="headerlink" href="#rpmdeb" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>下载 <a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/vmaster">RPM/DEB 包</a>。</p>
+<p>下载 <a href="https://github.com/vesoft-inc/nebula-graph/releases/tag/v3.0.0">RPM/DEB 包</a>。</p>
 </li>
 <li>
 <p>停止所有 Nebula Graph 服务。详情请参见<a href="../../../2.quick-start/5.start-stop-service/">管理 Nebula Graph 服务</a>。建议更新前备份配置文件。</p>
@@ -6420,7 +6420,7 @@
 <h2 id="docker_compose">Docker Compose 部署升级步骤<a class="headerlink" href="#docker_compose" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>修改目录<code>nebula-docker-compose</code>内的文件<code>docker-compose.yaml</code>，将<code>image</code>后的所有版本都修改为<code>master</code>。</p>
+<p>修改目录<code>nebula-docker-compose</code>内的文件<code>docker-compose.yaml</code>，将<code>image</code>后的所有版本都修改为<code>3.0.0</code>。</p>
 </li>
 <li>
 <p>在目录<code>nebula-docker-compose</code>内执行命令<code>docker-compose pull</code>，更新所有服务的镜像版本。</p>
@@ -6498,7 +6498,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2021 Nebula Graph - 浙ICP备20010487号
+      Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
     </div>
   
   

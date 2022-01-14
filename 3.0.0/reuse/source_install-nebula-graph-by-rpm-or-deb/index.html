@@ -6326,7 +6326,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/reuse/source_install-nebula-graph-by-rpm-or-deb.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.0.0/docs-2.0/reuse/source_install-nebula-graph-by-rpm-or-deb.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
@@ -6336,7 +6336,7 @@
 <p>RPM 和 DEB 是 Linux 系统下常见的两种安装包格式，本文介绍如何使用 RPM 或 DEB 文件在一台机器上快速安装 Nebula Graph。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>部署 Nebula Graph 集群的方式参见<a href="https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">使用 RPM/DEB 包部署集群</a>。<!--这里用外链。--></p>
+<p>部署 Nebula Graph 集群的方式参见<a href="https://docs.nebula-graph.com.cn/3.0.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">使用 RPM/DEB 包部署集群</a>。<!--这里用外链。--></p>
 </div>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
@@ -6363,13 +6363,13 @@ https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph
 //Ubuntu <span class="m">2004</span>
 https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.deb
 </code></pre></div>
-<p>例如要下载适用于<code>Centos 7.5</code>的<code>master</code>安装包：</p>
-<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.el7.x86_64.rpm
-wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.el7.x86_64.rpm.sha256sum.txt
+<p>例如要下载适用于<code>Centos 7.5</code>的<code>3.0.0</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/3.0.0/nebula-graph-3.0.0.el7.x86_64.rpm
+wget https://oss-cdn.nebula-graph.com.cn/package/3.0.0/nebula-graph-3.0.0.el7.x86_64.rpm.sha256sum.txt
 </code></pre></div>
-<p>下载适用于<code>ubuntu 1804</code>的<code>master</code>安装包：
-  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.ubuntu1804.amd64.deb
-wget https://oss-cdn.nebula-graph.com.cn/package/master/nebula-graph-master.ubuntu1804.amd64.deb.sha256sum.txt
+<p>下载适用于<code>ubuntu 1804</code>的<code>3.0.0</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget https://oss-cdn.nebula-graph.com.cn/package/3.0.0/nebula-graph-3.0.0.ubuntu1804.amd64.deb
+wget https://oss-cdn.nebula-graph.com.cn/package/3.0.0/nebula-graph-3.0.0.ubuntu1804.amd64.deb.sha256sum.txt
 </code></pre></div></p>
 </li>
 </ul>
@@ -6437,8 +6437,8 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
 <p>安装 RPM 包</p>
 <div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
 </code></pre></div>
-<p>例如在默认路径下安装master版本的 RPM 包：</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-graph-master.el7.x86_64.rpm
+<p>例如在默认路径下安装3.0.0版本的 RPM 包：</p>
+<div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-graph-3.0.0.el7.x86_64.rpm
 </code></pre></div>
 </li>
 </ul>
@@ -6447,8 +6447,8 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
 <p>安装 DEB 包</p>
 <div class="highlight"><pre><span></span><code>$ sudo dpkg -i --instdir<span class="o">==</span>&lt;installation_path&gt; &lt;package_name&gt;
 </code></pre></div>
-<p>例如在默认路径下安装master版本的 DEB 包：</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-graph-master.ubuntu1804.amd64.deb
+<p>例如在默认路径下安装3.0.0版本的 DEB 包：</p>
+<div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-graph-3.0.0.ubuntu1804.amd64.deb
 </code></pre></div>
 </li>
 </ul>
@@ -6458,11 +6458,11 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
 </div>
 <h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
-<li>（企业版）<a href="https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/deploy-license">设置 License</a></li>
+<li>（企业版）<a href="https://docs.nebula-graph.com.cn/3.0.0/4.deployment-and-installation/deploy-license">设置 License</a></li>
 </ul>
 <ul>
-<li><a href="https://docs.nebula-graph.com.cn/master/2.quick-start/5.start-stop-service/">启动 Nebula Graph</a><!--这里用外链。--></li>
-<li><a href="https://docs.nebula-graph.com.cn/master/2.quick-start/3.connect-to-nebula-graph/">连接 Nebula Graph</a><!--这里用外链。--></li>
+<li><a href="https://docs.nebula-graph.com.cn/3.0.0/2.quick-start/5.start-stop-service/">启动 Nebula Graph</a><!--这里用外链。--></li>
+<li><a href="https://docs.nebula-graph.com.cn/3.0.0/2.quick-start/3.connect-to-nebula-graph/">连接 Nebula Graph</a><!--这里用外链。--></li>
 </ul>
 
   <hr>
@@ -6495,7 +6495,7 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2021 Nebula Graph - 浙ICP备20010487号
+      Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
     </div>
   
   
