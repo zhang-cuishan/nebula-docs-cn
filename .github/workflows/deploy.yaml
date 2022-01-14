@@ -35,9 +35,10 @@ jobs:
       - name: mike list delete
         run: |
           mike list
-      - name: Mike Deploy v3.0.0
+      - name: Mike Deploy 3.0.0
         run: |
-          mike deploy v3.0.0 -p --rebase
+          #mike delete v3.0.0 -p
+          mike deploy 3.0.0 -p --rebase
           mike list
       - name: show git branch
         run: | 
@@ -45,7 +46,7 @@ jobs:
           git checkout gh-pages
       - name: Compress
         run: |
-          tar -vczf nebula-docs.tar.gz master versions.json *.html
+          tar -vczf nebula-docs.tar.gz 3.0.0 versions.json *.html
           
       - name: Transfer
         # uses: garygrossgarten/github-action-scp@release
