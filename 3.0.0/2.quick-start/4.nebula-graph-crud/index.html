@@ -7297,7 +7297,7 @@ ON {&lt;tag_name&gt; | &lt;edge_name&gt;} ([&lt;prop_name_list&gt;]) [COMMENT = 
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>为没有指定长度的变量属性创建索引时，需要指定索引长度。在 utf-8 编码中，一个中文字符占 3 字节，请根据变量属性长度设置合适的索引长度。例如 10 个中文字符，索引长度需要为 30。详情请参见<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/#_6">创建索引</a>。</p>
+<p>为没有指定长度的变量属性创建索引时，需要指定索引长度。在 utf-8 编码中，一个中文字符占 3 字节，请根据变量属性长度设置合适的索引长度。例如 10 个中文字符，索引长度需要为 30。详情请参见<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">创建索引</a>。</p>
 </div>
 <h3 id="lookupmatch">基于索引的<code>LOOKUP</code>和<code>MATCH</code>示例<a class="headerlink" href="#lookupmatch" title="Permanent link">&para;</a></h3>
 <p>确保<code>LOOKUP</code>或<code>MATCH</code>有一个索引可用。如果没有，请先创建索引。</p>
@@ -7336,7 +7336,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>
