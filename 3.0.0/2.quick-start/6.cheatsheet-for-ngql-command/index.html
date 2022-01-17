@@ -6798,6 +6798,9 @@
 <ul>
 <li>
 <p><a href="../../3.ngql-guide/6.functions-and-expressions/4.schema/">Schema 函数</a></p>
+<ul>
+<li>
+<p>原生 nGQL 语句适用</p>
 <table>
 <thead>
 <tr>
@@ -6815,7 +6818,7 @@
 <td align="left">返回点的所有属性。</td>
 </tr>
 <tr>
-<td align="left">map properties(edge))</td>
+<td align="left">map properties(edge)</td>
 <td align="left">返回边的所有属性。</td>
 </tr>
 <tr>
@@ -6832,10 +6835,87 @@
 </tr>
 <tr>
 <td align="left">int rank(edge)</td>
-<td align="left">返回边的 Rank 值。</td>
+<td align="left">返回边的 rank。</td>
+</tr>
+<tr>
+<td align="left">vertex</td>
+<td align="left">返回点的信息。包括点 ID、Tag、属性和值。</td>
+</tr>
+<tr>
+<td align="left">edge</td>
+<td align="left">返回边的信息。包括 Edge type、起始点 ID、目的点 ID、rank、属性和值。</td>
+</tr>
+<tr>
+<td align="left">vertices</td>
+<td align="left">返回子图中的点的信息。详情参见 <a href="../../3.ngql-guide/16.subgraph-and-path/1.get-subgraph/">GET SUBGRAPH</a>。</td>
+</tr>
+<tr>
+<td align="left">edges</td>
+<td align="left">返回子图中的边的信息。详情参见 <a href="../../3.ngql-guide/16.subgraph-and-path/1.get-subgraph/">GET SUBGRAPH</a>。</td>
+</tr>
+<tr>
+<td align="left">path</td>
+<td align="left">返回路径信息。详情参见 <a href="../../3.ngql-guide/16.subgraph-and-path/2.find-path/">FIND PATH</a>。</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<ul>
+<li>
+<p>openCypher 兼容语句适用</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id(&lt;vertex>)</td>
+<td align="left">返回点 ID。数据类型和点 ID 的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">list tags(&lt;vertex>)</td>
+<td align="left">返回点的 Tag，与 labels() 作用相同。</td>
+</tr>
+<tr>
+<td align="left">list labels(&lt;vertex>)</td>
+<td align="left">返回点的 Tag，与 tags() 作用相同，用于兼容 openCypher 语法。</td>
+</tr>
+<tr>
+<td align="left">map properties(&lt;vertex_or_edge>)</td>
+<td align="left">返回点或边的所有属性。</td>
+</tr>
+<tr>
+<td align="left">string type(&lt;edge>)</td>
+<td align="left">返回边的 Edge type。</td>
+</tr>
+<tr>
+<td align="left">src(&lt;edge>)</td>
+<td align="left">返回边的起始点 ID。数据类型和点 ID 的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">dst(&lt;edge>)</td>
+<td align="left">返回边的目的点 ID。数据类型和点 ID 的类型保持一致。</td>
+</tr>
+<tr>
+<td align="left">vertex startNode(&lt;path>)</td>
+<td align="left">获取一条边或一条路径并返回它的起始点 ID。</td>
+</tr>
+<tr>
+<td align="left">string endNode(&lt;path>)</td>
+<td align="left">获取一条边或一条路径并返回它的目的点 ID。</td>
+</tr>
+<tr>
+<td align="left">int rank(&lt;edge>)</td>
+<td align="left">返回边的 rank。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </li>
 </ul>
 <ul>
@@ -7094,7 +7174,7 @@ END
 <ul>
 <li>
 <p><a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a></p>
-<div class="highlight"><pre><span></span><code>MATCH &lt;pattern&gt; [&lt;WHERE clause&gt;] RETURN &lt;output&gt;
+<div class="highlight"><pre><span></span><code>MATCH &lt;pattern&gt; [&lt;clause_1&gt;]  RETURN &lt;output&gt;  [&lt;clause_2&gt;];
 </code></pre></div>
 <table>
 <thead>
@@ -7114,6 +7194,11 @@ END
 <td>匹配 Tag</td>
 <td><code>MATCH (v:player) RETURN v</code></td>
 <td>用户可以在点的右侧用<code>:&lt;tag_name&gt;</code>表示模式中的 Tag。</td>
+</tr>
+<tr>
+<td>匹配多 Tag</td>
+<td><code>MATCH (v:player:team) RETURN v LIMIT 10</code></td>
+<td>用户可以用英文冒号（:）匹配多 Tag 的点。</td>
 </tr>
 <tr>
 <td>匹配点的属性</td>
@@ -7235,6 +7320,25 @@ END
 </li>
 </ul>
 <ul>
+<li><a href="../../3.ngql-guide/7.general-query-statements/optional-match/">OPTIONAL MATCH</a><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>作为MATCH语句的可选项去匹配图数据库中的模式</td>
+<td><code>MATCH (m)-[]-&gt;(n) WHERE id(m)=="player100" OPTIONAL MATCH (n)-[]-&gt;(l) WHERE id(n)=="player125" RETURN id(m),id(n),id(l)</code></td>
+<td>如果图数据库中没有对应的模式，对应的列返回NULL。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
 <li>
 <p><a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a></p>
 <div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;} 
@@ -7291,6 +7395,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
 YIELD [DISTINCT] &lt;return_list&gt;
+[{SAMPLE &lt;sample_list&gt; | LIMIT &lt;limit_list&gt;}]
 [| GROUP BY {col_name | expr | position} YIELD &lt;col_name&gt;]
 [| ORDER BY &lt;expression&gt; [{ASC | DESC}]]
 [| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;]
@@ -7304,11 +7409,11 @@ YIELD [DISTINCT] &lt;return_list&gt;
 </thead>
 <tbody>
 <tr>
-<td><code>GO FROM "player102" OVER serve</code></td>
+<td><code>GO FROM "player102" OVER serve YIELD dst(edge)</code></td>
 <td>返回 player102 所属队伍。</td>
 </tr>
 <tr>
-<td><code>GO 2 STEPS FROM "player102" OVER follow</code></td>
+<td><code>GO 2 STEPS FROM "player102" OVER follow YIELD dst(edge)</code></td>
 <td>返回距离 player102 两跳的朋友。</td>
 </tr>
 <tr>
@@ -7342,6 +7447,9 @@ YIELD [DISTINCT] &lt;return_list&gt;
 <ul>
 <li>
 <p><a href="../../3.ngql-guide/7.general-query-statements/4.fetch/">FETCH</a></p>
+<ul>
+<li>
+<p>获取点的属性值</p>
 <div class="highlight"><pre><span></span><code>FETCH PROP ON {&lt;tag_name&gt;[, tag_name ...] | *} 
 &lt;vid&gt; [, vid ...] 
 YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
@@ -7355,7 +7463,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </thead>
 <tbody>
 <tr>
-<td><code>FETCH PROP ON player "player100"</code></td>
+<td><code>FETCH PROP ON player "player100" YIELD properties(vertex)</code></td>
 <td>在<code>FETCH</code>语句中指定 Tag 获取对应点的属性值。</td>
 </tr>
 <tr>
@@ -7363,23 +7471,37 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td>使用<code>YIELD</code>子句指定返回的属性。</td>
 </tr>
 <tr>
-<td><code>FETCH PROP ON player "player101", "player102", "player103"</code></td>
+<td><code>FETCH PROP ON player "player101", "player102", "player103" YIELD properties(vertex)</code></td>
 <td>指定多个点 ID 获取多个点的属性值，点之间用英文逗号（,）分隔。</td>
 </tr>
 <tr>
-<td><code>FETCH PROP ON player, t1 "player100", "player103"</code></td>
+<td><code>FETCH PROP ON player, t1 "player100", "player103" YIELD properties(vertex)</code></td>
 <td>在<code>FETCH</code>语句中指定多个 Tag 获取属性值。Tag 之间用英文逗号（,）分隔。</td>
 </tr>
 <tr>
-<td><code>FETCH PROP ON * "player100", "player106", "team200"</code></td>
+<td><code>FETCH PROP ON * "player100", "player106", "team200" YIELD properties(vertex)</code></td>
 <td>在<code>FETCH</code>语句中使用<code>*</code>获取当前图空间所有标签里，点的属性值。</td>
 </tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p>获取边的属性值</p>
+<div class="highlight"><pre><span></span><code>FETCH PROP ON &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt; ...]
+YIELD &lt;output&gt;;
+</code></pre></div>
+<table>
+<thead>
 <tr>
-<td><code>FETCH PROP ON serve "player102" -&gt; "player106" YIELD dst(edge)</code></td>
-<td>语法：<code>FETCH PROP ON &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt; ...] [YIELD &lt;output&gt;]</code></td>
+<th>示例</th>
+<th>说明</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td><code>FETCH PROP ON serve "player100" -&gt; "team204"</code></td>
+<td><code>FETCH PROP ON serve "player100" -&gt; "team204" YIELD properties(edge)</code></td>
 <td>获取连接 player100 和 team204 的边 serve 的所有属性值。</td>
 </tr>
 <tr>
@@ -7387,11 +7509,11 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td>使用<code>YIELD</code>子句指定返回的属性。</td>
 </tr>
 <tr>
-<td><code>FETCH PROP ON serve "player100" -&gt; "team204", "player133" -&gt; "team202"</code></td>
+<td><code>FETCH PROP ON serve "player100" -&gt; "team204", "player133" -&gt; "team202" YIELD properties(edge)</code></td>
 <td>指定多个边模式 (<code>&lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;]</code>) 获取多个边的属性值。模式之间用英文逗号（,）分隔。</td>
 </tr>
 <tr>
-<td><code>FETCH PROP ON serve "player100" -&gt; "team204"@1</code></td>
+<td><code>FETCH PROP ON serve "player100" -&gt; "team204"@1 YIELD properties(edge)</code></td>
 <td>要获取 rank 不为 0 的边，请在 FETCH 语句中设置 rank。</td>
 </tr>
 <tr>
@@ -7406,33 +7528,6 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </table>
 </li>
 </ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/8.clauses-and-options/unwind/">UNWIND</a></p>
-<div class="highlight"><pre><span></span><code>UNWIND &lt;list&gt; AS &lt;alias&gt; &lt;RETURN clause&gt;
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>UNWIND [1,2,3] AS n RETURN n</code></td>
-<td>拆分列表。</td>
-</tr>
-<tr>
-<td><code>WITH [1,1,2,2,3,3] AS n UNWIND n AS r WITH DISTINCT r AS r ORDER BY r RETURN collect(r)</code></td>
-<td>1. 拆分列表<code>[1,1,2,2,3,3]</code>。 2. 删除重复行。 3. 排序行。 4. 将行转换为列表。</td>
-</tr>
-<tr>
-<td><code>MATCH p=(v:player{name:"Tim Duncan"})--(v2) WITH nodes(p) AS n UNWIND n AS r WITH DISTINCT r AS r RETURN collect(r)</code></td>
-<td>1. 将匹配路径上的顶点输出到列表中。 2. 拆分列表。 3. 删除重复行。 4. 将行转换为列表。</td>
-</tr>
-</tbody>
-</table>
 </li>
 </ul>
 <ul>
@@ -7590,6 +7685,12 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td>用户可以单独使用<code>SKIP &lt;offset&gt;</code>设置偏移量，后面不需要添加<code>LIMIT &lt;number_rows&gt;</code>。</td>
 </tr>
 <tr>
+<td><a href="../../3.ngql-guide/8.clauses-and-options/sample/">SAMPLE</a></td>
+<td><code>&lt;go_statement&gt; SAMPLE &lt;sample_list&gt;;</code></td>
+<td><code>GO 3 STEPS FROM "player100"  OVER *   YIELD properties($$).name AS NAME, properties($$).age AS Age  SAMPLE [1,2,3];</code></td>
+<td>在结果集中均匀取样并返回指定数量的数据。</td>
+</tr>
+<tr>
 <td><a href="../../3.ngql-guide/8.clauses-and-options/order-by/">ORDER BY</a></td>
 <td><code>&lt;YIELD clause&gt; ORDER BY &lt;expression&gt; [ASC | DESC] [, &lt;expression&gt; [ASC | DESC] ...]</code></td>
 <td><code>FETCH PROP ON player "player100", "player101", "player102", "player103" YIELD player.age AS age, player.name AS name | ORDER BY $-.age ASC, $-.name DESC</code></td>
@@ -7625,6 +7726,12 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td><code>MATCH p=(v:player{name:"Tim Duncan"})--() WITH nodes(p) AS n UNWIND n AS n1 RETURN DISTINCT n1</code></td>
 <td><code>WITH</code>子句可以获取并处理查询前半部分的结果，并将处理结果作为输入传递给查询的后半部分。</td>
 </tr>
+<tr>
+<td><a href="../../3.ngql-guide/8.clauses-and-options/unwind/">UNWIND</a></td>
+<td><code>UNWIND &lt;list&gt; AS &lt;alias&gt; &lt;RETURN clause&gt;</code></td>
+<td><code>UNWIND [1,2,3] AS n RETURN n</code></td>
+<td>拆分列表。</td>
+</tr>
 </tbody>
 </table>
 <h2 id="_4">图空间语句<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -7640,7 +7747,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/9.space-statements/1.create-space/">CREATE SPACE</a></td>
-<td><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; ( [partition_num = &lt;partition_number&gt;,] [replica_factor = &lt;replica_number&gt;,] vid_type = {FIXED_STRING(&lt;N&gt;)| INT[64]} )  [COMMENT = '&lt;comment&gt;']</code></td>
+<td><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; ( [partition_num = &lt;partition_number&gt;,] [replica_factor = &lt;replica_number&gt;,]  vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]} ) [ON zone_list]  [COMMENT = '&lt;comment&gt;']</code></td>
 <td><code>CREATE SPACE my_space_1 (vid_type=FIXED_STRING(30))</code></td>
 <td>创建一个新的图空间。</td>
 </tr>
@@ -7648,7 +7755,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td><a href="../../3.ngql-guide/9.space-statements/1.create-space/">CREATE SPACE</a></td>
 <td><code>CREATE SPACE &lt;new_graph_space_name&gt; AS &lt;old_graph_space_name&gt;</code></td>
 <td><code>CREATE SPACE my_space_4 as my_space_3</code></td>
-<td>克隆现有图空间的 Schema</td>
+<td>克隆现有图空间的 Schema。</td>
 </tr>
 <tr>
 <td><a href="../../3.ngql-guide/9.space-statements/2.use-space/">USE</a></td>
@@ -7715,7 +7822,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td><a href="../../3.ngql-guide/10.tag-statements/5.describe-tag/">DESCRIBE TAG</a></td>
 <td><code>DESC[RIBE] TAG &lt;tag_name&gt;</code></td>
 <td><code>DESCRIBE TAG player</code></td>
-<td>指定 Tag 的详细信息，例如字段名称、数据类型等。</td>
+<td>查看指定 Tag 的详细信息，例如字段名称、数据类型等。</td>
 </tr>
 <tr>
 <td><a href="../../3.ngql-guide/10.tag-statements/6.delete-tag/">DELETE TAG</a></td>
@@ -7764,7 +7871,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <td><a href="../../3.ngql-guide/11.edge-type-statements/5.describe-edge/">DESCRIBE EDGE</a></td>
 <td><code>DESC[RIBE] EDGE &lt;edge_type_name&gt;</code></td>
 <td><code>DESCRIBE EDGE follow</code></td>
-<td>指定 Edge type 的详细信息，例如字段名称、数据类型等。</td>
+<td>查看指定 Edge type 的详细信息，例如字段名称、数据类型等。</td>
 </tr>
 </tbody>
 </table>
@@ -7781,7 +7888,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a></td>
-<td><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...] VALUES VID: ([prop_value_list]) &lt;br&gt; tag_props: tag_name ([prop_name_list]) &lt;br&gt; prop_name_list: [prop_name [, prop_name] ...] &lt;br&gt; prop_value_list: [prop_value [, prop_value] ...]</code></td>
+<td><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...] VALUES VID: ([prop_value_list])</code></td>
 <td><code>INSERT VERTEX t2 (name, age) VALUES "13":("n3", 12), "14":("n4", 8)</code></td>
 <td>在 Nebula Graph 实例的指定图空间中插入一个或多个点。</td>
 </tr>
@@ -7974,14 +8081,14 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 <tbody>
 <tr>
 <td><a href="../../3.ngql-guide/16.subgraph-and-path/1.get-subgraph/">子图</a></td>
-<td><code>GET SUBGRAPH [WITH PROP] [&lt;step_count&gt; STEPS] FROM {&lt;vid&gt;, &lt;vid&gt;...} [{IN | OUT | BOTH} &lt;edge_type&gt;, &lt;edge_type&gt;...] [YIELD [VERTICES AS &lt;vertex_alias&gt;] [,EDGES AS &lt;edge_alias&gt;]]</code></td>
+<td><code>GET SUBGRAPH [WITH PROP] [&lt;step_count&gt; STEPS] FROM {&lt;vid&gt;, &lt;vid&gt;...} [{IN | OUT | BOTH} &lt;edge_type&gt;, &lt;edge_type&gt;...] YIELD [VERTICES AS &lt;vertex_alias&gt;] [,EDGES AS &lt;edge_alias&gt;]</code></td>
 <td><code>GET SUBGRAPH 1 STEPS FROM "player100" YIELD VERTICES AS nodes, EDGES AS relationships</code></td>
 <td>指定 Edge type 的起始点可以到达的点和边的信息，返回子图信息。</td>
 </tr>
 <tr>
 <td><a href="../../3.ngql-guide/16.subgraph-and-path/2.find-path/">路径</a></td>
-<td><code>FIND { SHORTEST | ALL | NOLOOP } PATH [WITH PROP] FROM &lt;vertex_id_list&gt; TO &lt;vertex_id_list&gt;&lt;br/&gt;OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] [&lt;WHERE clause&gt;] [UPTO &lt;N&gt; STEPS] [| ORDER BY $-.path] [| LIMIT &lt;M&gt;]</code></td>
-<td><code>FIND SHORTEST PATH FROM "player102" TO "team204" OVER *</code></td>
+<td><code>FIND { SHORTEST | ALL | NOLOOP } PATH [WITH PROP] FROM &lt;vertex_id_list&gt; TO &lt;vertex_id_list&gt; OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT]  [&lt;WHERE clause&gt;] [UPTO &lt;N&gt; STEPS]  YIELD path as &lt;alias&gt; [| ORDER BY $-.path] [| LIMIT &lt;M&gt;]</code></td>
+<td><code>FIND SHORTEST PATH FROM "player102" TO "team204" OVER * YIELD path as p</code></td>
 <td>查找指定起始点和目的点之间的路径。返回的路径格式类似于<code>(&lt;vertex_id&gt;)-[:&lt;edge_type_name&gt;@&lt;rank&gt;]-&gt;(&lt;vertex_id)</code>。</td>
 </tr>
 </tbody>
@@ -8024,24 +8131,16 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>BALANCE DATA</code></td>
-<td align="left">启动任务均衡分布 Nebula Graph 集群里的所有分片。该命令会返回任务 ID（<code>balance_id</code>）。</td>
+<td align="left"><code>BALANCE IN ZONE [REMOVE &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...]]</code></td>
+<td align="left">在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Storage 节点，方便进行维护。</td>
 </tr>
 <tr>
-<td align="left"><code>BALANCE DATA &lt;balance_id&gt;</code></td>
-<td align="left">显示<code>BALANCE DATA</code>任务的状态。</td>
-</tr>
-<tr>
-<td align="left"><code>BALANCE DATA STOP</code></td>
-<td align="left">停止<code>BALANCE DATA</code>任务。</td>
-</tr>
-<tr>
-<td align="left"><code>BALANCE DATA REMOVE &lt;host_list&gt;</code></td>
-<td align="left">在 Nebula Graph 集群中扫描并解绑指定的 Storage 主机。</td>
+<td align="left"><code>BALANCE ACROSS ZONE [REMOVE "zone_name" [,"zone_name" ...]]</code></td>
+<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Zone，方便进行维护。</td>
 </tr>
 <tr>
 <td align="left"><code>BALANCE LEADER</code></td>
-<td align="left">在 Nebula Graph 集群中均衡分布 leader。</td>
+<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布 leader。该命令会返回任务 ID。</td>
 </tr>
 </tbody>
 </table>
@@ -8058,6 +8157,14 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>SUBMIT JOB BALANCE IN ZONE</code></td>
+<td>在当前图空间内每个 Zone 内部启动任务均衡分布分片。</td>
+</tr>
+<tr>
+<td><code>SUBMIT JOB BALANCE ACROSS ZONE</code></td>
+<td>在当前图空间内所有 Zone 之间启动任务均衡分布分片。</td>
+</tr>
 <tr>
 <td><code>SUBMIT JOB COMPACT</code></td>
 <td>触发 RocksDB 的长耗时<code>compact</code>操作。</td>
@@ -8117,7 +8224,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>

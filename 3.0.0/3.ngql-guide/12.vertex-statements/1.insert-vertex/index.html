@@ -6459,7 +6459,7 @@ nebula&gt; INSERT VERTEX VALUES &quot;1&quot;:();
 nebula&gt; CREATE TAG IF NOT EXISTS t1();                   
 nebula&gt; INSERT VERTEX t1() VALUES &quot;10&quot;:(); 
 </code></pre></div>
-<p>&lt;!---
+<!---
 <div class="highlight"><pre><span></span><code># 插入点 VID 为&quot;100&quot;和&quot;200&quot;，id 为 1 的点。
 nebula&gt; INSERT VERTEX person(id) VALUES &quot;100&quot;:(1), &quot;200&quot;:(1);
 
@@ -6491,10 +6491,10 @@ nebula&gt; LOOKUP ON person WHERE person.id == 2 YIELD id(vertex) as id;
 +-------+
 | &quot;200&quot; |
 +-------+
----&gt;
+</code></pre></div>
+--->
 
-```ngql
-nebula&gt; CREATE TAG IF NOT EXISTS t2 (name string, age int);                
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t2 (name string, age int);                
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;11&quot;:(&quot;n1&quot;, 12);
 
 # 创建失败，因为&quot;a13&quot;不是 int 类型。
@@ -6502,7 +6502,7 @@ nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;12&quot;:(&quot;n1&quot;, &
 
 # 一次插入 2 个点。
 nebula&gt; INSERT VERTEX t2 (name, age) VALUES &quot;13&quot;:(&quot;n3&quot;, 12), &quot;14&quot;:(&quot;n4&quot;, 8); 
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t3(p1 int);
 nebula&gt; CREATE TAG IF NOT EXISTS t4(p2 string);
 
@@ -6565,7 +6565,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>

@@ -6315,11 +6315,11 @@
 <tbody>
 <tr>
 <td align="left"><code>BALANCE IN ZONE [REMOVE &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...]]</code></td>
-<td align="left">在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Storage 节点，方便进行维护。</td>
+<td align="left">在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Storage 节点，该节点的分片会移动到其他节点，方便进行维护。</td>
 </tr>
 <tr>
 <td align="left"><code>BALANCE ACROSS ZONE [REMOVE "zone_name" [,"zone_name" ...]]</code></td>
-<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Zone，方便进行维护。</td>
+<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Zone，该节点的分片会移动到其他节点，方便进行维护。</td>
 </tr>
 <tr>
 <td align="left"><code>BALANCE LEADER</code></td>
@@ -6327,6 +6327,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>REMOVE</code>只能清空当前图空间的分片，如果 Storage 节点的图空间较多，需要切换到不同图空间执行<code>REMOVE</code>操作。</p>
+</div>
 <p>查看、停止、重启任务，请参见<a href="../4.job-statements/">作业管理</a>。</p>
 
   <hr>
@@ -6334,7 +6338,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>
