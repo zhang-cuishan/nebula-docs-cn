@@ -6345,25 +6345,25 @@
 <p>在 Nebula Graph Cloud 中登录订阅服务的 Azure 账号。</p>
 <ol>
 <li>
-<p>在 <strong>Provider</strong> 选择<strong>区域</strong>。</p>
+<p>在 <strong>供应商</strong> 选择<strong>区域</strong>。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>为提升服务性能，建议选择的区域应与业务区域在同一区域。</p>
 </div>
 </li>
 <li>
-<p>在 <strong>Instance</strong> 中，选择查询引擎的类型及数量，存储引擎的类型、磁盘大小及数量。</p>
+<p>在 <strong>实例</strong> 中，选择查询引擎的类型及数量，存储引擎的类型、磁盘大小及数量。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>为保证服务高可用，建议至少配置2个查询引擎和3个存储引擎。</p>
 </div>
 </li>
 <li>
-<p>在 <strong>Nebula Graph</strong> 中，输入指定 Azure 账号邮箱为 Root 用户。</p>
+<p>在 <strong>Nebula Graph</strong> 中，输入指定 Azure 账号邮箱为 Root 用户，默认为 Azure 订阅账户。</p>
 </li>
-<li>在页面的下方，选择 <strong>Next</strong> 的按钮。</li>
-<li>确定选择无误后，在页面的下方，选择 <strong>Create</strong> 的按钮。</li>
-<li>至此，用户已经完成了 Solution 的配置。当在 Cloud 首页上看到 Solution 的状态为 <strong>running</strong>，即认为 Solution 已创建成功。</li>
+<li>在页面的下方，选择 <strong>下一步</strong> 的按钮。</li>
+<li>确定选择无误后，在页面的下方，选择 <strong>创建</strong> 的按钮。</li>
+<li>至此，用户已经完成了 Solution 的配置。当在 Cloud 首页上看到 Solution 的状态为 <strong>创建中</strong>，即认为 Solution 已创建成功。</li>
 </ol>
 </li>
 </ol>
@@ -6378,44 +6378,44 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">creating</td>
-<td align="left">Solution 所需资源已经准备完毕，Solution 自动开始创建，此时 Solution 短暂处于 creating 状态，可能持续几分钟到十几分钟。</td>
+<td align="left">创建中</td>
+<td align="left">Solution 所需资源已经准备完毕，Solution 自动开始创建，此时 Solution 短暂处于<strong>创建中</strong>状态，可能持续几分钟到十几分钟。</td>
 </tr>
 <tr>
-<td align="left">starting</td>
-<td align="left">重新启动 Solution，此时 Solution 短暂处于 starting 状态。</td>
+<td align="left">启动中</td>
+<td align="left">重新启动 Solution，此时 Solution 短暂处于<strong>启动中</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">stopping</td>
-<td align="left">用户点击停止 Solution 后，此时 Solution 短暂处于 stopping 状态。</td>
+<td align="left">停止中</td>
+<td align="left">用户点击停止 Solution 后，此时 Solution 短暂处于<strong>停止中</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">deleting</td>
-<td align="left">用户点击删除 Solution 后，此时 Solution 短暂处于 deleting 状态。</td>
+<td align="left">删除中</td>
+<td align="left">用户点击删除 Solution 后，此时 Solution 短暂处于<strong>删除中</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">running</td>
-<td align="left">Solution 创建成功后，会长时间稳定地处于 running 状态。</td>
+<td align="left">运行中</td>
+<td align="left">Solution 创建成功后，会长时间稳定地处于<strong>运行中</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">stopped</td>
-<td align="left">停止 Solution 后，会长时间稳定地处于 stopped 状态。</td>
+<td align="left">已停止</td>
+<td align="left">停止 Solution 后，会长时间稳定地处于<strong>已停止</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">deleted</td>
-<td align="left">删除 Solution 后，会长时间稳定地处于 deleted 状态。</td>
+<td align="left">已删除</td>
+<td align="left">删除 Solution 后，会长时间稳定地处于<strong>已删除</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">create_failed</td>
-<td align="left">Solution 创建失败后，会长时间稳定地处于 create_failed 状态。</td>
+<td align="left">创建失败</td>
+<td align="left">Solution 创建失败后，会长时间稳定地处于<strong>创建失败</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">stop_failed</td>
-<td align="left">Solution 停止失败后，会长时间稳定地处于 stop_failed 状态。</td>
+<td align="left">停止失败</td>
+<td align="left">Solution 停止失败后，会长时间稳定地处于<strong>停止失败</strong>状态。</td>
 </tr>
 <tr>
-<td align="left">start_failed</td>
-<td align="left">Solution 开始失败后，会长时间稳定地处于 start_failed 状态。</td>
+<td align="left">启动失败</td>
+<td align="left">Solution 开始失败后，会长时间稳定地处于<strong>启动失败</strong>状态。</td>
 </tr>
 </tbody>
 </table>
@@ -6425,7 +6425,7 @@
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>如果 Solution 处于 create_failed、stop_failed、start_failed 态，用户可以重新执行 <strong>创建、停止、开始</strong> 的操作。 </p>
+<p>如果 Solution 处于创建失败、停止失败、启动失败态，用户可以重新执行 <strong>创建、停止、开始</strong> 的操作。 </p>
 </div>
 
   <hr>
@@ -6433,7 +6433,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>
