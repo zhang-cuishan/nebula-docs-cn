@@ -6621,7 +6621,8 @@
 <p>一个<code>MATCH</code>语句定义了一个搜索模式，用该模式匹配存储在 Nebula Graph 中的数据，然后用<code>RETURN</code>子句检索数据。</p>
 <p>本文示例使用测试数据集 <a href="../../1.nGQL-overview/1.overview/#basketballplayer">basketballplayer</a> 进行演示。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>与<code>GO</code>或<code>LOOKUP</code>等其他查询语句相比，<code>MATCH</code>的语法更灵活。<code>MATCH</code>语法可以概括如下：</p>
+<p>与<code>GO</code>或<code>LOOKUP</code>等其他查询语句相比，<code>MATCH</code>的语法更灵活。<code>MATCH</code>语句采用的路径类型是<a href="../../../1.introduction/2.1.path/"><code>trail</code></a>，即遍历时只有点可以重复，边不可以重复。</p>
+<p><code>MATCH</code> 语法如下：</p>
 <div class="highlight"><pre><span></span><code>MATCH &lt;pattern&gt; [&lt;clause_1&gt;]  RETURN &lt;output&gt;  [&lt;clause_2&gt;];
 </code></pre></div>
 <ul>
@@ -6637,27 +6638,22 @@
 <li><code>clause_2</code>：支持<code>ORDER BY</code>、<code>LIMIT</code>子句。</li>
 </ul>
 <h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="admonition compatibility">
-<p class="admonition-title">历史版本兼容性</p>
-<p>从 3.0.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag，所以返回属性时，需要额外指定 Tag 名称。即从<code>RETURN 变量名.属性名</code>改为<code>RETURN 变量名.Tag.属性名</code>。</p>
-</div>
+<p>除以下三种情况之外，请确保 <code>MATCH</code> 语句有<strong>至少</strong>一个<a href="../../14.native-index-statements/1.create-native-index/">索引</a>可用。</p>
 <ul>
-<li><code>MATCH</code>语句中的<code>WHERE</code>子句内不支持图模式。</li>
+<li>A: <code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
 </ul>
 <ul>
-<li><code>MATCH</code>语句采用的路径类型是<code>trail</code>，即遍历时只有点可以重复，边不可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</li>
+<li>B1: 当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
 </ul>
 <ul>
-<li><code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
+<li>B2: 当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
+</ul>
+<p>此外：</p>
+<ul>
+<li><code>MATCH</code>语句中的<code>WHERE</code>子句内<strong>不支持</strong>图模式。</li>
 </ul>
 <ul>
-<li>当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但需要使用<code>LIMIT</code>限制输出结果数量。</li>
-</ul>
-<ul>
-<li>当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但需要使用<code>LIMIT</code>限制输出结果数量。</li>
-</ul>
-<ul>
-<li>除以上三种情况之外，请确保<code>MATCH</code>语句有至少一个索引可用。如何使用索引，请参见<a href="../../14.native-index-statements/1.create-native-index/">创建原生索引</a>。</li>
+<li>从 3.0.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag。所以返回属性时，必须额外指定 Tag 名称。即从<code>RETURN &lt;变量名&gt;.&lt;属性名&gt;</code>改为<code>RETURN &lt;变量名&gt;.&lt;Tag名&gt;.&lt;属性名&gt;</code>。</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">创建索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -7081,7 +7077,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
       
     
   </small>
