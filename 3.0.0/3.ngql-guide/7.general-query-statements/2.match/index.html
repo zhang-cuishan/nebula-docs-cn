@@ -6650,7 +6650,7 @@
 <p>此外<code>MATCH</code>语句中的<code>WHERE</code>子句内<strong>不支持</strong>图模式。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>从 3.0.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag。所以返回属性时，必须额外指定 Tag 名称。即从<code>RETURN &lt;变量名&gt;.&lt;属性名&gt;</code>改为<code>RETURN &lt;变量名&gt;.&lt;Tag名&gt;.&lt;属性名&gt;</code>。</p>
+<p>从 3.0.0 版本开始，为了区别不同 Tag 的属性，返回属性时必须额外指定 Tag 名称。即从<code>RETURN &lt;变量名&gt;.&lt;属性名&gt;</code>改为<code>RETURN &lt;变量名&gt;.&lt;Tag名&gt;.&lt;属性名&gt;</code>。</p>
 </div>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">创建索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
