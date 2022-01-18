@@ -2724,6 +2724,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
           field:dst_player
       }
 
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
+
       # 单批次写入 Nebula Graph 的数据条数。
       batch: 10
 
@@ -2757,6 +2760,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
           field:teamid
       }
 
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
+
       batch: 10
       partition: 10
       interval.seconds: 10
@@ -2787,7 +2793,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
 </small>
 </div>
 </article>
