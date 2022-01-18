@@ -6340,10 +6340,6 @@
 <h1 id="delete_edge">DELETE EDGE<a class="headerlink" href="#delete_edge" title="Permanent link">&para;</a></h1>
 <p><code>DELETE EDGE</code>语句可以删除边。一次可以删除一条或多条边。用户可以结合管道符一起使用，详情请参见<a href="../../5.operators/4.pipe/">管道符</a>。</p>
 <p>如果需要删除一个点的所有出边，请删除这个点。详情请参见 <a href="../../12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>目前还不能保证操作的原子性，如果发生故障请重试。</p>
-</div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>DELETE EDGE &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] ...]
 </code></pre></div>
@@ -6362,7 +6358,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
       
     
   </small>
