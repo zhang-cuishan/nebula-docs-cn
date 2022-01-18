@@ -6662,7 +6662,7 @@ scrape_configs:
 <ol>
 <li>
 <p>在目录<code>nebula-graph-dashboard/static/</code>内修改文件<code>custom.json</code>，配置 Graph 服务的 IP 地址和端口，示例如下：</p>
-<div class="highlight"><pre><span></span><code><span class="o">{</span>
+<p><div class="highlight"><pre><span></span><code><span class="o">{</span>
     <span class="s2">&quot;connection&quot;</span>: <span class="o">{</span>
         <span class="s2">&quot;ip&quot;</span>: <span class="s2">&quot;192.168.xx.4&quot;</span>,
         <span class="s2">&quot;port&quot;</span>: <span class="m">9669</span>
@@ -6676,6 +6676,15 @@ scrape_configs:
 <span class="o">}</span>
 ...
 </code></pre></div>
+2. 修改服务端口，配置代理服域名: ./vendors/config-release.yaml
+<div class="highlight"><pre><span></span><code>  port: <span class="m">7003</span>
+  proxy:
+    gateway:
+      target: <span class="s2">&quot;127.0.0.1:8090&quot;</span>  // change gateway service proxy
+    prometheus:
+      target: <span class="s2">&quot;127.0.0.1:9091&quot;</span>  // change prometheus service proxy
+  ...
+</code></pre></div></p>
 </li>
 <li>
 <p>在目录<code>nebula-graph-dashboard</code>内执行如下命令启动服务：</p>
@@ -6692,8 +6701,7 @@ $ nohup ./dashboard <span class="p">&amp;</span>
 $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9200<span class="k">)</span> <span class="c1"># 停止 nebula-stats-exporter 服务</span>
 $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9090<span class="k">)</span> <span class="c1"># 停止 prometheus 服务</span>
 $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :8090<span class="k">)</span> <span class="c1"># 停止 nebula-http-gateway 服务</span>
-$ <span class="nb">cd</span> nebula-graph-dashboard
-$ npm run stop <span class="c1"># 停止 nebula-graph-dashboard 服务</span>
+$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7003<span class="k">)</span> <span class="c1"># 停止 nebula-graph-dashboard 服务</span>
 </code></pre></div>
 
   <hr>
