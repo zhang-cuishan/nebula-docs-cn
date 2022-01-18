@@ -6460,6 +6460,11 @@
 <td align="left">-</td>
 <td align="left">指定 Nebula Graph 的时区。初始配置文件中未设置该参数，如需使用请手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见 <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
 </tr>
+<tr>
+<td align="left"><code>license_path</code></td>
+<td align="left"><code>share/resources/nebula.license</code></td>
+<td align="left">企业版 License 路径。企业版需要用户<a href="../../../4.deployment-and-installation/deploy-license/">设置 License</a> 才可以正常启动并使用企业版功能。仅企业版 Nebula Graph 需要设置本参数，其他周边工具如何设置 License，请参见相应周边工具的部署文档。</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -6639,7 +6644,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
       
     
   </small>
