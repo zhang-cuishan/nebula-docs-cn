@@ -6963,9 +6963,17 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <p>用户可以使用<code>INSERT</code>语句，基于现有的 Tag 插入点，或者基于现有的 Edge type 插入边。</p>
 <h3 id="ngql_2">nGQL 语法<a class="headerlink" href="#ngql_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>插入点<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [&lt;tag_name&gt; (&lt;property_name&gt;] [, &lt;property_name&gt;...])
-[, &lt;tag_name&gt; (&lt;property_name&gt;[, &lt;property_name&gt;...]), ...]
-VALUES &lt;vid&gt;: ([&lt;property_value&gt;[, &lt;property_value&gt;...]]);
+<li>插入点<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...]
+VALUES VID: ([prop_value_list])
+
+tag_props:
+  tag_name ([prop_name_list])
+
+prop_name_list:
+   [prop_name [, prop_name] ...]
+
+prop_value_list:
+   [prop_value [, prop_value] ...]  
 </code></pre></div>
 <p><code>VID</code>是 Vertex ID 的缩写，<code>VID</code>在一个图空间中是唯一的。参数详情请参见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>。</p>
 </li>
