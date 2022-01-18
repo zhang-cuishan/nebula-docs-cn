@@ -6679,7 +6679,9 @@ scrape_configs:
 </li>
 <li>
 <p>在目录<code>nebula-graph-dashboard</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ npm run start
+<div class="highlight"><pre><span></span><code>$ $ npm run pkg
+$ cp -r vendors/config-release.yaml ./config.yaml
+$ nohup ./dashboard <span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -6699,7 +6701,7 @@ $ npm run stop <span class="c1"># 停止 nebula-graph-dashboard 服务</span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
       
     
   </small>
