@@ -1975,13 +1975,6 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    图空间说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
     检查分片分布情况
   </a>
   
@@ -6390,13 +6383,6 @@
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    图空间说明
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
     检查分片分布情况
   </a>
   
@@ -6430,10 +6416,10 @@
     [replica_factor = &lt;replica_number&gt;,]
     vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
-    [ON zone_list]
+    [ON &lt;zone_list&gt;]
     [COMMENT = &#39;&lt;comment&gt;&#39;];
 
-zone_list:
+&lt;zone_list&gt;:
     &quot;zone_name&quot; [,&quot;zone_name&quot; ...]
 </code></pre></div>
 <table>
@@ -6538,12 +6524,11 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 | &quot;my_space_4&quot; | &quot;CREATE SPACE `my_space_4` (partition_num = 15, replica_factor = 1, charset = utf8, collate = utf8_bin, vid_type = FIXED_STRING(30)) ON default comment = &#39;测试图空间&#39;&quot;  |
 +--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 </code></pre></div>
-<h2 id="_6">图空间说明<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>立刻尝试使用刚创建的图空间可能会失败，因为创建是异步实现的。为确保数据同步，后续操作能顺利进行，请等待 2 个心跳周期（20 秒）。如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a>修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
+<p>立刻尝试使用刚创建的图空间可能会失败。因为创建是异步实现的。为确保数据同步，后续操作能顺利进行，请等待 2 个心跳周期（20 秒）。如果需要修改心跳间隔，请为<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">所有配置文件</a>修改参数<code>heartbeat_interval_secs</code>。但过短的心跳周期（&lt;5 秒）可能会导致分布式系统中的机器误判对端失联。</p>
 </div>
-<h2 id="_7">检查分片分布情况<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_6">检查分片分布情况<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>在大型集群中，由于启动时间不同，分片的分布可能不均衡。用户可以执行如下命令检查分片的分布情况：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
 +-------------+------+----------+--------------+--------------------------------+--------------------------------+
@@ -6573,7 +6558,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
       
     
   </small>
