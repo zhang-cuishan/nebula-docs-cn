@@ -2489,14 +2489,21 @@
       
         <li class="md-nav__item">
   <a href="#null" class="md-nav__link">
-    NULL 值说明
+    没有 NULL 值索引
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    范围查询
+    没有唯一索引
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    数字、日期和时间类型的范围查询
   </a>
   
 </li>
@@ -6388,14 +6395,21 @@
       
         <li class="md-nav__item">
   <a href="#null" class="md-nav__link">
-    NULL 值说明
+    没有 NULL 值索引
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    范围查询
+    没有唯一索引
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    数字、日期和时间类型的范围查询
   </a>
   
 </li>
@@ -6477,17 +6491,19 @@
 <p>在对全文索引执行任何操作之前，请确保已经部署全文索引。详情请参见<a href="../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a> 和<a href="../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">部署 listener</a>。</p>
 <p>部署完成后，Elasticsearch 集群上会自动创建全文索引。不支持重建或修改全文索引。如果需要删除全文索引，请在 Elasticsearch 集群上手动删除。</p>
 <p>使用全文索引请参见<a href="../15.full-text-index-statements/1.search-with-text-based-index/">使用全文索引查询</a>。</p>
-<h2 id="null">NULL 值说明<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
+<h2 id="null">没有 NULL 值索引<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
 <p>不支持对值为 NULL 的属性创建索引。</p>
-<h2 id="_6">范围查询<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>原生索引除了可以查询单个结果之外，还可以执行范围查询。当前仅支持对数字、日期和时间类型的属性进行范围查询。</p>
+<h2 id="_6">没有唯一索引<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在 Cypher 中，可以通过 Constrains 实现属性值的唯一性限制。在 MySQL 中，可以建立唯一索引来限制某字段只有唯一值。在 nGQL 中没有属性的唯一索引（用户自行保证属性值的唯一性）。</p>
+<h2 id="_7">数字、日期和时间类型的范围查询<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>原生索引还支持对数字、日期和时间类型的属性进行范围查询，不支持其他属性类型的范围查询。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
       
     
   </small>
