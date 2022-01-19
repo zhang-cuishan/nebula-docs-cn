@@ -7180,7 +7180,11 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <h2 id="_9">关于运维<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">日志文件过大时如何回收日志？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph 的日志默认在 <code>/usr/local/nebula/logs/</code> 下，正常 INFO 级别日志文件为 <code>nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO</code>，报警和错误级别后缀为 <code>.WARNING</code> 和 <code>.ERROR</code>。</p>
-<p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以使用 crontab 设置定期任务回收日志文件，详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</p>
+<p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以：</p>
+<ul>
+<li>使用 crontab 设置定期任务回收日志文件，详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</li>
+<li>使用 <a href="https://github.com/logrotate/logrotate">logrotate</a> 实现日志轮询。使用 logrotate 管理日志前需修改相应 Nebula Graph 服务的配置，将<code>timestamp_in_logfile_name</code>参数的值改成<code>false</code>。</li>
+</ul>
 <h3 id="nebula_graph">如何查看 Nebula Graph 版本<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h3>
 <p>服务运行时：<code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
 <p>服务未运行时：在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到 version 和 GitHub 上的 commit ID，例如：</p>
@@ -7317,7 +7321,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 19, 2022</span>
       
     
   </small>
