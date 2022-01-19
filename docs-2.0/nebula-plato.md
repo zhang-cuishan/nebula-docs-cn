@@ -58,7 +58,7 @@ sudo rpm -i nebula-plato-1.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
 1. 克隆仓库`plato`。
 
   ```bash
-  $ git clone -b {{plato.branch}} https://github.com/vesoft-inc/plato.t
+  $ git clone -b {{plato.branch}} https://github.com/vesoft-inc/plato.git
   ```
 
 2. 进入目录`plato`。
