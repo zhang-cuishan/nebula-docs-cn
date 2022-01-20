@@ -6647,18 +6647,18 @@ scrape_configs:
 <h3 id="nebula-graph-dashboard">部署<code>nebula-graph-dashboard</code>服务<a class="headerlink" href="#nebula-graph-dashboard" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>在目录<code>nebula-dashboard/</code>内修改文件<code>config.json</code>，配置 Graph 服务的 IP 地址，端口和配置代理服域名，示例如下：
-   <code>bash
-    port: 7003
-    proxy:
-      gateway:
-        target: "127.0.0.1:8090"  // change gateway service proxy
-      prometheus:
-        target: "127.0.0.1:9091"  // change prometheus service proxy
-      nebulaServer:
-        ip: "192.168.8.143"  // change to nebula graph service ip
-        port: 9669 // change to nebula graph service port
-      ...</code></p>
+<p>在目录<code>nebula-dashboard/</code>内修改文件<code>config.json</code>，配置 Graph 服务的 IP 地址，端口和配置代理服域名，示例如下：</p>
+<div class="highlight"><pre><span></span><code>  port: <span class="m">7003</span>
+  proxy:
+    gateway:
+      target: <span class="s2">&quot;127.0.0.1:8090&quot;</span>  // change gateway service proxy
+    prometheus:
+      target: <span class="s2">&quot;127.0.0.1:9091&quot;</span>  // change prometheus service proxy
+    nebulaServer:
+      ip: <span class="s2">&quot;192.168.8.143&quot;</span>  // change to nebula graph service ip
+      port: <span class="m">9669</span> // change to nebula graph service port
+  ...
+</code></pre></div>
 </li>
 <li>
 <p>在目录<code>nebula-graph-dashboard</code>内执行如下命令启动服务：</p>
