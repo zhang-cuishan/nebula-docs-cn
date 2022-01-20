@@ -6034,20 +6034,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/" class="md-nav__link">
-        均衡扩容后的 Storage 数据
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -6524,10 +6510,12 @@
 </code></pre></div>
 <h3 id="add_hostsinto_zone">ADD HOSTS...INTO ZONE<a class="headerlink" href="#add_hostsinto_zone" title="Permanent link">&para;</a></h3>
 <p>将 Storage 节点加入已创建的 Zone。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>加入之后请使用 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a> 命令实现负载均衡。</p>
-</div>
+<!-- balance-3.1
+!!! note
+
+    加入之后请使用 [BALANCE](../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax.md) 命令实现负载均衡。
+-->
+
 <div class="highlight"><pre><span></span><code>ADD HOSTS &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...] INTO ZONE &quot;&lt;zone_name&gt;&quot;;
 </code></pre></div>
 <h3 id="drop_hosts">DROP HOSTS<a class="headerlink" href="#drop_hosts" title="Permanent link">&para;</a></h3>
@@ -6565,10 +6553,12 @@ DESC ZONE &quot;&lt;zone_name&gt;&quot;;
 <p class="admonition-title">Note</p>
 <p>合并时将检查所有图空间分片的分布情况，防止同一个分片的不同副本因为合并导致分布在同一个 Zone 中。</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>合并之后请使用 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a> 命令实现负载均衡。</p>
-</div>
+<!-- balance-3.1
+!!! note
+
+    合并之后请使用 [BALANCE](../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax.md) 命令实现负载均衡。
+-->
+
 <div class="highlight"><pre><span></span><code>MERGE ZONE &quot;&lt;zone_name&gt;&quot; [,&quot;&lt;zone_name&gt;&quot; ...] INTO &quot;&lt;new_zone_name&gt;&quot;;
 </code></pre></div>
 <p>示例：</p>
@@ -6576,10 +6566,12 @@ DESC ZONE &quot;&lt;zone_name&gt;&quot;;
 </code></pre></div>
 <h3 id="divide_zone">DIVIDE ZONE<a class="headerlink" href="#divide_zone" title="Permanent link">&para;</a></h3>
 <p>将一个 Zone 中的所有 Storage 节点分离至多个新建 Zone。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>分离之后请使用 <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/">BALANCE</a> 命令实现负载均衡。</p>
-</div>
+<!-- balance-3.1
+!!! note
+
+    分离之后请使用 [BALANCE](../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax.md) 命令实现负载均衡。
+-->
+
 <div class="highlight"><pre><span></span><code>DIVIDE ZONE &quot;&lt;zone_name&gt;&quot; INTO &quot;&lt;new_zone_name&gt;&quot;(&lt;ip&gt;:&lt;port&gt;) [&quot;&lt;new_zone_name&gt;&quot;(&lt;ip&gt;:&lt;port&gt;) ...];
 </code></pre></div>
 <p>示例：</p>
@@ -6591,7 +6583,7 @@ DESC ZONE &quot;&lt;zone_name&gt;&quot;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2022</span>
       
     
   </small>

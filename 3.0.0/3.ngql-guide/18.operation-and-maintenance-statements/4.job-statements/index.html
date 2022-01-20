@@ -2804,20 +2804,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#submit_job_balance_in_zone" class="md-nav__link">
-    SUBMIT JOB BALANCE IN ZONE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submit_job_balance_across_zone" class="md-nav__link">
-    SUBMIT JOB BALANCE ACROSS ZONE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#submit_job_compact" class="md-nav__link">
     SUBMIT JOB COMPACT
   </a>
@@ -6042,20 +6028,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/" class="md-nav__link">
-        均衡扩容后的 Storage 数据
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -6389,20 +6361,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#submit_job_balance_in_zone" class="md-nav__link">
-    SUBMIT JOB BALANCE IN ZONE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submit_job_balance_across_zone" class="md-nav__link">
-    SUBMIT JOB BALANCE ACROSS ZONE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#submit_job_compact" class="md-nav__link">
     SUBMIT JOB COMPACT
   </a>
@@ -6507,9 +6465,13 @@
 <p class="admonition-title">Note</p>
 <p>所有作业管理命令都需要先选择图空间后才能执行。</p>
 </div>
-<h2 id="submit_job_balance_in_zone">SUBMIT JOB BALANCE IN ZONE<a class="headerlink" href="#submit_job_balance_in_zone" title="Permanent link">&para;</a></h2>
-<p><code>SUBMIT JOB BALANCE IN ZONE</code>语句会在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Storage 节点，方便进行维护。</p>
-<p>示例：</p>
+<!-- balance-3.1
+## SUBMIT JOB BALANCE IN ZONE
+
+`SUBMIT JOB BALANCE IN ZONE`语句会在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Storage 节点，方便进行维护。
+
+示例：
+
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB BALANCE IN ZONE REMOVE 192.168.10.102:9779;
 +------------+
 | New Job Id |
@@ -6517,9 +6479,13 @@
 | 26         |
 +------------+
 </code></pre></div>
-<h2 id="submit_job_balance_across_zone">SUBMIT JOB BALANCE ACROSS ZONE<a class="headerlink" href="#submit_job_balance_across_zone" title="Permanent link">&para;</a></h2>
-<p><code>SUBMIT JOB BALANCE ACROSS ZONE</code>语句会在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Zone，方便进行维护。</p>
-<p>示例：</p>
+
+## SUBMIT JOB BALANCE ACROSS ZONE
+
+`SUBMIT JOB BALANCE ACROSS ZONE`语句会在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Zone，方便进行维护。
+
+示例：
+
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB BALANCE ACROSS ZONE REMOVE &quot;zone1&quot;;
 +------------+
 | New Job Id |
@@ -6527,6 +6493,8 @@
 | 27         |
 +------------+
 </code></pre></div>
+-->
+
 <h2 id="submit_job_compact">SUBMIT JOB COMPACT<a class="headerlink" href="#submit_job_compact" title="Permanent link">&para;</a></h2>
 <p><code>SUBMIT JOB COMPACT</code> 语句会在当前图空间内触发 RocksDB 的长耗时 <code>compact</code> 操作。</p>
 <p><code>compact</code>配置详情请参见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a>。</p>
@@ -6693,7 +6661,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2022</span>
       
     
   </small>

@@ -1301,11 +1301,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/</loc>
-         <lastmod>2022-01-20</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-studio/about-studio/st-ug-check-updates/</loc>
          <lastmod>2022-01-20</lastmod>
          <changefreq>daily</changefreq>

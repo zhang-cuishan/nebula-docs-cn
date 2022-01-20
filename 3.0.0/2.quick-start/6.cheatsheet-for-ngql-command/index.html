@@ -6028,20 +6028,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/" class="md-nav__link">
-        均衡扩容后的 Storage 数据
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -8110,14 +8096,6 @@ YIELD &lt;output&gt;;
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>BALANCE IN ZONE [REMOVE &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...]]</code></td>
-<td align="left">在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Storage 节点，方便进行维护。</td>
-</tr>
-<tr>
-<td align="left"><code>BALANCE ACROSS ZONE [REMOVE "zone_name" [,"zone_name" ...]]</code></td>
-<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用<code>REMOVE</code>选项指定需要清空的 Zone，方便进行维护。</td>
-</tr>
-<tr>
 <td align="left"><code>BALANCE LEADER</code></td>
 <td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布 leader。该命令会返回任务 ID。</td>
 </tr>
@@ -8125,6 +8103,11 @@ YIELD &lt;output&gt;;
 </table>
 </li>
 </ul>
+<!-- balance-3.1
+  |`BALANCE IN ZONE [REMOVE <ip>:<port> [,<ip>:<port> ...]]`|在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Storage 节点，方便进行维护。|
+  |`BALANCE ACROSS ZONE [REMOVE "zone_name" [,"zone_name" ...]]`|在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Zone，方便进行维护。|
+-->
+
 <ul>
 <li>
 <p><a href="../../3.ngql-guide/18.operation-and-maintenance-statements/4.job-statements/">作业管理</a></p>
@@ -8136,14 +8119,6 @@ YIELD &lt;output&gt;;
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>SUBMIT JOB BALANCE IN ZONE</code></td>
-<td>在当前图空间内每个 Zone 内部启动任务均衡分布分片。</td>
-</tr>
-<tr>
-<td><code>SUBMIT JOB BALANCE ACROSS ZONE</code></td>
-<td>在当前图空间内所有 Zone 之间启动任务均衡分布分片。</td>
-</tr>
 <tr>
 <td><code>SUBMIT JOB COMPACT</code></td>
 <td>触发 RocksDB 的长耗时<code>compact</code>操作。</td>
@@ -8176,6 +8151,11 @@ YIELD &lt;output&gt;;
 </table>
 </li>
 </ul>
+<!-- balance-3.1
+  |`SUBMIT JOB BALANCE IN ZONE`|在当前图空间内每个 Zone 内部启动任务均衡分布分片。|
+  |`SUBMIT JOB BALANCE ACROSS ZONE`|在当前图空间内所有 Zone 之间启动任务均衡分布分片。|
+-->
+
 <ul>
 <li>
 <p><a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/">终止查询</a></p>
@@ -8203,7 +8183,7 @@ YIELD &lt;output&gt;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2022</span>
       
     
   </small>

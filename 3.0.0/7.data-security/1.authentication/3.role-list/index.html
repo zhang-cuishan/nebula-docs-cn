@@ -5960,20 +5960,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/" class="md-nav__link">
-        均衡扩容后的 Storage 数据
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -6443,15 +6429,6 @@
 <td align="left"><code>USE</code>、<code>DESCRIBE SPACE</code></td>
 </tr>
 <tr>
-<td align="left">Write space</td>
-<td align="left">Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"><code>CREATE SPACE</code>、<code>DROP SPACE</code>、<code>CREATE SNAPSHOT</code>、<code>DROP SNAPSHOT</code>、<code>BALANCE DATA</code>、<code>BALANCE DATA STOP</code>、<code>BALANCE DATA REMOVE</code>、<code>BALANCE LEADER</code>、<code>ADMIN</code>、<code>CONFIG</code>、<code>INGEST</code>、<code>DOWNLOAD</code>、<code>BUILD TAG INDEX</code>、<code>BUILD EDGE INDEX</code></td>
-</tr>
-<tr>
 <td align="left">Read schema</td>
 <td align="left">Y</td>
 <td align="left">Y</td>
@@ -6523,8 +6500,21 @@
 <td align="left"></td>
 <td align="left"><code>SUBMIT JOB COMPACT</code>、<code>SUBMIT JOB FLUSH</code>、<code>SUBMIT JOB STATS</code>、<code>STOP JOB</code>、<code>RECOVER JOB</code></td>
 </tr>
+<tr>
+<td align="left">Write space</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>CREATE SPACE</code>、<code>DROP SPACE</code>、<code>CREATE SNAPSHOT</code>、<code>DROP SNAPSHOT</code>、<code>BALANCE</code>、<code>ADMIN</code>、<code>CONFIG</code>、<code>INGEST</code>、<code>DOWNLOAD</code>、<code>BUILD TAG INDEX</code>、<code>BUILD EDGE INDEX</code></td>
+</tr>
 </tbody>
 </table>
+<!-- balance-3.1
+  |Write space|Y|||||`CREATE SPACE`、`DROP SPACE`、`CREATE SNAPSHOT`、`DROP SNAPSHOT`、`BALANCE ZONE`、`BALANCE LEADER`、`ADMIN`、`CONFIG`、`INGEST`、`DOWNLOAD`、`BUILD TAG INDEX`、`BUILD EDGE INDEX`|
+-->
+
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Show operations 为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
@@ -6536,7 +6526,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 20, 2022</span>
       
     
   </small>
