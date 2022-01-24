@@ -1196,11 +1196,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/deploy-connect/ex-ug-reset-connection/</loc>
-         <lastmod>2022-01-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/ex-ug-canvas/</loc>
          <lastmod>2022-01-24</lastmod>
          <changefreq>daily</changefreq>
