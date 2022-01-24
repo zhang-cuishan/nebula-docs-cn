@@ -4237,21 +4237,48 @@
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    安装
+    安装部署
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    部署
+    停止服务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deb_studio" class="md-nav__link">
+    DEB 部署 Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="DEB 部署 Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    前提条件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    停止服务
+  <a href="#_9" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    卸载
   </a>
   
 </li>
@@ -4270,14 +4297,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     前提条件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     操作步骤
   </a>
   
@@ -4289,7 +4316,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     后续操作
   </a>
   
@@ -6198,21 +6225,48 @@
         
           <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    安装
+    安装部署
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    部署
+    停止服务
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deb_studio" class="md-nav__link">
+    DEB 部署 Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="DEB 部署 Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    前提条件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    停止服务
+  <a href="#_9" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    卸载
   </a>
   
 </li>
@@ -6231,14 +6285,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     前提条件
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     操作步骤
   </a>
   
@@ -6250,7 +6304,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     后续操作
   </a>
   
@@ -6278,7 +6332,7 @@
 Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云服务版 Studio 只能在 Nebula Graph Cloud Service 上使用。当在 Nebula Graph Cloud Service 上创建 Nebula Graph 实例时即自动完成云服务版本 Studio 的部署，一键直连即可使用，不需要自己部署。详细信息参考 [《Nebula Graph Cloud Service 用户手册》](https://cloud-docs.nebula-graph.com.cn/cn/posts/manage-instances/dbaas-ug-connect-nebulastudio/ "点击前往 Nebula Graph Cloud Service 用户手册")。
 -->
 
-<p>本文介绍如何在本地通过 Docker、RPM 和 tar 包部署 Studio。</p>
+<p>本文介绍如何在本地通过 Docker、RPM、DEB 和 tar 包部署 Studio。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>用户也可以在 <a href="https://playground.nebula-graph.com.cn/explore">Studio</a> 在线试用部分功能。</p>
@@ -6390,9 +6444,6 @@ $ npm run start
 <li>Nebula Graph 服务已经部署并启动。详细信息，参考 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</li>
 </ul>
 <ul>
-<li>使用的 Linux 上安装有版本为 v10.12.0 以上的 Node.js。</li>
-</ul>
-<ul>
 <li>
 <p>确保在安装开始前，以下端口处于未被使用状态。</p>
 <table>
@@ -6407,15 +6458,11 @@ $ npm run start
 <td>7001</td>
 <td>Studio 提供的 web 服务</td>
 </tr>
-<tr>
-<td>8080</td>
-<td>Nebula-http-gateway，Client 的 HTTP 服务</td>
-</tr>
 </tbody>
 </table>
 </li>
 </ul>
-<h3 id="_6">安装<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_6">安装部署<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>根据需要下载 tar 包，建议选择最新版本。</p>
@@ -6439,27 +6486,14 @@ $ npm run start
 <div class="highlight"><pre><span></span><code>tar -xvf nebula-graph-studio-3.2.0.x86_64.tar.gz
 </code></pre></div>
 </li>
-</ol>
-<h3 id="_7">部署<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>根目录 nebula-graph-studio 下一共有两个安装包：nebula-graph-studio 和 nebula-http-gateway。用户需要在同一台机器上分别部署并启动服务，才能完成 Studio 的部署。</p>
-</div>
-<ol>
-<li>
-<p>部署 nebula-http-gateway 并启动。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-http-gateway
-$ nohup ./nebula-httpd <span class="p">&amp;</span>
-</code></pre></div>
-</li>
 <li>
 <p>部署 nebula-graph-studio 并启动。</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-graph-studio
-$ npm run start
+$ ./server
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Studio 3.2.0 版本不需要依赖于 nebula-importer，故安装部署方式与 Studio v3.0.0 不同。</p>
+<p>Studio 3.2.0 版本不需要依赖于 nebula-importer 和 nebula-http-gateway，故安装部署方式与 Studio v3.1.0 不同。</p>
 </div>
 </li>
 <li>
@@ -6468,14 +6502,77 @@ $ npm run start
 <p><img alt="Nebula Graph Studio 登录界面" src="../../figs/st-ug-001-1.png" title="Nebula Graph Studio 登录界面" /></p>
 </li>
 </ol>
-<h3 id="_8">停止服务<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_7">停止服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>用户可以采用 <code>kill pid</code> 的方式来关停服务：
-<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :8080<span class="k">)</span> <span class="c1"># stop nebula-http-gateway</span>
-$ <span class="nb">cd</span> nebula-graph-studio
-$ npm run stop <span class="c1"># stop nebula-graph-studio</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7001<span class="k">)</span> <span class="c1"># stop nebula-graph-studio</span>
 </code></pre></div></p>
+<h2 id="deb_studio">DEB 部署 Studio<a class="headerlink" href="#deb_studio" title="Permanent link">&para;</a></h2>
+<h3 id="_8">前提条件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>在通过 DEB 部署安装 Studio 之前，用户需要确认以下信息：</p>
+<ul>
+<li>Nebula Graph 服务已经部署并启动。详细信息，参考 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</li>
+</ul>
+<ul>
+<li>使用的 Linux 发行版为 Ubuntu。</li>
+</ul>
+<ul>
+<li>
+<p>确保在安装开始前，以下端口处于未被使用状态。</p>
+<table>
+<thead>
+<tr>
+<th>端口号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7001</td>
+<td>Studio 提供的 web 服务</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="_9">安装<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>根据需要选择并下载 DEB 包，建议选择最新版本。常用下载链接如下：</p>
+<table>
+<thead>
+<tr>
+<th>安装包</th>
+<th>检验和</th>
+<th>Nebula 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/3.2.0/nebula-graph-studio-3.2.0.x86_64.deb">nebula-graph-studio-3.2.0.x86_64.deb</a></td>
+<td><a href="https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/3.2.0/nebula-graph-studio-3.2.0.x86_64.deb.sha256">nebula-graph-studio-3.2.0.x86_64.deb.sha256</a></td>
+<td>3.0.0</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>使用<code>sudo dpkg -i &lt;deb&gt;</code>命令安装 DEB 包。</p>
+<p>例如，安装 Studio 3.2.0 版本需要运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg -i nebula-graph-studio-3.2.0.x86_64.deb
+</code></pre></div>
+</li>
+<li>
+<p>启动成功后，在浏览器地址栏输入 <code>http://ip address:7001</code>。</p>
+<p>如果在浏览器窗口中能看到以下登录界面，表示已经成功部署并启动 Studio。</p>
+<p><img alt="Nebula Graph Studio 登录界面" src="../../figs/st-ug-001-1.png" title="Nebula Graph Studio 登录界面" /></p>
+</li>
+</ol>
+<h3 id="_10">卸载<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>用户可以使用以下的命令卸载 Studio。</p>
+<div class="highlight"><pre><span></span><code>$ sudo dpkg -r nebula-graph-studio-3.2.0.x86_64
+</code></pre></div>
 <h2 id="docker_studio">Docker 部署 Studio<a class="headerlink" href="#docker_studio" title="Permanent link">&para;</a></h2>
-<h3 id="_9">前提条件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_11">前提条件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>在部署 Docker 版 Studio 之前，用户需要确认以下信息：</p>
 <ul>
 <li>Nebula Graph 服务已经部署并启动。详细信息，参考 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</li>
@@ -6496,10 +6593,6 @@ $ npm run stop <span class="c1"># stop nebula-graph-studio</span>
 <td>7001</td>
 <td>Studio 提供的 web 服务</td>
 </tr>
-<tr>
-<td>8080</td>
-<td>Nebula-http-gateway，Client 的 HTTP 服务</td>
-</tr>
 </tbody>
 </table>
 </li>
@@ -6518,7 +6611,7 @@ $ npm run stop <span class="c1"># stop nebula-graph-studio</span>
 <p>配置文件的路径和方法因操作系统和/或 Docker Desktop 版本而异。详细信息参考 <a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file" title="点击前往 Docker 文档中心">Docker Daemon 配置文档</a>。</p>
 </li>
 </ul>
-<h3 id="_10">操作步骤<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_12">操作步骤<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>在命令行工具中按以下步骤依次运行命令，部署并启动 Docker 版 Studio，这里我们用 Nebula Graph 版本为 2.5 的进行演示：</p>
 <ol>
 <li>
@@ -6573,7 +6666,7 @@ Creating docker_nginx_1    ... <span class="k">done</span>
 <p><img alt="Nebula Graph Studio 登录界面" src="../../figs/st-ug-001-1.png" title="Nebula Graph Studio 登录界面" /></p>
 </li>
 </ol>
-<h2 id="_11">后续操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_13">后续操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>进入 Studio 登录界面后，用户需要连接 Nebula Graph。详细信息，参考<a href="../st-ug-connect/">连接数据库</a>。</p>
 
   <hr>
@@ -6581,7 +6674,7 @@ Creating docker_nginx_1    ... <span class="k">done</span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2022</span>
       
     
   </small>
