@@ -6069,29 +6069,47 @@
 </a>
 
 
-<h1 id="_1">查询探索<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>在 Explorer 中，用户可以选择以下查询方式，展示数据：</p>
+<h1 id="_1">查询方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用查询功能前，需要选中并单击目标图空间。</p>
+</div>
+<p>用户进行图数据的探索和分析前，需要先单击<strong>开始</strong>图标<img alt="query" src="../../figs/nav-query2.png" />并查询目标数据。查询到的数据会显示在画布中。查询方式如下：</p>
 <ul>
 <li>VID 查询</li>
 <li>Tag 查询</li>
 <li>子图查询</li>
 </ul>
 <h2 id="vid">VID 查询<a class="headerlink" href="#vid" title="Permanent link">&para;</a></h2>
-<p>用户可以通过输入 VID 或者生成 VID 的数据查询，一行仅支持一个数据。同时也支持随机导入数据和文件导入数据。确认添加后，数据会显示在画布中。以下给出示例：</p>
-<p><img alt="VID" src="../../figs/ex-ug-009-2.png" /></p>
+<p>用户可输入点的 ID（VID）查询目标点然后基于目标点进行探索和分析。</p>
+<p>支持手动输入、随机导入、文件导入 VID。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>输入或者导入的数据必须存在于图数据库中。</li>
+<li>查询区域中每行仅支持填入一个 VID。</li>
+</ul>
+</div>
+<p>以下以图空间<code>nba</code>及相关数据为例演示如何查询数据。</p>
+<p><img alt="VID QUERY" src="../../figs/vid_query.gif" /></p>
 <h2 id="tag">Tag 查询<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h2>
-<p>基于 Tag 查询，必选值为 Tag 和索引。用户可以对输出的结果进行数量上的限制和结果进行过滤。以下查询 10 个年龄大于 30 岁，且不等于 40 岁的球员，示例如下：
-<img alt="Tag" src="../../figs/ex-ug-011-2.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>使用 <strong>Tag 查询</strong> 方式查询数据，确保对应的图空间中已存在相应的 Tag 和索引。更多信息，参见<a href="../../../3.ngql-guide/10.tag-statements/1.create-tag/">创建 Tag</a>和<a href="../../../3.ngql-guide/14.native-index-statements/1.create-native-index/">创建索引</a>。</p>
+<p>用户可以对输出的结果进行数量上的限制和对结果进行过滤。以下查询 10 个年龄大于 30 岁，且不等于 40 岁的球员。</p>
+<!--补充录屏-->
+
 <h2 id="_2">子图查询<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>基于子图查询，必选值为 VID 。用户可以查看一个或多个点的子图，支持规定子图的步数、边类型及流入流出的方向。以下给出 VID 值为 101 ，步数为 4 ，边类型为 server 和 like 的入边的示例：
-<img alt="Query" src="../../figs/ex-ug-012-2.png" /></p>
+<p><strong>子图查询</strong>方式的必选值为 VID。用户可以输入一个或多个 VID，指定查询的步数、边类型及流入流出的方向查询子图数据。以下给出 VID 值为 <code>Kings</code>和<code>Suns</code>，步数为<code>2</code> ，边类型为<code>server</code>和<code>like</code>的入边的示例。</p>
+<!--补充录屏-->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2022</span>
       
     
   </small>
