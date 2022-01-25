@@ -6108,10 +6108,6 @@
 <ul>
 <li>
 <p><code>rank</code>：可选项。边的 rank 值。默认值为<code>0</code>。</p>
-<div class="admonition 关于 rank">
-<p class="admonition-title">关于</p>
-<p>Rank 值可以用来区分 Edge type、起始点、目的点都相同的边。该值完全由用户自己指定。读取时，必须自行在取得全部的 Rank 值后排序过滤和拼接。Rank 不支持诸如 <code>next(), pre(), head(), tail(), max(), min(), lessThan(), moreThan()</code> 等函数功能，也不能通过创建索引加速访问，或者条件过滤。 </p>
-</div>
 <div class="admonition compatibility">
 <p class="admonition-title">openCypher 兼容性</p>
 <p>openCypher 中没有 rank 的概念。</p>
@@ -6178,7 +6174,7 @@ nebula&gt; FETCH PROP ON e2 &quot;14&quot;-&gt;&quot;15&quot;@1 YIELD edge AS e;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2022</span>
       
     
   </small>
