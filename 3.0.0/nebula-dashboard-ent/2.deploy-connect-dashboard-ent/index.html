@@ -6160,11 +6160,15 @@
 </tr>
 <tr>
 <td>9090</td>
-<td>prometheus 服务的端口。</td>
+<td>Prometheus 服务的端口。</td>
 </tr>
 <tr>
 <td>9200</td>
 <td>nebula-stats-exporter 服务的端口。</td>
+</tr>
+<tr>
+<td>9093</td>
+<td>Alertmanager 服务的端口。接收 Prometheus 告警，发送告警通知给 Dashboard。</td>
 </tr>
 </tbody>
 </table>
@@ -6197,26 +6201,44 @@
 </code></pre></div>
 </li>
 <li>
-<p>使用<code>vim config/config.yaml</code>命令修改配置文件。</p>
+<p>使用<code>vim config/config.yaml</code>命令设置配置文件。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 数据库信息</span>
 database:
-  dialect: mysql <span class="c1"># 使用的数据库类型，目前仅支持 MySql</span>
-  host: <span class="m">192</span>.168.8.157 <span class="c1"># 连接的 MySql 数据库的 ip 地址</span>
-  port: <span class="m">3306</span> <span class="c1"># 连接的 MySql 数据库的端口号</span>
-  username: root <span class="c1"># 登陆 MySql 的账户</span>
-  password: nebula <span class="c1"># 登陆 MySql 的密码</span>
-  name: dashboard <span class="c1"># 对应的数据库名称</span>
-  autoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true</span>
+  dialect: mysql <span class="c1"># 使用的数据库类型，目前仅支持 MySQL。</span>
+  host: <span class="m">192</span>.168.8.157 <span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
+  port: <span class="m">3306</span> <span class="c1"># 连接的 MySQL 数据库的端口号。</span>
+  username: root <span class="c1"># 登陆 MySQL 的账户。</span>
+  password: nebula <span class="c1"># 登陆 MySQL 的密码。</span>
+  name: dashboard <span class="c1"># 对应的数据库名称。</span>
+  autoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true。</span>
 <span class="c1"># exporter 端口信息</span>
 exporter:
-  nodePort: <span class="m">9100</span> <span class="c1"># node-exporter 服务的端口</span>
-  nebulaPort: <span class="m">9200</span> <span class="c1"># nebula-stats-exporter 服务的端口</span>
+  nodePort: <span class="m">9100</span> <span class="c1"># node-exporter 服务的端口。</span>
+  nebulaPort: <span class="m">9200</span> <span class="c1"># nebula-stats-exporter 服务的端口。</span>
 <span class="c1"># 服务信息</span>
 proxy:
-  gateway:
-    target: <span class="s2">&quot;127.0.0.1:8090&quot;</span> <span class="c1"># gateway 服务的 IP 地址和端口</span>
   prometheus:
-    target: <span class="s2">&quot;127.0.0.1:9090&quot;</span> <span class="c1"># prometheus 服务的 IP 地址和端口</span>
+    target: <span class="s2">&quot;127.0.0.1:9090&quot;</span> <span class="c1"># prometheus 服务的 IP 地址和端口。</span>
+  alertmanager:
+    target: <span class="s2">&quot;127.0.0.1:9093&quot;</span> <span class="c1"># alertmanager 服务的 IP 地址和端口。</span>
+<span class="c1"># 邀请 LDAP 账号的发件人邮箱信息</span>
+mail:
+  host: smtp.office365.com <span class="c1">#  SMTP 服务器地址。</span>
+  port: <span class="m">587</span> <span class="c1"># SMTP 服务器的端口号。</span>
+  username: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的用户名。</span>
+  password: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的密码。</span>
+<span class="c1"># 系统信息</span>
+system:
+  webAddress: http://127.0.0.1:7005 <span class="c1"># 邮件被邀请人连接 Dashboard 的访问地址。</span>
+  messageStore: <span class="m">90</span> <span class="c1"># 保存告警消息的天数，默认 90 天。</span>
+<span class="c1"># LDAP 信息</span>
+ldap:
+  server: ldap://127.0.0.1 <span class="c1"># LDAP 服务器地址。</span>
+  bindDN: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># LDAP 服务器登录用户名。</span>
+  bindPassword: <span class="s2">&quot;&quot;</span> <span class="c1"># LDAP 服务器登录密码。</span>
+  baseDN: <span class="nv">dc</span><span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># 查询用户数据的路径。</span>
+  userFilter: <span class="s2">&quot;&amp;(objectClass=*)&quot;</span> <span class="c1"># 查询条件。</span>
+  emailKey: mail <span class="c1"># LDAP 数据库存放邮箱信息的字段名。</span>
 </code></pre></div>
 </li>
 <li>
@@ -6224,24 +6246,28 @@ proxy:
 <div class="highlight"><pre><span></span><code>$ cp -r &lt;license&gt; &lt;dashboard_path&gt;
 </code></pre></div>
 <p>例如：
- <div class="highlight"><pre><span></span><code>$ cp -r nebula.license /usr/local/nebula-dashboard-ent
+<div class="highlight"><pre><span></span><code>$ cp -r nebula.license /usr/local/nebula-dashboard-ent
 </code></pre></div></p>
 </li>
 <li>
 <p>启动 Dashboard。</p>
 <p>可以使用以下命令一键启动 Dashboard。
- <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
 $ sudo ./dashboard.service start all
 </code></pre></div>
- 或是执行以下命令，分别启动 prometheus、webserver、exporter 和 gateway 服务以启动 Dashboard。
- <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
-$ sudo ./dashboard.service start prometheus <span class="c1"># 启动 prometheus 服务</span>
-$ sudo ./dashboard.service start webserver <span class="c1">#启动 webserver 服务</span>
-$ sudo ./dashboard.service start exporter <span class="c1">#启动 exporter 服务</span>
-$ sudo ./dashboard.service start gateway <span class="c1">#启动 gateway 服务</span>
+或是执行以下命令，分别启动 prometheus、webserver、exporter 和 gateway 服务以启动 Dashboard。
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
+$ sudo ./dashboard.service start prometheus <span class="c1"># 启动 Prometheus 服务</span>
+$ sudo ./dashboard.service start webserver <span class="c1">#启动 Webserver 服务</span>
+$ sudo ./dashboard.service start exporter <span class="c1">#启动 Exporter 服务</span>
+$ sudo ./dashboard.service start gateway <span class="c1">#启动 Gateway 服务</span>
 </code></pre></div></p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在启动 Dashboard 后，如再修改配置文件的话，在修改后，可在<code>scripts</code>目录下执行<code>dashboard.service restart all</code>同步修改至 Dashboard 客户端页面中。</p>
+</div>
 <h2 id="dashboard_1">管理 Dashboard 服务<a class="headerlink" href="#dashboard_1" title="Permanent link">&para;</a></h2>
 <p>Dashboard 使用脚本<code>dashboard.service</code>管理服务，包括启动、停止和查看。</p>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -6308,6 +6334,7 @@ $ sudo ./dashboard.service start gateway <span class="c1">#启动 gateway 服务
 <div class="highlight"><pre><span></span><code>$ sudo /dashboard/scripts/dashboard.service start all <span class="c1">#启动 Dashboard 所有服务</span>
 $ sudo /dashboard/scripts/dashboard.service stop all <span class="c1">#停止 Dashboard 所有服务</span>
 $ sudo /dashboard/scripts/dashboard.service status all <span class="c1">#查看 Dashboard 所有服务状态</span>
+$ sudo /dashboard/scripts/dashboard.service restart all <span class="c1">#重启 Dashboard 所有服务状态</span>
 </code></pre></div></p>
 <h2 id="dashboard_2">连接 Dashboard<a class="headerlink" href="#dashboard_2" title="Permanent link">&para;</a></h2>
 <p>成功启动 Dashboard 后，在浏览器地址栏输入<code>http://&lt;ip_address&gt;:7005</code>。</p>
@@ -6324,7 +6351,7 @@ $ sudo /dashboard/scripts/dashboard.service status all <span class="c1">#查看 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2022</span>
       
     
   </small>
