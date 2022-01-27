@@ -3093,36 +3093,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../4.deployment-and-installation/5.zone/" class="md-nav__link">
-        管理逻辑机架（Zone）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_7">
           升级版本
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="升级版本" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -6181,11 +6167,7 @@
     [replica_factor = &lt;replica_number&gt;,]
     vid_type = {FIXED_STRING(&lt;N&gt;) | INT[64]}
     )
-    [ON &lt;zone_list&gt;]
     [COMMENT = &#39;&lt;comment&gt;&#39;];
-
-&lt;zone_list&gt;:
-    &quot;zone_name&quot; [,&quot;zone_name&quot; ...]
 </code></pre></div>
 <table>
 <thead>
@@ -6216,15 +6198,15 @@
 <td align="left">必选参数。指定点 ID 的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
 </tr>
 <tr>
-<td align="left"><code>zone_list</code></td>
-<td align="left">指定图空间所属的 Zone 列表，将在这些 Zone 中创建分片和对应副本。副本数量不能超过指定 Zone 数量。不指定<code>zone_list</code>时，默认属于所有 Zone。详情请参见 <a href="../../../4.deployment-and-installation/5.zone/">管理逻辑机架（Zone）</a>。</td>
-</tr>
-<tr>
 <td align="left"><code>COMMENT</code></td>
 <td align="left">图空间的描述。最大为 256 字节。默认无描述。</td>
 </tr>
 </tbody>
 </table>
+<!--
+|`zone_list`|指定图空间所属的 Zone 列表，将在这些 Zone 中创建分片和对应副本。副本数量不能超过指定 Zone 数量。不指定`zone_list`时，默认属于所有 Zone。详情请参见 [管理逻辑机架（Zone）](../../4.deployment-and-installation/5.zone.md)。|
+-->
+
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>如果将副本数设置为 1，用户将无法使用 <a href="../../../8.service-tuning/load-balance/">BALANCE</a> 命令为 Nebula Graph 的存储服务平衡负载或扩容。</p>
@@ -6323,7 +6305,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2022</span>
       
     
   </small>

@@ -3273,36 +3273,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../4.deployment-and-installation/5.zone/" class="md-nav__link">
-        管理逻辑机架（Zone）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_5_8">
+        <label class="md-nav__link" for="__nav_5_7">
           升级版本
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="升级版本" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
+        <label class="md-nav__title" for="__nav_5_7">
           <span class="md-nav__icon md-icon"></span>
           升级版本
         </label>
@@ -6569,13 +6555,22 @@
 <p>本文将使用下图的数据集演示基础操作的语法。</p>
 <p><img alt="The demo dataset" src="../dataset-for-crud.png" /></p>
 <h2 id="nebula_graph_storage">管理 Nebula Graph 集群的 Storage 节点<a class="headerlink" href="#nebula_graph_storage" title="Permanent link">&para;</a></h2>
-<p>首先将 Storage 节点加入 Nebula Graph 集群。更多管理集群命令请参见 <a href="../../4.deployment-and-installation/5.zone/">管理逻辑机架（Zone）</a>。</p>
+<p>首先将 Storage 节点加入 Nebula Graph 集群。</p>
+<!--
+更多管理集群命令请参见 [管理逻辑机架（Zone）](../4.deployment-and-installation/5.zone.md)。
+-->
+
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
 <p>从 3.0.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。</p>
 </div>
+<div class="highlight"><pre><span></span><code>ADD HOSTS &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...];
+</code></pre></div>
+<!--
 <div class="highlight"><pre><span></span><code>ADD HOSTS &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...] [INTO NEW ZONE &quot;&lt;new_zone_name&gt;&quot;];
 </code></pre></div>
+-->
+
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ADD HOSTS 192.168.10.100:9779, 192.168.10.101:9779, 192.168.10.102:9779;
 </code></pre></div>
@@ -7108,7 +7103,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2022</span>
       
     
   </small>

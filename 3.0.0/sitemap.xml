@@ -741,11 +741,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/4.deployment-and-installation/5.zone/</loc>
-         <lastmod>2022-01-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/4.deployment-and-installation/connect-to-nebula-graph/</loc>
          <lastmod>2022-01-27</lastmod>
          <changefreq>daily</changefreq>
