@@ -1196,16 +1196,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/canvas-snapshot/</loc>
-         <lastmod>2022-01-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/ex-ug-canvas/</loc>
-         <lastmod>2022-01-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/ex-ug-graph-exploration/</loc>
          <lastmod>2022-01-27</lastmod>
          <changefreq>daily</changefreq>
@@ -1221,17 +1211,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/ex-ug-relationship-list/</loc>
-         <lastmod>2022-01-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/ex-ug-shortcuts/</loc>
          <lastmod>2022-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/node-filtering/</loc>
+         <lastmod>2022-01-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/canvas-operations/canvas-overview/</loc>
+         <lastmod>2022-01-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/canvas-operations/canvas-snapshot/</loc>
+         <lastmod>2022-01-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-explorer/operation-guide/canvas-operations/visualization-mode/</loc>
          <lastmod>2022-01-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
