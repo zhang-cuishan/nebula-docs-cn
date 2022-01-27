@@ -5210,27 +5210,34 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    拓展
+    前提条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    共同邻居
+    拓展
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    路径查询
+    共同邻居
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    路径查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     查看属性
   </a>
   
@@ -6054,27 +6061,34 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    拓展
+    前提条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    共同邻居
+    拓展
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    路径查询
+    共同邻居
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    路径查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     查看属性
   </a>
   
@@ -6097,37 +6111,104 @@
 </a>
 
 
-<h1 id="_1">图探索拓展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>图探索拓展分为以下四类：</p>
+<h1 id="_1">探索拓展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>图数据库的探索拓展功能分为以下四类：</p>
 <ul>
 <li>拓展</li>
 <li>共同邻居</li>
 <li>路径查询</li>
 <li>查看属性</li>
 </ul>
-<h2 id="_2">拓展<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在菜单栏，点击 <img alt="expand" src="../figs/rightclickmenu-expand.png" /> 图标，打开 <strong>拓展</strong> 窗口。用户可以双击某一点，对该点进行拓展。也可以框选画布中的多个点，在如下操作栏中修改边类型，选择边的流入流出方向，修改点的颜色，规定拓展步数和自定义过滤条件。</p>
+<p><img alt="query_exploration" src="../../figs/exploration_query.gif" /></p>
+<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>使用<strong>探索拓展</strong>的所有功能前，确保画布中有点数据。具体操作，参见<a href="../ex-ug-query-exploration/">开始探索</a>。</p>
+<h2 id="_3">拓展<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在左侧导航栏，单击<img alt="expand" src="../../figs/nav-expand.png" />图标，打开<strong>拓展</strong>窗口。用户可以双击某一点，对该点进行拓展。也可以右键框选画布中的多个点，在操作栏中修改边类型，选择边的流入流出方向，修改点的颜色，规定拓展步数和自定义过滤条件。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>边类型</td>
+<td>默认显示并选中图数据库中的所有边。</td>
+</tr>
+<tr>
+<td>方向</td>
+<td>定义所有选中点的边的方向来查询目标点，包括<code>流出</code>、<code>流入</code>、<code>双向</code>三个选项。</td>
+</tr>
+<tr>
+<td>点的样式</td>
+<td><code>按标签类型分类</code>：目标点的显示颜色和相应的 Tag 颜色一致。<br /><code>自定义样式</code>：自定义目标点的显示颜色。</td>
+</tr>
+<tr>
+<td>步数</td>
+<td><code>单步</code>：自定义选中点至目标点的跳数。<br /><code>范围</code>：自定义选中点至目标点的范围。</td>
+</tr>
+<tr>
+<td>筛选条件</td>
+<td>根据筛选条件查询目标点。</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>面板内配置修改后会保存当前配置，当双击或者右键快捷拓展时候会以当前配置进行拓展。</p>
+<p>系统在面板内配置修改后会保存当前配置，当双击点或者右键对点快捷拓展时候会以当前配置进行拓展。</p>
 </div>
-<p><img alt="expand" src="../../figs/ex-ug-013-2.png" /></p>
-<h2 id="_3">共同邻居<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在菜单栏，点击 <img alt="commonneighbor" src="../figs/rightclickmenu-commonNeighbor.png" /> 图标，打开 <strong>共同邻居</strong> 窗口。用户可以选中画布中的两个点或多个点，查询它们的共同邻居。选中的点无共同邻居时，默认返回 <strong>没有相应数据</strong> 。</p>
-<p><img alt="common_neighbor" src="../../figs/ex-ug-014-2.png" /></p>
-<h2 id="_4">路径查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>在菜单栏，点击 <img alt="findpath" src="../figs/rightclickmenu-findPath.png" /> 图标，打开 <strong>路径查询</strong> 窗口。用户可以选中画布中的两个点，默认框选的第一个点为起点，第二个点为终点。用户可自定义边的类型和方向，规定拓展步数，选择查询以下三种路径： <code>All path</code>，<code>Shortest path</code> 和 <code>Noloop path</code>。</p>
-<p><img alt="find_path" src="../../figs/ex-ug-015-2.png" /></p>
-<h2 id="_5">查看属性<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>在菜单栏，点击 <img alt="propertyview" src="../../figs/nav-propertyView.png" /> 图标，打开 <strong>查看属性</strong> 窗口。用户可以选择在画布中展示或隐藏点或边的属性。点击确认后，缩放比例大于 100% 时候才会显示属性在画布上，小于 100% 的时候会自动隐藏。</p>
-<p><img alt="show_property" src="../../figs/ex-ug-016-2.png" /></p>
+<h2 id="_4">共同邻居<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在左侧导航栏，单击<img alt="commonneighbor" src="../../figs/nav-commonNeighbor.png" />图标，打开<strong>共同邻居</strong>窗口。用户可以选中画布中的两个点或多个点，查询它们的共同邻居。选中的点无共同邻居时，默认返回<strong>没有相应数据</strong>。</p>
+<p>关于如何选中两个点或者多个点的操作，参见<a href="../ex-ug-shortcuts/">常规操作</a>。</p>
+<h2 id="_5">路径查询<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>在左侧导航栏，单击<img alt="findpath" src="../../figs/nav-findPath.png" />图标，打开<strong>路径查询</strong>窗口。<strong>用户可以选中画布中的两个点，默认框选的第一个点为起点，第二个点为终点。</strong>用户可自定义边的类型和方向，规定拓展步数，选择查询路径。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>边类型</td>
+<td>默认显示并选中图数据库中的所有边。</td>
+</tr>
+<tr>
+<td>方向</td>
+<td>定义起始点的边的方向来查询和目标点的路径，包括<code>流出</code>、<code>流入</code>、<code>双向</code>三个选项。</td>
+</tr>
+<tr>
+<td>查询类型</td>
+<td><code>全路径</code>：查询符合条件的所有路径。<br /><code>最短路径</code>：查询符合条件的最短路径。<br /><code>非循环路径</code>：查询符合条件的非循环路径。</td>
+</tr>
+<tr>
+<td>选中步骤</td>
+<td>起始点至终点的路径的条数。</td>
+</tr>
+<tr>
+<td>筛选条件</td>
+<td>根据筛选条件筛选目标点。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">查看属性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>在左侧导航栏，单击<img alt="propertyview" src="../../figs/nav-propertyView.png" />图标，打开<strong>查看属性</strong>窗口。用户可以选择在画布中展示或隐藏点或边的属性。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>缩放比例大于 90% 时候在画布上才会显示点属性，小于 90% 的时候会自动隐藏。    </li>
+<li>缩放比例大于 100% 时候在画布上才会显示边属性，小于 100% 的时候会自动隐藏。</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2022</span>
       
     
   </small>
