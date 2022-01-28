@@ -6622,31 +6622,21 @@
 <h2 id="_2">创建和选择图空间<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="ngql">nGQL 语法<a class="headerlink" href="#ngql" title="Permanent link">&para;</a></h3>
 <ul>
-<li>创建图空间<p>```ngql
-  CREATE SPACE [IF NOT EXISTS] <graph_space_name> (
-  [partition_num = <partition_number>,]
-  [replica_factor = <replica_number>,]
-  vid_type = {FIXED_STRING(<N>) | INT64}
-  )</p>
+<li>创建图空间<div class="highlight"><pre><span></span><code>CREATE SPACE [IF NOT EXISTS] &lt;graph_space_name&gt; (
+[partition_num = &lt;partition_number&gt;,]
+[replica_factor = &lt;replica_number&gt;,]
+vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
+)
+
+[COMMENT = &#39;&lt;comment&gt;&#39;];
+</code></pre></div>
+<p>参数详情请参见 <a href="../../3.ngql-guide/9.space-statements/1.create-space/">CREATE SPACE</a>。</p>
+<!-- <code>charset</code>和<code>collate</code>当前只有一个可选值，忽略。
+      charset = <charset>
+      collate = <collate>
+  -->
 </li>
 </ul>
-<!--    [ON zone_list]-->
-<div class="codehilite"><pre><span></span><code>[COMMENT = &#39;&lt;comment&gt;&#39;];
-</code></pre></div>
-
-<!--
-    zone_list:
-    "zone_name" [,"zone_name" ...]-->
-<div class="codehilite"><pre><span></span><code>```
-
-参数详情请参见 [CREATE SPACE](../3.ngql-guide/9.space-statements/1.create-space.md)。
-
-&lt;!-- `charset`和`collate`当前只有一个可选值，忽略。
-    charset = &lt;charset&gt;
-    collate = &lt;collate&gt;
---&gt;
-</code></pre></div>
-
 <ul>
 <li>列出创建成功的图空间<div class="highlight"><pre><span></span><code>nebula&gt; SHOW SPACES;
 </code></pre></div>
