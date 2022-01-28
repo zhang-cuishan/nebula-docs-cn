@@ -6232,10 +6232,10 @@
 <h2 id="_4">升级准备<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>根据操作系统和架构下载 Nebula Graph 3.0.0 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件和配置文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
+<p>根据操作系统和架构下载 Nebula Graph 3.0.0 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>获取新版本二进制文件和配置文件有多种，除了解压 TAR 文件，还可以编译源码或者下载RPM/DEB包。</p>
+<p>编译源码或者下载RPM/DEB包也可以获取新版二进制文件。</p>
 </div>
 </li>
 </ul>
@@ -6247,7 +6247,7 @@
 </ul>
 <ul>
 <li>
-<p>统计升级前的数据量，供升级后比较：</p>
+<p>统计所有图空间升级前的数据量，供升级后比较。统计方法如下：</p>
 <ol>
 <li>运行<code>SUBMIT JOB STATS</code>。</li>
 <li>运行<code>SHOW JOBS</code>并记录返回结果。</li>
@@ -6261,7 +6261,7 @@
 <div class="highlight"><pre><span></span><code>&lt;nebula_install_path&gt;/scripts/nebula.service stop all
 </code></pre></div>
 <p><code>nebula_install_path</code>代表 Nebula Graph 的安装目录。</p>
-<p><code>storaged</code> 进程 flush 数据可能要等待 1 分钟。运行命令后可继续运行<code>nebula.service status all</code>命令以确认所有服务都已停止。启动和停止服务的详细说明参见<a href="../../manage-service/">管理服务</a>。</p>
+<p><code>storaged</code> 进程 flush 数据要等待约 1 分钟。运行命令后可继续运行<code>nebula.service status all</code>命令以确认所有服务都已停止。启动和停止服务的详细说明参见<a href="../../manage-service/">管理服务</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果超过 20 分钟不能停止服务，放弃本次升级，在<a href="https://discuss.nebula-graph.com.cn/">论坛</a>或 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub</a> 提问。</p>
@@ -6297,7 +6297,7 @@
 <p>使用<code>bin</code>目录下的新版 db_upgrader 文件升级数据格式。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>本步骤会备份 Storage 服务中保存的数据，但为防止备份失败，升级数据格式前，务必按照本文<strong>升级准备</strong>部分的说明备份 Meta 数据和 Storage 数据，确保数据安全。</p>
+<p>本步骤会备份 Storage 服务中保存的数据，但为防止备份失败，升级数据格式前，务必按照本文<strong>升级准备</strong>部分的说明备份数据。</p>
 </div>
 <p>命令语法：</p>
 <div class="highlight"><pre><span></span><code>&lt;nebula_install_path&gt;/bin/db_upgrader \
@@ -6307,7 +6307,7 @@
 --upgrade_version=2:3
 </code></pre></div>
 <ul>
-<li><code>old_storage_data_path</code>代表数据的存储路径，由 Graph 服务和 Meta 服务配置文件中的<code>data_path</code>参数定义。</li>
+<li><code>old_storage_data_path</code>代表数据的存储路径，由 Storage 服务配置文件中的<code>data_path</code>参数定义。</li>
 <li><code>data_backup_path</code>代表自定义的数据备份路径。</li>
 <li><code>meta_server_ip</code>和<code>port</code>分别代表 Meta 服务各节点的 IP 地址和端口号。</li>
 <li><code>2:3</code>代表从 Nebula Graph 2.x 版本升级到 3.x 版本。</li>
@@ -6371,13 +6371,15 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
 <p>如果有多个 Meta 服务节点，手动<code>ADD HOSTS</code>之后，部分 Storage 节点需等待数个心跳（<code>heartbeat_interval_secs</code>）的时间才能正常连接到集群。</p>
 </li>
 </ul>
+<p>Q：为什么升级后用<code>SHOW JOBS</code>查询到的 Job 的 ID 与升级前一样，但 Job 名称等信息不同了？</p>
+<p>A： Nebula Graph 2.5.0 版本调整了 Job 的定义，详情参见 <a href="https://github.com/vesoft-inc/nebula-common/pull/562/files">Pull request</a>。如果是从 2.5.0 之前的版本升级，会出现该问题。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2022</span>
       
     
   </small>
