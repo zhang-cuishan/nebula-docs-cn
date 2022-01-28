@@ -6286,7 +6286,7 @@
 <p>启动所有 Meta 服务。</p>
 <div class="highlight"><pre><span></span><code>&lt;nebula_install_path&gt;/scripts/nebula-metad.service start
 </code></pre></div>
-<p>启动后，Meta 服务选举 leader，并更新 Zone。该过程耗时数秒。</p>
+<p>启动后，Meta 服务选举 leader。该过程耗时数秒。</p>
 <p>启动后可以任意启动一个 Graph 服务节点，使用 Nebula Graph 连接该节点并运行<a href="../../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/"><code>SHOW HOSTS meta</code></a>和<a href="../../../3.ngql-guide/7.general-query-statements/6.show/19.show-meta-leader/"><code>SHOW META LEADER</code></a>，如果能够正常返回 Meta 节点的状态，则 Meta 服务启动成功。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6360,17 +6360,15 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
 <p>A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文档。</p>
 <p>Q：是否有工具或者办法验证新旧版本数据是否一致？</p>
 <p>A：没有。如果只是检查数据量，可以在升级完成后再次运行<code>SUBMIT JOB STATS</code>和<code>SHOW STATS</code>统计数据量，并与升级之前做对比。</p>
-<p>Q: 为什么<code>SHOW HOSTS</code>提示 Storage <code>OFFLINE</code>并且<code>Leader count</code>是<code>0</code>？</p>
-<p>A：可能的原因有：</p>
-<ul>
-<li>Meta 没有启动成功或者升级失败，导致 Storage 节点没有自动加入默认 Zone。</li>
-<li>
-<p>Meta 升级成功但是没有自动把 Storage 节点加入默认 Zone。连接 Nebula Graph 并手动将 Storage 节点<a href="../5.zone.md">加入默认 Zone</a>，例如：</p>
+<p>Q: Storage <code>OFFLINE</code>并且<code>Leader count</code>是<code>0</code>怎么处理？</p>
+<p>A：运行以下命令手动添加 Storage 主机：</p>
+<div class="highlight"><pre><span></span><code>ADD HOSTS &lt;ip&gt;:&lt;port&gt;[, &lt;ip&gt;:&lt;port&gt; ...];
+</code></pre></div>
+<p>例如：</p>
 <div class="highlight"><pre><span></span><code>ADD HOSTS 192.168.10.100:9779, 192.168.10.101:9779, 192.168.10.102:9779;
 </code></pre></div>
 <p>如果有多个 Meta 服务节点，手动<code>ADD HOSTS</code>之后，部分 Storage 节点需等待数个心跳（<code>heartbeat_interval_secs</code>）的时间才能正常连接到集群。</p>
-</li>
-</ul>
+<p>如果添加 Storage 主机后问题仍然存在，在<a href="https://discuss.nebula-graph.com.cn/">论坛</a>或 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub</a> 提问。</p>
 <p>Q：为什么升级后用<code>SHOW JOBS</code>查询到的 Job 的 ID 与升级前一样，但 Job 名称等信息不同了？</p>
 <p>A： Nebula Graph 2.5.0 版本调整了 Job 的定义，详情参见 <a href="https://github.com/vesoft-inc/nebula-common/pull/562/files">Pull request</a>。如果是从 2.5.0 之前的版本升级，会出现该问题。</p>
 
