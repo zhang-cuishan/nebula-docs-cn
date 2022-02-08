@@ -6112,14 +6112,14 @@
 <ul>
 <li>两点之间可以有多条边。</li>
 <li>边是有方向的，不存在无向边。</li>
-<li>四元组 <code>&lt;起点 VID、Edge type、边排序值 (Rank)、终点 VID&gt;</code> 用于唯一标识一条边。边没有 EID。</li>
+<li>四元组 <code>&lt;起点 VID、Edge type、边排序值 (rank)、终点 VID&gt;</code> 用于唯一标识一条边。边没有 EID。</li>
 <li>一条边有且仅有一个 Edge type。</li>
-<li>一条边有且仅有一个 rank。其为 int64，默认为 0。</li>
+<li>一条边有且仅有一个 rank，类型为 int64，默认值为 0。</li>
 </ul>
 <div class="admonition 关于 rank">
 <p class="admonition-title">关于</p>
-<p>Rank 值可以用来区分 Edge type、起始点、目的点都相同的边。该值完全由用户自己指定。     <br />
- 读取时必须自行在取得全部的 Rank 值后排序过滤和拼接。     <br />
+<p>rank 可以用来区分 Edge type、起始点、目的点都相同的边。该值完全由用户自己指定。     <br />
+ 读取时必须自行取得全部的 rank 值后排序过滤和拼接。     <br />
  不支持诸如 <code>next(), pre(), head(), tail(), max(), min(), lessThan(), moreThan()</code> 等函数功能，也不能通过创建索引加速访问或者条件过滤。 </p>
 </div>
 </li>
@@ -6200,7 +6200,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
