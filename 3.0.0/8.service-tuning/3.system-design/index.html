@@ -6120,10 +6120,15 @@
 <h2 id="_2">水平扩展或垂直扩展<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Nebula Graph 3.0.0 支持水平扩展：</p>
 <ul>
-<li>Storaged 的水平扩展：<p>- 增加 storaged 的机器数量，可以大体线性增加集群的整体能力，包括增加整体 QPS 和降低时延。</p>
-<p>- 但由于 partition 数量在 CREATE SPACE 时已固定，因此单个 partition 的服务能力只由单服务器决定——例如：获取单个点的属性 (<code>FETCH</code>)、单个点开始的广度优先遍历 (<code>GO</code>)</p>
+<li>Storaged 的水平扩展：<p>- Nebula Graph 3.0.0 不支持水平扩展。</p>
 </li>
 </ul>
+<!--
+
+    - 增加 storaged 的机器数量，可以大体线性增加集群的整体能力，包括增加整体 QPS 和降低时延。
+
+    - 但由于 partition 数量在 CREATE SPACE 时已固定，因此单个 partition 的服务能力只由单服务器决定——例如：获取单个点的属性 (`FETCH`)、单个点开始的广度优先遍历 (`GO`)
+-->
 <ul>
 <li>Graphd 的水平扩展：<p>- 来自客户端的每个请求，都由且仅由一个 graphd 处理，其他 graphd 不会参与处理该请求。</p>
 <p>- 因此增加 graphd 机器数量，可以增加集群整体 QPS，但不能降低单个请求时延。</p>
