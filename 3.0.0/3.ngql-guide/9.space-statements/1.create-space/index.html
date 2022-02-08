@@ -6273,26 +6273,24 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 <h2 id="_6">检查分片分布情况<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>在大型集群中，由于启动时间不同，分片的分布可能不均衡。用户可以执行如下命令检查分片的分布情况：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
-| Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
-| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; |
-| &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; |
-| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; |
-| &quot;Total&quot;     |      |          | 20           | &quot;basketballplayer:10, test:10&quot; | &quot;basketballplayer:30, test:30&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
+| Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         | Version |
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
+| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
+| &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
+| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
 </code></pre></div>
 <p>如果需要均衡负载，请执行如下命令：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; BALANCE LEADER;
 nebula&gt; SHOW HOSTS;
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
-| Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
-| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:3, test:4&quot;   | &quot;basketballplayer:10, test:10&quot; |
-| &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:4, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; |
-| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 6            | &quot;basketballplayer:3, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; |
-| &quot;Total&quot;     |      |          | 20           | &quot;basketballplayer:10, test:10&quot; | &quot;basketballplayer:30, test:30&quot; |
-+-------------+------+----------+--------------+--------------------------------+--------------------------------+
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
+| Host        | Port | Status   | Leader count | Leader distribution            | Partition distribution         | Version |
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
+| &quot;storaged0&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:3, test:4&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
+| &quot;storaged1&quot; | 9779 | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:4, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
+| &quot;storaged2&quot; | 9779 | &quot;ONLINE&quot; | 6            | &quot;basketballplayer:3, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.0.0&quot; |
++-------------+------+----------+--------------+--------------------------------+--------------------------------+---------+
 </code></pre></div>
 
   <hr>
@@ -6300,7 +6298,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>

@@ -6572,14 +6572,13 @@
 <h2 id="nebula_graph">检查 Nebula Graph 集群的机器状态<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h2>
 <p>Storage 服务加入集群后，可以执行命令<code>SHOW HOSTS</code>查看机器状态。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
-+------------------+------+----------+--------------+----------------------+------------------------+
-| Host             | Port | Status   | Leader count | Leader distribution  | Partition distribution |
-+------------------+------+----------+--------------+----------------------+------------------------+
-| &quot;192.168.10.100&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-| &quot;192.168.10.101&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-| &quot;192.168.10.102&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   |
-| &quot;Total&quot;          |      |          | 0            |                      |                        |
-+------------------+------+----------+--------------+----------------------+------------------------+
++------------------+------+----------+--------------+----------------------+------------------------+---------+
+| Host             | Port | Status   | Leader count | Leader distribution  | Partition distribution | Version |
++------------------+------+----------+--------------+----------------------+------------------------+---------+
+| &quot;192.168.10.100&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   | &quot;3.0.0&quot; |
+| &quot;192.168.10.101&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   | &quot;3.0.0&quot; |
+| &quot;192.168.10.102&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot; | &quot;No valid partition&quot;   | &quot;3.0.0&quot; |
++------------------+------+----------+--------------+----------------------+------------------------+---------+
 </code></pre></div>
 <p>在返回结果中，查看 <strong>Status</strong> 列，可以看到所有 Storage 服务都在线。</p>
 <h3 id="_1">异步实现创建和修改<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -6638,14 +6637,13 @@ vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
 <li>
 <p>执行命令<code>SHOW HOSTS</code>检查分片的分布情况，确保平衡分布。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
-| Host        | Port      | Status    | Leader count | Leader distribution              | Partition distribution |
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
-| &quot;storaged0&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-| &quot;storaged1&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-| &quot;storaged2&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   |
-| &quot;Total&quot;     |           |           | 15           | &quot;basketballplayer:15&quot;            | &quot;basketballplayer:15&quot;  |
-+-------------+-----------+-----------+--------------+----------------------------------+------------------------+
++-------------+-----------+-----------+--------------+----------------------------------+------------------------+---------+
+| Host        | Port      | Status    | Leader count | Leader distribution              | Partition distribution | Version |
++-------------+-----------+-----------+--------------+----------------------------------+------------------------+---------+
+| &quot;storaged0&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   | &quot;3.0.0&quot; |
+| &quot;storaged1&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   | &quot;3.0.0&quot; |
+| &quot;storaged2&quot; | 9779      | &quot;ONLINE&quot;  | 5            | &quot;basketballplayer:5&quot;             | &quot;basketballplayer:5&quot;   | &quot;3.0.0&quot; |
++-------------+-----------+-----------+--------------+----------------------------------+------------------------+---------+
 </code></pre></div>
 <p>如果<strong> Leader distribution </strong>分布不均匀，请执行命令<code>BALANCE LEADER</code>重新分配。更多信息，请参见 <a href="../../8.service-tuning/load-balance/">Storage 负载均衡</a>。</p>
 </li>
@@ -7095,7 +7093,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
