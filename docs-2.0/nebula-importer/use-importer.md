@@ -57,10 +57,7 @@ Importer 适用于将本地 CSV 文件的内容导入至 Nebula Graph 中。
   !!! note
   
         请使用正确的分支。 
-        Nebula Graph 1.x 和 2.x 的 rpc 协议不同，因此：
-
-      - Nebula Importer v1 分支只能连接 Nebula Graph 1.x。
-      - Nebula Importer master 分支和 v2 分支可以连接 Nebula Graph 2.x。
+        Nebula Graph 2.x 和 3.x 的 rpc 协议不同。
 
 2. 进入目录`nebula-importer`。
 
