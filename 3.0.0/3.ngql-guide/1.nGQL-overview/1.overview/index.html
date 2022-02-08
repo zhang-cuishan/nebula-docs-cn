@@ -6042,7 +6042,7 @@
 <td>语法元素的名称。</td>
 </tr>
 <tr>
-<td>::=</td>
+<td>:</td>
 <td>定义元素的公式。</td>
 </tr>
 <tr>
@@ -6063,9 +6063,18 @@
 </tr>
 </tbody>
 </table>
-<p>例如创建点或边的 nGQL 语法：</p>
-<div class="highlight"><pre><span></span><code>CREATE {TAG | EDGE} {&lt;tag_name&gt; | &lt;edge_type&gt;}(&lt;property_name&gt; &lt;data_type&gt;
-[, &lt;property_name&gt; &lt;data_type&gt; ...]);
+<p>例如创建点的 nGQL 语法：</p>
+<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...]
+VALUES &lt;vid&gt;: ([prop_value_list])
+
+tag_props:
+  tag_name ([prop_name_list])
+
+prop_name_list:
+   [prop_name [, prop_name] ...]
+
+prop_value_list:
+   [prop_value [, prop_value] ...]  
 </code></pre></div>
 <p>示例语句：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS player(name string, age int);
@@ -6265,7 +6274,7 @@ Feature:  Comparison of where clause
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
