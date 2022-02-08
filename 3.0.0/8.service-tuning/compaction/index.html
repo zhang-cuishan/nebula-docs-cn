@@ -3600,8 +3600,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rate_limit" class="md-nav__link">
-    可以动态调整rate_limit吗？
+  <a href="#rocksdb_rate_limit" class="md-nav__link">
+    可以动态调整rocksdb_rate_limit吗？
   </a>
   
 </li>
@@ -6156,8 +6156,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#rate_limit" class="md-nav__link">
-    可以动态调整rate_limit吗？
+  <a href="#rocksdb_rate_limit" class="md-nav__link">
+    可以动态调整rocksdb_rate_limit吗？
   </a>
   
 </li>
@@ -6268,7 +6268,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 
 <ul>
 <li>为控制<code>Compaction</code>的读写速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下参数：<div class="highlight"><pre><span></span><code><span class="c1"># 读写速率限制为 20MB/S。</span>
---rate_limit<span class="o">=</span><span class="m">20</span> <span class="o">(</span><span class="k">in</span> MB/s<span class="o">)</span>
+--rocksdb_rate_limit<span class="o">=</span><span class="m">20</span> <span class="o">(</span><span class="k">in</span> MB/s<span class="o">)</span>
 </code></pre></div>
 </li>
 </ul>
@@ -6286,8 +6286,9 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
 <h3 id="compaction_4">可以同时在多个图空间执行全量<code>Compaction</code>操作吗？<a class="headerlink" href="#compaction_4" title="Permanent link">&para;</a></h3>
 <p>可以，但是此时的硬盘 IO 会很高，可能会影响效率。</p>
 <h3 id="compaction_5">全量<code>Compaction</code>操作会耗费多长时间？<a class="headerlink" href="#compaction_5" title="Permanent link">&para;</a></h3>
-<p>如果已经设置读写速率限制，例如<code>rate_limit</code>限制为 20MB/S 时，用户可以通过 <code>硬盘使用量/rate_limit</code> 预估需要耗费的时间。如果没有设置读写速率限制，根据经验，速率大约为 50MB/S。</p>
-<h3 id="rate_limit">可以动态调整<code>rate_limit</code>吗？<a class="headerlink" href="#rate_limit" title="Permanent link">&para;</a></h3>
+<p>如果已经设置读写速率限制，例如<code>rocksdb_rate_limit</code>限制为 20MB/S 时，用户可以通过 <code>硬盘使用量/rocksdb_rate_limit</code> 预估需要耗费的时间。
+如果没有设置读写速率限制，根据经验，速率大约为 50MB/S。</p>
+<h3 id="rocksdb_rate_limit">可以动态调整<code>rocksdb_rate_limit</code>吗？<a class="headerlink" href="#rocksdb_rate_limit" title="Permanent link">&para;</a></h3>
 <p>不可以。</p>
 <h3 id="compaction_6">全量<code>Compaction</code>操作开始后可以停止吗？<a class="headerlink" href="#compaction_6" title="Permanent link">&para;</a></h3>
 <p>不可以停止，必须等待操作完成。这是 RocksDB 的限制。</p>
@@ -6297,7 +6298,7 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
