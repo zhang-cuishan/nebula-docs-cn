@@ -54,8 +54,8 @@ Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebul
   ```bash
   mkdir -p $working_dir
   cd $working_dir
-  git clone https://github.com/$user/nebula-graph.git
-  # 或：git clone git@github.com:$user/nebula-graph.git
+  git clone https://github.com/$user/nebula.git
+  # 或：git clone git@github.com:$user/nebula.git
 
   cd $working_dir/nebula
   git remote add upstream https://github.com/vesoft-inc/nebula.git
@@ -66,8 +66,8 @@ Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebul
 
   # 确认远程分支有效。
   # 正确的格式为：
-  # origin    git@github.com:$(user)/nebula-graph.git (fetch)
-  # origin    git@github.com:$(user)/nebula-graph.git (push)
+  # origin    git@github.com:$(user)/nebula.git (fetch)
+  # origin    git@github.com:$(user)/nebula.git (push)
   # upstream  https://github.com/vesoft-inc/nebula (fetch)
   # upstream  no_push (push)
   git remote -v
@@ -177,7 +177,7 @@ git push origin myfeature
 
 ### Step 8：创建 pull request
 
-1. 访问 fork 出的仓库`https://github.com/$user/nebula-graph` （替换此处的用户名`$user`)。
+1. 访问 fork 出的仓库`https://github.com/$user/nebula` （替换此处的用户名`$user`)。
 
 2. 单击`myfeature`分支旁的按钮`Compare & pull request`。
 
