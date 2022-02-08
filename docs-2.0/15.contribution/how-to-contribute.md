@@ -28,11 +28,11 @@ Nebula Graph 文档以 Markdown 语言编写。单击文档标题右侧的铅笔
 
 ### Step 1：通过 GitHub fork 仓库
 
-Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebula-graph 仓库](https://github.com/vesoft-inc/nebula)为例：
+Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebula 仓库](https://github.com/vesoft-inc/nebula)为例：
 
 1. 访问 [github.com/vesoft-inc/nebula](https://github.com/vesoft-inc/nebula)。
 
-2. 在右上角单击按钮`Fork`，然后单击用户名，即可 fork 出 nebula-graph 仓库。
+2. 在右上角单击按钮`Fork`，然后单击用户名，即可 fork 出 nebula 仓库。
 
 ### Step 2：将分支克隆到本地
 
@@ -80,14 +80,14 @@ Nebula Graph 项目有很多[仓库](https://github.com/vesoft-inc)，以 [nebul
   hook 将检查 commit，包括格式、构建、文档生成等。
 
   ```bash
-  cd $working_dir/nebula-graph/.git/hooks
-  ln -s $working_dir/nebula-graph/.linters/cpp/hooks/pre-commit.sh .
+  cd $working_dir/nebula/.git/hooks
+  ln -s $working_dir/nebula/.linters/cpp/hooks/pre-commit.sh .
   ```
 
   pre-commit hook 有时候可能无法正常执行，用户必须手动执行。
 
   ```bash
-  cd $working_dir/nebula-graph/.git/hooks
+  cd $working_dir/nebula/.git/hooks
   chmod +x pre-commit
   ```
 
