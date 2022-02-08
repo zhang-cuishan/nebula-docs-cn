@@ -24,5 +24,6 @@
 | Shift + 'l' | 显示 |
 | Ctrl/Cmd + 'z' | 撤销 |
 | Ctrl/Cmd + Shift + 'z' | 回退 |
+| Ctrl/Cmd + 'a'	| 选中所有点|
 | 选中 + 'del'| 隐藏 |
 | 选中 + Shift + 'del' | 隐藏其他 |
