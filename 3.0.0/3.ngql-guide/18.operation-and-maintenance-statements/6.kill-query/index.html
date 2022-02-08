@@ -5864,6 +5864,10 @@
 
 <h1 id="_1">终止查询<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><code>KILL QUERY</code>命令可以终止正在执行的查询，常用于终止慢查询。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当前任意角色权限账号都可以执行<code>KILL QUERY</code>命令。</p>
+</div>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>KILL QUERY (session=&lt;session_id&gt;, plan=&lt;plan_id&gt;);
 </code></pre></div>
@@ -5885,7 +5889,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
