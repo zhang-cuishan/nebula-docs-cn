@@ -10,7 +10,7 @@
 
 | 文档                                                         | 视频                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [什么是 Nebula Graph](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/1.what-is-nebula-graph/) | [Nebula Graph 介绍](https://www.bilibili.com/video/BV1kf4y1v7LM)、[万亿级别的图数据库 Nebula Graph](https://www.bilibili.com/video/BV1aK4y1e7Q4?spm_id_from=333.999.0.0) 、[Nebula v2.x 讲解](https://www.bilibili.com/video/BV14U4y157zc?spm_id_from=333.999.0.0)、[吴敏博士带你了解硬核 v2.5.0](https://www.bilibili.com/video/BV14b4y1S7BS)|
+| [什么是 Nebula Graph](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/1.what-is-nebula-graph/) | [Nebula Graph 介绍](https://www.bilibili.com/video/BV1kf4y1v7LM)、[万亿级别的图数据库 Nebula Graph](https://www.bilibili.com/video/BV1aK4y1e7Q4?spm_id_from=333.999.0.0)|
 
 
 ### 1.2 图相关术语
@@ -55,7 +55,7 @@
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | [使用 RPM/DEB 包](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/) | -                                                            |
   | [使用 TAR 包](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar/) | -                                                            |
-  | [使用 Docker](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/) | [使用 Docker Compose 部署 Nebula Graph 2.0 和 Web Studio](https://www.bilibili.com/video/BV1T54y1b7pa) |
+  | [使用 Docker](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/) | [使用 Docker Compose 部署 Nebula Graph和 Web Studio](https://www.bilibili.com/video/BV1T54y1b7pa) |
   | [使用源码](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/) | [图数据库入门教程（零）通过编译源码来安装 Nebula Graph](https://www.bilibili.com/video/BV1YJ411i7Jn?spm_id_from=333.999.0.0)                                                             |
   |-|[如何选择部署方式？](https://www.bilibili.com/video/BV1vy4y1K7S5)|
 
