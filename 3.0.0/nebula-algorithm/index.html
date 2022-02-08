@@ -6039,7 +6039,7 @@
 <td align="left">nightly</td>
 </tr>
 <tr>
-<td align="left">2.6.2</td>
+<td align="left">3.0.0</td>
 <td align="left">2.6.0、2.6.1</td>
 </tr>
 <tr>
@@ -6293,7 +6293,7 @@
 <ol>
 <li>
 <p>克隆仓库<code>nebula-algorithm</code>。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b v2.6 https://github.com/vesoft-inc/nebula-algorithm.git
+<div class="highlight"><pre><span></span><code>$ git clone -b v3.0.0 https://github.com/vesoft-inc/nebula-algorithm.git
 </code></pre></div>
 </li>
 <li>
@@ -6319,7 +6319,7 @@
 <div class="highlight"><pre><span></span><code>&lt;dependency&gt;
      &lt;groupId&gt;com.vesoft&lt;/groupId&gt;
      &lt;artifactId&gt;nebula-algorithm&lt;/artifactId&gt;
-     &lt;version&gt;2.6.2&lt;/version&gt;
+     &lt;version&gt;3.0.0&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre></div>
 </li>
@@ -6342,7 +6342,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </div>
 <ol>
 <li>
-<p>设置<a href="https://github.com/vesoft-inc/nebula-algorithm/blob/v2.6/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
+<p>设置<a href="https://github.com/vesoft-inc/nebula-algorithm/blob/v3.0.0/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
 <div class="highlight"><pre><span></span><code><span class="o">{</span>
     <span class="c1"># Spark 相关配置</span>
     spark: <span class="o">{</span>
@@ -6459,7 +6459,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </li>
 <li>
 <p>提交图计算任务。</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master &lt;mode&gt; --class com.vesoft.nebula.algorithm.Main &lt;nebula-algorithm-2.6.2.jar_path&gt; -p &lt;application.conf_path&gt;
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master &lt;mode&gt; --class com.vesoft.nebula.algorithm.Main &lt;nebula-algorithm-3.0.0.jar_path&gt; -p &lt;application.conf_path&gt;
 </code></pre></div>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit --master <span class="s2">&quot;local&quot;</span> --class com.vesoft.nebula.algorithm.Main /root/nebula-algorithm/target/nebula-algorithm-3.0-SNAPSHOT.jar -p /root/nebula-algorithm/src/main/resources/application.conf

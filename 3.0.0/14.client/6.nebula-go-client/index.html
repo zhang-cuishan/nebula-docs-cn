@@ -5903,7 +5903,7 @@
 
 
 <h1 id="nebula_go">Nebula Go<a class="headerlink" href="#nebula_go" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-go/tree/v2.6.0">Nebula Go</a> 是一款 Go 语言的客户端，可以连接、管理 Nebula Graph 图数据库。</p>
+<p><a href="https://github.com/vesoft-inc/nebula-go/tree/v3.0.0">Nebula Go</a> 是一款 Go 语言的客户端，可以连接、管理 Nebula Graph 图数据库。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>已安装 Go，版本为 1.13 及以上。</p>
 <h2 id="_2">版本对照表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -5917,14 +5917,14 @@
 <tbody>
 <tr>
 <td align="left">3.0.0</td>
+<td align="left">3.0.0</td>
+</tr>
+<tr>
+<td align="left">2.6.x</td>
 <td align="left">2.6.0</td>
 </tr>
 <tr>
-<td align="left">2.0.1</td>
-<td align="left">2.0.0-GA</td>
-</tr>
-<tr>
-<td align="left">2.0.0</td>
+<td align="left">2.0.x</td>
 <td align="left">2.0.0-GA</td>
 </tr>
 </tbody>
@@ -5932,8 +5932,8 @@
 <h2 id="nebula_go_1">下载 Nebula Go<a class="headerlink" href="#nebula_go_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>（推荐）如果需要下载指定版本的 Nebula Go，请使用选项<code>--branch</code>指定分支。例如安装 v2.6.0发布版本，请执行如下命令：</p>
-<div class="highlight"><pre><span></span><code>$ git clone --branch v2.6.0 https://github.com/vesoft-inc/nebula-go.git
+<p>（推荐）如果需要下载指定版本的 Nebula Go，请使用选项<code>--branch</code>指定分支。例如安装 v3.0.0发布版本，请执行如下命令：</p>
+<div class="highlight"><pre><span></span><code>$ git clone --branch v3.0.0 https://github.com/vesoft-inc/nebula-go.git
 </code></pre></div>
 </li>
 </ul>
@@ -5948,7 +5948,7 @@
 <p>安装或更新的命令如下：</p>
 <div class="highlight"><pre><span></span><code>$ go get -u -v github.com/vesoft-inc/nebula-go@&lt;tag&gt;
 </code></pre></div>
-<p><code>tag</code>：指定分支。例如<code>master</code>或<code>v2.6.0</code>。</p>
+<p><code>tag</code>：指定分支。例如<code>master</code>或<code>v3.0.0</code>。</p>
 <h2 id="_4">核心代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>详细示例请参见 <a href="https://github.com/vesoft-inc/nebula-go/blob/master/basic_example/graph_client_basic_example.go">graph_client_basic_example</a> 和 <a href="https://github.com/vesoft-inc/nebula-go/blob/master/gorountines_example/graph_client_goroutines_example.go">graph_client_goroutines_example</a>。</p>
 <div class="highlight"><pre><span></span><code>const <span class="o">(</span>
@@ -5990,7 +5990,7 @@ func main<span class="o">()</span> <span class="o">{</span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>

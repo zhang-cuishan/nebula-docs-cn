@@ -6144,7 +6144,7 @@ Creating nebula-docker-compose_storaged1_1 ... <span class="k">done</span>
 <ol>
 <li>
 <p>使用 Nebula Console 镜像启动一个容器，并连接到 Nebula Graph 服务所在的网络（nebula-docker-compose_nebula-net）中。</p>
-<div class="highlight"><pre><span></span><code>$ docker run --rm -ti --network nebula-docker-compose_nebula-net --entrypoint<span class="o">=</span>/bin/sh vesoft/nebula-console:v2.6.0
+<div class="highlight"><pre><span></span><code>$ docker run --rm -ti --network nebula-docker-compose_nebula-net --entrypoint<span class="o">=</span>/bin/sh vesoft/nebula-console:v3.0.0
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6269,7 +6269,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="docker">如何固定 Docker 映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:3.0.0
+    image: vesoft/nebula-graphd:v3.0.0
     ...
     ports:
       - <span class="m">9669</span>:9669
@@ -6298,7 +6298,7 @@ Removing network nebula-docker-compose_nebula-net
 <p>以上错误表示已达到 Docker Hub 的速率限制。解决方案请参见 <a href="https://www.docker.com/increase-rate-limit">Understanding Docker Hub Rate Limiting</a>。</p>
 <h3 id="nebula_console">如何更新 Nebula Console？<a class="headerlink" href="#nebula_console" title="Permanent link">&para;</a></h3>
 <p>执行如下命令可以更新 Nebula Console 客户端镜像。</p>
-<div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v2.6.0
+<div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v3.0.0
 </code></pre></div>
 <h3 id="nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph">为什么更新 nebula-docker-compose 仓库（Nebula Graph 2.0.0-RC）后，无法通过端口<code>3699</code>连接 Nebula Graph？<a class="headerlink" href="#nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph" title="Permanent link">&para;</a></h3>
 <p>在 Nebula Graph 2.0.0-RC 版本，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
