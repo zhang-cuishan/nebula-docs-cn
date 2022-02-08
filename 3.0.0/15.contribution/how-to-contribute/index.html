@@ -6370,13 +6370,13 @@
 <h2 id="_4">批量修改或新增文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>该方法适用于贡献代码、批量修改多篇文档或者新增文档。</p>
 <h3 id="step_1_github_fork">Step 1：通过 GitHub fork 仓库<a class="headerlink" href="#step_1_github_fork" title="Permanent link">&para;</a></h3>
-<p>Nebula Graph 项目有很多<a href="https://github.com/vesoft-inc">仓库</a>，以 <a href="https://github.com/vesoft-inc/nebula">nebula-graph 仓库</a>为例：</p>
+<p>Nebula Graph 项目有很多<a href="https://github.com/vesoft-inc">仓库</a>，以 <a href="https://github.com/vesoft-inc/nebula">nebula 仓库</a>为例：</p>
 <ol>
 <li>
 <p>访问 <a href="https://github.com/vesoft-inc/nebula">github.com/vesoft-inc/nebula</a>。</p>
 </li>
 <li>
-<p>在右上角单击按钮<code>Fork</code>，然后单击用户名，即可 fork 出 nebula-graph 仓库。</p>
+<p>在右上角单击按钮<code>Fork</code>，然后单击用户名，即可 fork 出 nebula 仓库。</p>
 </li>
 </ol>
 <h3 id="step_2">Step 2：将分支克隆到本地<a class="headerlink" href="#step_2" title="Permanent link">&para;</a></h3>
@@ -6396,8 +6396,8 @@
 <p>克隆代码。</p>
 <div class="highlight"><pre><span></span><code>mkdir -p <span class="nv">$working_dir</span>
 <span class="nb">cd</span> <span class="nv">$working_dir</span>
-git clone https://github.com/<span class="nv">$user</span>/nebula-graph.git
-<span class="c1"># 或：git clone git@github.com:$user/nebula-graph.git</span>
+git clone https://github.com/<span class="nv">$user</span>/nebula.git
+<span class="c1"># 或：git clone git@github.com:$user/nebula.git</span>
 
 <span class="nb">cd</span> <span class="nv">$working_dir</span>/nebula
 git remote add upstream https://github.com/vesoft-inc/nebula.git
@@ -6408,8 +6408,8 @@ git remote set-url --push upstream no_push
 
 <span class="c1"># 确认远程分支有效。</span>
 <span class="c1"># 正确的格式为：</span>
-<span class="c1"># origin    git@github.com:$(user)/nebula-graph.git (fetch)</span>
-<span class="c1"># origin    git@github.com:$(user)/nebula-graph.git (push)</span>
+<span class="c1"># origin    git@github.com:$(user)/nebula.git (fetch)</span>
+<span class="c1"># origin    git@github.com:$(user)/nebula.git (push)</span>
 <span class="c1"># upstream  https://github.com/vesoft-inc/nebula (fetch)</span>
 <span class="c1"># upstream  no_push (push)</span>
 git remote -v
@@ -6419,11 +6419,11 @@ git remote -v
 <p>（可选）定义 pre-commit hook。</p>
 <p>请将 Nebula Graph 的 pre-commit hook 连接到<code>.git</code>目录。</p>
 <p>hook 将检查 commit，包括格式、构建、文档生成等。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$working_dir</span>/nebula-graph/.git/hooks
-ln -s <span class="nv">$working_dir</span>/nebula-graph/.linters/cpp/hooks/pre-commit.sh .
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$working_dir</span>/nebula/.git/hooks
+ln -s <span class="nv">$working_dir</span>/nebula/.linters/cpp/hooks/pre-commit.sh .
 </code></pre></div>
 <p>pre-commit hook 有时候可能无法正常执行，用户必须手动执行。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$working_dir</span>/nebula-graph/.git/hooks
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> <span class="nv">$working_dir</span>/nebula/.git/hooks
 chmod +x pre-commit
 </code></pre></div>
 </li>
@@ -6504,7 +6504,7 @@ git rebase upstream/master
 <h3 id="step_8_pull_request">Step 8：创建 pull request<a class="headerlink" href="#step_8_pull_request" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>访问 fork 出的仓库<code>https://github.com/$user/nebula-graph</code> （替换此处的用户名<code>$user</code>)。</p>
+<p>访问 fork 出的仓库<code>https://github.com/$user/nebula</code> （替换此处的用户名<code>$user</code>)。</p>
 </li>
 <li>
 <p>单击<code>myfeature</code>分支旁的按钮<code>Compare &amp; pull request</code>。</p>
@@ -6537,7 +6537,7 @@ git rebase upstream/master
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
       
     
   </small>
