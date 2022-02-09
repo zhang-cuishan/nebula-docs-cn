@@ -16,6 +16,12 @@ Nebula Graph 支持多种类型客户端，包括 CLI 客户端、GUI 客户端�
 
 - 运行 Nebula Console 的机器和运行 Nebula Graph 的服务器网络互通。
 
+- Nebula Console 版本兼容 Nebula Graph 版本。
+
+  !!! note
+  
+        版本相同的 Nebula Console 和 Nebula Graph 兼容程度最高，版本不同的 Nebula Console 连接 Nebula Graph 时，可能会有兼容问题，或者无法连接并报错`incompatible version between client and server`。
+
 ### 操作步骤
 
 1. 在 [Nebula Console](https://github.com/vesoft-inc/nebula-console/releases "the nebula-console Releases page") 下载页面，确认需要的版本，单击** Assets**。
