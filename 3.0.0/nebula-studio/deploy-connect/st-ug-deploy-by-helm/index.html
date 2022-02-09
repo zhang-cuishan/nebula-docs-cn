@@ -5970,34 +5970,14 @@
 <td align="left">Deployment 的副本数。</td>
 </tr>
 <tr>
-<td align="left">image.httpGateway.name</td>
-<td align="left">vesoft/nebula-http-gateway</td>
-<td align="left">nebula-http-gateway 镜像的仓库地址。</td>
-</tr>
-<tr>
 <td align="left">image.nebulaStudio.name</td>
 <td align="left">vesoft/nebula-graph-studio</td>
 <td align="left">nebula-graph-studio 镜像的仓库地址。</td>
 </tr>
 <tr>
-<td align="left">image.nginx.name</td>
-<td align="left">nginx</td>
-<td align="left">nginx 镜像的仓库地址。</td>
-</tr>
-<tr>
-<td align="left">image.httpGateway.version</td>
-<td align="left">v2.1.1</td>
-<td align="left">nebula-http-gateway 的版本。</td>
-</tr>
-<tr>
 <td align="left">image.nebulaStudio.version</td>
-<td align="left">v3.1.0</td>
+<td align="left">v3.2.0</td>
 <td align="left">nebula-graph-studio 的版本。</td>
-</tr>
-<tr>
-<td align="left">image.nginx.version</td>
-<td align="left">alpine</td>
-<td align="left">nginx 的版本。</td>
 </tr>
 <tr>
 <td align="left">service.type</td>
@@ -6010,19 +5990,14 @@
 <td align="left">nebula-graph-studio 中 web 服务的端口。</td>
 </tr>
 <tr>
-<td align="left">resources.httpGateway</td>
-<td align="left">{}</td>
-<td align="left">nebula-http-gateway 的资源限制/请求。</td>
+<td align="left">service.nodePort</td>
+<td align="left">32701</td>
+<td align="left">Kubernetes 集群外部访问 nebula-studio 的代理端口。</td>
 </tr>
 <tr>
 <td align="left">resources.nebulaStudio</td>
 <td align="left">{}</td>
 <td align="left">nebula-studio 的资源限制/请求。</td>
-</tr>
-<tr>
-<td align="left">resources.nginx</td>
-<td align="left">{}</td>
-<td align="left">nginx 的资源限制/请求。</td>
 </tr>
 <tr>
 <td align="left">persistent.storageClassName</td>
@@ -6042,7 +6017,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2022</span>
       
     
   </small>
