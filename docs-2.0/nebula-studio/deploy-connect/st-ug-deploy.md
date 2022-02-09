@@ -35,10 +35,14 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
 
 2. 使用`sudo rpm -i <rpm>`命令安装 RPM 包。
 
-   例如，安装 Studio {{studio.release}} 版本需要运行以下命令：
+   例如，安装 Studio {{studio.release}} 版本需要运行以下命令，默认安装路径为`/usr/local/nebula-graph-studio`：
 
    ```bash
    $ sudo rpm -i nebula-graph-studio-{{studio.release}}.x86_64.rpm
+   ```
+   也可以使用以下命令安装到指定路径：
+   ```bash
+   $ sudo rpm -i nebula-graph-studio-{{studio.release}}.x86_64.rpm --prefix=<path> 
    ```
 
    当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。
@@ -83,20 +87,19 @@ $ lsof -i:7001
 如果端口被占用，且无法结束该端口上进程，用户可以通过以下命令修改 Studio 服务启动端口，并重新启动服务。
 ```bash
 //修改 studio 服务启动端口
-$ vi config/config.default.js
+$ vi config/example-config.yaml
 
 //修改
-...
-    config.cluster = {
-        listen: {
-            port: 7001, // 修改这个端口号，改成任意一个当前可用的即可
-            hostname: '0.0.0.0',
-        },
-    };
-...
+web:
+#  task_id_path:
+#  upload_dir:
+#  tasks_dir:
+#  sqlitedb_file_path:
+#  ip:
+  port: 7001 // 修改这个端口号，改成任意一个当前可用的即可
 
-//重新启动 npm
-$ npm run start
+//重启服务
+$ systemctl restart nebula-graph-studio.service
 ```
 
 ## tar 包部署 Studio
