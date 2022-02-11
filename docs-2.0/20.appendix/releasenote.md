@@ -40,7 +40,7 @@
 
 - 支持反引号中的任何字符串作为 Tag 名称。 [#3424](https://github.com/vesoft-inc/nebula/pull/3424)
 
-- 存储通过心跳将 partition 的磁盘路径信息发送到 meta。 [#3369](https://github.com/vesoft-inc/nebula/pull/3369) [#3416](https://github.com/vesoft-inc/nebula/pull/3416)
+- Storage 服务通过心跳将 partition 的磁盘路径信息发送到 Meta 服务。 [#3369](https://github.com/vesoft-inc/nebula/pull/3369) [#3416](https://github.com/vesoft-inc/nebula/pull/3416)
 
 - 添加对无效密码尝试的限制。 [#3573](https://github.com/vesoft-inc/nebula/pull/3573) [#3629](https://github.com/vesoft-inc/nebula/pull/3629)
 
