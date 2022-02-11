@@ -54,7 +54,7 @@
 
 - 增强日期解析器。 [#3179](https://github.com/vesoft-inc/nebula/pull/3179)
 
-- 删除 meta 客户端中的读锁以减少读写锁的副作用。 [#3256](https://github.com/vesoft-inc/nebula/pull/3256)
+- 删除 meta 服务中的读锁以减少读写锁的副作用。 [#3256](https://github.com/vesoft-inc/nebula/pull/3256)
 
 - 重构存储索引，解决节点间耦合严重的问题。 [#3196](https://github.com/vesoft-inc/nebula/pull/3196)
 
