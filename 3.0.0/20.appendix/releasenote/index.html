@@ -5661,6 +5661,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    Feature
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancement" class="md-nav__link">
+    Enhancement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug_fix" class="md-nav__link">
+    Bug fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incompatibility" class="md-nav__link">
+    Incompatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     历史版本
   </a>
@@ -5823,6 +5851,34 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    Feature
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhancement" class="md-nav__link">
+    Enhancement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug_fix" class="md-nav__link">
+    Bug fix
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incompatibility" class="md-nav__link">
+    Incompatibility
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     历史版本
   </a>
@@ -5847,7 +5903,210 @@
 
 
 <h1 id="nebula_graph_300_release_notes">Nebula Graph 3.0.0 release notes<a class="headerlink" href="#nebula_graph_300_release_notes" title="Permanent link">&para;</a></h1>
-<p>TODO</p>
+<h2 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h2>
+<ul>
+<li>新增<a href="../7.data-security/2.backup-restore/1.what-is-br.md">备份与恢复工具BR</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3469">#3469</a> <a href="https://github.com/vesoft-inc/nebula-agent/pull/1">#1</a> <a href="https://github.com/vesoft-inc/nebula-br/pull/22">#22</a></li>
+</ul>
+<ul>
+<li>新增 <a href="../../3.ngql-guide/7.general-query-statements/2.match/">openCypher 多 MATCH 查询</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3519">#3519</a> <a href="https://github.com/vesoft-inc/nebula/pull/3318">#3318</a></li>
+</ul>
+<ul>
+<li>新增 traverse 算子。 <a href="https://github.com/vesoft-inc/nebula/pull/3308">#3308</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../4.deployment-and-installation/standalone-deployment/">存算合并版</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3310">#3310</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../5.configurations-and-logs/1.configurations/4.storage-config/">存储引擎的 kv 分离</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3281">#3281</a></li>
+</ul>
+<ul>
+<li>新增<code>LOOKUP</code>支持 topN 下推。 <a href="https://github.com/vesoft-inc/nebula/pull/3499">#3499</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">不带 Tag 的点</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3316">#3316</a> <a href="https://github.com/vesoft-inc/nebula/pull/3335">#3335</a> <a href="https://github.com/vesoft-inc/nebula/pull/3328">#3328</a> <a href="https://github.com/vesoft-inc/nebula/pull/3286">#3286</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../nebula-console/">参数化查询</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3379">#3379</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../3.ngql-guide/7.general-query-statements/2.match/">不指定 VID 的查询</a>，通过<code>LIMIT</code>子句限制输出结果。 <a href="https://github.com/vesoft-inc/nebula/pull/3320">#3320</a> <a href="https://github.com/vesoft-inc/nebula/pull/3329">#3329</a> <a href="https://github.com/vesoft-inc/nebula/pull/3262">#3262</a></li>
+</ul>
+<ul>
+<li>新增 <a href="../../3.ngql-guide/3.data-types/4.date-and-time/">duration</a> 数据类型和函数。 <a href="https://github.com/vesoft-inc/nebula/pull/3338">#3338</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">中文 Schema</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3380">#3380</a>  <a href="https://github.com/vesoft-inc/nebula/pull/3440">#3440</a></li>
+</ul>
+<ul>
+<li>新增<a href="../../7.data-security/1.authentication/2.management-user/">查看指定用户权限</a>。 <a href="https://github.com/vesoft-inc/nebula/pull/3300">#3300</a></li>
+</ul>
+<!--
+- 支持Snowflake IDs。 [#3500](https://github.com/vesoft-inc/nebula/pull/3500)
+-->
+
+<h2 id="enhancement">Enhancement<a class="headerlink" href="#enhancement" title="Permanent link">&para;</a></h2>
+<ul>
+<li>重构集群管理。 <a href="https://github.com/vesoft-inc/nebula/pull/3343">#3343</a></li>
+</ul>
+<ul>
+<li>当日志磁盘空间不足时，支持改变日志级别。 <a href="https://github.com/vesoft-inc/nebula/pull/3576">#3576</a></li>
+</ul>
+<ul>
+<li>升级 third party 到 3.0。 <a href="https://github.com/vesoft-inc/nebula/pull/3554">#3554</a> <a href="https://github.com/vesoft-inc/nebula/pull/3511">#3511</a></li>
+</ul>
+<ul>
+<li>支持反引号中的任何字符串作为 Tag 名称。 <a href="https://github.com/vesoft-inc/nebula/pull/3424">#3424</a></li>
+</ul>
+<ul>
+<li>存储通过心跳将 partition 的磁盘路径信息发送到 meta。 <a href="https://github.com/vesoft-inc/nebula/pull/3369">#3369</a> <a href="https://github.com/vesoft-inc/nebula/pull/3416">#3416</a></li>
+</ul>
+<ul>
+<li>添加对无效密码尝试的限制。 <a href="https://github.com/vesoft-inc/nebula/pull/3573">#3573</a> <a href="https://github.com/vesoft-inc/nebula/pull/3629">#3629</a></li>
+</ul>
+<ul>
+<li>TOSS 支持<code>DELETE</code>操作的一致性。 <a href="https://github.com/vesoft-inc/nebula/pull/3374">#3374</a></li>
+</ul>
+<ul>
+<li>支持对接 logrotate。 <a href="https://github.com/vesoft-inc/nebula/pull/3541">#3541</a></li>
+</ul>
+<ul>
+<li>支持更多的统计。 <a href="https://github.com/vesoft-inc/nebula/pull/3446">#3446</a> <a href="https://github.com/vesoft-inc/nebula/pull/3605">#3605</a> <a href="https://github.com/vesoft-inc/nebula/pull/3590">#3590</a></li>
+</ul>
+<ul>
+<li>在<code>GO</code>语句的<code>WHERE</code>子句中支持属性函数。 <a href="https://github.com/vesoft-inc/nebula/pull/3443">#3443</a></li>
+</ul>
+<ul>
+<li>增强日期解析器。 <a href="https://github.com/vesoft-inc/nebula/pull/3179">#3179</a></li>
+</ul>
+<ul>
+<li>删除 meta 客户端中的读锁以减少读写锁的副作用。 <a href="https://github.com/vesoft-inc/nebula/pull/3256">#3256</a></li>
+</ul>
+<ul>
+<li>重构存储索引，解决节点间耦合严重的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3196">#3196</a></li>
+</ul>
+<ul>
+<li>支持指定<code>round()</code>函数的浮点精度。 <a href="https://github.com/vesoft-inc/nebula/pull/3178">#3178</a>ß</li>
+</ul>
+<ul>
+<li>ES 客户端支持 https。 <a href="https://github.com/vesoft-inc/nebula/pull/3150">#3150</a></li>
+</ul>
+<ul>
+<li>将版本信息移到心跳之外。 <a href="https://github.com/vesoft-inc/nebula/pull/3378">#3378</a></li>
+</ul>
+<ul>
+<li>支持空的列表、集合、映射。 <a href="https://github.com/vesoft-inc/nebula/pull/3302">#3302</a></li>
+</ul>
+<ul>
+<li>支持创建地理索引时指定 s2 区域覆盖参数。<a href="https://github.com/vesoft-inc/nebula/pull/3396">#3396</a></li>
+</ul>
+<ul>
+<li><code>SHOW HOSTS</code>中新增版本信息的显示。<a href="https://github.com/vesoft-inc/nebula/pull/3702">#3702</a></li>
+</ul>
+<h2 id="bug_fix">Bug fix<a class="headerlink" href="#bug_fix" title="Permanent link">&para;</a></h2>
+<ul>
+<li>修复 nGQL 中未指定值时使用默认值的情况下，存在内存没有释放的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3666">#3666</a></li>
+</ul>
+<ul>
+<li>修复无法使用<code>coalesce()</code>函数的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3653">#3653</a></li>
+</ul>
+<ul>
+<li>修复批量插入时，由于 Tag 已创建索引而导致查找结果错误的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3627">#3627</a></li>
+</ul>
+<ul>
+<li>修复表达式超过深度时的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3606">#3606</a></li>
+</ul>
+<ul>
+<li>禁用 nGQL 的<code>YIELD</code>子句和<code>WHERE</code>子句中的聚合函数。 <a href="https://github.com/vesoft-inc/nebula/pull/3597">#3597</a></li>
+</ul>
+<ul>
+<li>修复在<code>UNWIND</code>、<code>WHERE</code>子句中使用聚合函数时的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3397">#3397</a> <a href="https://github.com/vesoft-inc/nebula/pull/3355">#3355</a></li>
+</ul>
+<ul>
+<li>修复使用旧 Schema 版本值重建标签索引的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3332">#3332</a></li>
+</ul>
+<ul>
+<li>修复使用<code>GO...REVERSELY</code>查询结果会包含过期边的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3536">#3536</a></li>
+</ul>
+<ul>
+<li>修复 CentOS6 中估计内存信息的错误。 <a href="https://github.com/vesoft-inc/nebula/pull/3534">#3534</a></li>
+</ul>
+<ul>
+<li>修复当<code>LOOKUP</code>语句包含一个过滤器，该过滤器由一个逻辑 AND 表达式和一个只有一个元素的 IN 表达式组成时的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3525">#3525</a></li>
+</ul>
+<ul>
+<li>修复 metad 在高负载下挂起的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3482">#3482</a></li>
+</ul>
+<ul>
+<li>修复<code>UNWIND</code>子图的崩溃问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3506">#3506</a></li>
+</ul>
+<ul>
+<li>修复重建索引时<code>DROP SPACE</code>的崩溃问题。<a href="https://github.com/vesoft-inc/nebula/pull/3406">#3406</a></li>
+</ul>
+<ul>
+<li>修复 cgroup v2 下读取内存统计的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3419">#3419</a></li>
+</ul>
+<ul>
+<li>修复<code>DROP TAG INDEX</code>会删除同名边索引，删除边索引时也会删除同名 TAG 索引的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3413">#3413</a></li>
+</ul>
+<ul>
+<li>修复克隆空间后无法显示边的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3351">#3351</a></li>
+</ul>
+<ul>
+<li>修复索引存在检查的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3315">#3315</a></li>
+</ul>
+<ul>
+<li>修复执行<code>ALTER</code>语句后获取类型属性时可能导致存储获取空指针的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3325">#3325</a></li>
+</ul>
+<ul>
+<li>优化 raft 从而确保系统更稳定。 <a href="https://github.com/vesoft-inc/nebula/pull/3172">#3172</a> <a href="https://github.com/vesoft-inc/nebula/pull/3435">#3435</a> <a href="https://github.com/vesoft-inc/nebula/pull/3358">#3358</a> <a href="https://github.com/vesoft-inc/nebula/pull/3322">#3322</a> <a href="https://github.com/vesoft-inc/nebula/pull/3031">#3031</a></li>
+</ul>
+<ul>
+<li>内存比率大于 1.0 时取消内存检查。<a href="https://github.com/vesoft-inc/nebula/pull/3289">#3289</a></li>
+</ul>
+<ul>
+<li>修复使用 ninja build 时的错误。 <a href="https://github.com/vesoft-inc/nebula/pull/3195">#3195</a></li>
+</ul>
+<ul>
+<li>修复同时创建同名 Tag 和 Edge type 可能都成功的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3735">#3735</a></li>
+</ul>
+<ul>
+<li>修复当不同的图空间中存在相同的 Tag 或 Edge type 的内部 ID 时，创建全文索引失败的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/3747">#3747</a></li>
+</ul>
+<ul>
+<li>修复<code>YIELD</code>子句和 <code>GO</code> 语句中变量不一致的问题。<a href="https://github.com/vesoft-inc/nebula/pull/3430">#3430</a></li>
+</ul>
+<h2 id="incompatibility">Incompatibility<a class="headerlink" href="#incompatibility" title="Permanent link">&para;</a></h2>
+<p>Nebula Graph 3.0.0 不支持 v2.x 的大部分生态工具，请升级<a href="../6.eco-tool-version/">生态工具</a>。</p>
+<ul>
+<li>在配置文件中添加的 Storage 主机无法直接读写，配置文件的作用仅仅是将 Storage 主机注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 主机。<a href="https://github.com/vesoft-inc/nebula/pull/3343">#3343</a></li>
+</ul>
+<ul>
+<li>禁用 ZONE 和 GROUP。<a href="https://github.com/vesoft-inc/nebula/pull/3776">#3776</a> <a href="https://github.com/vesoft-inc/nebula/pull/3825">#3825</a>  <a href="https://github.com/vesoft-inc/nebula/pull/3330">#3330</a></li>
+</ul>
+<ul>
+<li>禁用<code>BALANCE DATA</code>。  <a href="https://github.com/vesoft-inc/nebula/pull/3756">#3756</a></li>
+</ul>
+<ul>
+<li>将默认会话超时时间从<code>0</code>修改为<code>28800</code>秒，范围从<code>1</code>到<code>604800</code>秒。 <a href="https://github.com/vesoft-inc/nebula/pull/3357">#3357</a> <a href="https://github.com/vesoft-inc/nebula/pull/3807">#3807</a></li>
+</ul>
+<ul>
+<li>添加<code>SHOW LOCAL SESSIONS</code>和<code>SHOW LOCAL QUERIES</code>命令，并弃用<code>SHOW ALL QUERIES</code>。 <a href="https://github.com/vesoft-inc/nebula/pull/3488">#3488</a></li>
+</ul>
+<ul>
+<li>从点至少有一个 Tag 修改为可以没有 Tag。<code>DELETE VERTEX</code>修改为默认只删除点，不再删除该点关联的出边和入边，此时将默认存在悬挂边。 <a href="https://github.com/vesoft-inc/nebula/pull/3316">#3316</a> <a href="https://github.com/vesoft-inc/nebula/pull/3335">#3335</a> <a href="https://github.com/vesoft-inc/nebula/pull/3328">#3328</a> <a href="https://github.com/vesoft-inc/nebula/pull/3286">#3286</a></li>
+</ul>
+<ul>
+<li>禁用<code>YIELD</code>子句返回自定义变量。 <a href="https://github.com/vesoft-inc/nebula/pull/3271">#3271</a></li>
+</ul>
+<ul>
+<li><code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>、<code>FIND PATH</code>、<code>GET SUBGRAPH</code>语句中必须添加<code>YIELD</code>子句。<a href="https://github.com/vesoft-inc/nebula/pull/2957">#2957</a> <a href="https://github.com/vesoft-inc/nebula/pull/3056">#3056</a> <a href="https://github.com/vesoft-inc/nebula/pull/3139">#3139</a></li>
+</ul>
+<ul>
+<li>新增非保留关键字<code>s2_max_level</code>、<code>s2_max_cells</code>。<a href="https://github.com/vesoft-inc/nebula/pull/3396">#3396</a></li>
+</ul>
+<ul>
+<li>MATCH 语句中获取点属性时，必须指定 Tag，例如从<code>return v.name</code>变为<code>return v.player.name</code>。<a href="https://github.com/vesoft-inc/nebula/pull/3255">#3255</a></li>
+</ul>
 <h2 id="_1">历史版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://nebula-graph.com.cn/tags/release-note/">历史版本</a></p>
 
@@ -5856,7 +6115,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2022</span>
       
     
   </small>
