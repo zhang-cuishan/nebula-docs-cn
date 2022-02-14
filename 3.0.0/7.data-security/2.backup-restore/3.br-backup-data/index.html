@@ -5995,6 +5995,10 @@
 <div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt;
 </code></pre></div>
 <p>例如运行以下命令对 meta 服务的地址为<code>127.0.0.1:9559</code>的整个集群进行全量备份操作，并将备份文件保存到本地的 <code>/home/nebula/backup/</code>路径下。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>如果 mated 有多个，可设置为任意一个地址。</p>
+</div>
 <div class="highlight"><pre><span></span><code> $ ./bin/br backup full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --storage <span class="s2">&quot;local:///home/nebula/backup/&quot;</span>
 </code></pre></div>
 <p>运行以下命令对 meta 服务的地址为<code>127.0.0.1:9559</code>的整个集群进行全量备份操作，并将备份文件保存到兼容 s3 协议的对象存储服务 <code>br-test</code> 桶下的<code>backup</code>中。
@@ -6018,6 +6022,13 @@
 <td>否</td>
 <td>无</td>
 <td>查看帮助。</td>
+</tr>
+<tr>
+<td>--debug</td>
+<td>-</td>
+<td>否</td>
+<td>无</td>
+<td>查看更多日志信息。</td>
 </tr>
 <tr>
 <td>--log</td>
