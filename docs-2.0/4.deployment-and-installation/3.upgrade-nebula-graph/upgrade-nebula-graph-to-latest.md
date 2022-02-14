@@ -209,3 +209,7 @@ ADD HOSTS 192.168.10.100:9779, 192.168.10.101:9779, 192.168.10.102:9779;
 Q：为什么升级后用`SHOW JOBS`查询到的 Job 的 ID 与升级前一样，但 Job 名称等信息不同了？
 
 A： Nebula Graph 2.5.0 版本调整了 Job 的定义，详情参见 [Pull request](https://github.com/vesoft-inc/nebula-common/pull/562/files)。如果是从 2.5.0 之前的版本升级，会出现该问题。
+
+Q: 有哪些语法不兼容 ?
+
+A: 参见[Release Note](../../../20.appendix/releasenote.md) Incompatibility 部分。
