@@ -49,8 +49,6 @@
 
 - 支持更多的统计。 [#3446](https://github.com/vesoft-inc/nebula/pull/3446) [#3605](https://github.com/vesoft-inc/nebula/pull/3605) [#3590](https://github.com/vesoft-inc/nebula/pull/3590)
 
-- 在`LOOKUP`语句的`WHERE`子句中支持属性函数。 [#3443](https://github.com/vesoft-inc/nebula/pull/3443)
-
 - 增强日期解析器。 [#3179](https://github.com/vesoft-inc/nebula/pull/3179)
 
 - 删除 meta 服务中的读锁以减少读写锁的副作用。 [#3256](https://github.com/vesoft-inc/nebula/pull/3256)
