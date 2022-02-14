@@ -6,7 +6,7 @@
 
 - 新增 [openCypher 多 MATCH 查询](../3.ngql-guide/7.general-query-statements/2.match.md)。 [#3519](https://github.com/vesoft-inc/nebula/pull/3519) [#3318](https://github.com/vesoft-inc/nebula/pull/3318)
 
-- 新增 traverse 算子。 [#3308](https://github.com/vesoft-inc/nebula/pull/3308)
+<! -- - 新增 traverse 算子。 [#3308](https://github.com/vesoft-inc/nebula/pull/3308) -->
 
 - 新增[存算合并版](../4.deployment-and-installation/standalone-deployment.md)。 [#3310](https://github.com/vesoft-inc/nebula/pull/3310)
 
