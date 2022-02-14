@@ -6,8 +6,6 @@
 
 - 新增 [openCypher 多 MATCH 查询](../3.ngql-guide/7.general-query-statements/2.match.md)。 [#3519](https://github.com/vesoft-inc/nebula/pull/3519) [#3318](https://github.com/vesoft-inc/nebula/pull/3318)
 
-<! -- - 新增 traverse 算子。 [#3308](https://github.com/vesoft-inc/nebula/pull/3308) -->
-
 - 新增[存算合并版](../4.deployment-and-installation/standalone-deployment.md)。 [#3310](https://github.com/vesoft-inc/nebula/pull/3310)
 
 - 新增[存储引擎的 kv 分离](../5.configurations-and-logs/1.configurations/4.storage-config.md)。 [#3281](https://github.com/vesoft-inc/nebula/pull/3281)
@@ -27,6 +25,7 @@
 - 新增[查看指定用户权限](../7.data-security/1.authentication/2.management-user.md)。 [#3300](https://github.com/vesoft-inc/nebula/pull/3300)
 
 <!--
+- 新增 traverse 算子。 [#3308](https://github.com/vesoft-inc/nebula/pull/3308)
 - 支持Snowflake IDs。 [#3500](https://github.com/vesoft-inc/nebula/pull/3500)
 -->
 
