@@ -212,4 +212,4 @@ A： Nebula Graph 2.5.0 版本调整了 Job 的定义，详情参见 [Pull reque
 
 Q: 有哪些语法不兼容 ?
 
-A: 参见[Release Note](../../../20.appendix/releasenote.md) Incompatibility 部分。
+A: 参见[Release Note](../../20.appendix/releasenote.md) Incompatibility 部分。
