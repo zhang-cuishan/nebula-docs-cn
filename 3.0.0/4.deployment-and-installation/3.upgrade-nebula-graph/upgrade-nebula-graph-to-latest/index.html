@@ -6074,6 +6074,21 @@
 <p>少数配置参数发生改变，详情参考版本发布说明和参数文档。</p>
 </li>
 </ul>
+<ul>
+<li>
+<p>语法变化</p>
+<p>nGQL 语法有部分不兼容：</p>
+<ul>
+<li>禁用<code>YIELD</code>子句返回自定义变量。</li>
+</ul>
+<ul>
+<li><code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>、<code>FIND PATH</code>、<code>GET SUBGRAPH</code>语句中必须添加<code>YIELD</code>子句。</li>
+</ul>
+<ul>
+<li>MATCH 语句中获取点属性时，必须指定 Tag，例如从<code>return v.name</code>变为<code>return v.player.name</code>。</li>
+</ul>
+</li>
+</ul>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>可能存在其它暂未发现的影响，建议升级前详细查看版本发布说明和产品手册，并密切关注<a href="https://discuss.nebula-graph.com.cn/">论坛</a>与 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub</a> 的最新动态。</p>
@@ -6205,8 +6220,12 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
 <p>A：只需要升级 Graph 服务对应的二进制文件和配置文件。</p>
 <p>Q：操作报错 <code>Permission denied</code>。</p>
 <p>A：部分命令需要有 sudo 权限。</p>
-<p>Q：是否有 gflags 发生改变？</p>
-<p>A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文档。</p>
+<!--
+Q：是否有 gflags 发生改变？
+
+A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文档。
+-->
+
 <p>Q：是否有工具或者办法验证新旧版本数据是否一致？</p>
 <p>A：没有。如果只是检查数据量，可以在升级完成后再次运行<code>SUBMIT JOB STATS</code>和<code>SHOW STATS</code>统计数据量，并与升级之前做对比。</p>
 <p>Q: Storage <code>OFFLINE</code>并且<code>Leader count</code>是<code>0</code>怎么处理？</p>
