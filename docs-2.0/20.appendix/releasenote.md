@@ -35,8 +35,6 @@
 
 - 当日志磁盘空间不足时，支持改变日志级别。 [#3576](https://github.com/vesoft-inc/nebula/pull/3576)
 
-- 升级 third party 到 3.0。 [#3554](https://github.com/vesoft-inc/nebula/pull/3554) [#3511](https://github.com/vesoft-inc/nebula/pull/3511)
-
 - 支持反引号中的任何字符串作为 Tag 名称。 [#3424](https://github.com/vesoft-inc/nebula/pull/3424)
 
 - Storage 服务通过心跳将 partition 的磁盘路径信息发送到 Meta 服务。 [#3369](https://github.com/vesoft-inc/nebula/pull/3369) [#3416](https://github.com/vesoft-inc/nebula/pull/3416)
