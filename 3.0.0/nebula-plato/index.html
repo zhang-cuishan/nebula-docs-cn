@@ -5694,30 +5694,10 @@
     安装 Nebula Plato
   </a>
   
-    <nav class="md-nav" aria-label="安装 Nebula Plato">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rpm" class="md-nav__link">
-    RPM包安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编译安装
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     使用方法
   </a>
   
@@ -5997,30 +5977,10 @@
     安装 Nebula Plato
   </a>
   
-    <nav class="md-nav" aria-label="安装 Nebula Plato">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rpm" class="md-nav__link">
-    RPM包安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编译安装
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     使用方法
   </a>
   
@@ -6044,7 +6004,7 @@
 
 
 <h1 id="nebula_plato">Nebula Plato<a class="headerlink" href="#nebula_plato" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-algorithm">Nebula Plato</a> 是一款集成了开源高性能图计算框架 <a href="https://github.com/tencent/plato">Plato</a> 的应用程序，支持利用 Plato 对 Nebula Graph 数据库中的数据执行图计算。</p>
+<p>Nebula Plato 是一款集成了开源高性能图计算框架 <a href="https://github.com/tencent/plato">Plato</a> 的应用程序，支持利用 Plato 对 Nebula Graph 数据库中的数据执行图计算。</p>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
 <p>仅企业版支持本功能。</p>
@@ -6144,39 +6104,40 @@
 </table>
 <h2 id="nebula_plato_1">安装 Nebula Plato<a class="headerlink" href="#nebula_plato_1" title="Permanent link">&para;</a></h2>
 <p>在多个机器安装由多个 Nebula Plato 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
-<h3 id="rpm">RPM包安装<a class="headerlink" href="#rpm" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo rpm -i nebula-plato-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
 </code></pre></div>
-<h3 id="_5">编译安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>编译安装 Nebula Plato 的准备工作和编译 Nebula Graph 类似，详情参见<a href="../4.deployment-and-installation/1.resource-preparations/">准备资源</a>。</p>
-<ol>
-<li>
-<p>克隆仓库<code>plato</code>。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b v1.0.0 https://github.com/vesoft-inc/plato.git
+<!--
+### 编译安装
+
+编译安装 Nebula Plato 的准备工作和编译 Nebula Graph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
+
+1. 克隆仓库`plato`。
+
+  <div class="highlight"><pre><span></span><code>$ git clone -b v1.0.0 https://github.com/vesoft-inc/plato.git
 </code></pre></div>
-</li>
-<li>
-<p>进入目录<code>plato</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> plato
+
+2. 进入目录`plato`。
+
+  <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> plato
 </code></pre></div>
-</li>
-<li>
-<p>执行脚本安装编译依赖。</p>
-<div class="highlight"><pre><span></span><code>$ sudo ./docker/install-dependencies.sh
+
+3. 执行脚本安装编译依赖。
+
+  <div class="highlight"><pre><span></span><code>$ sudo ./docker/install-dependencies.sh
 </code></pre></div>
-</li>
-<li>
-<p>下载并编译静态链接库。</p>
-<div class="highlight"><pre><span></span><code>$ ./3rdtools.sh distclean <span class="o">&amp;&amp;</span> ./3rdtools.sh install
+
+4. 下载并编译静态链接库。
+
+  <div class="highlight"><pre><span></span><code>$ ./3rdtools.sh distclean <span class="o">&amp;&amp;</span> ./3rdtools.sh install
 </code></pre></div>
-</li>
-<li>
-<p>编译 Nebula Plato。</p>
-<div class="highlight"><pre><span></span><code>$ ./build.sh
+
+5. 编译 Nebula Plato。
+
+  <div class="highlight"><pre><span></span><code>$ ./build.sh
 </code></pre></div>
-</li>
-</ol>
-<h2 id="_6">使用方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+-->
+
+<h2 id="_5">使用方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>安装完成后，用户可以设置不同算法的参数，然后执行脚本，即可获得算法的结果，并导出为指定格式。</p>
 <ol>
 <li>
