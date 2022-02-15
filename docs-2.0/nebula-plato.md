@@ -1,6 +1,6 @@
 # Nebula Plato
 
-[Nebula Plato](https://github.com/vesoft-inc/nebula-algorithm) 是一款集成了开源高性能图计算框架 [Plato](https://github.com/tencent/plato) 的应用程序，支持利用 Plato 对 Nebula Graph 数据库中的数据执行图计算。
+Nebula Plato 是一款集成了开源高性能图计算框架 [Plato](https://github.com/tencent/plato) 的应用程序，支持利用 Plato 对 Nebula Graph 数据库中的数据执行图计算。
 
 !!! enterpriseonly
 
@@ -45,12 +45,11 @@ Nebula Plato 支持的图计算算法如下。
 
 在多个机器安装由多个 Nebula Plato 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。
 
-### RPM包安装
-
 ```bash
 sudo rpm -i nebula-plato-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
 ```
 
+<!--
 ### 编译安装
 
 编译安装 Nebula Plato 的准备工作和编译 Nebula Graph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
@@ -84,6 +83,8 @@ sudo rpm -i nebula-plato-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plat
   ```bash
   $ ./build.sh
   ```
+-->
+
 
 ## 使用方法
 
