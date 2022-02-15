@@ -30,7 +30,7 @@ Importer 适用于将本地 CSV 文件的内容导入至 Nebula Graph 中。
 
 - Nebula Graph 中已创建 Schema，包括图空间、Tag 和 Edge type，或者通过参数`clientSettings.postStart.commands`设置。
 
-- 运行 Importer 的机器已部署 Golang 环境。详情请参见 [Golang 环境搭建](https://github.com/vesoft-inc/nebula-importer/blob/release-v2.0.0-ga/docs/golang-install.md)。
+- 运行 Importer 的机器已部署 Golang 环境。详情请参见 [Golang 环境搭建](https://github.com/vesoft-inc/nebula-importer/blob/{{importer.branch}}/docs/golang-install.md)。
 
 ## 操作步骤
 
