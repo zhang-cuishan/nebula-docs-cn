@@ -3058,13 +3058,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    相关视频
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6121,13 +6114,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    相关视频
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -6390,22 +6376,27 @@ Removing network nebula-docker-compose_nebula-net
 <div class="highlight"><pre><span></span><code>docker pull vesoft/nebula-console:v3.0.0
 </code></pre></div>
 <h3 id="nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph">为什么更新 nebula-docker-compose 仓库（Nebula Graph 2.0.0-RC）后，无法通过端口<code>3699</code>连接 Nebula Graph？<a class="headerlink" href="#nebula-docker-compose_nebula_graph_200-rc3699_nebula_graph" title="Permanent link">&para;</a></h3>
-<p>在 Nebula Graph 2.0.0-RC 版本，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
+<p>从 Nebula Graph 2.0.0-RC 版本开始，默认端口从<code>3699</code>改为<code>9669</code>。请使用<code>9669</code>端口连接，或修改配置文件<code>docker-compose.yaml</code>内的端口。</p>
 <h3 id="nebula-docker-compose_2021_01_04">为什么更新 nebula-docker-compose 仓库后，无法访问数据？（2021 年 01 月 04 日）<a class="headerlink" href="#nebula-docker-compose_2021_01_04" title="Permanent link">&para;</a></h3>
 <p>如果在 2021 年 01 月 04 日后更新过 nebula-docker-compose 仓库，而且之前已经有数据，请修改文件<code>docker-compose.yaml</code>，将端口修改为之前使用的端口。详情请参见<a href="https://github.com/vesoft-inc/nebula-docker-compose/commit/2a612f1c4f0e2c31515e971b24b355b3be69420a">修改默认端口</a>。</p>
 <h3 id="nebula-docker-compose_2021_01_27">为什么更新 nebula-docker-compose 仓库后，无法访问数据？（2021 年 01 月 27 日）<a class="headerlink" href="#nebula-docker-compose_2021_01_27" title="Permanent link">&para;</a></h3>
 <p>2021 年 01 月 27 日修改了数据格式，无法兼容之前的数据，请执行命令<code>docker-compose down -v</code>删除所有本地数据。</p>
-<h2 id="_4">相关视频<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>用户也可以查看视频快速部署 Nebula Graph 2.0。</p>
-<p><a href="https://www.bilibili.com/video/BV1T54y1b7pa">使用 docker compose 部署 Nebula Graph 2.0 和 Web Studio</a>（18 分 10 秒）</p>
+<!--
+## 相关视频
+
+用户也可以查看视频快速部署 Nebula Graph 2.0。
+
+[使用 docker compose 部署 Nebula Graph 2.0 和 Web Studio](https://www.bilibili.com/video/BV1T54y1b7pa)（18 分 10 秒）
+
 <iframe src="//player.bilibili.com/player.html?aid=844979052&bvid=BV1T54y1b7pa&cid=319036307&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="720px" height="480px"> </iframe>
+-->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
       
     
   </small>
