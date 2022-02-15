@@ -237,7 +237,7 @@ $ sudo dpkg -r nebula-graph-studio-{{studio.release}}.x86_64
 
    | 安装包 | Nebula Graph 版本 |
    | ----- | ----- |
-   | [nebula-graph-studio-v{{studio.release}}.tar.gz](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/nebula-graph-studio-v{{studio.release}}.tar.gz) | {{nebula.release}} |
+   | [nebula-graph-studio-v{{studio.release}}.tar.gz](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/{{studio.release}}/nebula-graph-studio-v{{studio.release}}.tar.gz) | {{nebula.release}} |
 
 2. 创建`nebula-graph-studio-v{{studio.release}}`目录，并将安装包解压至目录中。
 
