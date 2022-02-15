@@ -48,7 +48,7 @@ Nebula Plato 支持的图计算算法如下。
 ### RPM包安装
 
 ```bash
-sudo rpm -i nebula-plato-1.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
+sudo rpm -i nebula-plato-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
 ```
 
 ### 编译安装
