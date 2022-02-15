@@ -8,10 +8,10 @@ Nebula Exchange 版本（即 JAR 包版本）和 Nebula Graph 内核的版本对
 
 |Exchange client 版本|Nebula Graph 版本|
 |:---|:---|
-|2.5-SNAPSHOT|nightly|
-|{{exchange.release}}|2.6.0、{{nebula.release}}|
-|2.5.1|2.5.0、2.5.1|
-|2.5.0|2.5.0、2.5.1|
+|3.0-SNAPSHOT|nightly|
+|{{exchange.release}}|{{nebula.release}}|
+|2.6.x|2.6.x       |  
+|2.5.x|2.5.x       |
 |2.1.0|2.0.0、2.0.1|
 |2.0.1|2.0.0、2.0.1|
 |2.0.0|2.0.0、2.0.1|
@@ -22,7 +22,7 @@ JAR 包有两种获取方式：[自行编译](../ex-ug-compile.md)或者从 mave
 
 ## 使用环境
 
-Exchange 2.x 支持以下操作系统：
+Exchange 3.x 支持以下操作系统：
 
 - CentOS 7
 - macOS
