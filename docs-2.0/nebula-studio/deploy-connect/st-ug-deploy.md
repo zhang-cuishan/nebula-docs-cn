@@ -266,9 +266,7 @@ $ sudo dpkg -r nebula-graph-studio-{{studio.release}}.x86_64
    当屏幕返回以下信息时，表示 Docker 版 Studio 已经成功启动。
 
    ```bash
-   Creating docker_client_1   ... done
    Creating docker_web_1      ... done
-   Creating docker_nginx_1    ... done
    ```
 
 6. 启动成功后，在浏览器地址栏输入 `http://ip address:7001`。
