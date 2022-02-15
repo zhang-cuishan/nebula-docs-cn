@@ -9,8 +9,8 @@ Nebula Algorithm 版本和 Nebula Graph 内核的版本对应关系如下。
 |Algorithm client 版本|Nebula Graph 版本|
 |:---|:---|
 |3.0-SNAPSHOT         |  nightly       |
-|{{algorithm.release}}|  2.6.0、2.6.1  |
-|  2.6.0              |  2.6.0、2.6.1  |
+|{{algorithm.release}}|  {{nebula.release}}  |
+|  2.6.x              |  2.6.x  |
 |  2.5.0              |  2.5.0、2.5.1  |
 |  2.1.0              |  2.0.0、2.0.1  |
 
