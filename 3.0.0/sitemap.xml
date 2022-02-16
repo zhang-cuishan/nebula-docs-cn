@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-analytics/</loc>
+         <lastmod>2022-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-bench/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
@@ -22,11 +27,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-flink-connector/</loc>
-         <lastmod>2022-02-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-plato/</loc>
          <lastmod>2022-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

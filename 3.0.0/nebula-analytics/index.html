@@ -12,14 +12,14 @@
         <meta name="author" content="Nebula Graph">
       
       
-        <link rel="canonical" href="https://docs.nebula-graph.com.cn/3.0.0/nebula-plato/">
+        <link rel="canonical" href="https://docs.nebula-graph.com.cn/3.0.0/nebula-analytics/">
       
       <link rel="icon" href="../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
     
     
       
-        <title>Nebula Plato - Nebula Graph Database 手册</title>
+        <title>Nebula Analytics - Nebula Graph Database 手册</title>
       
     
     
@@ -51,6 +51,8 @@
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
 
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula_plato" class="md-skip">
+        <a href="#nebula_analytics" class="md-skip">
           跳转至
         </a>
       
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Nebula Plato
+              Nebula Analytics
             
           </span>
         </div>
@@ -5638,12 +5640,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Nebula Plato
+          Nebula Analytics
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Nebula Plato
+        Nebula Analytics
       </a>
       
         
@@ -5690,8 +5692,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nebula_plato_1" class="md-nav__link">
-    安装 Nebula Plato
+  <a href="#nebula_analytics_1" class="md-nav__link">
+    安装 Nebula Analytics
   </a>
   
 </li>
@@ -5973,8 +5975,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#nebula_plato_1" class="md-nav__link">
-    安装 Nebula Plato
+  <a href="#nebula_analytics_1" class="md-nav__link">
+    安装 Nebula Analytics
   </a>
   
 </li>
@@ -5998,27 +6000,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.0.0/docs-2.0/nebula-plato.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.0.0/docs-2.0/nebula-analytics.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="nebula_plato">Nebula Plato<a class="headerlink" href="#nebula_plato" title="Permanent link">&para;</a></h1>
-<p>Nebula Plato 是一款集成了开源高性能图计算框架 <a href="https://github.com/tencent/plato">Plato</a> 的应用程序，支持利用 Plato 对 Nebula Graph 数据库中的数据执行图计算。</p>
+<h1 id="nebula_analytics">Nebula Analytics<a class="headerlink" href="#nebula_analytics" title="Permanent link">&para;</a></h1>
+<p>Nebula Analytics 是一款集成了开源高性能图计算框架 <a href="https://github.com/tencent/plato">Plato</a> 的应用程序，支持利用 Analytics 对 Nebula Graph 数据库中的数据执行图计算。</p>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
 <p>仅企业版支持本功能。</p>
 </div>
 <h2 id="_1">适用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>支持将数据源为 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件中的数据导入 Nebula Plato，并将图计算结果输出至 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件。</p>
+<p>支持将数据源为 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件中的数据导入 Nebula Analytics，并将图计算结果输出至 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件。</p>
 <h2 id="_2">使用限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>输入和输出均为 Nebula Graph 集群时，图计算结果只能输出到数据源所在的图空间。</p>
 <h2 id="_3">版本兼容性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>Nebula Plato 版本和 Nebula Graph 内核的版本对应关系如下。</p>
+<p>Nebula Analytics 版本和 Nebula Graph 内核的版本对应关系如下。</p>
 <table>
 <thead>
 <tr>
-<th align="left">Plato client 版本</th>
+<th align="left">Analytics client 版本</th>
 <th align="left">Nebula Graph 版本</th>
 </tr>
 </thead>
@@ -6030,7 +6032,7 @@
 </tbody>
 </table>
 <h2 id="_4">支持算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Nebula Plato 支持的图计算算法如下。</p>
+<p>Nebula Analytics 支持的图计算算法如下。</p>
 <table>
 <thead>
 <tr>
@@ -6102,23 +6104,23 @@
 </tr>
 </tbody>
 </table>
-<h2 id="nebula_plato_1">安装 Nebula Plato<a class="headerlink" href="#nebula_plato_1" title="Permanent link">&para;</a></h2>
-<p>在多个机器安装由多个 Nebula Plato 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-plato-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-plato
+<h2 id="nebula_analytics_1">安装 Nebula Analytics<a class="headerlink" href="#nebula_analytics_1" title="Permanent link">&para;</a></h2>
+<p>在多个机器安装由多个 Nebula Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
+<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-analytics-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-analytics
 </code></pre></div>
 <!--
 ### 编译安装
 
-编译安装 Nebula Plato 的准备工作和编译 Nebula Graph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
+编译安装 Nebula Analytics 的准备工作和编译 Nebula Graph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
 
-1. 克隆仓库`plato`。
+1. 克隆仓库`analytics`。
 
-  <div class="highlight"><pre><span></span><code>$ git clone -b v1.0.0 https://github.com/vesoft-inc/plato.git
+  <div class="highlight"><pre><span></span><code>$ git clone -b v1.0.0 https://github.com/vesoft-inc/nebula-analytics.git
 </code></pre></div>
 
-2. 进入目录`plato`。
+2. 进入目录`nebula-analytics`。
 
-  <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> plato
+  <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-analytics
 </code></pre></div>
 
 3. 执行脚本安装编译依赖。
@@ -6131,7 +6133,7 @@
   <div class="highlight"><pre><span></span><code>$ ./3rdtools.sh distclean <span class="o">&amp;&amp;</span> ./3rdtools.sh install
 </code></pre></div>
 
-5. 编译 Nebula Plato。
+5. 编译 Nebula Analytics
 
   <div class="highlight"><pre><span></span><code>$ ./build.sh
 </code></pre></div>
@@ -6141,7 +6143,7 @@
 <p>安装完成后，用户可以设置不同算法的参数，然后执行脚本，即可获得算法的结果，并导出为指定格式。</p>
 <ol>
 <li>
-<p>选择 Nebula Plato 集群的任一节点，进入目录<code>scripts</code>。</p>
+<p>选择 Nebula Analytics 集群的任一节点，进入目录<code>scripts</code>。</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
 </code></pre></div>
 </li>
@@ -6186,7 +6188,7 @@
 <span class="c1"># 写回时，每次写入的行数。</span>
 --write_batch_size<span class="o">=</span><span class="m">1000</span> 
 <span class="c1"># 写回失败的数据所存储的文件。</span>
---err_file<span class="o">=</span>/home/jie.wang/plato/err.txt 
+--err_file<span class="o">=</span>/home/jie.wang/analytics/err.txt 
 </code></pre></div>
 </li>
 <li>
@@ -6263,8 +6265,8 @@
 </ul>
 </li>
 <li>
-<p>修改配置文件<code>cluster</code>，设置执行算法的 Nebula Plato 集群节点和任务分配权重。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Nebula Plato 集群节点 IP 地址:任务分配权重</span>
+<p>修改配置文件<code>cluster</code>，设置执行算法的 Nebula Analytics 集群节点和任务分配权重。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nebula Analytics 集群节点 IP 地址:任务分配权重</span>
 <span class="m">192</span>.168.8.200:1
 <span class="m">192</span>.168.8.201:1
 <span class="m">192</span>.168.8.202:1
@@ -6291,7 +6293,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2022</span>
       
     
   </small>
