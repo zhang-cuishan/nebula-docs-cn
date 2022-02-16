@@ -6,10 +6,7 @@ Nebula Graph Studio（简称 Studio）是一款可以通过 Web 访问的开源�
 
 可以使用以下五种方式安装部署 Studio：
 
-- Docker 版本：用户可以使用 Docker 服务部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考 [Docker 部署 Studio](../deploy-connect/st-ug-deploy.md)。
-- RPM 版本：用户可以使用 RPM 服务部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考 [RPM 部署 Studio](../deploy-connect/st-ug-deploy.md)。
-- tar 包安装部署：用户可以使用 tar 包安装并部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考 [tar 包部署 Studio](../deploy-connect/st-ug-deploy.md)。
-- DEB 包安装部署：用户可以使用 DEB 包安装并部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考 [DEB 包部署 Studio](../deploy-connect/st-ug-deploy.md)。
+- 用户可以使用 Docker 服务、RPM 服务、tar 包和 DEB 包安装部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考 [部署 Studio](../deploy-connect/st-ug-deploy.md)。
 - 使用 Helm 安装部署：在 Kubernetes 集群里使用 Helm 安装并部署 Studio，并连接到 Nebula Graph 数据库。详细信息参考[使用 Helm 部署 Nebula Graph Studio](../deploy-connect/st-ug-deploy-by-helm.md)。
 
 <!--
