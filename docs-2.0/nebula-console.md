@@ -98,7 +98,7 @@ Nebula Console 是 Nebula Graph 的原生命令行客户端，用于连接 Nebul
 
 ## 加载测试数据集
 
-测试数据集名称为 nba，详细 Schema 信息和数据信息请使用相关`SHOW`命令查看。
+测试数据集名称为 basket，详细 Schema 信息和数据信息请使用相关`SHOW`命令查看。
 
 加载测试数据集命令如下：
 
