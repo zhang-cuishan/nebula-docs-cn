@@ -136,7 +136,7 @@ sudo rpm -i nebula-analytics-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-
       # 写回时，每次写入的行数。
       --write_batch_size=1000 
       # 写回失败的数据所存储的文件。
-      --err_file=/home/jie.wang/analytics/err.txt 
+      --err_file=/home/xxx/analytics/err.txt 
       ```
     
     2. 修改需要使用的算法脚本，例如`run_pagerank.sh`，设置相关参数。
