@@ -115,7 +115,7 @@ Nebula Algorithm 实现图计算的流程如下：
   $ mvn clean package -Dgpg.skip -Dmaven.javadoc.skip=true -Dmaven.test.skip=true
   ```
 
-编译完成后，在目录`nebula-algorithm/target`下生成类似文件`nebula-algorithm-3.x-SNAPSHOT.jar`。
+编译完成后，在目录`nebula-algorithm/target`下生成类似文件`nebula-algorithm-3.x.x.jar`。
 
 ### Maven 远程仓库下载
 
