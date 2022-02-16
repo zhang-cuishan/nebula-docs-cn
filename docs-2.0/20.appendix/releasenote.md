@@ -20,7 +20,7 @@
 
 - 新增 [duration](../3.ngql-guide/3.data-types/4.date-and-time.md) 数据类型和函数。 [#3338](https://github.com/vesoft-inc/nebula/pull/3338)
 
-- 支持大部分 1~4 字节的 [UTF-8 编码字符](../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words.md)。 [#3380](https://github.com/vesoft-inc/nebula/pull/3380)  [#3440](https://github.com/vesoft-inc/nebula/pull/3440)
+- 支持 Schema 使用大部分 1~4 字节的 [UTF-8 编码字符](../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words.md)。 [#3380](https://github.com/vesoft-inc/nebula/pull/3380)  [#3440](https://github.com/vesoft-inc/nebula/pull/3440)
 
 - 新增[查看指定用户权限](../7.data-security/1.authentication/2.management-user.md)。 [#3300](https://github.com/vesoft-inc/nebula/pull/3300)
 
