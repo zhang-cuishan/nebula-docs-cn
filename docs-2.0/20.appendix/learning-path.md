@@ -55,7 +55,7 @@
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | [使用 RPM/DEB 包](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/) | -                                                            |
   | [使用 TAR 包](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar/) | -                                                            |
-  | [使用 Docker](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/) |  |
+  | [使用 Docker](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/) | - |
   | [使用源码](https://docs.nebula-graph.com.cn/{{nebula.release}}/4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/) | [图数据库入门教程（零）通过编译源码来安装 Nebula Graph](https://www.bilibili.com/video/BV1YJ411i7Jn?spm_id_from=333.999.0.0)                                                             |
   |-|[如何选择部署方式？](https://www.bilibili.com/video/BV1vy4y1K7S5)|
 
