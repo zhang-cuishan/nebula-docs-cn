@@ -115,6 +115,8 @@
 
 - 修复`YIELD`子句和 `GO` 语句中变量不一致的问题。[#3430](https://github.com/vesoft-inc/nebula/pull/3430)
 
+- 修复 当Schema 版本大于 256 时的崩溃问题。[#3893](https://github.com/vesoft-inc/nebula/pull/3893)
+
 ## Incompatibility
 
 Nebula Graph {{ nebula.release }} 不支持 v2.x 的大部分生态工具，请升级[生态工具](6.eco-tool-version.md)。
