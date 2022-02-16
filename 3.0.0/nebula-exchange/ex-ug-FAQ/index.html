@@ -5461,7 +5461,7 @@
   
     <li class="md-nav__item">
       <a href="../use-exchange/ex-ug-import-from-mysql/" class="md-nav__link">
-        导入 MySQL 数据
+        导入 MySQL/PostgreSQL 数据
       </a>
     </li>
   
@@ -6331,7 +6331,7 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 --conf spark.executor.extraClassPath<span class="o">=</span>./ <span class="se">\</span>
 --conf spark.driver.extraJavaOptions<span class="o">=</span>-Dfile.encoding<span class="o">=</span>utf-8 <span class="se">\</span>
 --conf spark.executor.extraJavaOptions<span class="o">=</span>-Dfile.encoding<span class="o">=</span>utf-8 <span class="se">\</span>
-&lt;nebula-exchange-2.x.y.jar_path&gt; <span class="se">\</span>
+&lt;nebula-exchange-3.x.y.jar_path&gt; <span class="se">\</span>
 -c application.conf
 </code></pre></div>
 <h3 id="qhive_schema">Q：Hive 数据导入时提示 schema 版本不一致<a class="headerlink" href="#qhive_schema" title="Permanent link">&para;</a></h3>
@@ -6388,14 +6388,14 @@ nebula-docker-compose_storaged2_1   ./bin/nebula-storaged --fl ...   Up <span cl
 <li>修复了 Spark Writer 的部分问题。例如 Spark 读取 HDFS 里的数据时，默认读取到的源数据均为 String 类型，可能与 Nebula Graph 定义的 Schema 不同，所以 Exchange 增加了数据类型的自动匹配和类型转换，当 Nebula Graph 定义的 Schema 中数据类型为非 String 类型（如 double）时，Exchange 会将 String 类型的源数据转换为对应的类型（如 double）。</li>
 </ul>
 <h3 id="qexchange">Q：Exchange 传输数据的性能如何？<a class="headerlink" href="#qexchange" title="Permanent link">&para;</a></h3>
-<p>Exchange 的性能测试数据和测试方法参见 <a href="https://github.com/vesoft-inc/nebula-exchange/blob/master/bench/exchange-test.md">Nebula Exchange test result</a>。</p>
+<p>Exchange 的性能测试数据和测试方法参见 <a href="https://github.com/vesoft-inc/nebula-exchange/blob/v3.0.0/bench/exchange-test.md">Nebula Exchange test result</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2022</span>
       
     
   </small>
