@@ -107,7 +107,7 @@
 
 - 内存比率大于 1.0 时取消内存检查。[#3289](https://github.com/vesoft-inc/nebula/pull/3289)
 
-- 修复使用 ninja-build 时的错误。 [#3195](https://github.com/vesoft-inc/nebula/pull/3195)
+- 修复使用 Ninja 编译时的错误。 [#3195](https://github.com/vesoft-inc/nebula/pull/3195)
 
 - 修复同时创建同名 Tag 和 Edge type 可能都成功的问题。[#3735](https://github.com/vesoft-inc/nebula/pull/3735)
 
