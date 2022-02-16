@@ -115,7 +115,7 @@
 
 - 修复`YIELD`子句和 `GO` 语句中变量不一致的问题。[#3430](https://github.com/vesoft-inc/nebula/pull/3430)
 
-- 修复 当Schema 版本大于 256 时的崩溃问题。[#3893](https://github.com/vesoft-inc/nebula/pull/3893)
+- 修复当 Schema 版本大于 256 时的崩溃问题。[#3893](https://github.com/vesoft-inc/nebula/pull/3893)
 
 ## Incompatibility
 
