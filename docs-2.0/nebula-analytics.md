@@ -1,6 +1,6 @@
 # Nebula Analytics
 
-Nebula Analytics 是一款集成了开源高性能图计算框架 [Plato](https://github.com/tencent/plato) 的应用程序，支持利用 Analytics 对 Nebula Graph 数据库中的数据执行图计算。
+Nebula Analytics 是一款高性能图计算框架工具，支持对 Nebula Graph 数据库中的数据执行图分析。
 
 !!! enterpriseonly
 
