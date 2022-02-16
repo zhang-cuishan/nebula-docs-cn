@@ -42,8 +42,8 @@
   | 文档                                                         | 视频                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | [Meta 服务](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/3.nebula-graph-architecture/2.meta-service/) | -                                                            |
-  | [Graph 服务](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/3.nebula-graph-architecture/3.graph-service/) | [Nebula Graph Query Engine](https://www.bilibili.com/video/BV1xV411n7DD) |
-  | [Storage 服务](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/3.nebula-graph-architecture/4.storage-service/) | [Nebula Graph Storage](https://www.bilibili.com/video/BV16b4y1Q77k) |
+  | [Graph 服务](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/3.nebula-graph-architecture/3.graph-service/) | - |
+  | [Storage 服务](https://docs.nebula-graph.com.cn/{{nebula.release}}/1.introduction/3.nebula-graph-architecture/4.storage-service/) | - |
   
 
 
