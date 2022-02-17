@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-cloud/</loc>
+         <lastmod>2022-02-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/nebula-console/</loc>
          <lastmod>2022-02-17</lastmod>
          <changefreq>daily</changefreq>
