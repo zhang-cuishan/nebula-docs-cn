@@ -1,4 +1,4 @@
-## Nebula Graph Cloud
+# Nebula Graph Cloud
 
 Nebula Graph Cloud（简称 Cloud ）是一款支持 [Azure](https://azure.microsoft.com/zh-cn/) 平台，在云上搭建 Nebula Graph 数据库的产品，支持一键部署 Nebula Graph。用户可以在几分钟内创建一个图数据库，并快速扩展计算、存储等资源。
 
