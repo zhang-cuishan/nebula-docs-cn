@@ -5838,6 +5838,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone_not_enough" class="md-nav__link">
+    如何处理错误信息 Zone not enough!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
     如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
   </a>
@@ -6046,13 +6053,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    日志文件过大时如何回收日志？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#nebula_graph_1" class="md-nav__link">
     如何查看 Nebula Graph 版本
   </a>
@@ -6060,7 +6060,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     如何扩缩容
   </a>
   
@@ -6079,7 +6079,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     关于连接
   </a>
   
@@ -6087,14 +6087,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     防火墙中需要开放哪些端口？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     如何测试端口是否已开放？
   </a>
   
@@ -6295,6 +6295,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone_not_enough" class="md-nav__link">
+    如何处理错误信息 Zone not enough!
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" class="md-nav__link">
     如何处理错误信息 To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'
   </a>
@@ -6503,13 +6510,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    日志文件过大时如何回收日志？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#nebula_graph_1" class="md-nav__link">
     如何查看 Nebula Graph 版本
   </a>
@@ -6517,7 +6517,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     如何扩缩容
   </a>
   
@@ -6536,7 +6536,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     关于连接
   </a>
   
@@ -6544,14 +6544,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     防火墙中需要开放哪些端口？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     如何测试端口是否已开放？
   </a>
   
@@ -6631,12 +6631,8 @@
 <h2 id="_4">关于执行报错<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="semanticerror_missing_yield_clause">如何处理错误信息 <code>SemanticError: Missing yield clause.</code><a class="headerlink" href="#semanticerror_missing_yield_clause" title="Permanent link">&para;</a></h3>
 <p>从 Nebula Graph 3.0.0 开始，查询语句<code>LOOKUP</code>、<code>GO</code>、<code>FETCH</code>必须用<code>YIELD</code>子句指定输出结果。详情请参见<a href="../../3.ngql-guide/8.clauses-and-options/yield/">YIELD</a>。</p>
-<!--
-### 如何处理错误信息 `Zone not enough!`
-
-从 3.0.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用`ADD HOSTS`命令后，才能正常读写 Storage 节点。详情参见[管理逻辑机架（Zone）](../4.deployment-and-installation/5.zone.md)。
--->
-
+<h3 id="zone_not_enough">如何处理错误信息 <code>Zone not enough!</code><a class="headerlink" href="#zone_not_enough" title="Permanent link">&para;</a></h3>
+<p>从 3.0.0 版本开始，在配置文件中添加的 Storage 节点无法直接读写，配置文件的作用仅仅是将 Storage 节点注册至 Meta 服务中。必须使用<code>ADD HOSTS</code>命令后，才能正常读写 Storage 节点。详情参见<a href="../../4.deployment-and-installation/manage-storage-host/">管理 Storage 主机</a>。</p>
 <h3 id="to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop">如何处理错误信息 <code>To get the property of the vertex in 'v.age', should use the format 'var.tag.prop'</code><a class="headerlink" href="#to_get_the_property_of_the_vertex_in_vage_should_use_the_format_vartagprop" title="Permanent link">&para;</a></h3>
 <p>从 3.0.0 版本开始，<code>pattern</code>支持同时匹配多个 Tag，所以返回属性时，需要额外指定 Tag 名称。即从<code>RETURN 变量名.属性名</code>改为<code>RETURN 变量名.Tag名.属性名</code>。</p>
 <h3 id="error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory">如何处理错误信息 <code>[ERROR (-1005)]: Used memory hits the high watermark(0.800000) of total system memory.</code><a class="headerlink" href="#error_-1005_used_memory_hits_the_high_watermark0800000_of_total_system_memory" title="Permanent link">&para;</a></h3>
@@ -6827,8 +6823,9 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>没有直接命令。</p>
 <p>可以使用 <a href="../../nebula-algorithm/">Nebula Algorithm</a>。</p>
 <h2 id="_10">关于运维<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<h3 id="_11">日志文件过大时如何回收日志？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <!--
+### 日志文件过大时如何回收日志？
+
 Nebula Graph 的日志默认在 `/usr/local/nebula/logs/` 下，正常 INFO 级别日志文件为 `nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO`，报警和错误级别后缀为 `.WARNING` 和 `.ERROR`。
 
 Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog 没有日志回收的功能，用户可以：
@@ -6858,7 +6855,7 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 <p>执行<code>rpm -qa |grep nebula</code>即可查看版本。</p>
 </li>
 </ul>
-<h3 id="_12">如何扩缩容<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_11">如何扩缩容<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>用户可以使用 Dashboard（企业版），在可视化页面对 graphd <!--和 storaged --> 进行快速扩缩容，详情参见<a href="../../nebula-dashboard-ent/4.cluster-operator/4.manage/">集群操作-扩缩容</a>。</p>
 <p>Nebula Graph 3.0.0 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
 <ul>
@@ -6890,8 +6887,8 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 
 <h3 id="host_host_offline">修改 Host 名称后，旧的 Host 一直显示 <code>OFFLINE</code> 怎么办？<a class="headerlink" href="#host_host_offline" title="Permanent link">&para;</a></h3>
 <p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
-<h2 id="_13">关于连接<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h3 id="_14">防火墙中需要开放哪些端口？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h2 id="_12">关于连接<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">防火墙中需要开放哪些端口？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
 <table>
 <thead>
@@ -6917,7 +6914,7 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 </table>
 <p>如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。</p>
 <p>周边工具各自使用不用的端口，请参考各工具文档。</p>
-<h3 id="_15">如何测试端口是否已开放？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<h3 id="_14">如何测试端口是否已开放？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>用户可以使用如下 telnet 命令检查端口状态：</p>
 <div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
 </code></pre></div>
@@ -6977,7 +6974,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
       
     
   </small>
