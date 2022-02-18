@@ -6014,9 +6014,9 @@
     [COMMENT = &#39;&lt;comment&gt;&#39;];
 
 alter_definition:
-| ADD    (prop_name data_type)
+| ADD    (prop_name data_type [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT &#39;&lt;comment&gt;&#39;])
 | DROP   (prop_name)
-| CHANGE (prop_name data_type)
+| CHANGE (prop_name data_type [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT &#39;&lt;comment&gt;&#39;])
 
 ttl_definition:
     TTL_DURATION = ttl_duration, TTL_COL = prop_name
@@ -6042,7 +6042,7 @@ nebula&gt; ALTER TAG t1 COMMENT = &#39;test1&#39;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
       
     
   </small>
