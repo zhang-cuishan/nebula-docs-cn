@@ -6032,6 +6032,7 @@ ttl_definition:
 nebula&gt; ALTER TAG t1 ADD (p3 int, p4 string);
 nebula&gt; ALTER TAG t1 TTL_DURATION = 2, TTL_COL = &quot;p2&quot;;
 nebula&gt; ALTER TAG t1 COMMENT = &#39;test1&#39;;
+nebula&gt; ALTER TAG t1 ADD (p5 double NOT NULL DEFAULT 0.4 COMMENT &#39;p5&#39;) COMMENT=&#39;test2&#39;;
 </code></pre></div>
 <h2 id="tag">修改 Tag 说明<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h2>
 <p>尝试使用刚修改的 Tag 可能会失败，因为修改是异步实现的。为确保数据同步，后续操作能顺利进行，请等待 2 个心跳周期（20 秒）。</p>
