@@ -9,9 +9,9 @@
 <meta content="Nebula Graph" name="author"/>
 <link href="https://docs.nebula-graph.com.cn/2.5.0/nebula-importer/config-without-header/" rel="canonical"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.3.0" name="generator"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.3.3" name="generator"/>
 <title>无表头配置说明 - Nebula Graph Database 手册</title>
-<link href="../../assets/stylesheets/main.8b42a75e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.5143246d.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -2136,169 +2136,169 @@ student100,student102,1,96.2
 </li>
 </ul>
 <h2 id="_3">配置示例<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># 连接的Nebula Graph版本，连接2.x时设置为v2。</span>
-<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v2</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 连接的Nebula Graph版本，连接2.x时设置为v2。</span><span class="w"></span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span><span class="w"></span>
 
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example</span>
+<span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span><span class="w"></span>
 
-<span class="c1"># 是否删除临时生成的日志和错误数据文件。</span>
-<span class="nt">removeTempFiles</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="c1"># 是否删除临时生成的日志和错误数据文件。</span><span class="w"></span>
+<span class="nt">removeTempFiles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-<span class="nt">clientSettings</span><span class="p">:</span>
+<span class="nt">clientSettings</span><span class="p">:</span><span class="w"></span>
 
-  <span class="c1"># nGQL语句执行失败的重试次数。</span>
-  <span class="nt">retry</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="c1"># nGQL语句执行失败的重试次数。</span><span class="w"></span>
+<span class="w">  </span><span class="nt">retry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-  <span class="c1"># Nebula Graph客户端并发数。</span>
-  <span class="nt">concurrency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span> 
+<span class="w">  </span><span class="c1"># Nebula Graph客户端并发数。</span><span class="w"></span>
+<span class="w">  </span><span class="nt">concurrency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"> </span>
 
-  <span class="c1"># 每个Nebula Graph客户端的缓存队列大小。</span>
-  <span class="nt">channelBufferSize</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">128</span>
+<span class="w">  </span><span class="c1"># 每个Nebula Graph客户端的缓存队列大小。</span><span class="w"></span>
+<span class="w">  </span><span class="nt">channelBufferSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span><span class="w"></span>
 
-  <span class="c1"># 指定数据要导入的Nebula Graph图空间。</span>
-  <span class="nt">space</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">student</span>
+<span class="w">  </span><span class="c1"># 指定数据要导入的Nebula Graph图空间。</span><span class="w"></span>
+<span class="w">  </span><span class="nt">space</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">student</span><span class="w"></span>
 
-  <span class="c1"># 连接信息。</span>
-  <span class="nt">connection</span><span class="p">:</span>
-    <span class="nt">user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
-    <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nebula</span>
-    <span class="nt">address</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.11.13:9669</span>
+<span class="w">  </span><span class="c1"># 连接信息。</span><span class="w"></span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nebula</span><span class="w"></span>
+<span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.11.13:9669</span><span class="w"></span>
 
-  <span class="nt">postStart</span><span class="p">:</span>
-    <span class="c1"># 配置连接Nebula Graph服务器之后，在插入数据之前执行的一些操作。</span>
-    <span class="nt">commands</span><span class="p">:</span> <span class="p p-Indicator">|</span>
-      <span class="no">DROP SPACE IF EXISTS student;</span>
-      <span class="no">CREATE SPACE IF NOT EXISTS student(partition_num=5, replica_factor=1, vid_type=FIXED_STRING(20));</span>
-      <span class="no">USE student;</span>
-      <span class="no">CREATE TAG student(name string, age int,gender string);</span>
-      <span class="no">CREATE EDGE follow(degree int);</span>
+<span class="w">  </span><span class="nt">postStart</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 配置连接Nebula Graph服务器之后，在插入数据之前执行的一些操作。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">commands</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">      </span><span class="no">DROP SPACE IF EXISTS student;</span><span class="w"></span>
+<span class="w">      </span><span class="no">CREATE SPACE IF NOT EXISTS student(partition_num=5, replica_factor=1, vid_type=FIXED_STRING(20));</span><span class="w"></span>
+<span class="w">      </span><span class="no">USE student;</span><span class="w"></span>
+<span class="w">      </span><span class="no">CREATE TAG student(name string, age int,gender string);</span><span class="w"></span>
+<span class="w">      </span><span class="no">CREATE EDGE follow(degree int);</span><span class="w"></span>
 
-    <span class="c1"># 执行上述命令后到执行插入数据命令之间的间隔。</span>
-    <span class="nt">afterPeriod</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+<span class="w">    </span><span class="c1"># 执行上述命令后到执行插入数据命令之间的间隔。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">afterPeriod</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15s</span><span class="w"></span>
 
-  <span class="nt">preStop</span><span class="p">:</span>
-    <span class="c1"># 配置断开Nebula Graph服务器连接之前执行的一些操作。</span>
-    <span class="nt">commands</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="nt">preStop</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 配置断开Nebula Graph服务器连接之前执行的一些操作。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">commands</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
 
-<span class="c1"># 错误等日志信息输出的文件路径。    </span>
-<span class="nt">logPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./err/test.log</span>
+<span class="c1"># 错误等日志信息输出的文件路径。    </span><span class="w"></span>
+<span class="nt">logPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./err/test.log</span><span class="w"></span>
 
-<span class="c1"># CSV文件相关设置。</span>
-<span class="nt">files</span><span class="p">:</span>
+<span class="c1"># CSV文件相关设置。</span><span class="w"></span>
+<span class="nt">files</span><span class="p">:</span><span class="w"></span>
 
-    <span class="c1"># 数据文件的存放路径，如果使用相对路径，则会将路径和当前配置文件的目录拼接。本示例第一个数据文件为点的数据。</span>
-  <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./student_without_header.csv</span>
+<span class="w">    </span><span class="c1"># 数据文件的存放路径，如果使用相对路径，则会将路径和当前配置文件的目录拼接。本示例第一个数据文件为点的数据。</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./student_without_header.csv</span><span class="w"></span>
 
-    <span class="c1"># 插入失败的数据文件存放路径，以便后面补写数据。</span>
-    <span class="nt">failDataPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./err/studenterr.csv</span>
+<span class="w">    </span><span class="c1"># 插入失败的数据文件存放路径，以便后面补写数据。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">failDataPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./err/studenterr.csv</span><span class="w"></span>
 
-    <span class="c1"># 单批次插入数据的语句数量。</span>
-    <span class="nt">batchSize</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="c1"># 单批次插入数据的语句数量。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">batchSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
 
-    <span class="c1"># 读取数据的行数限制。</span>
-    <span class="nt">limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="c1"># 读取数据的行数限制。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
 
-    <span class="c1"># 是否按顺序在文件中插入数据行。如果为false，可以避免数据倾斜导致的导入速率降低。</span>
-    <span class="nt">inOrder</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="c1"># 是否按顺序在文件中插入数据行。如果为false，可以避免数据倾斜导致的导入速率降低。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inOrder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-    <span class="c1"># 文件类型，当前仅支持csv。</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+<span class="w">    </span><span class="c1"># 文件类型，当前仅支持csv。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
 
-    <span class="nt">csv</span><span class="p">:</span>
-      <span class="c1"># 是否有表头。</span>
-      <span class="nt">withHeader</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">csv</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># 是否有表头。</span><span class="w"></span>
+<span class="w">      </span><span class="nt">withHeader</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-      <span class="c1"># 是否有LABEL。</span>
-      <span class="nt">withLabel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="c1"># 是否有LABEL。</span><span class="w"></span>
+<span class="w">      </span><span class="nt">withLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
 
-      <span class="c1"># 指定csv文件的分隔符。只支持一个字符的字符串分隔符。</span>
-      <span class="nt">delimiter</span><span class="p">:</span> <span class="s">","</span>
+<span class="w">      </span><span class="c1"># 指定csv文件的分隔符。只支持一个字符的字符串分隔符。</span><span class="w"></span>
+<span class="w">      </span><span class="nt">delimiter</span><span class="p">:</span><span class="w"> </span><span class="s">","</span><span class="w"></span>
 
-    <span class="nt">schema</span><span class="p">:</span>
-      <span class="c1"># Schema的类型，可选值为vertex和edge。</span>
-      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">vertex</span>
+<span class="w">    </span><span class="nt">schema</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># Schema的类型，可选值为vertex和edge。</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vertex</span><span class="w"></span>
 
-      <span class="nt">vertex</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">vertex</span><span class="p">:</span><span class="w"></span>
 
-        <span class="c1"># 点ID设置。</span>
-        <span class="nt">vid</span><span class="p">:</span>
-           <span class="c1"># 点ID对应CSV文件中列的序号。CSV文件中列的序号从0开始。</span>
-           <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">        </span><span class="c1"># 点ID设置。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">vid</span><span class="p">:</span><span class="w"></span>
+<span class="w">           </span><span class="c1"># 点ID对应CSV文件中列的序号。CSV文件中列的序号从0开始。</span><span class="w"></span>
+<span class="w">           </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
 
-           <span class="c1"># 点ID的数据类型，可选值为int和string，分别对应Nebula Graph中的INT64和FIXED_STRING。</span>
-           <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">           </span><span class="c1"># 点ID的数据类型，可选值为int和string，分别对应Nebula Graph中的INT64和FIXED_STRING。</span><span class="w"></span>
+<span class="w">           </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-        <span class="c1"># Tag设置。   </span>
-        <span class="nt">tags</span><span class="p">:</span>
-            <span class="c1"># Tag名称。</span>
-          <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">student</span>
+<span class="w">        </span><span class="c1"># Tag设置。   </span><span class="w"></span>
+<span class="w">        </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1"># Tag名称。</span><span class="w"></span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">student</span><span class="w"></span>
 
-            <span class="c1"># Tag内的属性设置。</span>
-            <span class="nt">props</span><span class="p">:</span>
-                <span class="c1"># 属性名称。</span>
-              <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
+<span class="w">            </span><span class="c1"># Tag内的属性设置。</span><span class="w"></span>
+<span class="w">            </span><span class="nt">props</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="c1"># 属性名称。</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">name</span><span class="w"></span>
 
-                <span class="c1"># 属性数据类型。</span>
-                <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">                </span><span class="c1"># 属性数据类型。</span><span class="w"></span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-                <span class="c1"># 属性对应CSV文件中列的序号。</span>
-                <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">                </span><span class="c1"># 属性对应CSV文件中列的序号。</span><span class="w"></span>
+<span class="w">                </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 
-              <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">age</span>
-                <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">int</span>
-                <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-              <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gender</span>
-                <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-                <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">age</span><span class="w"></span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">int</span><span class="w"></span>
+<span class="w">                </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gender</span><span class="w"></span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">                </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 
-    <span class="c1"># 本示例第二个数据文件为边的数据。</span>
-  <span class="p p-Indicator">-</span> <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./follow_without_header.csv</span>
-    <span class="nt">failDataPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./err/followerr.csv</span>
-    <span class="nt">batchSize</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="nt">limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10</span>
-    <span class="nt">inOrder</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
-    <span class="nt">csv</span><span class="p">:</span>
-      <span class="nt">withHeader</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-      <span class="nt">withLabel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
-    <span class="nt">schema</span><span class="p">:</span>
-      <span class="c1"># Schema的类型为edge。</span>
-      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">edge</span>
-      <span class="nt">edge</span><span class="p">:</span>
-        <span class="c1"># Edge type名称。</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">follow</span>
+<span class="w">    </span><span class="c1"># 本示例第二个数据文件为边的数据。</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./follow_without_header.csv</span><span class="w"></span>
+<span class="w">    </span><span class="nt">failDataPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./err/followerr.csv</span><span class="w"></span>
+<span class="w">    </span><span class="nt">batchSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w"></span>
+<span class="w">    </span><span class="nt">inOrder</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csv</span><span class="w"></span>
+<span class="w">    </span><span class="nt">csv</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">withHeader</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">      </span><span class="nt">withLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">schema</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1"># Schema的类型为edge。</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">edge</span><span class="w"></span>
+<span class="w">      </span><span class="nt">edge</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1"># Edge type名称。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">follow</span><span class="w"></span>
 
-        <span class="c1"># 是否包含rank。</span>
-        <span class="nt">withRanking</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="c1"># 是否包含rank。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">withRanking</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 
-        <span class="c1"># 起始点ID设置。</span>
-        <span class="nt">srcVID</span><span class="p">:</span>
-           <span class="c1"># 数据类型。</span>
-           <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">        </span><span class="c1"># 起始点ID设置。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">srcVID</span><span class="p">:</span><span class="w"></span>
+<span class="w">           </span><span class="c1"># 数据类型。</span><span class="w"></span>
+<span class="w">           </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-           <span class="c1"># 起始点ID对应CSV文件中列的序号。</span>
-           <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">           </span><span class="c1"># 起始点ID对应CSV文件中列的序号。</span><span class="w"></span>
+<span class="w">           </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
 
-        <span class="c1"># 目的点ID设置。</span>
-        <span class="nt">dstVID</span><span class="p">:</span>
-           <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-           <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="c1"># 目的点ID设置。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">dstVID</span><span class="p">:</span><span class="w"></span>
+<span class="w">           </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">           </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 
-        <span class="c1"># rank设置。</span>
-        <span class="nt">rank</span><span class="p">:</span>
-           <span class="c1"># rank值对应CSV文件中列的序号。如果没有设置index，请务必在第三列设置rank的值。之后的列依次设置各属性。</span>
-           <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="c1"># rank设置。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">rank</span><span class="p">:</span><span class="w"></span>
+<span class="w">           </span><span class="c1"># rank值对应CSV文件中列的序号。如果没有设置index，请务必在第三列设置rank的值。之后的列依次设置各属性。</span><span class="w"></span>
+<span class="w">           </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 
-        <span class="c1"># Edge type内的属性设置。</span>
-        <span class="nt">props</span><span class="p">:</span>
-             <span class="c1"># 属性名称。</span>
-           <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">degree</span>
+<span class="w">        </span><span class="c1"># Edge type内的属性设置。</span><span class="w"></span>
+<span class="w">        </span><span class="nt">props</span><span class="p">:</span><span class="w"></span>
+<span class="w">             </span><span class="c1"># 属性名称。</span><span class="w"></span>
+<span class="w">           </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">degree</span><span class="w"></span>
 
-             <span class="c1"># 属性数据类型。</span>
-             <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">double</span>
+<span class="w">             </span><span class="c1"># 属性数据类型。</span><span class="w"></span>
+<span class="w">             </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">double</span><span class="w"></span>
 
-             <span class="c1"># 属性对应CSV文件中列的序号。</span>
-             <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">             </span><span class="c1"># 属性对应CSV文件中列的序号。</span><span class="w"></span>
+<span class="w">             </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -2389,8 +2389,8 @@ student100,student102,1,96.2
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.f8263e09.min.js", "version": {"method": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.8397ff9e.min.js", "version": {"method": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.f89c2efe.min.js"></script>
 <script src="../../js/version-select.js"></script>
 <script src="../../js/config.js"></script>
 <script src="../../js/jquery.js"></script>
