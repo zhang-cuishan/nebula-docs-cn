@@ -6088,7 +6088,7 @@
 <div class="highlight"><pre><span></span><code>$ ./bin/br restore full --meta &quot;127.0.0.1:9559&quot; --storage &quot;local:///home/nebula/backup/&quot; --name BACKUP_2021_12_08_18_38_08
 </code></pre></div>
 <p>或者使用以下命令，将兼容 s3 协议的对象存储服务 <code>br-test</code> 桶下的<code>backup</code>的备份，恢复到 meta 服务的地址为<code>127.0.0.1:9559</code>的集群中。
-<div class="highlight"><pre><span></span><code>br restore full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --s3.endpoint <span class="s2">&quot;http://127.0.0.1:9000&quot;</span> --storage<span class="o">=</span><span class="s2">&quot;s3://br-test/backup/&quot;</span> --s3.access_key<span class="o">=</span>minioadmin --s3.secret_key<span class="o">=</span>minioadmin --s3.region<span class="o">=</span><span class="s2">&quot;default&quot;</span> --name BACKUP_2021_12_08_18_38_08
+<div class="highlight"><pre><span></span><code>$ ./bin/br restore full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --s3.endpoint <span class="s2">&quot;http://127.0.0.1:9000&quot;</span> --storage<span class="o">=</span><span class="s2">&quot;s3://br-test/backup/&quot;</span> --s3.access_key<span class="o">=</span>minioadmin --s3.secret_key<span class="o">=</span>minioadmin --s3.region<span class="o">=</span><span class="s2">&quot;default&quot;</span> --name BACKUP_2021_12_08_18_38_08
 </code></pre></div></p>
 <p>如果返回如下信息，表示数据已经恢复成功。
 <div class="highlight"><pre><span></span><code>Restore succeed.
@@ -6278,7 +6278,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2022</span>
       
     
   </small>
