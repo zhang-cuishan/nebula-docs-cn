@@ -6053,6 +6053,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    日志文件过大时如何回收日志？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nebula_graph_1" class="md-nav__link">
     如何查看 Nebula Graph 版本
   </a>
@@ -6060,7 +6067,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如何扩缩容
   </a>
   
@@ -6079,7 +6086,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     关于连接
   </a>
   
@@ -6087,14 +6094,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     防火墙中需要开放哪些端口？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     如何测试端口是否已开放？
   </a>
   
@@ -6510,6 +6517,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    日志文件过大时如何回收日志？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#nebula_graph_1" class="md-nav__link">
     如何查看 Nebula Graph 版本
   </a>
@@ -6517,7 +6531,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如何扩缩容
   </a>
   
@@ -6536,7 +6550,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     关于连接
   </a>
   
@@ -6544,14 +6558,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     防火墙中需要开放哪些端口？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     如何测试端口是否已开放？
   </a>
   
@@ -6823,17 +6837,13 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>没有直接命令。</p>
 <p>可以使用 <a href="../../nebula-algorithm/">Nebula Algorithm</a>。</p>
 <h2 id="_10">关于运维<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<!--
-### 日志文件过大时如何回收日志？
-
-Nebula Graph 的日志默认在 `/usr/local/nebula/logs/` 下，正常 INFO 级别日志文件为 `nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO`，报警和错误级别后缀为 `.WARNING` 和 `.ERROR`。
-
-Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog 没有日志回收的功能，用户可以：
-
-- 使用 crontab 设置定期任务回收日志文件，详情请参见 [Glog should delete old log files automatically](https://github.com/google/glog/issues/423)。
-- 使用 [logrotate](https://github.com/logrotate/logrotate) 实现日志轮询。使用 logrotate 管理日志前需修改相应 Nebula Graph 服务的配置，将`timestamp_in_logfile_name`参数的值改成`false`。
--->
-
+<h3 id="_11">日志文件过大时如何回收日志？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Nebula Graph 的日志默认在 <code>/usr/local/nebula/logs/</code> 下，正常 INFO 级别日志文件为 <code>nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO</code>，报警和错误级别后缀为 <code>.WARNING</code> 和 <code>.ERROR</code>。</p>
+<p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以：</p>
+<ul>
+<li>使用 crontab 设置定期任务回收日志文件，详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</li>
+<li>使用 <a href="https://github.com/logrotate/logrotate">logrotate</a> 实现日志轮询。使用 logrotate 管理日志前需修改相应 Nebula Graph 服务的配置，将<code>timestamp_in_logfile_name</code>参数的值改成<code>false</code>。</li>
+</ul>
 <h3 id="nebula_graph_1">如何查看 Nebula Graph 版本<a class="headerlink" href="#nebula_graph_1" title="Permanent link">&para;</a></h3>
 <p>服务运行时：<code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
 <p>服务未运行时：在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到 version 和 GitHub 上的 commit ID，例如：</p>
@@ -6855,7 +6865,7 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 <p>执行<code>rpm -qa |grep nebula</code>即可查看版本。</p>
 </li>
 </ul>
-<h3 id="_11">如何扩缩容<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12">如何扩缩容<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>用户可以使用 Dashboard（企业版），在可视化页面对 graphd <!--和 storaged --> 进行快速扩缩容，详情参见<a href="../../nebula-dashboard-ent/4.cluster-operator/4.manage/">集群操作-扩缩容</a>。</p>
 <p>Nebula Graph 3.0.0 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
 <ul>
@@ -6887,8 +6897,8 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 
 <h3 id="host_host_offline">修改 Host 名称后，旧的 Host 一直显示 <code>OFFLINE</code> 怎么办？<a class="headerlink" href="#host_host_offline" title="Permanent link">&para;</a></h3>
 <p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
-<h2 id="_12">关于连接<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h3 id="_13">防火墙中需要开放哪些端口？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h2 id="_13">关于连接<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">防火墙中需要开放哪些端口？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
 <table>
 <thead>
@@ -6914,7 +6924,7 @@ Nebula Graph 使用 [glog](https://github.com/google/glog) 打印日志。glog �
 </table>
 <p>如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。</p>
 <p>周边工具各自使用不用的端口，请参考各工具文档。</p>
-<h3 id="_14">如何测试端口是否已开放？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h3 id="_15">如何测试端口是否已开放？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>用户可以使用如下 telnet 命令检查端口状态：</p>
 <div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
 </code></pre></div>
@@ -6974,7 +6984,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2022</span>
       
     
   </small>
