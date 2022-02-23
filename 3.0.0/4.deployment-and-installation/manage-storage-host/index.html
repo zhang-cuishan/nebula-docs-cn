@@ -5974,6 +5974,10 @@
 <p>向集群中增加 Storage 主机。</p>
 <div class="highlight"><pre><span></span><code>ADD HOSTS &lt;ip&gt;:&lt;port&gt; [,&lt;ip&gt;:&lt;port&gt; ...];
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>增加 Storage 主机在<strong>下一个</strong>心跳周期之后才能生效，为确保数据同步，请等待 2 个心跳周期（20 秒），然后执行<code>SHOW HOSTS</code>查看是否在线。</p>
+</div>
 <h2 id="storage_2">删除 Storage 主机<a class="headerlink" href="#storage_2" title="Permanent link">&para;</a></h2>
 <p>从集群中删除 Storage 主机。</p>
 <div class="admonition note">
@@ -5988,7 +5992,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2022</span>
       
     
   </small>
