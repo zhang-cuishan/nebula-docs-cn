@@ -51,6 +51,16 @@
     <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
 
     
     
@@ -5905,7 +5915,7 @@
 
 
 <h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'analytics' is undefined</p>
+<p><strong>UndefinedError</strong>: 'dict object' has no attribute 'release'</p>
 <div class="highlight"><pre><span></span><code>Traceback (most recent call last):
   File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/mkdocs_macros/plugin.py&quot;, line 473, in render
     return md_template.render(**page_variables)
@@ -5914,9 +5924,7 @@
   File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/jinja2/environment.py&quot;, line 925, in handle_exception
     raise rewrite_traceback_stack(source=source)
   File &quot;&lt;template&gt;&quot;, line 23, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/jinja2/environment.py&quot;, line 474, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;analytics&#39; is undefined
+jinja2.exceptions.UndefinedError: &#39;dict object&#39; has no attribute &#39;release&#39;
 </code></pre></div>
 
   <hr>
