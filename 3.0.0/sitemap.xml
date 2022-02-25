@@ -41,6 +41,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/1.introduction/0-0-graph/</loc>
+         <lastmod>2022-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/1.introduction/0-1-graph-database/</loc>
+         <lastmod>2022-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/1.introduction/0-2.relates/</loc>
+         <lastmod>2022-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/1.introduction/1.what-is-nebula-graph/</loc>
          <lastmod>2022-02-25</lastmod>
          <changefreq>daily</changefreq>
@@ -147,6 +162,11 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/3.0.0/20.appendix/6.eco-tool-version/</loc>
+         <lastmod>2022-02-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.0.0/20.appendix/history/</loc>
          <lastmod>2022-02-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
