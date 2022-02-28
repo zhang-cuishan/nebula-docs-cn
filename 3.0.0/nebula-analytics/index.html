@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#nebula_analytics" class="md-skip">
           跳转至
         </a>
       
@@ -5705,9 +5705,75 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Nebula Analytics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Nebula Analytics
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    适用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    使用限制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    版本兼容性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    支持算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nebula_analytics_1" class="md-nav__link">
+    安装 Nebula Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使用方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5954,6 +6020,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    适用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    使用限制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    版本兼容性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    支持算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nebula_analytics_1" class="md-nav__link">
+    安装 Nebula Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    使用方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5970,18 +6086,288 @@
 
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'dict object' has no attribute 'release'</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/mkdocs_macros/plugin.py&quot;, line 473, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/jinja2/environment.py&quot;, line 1291, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/jinja2/environment.py&quot;, line 925, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 23, in top-level template code
-jinja2.exceptions.UndefinedError: &#39;dict object&#39; has no attribute &#39;release&#39;
+<h1 id="nebula_analytics">Nebula Analytics<a class="headerlink" href="#nebula_analytics" title="Permanent link">&para;</a></h1>
+<p>Nebula Analytics 是一款高性能图计算框架工具，支持对 Nebula Graph 数据库中的数据执行图分析。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅企业版支持本功能。</p>
+</div>
+<h2 id="_1">适用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>支持将数据源为 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件中的数据导入 Nebula Analytics，并将图计算结果输出至 Nebula Graph 集群、HDFS 上的 CSV 文件或本地 CSV 文件。</p>
+<h2 id="_2">使用限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>输入和输出均为 Nebula Graph 集群时，图计算结果只能输出到数据源所在的图空间。</p>
+<h2 id="_3">版本兼容性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Nebula Analytics 版本和 Nebula Graph 内核的版本对应关系如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Analytics client 版本</th>
+<th align="left">Nebula Graph 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1.0.0</td>
+<td align="left">3.0.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">支持算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Nebula Analytics 支持的图计算算法如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">算法名</th>
+<th align="left">说明</th>
+<th align="left">分类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">APSP</td>
+<td align="left">全图最短路径</td>
+<td align="left">路径</td>
+</tr>
+<tr>
+<td align="left">SSSP</td>
+<td align="left">单源最短路径</td>
+<td align="left">路径</td>
+</tr>
+<tr>
+<td align="left">BFS</td>
+<td align="left">广度优先遍历</td>
+<td align="left">路径</td>
+</tr>
+<tr>
+<td align="left">PageRank</td>
+<td align="left">页面排序</td>
+<td align="left">节点重要度</td>
+</tr>
+<tr>
+<td align="left">KCore</td>
+<td align="left">K核</td>
+<td align="left">节点重要度</td>
+</tr>
+<tr>
+<td align="left">DegreeCentrality</td>
+<td align="left">度中心性</td>
+<td align="left">节点重要度</td>
+</tr>
+<tr>
+<td align="left">TriangleCount</td>
+<td align="left">三角计数</td>
+<td align="left">图特征</td>
+</tr>
+<tr>
+<td align="left">LPA</td>
+<td align="left">标签传播</td>
+<td align="left">社区发现</td>
+</tr>
+<tr>
+<td align="left">HANP</td>
+<td align="left">标签传播进阶版</td>
+<td align="left">社区发现</td>
+</tr>
+<tr>
+<td align="left">WCC</td>
+<td align="left">联通分量</td>
+<td align="left">社区发现</td>
+</tr>
+<tr>
+<td align="left">LOUVAIN</td>
+<td align="left">社区发现</td>
+<td align="left">社区发现</td>
+</tr>
+<tr>
+<td align="left">Clustering Coefficient</td>
+<td align="left">聚集系数</td>
+<td align="left">聚类</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nebula_analytics_1">安装 Nebula Analytics<a class="headerlink" href="#nebula_analytics_1" title="Permanent link">&para;</a></h2>
+<p>在多个机器安装由多个 Nebula Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
+<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-analytics-1.0.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-analytics
 </code></pre></div>
+<!--
+### 编译安装
+
+编译安装 Nebula Analytics 的准备工作和编译 Nebula Graph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
+
+1. 克隆仓库`analytics`。
+
+  <div class="highlight"><pre><span></span><code>$ git clone -b v1.0.0 https://github.com/vesoft-inc/nebula-analytics.git
+</code></pre></div>
+
+2. 进入目录`nebula-analytics`。
+
+  <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-analytics
+</code></pre></div>
+
+3. 执行脚本安装编译依赖。
+
+  <div class="highlight"><pre><span></span><code>$ sudo ./docker/install-dependencies.sh
+</code></pre></div>
+
+4. 下载并编译静态链接库。
+
+  <div class="highlight"><pre><span></span><code>$ ./3rdtools.sh distclean <span class="o">&amp;&amp;</span> ./3rdtools.sh install
+</code></pre></div>
+
+5. 编译 Nebula Analytics
+
+  <div class="highlight"><pre><span></span><code>$ ./build.sh
+</code></pre></div>
+-->
+
+<h2 id="_5">使用方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>安装完成后，用户可以设置不同算法的参数，然后执行脚本，即可获得算法的结果，并导出为指定格式。</p>
+<ol>
+<li>
+<p>选择 Nebula Analytics 集群的任一节点，进入目录<code>scripts</code>。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
+</code></pre></div>
+</li>
+<li>
+<p>确认数据源和输出路径。配置方法如下：</p>
+<ul>
+<li>
+<p>数据源为 Nebula Graph 集群</p>
+<ol>
+<li>
+<p>修改配置文件<code>nebula.conf</code>，设置 Nebula Graph 集群相关信息。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 连接 Nebula Graph 时的重试次数。</span>
+--retry<span class="o">=</span><span class="m">3</span>  
+<span class="c1"># 要读取或写入的图空间名称。</span>
+--space<span class="o">=</span>baskeyballplayer  
+
+<span class="c1"># 读取 Nebula Graph 设置</span>
+<span class="c1"># Nebula Graph 的 metad 服务地址。</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.8.100:9559, <span class="m">192</span>.168.8.101:9559, <span class="m">192</span>.168.8.102:9559
+<span class="c1"># 要读取的边的名称。</span>
+--edges<span class="o">=</span>LIKES  
+<span class="c1"># 要读取的作为边的权重属性的名称。可以是属性名，也可以是 _rank。</span>
+<span class="c1">#--edge_data_fields </span>
+<span class="c1"># 每次扫描读取的行数。</span>
+--read_batch_size<span class="o">=</span><span class="m">10000</span>  
+
+<span class="c1"># 写回 Nebula Graph 设置</span>
+<span class="c1"># Nebula Graph 的 graphd 服务地址。</span>
+--graph_server_addrs<span class="o">=</span><span class="m">192</span>.168.8.100:9669  
+<span class="c1"># Nebula Graph 的登录用户名。</span>
+--user<span class="o">=</span>root  
+<span class="c1"># Nebula Graph 的登录密码。</span>
+--password<span class="o">=</span>nebula  
+<span class="c1"># 写回 Nebula Graph 时采用的模式: insert 和 update。</span>
+--mode<span class="o">=</span>insert  
+<span class="c1"># 写回到 Nebula Graph 的 Tag 名称。</span>
+--tag<span class="o">=</span>pagerank  
+<span class="c1"># 写回到 Nebula Graph 的 Tag 对应的属性名称。</span>
+--prop<span class="o">=</span>pr  
+<span class="c1"># 写回到 Nebula Graph 的 Tag 对应的属性的类型。</span>
+--type<span class="o">=</span>double 
+<span class="c1"># 写回时，每次写入的行数。</span>
+--write_batch_size<span class="o">=</span><span class="m">1000</span> 
+<span class="c1"># 写回失败的数据所存储的文件。</span>
+--err_file<span class="o">=</span>/home/xxx/analytics/err.txt 
+</code></pre></div>
+</li>
+<li>
+<p>修改需要使用的算法脚本，例如<code>run_pagerank.sh</code>，设置相关参数。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 集群所有机器所运行的进程数之和，推荐每台机器为 1 或者 NUMA 架构的 node 数。</span>
+<span class="nv">WNUM</span><span class="o">=</span><span class="m">3</span> 
+<span class="c1"># 每个进程的线程数，推荐最大设置为机器的硬件线程数。</span>
+<span class="nv">WCORES</span><span class="o">=</span><span class="m">4</span>  
+<span class="c1"># 数据源路径</span>
+<span class="c1"># 可以通过文件 nebula.conf 设置从 Nebula Graph 读取：</span>
+<span class="nv">INPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT</span><span class="p">:=</span><span class="s2">&quot;nebula:</span><span class="nv">$PROJECT</span><span class="s2">/scripts/nebula.conf&quot;</span><span class="si">}</span>  
+<span class="c1"># 也可以通过本地或 HDFS 上的 CSV 文件读取：</span>
+<span class="c1"># #INPUT=${INPUT:=&quot;$PROJECT/data/graph/v100_e2150_ua_c3.csv&quot;}</span>
+
+<span class="c1"># 图计算结果输出路径</span>
+<span class="c1"># 可以输出至 Nebula Graph 集群，如果数据源也为 Nebula Graph，结果会输出至 nebula.conf 指定的图空间。</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT</span><span class="p">:=</span><span class="s2">&quot;nebula:</span><span class="nv">$PROJECT</span><span class="s2">/scripts/nebula.conf&quot;</span><span class="si">}</span>
+<span class="c1"># 也可以输出至本地或 HDFS 上的 CSV 文件：</span>
+<span class="c1"># OUTPUT=${OUTPUT:=&#39;hdfs://192.168.8.100:9000/_test/output&#39;}</span>
+
+<span class="c1"># true 为有向图，false 为无向图。</span>
+<span class="nv">IS_DIRECTED</span><span class="o">=</span><span class="si">${</span><span class="nv">IS_DIRECTED</span><span class="p">:=true</span><span class="si">}</span>
+<span class="c1"># 是否进行 ID 编码</span>
+<span class="nv">NEED_ENCODE</span><span class="o">=</span><span class="si">${</span><span class="nv">NEED_ENCODE</span><span class="p">:=true</span><span class="si">}</span>
+<span class="c1"># 数据源的点 ID 类型，例如：string、int32、int64。</span>
+<span class="nv">VTYPE</span><span class="o">=</span><span class="si">${</span><span class="nv">VTYPE</span><span class="p">:=int32</span><span class="si">}</span>
+<span class="c1"># 编码类型。distributed 为分布式点ID编码，single 为单机点 ID 编码。</span>
+<span class="nv">ENCODER</span><span class="o">=</span><span class="si">${</span><span class="nv">ENCODER</span><span class="p">:=</span><span class="s2">&quot;distributed&quot;</span><span class="si">}</span>
+<span class="c1"># PageRank 算法的参数。不同算法的参数不同。</span>
+<span class="nv">EPS</span><span class="o">=</span><span class="si">${</span><span class="nv">EPS</span><span class="p">:=0.0001</span><span class="si">}</span>
+<span class="nv">DAMPING</span><span class="o">=</span><span class="si">${</span><span class="nv">DAMPING</span><span class="p">:=0.85</span><span class="si">}</span>
+<span class="c1"># 迭代次数</span>
+<span class="nv">ITERATIONS</span><span class="o">=</span><span class="si">${</span><span class="nv">ITERATIONS</span><span class="p">:=100</span><span class="si">}</span>
+</code></pre></div>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>
+<p>数据源为本地或 HDFS 上的 CSV 文件</p>
+<p>修改需要使用的算法脚本，例如<code>run_pagerank.sh</code>，设置相关参数。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 集群所有机器所运行的进程数之和，推荐每台机器为 1 或者 NUMA 架构的 node 数。</span>
+<span class="nv">WNUM</span><span class="o">=</span><span class="m">3</span> 
+<span class="c1"># 每个进程的线程数，推荐最大设置为机器的硬件线程数。</span>
+<span class="nv">WCORES</span><span class="o">=</span><span class="m">4</span>  
+<span class="c1"># 数据源路径</span>
+<span class="c1"># 可以通过文件 nebula.conf 设置从 Nebula Graph 读取：</span>
+<span class="c1"># INPUT=${INPUT:=&quot;nebula:$PROJECT/scripts/nebula.conf&quot;}  </span>
+<span class="c1"># 也可以通过本地或 HDFS 上的 CSV 文件读取：</span>
+<span class="nv">INPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT</span><span class="p">:=</span><span class="s2">&quot;</span><span class="nv">$PROJECT</span><span class="s2">/data/graph/v100_e2150_ua_c3.csv&quot;</span><span class="si">}</span>
+
+<span class="c1"># 图计算结果输出路径</span>
+<span class="c1"># 可以输出至 Nebula Graph 集群，如果数据源也为 Nebula Graph，结果会输出至 nebula.conf 指定的图空间。</span>
+<span class="c1"># OUTPUT=${OUTPUT:=&quot;nebula:$PROJECT/scripts/nebula.conf&quot;}</span>
+<span class="c1"># 也可以输出至本地或 HDFS 上的 CSV 文件：</span>
+<span class="nv">OUTPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT</span><span class="p">:=</span><span class="s1">&#39;hdfs://192.168.8.100:9000/_test/output&#39;</span><span class="si">}</span>
+
+<span class="c1"># true 为有向图，false 为无向图。</span>
+<span class="nv">IS_DIRECTED</span><span class="o">=</span><span class="si">${</span><span class="nv">IS_DIRECTED</span><span class="p">:=true</span><span class="si">}</span>
+<span class="c1"># 是否进行 ID 编码</span>
+<span class="nv">NEED_ENCODE</span><span class="o">=</span><span class="si">${</span><span class="nv">NEED_ENCODE</span><span class="p">:=true</span><span class="si">}</span>
+<span class="c1"># 数据源的点 ID 类型，例如：string、int32、int64。</span>
+<span class="nv">VTYPE</span><span class="o">=</span><span class="si">${</span><span class="nv">VTYPE</span><span class="p">:=int32</span><span class="si">}</span>
+<span class="c1"># 编码类型。distributed 为分布式点ID编码，single 为单机点 ID 编码。</span>
+<span class="nv">ENCODER</span><span class="o">=</span><span class="si">${</span><span class="nv">ENCODER</span><span class="p">:=</span><span class="s2">&quot;distributed&quot;</span><span class="si">}</span>
+<span class="c1"># PageRank 算法的参数。不同算法的参数不同。</span>
+<span class="nv">EPS</span><span class="o">=</span><span class="si">${</span><span class="nv">EPS</span><span class="p">:=0.0001</span><span class="si">}</span>
+<span class="nv">DAMPING</span><span class="o">=</span><span class="si">${</span><span class="nv">DAMPING</span><span class="p">:=0.85</span><span class="si">}</span>
+<span class="c1"># 迭代次数</span>
+<span class="nv">ITERATIONS</span><span class="o">=</span><span class="si">${</span><span class="nv">ITERATIONS</span><span class="p">:=100</span><span class="si">}</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>修改配置文件<code>cluster</code>，设置执行算法的 Nebula Analytics 集群节点和任务分配权重。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Nebula Analytics 集群节点 IP 地址:任务分配权重</span>
+<span class="m">192</span>.168.8.200:1
+<span class="m">192</span>.168.8.201:1
+<span class="m">192</span>.168.8.202:1
+</code></pre></div>
+</li>
+<li>
+<p>执行算法脚本。例如：</p>
+<div class="highlight"><pre><span></span><code>./run_pagerank.sh
+</code></pre></div>
+</li>
+<li>
+<p>在输出路径查看计算结果。</p>
+<ul>
+<li>输出至 Nebula Graph 集群，请根据<code>nebula.conf</code>的设置查看计算结果。</li>
+</ul>
+<ul>
+<li>输出至 HDFS 上的 CSV 文件或本地 CSV 文件，请根据图计算脚本内的<code>OUTPUT</code>设置查看计算结果，计算结果为<code>.gz</code>格式的压缩文件。</li>
+</ul>
+</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
