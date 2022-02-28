@@ -6345,6 +6345,10 @@
 <li>B2: 当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
 </ul>
 <p>此外<code>MATCH</code>语句中的<code>WHERE</code>子句内<strong>不支持</strong>图模式。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>目前 match 语句无法查询到悬挂边。</p>
+</div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
 <p>从 3.0.0 版本开始，为了区别不同 Tag 的属性，返回属性时必须额外指定 Tag 名称。即从<code>RETURN &lt;变量名&gt;.&lt;属性名&gt;</code>改为<code>RETURN &lt;变量名&gt;.&lt;Tag名&gt;.&lt;属性名&gt;</code>。</p>
@@ -6771,7 +6775,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2022</span>
       
     
   </small>
