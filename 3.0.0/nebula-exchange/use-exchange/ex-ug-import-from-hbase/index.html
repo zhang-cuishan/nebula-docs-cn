@@ -6304,7 +6304,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       cores: 1
       maxResultSize: 1G
     }
-    cores {
+    cores: {
       max: 16
     }
   }
@@ -6323,11 +6323,11 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
     pswd: nebula
     # 填写 Nebula Graph 中需要写入数据的图空间名称。
     space: basketballplayer
-    connection {
+    connection: {
       timeout: 3000
       retry: 3
     }
-    execution {
+    execution: {
       retry: 3
     }
     error: {
@@ -6500,7 +6500,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2022</span>
       
     
   </small>
