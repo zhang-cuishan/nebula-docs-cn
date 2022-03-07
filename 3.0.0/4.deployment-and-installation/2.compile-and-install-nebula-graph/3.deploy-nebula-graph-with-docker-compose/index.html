@@ -6327,8 +6327,10 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 </div>
 </li>
 <li>
-<p>执行如下命令检查<code>nebula-storaged</code>进程状态。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS<span class="p">;</span>
+<p>执行如下命令将 <code>nebula-storaged</code> 进程增加为可用状态。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; ADD HOSTS <span class="s2">&quot;storaged0&quot;</span>:9779,<span class="s2">&quot;storaged1&quot;</span>:9779,<span class="s2">&quot;storaged2&quot;</span>:9779<span class="p">;</span>
+
+nebula&gt; SHOW HOSTS<span class="p">;</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
 <span class="p">|</span> Host        <span class="p">|</span> Port <span class="p">|</span> Status   <span class="p">|</span> Leader count <span class="p">|</span> Leader distribution  <span class="p">|</span> Partition distribution <span class="p">|</span> Version <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
@@ -6337,11 +6339,15 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 <span class="p">|</span> <span class="s2">&quot;storaged2&quot;</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">&quot;ONLINE&quot;</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span> <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span>   <span class="p">|</span> <span class="s2">&quot;3.0.0&quot;</span> <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>从 3.0 开始，上报到 metad 的 <code>nebula-storaged</code> 服务需要人为 <code>ADD HOSTS</code> 之后才可以被使用。</p>
+</div>
 </li>
 </ol>
 </li>
 <li>
-<p>执行两次<code>exit</code> 可以退出容器。</p>
+<p>执行两次<code>exit</code>可以退出容器。</p>
 </li>
 </ol>
 <h2 id="nebula_graph_1">查看 Nebula Graph 服务的状态和端口<a class="headerlink" href="#nebula_graph_1" title="Permanent link">&para;</a></h2>
@@ -6480,7 +6486,7 @@ Removing network nebula-docker-compose_nebula-net
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
       
     
   </small>
