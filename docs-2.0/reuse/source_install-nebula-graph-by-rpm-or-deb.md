@@ -128,7 +128,7 @@ RPM 和 DEB 是 Linux 系统下常见的两种安装包格式，本文介绍如�
 - 安装 DEB 包
 
   ```bash
-  $ sudo dpkg -i --instdir==<installation_path> <package_name>
+  $ sudo dpkg -i --instdir=<installation_path> <package_name>
   ```
 
   例如在默认路径下安装{{nebula.release}}版本的 DEB 包：
