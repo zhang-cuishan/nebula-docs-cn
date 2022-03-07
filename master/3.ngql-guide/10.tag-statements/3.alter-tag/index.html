@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5883,6 +5933,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6015,9 +6079,9 @@
     [COMMENT = &#39;&lt;comment&gt;&#39;];
 
 alter_definition:
-| ADD    (prop_name data_type)
+| ADD    (prop_name data_type [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT &#39;&lt;comment&gt;&#39;])
 | DROP   (prop_name)
-| CHANGE (prop_name data_type)
+| CHANGE (prop_name data_type [NULL | NOT NULL] [DEFAULT &lt;default_value&gt;] [COMMENT &#39;&lt;comment&gt;&#39;])
 
 ttl_definition:
     TTL_DURATION = ttl_duration, TTL_COL = prop_name
@@ -6033,6 +6097,7 @@ ttl_definition:
 nebula&gt; ALTER TAG t1 ADD (p3 int, p4 string);
 nebula&gt; ALTER TAG t1 TTL_DURATION = 2, TTL_COL = &quot;p2&quot;;
 nebula&gt; ALTER TAG t1 COMMENT = &#39;test1&#39;;
+nebula&gt; ALTER TAG t1 ADD (p5 double NOT NULL DEFAULT 0.4 COMMENT &#39;p5&#39;) COMMENT=&#39;test2&#39;;
 </code></pre></div>
 <h2 id="tag">修改 Tag 说明<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h2>
 <p>尝试使用刚修改的 Tag 可能会失败，因为修改是异步实现的。为确保数据同步，后续操作能顺利进行，请等待 2 个心跳周期（20 秒）。</p>
@@ -6043,7 +6108,7 @@ nebula&gt; ALTER TAG t1 COMMENT = &#39;test1&#39;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
       
     
   </small>

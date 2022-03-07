@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -6008,6 +6058,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6273,15 +6337,19 @@
 <h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>除以下三种情况之外，请确保 <code>MATCH</code> 语句有<strong>至少</strong>一个<a href="../../14.native-index-statements/1.create-native-index/">索引</a>可用。</p>
 <ul>
-<li>A: <code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
+<li><code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
 </ul>
 <ul>
-<li>B1: 当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
+<li>当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
 </ul>
 <ul>
-<li>B2: 当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
+<li>当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
 </ul>
 <p>此外<code>MATCH</code>语句中的<code>WHERE</code>子句内<strong>不支持</strong>图模式。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>目前 match 语句无法查询到悬挂边。</p>
+</div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
 <p>从 3.0.0 版本开始，为了区别不同 Tag 的属性，返回属性时必须额外指定 Tag 名称。即从<code>RETURN &lt;变量名&gt;.&lt;属性名&gt;</code>改为<code>RETURN &lt;变量名&gt;.&lt;Tag名&gt;.&lt;属性名&gt;</code>。</p>
@@ -6700,7 +6768,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 <p>参见<a href="../optional-match/">OPTIONAL MATCH</a>。</p>
 <div class="admonition performance">
 <p class="admonition-title">Performance</p>
-<p>Nebula Graph master 中<code>MATCH</code>语句的性能和资源占用得到了优化.但对性能要求较高时，仍建议使用 <code>GO</code>, <code>LOOKUP</code>, <code>|</code> 和 <code>FETCH</code> 等来替代<code>MATCH</code>。</p>
+<p>Nebula Graph 3.0.0 中<code>MATCH</code>语句的性能和资源占用得到了优化.但对性能要求较高时，仍建议使用 <code>GO</code>, <code>LOOKUP</code>, <code>|</code> 和 <code>FETCH</code> 等来替代<code>MATCH</code>。</p>
 </div>
 
   <hr>

@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -291,6 +299,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -352,18 +402,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5904,6 +5954,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6108,10 +6172,6 @@
 <p>如上图所示，探索到节点 <code>Filter</code> 时，发现依赖的节点是 <code>GetNeighbor</code>，匹配预先定义的规则，就会将 <code>Filter</code> 融入到 <code>GetNeighbor</code> 中，然后移除节点 <code>Filter</code>，继续匹配下一个规则。在执行阶段，当算子 <code>GetNeighbor</code> 调用 Storage 服务的接口获取一个点的邻边时，Storage 服务内部会直接将不符合条件的边过滤掉，这样可以极大地减少传输的数据量，该优化称为过滤下推。</p>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Nebula Graph master 默认没有打开优化。</p>
-</div>
 <h2 id="executor">Executor<a class="headerlink" href="#executor" title="Permanent link">&para;</a></h2>
 <p>Executor 模块包含调度器（Scheduler）和执行器（Executor），通过调度器调度执行计划，让执行器根据执行计划生成对应的执行算子，从叶子节点开始执行，直到根节点结束。如下图所示。</p>
 <p><img alt="Executor" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/executor.png" /></p>
@@ -6135,7 +6195,7 @@
 <h2 id="_2">视频<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>用户也可以通过视频全方位了解 Nebula Graph 的查询引擎。</p>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1xV411n7DD">nMeetup·上海 ｜全面解析 2.0 Query Engine</a>（33 分 30 秒）</li>
+<li><a href="https://www.bilibili.com/video/BV1xV411n7DD">nMeetup·上海 ｜全面解析 Query Engine</a>（33 分 30 秒）</li>
 </ul>
 <iframe src="//player.bilibili.com/player.html?aid=417369444&bvid=BV1xV411n7DD&cid=317029694&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="720px" height="480px"> </iframe>
 
@@ -6144,7 +6204,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
       
     
   </small>

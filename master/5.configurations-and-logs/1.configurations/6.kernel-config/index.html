@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -6046,6 +6096,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6354,7 +6418,7 @@
 <h3 id="vmswappiness">vm.swappiness<a class="headerlink" href="#vmswappiness" title="Permanent link">&para;</a></h3>
 <p><code>vm.swappiness</code>是触发虚拟内存（swap）的空闲内存百分比。值越大，使用 swap 的可能性就越大，建议设置为 0，表示首先删除页缓存。需要注意的是，0 表示<strong>尽量</strong>不使用 swap。</p>
 <h3 id="vmmin_free_kbytes">vm.min_free_kbytes<a class="headerlink" href="#vmmin_free_kbytes" title="Permanent link">&para;</a></h3>
-<p><code>vm.min_free_kbytes</code>用于设置 Linux 虚拟机保留的最小空闲千字节数。如果系统内存足够，建议设置较大值。例如物理内存为 128 GB，可以将<code>vm.min_free_kbytes</code>设置为 5 GB。如果值太小，会导致系统无法申请足够的连续物理内存。</p>
+<p><code>vm.min_free_kbytes</code>用于设置 Linux 内核保留的最小空闲千字节数。如果系统内存足够，建议设置较大值。例如物理内存为 128 GB，可以将<code>vm.min_free_kbytes</code>设置为 5 GB。如果值太小，会导致系统无法申请足够的连续物理内存。</p>
 <h3 id="vmmax_map_count">vm.max_map_count<a class="headerlink" href="#vmmax_map_count" title="Permanent link">&para;</a></h3>
 <p><code>vm.max_map_count</code>用于限制单个进程的 VMA（虚拟内存区域）数量。默认值为<code>65530</code>，对于绝大多数应用程序来说已经足够。如果应用程序因为内存消耗过大而报错，请增大本参数的值。</p>
 <h3 id="vmdirty_">vm.dirty_*<a class="headerlink" href="#vmdirty_" title="Permanent link">&para;</a></h3>
@@ -6412,7 +6476,7 @@ root# swapoff -a <span class="o">&amp;&amp;</span> swapon -a
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
       
     
   </small>

@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -3573,6 +3623,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    视频
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5874,6 +5931,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -5965,6 +6036,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    视频
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5998,8 +6076,9 @@
 </ul>
 <h2 id="_2">限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Nebula Graph 版本需要为 vmaster。</li>
+<li>Nebula Graph 版本需要为 v3.0.0。</li>
 <li>数据备份仅支持全量备份，不支持增量备份。</li>
+<li>仅支持单 metad 部署的本地文件的自动部署和恢复。</li>
 <li>Nebula Listener 暂时不支持备份，且全文索引也不支持备份。</li>
 <li>如果备份数据到本地磁盘，备份的文件将会放置在每个服务器的本地路径中。也可以在本地挂载 NFS 文件系统，以便将备份数据还原到不同的主机上。</li>
 <li>备份图空间只能恢复到原集群，不能跨集群恢复。</li>
@@ -6110,6 +6189,11 @@
 <li><a href="../3.br-backup-data/">使用 BR 备份数据</a></li>
 <li><a href="../4.br-restore-data/">使用 BR 恢复数据</a></li>
 </ol>
+<h2 id="_3">视频<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.bilibili.com/video/av851858570">Nebula Graph 容灾备份工具 nebula-br 介绍</a>（3 分 34 秒）</li>
+</ul>
+<iframe src="//player.bilibili.com/player.html?aid=851858570&bvid=BV11L4y1g7rD&cid=515246370&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="720px" height="480px"> </iframe>
 
   <hr>
 <div class="md-source-file">

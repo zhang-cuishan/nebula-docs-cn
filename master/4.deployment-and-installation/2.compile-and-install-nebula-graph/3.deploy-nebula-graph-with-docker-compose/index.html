@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5959,6 +6009,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6211,7 +6275,7 @@
 <li>
 <p>执行如下命令启动 Nebula Graph 服务。</p>
 <!-- 支持ARM架构docker image后再发布
-  从 master 开始，Nebula Graph 在 Docker Hub 上的 Docker 支持 ARM64 架构。用户可以在 ARM macOS 的 Docker Desktop 上或者 ARM Linux Server 上运行容器化的 Nebula Graph。
+  从 3.0.0 开始，Nebula Graph 在 Docker Hub 上的 Docker 支持 ARM64 架构。用户可以在 ARM macOS 的 Docker Desktop 上或者 ARM Linux Server 上运行容器化的 Nebula Graph。
   -->
 
 <div class="admonition note">
@@ -6263,8 +6327,10 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 </div>
 </li>
 <li>
-<p>执行如下命令检查<code>nebula-storaged</code>进程状态。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS<span class="p">;</span>
+<p>执行如下命令将 <code>nebula-storaged</code> 进程增加为可用状态。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; ADD HOSTS <span class="s2">&quot;storaged0&quot;</span>:9779,<span class="s2">&quot;storaged1&quot;</span>:9779,<span class="s2">&quot;storaged2&quot;</span>:9779<span class="p">;</span>
+
+nebula&gt; SHOW HOSTS<span class="p">;</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
 <span class="p">|</span> Host        <span class="p">|</span> Port <span class="p">|</span> Status   <span class="p">|</span> Leader count <span class="p">|</span> Leader distribution  <span class="p">|</span> Partition distribution <span class="p">|</span> Version <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
@@ -6273,11 +6339,15 @@ ed55ccf356ae        nebula-docker-compose_nebula-net   bridge              <span
 <span class="p">|</span> <span class="s2">&quot;storaged2&quot;</span> <span class="p">|</span> <span class="m">9779</span> <span class="p">|</span> <span class="s2">&quot;ONLINE&quot;</span> <span class="p">|</span> <span class="m">0</span>            <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span> <span class="p">|</span> <span class="s2">&quot;No valid partition&quot;</span>   <span class="p">|</span> <span class="s2">&quot;3.0.0&quot;</span> <span class="p">|</span>
 +-------------+------+----------+--------------+----------------------+------------------------+---------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>从 3.0 开始，上报到 metad 的 <code>nebula-storaged</code> 服务需要人为 <code>ADD HOSTS</code> 之后才可以被使用。</p>
+</div>
 </li>
 </ol>
 </li>
 <li>
-<p>执行两次<code>exit</code> 可以退出容器。</p>
+<p>执行两次<code>exit</code>可以退出容器。</p>
 </li>
 </ol>
 <h2 id="nebula_graph_1">查看 Nebula Graph 服务的状态和端口<a class="headerlink" href="#nebula_graph_1" title="Permanent link">&para;</a></h2>
@@ -6364,7 +6434,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="docker">如何固定 Docker 映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:master
+    image: vesoft/nebula-graphd:v3.0.0
     ...
     ports:
       - <span class="m">9669</span>:9669

@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5931,6 +5981,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6116,7 +6180,7 @@
 <li>Hadoop：2.9.2 伪分布式部署</li>
 </ul>
 <ul>
-<li>Nebula Graph：master。使用 <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose 部署</a>。</li>
+<li>Nebula Graph：3.0.0。使用 <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">Docker Compose 部署</a>。</li>
 </ul>
 <h2 id="_3">前提条件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>开始导入数据之前，用户需要确认以下信息：</p>
@@ -6236,7 +6300,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
         memory:1G
     }
 
-    cores {
+    cores: {
       max: 16
     }
   }
@@ -6257,11 +6321,11 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
     # 指定图空间名称。
     space: basketballplayer
-    connection {
+    connection: {
       timeout: 3000
       retry: 3
     }
-    execution {
+    execution: {
       retry: 3
     }
     error: {
@@ -6303,7 +6367,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为 VID 的源。
       # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，Nebula Graph master仅支持字符串或整数类型的 VID。
+      # 目前，Nebula Graph 3.0.0仅支持字符串或整数类型的 VID。
       vertex: {
         field:id
       }
@@ -6342,7 +6406,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为 VID 的源。
       # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，Nebula Graph master仅支持字符串或整数类型的 VID。
+      # 目前，Nebula Graph 3.0.0仅支持字符串或整数类型的 VID。
       vertex: {
         field:id
       }
@@ -6385,7 +6449,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为起始点和目的点的源。
       # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，Nebula Graph master仅支持字符串或整数类型的 VID。
+      # 目前，Nebula Graph 3.0.0仅支持字符串或整数类型的 VID。
       source: {
         field: src
       }
@@ -6430,7 +6494,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 
       # 指定一个列作为起始点和目的点的源。
       # vertex 的值必须与 Parquet 文件中的字段保持一致。
-      # 目前，Nebula Graph master仅支持字符串或整数类型的 VID。
+      # 目前，Nebula Graph 3.0.0仅支持字符串或整数类型的 VID。
       source: {
         field: src
       }
@@ -6477,7 +6541,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
       
     
   </small>

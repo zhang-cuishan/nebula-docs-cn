@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -79,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula_graph_2x_master" class="md-skip">
+        <a href="#nebula_graph_2x_300" class="md-skip">
           跳转至
         </a>
       
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5904,6 +5954,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6041,13 +6105,13 @@
 
 
 
-<h1 id="nebula_graph_2x_master">升级 Nebula Graph 2.x 至 master 版本<a class="headerlink" href="#nebula_graph_2x_master" title="Permanent link">&para;</a></h1>
-<p>本文以 Nebula Graph 2.6.1 版本升级到 master 版本为例，介绍 Nebula Graph 2.x 版本升级到 3.x 版本的方法。</p>
+<h1 id="nebula_graph_2x_300">升级 Nebula Graph 2.x 至 3.0.0 版本<a class="headerlink" href="#nebula_graph_2x_300" title="Permanent link">&para;</a></h1>
+<p>本文以 Nebula Graph 2.6.1 版本升级到 3.0.0 版本为例，介绍 Nebula Graph 2.x 版本升级到 3.x 版本的方法。</p>
 <h2 id="_1">适用版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>本文适用于将 Nebula Graph 从 2.0.0 及之后的 2.x 版本升级到 master 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
+<p>本文适用于将 Nebula Graph 从 2.0.0 及之后的 2.x 版本升级到 3.0.0 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>如需从 2.0.0 之前的版本（含 1.x 版本）升级到 master，还需找到 master 版本文件中<code>share/resources</code>目录下的<code>date_time_zonespec.csv</code>文件，将其复制到 Nebula Graph 安装路径下的相同目录内。也可从 <a href="https://github.com/vesoft-inc/nebula/blob/master/resources/date_time_zonespec.csv">GitHub</a> 下载该文件。</p>
+<p>如需从 2.0.0 之前的版本（含 1.x 版本）升级到 3.0.0，还需找到 3.0.0 版本文件中<code>share/resources</code>目录下的<code>date_time_zonespec.csv</code>文件，将其复制到 Nebula Graph 安装路径下的相同目录内。也可从 <a href="https://github.com/vesoft-inc/nebula/blob/master/resources/date_time_zonespec.csv">GitHub</a> 下载该文件。</p>
 </div>
 <h2 id="_2">升级限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6063,7 +6127,7 @@
 <li>必须在原服务器上原地升级，不能修改原机器的 IP 地址、配置文件，不可更改集群拓扑。</li>
 </ul>
 <ul>
-<li>硬盘空间要求：各机器硬盘剩余空间都需要是原数据目录的<strong>三倍以上</strong>。</li>
+<li>硬盘空间要求：各机器硬盘剩余空间都需要是原数据目录的<strong>三倍</strong>。</li>
 </ul>
 <ul>
 <li>已知会造成数据丢失的 4 种场景，和 alter schema 以及 default value 相关，参见 <a href="https://github.com/vesoft-inc/nebula-graph/issues/857">github known issues</a>。</li>
@@ -6085,7 +6149,7 @@
 <ul>
 <li>
 <p>客户端兼容</p>
-<p>升级后旧版本客户端将无法连接 Nebula Graph，需将所有客户端都升级到兼容 Nebula Graph master 的版本。</p>
+<p>升级后旧版本客户端将无法连接 Nebula Graph，需将所有客户端都升级到兼容 Nebula Graph 3.0.0 的版本。</p>
 </li>
 </ul>
 <ul>
@@ -6116,7 +6180,7 @@
 <h2 id="_4">升级准备<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>根据操作系统和架构下载 Nebula Graph master 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
+<p>根据操作系统和架构下载 Nebula Graph 3.0.0 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>编译源码或者下载RPM/DEB包也可以获取新版二进制文件。</p>
@@ -6124,7 +6188,13 @@
 </li>
 </ul>
 <ul>
-<li>根据 Storage 和 Meta 服务配置中<code>data_path</code>参数的值找到数据文件的位置，并备份数据。默认路径为<code>nebula/data/storage</code>和<code>nebula/data/meta</code>。</li>
+<li>
+<p>根据 Storage 和 Meta 服务配置中<code>data_path</code>参数的值找到数据文件的位置，并备份数据。默认路径为<code>nebula/data/storage</code>和<code>nebula/data/meta</code>。</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>升级时不会自动备份原有数据。务必手动备份数据，防止丢失。</p>
+</div>
+</li>
 </ul>
 <ul>
 <li>备份配置文件。</li>
@@ -6179,9 +6249,9 @@
 </li>
 <li>
 <p>使用<code>bin</code>目录下的新版 db_upgrader 文件升级数据格式。</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>本步骤会备份 Storage 服务中保存的数据，但为防止备份失败，升级数据格式前，务必按照本文<strong>升级准备</strong>部分的说明备份数据。</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>本步骤不会备份 Storage 服务中保存的数据。升级数据格式前，务必按照本文<strong>升级准备</strong>部分的说明备份数据。</p>
 </div>
 <p>命令语法：</p>
 <div class="highlight"><pre><span></span><code>&lt;nebula_install_path&gt;/bin/db_upgrader \
@@ -6192,7 +6262,7 @@
 </code></pre></div>
 <ul>
 <li><code>old_storage_data_path</code>代表数据的存储路径，由 Storage 服务配置文件中的<code>data_path</code>参数定义。</li>
-<li><code>data_backup_path</code>代表自定义的数据备份路径。</li>
+<li><code>data_backup_path</code>代表自定义的数据备份路径。<strong>当前版本该设置不生效，升级数据格式时不会将原有数据备份到任何路径。</strong></li>
 <li><code>meta_server_ip</code>和<code>port</code>分别代表 Meta 服务各节点的 IP 地址和端口号。</li>
 <li><code>2:3</code>代表从 Nebula Graph 2.x 版本升级到 3.x 版本。</li>
 </ul>
@@ -6227,7 +6297,7 @@ nebula&gt; SUBMIT JOB STATS;
 nebula&gt; SHOW STATS;
 nebula&gt; MATCH (v) RETURN v LIMIT 5;
 </code></pre></div>
-<p>也可根据 master 版本的新功能测试，新功能列表参见<a href="../../../20.appendix/releasenote/">发布说明</a>。</p>
+<p>也可根据 3.0.0 版本的新功能测试，新功能列表参见<a href="../../../20.appendix/releasenote/">发布说明</a>。</p>
 </li>
 </ol>
 <h2 id="_6">升级失败回滚<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>

@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5874,6 +5924,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -5986,7 +6050,7 @@
 <h1 id="_1">系统设计建议<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="qps">选择 QPS 优先或时延优先<a class="headerlink" href="#qps" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Nebula Graph master 更擅长处理（互联网式的）有大量并发的小请求。也即：虽然全图很大（万亿点边），但是每个请求要访问到的子图本身并不大（几百万个点边）——单个请求时延不大；但这类请求的并发数量特别多——QPS 大。</li>
+<li>Nebula Graph 3.0.0 更擅长处理（互联网式的）有大量并发的小请求。也即：虽然全图很大（万亿点边），但是每个请求要访问到的子图本身并不大（几百万个点边）——单个请求时延不大；但这类请求的并发数量特别多——QPS 大。</li>
 </ul>
 <ul>
 <li>但对于一些交互分析型的场景，并发请求的数量不多，而每个请求要访问的子图本身特别大（亿以上）。为降低时延，可以在应用程序中将一个大的请求，拆分为多个小请求，并发发送给多个 graphd。这样可以降低单个大请求的时延，降低单个 graphd 的内存占用。另外，也可以使用<a href="../../nebula-algorithm/">图计算功能 Nebula Algorithm</a>。</li>
@@ -5994,11 +6058,11 @@
 <!--
 ## 水平扩展或垂直扩展
 
-Nebula Graph master 支持水平扩展：
+Nebula Graph 3.0.0 支持水平扩展：
 
 + Storaged 的水平扩展：
 
-    - Nebula Graph master 不支持水平扩展。
+    - Nebula Graph 3.0.0 不支持水平扩展。
 
 
     - 增加 storaged 的机器数量，可以大体线性增加集群的整体能力，包括增加整体 QPS 和降低时延。
@@ -6013,14 +6077,14 @@ Nebula Graph master 支持水平扩展：
 
 + Metad 不支持水平扩展。
 
-垂直扩展通常硬件成本更高，但运维操作相对简单。<!-- Nebula Graph master 也可以垂直扩展。 
+垂直扩展通常硬件成本更高，但运维操作相对简单。<!-- Nebula Graph 3.0.0 也可以垂直扩展。 
 -->
 <h2 id="_2">数据传输与优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>读写平衡。Nebula Graph 适合读写平衡性的在线场景，也即 OLTP 型的的“并发的发生写入与读取”；而非数仓 OLAP 型的“一次写入多次读取”。</li>
 <li>选择不同的写入方式。大批量的数据写入可以使用 sst 加载的方式；小批量的写入使用<code>INSERT</code>语句。</li>
 <li>选择合适的时间运行 COMPACTION 和 BALANCE，来分别优化数据格式和存储分布。</li>
-<li>Nebula Graph master 不支持关系型数据库意义上的事务和隔离性，更接近 NoSQL。</li>
+<li>Nebula Graph 3.0.0 不支持关系型数据库意义上的事务和隔离性，更接近 NoSQL。</li>
 </ul>
 <h2 id="_3">查询预热与数据预热<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>应用端进行预热：</p>

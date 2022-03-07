@@ -55,6 +55,14 @@
   
 
 
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
     
     
   </head>
@@ -289,6 +297,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../1.introduction/0-0-graph/" class="md-nav__link">
+        图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-1-graph-database/" class="md-nav__link">
+        图数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.introduction/0-2.relates/" class="md-nav__link">
+        相关技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../1.introduction/1.what-is-nebula-graph/" class="md-nav__link">
         什么是 Nebula Graph
       </a>
@@ -348,18 +398,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_2_5">
+        <label class="md-nav__link" for="__nav_2_8">
           服务架构
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="服务架构" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           服务架构
         </label>
@@ -5916,6 +5966,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../20.appendix/history/" class="md-nav__link">
+        年表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../20.appendix/mind-map/" class="md-nav__link">
         思维导图
       </a>
@@ -6201,12 +6265,12 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD follow._src, follow._
 </code></pre></div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>从 Nebula Graph 2.6.0 起支持了新的 <a href="../../6.functions-and-expressions/4.schema/">Schema 函数</a>。以上示例在 Nebula Graph master 中的写法如下：</p>
+<p>从 Nebula Graph 2.6.0 起支持了新的 <a href="../../6.functions-and-expressions/4.schema/">Schema 函数</a>。以上示例在 Nebula Graph 3.0.0 中的写法如下：</p>
 <div class="highlight"><pre><span></span><code>GO FROM &quot;player100&quot; OVER follow YIELD properties($^).name AS startName, properties($$).age AS endAge;
 GO FROM &quot;player100&quot; OVER follow YIELD properties(edge).degree;
 GO FROM &quot;player100&quot; OVER follow YIELD src(edge), dst(edge), type(edge), rank(edge);
 </code></pre></div>
-<p>Nebula Graph master 兼容新旧语法。</p>
+<p>Nebula Graph 3.0.0 兼容新旧语法。</p>
 </div>
 
   <hr>
