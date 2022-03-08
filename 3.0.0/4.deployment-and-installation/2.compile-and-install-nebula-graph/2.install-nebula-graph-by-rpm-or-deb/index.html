@@ -6194,7 +6194,8 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
 <p>安装 RPM 包</p>
 <div class="highlight"><pre><span></span><code>$ sudo rpm -ivh --prefix<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
 </code></pre></div>
-<p>例如在默认路径下安装3.0.0版本的 RPM 包：</p>
+<p><code>--prefix</code>为可选项，用于指定安装路径。如不设置，系统会将 Nebula Graph 安装到默认路径<code>/usr/local/nebula/</code>。</p>
+<p>例如，要在默认路径下安装3.0.0版本的 RPM 包，运行如下命令：</p>
 <div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-graph-3.0.0.el7.x86_64.rpm
 </code></pre></div>
 </li>
@@ -6202,17 +6203,17 @@ wget https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph
 <ul>
 <li>
 <p>安装 DEB 包</p>
-<div class="highlight"><pre><span></span><code>$ sudo dpkg -i --instdir<span class="o">=</span>&lt;installation_path&gt; &lt;package_name&gt;
+<div class="highlight"><pre><span></span><code>$ sudo dpkg -i &lt;package_name&gt;
 </code></pre></div>
-<p>例如在默认路径下安装3.0.0版本的 DEB 包：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 DEB 包安装 Nebula Graph 时不支持自定义安装路径。默认安装路径为<code>/usr/local/nebula/</code>。</p>
+</div>
+<p>例如安装3.0.0版本的 DEB 包：</p>
 <div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-graph-3.0.0.ubuntu1804.amd64.deb
 </code></pre></div>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果不设置安装路径，默认安装路径为<code>/usr/local/nebula/</code>。</p>
-</div>
 <h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>（企业版）<a href="https://docs.nebula-graph.com.cn/3.0.0/4.deployment-and-installation/deploy-license">设置 License</a></li>
