@@ -71,12 +71,12 @@ $ sudo rpm -e nebula-graph-studio-{{studio.release}}.x86_64
 
 - 手动启动服务
 ```bash
-$ bash /usr/local/nebula-graph-studio/scripts/rpm/start.sh
+$ bash /usr/local/nebula-graph-studio/scripts/start.sh
 ```
 
 - 手动停止服务
 ```bash  
-$ bash /usr/local/nebula-graph-studio/scripts/rpm/stop.sh
+$ bash /usr/local/nebula-graph-studio/scripts/stop.sh
 ```
 
 如果启动服务时遇到报错报错 ERROR: bind EADDRINUSE 0.0.0.0:7001，用户可以通过以下命令查看端口 7001 是否被占用。
