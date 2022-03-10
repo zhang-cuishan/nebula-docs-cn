@@ -6059,7 +6059,7 @@
 <p><code>KILL QUERY</code>命令可以终止正在执行的查询，常用于终止慢查询。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>当前任意角色权限账号都可以执行<code>KILL QUERY</code>命令。</p>
+<p>仅 God 角色权限可以终止任意查询，其他角色只能终止自己的查询。</p>
 </div>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>KILL QUERY (session=&lt;session_id&gt;, plan=&lt;plan_id&gt;);
@@ -6082,7 +6082,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>

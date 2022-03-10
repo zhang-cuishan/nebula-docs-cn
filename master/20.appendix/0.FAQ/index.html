@@ -6929,7 +6929,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志。glog 没有日志回收的功能，用户可以：</p>
 <ul>
 <li>使用 crontab 设置定期任务回收日志文件，详情请参见 <a href="https://github.com/google/glog/issues/423">Glog should delete old log files automatically</a>。</li>
-<li>使用 <a href="https://github.com/logrotate/logrotate">logrotate</a> 实现日志轮询。使用 logrotate 管理日志前需修改相应 Nebula Graph 服务的配置，将<code>timestamp_in_logfile_name</code>参数的值改成<code>false</code>。</li>
+<li>使用 <a href="https://github.com/logrotate/logrotate">logrotate</a> 实现<a href="https://discuss.nebula-graph.com.cn/t/topic/7803">日志轮询</a>。使用 logrotate 管理日志前需修改相应 Nebula Graph 服务的配置，将<code>timestamp_in_logfile_name</code>参数的值改成<code>false</code>。</li>
 </ul>
 <h3 id="nebula_graph_1">如何查看 Nebula Graph 版本<a class="headerlink" href="#nebula_graph_1" title="Permanent link">&para;</a></h3>
 <p>服务运行时：<code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
@@ -7070,7 +7070,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>
