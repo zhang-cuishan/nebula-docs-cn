@@ -6041,7 +6041,12 @@
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>增加 Storage 主机在<strong>下一个</strong>心跳周期之后才能生效，为确保数据同步，请等待 2 个心跳周期（20 秒），然后执行<code>SHOW HOSTS</code>查看是否在线。</p>
+<ul>
+<li>增加 Storage 主机在<strong>下一个</strong>心跳周期之后才能生效，为确保数据同步，请等待 2 个心跳周期（20 秒），然后执行<code>SHOW HOSTS</code>查看是否在线。</li>
+</ul>
+<ul>
+<li>IP地址和端口请和配置文件中的设置保持一致，例如单机部署的默认为<code>127.0.0.1:9779</code>。</li>
+</ul>
 </div>
 <h2 id="storage_2">删除 Storage 主机<a class="headerlink" href="#storage_2" title="Permanent link">&para;</a></h2>
 <p>从集群中删除 Storage 主机。</p>
@@ -6057,7 +6062,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>
