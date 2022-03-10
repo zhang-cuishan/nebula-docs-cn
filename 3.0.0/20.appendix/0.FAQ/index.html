@@ -5882,6 +5882,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#nebula-storaged" class="md-nav__link">
+    为什么nebula-storaged进程的端口号一直显示红色？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#semanticerror_missing_yield_clause" class="md-nav__link">
     如何处理错误信息 SemanticError: Missing yield clause.
   </a>
@@ -6009,13 +6016,6 @@
           <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nebula_graph_nebula-storaged" class="md-nav__link">
-    为什么在正常连接 Nebula Graph 后，nebula-storaged进程的端口号一直显示红色？
   </a>
   
 </li>
@@ -6360,6 +6360,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#nebula-storaged" class="md-nav__link">
+    为什么nebula-storaged进程的端口号一直显示红色？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#semanticerror_missing_yield_clause" class="md-nav__link">
     如何处理错误信息 SemanticError: Missing yield clause.
   </a>
@@ -6487,13 +6494,6 @@
           <li class="md-nav__item">
   <a href="#time_spent" class="md-nav__link">
     返回消息中 time spent 的含义是什么？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nebula_graph_nebula-storaged" class="md-nav__link">
-    为什么在正常连接 Nebula Graph 后，nebula-storaged进程的端口号一直显示红色？
   </a>
   
 </li>
@@ -6708,6 +6708,8 @@
 -->
 
 <h2 id="_4">关于执行报错<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="nebula-storaged">为什么<code>nebula-storaged</code>进程的端口号一直显示红色？<a class="headerlink" href="#nebula-storaged" title="Permanent link">&para;</a></h3>
+<p><code>nebula-storaged</code>进程的端口号的红色闪烁状态是因为<code>nebula-storaged</code>在启动流程中会等待<code>nebula-metad</code>添加当前 Storage 服务，当前 Storage 服务收到 Ready 信号后才会正式启动服务。从 3.0.0 版本开始，Meta 服务无法直接读写在配置文件中添加的 Storage 服务，配置文件的作用仅仅是将 Storage 服务注册至 Meta 服务中。用户必须使用<code>ADD HOSTS</code>命令后，才能使 Meta 服务正常读写 Storage 服务。更多信息，参见<a href="../../4.deployment-and-installation/manage-storage-host/">管理 Storage 主机</a>。</p>
 <h3 id="semanticerror_missing_yield_clause">如何处理错误信息 <code>SemanticError: Missing yield clause.</code><a class="headerlink" href="#semanticerror_missing_yield_clause" title="Permanent link">&para;</a></h3>
 <p>从 Nebula Graph 3.0.0 开始，查询语句<code>LOOKUP</code>、<code>GO</code>、<code>FETCH</code>必须用<code>YIELD</code>子句指定输出结果。详情请参见<a href="../../3.ngql-guide/8.clauses-and-options/yield/">YIELD</a>。</p>
 <h3 id="zone_not_enough">如何处理错误信息 <code>Zone not enough!</code><a class="headerlink" href="#zone_not_enough" title="Permanent link">&para;</a></h3>
@@ -6823,8 +6825,6 @@ Got 1 rows (time spent 1235/1934 us)
 <ul>
 <li>第二个数字<code>1934</code>表示从客户端角度看所花费的时间，即从客户端发送请求、接收结果，然后在屏幕上显示结果所花费的时间。</li>
 </ul>
-<h3 id="nebula_graph_nebula-storaged">为什么在正常连接 Nebula Graph 后，<code>nebula-storaged</code>进程的端口号一直显示红色？<a class="headerlink" href="#nebula_graph_nebula-storaged" title="Permanent link">&para;</a></h3>
-<p><code>nebula-storaged</code>进程的端口号的红色闪烁状态是因为<code>nebula-storaged</code>在启动流程中会等待<code>nebula-metad</code>添加当前 Storage 服务，当前 Storage 服务收到 Ready 信号后才会正式启动服务。从 3.0.0 版本开始，Meta 服务无法直接读写在配置文件中添加的 Storage 服务，配置文件的作用仅仅是将 Storage 服务注册至 Meta 服务中。用户必须使用<code>ADD HOSTS</code>命令后，才能使 Meta 服务正常读写 Storage 服务。更多信息，参见<a href="../../4.deployment-and-installation/manage-storage-host/">管理 Storage 主机</a>。</p>
 <h3 id="nebula_graph">为什么 Nebula Graph 的返回结果每行之间没有横线分隔了？<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h3>
 <p>这是 Nebula Console 2.6.0 版本的变动造成的，不是 Nebula Graph 内核的变更，不影响返回数据本身的内容。</p>
 <h3 id="_6">关于悬挂边<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -7050,7 +7050,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>
