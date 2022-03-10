@@ -6092,16 +6092,16 @@ nebual&gt; ADD HOSTS 192.168.10.105:9779 INTO ZONE &quot;zone3&quot;;
 2. 执行命令 [`SHOW HOSTS`](../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts.md) 检查分片的分布。
 
   <div class="highlight"><pre><span></span><code>nebual&gt; SHOW HOSTS;
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| Host             | Port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| &quot;192.168.10.100&quot; | 9779 | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:4&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
-| &quot;192.168.10.101&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:8&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
-| &quot;192.168.10.102&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
-| &quot;192.168.10.103&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.104&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.105&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| Host             | Port | HTTP port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| &quot;192.168.10.100&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:4&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
+| &quot;192.168.10.101&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:8&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
+| &quot;192.168.10.102&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:15&quot;  | &quot;3.1.0&quot; |
+| &quot;192.168.10.103&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.104&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.105&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;No valid partition&quot;   | &quot;3.1.0&quot; |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
 </code></pre></div>
 
 3. 执行命令`BALANCE IN ZONE`将当前图空间内每个 Zone 内部的分片均衡分布。
@@ -6136,16 +6136,16 @@ nebula&gt; BALANCE IN ZONE;
         `BALANCE IN ZONE`不会均衡 leader 的分布。均衡 leader 请参见[均衡 leader 分布](#leader)。
 
   <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| Host             | Port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| &quot;192.168.10.100&quot; | 9779 | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:4&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.101&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:8&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.102&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.103&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.104&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
-| &quot;192.168.10.105&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| Host             | Port | HTTP port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| &quot;192.168.10.100&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:4&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.101&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:8&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.102&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.103&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.104&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.105&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;No valid partition&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
 </code></pre></div>
 
 如果有子任务失败，请重启作业，详情参见[作业管理](../3.ngql-guide/18.operation-and-maintenance-statements/4.job-statements.md)。如果重做负载均衡仍然不能解决问题，请到 [Nebula Graph 社区](https://discuss.nebula-graph.com.cn/)寻求帮助。
@@ -6196,16 +6196,16 @@ nebula&gt; BALANCE IN ZONE;
 </code></pre></div>
 <p>用户可以执行<code>SHOW HOSTS</code>检查结果。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS;
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| Host             | Port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
-| &quot;192.168.10.100&quot; | 9779 | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.0.0&quot; |
-| &quot;192.168.10.101&quot; | 9779 | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.0.0&quot; |
-| &quot;192.168.10.102&quot; | 9779 | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.0.0&quot; |
-| &quot;192.168.10.103&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.0.0&quot; |
-| &quot;192.168.10.104&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.0.0&quot; |
-| &quot;192.168.10.105&quot; | 9779 | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.0.0&quot; |
-+------------------+------+----------+--------------+-----------------------------------+------------------------+---------+
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| Host             | Port | HTTP port | Status   | Leader count | Leader distribution               | Partition distribution | Version |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
+| &quot;192.168.10.100&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 4            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.101&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.102&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;              | &quot;basketballplayer:8&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.103&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.104&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
+| &quot;192.168.10.105&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 0            | &quot;basketballplayer:2&quot;              | &quot;basketballplayer:7&quot;   | &quot;3.1.0&quot; |
++------------------+------+-----------+----------+--------------+-----------------------------------+------------------------+---------+
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -6217,7 +6217,7 @@ nebula&gt; BALANCE IN ZONE;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>
