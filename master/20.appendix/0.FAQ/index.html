@@ -6192,6 +6192,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dashboardexplorernebula_graph_license" class="md-nav__link">
+    Dashboard/Explorer/Nebula Graph 企业版的 License 一样吗？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#license_license" class="md-nav__link">
     License 过期前后，是否有信息提示？License 过期后如何续期？
   </a>
@@ -6670,6 +6677,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dashboardexplorernebula_graph_license" class="md-nav__link">
+    Dashboard/Explorer/Nebula Graph 企业版的 License 一样吗？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#license_license" class="md-nav__link">
     License 过期前后，是否有信息提示？License 过期后如何续期？
   </a>
@@ -6700,7 +6714,7 @@
 
 
 <h1 id="faq">常见问题 FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<p>本文列出了使用 Nebula Graph 3.0.0 时可能遇到的常见问题，用户可以使用文档中心或者浏览器的搜索功能查找相应问题。</p>
+<p>本文列出了使用 Nebula Graph master 时可能遇到的常见问题，用户可以使用文档中心或者浏览器的搜索功能查找相应问题。</p>
 <p>如果按照文中的建议无法解决问题，请到 <a href="https://discuss.nebula-graph.com.cn/">Nebula Graph 论坛</a> 提问或提交 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub issue</a>。</p>
 <h2 id="_1">关于本手册<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">为什么手册示例和系统行为不一致？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -6717,14 +6731,14 @@
 <h2 id="_3">关于历史兼容性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition compatibility">
 <p class="admonition-title"><code>X</code>版本兼容性</p>
-<p>Nebula Graph 3.0.0 与 历史版本 （包括 Nebula Graph 1.x 和 2.x) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
+<p>Nebula Graph master 与 历史版本 （包括 Nebula Graph 1.x 和 2.x) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
 数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至当前版本</a>。
 客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
 </div>
 <!-- TODO
 !!! compatibility "`Y`版本兼容性"
 
-    Neubla Graph 3.0.0 与 Nebula Graph 2.0 的数据格式兼容，客户端不兼容。
+    Neubla Graph master 与 Nebula Graph 2.0 的数据格式兼容，客户端不兼容。
 -->
 
 <h2 id="_4">关于执行报错<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -6849,7 +6863,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>这是 Nebula Console 2.6.0 版本的变动造成的，不是 Nebula Graph 内核的变更，不影响返回数据本身的内容。</p>
 <h3 id="_6">关于悬挂边<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>悬挂边 (Dangling edge) 是指一条边的起点或者终点在数据库中不存在。</p>
-<p>Nebula Graph 3.0.0 的数据模型中，由于设计允许图中存在“悬挂边”；
+<p>Nebula Graph master 的数据模型中，由于设计允许图中存在“悬挂边”；
 没有 openCypher 中的 MERGE 语句。
 对于悬挂边的保证完全依赖应用层面。
 详见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
@@ -6958,7 +6972,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 
 用户可以使用 Dashboard（企业版），在可视化页面对 graphd 和 storaged 进行快速扩缩容，详情参见[集群操作-扩缩容](../nebula-dashboard-ent/4.cluster-operator/4.manage.md)。
 
-Nebula Graph 3.0.0 未提供运维命令以实现自动扩缩容，参考以下步骤：
+Nebula Graph master 未提供运维命令以实现自动扩缩容，参考以下步骤：
 
 - metad 的扩容和缩容： metad 不支持自动扩缩容。
 
@@ -7031,46 +7045,28 @@ Trying <span class="m">192</span>.168.1.10...
 telnet: connect to address <span class="m">192</span>.168.1.10: Connection refused
 </code></pre></div>
 <h2 id="license">关于 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<h3 id="dashboardexplorernebula_graph_license">Dashboard/Explorer/Nebula Graph 企业版的 License 一样吗？<a class="headerlink" href="#dashboardexplorernebula_graph_license" title="Permanent link">&para;</a></h3>
+<p>不一样，Dashboard、Explorer、Nebula Graph 企业版的 License 相互独立，不可互用。</p>
 <h3 id="license_license">License 过期前后，是否有信息提示？License 过期后如何续期？<a class="headerlink" href="#license_license" title="Permanent link">&para;</a></h3>
-<p>在License 过期前的 3 天内和过期后的 7 天内，用户会收到系统发出的 License 过期告警提示。</p>
-<table>
-<thead>
-<tr>
-<th>License 使用时间</th>
-<th>产品使用状态</th>
-<th>消息提示及续费方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>未到生效期</td>
-<td>不可登录且无法使用</td>
-<td>您的 License 还未到生效时间，请于有效期范围内使用。</td>
-</tr>
-<tr>
-<td>过期前 3 天内</td>
-<td>可以登录并继续使用</td>
-<td>您的 License 证书有效时间还剩 &lt;3|2|1|0&gt; 天，过期7天后无法使用，请及时联系销售（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）购买并更换新的证书。</td>
-</tr>
-<tr>
-<td>过期后 7 天内</td>
-<td>可以登录并继续使用</td>
-<td>您的 License 证书已过期 &lt;0|1|2|3|4|5|6|7&gt; 天，过期7天后无法使用，请及时联系销售（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）购买并更换新的证书。</td>
-</tr>
-<tr>
-<td>过期后 7 天以上</td>
-<td>不可登录且无法使用</td>
-<td>您的 License 已过期 7 天以上，产品无法正常使用，请及时联系销售（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）购买并更换新的证书。</td>
-</tr>
-</tbody>
-</table>
+<p>在购买的 License 过期前，不同 License 的过期提醒如下：</p>
+<ul>
+<li>Nebula Graph 企业版的 License：过期前7天，在启动服务时有过期提醒, 过期后有3天缓冲期。在缓冲期期间，能继续使用 Nebula Graph。缓冲期结束后，服务会停机并无法启动。</li>
+</ul>
+<ul>
+<li>Dashboard/Explorer 企业版的 License：过期前14天有提醒，过期后直接停用 Dashboard/Explorer 企业版服务，没有缓冲期。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dashboard/Explorer 企业版的试用 License 的试用期一共15天，过期前5天提醒，到期后直接停服务。Nebula Graph 企业版的试用 License 的试用期不定，因此过期前的提醒时间也不定。</p>
+</div>
+<p>License 过期后，请及时联系销售（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）购买并更换新的证书。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
       
     
   </small>

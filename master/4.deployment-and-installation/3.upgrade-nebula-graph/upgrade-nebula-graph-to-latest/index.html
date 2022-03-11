@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebula_graph_2x_300" class="md-skip">
+        <a href="#nebula_graph_2x_master" class="md-skip">
           跳转至
         </a>
       
@@ -6125,13 +6125,13 @@
 
 
 
-<h1 id="nebula_graph_2x_300">升级 Nebula Graph 2.x 至 3.0.0 版本<a class="headerlink" href="#nebula_graph_2x_300" title="Permanent link">&para;</a></h1>
-<p>本文以 Nebula Graph 2.6.1 版本升级到 3.0.0 版本为例，介绍 Nebula Graph 2.x 版本升级到 3.x 版本的方法。</p>
+<h1 id="nebula_graph_2x_master">升级 Nebula Graph 2.x 至 master 版本<a class="headerlink" href="#nebula_graph_2x_master" title="Permanent link">&para;</a></h1>
+<p>本文以 Nebula Graph 2.6.1 版本升级到 master 版本为例，介绍 Nebula Graph 2.x 版本升级到 3.x 版本的方法。</p>
 <h2 id="_1">适用版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>本文适用于将 Nebula Graph 从 2.0.0 及之后的 2.x 版本升级到 3.0.0 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
+<p>本文适用于将 Nebula Graph 从 2.0.0 及之后的 2.x 版本升级到 master 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>如需从 2.0.0 之前的版本（含 1.x 版本）升级到 3.0.0，还需找到 3.0.0 版本文件中<code>share/resources</code>目录下的<code>date_time_zonespec.csv</code>文件，将其复制到 Nebula Graph 安装路径下的相同目录内。也可从 <a href="https://github.com/vesoft-inc/nebula/blob/master/resources/date_time_zonespec.csv">GitHub</a> 下载该文件。</p>
+<p>如需从 2.0.0 之前的版本（含 1.x 版本）升级到 master，还需找到 master 版本文件中<code>share/resources</code>目录下的<code>date_time_zonespec.csv</code>文件，将其复制到 Nebula Graph 安装路径下的相同目录内。也可从 <a href="https://github.com/vesoft-inc/nebula/blob/master/resources/date_time_zonespec.csv">GitHub</a> 下载该文件。</p>
 </div>
 <h2 id="_2">升级限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6169,7 +6169,7 @@
 <ul>
 <li>
 <p>客户端兼容</p>
-<p>升级后旧版本客户端将无法连接 Nebula Graph，需将所有客户端都升级到兼容 Nebula Graph 3.0.0 的版本。</p>
+<p>升级后旧版本客户端将无法连接 Nebula Graph，需将所有客户端都升级到兼容 Nebula Graph master 的版本。</p>
 </li>
 </ul>
 <ul>
@@ -6200,7 +6200,7 @@
 <h2 id="_4">升级准备<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>根据操作系统和架构下载 Nebula Graph 3.0.0 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
+<p>根据操作系统和架构下载 Nebula Graph master 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>编译源码或者下载RPM/DEB包也可以获取新版二进制文件。</p>
@@ -6317,7 +6317,7 @@ nebula&gt; SUBMIT JOB STATS;
 nebula&gt; SHOW STATS;
 nebula&gt; MATCH (v) RETURN v LIMIT 5;
 </code></pre></div>
-<p>也可根据 3.0.0 版本的新功能测试，新功能列表参见<a href="../../../20.appendix/releasenote/">发布说明</a>。</p>
+<p>也可根据 master 版本的新功能测试，新功能列表参见<a href="../../../20.appendix/releasenote/">发布说明</a>。</p>
 </li>
 </ol>
 <h2 id="_6">升级失败回滚<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>

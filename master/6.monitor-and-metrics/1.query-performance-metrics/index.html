@@ -3411,10 +3411,10 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    监控指标说明
+    监控指标结构说明
   </a>
   
-    <nav class="md-nav" aria-label="监控指标说明">
+    <nav class="md-nav" aria-label="监控指标结构说明">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3447,6 +3447,47 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    监控指标说明
+  </a>
+  
+    <nav class="md-nav" aria-label="监控指标说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    Meta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图空间级别监控指标
   </a>
   
 </li>
@@ -6056,10 +6097,10 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    监控指标说明
+    监控指标结构说明
   </a>
   
-    <nav class="md-nav" aria-label="监控指标说明">
+    <nav class="md-nav" aria-label="监控指标结构说明">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6101,6 +6142,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    监控指标说明
+  </a>
+  
+    <nav class="md-nav" aria-label="监控指标说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    Meta
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    图空间级别监控指标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6121,7 +6203,7 @@
 
 <h1 id="nebula_graph">查询 Nebula Graph 监控指标<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h1>
 <p>Nebula Graph 支持多种方式查询服务的监控指标，本文将介绍最基础的方式，即通过 HTTP 端口查询。</p>
-<h2 id="_1">监控指标说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">监控指标结构说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Nebula Graph 的每个监控指标都由三个部分组成，中间用英文句号（.）隔开，例如<code>num_queries.sum.600</code>。不同的 Nebula Graph 服务支持查询的监控指标也不同。指标结构的说明如下。</p>
 <table>
 <thead>
@@ -6140,7 +6222,7 @@
 <tr>
 <td align="left">统计类型</td>
 <td align="left"><code>sum</code></td>
-<td align="left">指标统计的方法。当前支持 SUM、COUNT、AVG、RATE 和 P 分位数（P75、P95、P99、P99.9）。</td>
+<td align="left">指标统计的方法。当前支持 SUM、AVG、RATE 和 P 分位数（P75、P95、P99、P999）。</td>
 </tr>
 <tr>
 <td align="left">统计时间</td>
@@ -6151,9 +6233,11 @@
 </table>
 <h3 id="_2">图空间监控指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>Graph 服务支持一系列基于图空间的监控指标（Space Level Metrics），对不同图空间的数据分别记录。</p>
-<p>图空间指标的名称中以<code>{space=space_name}</code>的形式包含图空间名，例如<code>query_latency_us{space=basketballplayer}.avg.3600</code>。</p>
 <p>如需开启图空间监控指标，先在 Graph 服务的配置文件中将<code>enable_space_level_metrics</code>参数的值修改为<code>true</code>，再启动 Nebula Graph。修改配置的详细方式参见<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
-<p>支持的图空间指标可根据下方的说明用 <code>curl</code> 命令查询。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>图空间指标只能通过查询所有监控指标的形式查询到，例如<code>curl -G "http://192.168.8.40:19559/stats"</code>，返回结果中以<code>{space=space_name}</code>的形式包含图空间名称，例如<code>num_active_queries{space=basketballplayer}.sum.5=0</code>。</p>
+</div>
 <h2 id="http">通过 HTTP 端口查询监控指标<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>curl -G <span class="s2">&quot;http://&lt;ip&gt;:&lt;port&gt;/stats?stats=&lt;metric_name_list&gt; [&amp;format=json]&quot;</span>
@@ -6246,16 +6330,390 @@ num_heartbeats.sum.5<span class="o">=</span><span class="m">2</span>
 num_heartbeats.sum.60<span class="o">=</span><span class="m">40</span>
 num_heartbeats.sum.600<span class="o">=</span><span class="m">394</span>
 num_heartbeats.sum.3600<span class="o">=</span><span class="m">2364</span>
+...
 </code></pre></div>
 </li>
 </ul>
+<h2 id="_5">监控指标说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_active_queries</code></td>
+<td>当前正在执行的查询数。</td>
+</tr>
+<tr>
+<td><code>num_active_sessions</code></td>
+<td>当前活跃的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_aggregate_executors</code></td>
+<td>聚合（Aggregate）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions_bad_username_password</code></td>
+<td>因用户名密码错误导验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions_out_of_max_allowed</code></td>
+<td>因为超过<code>FLAG_OUT_OF_MAX_ALLOWED_CONNECTIONS</code>参数导致的验证登录的失败的 session 数量。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions</code></td>
+<td>登录验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_indexscan_executors</code></td>
+<td>索引扫描（IndexScan）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_killed_queries</code></td>
+<td>被终止的查询数量。</td>
+</tr>
+<tr>
+<td><code>num_opened_sessions</code></td>
+<td>服务端建立过的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_queries</code></td>
+<td>查询次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors_leader_changes</code></td>
+<td>因查询错误而导致的 Leader 变更的次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors</code></td>
+<td>查询错误次数。</td>
+</tr>
+<tr>
+<td><code>num_reclaimed_expired_sessions</code></td>
+<td>服务端主动回收的过期的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad_failed</code></td>
+<td>Graphd 服务发给 Metad 的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad</code></td>
+<td>Graphd 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged_failed</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_sentences</code></td>
+<td>Graphd 服务接收的语句数。</td>
+</tr>
+<tr>
+<td><code>num_slow_queries</code></td>
+<td>慢查询次数。</td>
+</tr>
+<tr>
+<td><code>num_sort_executors</code></td>
+<td>排序（Sort）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>optimizer_latency_us</code></td>
+<td>优化器阶段延迟时间。</td>
+</tr>
+<tr>
+<td><code>query_latency_us</code></td>
+<td>查询平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>slow_query_latency_us</code></td>
+<td>慢查询平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_queries_hit_memory_watermark</code></td>
+<td>达到内存水位线的语句的数量。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commit_log_latency_us</code></td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_snapshot_latency_us</code></td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
+</tr>
+<tr>
+<td><code>heartbeat_latency_us</code></td>
+<td>心跳延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_heartbeats</code></td>
+<td>心跳次数。</td>
+</tr>
+<tr>
+<td><code>num_raft_votes</code></td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td><code>transfer_leader_latency_us</code></td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_agent_heartbeats</code></td>
+<td>AgentHBProcessor 心跳次数。</td>
+</tr>
+<tr>
+<td><code>agent_heartbeat_latency_us</code></td>
+<td>AgentHBProcessor 延迟时间。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add_edges_atomic_latency_us</code></td>
+<td>添加边单次延迟。</td>
+</tr>
+<tr>
+<td><code>add_edges_latency_us</code></td>
+<td>添加边的平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>add_vertices_latency_us</code></td>
+<td>添加点的平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_log_latency_us</code></td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_snapshot_latency_us</code></td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
+</tr>
+<tr>
+<td><code>delete_edges_latency_us</code></td>
+<td>删除边的平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>delete_vertices_latency_us</code></td>
+<td>删除点的平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>get_neighbors_latency_us</code></td>
+<td>查询邻居平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_get_prop</code></td>
+<td>GetPropProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_neighbors_errors</code></td>
+<td>GetNeighborsProcessor 执行出错的次数。</td>
+</tr>
+<tr>
+<td><code>get_prop_latency_us</code></td>
+<td>GetPropProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_edges_deleted</code></td>
+<td>删除的边数量。</td>
+</tr>
+<tr>
+<td><code>num_edges_inserted</code></td>
+<td>插入的边数量。</td>
+</tr>
+<tr>
+<td><code>num_raft_votes</code></td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad_failed</code></td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad</code></td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_tags_deleted</code></td>
+<td>删除的 Tag 数量。</td>
+</tr>
+<tr>
+<td><code>num_vertices_deleted</code></td>
+<td>删除的点数量。</td>
+</tr>
+<tr>
+<td><code>num_vertices_inserted</code></td>
+<td>插入的点数量。</td>
+</tr>
+<tr>
+<td><code>transfer_leader_latency_us</code></td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>lookup_latency_us</code></td>
+<td>LookupProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_lookup_errors</code></td>
+<td>LookupProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_scan_vertex</code></td>
+<td>ScanVertexProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_scan_vertex_errors</code></td>
+<td>ScanVertexProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>update_edge_latency_us</code></td>
+<td>UpdateEdgeProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_update_vertex</code></td>
+<td>UpdateVertexProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_update_vertex_errors</code></td>
+<td>UpdateVertexProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>kv_get_latency_us</code></td>
+<td>Getprocessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>kv_put_latency_us</code></td>
+<td>PutProcessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>kv_remove_latency_us</code></td>
+<td>RemoveProcessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_kv_get_errors</code></td>
+<td>GetProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_get</code></td>
+<td>GetProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_put_errors</code></td>
+<td>PutProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_put</code></td>
+<td>PutProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_remove_errors</code></td>
+<td>RemoveProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_remove</code></td>
+<td>RemoveProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>forward_tranx_latency_us</code></td>
+<td>传输平均延迟时间。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">图空间级别监控指标<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_active_queries</code></td>
+<td>当前正在执行的查询数。</td>
+</tr>
+<tr>
+<td><code>num_queries</code></td>
+<td>查询次数。</td>
+</tr>
+<tr>
+<td><code>num_sentences</code></td>
+<td>Graphd 服务接收的语句数。</td>
+</tr>
+<tr>
+<td><code>optimizer_latency_us</code></td>
+<td>优化器阶段延迟时间。</td>
+</tr>
+<tr>
+<td><code>query_latency_us</code></td>
+<td>查询平均延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_slow_queries</code></td>
+<td>慢查询次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors</code></td>
+<td>查询报错语句数量。</td>
+</tr>
+<tr>
+<td><code>num_query_errors_leader_changes</code></td>
+<td>因查询错误而导致的 Leader 变更的次数。</td>
+</tr>
+<tr>
+<td><code>num_killed_queries</code></td>
+<td>被终止的查询数量。</td>
+</tr>
+<tr>
+<td><code>num_aggregate_executors</code></td>
+<td>聚合（Aggregate）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_sort_executors</code></td>
+<td>排序（Sort）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_indexscan_executors</code></td>
+<td>索引扫描（IndexScan）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_oom_queries</code></td>
+<td>导致内存耗尽的语句数量。</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
       
     
   </small>
