@@ -7043,22 +7043,22 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </tr>
 <tr>
 <td>通过 Tag 列出所有点</td>
-<td><code>LOOKUP ON player</code></td>
+<td><code>LOOKUP ON player YIELD properties(vertex),id(vertex)</code></td>
 <td>查找所有 Tag 为<code>player</code>的点 VID。</td>
 </tr>
 <tr>
 <td>通过 Edge type 列出边</td>
-<td><code>LOOKUP ON like</code></td>
+<td><code>LOOKUP ON like YIELD edge AS e</code></td>
 <td>查找 Edge type 为<code>like</code>的所有边的信息。</td>
 </tr>
 <tr>
 <td>统计点</td>
-<td><code>LOOKUP ON player | YIELD COUNT(*) AS Player_Number</code></td>
+<td><code>LOOKUP ON player YIELD id(vertex)| YIELD COUNT(*) AS Player_Count</code></td>
 <td>统计 Tag 为<code>player</code>的点。</td>
 </tr>
 <tr>
 <td>统计边</td>
-<td><code>LOOKUP ON like | YIELD COUNT(*) AS Like_Number</code></td>
+<td><code>LOOKUP ON like YIELD id(vertex)| YIELD COUNT(*) AS Like_Count</code></td>
 <td>统计 Edge type 为<code>like</code>的边。</td>
 </tr>
 </tbody>
@@ -7895,7 +7895,7 @@ YIELD &lt;output&gt;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2022</span>
       
     
   </small>
