@@ -6513,29 +6513,37 @@
 <li>Debug 调试与测试</li>
 </ul>
 <h3 id="_14">一些开源的单机图工具<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>对于图数据库通常会有一个误解，只要涉及到图结构的数据存取就需要存放在图数据库中。这通常是一种误解。</p>
+<p>对于图数据库通常会有一个误解，只要涉及到图结构的数据存取就需要存放在图数据库中，这是一种很大的浪费。</p>
+<p>这就像也许你只需要一个 SQLite，却用了一个 Oracle。</p>
 <p>当数据量并不大时，通常单机内存可以放下，例如数据量几千万的点边关系，使用一些单机的开源工具也可以取得很好的效果。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>下面是一些推荐的单机图库，也可以集成在你的应用程序里面。</p>
+</div>
 <ul>
 <li>JGraphT<sup id="fnref:JGraphT"><a class="footnote-ref" href="#fn:JGraphT">10</a></sup>: 一个知名的开源 Java 图论库(library)，其实现了相当多的高效图算法。</li>
 </ul>
 <ul>
-<li>igraph<sup id="fnref:igraph"><a class="footnote-ref" href="#fn:igraph">11</a></sup>: 一个轻量且功能强大的 Library, 支持R、python、C</li>
+<li>JUNG<sup id="fnref:JUNG"><a class="footnote-ref" href="#fn:JUNG">11</a></sup>是BSD许可下用Java编写的开源图建模和可视化框架。该框架内置了许多布局算法，以及诸如图聚类和节点中心性度量之类的分析算法。</li>
 </ul>
 <ul>
-<li>NetworkX<sup id="fnref:NetworkX"><a class="footnote-ref" href="#fn:NetworkX">12</a></sup>: 数据科学家做图论分析第一选择， python。</li>
+<li>igraph<sup id="fnref:igraph"><a class="footnote-ref" href="#fn:igraph">12</a></sup>: 一个轻量且功能强大的 Library, 支持R、python、C</li>
 </ul>
 <ul>
-<li>Cytoscape<sup id="fnref:Cytoscape"><a class="footnote-ref" href="#fn:Cytoscape">13</a></sup>: 功能强大的可视化开源图分析工具。</li>
+<li>NetworkX<sup id="fnref:NetworkX"><a class="footnote-ref" href="#fn:NetworkX">13</a></sup>: 数据科学家做图论分析第一选择， python。</li>
 </ul>
 <ul>
-<li>Gephi<sup id="fnref:Gephi"><a class="footnote-ref" href="#fn:Gephi">14</a></sup>: 功能强大的可视化开源图分析工具。</li>
+<li>Cytoscape<sup id="fnref:Cytoscape"><a class="footnote-ref" href="#fn:Cytoscape">14</a></sup>: 功能强大的可视化开源图分析工具。</li>
 </ul>
 <ul>
-<li>arrows.app<sup id="fnref:Arrow"><a class="footnote-ref" href="#fn:Arrow">15</a></sup>： 非常简单的脑图工具，用于可视化生成 Cypher 语句.</li>
+<li>Gephi<sup id="fnref:Gephi"><a class="footnote-ref" href="#fn:Gephi">15</a></sup>: 功能强大的可视化开源图分析工具。</li>
+</ul>
+<ul>
+<li>arrows.app<sup id="fnref:Arrow"><a class="footnote-ref" href="#fn:Arrow">16</a></sup>： 非常简单的脑图工具，用于可视化生成 Cypher 语句.</li>
 </ul>
 <h3 id="benchmark">一些行业数据集和 Benchmark<a class="headerlink" href="#benchmark" title="Permanent link">&para;</a></h3>
 <h4 id="ldbc">LDBC<a class="headerlink" href="#ldbc" title="Permanent link">&para;</a></h4>
-<p>关联数据基准委员会（LDBC<sup id="fnref:LDBC"><a class="footnote-ref" href="#fn:LDBC">16</a></sup>，Linked Data Benchmark Council）是由Oracle、Intel等软硬件巨头和主流图数据库厂商Neo4j和TigerGraph等组成的非赢利机构，是图的基准指南制定者与测试结果发布机构，在行业内有着很高的影响力。</p>
+<p>关联数据基准委员会（LDBC<sup id="fnref:LDBC"><a class="footnote-ref" href="#fn:LDBC">17</a></sup>，Linked Data Benchmark Council）是由Oracle、Intel等软硬件巨头和主流图数据库厂商Neo4j和TigerGraph等组成的非赢利机构，是图的基准指南制定者与测试结果发布机构，在行业内有着很高的影响力。</p>
 <p>社交网络基准测试（SNB，Social Network Benchmark）是由关联数据基准委员会（LDBC）开发的面向图数据库的基准测试（Benchmark）之一，分为交互式查询（Interactive）和商业智能（BI）两个场景。其作用类似于 TPC-C, TPC-H 等测试在 SQL 型数据库中的功能，可以帮助用户比较多种图数据库产品的功能、性能、容量。</p>
 <p>SNB 数据集模拟一个社交网络的人、发帖之间的关系，考虑了社交网络的分布属性、人的活跃度等等社交信息。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/ldbc.png" /></p>
@@ -6545,12 +6553,12 @@
 <h3 id="_16">虽然图的各种技术起源和目标并不相同，但在相互借鉴和融合<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/convergenceofcapability.png" /></p>
 <h3 id="_17">上云的趋势在加速，对于弹性能力提出更高要求<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>根据 Gartner 的预计，云服务一直保持较快的增速和渗透率<sup id="fnref:cl"><a class="footnote-ref" href="#fn:cl">17</a></sup>。大量的商业软件，正在从 10 年前完全私有本地逐步转向基于云服务的商业模式。
+<p>根据 Gartner 的预计，云服务一直保持较快的增速和渗透率<sup id="fnref:cl"><a class="footnote-ref" href="#fn:cl">18</a></sup>。大量的商业软件，正在从 10 年前完全私有本地逐步转向基于云服务的商业模式。
 云服务的一大优点是其提供了近乎无限的弹性能力；这也要求各种基于云基础设施的软件必须有更好的快速弹性扩缩容能力。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/cloudtrends.png" /></p>
 <h3 id="ssd">硬件趋势，SSD 将成为主流的持久化设备<a class="headerlink" href="#ssd" title="Permanent link">&para;</a></h3>
 <p>硬件决定了软件的架构——从发现摩尔定律的 50 年代到进入多核的 00 年代，硬件发展趋势和速度一直深刻的决定了软件的架构。数据库类系统大多围绕“硬盘+内存”设计，高性能计算型系统大多围绕“内存 + CPU”设计，分布式系统面对千兆、万兆和 RDMA 网卡的设计也完全不同。</p>
-<p>图基于拓扑的遍历有着极其明显的随机访问特点，因此大多数早期图数据库系统都采用了“大内存 + HDD” 的架构————通过设计<strong>常驻</strong>在内存中的一些数据结构（例如B+树、Hash表等），在内存中实现随机访问目的，以优化图的拓扑遍历，再将这些随机访问转换成 HDD 所适合的顺序读写。整套软件的架构（包括存储和计算层）都必须基于和围绕这样的 IO 流程来展开。随着 SSD 价格的快速下降<sup id="fnref:ssdhdd"><a class="footnote-ref" href="#fn:ssdhdd">18</a></sup>，SSD 正在替代 HDD 成为持久化设备的主流。SSD 随机访问友好、IO 队列深、按快存取的特点与 HDD 高度顺序、随机时延极高、磁道易损坏的访问特点有着明显的不同。全部的软件架构也需要重新设计，这成为沉重的历史技术负担。</p>
+<p>图基于拓扑的遍历有着极其明显的随机访问特点，因此大多数早期图数据库系统都采用了“大内存 + HDD” 的架构————通过设计<strong>常驻</strong>在内存中的一些数据结构（例如B+树、Hash表等），在内存中实现随机访问目的，以优化图的拓扑遍历，再将这些随机访问转换成 HDD 所适合的顺序读写。整套软件的架构（包括存储和计算层）都必须基于和围绕这样的 IO 流程来展开。随着 SSD 价格的快速下降<sup id="fnref:ssdhdd"><a class="footnote-ref" href="#fn:ssdhdd">19</a></sup>，SSD 正在替代 HDD 成为持久化设备的主流。SSD 随机访问友好、IO 队列深、按快存取的特点与 HDD 高度顺序、随机时延极高、磁道易损坏的访问特点有着明显的不同。全部的软件架构也需要重新设计，这成为沉重的历史技术负担。</p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/ssdhdd.png" /></p>
 <div class="footnote">
 <hr />
@@ -6585,29 +6593,32 @@
 <li id="fn:JGraphT">
 <p>https://jgrapht.org/&#160;<a class="footnote-backref" href="#fnref:JGraphT" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
+<li id="fn:JUNG">
+<p>https://github.com/jrtom/jung&#160;<a class="footnote-backref" href="#fnref:JUNG" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
 <li id="fn:igraph">
-<p>https://igraph.org/&#160;<a class="footnote-backref" href="#fnref:igraph" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<p>https://igraph.org/&#160;<a class="footnote-backref" href="#fnref:igraph" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
 <li id="fn:NetworkX">
-<p>https://networkx.org/&#160;<a class="footnote-backref" href="#fnref:NetworkX" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+<p>https://networkx.org/&#160;<a class="footnote-backref" href="#fnref:NetworkX" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Cytoscape">
-<p>https://cytoscape.org/&#160;<a class="footnote-backref" href="#fnref:Cytoscape" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<p>https://cytoscape.org/&#160;<a class="footnote-backref" href="#fnref:Cytoscape" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Gephi">
-<p>https://gephi.org/&#160;<a class="footnote-backref" href="#fnref:Gephi" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+<p>https://gephi.org/&#160;<a class="footnote-backref" href="#fnref:Gephi" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Arrow">
-<p>https://arrows.app/&#160;<a class="footnote-backref" href="#fnref:Arrow" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<p>https://arrows.app/&#160;<a class="footnote-backref" href="#fnref:Arrow" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
 <li id="fn:LDBC">
-<p>https://github.com/ldbc/ldbc_snb_docs&#160;<a class="footnote-backref" href="#fnref:LDBC" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<p>https://github.com/ldbc/ldbc_snb_docs&#160;<a class="footnote-backref" href="#fnref:LDBC" title="Jump back to footnote 17 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cl">
-<p>https://cloudcomputing-news.net/news/2019/apr/15/public-cloud-soaring-to-331b-by-2022-according-to-gartner/&#160;<a class="footnote-backref" href="#fnref:cl" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+<p>https://cloudcomputing-news.net/news/2019/apr/15/public-cloud-soaring-to-331b-by-2022-according-to-gartner/&#160;<a class="footnote-backref" href="#fnref:cl" title="Jump back to footnote 18 in the text">&#8617;</a></p>
 </li>
 <li id="fn:ssdhdd">
-<p>https://blocksandfiles.com/2021/01/25/wikibon-ssds-vs-hard-drives-wrights-law/&#160;<a class="footnote-backref" href="#fnref:ssdhdd" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+<p>https://blocksandfiles.com/2021/01/25/wikibon-ssds-vs-hard-drives-wrights-law/&#160;<a class="footnote-backref" href="#fnref:ssdhdd" title="Jump back to footnote 19 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -6617,7 +6628,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2022</span>
       
     
   </small>
