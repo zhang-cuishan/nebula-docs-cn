@@ -31,11 +31,17 @@ Nebula Graph 企业版需要用户设置 License 才可以正常启动并使用�
 {
   "vendor": "Vesoft_Inc",
   "organization": "doc",
-  "issuedDate": "2021-11-07T16:00:00.000Z",
-  "expirationDate": "2021-11-30T15:59:59.000Z",
+  "issuedDate": "2022-03-06T16:00:00.000Z",
+  "expirationDate": "2022-05-31T15:59:59.000Z",
   "product": "nebula_graph",
-  "version": ">2.6.1",
-  "licenseType": "enterprise"
+  "version": ">3.0.0",
+  "licenseType": "enterprise",
+  "graphdSpec": {
+    "nodes": 3
+  },
+  "storagedSpec": {
+    "nodes": 3
+  }
 }
 ----------License Content End----------
 
@@ -48,13 +54,15 @@ License 文件包含生效时间、过期时间等信息。说明如下。
 
 |参数|说明|
 |:---|:---|
-|`vendor`|发放渠道。|
-|`organization`|用户名称。|
-|`issuedDate`|License 生效时间。|
-|`expirationDate`|License 过期时间。|
-|`product`|产品类型。Nebula Graph 的产品类型为`nebula_graph`。|
-|`version`|版本支持的信息。|
-|`licenseType`|License 类型。包括`enterprise`、`samll_bussiness`、`pro`、`individual`。预留参数。|
+|`vendor`| 发放渠道。|
+|`organization`| 用户名称。|
+|`issuedDate`| License 生效时间。|
+|`expirationDate`| License 过期时间。|
+|`product`| 产品类型。Nebula Graph 的产品类型为`nebula_graph`。|
+|`version`| 版本支持的信息。|
+|`licenseType`| License 类型。包括`enterprise`、`samll_bussiness`、`pro`、`individual`。预留参数。|
+|`graphdSpec`| 集群中 Graph 服务的数量限制。Nebula Graph 会实时监测当前活动的 Graph 服务数量，超过限制的 Graph 服务无法连接集群。|
+|`storagedSpec`| 集群中 Storage 服务的数量限制。Nebula Graph 会实时监测当前活动的 Storage 服务数量，超过限制的 Storage 服务无法连接集群。|
 
 ## 设置 Nebula Graph 企业版 License
 
