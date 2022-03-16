@@ -3556,8 +3556,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alter_user" class="md-nav__link">
-    修改用户密码（ALTER USER）
+  <a href="#ip_alter_user" class="md-nav__link">
+    修改用户密码和 IP 白名单（ALTER USER）
   </a>
   
 </li>
@@ -6115,8 +6115,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alter_user" class="md-nav__link">
-    修改用户密码（ALTER USER）
+  <a href="#ip_alter_user" class="md-nav__link">
+    修改用户密码和 IP 白名单（ALTER USER）
   </a>
   
 </li>
@@ -6168,14 +6168,29 @@
 <ul>
 <li>
 <p>语法</p>
-<div class="highlight"><pre><span></span><code>CREATE USER [IF NOT EXISTS] &lt;user_name&gt; [WITH PASSWORD &#39;&lt;password&gt;&#39;];
+<div class="highlight"><pre><span></span><code>CREATE USER [IF NOT EXISTS] &lt;user_name&gt; [WITH PASSWORD &#39;&lt;password&gt;&#39;] [WITH IP WHITELIST &lt;ip_list&gt;];
 </code></pre></div>
+<ul>
+<li><code>IF NOT EXISTS</code>：检测待创建的用户名是否存在，只有不存在时，才会创建新用户。</li>
+<li><code>user_name</code>：待创建的用户名。</li>
+<li><code>password</code>：用户名对应的密码。</li>
+<li><code>ip_list</code>（企业版）：IP 白名单列表。该用户只有通过列表内的 IP 才能连接 Nebula Graph。多个 IP 之间用英文逗号（,）分隔。</li>
+</ul>
 </li>
 </ul>
 <ul>
 <li>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE USER user1 WITH PASSWORD &#39;nebula&#39;;
+nebula&gt; CREATE USER user2 WITH PASSWORD &#39;nebula&#39; WITH IP WHITELIST 192.168.10.10,192.168.10.12;
+nebula&gt; SHOW USERS;
++---------+-------------------------------+
+| Account | IP Whitelist                  |
++---------+-------------------------------+
+| &quot;root&quot;  | &quot;&quot;                            |
+| &quot;user1&quot; | &quot;&quot;                            |
+| &quot;user2&quot; | &quot;192.168.10.10,192.168.10.12&quot; |
++---------+-------------------------------+
 </code></pre></div>
 </li>
 </ul>
@@ -6270,19 +6285,33 @@ DESC USER &lt;user_name&gt;;
 </code></pre></div>
 </li>
 </ul>
-<h2 id="alter_user">修改用户密码（<code>ALTER USER</code>）<a class="headerlink" href="#alter_user" title="Permanent link">&para;</a></h2>
-<p>执行<code>ALTER USER</code>语句可以修改用户密码，修改时不需要提供旧密码。当前仅<strong> God </strong>角色用户（即<code>root</code>用户）能够执行<code>ALTER USER</code>语句。</p>
+<h2 id="ip_alter_user">修改用户密码和 IP 白名单（<code>ALTER USER</code>）<a class="headerlink" href="#ip_alter_user" title="Permanent link">&para;</a></h2>
+<p>执行<code>ALTER USER</code>语句可以修改用户密码和 IP 白名单，修改时不需要提供旧密码。当前仅<strong> God </strong>角色用户（即<code>root</code>用户）能够执行<code>ALTER USER</code>语句。</p>
 <ul>
 <li>
 <p>语法</p>
-<div class="highlight"><pre><span></span><code>ALTER USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;password&gt;&#39;;
+<div class="highlight"><pre><span></span><code>ALTER USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;password&gt;&#39; [WITH IP WHITELIST &lt;ip_list&gt;];
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>示例</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; ALTER USER user1 WITH PASSWORD &#39;nebula&#39;;
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>没有使用<code>WITH IP WHITELIST</code>时，表示取消 IP 白名单，用户使用任何 IP 都可以连接 Nebula Graph。  </p>
+</div>
+<div class="highlight"><pre><span></span><code>nebula&gt; ALTER USER user2 WITH PASSWORD &#39;nebula&#39;;
+nebula&gt; SHOW USERS;
++---------+--------------+
+| Account | IP Whitelist |
++---------+--------------+
+| &quot;root&quot;  | &quot;&quot;           |
+| &quot;user1&quot; | &quot;&quot;           |
+| &quot;user2&quot; | &quot;&quot;           |
++---------+--------------+
+
+nebula&gt; ALTER USER user2 WITH PASSWORD &#39;nebula&#39; WITH IP WHITELIST 192.168.10.10;
 </code></pre></div>
 </li>
 </ul>
@@ -6319,13 +6348,13 @@ DESC USER &lt;user_name&gt;;
 <li>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW USERS;
-+-----------+
-| Account   |
-+-----------+
-| &quot;test1&quot;   |
-| &quot;test2&quot;   |
-| &quot;test3&quot;   |
-+-----------+
++---------+-----------------+
+| Account | IP Whitelist    |
++---------+-----------------+
+| &quot;root&quot;  | &quot;&quot;              |
+| &quot;user1&quot; | &quot;&quot;              |
+| &quot;user2&quot; | &quot;192.168.10.10&quot; |
++---------+-----------------+
 </code></pre></div>
 </li>
 </ul>
@@ -6335,7 +6364,7 @@ DESC USER &lt;user_name&gt;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 30, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2022</span>
       
     
   </small>

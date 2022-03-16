@@ -6080,12 +6080,13 @@
 </code></pre></div>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; SHOW USERS;
-+---------+
-| Account |
-+---------+
-| &quot;root&quot;  |
-| &quot;user1&quot; |
-+---------+
++---------+-----------------+
+| Account | IP Whitelist    |
++---------+-----------------+
+| &quot;root&quot;  | &quot;&quot;              |
+| &quot;user1&quot; | &quot;&quot;              |
+| &quot;user2&quot; | &quot;192.168.10.10&quot; |
++---------+-----------------+
 </code></pre></div>
 
   <hr>
@@ -6093,7 +6094,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2022</span>
       
     
   </small>
