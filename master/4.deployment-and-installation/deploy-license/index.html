@@ -6117,11 +6117,17 @@
 <span class="o">{</span>
   <span class="s2">&quot;vendor&quot;</span>: <span class="s2">&quot;Vesoft_Inc&quot;</span>,
   <span class="s2">&quot;organization&quot;</span>: <span class="s2">&quot;doc&quot;</span>,
-  <span class="s2">&quot;issuedDate&quot;</span>: <span class="s2">&quot;2021-11-07T16:00:00.000Z&quot;</span>,
-  <span class="s2">&quot;expirationDate&quot;</span>: <span class="s2">&quot;2021-11-30T15:59:59.000Z&quot;</span>,
+  <span class="s2">&quot;issuedDate&quot;</span>: <span class="s2">&quot;2022-03-06T16:00:00.000Z&quot;</span>,
+  <span class="s2">&quot;expirationDate&quot;</span>: <span class="s2">&quot;2022-05-31T15:59:59.000Z&quot;</span>,
   <span class="s2">&quot;product&quot;</span>: <span class="s2">&quot;nebula_graph&quot;</span>,
-  <span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;&gt;2.6.1&quot;</span>,
-  <span class="s2">&quot;licenseType&quot;</span>: <span class="s2">&quot;enterprise&quot;</span>
+  <span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;&gt;3.0.0&quot;</span>,
+  <span class="s2">&quot;licenseType&quot;</span>: <span class="s2">&quot;enterprise&quot;</span>,
+  <span class="s2">&quot;graphdSpec&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;nodes&quot;</span>: <span class="m">3</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;storagedSpec&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;nodes&quot;</span>: <span class="m">3</span>
+  <span class="o">}</span>
 <span class="o">}</span>
 ----------License Content End----------
 
@@ -6166,6 +6172,14 @@
 <td align="left"><code>licenseType</code></td>
 <td align="left">License 类型。包括<code>enterprise</code>、<code>samll_bussiness</code>、<code>pro</code>、<code>individual</code>。预留参数。</td>
 </tr>
+<tr>
+<td align="left"><code>graphdSpec</code></td>
+<td align="left">集群中 Graph 服务的数量限制。Nebula Graph 会实时监测当前活动的 Graph 服务数量，超过限制的 Graph 服务无法连接集群。</td>
+</tr>
+<tr>
+<td align="left"><code>storagedSpec</code></td>
+<td align="left">集群中 Storage 服务的数量限制。Nebula Graph 会实时监测当前活动的 Storage 服务数量，超过限制的 Storage 服务无法连接集群。</td>
+</tr>
 </tbody>
 </table>
 <h2 id="nebula_graph_license_2">设置 Nebula Graph 企业版 License<a class="headerlink" href="#nebula_graph_license_2" title="Permanent link">&para;</a></h2>
@@ -6195,7 +6209,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2022</span>
       
     
   </small>
