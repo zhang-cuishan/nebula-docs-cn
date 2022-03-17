@@ -616,36 +616,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nebula_graph" class="md-nav__link">
-    Nebula Graph 客户端
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nebula_console_nebula_graph" class="md-nav__link">
-    使用 Nebula Console 连接 Nebula Graph
-  </a>
-  
-    <nav class="md-nav" aria-label="使用 Nebula Console 连接 Nebula Graph">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     前提条件
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     操作步骤
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5906,36 +5886,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nebula_graph" class="md-nav__link">
-    Nebula Graph 客户端
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nebula_console_nebula_graph" class="md-nav__link">
-    使用 Nebula Console 连接 Nebula Graph
-  </a>
-  
-    <nav class="md-nav" aria-label="使用 Nebula Console 连接 Nebula Graph">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     前提条件
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     操作步骤
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5958,60 +5918,32 @@
 
 
 <h1 id="3_nebula_graph">步骤 3：连接 Nebula Graph<a class="headerlink" href="#3_nebula_graph" title="Permanent link">&para;</a></h1>
-<p>Nebula Graph 支持多种类型客户端，包括 CLI 客户端、GUI 客户端和流行编程语言开发的客户端。本文将概述 Nebula Graph 客户端，并介绍如何使用原生 CLI 客户端 Nebula Console。</p>
-<h2 id="nebula_graph">Nebula Graph 客户端<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h2>
-<p>用户可以使用已支持的<a href="https://docs.nebula-graph.com.cn/master/20.appendix/6.eco-tool-version/">客户端或者命令行工具</a>来连接 Nebula Graph 数据库。<!--这里用外链。--></p>
-<!-- TODO 云服务未能和 vmaster 一起发布。
-如果还没有 Nebula Graph 数据库，建议尝试云服务 [Nebula Graph Cloud Service](https://cloud.nebula-graph.com.cn/)。Nebula Graph Cloud Service 支持按需部署和快速搭建，并且使用 Nebula Graph Studio 作为默认客户端。
--->
-
-<h2 id="nebula_console_nebula_graph">使用 Nebula Console 连接 Nebula Graph<a class="headerlink" href="#nebula_console_nebula_graph" title="Permanent link">&para;</a></h2>
-<h3 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>本文介绍如何使用原生命令行客户端 Nebula Console 连接 Nebula Graph。</p>
+<p>Nebula Graph 支持多种类型的客户端，包括命令行客户端、可视化界面客户端和流行编程语言客户端。详情参见<a href="../../14.client/1.nebula-client/">客户端列表</a>。</p>
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Nebula Graph 服务已<a href="https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/manage-service/">启动</a>。<!--这里用外链。--></li>
+<li>Nebula Graph 服务已<a href="https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/manage-service/">启动</a>。<!--必须用外链，因为这篇文档是复用的，用内部链接会出错。--></li>
 </ul>
 <ul>
 <li>运行 Nebula Console 的机器和运行 Nebula Graph 的服务器网络互通。</li>
 </ul>
 <ul>
 <li>
-<p>Nebula Console 版本兼容 Nebula Graph 版本。</p>
+<p>Nebula Console 的版本兼容 Nebula Graph 的版本。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>版本相同的 Nebula Console 和 Nebula Graph 兼容程度最高，版本不同的 Nebula Console 连接 Nebula Graph 时，可能会有兼容问题，或者无法连接并报错<code>incompatible version between client and server</code>。</p>
 </div>
 </li>
 </ul>
-<h3 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>在 <a href="https://github.com/vesoft-inc/nebula-console/releases" title="the nebula-console Releases page">Nebula Console</a> 下载页面，确认需要的版本，单击<strong> Assets</strong>。</p>
+<p>进入 Nebula Graph 安装路径的 <code>bin</code> 目录中，找到 Nebula Console 的二进制文件。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>建议选择<strong>最新</strong>版本。</p>
+<p><code>bin</code> 目录中仅有 Linux 系统可用的二进制文件，Windows系统二进制文件的获取方式参见<a href="../../nebula-console/">获取 Nebula Console</a>。</p>
 </div>
-</li>
-<li>
-<p>在<strong> Assets </strong>区域找到机器运行所需的二进制文件，下载文件到机器上。</p>
-</li>
-<li>
-<p>（可选）为方便使用，重命名文件为<code>nebula-console</code>。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>在 Windows 系统中，请重命名为<code>nebula-console.exe</code>。</p>
-</div>
-</li>
-<li>
-<p>在运行 Nebula Console 的机器上执行如下命令，为用户授予 nebula-console 文件的执行权限。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Windows 系统请跳过此步骤。</p>
-</div>
-<div class="highlight"><pre><span></span><code>$ chmod <span class="m">111</span> nebula-console
-</code></pre></div>
-</li>
-<li>
-<p>在命令行界面中，切换工作目录至 nebula-console 文件所在目录。</p>
 </li>
 <li>
 <p>执行如下命令连接 Nebula Graph。</p>
@@ -6041,16 +5973,16 @@
 </thead>
 <tbody>
 <tr>
-<td><code>-h</code></td>
+<td><code>-h/-help</code></td>
 <td>显示帮助菜单。</td>
 </tr>
 <tr>
-<td><code>-addr</code></td>
-<td>设置要连接的 graphd 服务的 IP 地址。默认地址为 127.0.0.1。如果 Nebula Graph 部署在 <a href="https://docs.nebula-graph.com.cn/2.6.2/nebula-cloud/1.what-is-cloud/">Nebula Cloud</a> 上，用户需要创建 <a href="https://docs.nebula-graph.com.cn/2.6.2/nebula-cloud/5.solution/5.2.connection-configuration-and-use">Private Link</a>，设置为专用终结点的 IP 地址。</td>
+<td><code>-addr/-address</code></td>
+<td>设置要连接的 Graph 服务的 IP 地址。默认地址为 127.0.0.1。如果 Nebula Graph 部署在 <a href="https://docs.nebula-graph.com.cn/2.6.2/nebula-cloud/1.what-is-cloud/">Nebula Cloud</a> 上，需要创建 <a href="https://docs.nebula-graph.com.cn/2.6.2/nebula-cloud/5.solution/5.2.connection-configuration-and-use">Private Link</a>，并设置该参数的值为专用终结点的 IP 地址。</td>
 </tr>
 <tr>
-<td><code>-port</code></td>
-<td>设置要连接的 graphd 服务的端口。默认端口为 9669。</td>
+<td><code>-P/-port</code></td>
+<td>设置要连接的 Graph 服务的端口。默认端口为 9669。</td>
 </tr>
 <tr>
 <td><code>-u/-user</code></td>
@@ -6072,11 +6004,27 @@
 <td><code>-f/-file</code></td>
 <td>设置存储 nGQL 语句的文件的路径。连接成功后会执行该文件内的 nGQL 语句并返回结果，执行完毕后自动断开连接。</td>
 </tr>
+<tr>
+<td><code>-enable_ssl</code></td>
+<td>连接 Nebula Graph 时使用 SSL 加密。</td>
+</tr>
+<tr>
+<td><code>-ssl_root_ca_path</code></td>
+<td>指定 CA 证书的存储路径。</td>
+</tr>
+<tr>
+<td><code>-ssl_cert_path</code></td>
+<td>指定 CRT 证书的存储路径。</td>
+</tr>
+<tr>
+<td><code>-ssl_private_key_path</code></td>
+<td>指定私钥文件的存储路径。</td>
+</tr>
 </tbody>
 </table>
+<p>更多参数参见<a href="https://github.com/vesoft-inc/nebula-console/tree/v3.0.0">项目仓库</a>。</p>
 </li>
 </ol>
-<p>用户可以使用<code>./nebula-console --help</code>命令获取所有参数的说明，也可以在<a href="https://github.com/vesoft-inc/nebula-console/tree/v3.0.0">项目仓库</a>找到更多说明。</p>
 <!-- The line above is for content reusing. The source file is in the docs-2.0/reuse directory. -->
 
   <hr>

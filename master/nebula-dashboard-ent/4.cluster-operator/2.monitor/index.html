@@ -4698,6 +4698,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    可视化监控大屏
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5915,6 +5922,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    可视化监控大屏
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5934,7 +5948,7 @@
 
 
 <h1 id="_1">集群监控<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文主要介绍 Dashboard 的集群监控中的节点监控、服务监控、图空间监控。</p>
+<p>本文主要介绍 Dashboard 的集群监控中的节点监控、服务监控、图空间监控，以及可视化的监控大屏。</p>
 <h2 id="_2">节点监控<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在 Dashboard 顶部导航栏，单击<strong>集群管理</strong>，然后单击<strong>集群监控</strong>-&gt;<strong>节点监控</strong>进入节点监控页面。</p>
 <p>用户可快速查看 CPU、Memory、Load、Disk 和 Network In/Out 变化情况。</p>
@@ -5974,13 +5988,55 @@
 <p>图空间的监控指标记录不同图空间的数据。目前，只有 Graph 服务支持基于图空间的监控指标。</p>
 <p>只有当图空间指标的行为被触发后，用户才能指定图空间查看对应的图空间指标的信息。Dashboard 支持的图空间指标，参见<a href="../../7.monitor-parameter/">图空间</a>。</p>
 <p><img alt="" src="../../figs/space_level_metrics.png" /></p>
+<h2 id="_5">可视化监控大屏<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Dashboard 企业版的可视化监控大屏帮助用户一目了然地把握集群的健康状态、服务及节点信息。</p>
+<p>在 Dashboard 顶部导航栏，单击<strong>集群管理</strong>，然后单击<strong>集群监控</strong>-&gt;<strong>监控大屏</strong>进入监控大屏页面。</p>
+<!-- 增加大屏图片 -->
+
+<table>
+<thead>
+<tr>
+<th>大屏区域</th>
+<th>显示信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中间区域上方</td>
+<td>1. 集群的健康度，为集群的健康打分。关于打分规则，参见下文 Note 说明。 <br>2. 运行的节点信息和数量、集群中运行中的服务个数和异常服务的个数。 <br/>3. 当前时间的节点 CPU 和内存使用率。<br/>4. 告警信息。系统按照告警消息的严重级别（emergency&gt;critical&gt;warning）展示最近触发的 5 条告警消息。更多信息，参见<a href="../../9.alerts/">监控告警</a>。</td>
+</tr>
+<tr>
+<td>中间区域下方</td>
+<td>在不同时间段 4 个 Graph 服务指标的监控信息。4 个指标分别是：<br/>1. num_active_sessions<br/>2. num_slow_queries<br/>3. num_active_queries<br/>4. num_query_errors</td>
+</tr>
+<tr>
+<td>左侧区域</td>
+<td>1. 集群的每秒查询率 QPS (Query Per Second)。<br/>2. 在不同时间段两个 Storage 服务指标的监控信息。两个指标分别是 add_edges_latency_us、add_vertices_latency_us。</td>
+</tr>
+<tr>
+<td>右侧区域</td>
+<td>在不同时间段节点相关指标的信息，指标包括：<br/>1. cpu_utilization<br/>2. memory_utilization<br/>3. load_1m<br/>4. disk_readbytes<br/>5. disk_writebytes</td>
+</tr>
+</tbody>
+</table>
+<p>有关监控指标的具体信息，参见<a href="../../7.monitor-parameter/">指标监控</a>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>集群的健康打分规则如下：</p>
+<ul>
+<li>最高 100 分，最低 13 分。</li>
+<li>当 100≥健康度≥80，分数为蓝色；当 80＞健康度≥60，分数为黄色；当健康度＜60，分数为红色。</li>
+<li>算法：(1-异常服务数/总服务数)*100%。</li>
+<li>除第一个出现的<code>emergency</code>级别的告警扣 40 分外，其余<code>emergency</code>级别及其他级别的告警每个扣 10 分。</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2022</span>
       
     
   </small>
