@@ -1256,16 +1256,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-shortcuts/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-terms/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-what-is-graph-studio/</loc>
          <lastmod>2022-03-17</lastmod>
          <changefreq>daily</changefreq>
@@ -1311,12 +1301,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-create-schema/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-console/</loc>
          <lastmod>2022-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-explore/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-create-schema/</loc>
          <lastmod>2022-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1342,21 +1332,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/troubleshooting/st-ug-faq/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/use-console/st-ug-console/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/use-console/st-ug-open-in-explore/</loc>
-         <lastmod>2022-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/use-console/st-ug-visualize-subgraph/</loc>
          <lastmod>2022-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
