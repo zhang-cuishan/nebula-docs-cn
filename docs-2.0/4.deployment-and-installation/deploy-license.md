@@ -14,28 +14,34 @@ Nebula Graph 企业版需要用户设置 License 才可以正常启动并使用�
 
 - License 快过期时，请及时发送邮件至`inquiry@vesoft.com`申请续期。
 
-- License 的过期缓冲为 7 天：
+- License 的过期缓冲为 3 天：
 
-  - 过期 3 天前和过期当天，服务启动时会打印日志进行提醒。
+  - 过期 7 天前和过期当天，服务启动时会打印日志进行提醒。
 
-  - 过期后仍可继续使用 7 天。
+  - 过期后仍可继续使用 3 天。
 
-  - 过期 7 天后，服务无法启动，并会打印日志进行提醒。
+  - 过期 3 天后，服务无法启动，并会打印日志进行提醒。
 
-## License 说明
+## Nebula Graph 企业版 License 说明
 
 用户可以用`cat`等命令查看 License 文件（`nebula.license`）内容，示例文件内容如下：
 
 ```bash
 ----------License Content Start----------
 {
-  "vendor": "Vesoft_Inc",
+  "vendor": "vesoft",
   "organization": "doc",
-  "issuedDate": "2021-11-07T16:00:00.000Z",
-  "expirationDate": "2021-11-30T15:59:59.000Z",
+  "issuedDate": "2022-03-06T16:00:00.000Z",
+  "expirationDate": "2022-05-31T15:59:59.000Z",
   "product": "nebula_graph",
-  "version": ">2.6.1",
-  "licenseType": "enterprise"
+  "version": ">3.0.0",
+  "licenseType": "enterprise",
+  "graphdSpec": {
+    "nodes": 3
+  },
+  "storagedSpec": {
+    "nodes": 3
+  }
 }
 ----------License Content End----------
 
@@ -48,15 +54,17 @@ License 文件包含生效时间、过期时间等信息。说明如下。
 
 |参数|说明|
 |:---|:---|
-|`vendor`|发放渠道。|
-|`organization`|用户名称。|
-|`issuedDate`|License 生效时间。|
-|`expirationDate`|License 过期时间。|
-|`product`|产品类型。Nebula Graph 的产品类型为`nebula_graph`。|
-|`version`|版本支持的信息。|
-|`licenseType`|License 类型。包括`enterprise`、`samll_bussiness`、`pro`、`individual`。预留参数。|
+|`vendor`| 发放渠道。|
+|`organization`| 用户名称。|
+|`issuedDate`| License 生效时间。|
+|`expirationDate`| License 过期时间。|
+|`product`| 产品类型。Nebula Graph 的产品类型为`nebula_graph`。|
+|`version`| 版本支持的信息。|
+|`licenseType`| License 类型。包括`enterprise`、`samll_bussiness`、`pro`、`individual`。预留参数。|
+|`graphdSpec`| 集群中 Graph 服务的数量限制。Nebula Graph 会实时监测当前活动的 Graph 服务数量，超过限制的 Graph 服务无法连接集群。|
+|`storagedSpec`| 集群中 Storage 服务的数量限制。Nebula Graph 会实时监测当前活动的 Storage 服务数量，超过限制的 Storage 服务无法连接集群。|
 
-## 设置 License
+## 设置 Nebula Graph 企业版 License
 
 1. 发送邮件至`inquiry@vesoft.com`申请 Nebula Graph 企业版安装包。
 
@@ -69,3 +77,7 @@ License 文件包含生效时间、过期时间等信息。说明如下。
   !!! note
 
         周边工具的 License 文件上传位置，请参见[具体周边工具](../20.appendix/6.eco-tool-version.md)的说明文档。
+
+## 下一步
+
+[启动 Nebula Graph](manage-service.md)

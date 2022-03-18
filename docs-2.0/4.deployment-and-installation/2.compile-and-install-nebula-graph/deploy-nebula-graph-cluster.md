@@ -14,7 +14,8 @@ Nebula Graph 不提供官方的集群部署工具，用户可以使用 RPM 或 D
 
 ## 前提条件
 
-准备 5 台用于部署集群的机器。
+- 准备 5 台用于部署集群的机器。
+- 在集群中通过 NTP 服务同步时间。
 
 ## 手动部署流程
 
@@ -291,14 +292,13 @@ $ ./nebula-console --addr 192.168.10.111 --port 9669 -u root -p nebula
 Welcome to Nebula Graph!
 
 > SHOW HOSTS;
-+------------------+------+----------+--------------+----------------------+------------------------+
-| Host             | Port | Status   | Leader count | Leader distribution  | Partition distribution |
-+------------------+------+----------+--------------+----------------------+------------------------+
-| "192.168.10.111" | 9779 | "ONLINE" | 0            | "No valid partition" | "No valid partition"   |
-| "192.168.10.112" | 9779 | "ONLINE" | 0            | "No valid partition" | "No valid partition"   |
-| "192.168.10.113" | 9779 | "ONLINE" | 0            | "No valid partition" | "No valid partition"   |
-| "192.168.10.114" | 9779 | "ONLINE" | 0            | "No valid partition" | "No valid partition"   |
-| "192.168.10.115" | 9779 | "ONLINE" | 0            | "No valid partition" | "No valid partition"   |
-| "Total"          |      |          | 0            |                      |                        |
-+------------------+------+----------+--------------+----------------------+------------------------+
++------------------+------+-----------+----------+--------------+----------------------+------------------------+---------+
+| Host             | Port | HTTP port | Status   | Leader count | Leader distribution  | Partition distribution | Version |
++------------------+------+-----------+----------+--------------+----------------------+------------------------+---------+
+| "192.168.10.111" | 9779 | 19669     | "ONLINE" | 0            | "No valid partition" | "No valid partition"   | "3.1.0" |
+| "192.168.10.112" | 9779 | 19669     | "ONLINE" | 0            | "No valid partition" | "No valid partition"   | "3.1.0" |
+| "192.168.10.113" | 9779 | 19669     | "ONLINE" | 0            | "No valid partition" | "No valid partition"   | "3.1.0" |
+| "192.168.10.114" | 9779 | 19669     | "ONLINE" | 0            | "No valid partition" | "No valid partition"   | "3.1.0" |
+| "192.168.10.115" | 9779 | 19669     | "ONLINE" | 0            | "No valid partition" | "No valid partition"   | "3.1.0" |
++------------------+------+-----------+----------+--------------+----------------------+------------------------+---------+
 ```

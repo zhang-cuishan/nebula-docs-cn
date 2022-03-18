@@ -89,7 +89,7 @@
       cores: 1
       maxResultSize: 1G
     }
-    cores {
+    cores: {
       max: 16
     }
   }
@@ -108,11 +108,11 @@
     pswd: nebula
     # 填写 Nebula Graph 中需要写入数据的图空间名称。
     space: basketballplayer
-    connection {
+    connection: {
       timeout: 3000
       retry: 3
     }
-    execution {
+    execution: {
       retry: 3
     }
     error: {
@@ -229,6 +229,9 @@
           field:dst_player
       }
 
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
+
       # 单批次写入 Nebula Graph 的数据条数。
       batch: 10
 
@@ -261,6 +264,9 @@
       target:{
           field:teamid
       }
+
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
 
       batch: 10
       partition: 10

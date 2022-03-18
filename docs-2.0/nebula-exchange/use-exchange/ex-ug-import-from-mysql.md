@@ -1,6 +1,6 @@
-# 导入 MySQL 数据
+# 导入 MySQL/PostgreSQL 数据
 
-本文以一个示例说明如何使用 Exchange 将存储在 MySQL 上的数据导入 Nebula Graph。
+本文以一个示例说明如何使用 Exchange 将存储在 MySQL 上的数据导入 Nebula Graph，也适用于从 PostgreSQL 导出数据到 Nebula Graph。
 
 ## 数据集
 
@@ -137,7 +137,7 @@ mysql> desc serve;
       cores: 1
       maxResultSize: 1G
     }
-    cores {
+    cores: {
       max: 16
     }
   }
@@ -156,11 +156,11 @@ mysql> desc serve;
     pswd: nebula
     # 填写 Nebula Graph 中需要写入数据的图空间名称。
     space: basketballplayer
-    connection {
+    connection: {
       timeout: 3000
       retry: 3
     }
-    execution {
+    execution: {
       retry: 3
     }
     error: {
@@ -277,6 +277,9 @@ mysql> desc serve;
         field: dst_player
       }
 
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
+
       # 单批次写入 Nebula Graph 的数据条数。
       batch: 256
 
@@ -307,6 +310,10 @@ mysql> desc serve;
       target: {
         field: teamid
       }
+
+      # 指定一个列作为 rank 的源（可选）。
+      #ranking: rank
+
       batch: 256
       partition: 32
     }
