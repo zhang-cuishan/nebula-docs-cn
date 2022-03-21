@@ -1241,11 +1241,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-check-updates/</loc>
-         <lastmod>2022-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-limitations/</loc>
          <lastmod>2022-03-21</lastmod>
          <changefreq>daily</changefreq>
@@ -1272,11 +1267,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/deploy-connect/st-ug-deploy/</loc>
-         <lastmod>2022-03-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/deploy-connect/st-ug-reset-connection/</loc>
          <lastmod>2022-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -4006,20 +4006,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../about-studio/st-ug-check-updates/" class="md-nav__link">
-        版本更新
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -4141,26 +4127,25 @@
     后续操作
   </a>
   
+    <nav class="md-nav" aria-label="后续操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    清除连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../st-ug-reset-connection/" class="md-nav__link">
-        清除连接
-      </a>
     </li>
   
 
@@ -4247,7 +4232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../use-console/st-ug-console.md" class="md-nav__link">
+      <a href="../../quick-start/st-ug-console/" class="md-nav__link">
         控制台界面
       </a>
     </li>
@@ -5913,6 +5898,19 @@
     后续操作
   </a>
   
+    <nav class="md-nav" aria-label="后续操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    清除连接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -5996,13 +5994,25 @@
 <li>如果已拥有 GOD、ADMIN、DBA 或者 USER 权限的账号登录，可以<a href="../../quick-start/st-ug-import-data/">批量导入数据</a>或者在 <strong>控制台</strong> 页面上运行 nGQL 语句插入数据。</li>
 <li>如果已拥有 GOD、ADMIN、DBA、USER 或者 GUEST 权限的账号登录，可以在 <strong>控制台</strong> 页面上运行 nGQL 语句读取数据。</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>账号权限参见 <a href="../../../7.data-security/1.authentication/3.role-list/">内置角色权限</a>。</p>
+</div>
+<h3 id="_5">清除连接<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<!--
+使用云服务版 Studio 时，用户不能清除连接。
+-->
+
+<p>如果需要重新连接 Nebula Graph 数据库，可以清除当前连接后再重新配置数据库。</p>
+<p>当 Studio 还连接在某个 Nebula Graph 数据库时，在工具栏中，选择 <strong>设置</strong> &gt; <strong>清除连接</strong>。之后，如果浏览器上显示 <strong>配置数据库</strong> 页面，表示 Studio 已经成功断开了与 Nebula Graph 数据库的连接。</p>
+<p><img alt="reset" src="../../figs/st-ug-005.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 21, 2022</span>
       
     
   </small>
@@ -6041,13 +6051,13 @@
       
       
         
-        <a href="../st-ug-reset-connection/" class="md-footer__link md-footer__link--next" aria-label="下一页: 清除连接" rel="next">
+        <a href="../../quick-start/st-ug-plan-schema/" class="md-footer__link md-footer__link--next" aria-label="下一页: 规划 Schema" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              清除连接
+              规划 Schema
             </div>
           </div>
           <div class="md-footer__button md-icon">
