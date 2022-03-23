@@ -12,14 +12,14 @@
         <meta name="author" content="Nebula Graph">
       
       
-        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/7.data-security/3.manage-snapshot/">
+        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/synchronization-and-migration/2.balance-syntax/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>管理快照 - Nebula Graph Database 手册</title>
+        <title>负载均衡 - Nebula Graph Database 手册</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#balance" class="md-skip">
           跳转至
         </a>
       
@@ -129,7 +129,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                管理快照
+                负载均衡
               
             </span>
           </div>
@@ -2024,6 +2024,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../3.ngql-guide/9.space-statements/6.clear-space/" class="md-nav__link">
+        CLEAR SPACE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../3.ngql-guide/9.space-statements/5.drop-space/" class="md-nav__link">
         DROP SPACE
       </a>
@@ -2761,14 +2775,14 @@
       
       
         <label class="md-nav__link" for="__nav_4_16">
-          查询调优
+          查询调优与终止
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="查询调优" data-md-level="2">
+      <nav class="md-nav" aria-label="查询调优与终止" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_16">
           <span class="md-nav__icon md-icon"></span>
-          查询调优
+          查询调优与终止
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -2786,74 +2800,13 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_17" type="checkbox" id="__nav_4_17" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_17">
-          运维
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="运维" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_17">
-          <span class="md-nav__icon md-icon"></span>
-          运维
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/2.balance-syntax/" class="md-nav__link">
-        BALANCE
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/4.job-statements/" class="md-nav__link">
-        作业管理
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../3.ngql-guide/18.operation-and-maintenance-statements/6.kill-query/" class="md-nav__link">
+      <a href="../../3.ngql-guide/17.query-tuning-statements/6.kill-query/" class="md-nav__link">
         终止查询
       </a>
     </li>
@@ -2863,6 +2816,20 @@
           
         </ul>
       </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.ngql-guide/4.job-statements/" class="md-nav__link">
+        作业管理
+      </a>
     </li>
   
 
@@ -3408,14 +3375,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
       
       
       
@@ -3464,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.authentication/1.authentication/" class="md-nav__link">
+      <a href="../../7.data-security/1.authentication/1.authentication/" class="md-nav__link">
         身份验证
       </a>
     </li>
@@ -3478,7 +3443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.authentication/2.management-user/" class="md-nav__link">
+      <a href="../../7.data-security/1.authentication/2.management-user/" class="md-nav__link">
         用户管理
       </a>
     </li>
@@ -3492,7 +3457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.authentication/3.role-list/" class="md-nav__link">
+      <a href="../../7.data-security/1.authentication/3.role-list/" class="md-nav__link">
         内置角色权限
       </a>
     </li>
@@ -3506,7 +3471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1.authentication/4.ldap/" class="md-nav__link">
+      <a href="../../7.data-security/1.authentication/4.ldap/" class="md-nav__link">
         OpenLDAP 验证
       </a>
     </li>
@@ -3525,120 +3490,9 @@
               
   
   
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          管理快照
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        管理快照
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    前提条件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    注意事项
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    快照路径
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    创建快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    查看快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    删除快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    恢复快照
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
   
     <li class="md-nav__item">
-      <a href="../replication-between-clusters/" class="md-nav__link">
-        集群间数据同步
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4.ssl/" class="md-nav__link">
+      <a href="../../7.data-security/4.ssl/" class="md-nav__link">
         SSL 加密
       </a>
     </li>
@@ -3669,14 +3523,40 @@
       
       
         <label class="md-nav__link" for="__nav_9">
-          备份恢复(BR)
+          备份与恢复
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="备份恢复(BR)" data-md-level="1">
+      <nav class="md-nav" aria-label="备份与恢复" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
-          备份恢复(BR)
+          备份与恢复
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_1" type="checkbox" id="__nav_9_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9_1">
+          Nebula BR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nebula BR" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_1">
+          <span class="md-nav__icon md-icon"></span>
+          Nebula BR
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -3686,7 +3566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-br/1.what-is-br/" class="md-nav__link">
+      <a href="../../backup-and-restore/nebula-br/1.what-is-br/" class="md-nav__link">
         什么是 BR
       </a>
     </li>
@@ -3700,7 +3580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-br/2.compile-br/" class="md-nav__link">
+      <a href="../../backup-and-restore/nebula-br/2.compile-br/" class="md-nav__link">
         编译 BR
       </a>
     </li>
@@ -3714,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-br/3.br-backup-data/" class="md-nav__link">
+      <a href="../../backup-and-restore/nebula-br/3.br-backup-data/" class="md-nav__link">
         使用 BR 备份数据
       </a>
     </li>
@@ -3728,8 +3608,103 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-br/4.br-restore-data/" class="md-nav__link">
+      <a href="../../backup-and-restore/nebula-br/4.br-restore-data/" class="md-nav__link">
         使用 BR 恢复数据
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backup-and-restore/3.manage-snapshot/" class="md-nav__link">
+        管理快照
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          同步与迁移
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="同步与迁移" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          同步与迁移
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        负载均衡
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../replication-between-clusters/" class="md-nav__link">
+        集群间数据同步
       </a>
     </li>
   
@@ -3753,18 +3728,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_11">
           最佳实践
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="最佳实践" data-md-level="1">
-        <label class="md-nav__title" for="__nav_10">
+        <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           最佳实践
         </label>
@@ -3885,18 +3860,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_12">
           客户端
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="客户端" data-md-level="1">
-        <label class="md-nav__title" for="__nav_11">
+        <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
           客户端
         </label>
@@ -4018,18 +3993,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13">
+        <label class="md-nav__link" for="__nav_14">
           Nebula Graph Studio
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Graph Studio" data-md-level="1">
-        <label class="md-nav__title" for="__nav_13">
+        <label class="md-nav__title" for="__nav_14">
           <span class="md-nav__icon md-icon"></span>
           Nebula Graph Studio
         </label>
@@ -4058,18 +4033,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_2" type="checkbox" id="__nav_13_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_2" type="checkbox" id="__nav_14_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13_2">
+        <label class="md-nav__link" for="__nav_14_2">
           认识 Nebula Graph Studio
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="认识 Nebula Graph Studio" data-md-level="2">
-        <label class="md-nav__title" for="__nav_13_2">
+        <label class="md-nav__title" for="__nav_14_2">
           <span class="md-nav__icon md-icon"></span>
           认识 Nebula Graph Studio
         </label>
@@ -4119,18 +4094,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_3" type="checkbox" id="__nav_13_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_3" type="checkbox" id="__nav_14_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13_3">
+        <label class="md-nav__link" for="__nav_14_3">
           安装与登录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="安装与登录" data-md-level="2">
-        <label class="md-nav__title" for="__nav_13_3">
+        <label class="md-nav__title" for="__nav_14_3">
           <span class="md-nav__icon md-icon"></span>
           安装与登录
         </label>
@@ -4194,18 +4169,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4" type="checkbox" id="__nav_13_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4" type="checkbox" id="__nav_14_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13_4">
+        <label class="md-nav__link" for="__nav_14_4">
           快速开始
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="快速开始" data-md-level="2">
-        <label class="md-nav__title" for="__nav_13_4">
+        <label class="md-nav__title" for="__nav_14_4">
           <span class="md-nav__icon md-icon"></span>
           快速开始
         </label>
@@ -4276,18 +4251,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_4_5" type="checkbox" id="__nav_13_4_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_4_5" type="checkbox" id="__nav_14_4_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13_4_5">
+        <label class="md-nav__link" for="__nav_14_4_5">
           管理Schema
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="管理Schema" data-md-level="3">
-        <label class="md-nav__title" for="__nav_13_4_5">
+        <label class="md-nav__title" for="__nav_14_4_5">
           <span class="md-nav__icon md-icon"></span>
           管理Schema
         </label>
@@ -4372,18 +4347,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_5" type="checkbox" id="__nav_13_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14_5" type="checkbox" id="__nav_14_5" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_13_5">
+        <label class="md-nav__link" for="__nav_14_5">
           故障排查
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="故障排查" data-md-level="2">
-        <label class="md-nav__title" for="__nav_13_5">
+        <label class="md-nav__title" for="__nav_14_5">
           <span class="md-nav__icon md-icon"></span>
           故障排查
         </label>
@@ -4455,18 +4430,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_14">
+        <label class="md-nav__link" for="__nav_15">
           Nebula Dashboard（社区版）
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Dashboard（社区版）" data-md-level="1">
-        <label class="md-nav__title" for="__nav_14">
+        <label class="md-nav__title" for="__nav_15">
           <span class="md-nav__icon md-icon"></span>
           Nebula Dashboard（社区版）
         </label>
@@ -4559,18 +4534,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15" type="checkbox" id="__nav_15" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_15">
+        <label class="md-nav__link" for="__nav_16">
           Nebula Dashboard（企业版）
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Dashboard（企业版）" data-md-level="1">
-        <label class="md-nav__title" for="__nav_15">
+        <label class="md-nav__title" for="__nav_16">
           <span class="md-nav__icon md-icon"></span>
           Nebula Dashboard（企业版）
         </label>
@@ -4613,18 +4588,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_3" type="checkbox" id="__nav_15_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_3" type="checkbox" id="__nav_16_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_15_3">
+        <label class="md-nav__link" for="__nav_16_3">
           创建及导入集群
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="创建及导入集群" data-md-level="2">
-        <label class="md-nav__title" for="__nav_15_3">
+        <label class="md-nav__title" for="__nav_16_3">
           <span class="md-nav__icon md-icon"></span>
           创建及导入集群
         </label>
@@ -4674,18 +4649,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_15_4" type="checkbox" id="__nav_15_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_4" type="checkbox" id="__nav_16_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_15_4">
+        <label class="md-nav__link" for="__nav_16_4">
           集群管理
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="集群管理" data-md-level="2">
-        <label class="md-nav__title" for="__nav_15_4">
+        <label class="md-nav__title" for="__nav_16_4">
           <span class="md-nav__icon md-icon"></span>
           集群管理
         </label>
@@ -4883,18 +4858,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16">
+        <label class="md-nav__link" for="__nav_17">
           Nebula Explorer
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Explorer" data-md-level="1">
-        <label class="md-nav__title" for="__nav_16">
+        <label class="md-nav__title" for="__nav_17">
           <span class="md-nav__icon md-icon"></span>
           Nebula Explorer
         </label>
@@ -4923,18 +4898,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_2" type="checkbox" id="__nav_16_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17_2" type="checkbox" id="__nav_17_2" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_2">
+        <label class="md-nav__link" for="__nav_17_2">
           安装与登录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="安装与登录" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_2">
+        <label class="md-nav__title" for="__nav_17_2">
           <span class="md-nav__icon md-icon"></span>
           安装与登录
         </label>
@@ -5040,18 +5015,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_7" type="checkbox" id="__nav_16_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17_7" type="checkbox" id="__nav_17_7" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_7">
+        <label class="md-nav__link" for="__nav_17_7">
           画布功能
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="画布功能" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_7">
+        <label class="md-nav__title" for="__nav_17_7">
           <span class="md-nav__icon md-icon"></span>
           画布功能
         </label>
@@ -5151,18 +5126,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17" type="checkbox" id="__nav_17" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_17">
+        <label class="md-nav__link" for="__nav_18">
           Nebula Importer
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Importer" data-md-level="1">
-        <label class="md-nav__title" for="__nav_17">
+        <label class="md-nav__title" for="__nav_18">
           <span class="md-nav__icon md-icon"></span>
           Nebula Importer
         </label>
@@ -5227,18 +5202,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18" type="checkbox" id="__nav_18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19" type="checkbox" id="__nav_19" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_18">
+        <label class="md-nav__link" for="__nav_19">
           Nebula Exchange
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Nebula Exchange" data-md-level="1">
-        <label class="md-nav__title" for="__nav_18">
+        <label class="md-nav__title" for="__nav_19">
           <span class="md-nav__icon md-icon"></span>
           Nebula Exchange
         </label>
@@ -5253,18 +5228,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_1" type="checkbox" id="__nav_18_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19_1" type="checkbox" id="__nav_19_1" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_18_1">
+        <label class="md-nav__link" for="__nav_19_1">
           认识 Nebula Exchange
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="认识 Nebula Exchange" data-md-level="2">
-        <label class="md-nav__title" for="__nav_18_1">
+        <label class="md-nav__title" for="__nav_19_1">
           <span class="md-nav__icon md-icon"></span>
           认识 Nebula Exchange
         </label>
@@ -5328,18 +5303,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_3" type="checkbox" id="__nav_18_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19_3" type="checkbox" id="__nav_19_3" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_18_3">
+        <label class="md-nav__link" for="__nav_19_3">
           参数说明
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="参数说明" data-md-level="2">
-        <label class="md-nav__title" for="__nav_18_3">
+        <label class="md-nav__title" for="__nav_19_3">
           <span class="md-nav__icon md-icon"></span>
           参数说明
         </label>
@@ -5389,18 +5364,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_18_4" type="checkbox" id="__nav_18_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_19_4" type="checkbox" id="__nav_19_4" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_18_4">
+        <label class="md-nav__link" for="__nav_19_4">
           使用 Nebula Exchange
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="使用 Nebula Exchange" data-md-level="2">
-        <label class="md-nav__title" for="__nav_18_4">
+        <label class="md-nav__title" for="__nav_19_4">
           <span class="md-nav__icon md-icon"></span>
           使用 Nebula Exchange
         </label>
@@ -5715,18 +5690,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_24" type="checkbox" id="__nav_24" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_25" type="checkbox" id="__nav_25" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_24">
+        <label class="md-nav__link" for="__nav_25">
           附录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="附录" data-md-level="1">
-        <label class="md-nav__title" for="__nav_24">
+        <label class="md-nav__title" for="__nav_25">
           <span class="md-nav__icon md-icon"></span>
           附录
         </label>
@@ -5900,63 +5875,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    前提条件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    注意事项
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    快照路径
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    创建快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    查看快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    删除快照
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    恢复快照
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -5967,125 +5885,50 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/7.data-security/3.manage-snapshot.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/synchronization-and-migration/2.balance-syntax.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="_1">管理快照<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>Nebula Graph 提供快照（snapshot）功能，用于保存集群当前时间点的数据状态，当出现数据丢失或误操作时，可以通过快照恢复数据。</p>
-<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Nebula Graph 的<a href="../1.authentication/1.authentication/">身份认证</a>功能默认是关闭的，此时任何用户都能使用快照功能。</p>
-<p>如果身份认证开启，仅 God 角色用户可以使用快照功能。关于角色说明，请参见<a href="../1.authentication/3.role-list/">内置角色权限</a>。</p>
-<h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>系统结构发生变化后，建议立刻创建快照，例如在<code>add host</code>、<code>drop host</code>、<code>create space</code>、<code>drop space</code>、<code>balance</code>等操作之后。</li>
-</ul>
-<ul>
-<li>不支持自动回收创建失败的快照垃圾文件，需要手动删除。</li>
-</ul>
-<ul>
-<li>不支持指定快照保存路径，默认路径为<code>/usr/local/nebula/data</code>。</li>
-</ul>
-<h2 id="_4">快照路径<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Nebula Graph 创建的快照以目录的形式存储，例如<code>SNAPSHOT_2021_03_09_08_43_12</code>，后缀<code>2021_03_09_08_43_12</code>根据创建时间（UTC）自动生成。</p>
-<p>创建快照时，快照目录会自动在 leader Meta 服务器和所有 Storage 服务器的目录<code>checkpoints</code>内创建。</p>
-<p>为了快速定位快照所在路径，可以使用 Linux 命令<code>find</code>。例如：</p>
-<div class="highlight"><pre><span></span><code>$ find <span class="p">|</span>grep <span class="s1">&#39;SNAPSHOT_2021_03_09_08_43_12&#39;</span>
-./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12
-./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12/data
-./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12/data/000081.sst
-...
-</code></pre></div>
-<h2 id="_5">创建快照<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>命令<code>CREATE SNAPSHOT</code>可以创建集群当前时间点的快照。只支持创建所有图空间的快照，不支持创建指定图空间的快照。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果快照创建失败，请<a href="#_7">删除快照</a>重新创建。</p>
+<h1 id="balance">BALANCE<a class="headerlink" href="#balance" title="Permanent link">&para;</a></h1>
+<p><code>BALANCE</code>语句可以让 Nebula Graph 的 Storage 服务实现负载均衡。更多<code>BALANCE</code>语句示例和 Storage 负载均衡，请参见 <a href="../../8.service-tuning/load-balance/">Storage 负载均衡</a>。</p>
+<div class="admonition compatibility">
+<p class="admonition-title">历史版本兼容性</p>
+<p>不支持<code>BALANCE DATA</code>命令。</p>
 </div>
-<div class="highlight"><pre><span></span><code>nebula&gt; CREATE SNAPSHOT;
-</code></pre></div>
-<h2 id="_6">查看快照<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>命令<code>SHOW SNAPSHOTS</code>可以查看集群中的所有快照。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW SNAPSHOTS;
-+--------------------------------+---------+------------------+
-| Name                           | Status  | Hosts            |
-+--------------------------------+---------+------------------+
-| &quot;SNAPSHOT_2021_03_09_08_43_12&quot; | &quot;VALID&quot; | &quot;127.0.0.1:9779&quot; |
-| &quot;SNAPSHOT_2021_03_09_09_10_52&quot; | &quot;VALID&quot; | &quot;127.0.0.1:9779&quot; |
-+--------------------------------+---------+------------------+
-</code></pre></div>
-<p>参数说明如下：</p>
+<p><code>BALANCE</code>语法说明如下。</p>
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
+<th align="left">语法</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>Name</code></td>
-<td align="left">快照名称，前缀为<code>SNAPSHOT</code>，表示该文件为快照文件，后缀为快照创建的时间点（UTC 时间）。</td>
-</tr>
-<tr>
-<td align="left"><code>Status</code></td>
-<td align="left">快照状态。<code>VALID</code>表示快照有效，<code>INVALID</code>表示快照无效。</td>
-</tr>
-<tr>
-<td align="left"><code>Hosts</code></td>
-<td align="left">创建快照时所有 Storage 服务器的 IP 地址和端口。</td>
+<td align="left"><code>BALANCE LEADER</code></td>
+<td align="left">在当前图空间内所有 Zone 之间启动任务均衡分布 leader。该命令会返回任务 ID。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_7">删除快照<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>命令<code>DROP SNAPSHOT</code>可以删除指定的快照，语法为：</p>
-<div class="highlight"><pre><span></span><code>DROP SNAPSHOT &lt;snapshot_name&gt;;
-</code></pre></div>
-<p>示例如下：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; DROP SNAPSHOT SNAPSHOT_2021_03_09_08_43_12;
-nebula&gt; SHOW SNAPSHOTS;
-+--------------------------------+---------+------------------+
-| Name                           | Status  | Hosts            |
-+--------------------------------+---------+------------------+
-| &quot;SNAPSHOT_2021_03_09_09_10_52&quot; | &quot;VALID&quot; | &quot;127.0.0.1:9779&quot; |
-+--------------------------------+---------+------------------+
-</code></pre></div>
-<h2 id="_8">恢复快照<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>当前未提供恢复快照命令，需要手动拷贝快照文件到对应的文件夹内，也可以通过 shell 脚本进行操作。实现逻辑如下：</p>
-<ol>
-<li>
-<p>创建快照后，会在 leader Meta 服务器和所有 Storage 服务器的安装目录内生成<code>checkpoints</code>目录，保存创建的快照。以本文为例，当存在 2 个图空间时，创建的快照分别保存在<code>/usr/local/nebula/data/meta/nebula/0/checkpoints</code>、<code>/usr/local/nebula/data/storage/nebula/3/checkpoints</code>和<code>/usr/local/nebula/data/storage/nebula/4/checkpoints</code>中。</p>
-<div class="highlight"><pre><span></span><code>$ ls /usr/local/nebula/data/meta/nebula/0/checkpoints/
-SNAPSHOT_2021_03_09_09_10_52
-$ ls /usr/local/nebula/data/storage/nebula/3/checkpoints/
-SNAPSHOT_2021_03_09_09_10_52
-$ ls /usr/local/nebula/data/storage/nebula/4/checkpoints/
-SNAPSHOT_2021_03_09_09_10_52
-</code></pre></div>
-</li>
-<li>
-<p>当数据丢失需要通过快照恢复时，用户可以找到合适的时间点快照，将内部的文件夹<code>data</code>和<code>wal</code>分别拷贝到各自的上级目录（和<code>checkpoints</code>平级），覆盖之前的<code>data</code>和<code>wal</code>，然后重启集群即可。</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>需要同时覆盖所有 Meta 节点的 data 和 wal 目录，因为存在重启集群后发生 Meta 重新选举 leader 的情况，如果不覆盖所有 Meta 节点，新的 leader 使用的还是最新的 Meta 数据，导致恢复失败。</p>
-</div>
-</li>
-</ol>
-<!-- TODO
+<!-- balance-3.1
+|`BALANCE IN ZONE [REMOVE <ip>:<port> [,<ip>:<port> ...]]`|在当前图空间内每个 Zone 内部启动任务均衡分布分片。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Storage 节点，该节点的分片会移动到其他节点，方便进行维护。|
+|`BALANCE ACROSS ZONE [REMOVE "zone_name" [,"zone_name" ...]]`|在当前图空间内所有 Zone 之间启动任务均衡分布分片，保证各个 Zone 分片数量平衡。该命令会返回任务 ID。可以使用`REMOVE`选项指定需要清空的 Zone，该节点的分片会移动到其他节点，方便进行维护。|
 
-## 相关文档
+!!! note
 
-除了使用快照，用户还可以使用备份恢复工具 Backup&Restore（BR）备份或恢复 Nebula Graph 数据。详情请参见 [Backup&Restore](2.backup-restore/1.what-is-br.md)。
+    `REMOVE`只能清空当前图空间的分片，如果 Storage 节点的图空间较多，需要切换到不同图空间执行`REMOVE`操作。
 -->
+
+<p>查看、停止、重启任务，请参见<a href="../../3.ngql-guide/4.job-statements/">作业管理</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
       
     
   </small>
@@ -6108,7 +5951,7 @@ SNAPSHOT_2021_03_09_09_10_52
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../1.authentication/4.ldap/" class="md-footer__link md-footer__link--prev" aria-label="上一页: OpenLDAP 验证" rel="prev">
+        <a href="../../backup-and-restore/3.manage-snapshot/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 管理快照" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -6117,7 +5960,7 @@ SNAPSHOT_2021_03_09_09_10_52
               <span class="md-footer__direction">
                 上一页
               </span>
-              OpenLDAP 验证
+              管理快照
             </div>
           </div>
         </a>
