@@ -886,6 +886,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/7.data-security/replication-between-clusters/</loc>
+         <lastmod>2022-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/7.data-security/1.authentication/1.authentication/</loc>
          <lastmod>2022-03-23</lastmod>
          <changefreq>daily</changefreq>
