@@ -535,6 +535,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#storage_2" class="md-nav__link">
+    Storage 写入流程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kvstore" class="md-nav__link">
     KVStore
   </a>
@@ -5983,6 +5990,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#storage_2" class="md-nav__link">
+    Storage 写入流程
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#kvstore" class="md-nav__link">
     KVStore
   </a>
@@ -6161,6 +6175,8 @@
 </li>
 </ul>
 <p>下文将基于架构介绍 Storage 服务的部分特性。</p>
+<h2 id="storage_2">Storage 写入流程<a class="headerlink" href="#storage_2" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="https://docs-cdn.nebula-graph.com.cn/figures/storage_write_process.png" /></p>
 <h2 id="kvstore">KVStore<a class="headerlink" href="#kvstore" title="Permanent link">&para;</a></h2>
 <p>Nebula Graph 使用自行开发的 KVStore，而不是其他开源 KVStore，原因如下：</p>
 <ul>
@@ -6197,7 +6213,7 @@
 <li>
 <p>点数据存储格式</p>
 <p>相比 Nebula Graph 2.x 版本，3.x 版本的每个点多了一个不含 TagID 字段并且无 value 的 key，用于支持无 Tag 的点。</p>
-<p><img alt="The vertex format of storage service" src="../3.0-vertex-key.png" /></p>
+<p><img alt="The vertex format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-vertex-key.png" /></p>
 <table>
 <thead>
 <tr>
@@ -6231,7 +6247,7 @@
 </li>
 </ul>
 <ul>
-<li>边数据存储格式<p><img alt="The edge format of storage service" src="../3.0-edge-key.png" /></p>
+<li>边数据存储格式<p><img alt="The edge format of storage service" src="https://docs-cdn.nebula-graph.com.cn/figures/3.0-edge-key.png" /></p>
 <table>
 <thead>
 <tr>
@@ -6280,7 +6296,7 @@
 <p><img alt="data partitioning" src="https://www-cdn.nebula-graph.com.cn/nebula-blog/DataModel02.png" /></p>
 <h3 id="_5">切边与存储放大<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph 中逻辑上的一条边对应着硬盘上的两个键值对（key-value pair），在边的数量和属性较多时，存储放大现象较明显。边的存储方式如下图所示。</p>
-<p><img alt="edge storage" src="../edge-division.png" /></p>
+<p><img alt="edge storage" src="https://docs-cdn.nebula-graph.com.cn/figures/edge-division.png" /></p>
 <p>上图以最简单的两个点和一条边为例，起点 SrcVertex 通过边 EdgeA 连接目的点 DstVertex，形成路径<code>(SrcVertex)-[EdgeA]-&gt;(DstVertex)</code>。这两个点和一条边会以 6 个键值对的形式保存在存储层的两个不同分片，即 Partition x 和 Partition y 中，详细说明如下：</p>
 <ul>
 <li>点 SrcVertex 的键值保存在 Partition x 中。</li>
@@ -6426,7 +6442,7 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
       
     
   </small>
