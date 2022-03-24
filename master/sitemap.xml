@@ -1166,6 +1166,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/12.query-visually/</loc>
+         <lastmod>2022-03-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/ex-ug-graph-exploration/</loc>
          <lastmod>2022-03-24</lastmod>
          <changefreq>daily</changefreq>
