@@ -4,7 +4,7 @@ Studio 连接到 Nebula Graph 数据库后，用户可以创建或删除图空�
 
 ## 支持版本
 
-Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-check-updates.md)。
+Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-release-note.md)。
 
 ## 前提条件
 
@@ -12,7 +12,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 - Studio 已经连接到 Nebula Graph 数据库。
 - 当前登录的账号拥有创建或删除图空间的权限，即：
-  - 如果 Nebula Graph 未开启身份验证，用户以默认用户名 `user` 账号和默认密码 `password` 登录。
+  - 如果 Nebula Graph 未开启身份验证，用户以默认用户名 `user` 账号和任意密码登录。
   - 如果 Nebula Graph 已开启身份验证，用户以 `root` 账号及其密码登录。
 
 ## 创建图空间
@@ -42,20 +42,20 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 4. 配置确认无误后，点击 **创建** 按钮。
   如果页面回到 **图空间列表**，而且列表中显示刚创建的图空间信息，表示图空间创建成功。
 
-![带有示例配置信息的图空间创建页面](../figs/st-ug-015.png "图空间创建页面")
+![带有示例配置信息的图空间创建页面](https://docs-cdn.nebula-graph.com.cn/figures/st-ug-006-cn.png "图空间创建页面")
 
 ## 删除图空间
 
 !!! danger
-    删除图空间会删除其中的所有数据，已删除的数据如未[备份](../../7.data-security/3.manage-snapshot.md)无法恢复。
+    删除图空间会删除其中的所有数据，已删除的数据如未[备份](../../backup-and-restore/3.manage-snapshot.md)无法恢复。
 
 按以下步骤使用 **Schema** 删除图空间：
 
 1. 在顶部导航栏里，点击 **Schema** 页签。
 
-2. 在图空间列表里，找到需要删除的图空间，并在 **操作** 列中，点击 ![表示删除的图标](../figs/alert-delete.png "删除") 图标。
+2. 在图空间列表里，找到需要删除的图空间，并在 **操作** 列中，点击 ![表示删除的图标](https://docs-cdn.nebula-graph.com.cn/figures/alert-delete.png "删除") 图标。
 
-  ![在图空间列表中删除指定的图空间](../figs/st-ug-016.png "删除图空间")
+  ![在图空间列表中删除指定的图空间](https://docs-cdn.nebula-graph.com.cn/figures/st-ug-007-cn.png "删除图空间")
 
 3. 在弹出的对话框中点击 **确认**。
   删除成功后，页面回到 **图空间列表**。

@@ -4,7 +4,7 @@
 
 ## 支持版本
 
-Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-check-updates.md)。
+Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-release-note.md)。
 
 ## 前提条件
 
@@ -46,7 +46,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 6. 完成设置后，在 **对应的 nGQL ** 面板，用户能看到与上述配置等价的 nGQL 语句。
   
-   ![create tag](../figs/st-ug-017.png)
+   ![create tag](https://docs-cdn.nebula-graph.com.cn/figures/st-ug-008-cn.png)
 
 7. 确认无误后，点击 **创建** 按钮。
 
@@ -63,7 +63,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 3. 在 **当前图空间** 里确认图空间名称。用户也可以通过选择图空间名称切换图空间。
 
-4. 点击 **标签** 页签，找到需要修改的 Tag，并在 **操作** 列中，点击 ![表示修改的图标](../figs/Setup.png "修改") 图标。
+4. 点击 **标签** 页签，找到需要修改的 Tag，并在 **操作** 列中，点击 ![表示修改的图标](https://docs-cdn.nebula-graph.com.cn/figures/Setup.png "修改") 图标。
 
 5. 在 **编辑** 页面，用户可以选择以下操作：
    
@@ -83,7 +83,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 !!! danger
 
-    删除 Tag 前先确认[影响](../../3.ngql-guide/10.tag-statements/2.drop-tag.md)，已删除的数据如未[备份](../../nebula-br/1.what-is-br.md)无法恢复。
+    删除 Tag 前先确认[影响](../../3.ngql-guide/10.tag-statements/2.drop-tag.md)，已删除的数据如未[备份](../../backup-and-restore/nebula-br/1.what-is-br.md)无法恢复。
 
 按以下步骤使用 **Schema** 删除 Tag：
 
@@ -93,7 +93,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 3. 在 **当前图空间** 里确认图空间名称。用户也可以通过选择图空间名称切换图空间。
 
-4. 点击 **标签** 页签，找到需要修改的 Tag，并在 **操作** 列中，点击![删除](../figs/alert-delete.png)图标。
+4. 点击 **标签** 页签，找到需要修改的 Tag，并在 **操作** 列中，点击![删除](https://docs-cdn.nebula-graph.com.cn/figures/alert-delete.png)图标。
 
 5. 在弹出的对话框中点击 **确认**。
 

@@ -4,7 +4,7 @@
 
 ## 支持版本
 
-Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-check-updates.md)。
+Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参考[版本更新](../about-studio/st-ug-release-note.md)。
 
 ## 前提条件
 
@@ -43,7 +43,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
   4. （可选）Tag 未设置索引时，用户可以设置 TTL：在 **设置 TTL（存活时间）** 模块左上角，点击勾选框，在列表中设置 `TTL_COL` 和 `TTL_DURATION` 参数信息。关于这两个参数的详细信息，参考 [TTL 配置](../../3.ngql-guide/8.clauses-and-options/ttl-options.md "点击前往 Nebula Graph 网站")。
 
 6. 完成设置后，在 **对应的 nGQL 语句** 面板上，用户能看到与上述配置等价的 nGQL 语句。  
-![定义 Edge type action 的属性](../figs/st-ug-022.png "定义 Edge type")
+![定义 Edge type action 的属性](https://docs-cdn.nebula-graph.com.cn/figures/st-ug-004-cn.png "定义 Edge type")
 
 7. 确认无误后，点击 **创建** 按钮。
 
@@ -59,7 +59,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 3. 在 **当前图空间** 里确认图空间名称。用户也可以通过选择图空间名称完成图空间切换。
 
-4. 点击 **边类型** 页签，找到需要修改的 Edge Type，并在 **操作** 列中，点击 ![表示修改的图标](../figs/Setup.png "修改") 图标。
+4. 点击 **边类型** 页签，找到需要修改的 Edge Type，并在 **操作** 列中，点击 ![表示修改的图标](https://docs-cdn.nebula-graph.com.cn/figures/Setup.png "修改") 图标。
 
 5. 在 **编辑** 页面，用户可以选择以下操作：
 
@@ -80,7 +80,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 ## 删除 Edge type
 
 !!! danger
-    删除 Edge type 前先确认[影响](../../3.ngql-guide/11.edge-type-statements/2.drop-edge.md)，已删除的数据如未[备份](../../7.data-security/3.manage-snapshot.md)无法恢复。
+    删除 Edge type 前先确认[影响](../../3.ngql-guide/11.edge-type-statements/2.drop-edge.md)，已删除的数据如未[备份](../../backup-and-restore/3.manage-snapshot.md)无法恢复。
 
 按以下步骤使用 **Schema** 删除 Edge type：
 
@@ -90,7 +90,7 @@ Studio v{{ studio.release }} 及以后版本。请更新版本，详细操作参
 
 3. 在 **当前图空间** 里确认图空间名称。用户也可以通过选择图空间名称切换图空间。
 
-4. 点击 **边类型** 页签，找到需要修改的 Edge type，并在 **操作** 列中，点击 ![表示删除的图标](../figs/alert-delete.png) 图标。
+4. 点击 **边类型** 页签，找到需要修改的 Edge type，并在 **操作** 列中，点击 ![表示删除的图标](https://docs-cdn.nebula-graph.com.cn/figures/alert-delete.png) 图标。
 
 5. 在弹出的对话框中点击 **确认**。
 
