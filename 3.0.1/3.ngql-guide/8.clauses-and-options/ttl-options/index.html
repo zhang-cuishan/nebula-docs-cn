@@ -6253,8 +6253,8 @@ nebula&gt; INSERT VERTEX t1(a) values &quot;101&quot;:(now());
 <div class="highlight"><pre><span></span><code># 创建 Tag 并设置 TTL 选项。
 nebula&gt; CREATE TAG IF NOT EXISTS t2(a int, b int, c string) ttl_duration= 100, ttl_col = &quot;a&quot;;
 
-# 插入点。过期时间戳为 1612778164774（1612778164674 + 100）。
-nebula&gt; INSERT VERTEX t2(a, b, c) values &quot;102&quot;:(1612778164674, 30, &quot;Hello&quot;);
+# 插入点。过期时间戳为 1648197238（1648197138 + 100）。
+nebula&gt; INSERT VERTEX t2(a, b, c) values &quot;102&quot;:(1648197138, 30, &quot;Hello&quot;);
 </code></pre></div>
 <h2 id="_6">删除存活时间<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>删除存活时间可以使用如下几种方法：</p>
@@ -6279,7 +6279,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) values &quot;102&quot;:(1612778164674, 30, 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
       
     
   </small>
