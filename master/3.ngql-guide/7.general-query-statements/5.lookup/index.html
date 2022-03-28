@@ -6251,12 +6251,11 @@ nebula&gt; LOOKUP ON follow \
 nebula&gt; LOOKUP ON follow \
         WHERE follow.degree == 90 \
         YIELD properties(edge).degree;
-+-------------+-------------+---------+-------------------------+
-| SrcVID      | DstVID      | Ranking | properties(EDGE).degree |
-+-------------+-------------+---------+-------------------------+
-| &quot;player150&quot; | &quot;player143&quot; | 0       | 90                      |
-| &quot;player150&quot; | &quot;player137&quot; | 0       | 90                      |
-| &quot;player148&quot; | &quot;player136&quot; | 0       | 90                      |
++-------------------------+
+| properties(EDGE).degree |
++-------------------------+
+| 90                      |
+| 90                      |
 ...
 
 nebula&gt; LOOKUP ON follow \
@@ -6358,7 +6357,7 @@ nebula&gt; LOOKUP ON follow YIELD edge AS e| \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 28, 2022</span>
       
     
   </small>
