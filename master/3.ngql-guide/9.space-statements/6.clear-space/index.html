@@ -6058,7 +6058,7 @@
 </li>
 </ul>
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;
+<div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;
 </code></pre></div>
 <table>
 <thead>
@@ -6072,10 +6072,14 @@
 <td><code>IF EXISTS</code></td>
 <td>检查待清空的图空间是否存在，如果图空间存在，则继续执行清空操作；如果图空间不存在，则完成执行，并且提示执行成功，不会提示图空间不存在。若不设置该选项，当图空间不存在时，<code>CLEAR SPACE</code>语句会执行失败，系统会报错。</td>
 </tr>
+<tr>
+<td><code>space_name</code></td>
+<td>要清除数据的图空间名称。</td>
+</tr>
 </tbody>
 </table>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>CLEAR SPACE basketballplayer
+<div class="highlight"><pre><span></span><code>CLEAR SPACE basketballplayer;
 </code></pre></div>
 <h2 id="_4">保留的数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>图空间中，<code>CLEAR SPACE</code>不会删除的数据包括：</p>
@@ -6086,11 +6090,11 @@
 </ul>
 <p>下面的执行示例明确展示了<code>CLEAR SPACE</code>会删除与保留的数据。</p>
 <div class="highlight"><pre><span></span><code># 进入图空间 basketballplayer。
-nebula [(none)]&gt; use basketballplayer
+nebula [(none)]&gt; use basketballplayer;
 Execution succeeded
 
 # 查看 Tag 和 Edge type。
-nebula[basketballplayer]&gt; SHOW TAGS
+nebula[basketballplayer]&gt; SHOW TAGS;
 +----------+
 | Name     |
 +----------+
@@ -6099,7 +6103,7 @@ nebula[basketballplayer]&gt; SHOW TAGS
 +----------+
 Got 2 rows
 
-nebula[basketballplayer]&gt; SHOW EDGES
+nebula[basketballplayer]&gt; SHOW EDGES;
 +----------+
 | Name     |
 +----------+
@@ -6109,7 +6113,7 @@ nebula[basketballplayer]&gt; SHOW EDGES
 Got 2 rows
 
 # 统计图空间中的数据。
-nebula[basketballplayer]&gt; SUBMIT JOB STATS
+nebula[basketballplayer]&gt; SUBMIT JOB STATS;
 +------------+
 | New Job Id |
 +------------+
@@ -6118,7 +6122,7 @@ nebula[basketballplayer]&gt; SUBMIT JOB STATS
 Got 1 rows
 
 # 查看统计结果。
-nebula[basketballplayer]&gt; SHOW STATS
+nebula[basketballplayer]&gt; SHOW STATS;
 +---------+------------+-------+
 | Type    | Name       | Count |
 +---------+------------+-------+
@@ -6132,7 +6136,7 @@ nebula[basketballplayer]&gt; SHOW STATS
 Got 6 rows
 
 # 查看 Tag 索引。
-nebula[basketballplayer]&gt; SHOW TAG INDEXES
+nebula[basketballplayer]&gt; SHOW TAG INDEXES;
 +------------------+----------+----------+
 | Index Name       | By Tag   | Columns  |
 +------------------+----------+----------+
@@ -6143,11 +6147,11 @@ Got 2 rows
 
 # ----------------------- CLEAR SPACE 分割线 -----------------------
 # 执行 CLEAR SPACE 清空图空间 basketballplayer。
-nebula[basketballplayer]&gt; CLEAR SPACE basketballplayer
+nebula[basketballplayer]&gt; CLEAR SPACE basketballplayer;
 Execution succeeded
 
 # 更新统计信息。
-nebula[basketballplayer]&gt; SUBMIT JOB STATS
+nebula[basketballplayer]&gt; SUBMIT JOB STATS;
 +------------+
 | New Job Id |
 +------------+
@@ -6156,7 +6160,7 @@ nebula[basketballplayer]&gt; SUBMIT JOB STATS
 Got 1 rows
 
 # 查看统计信息。Tag 和 Edge type 还存在，但所有的点和边都没了。
-nebula[basketballplayer]&gt; SHOW STATS
+nebula[basketballplayer]&gt; SHOW STATS;
 +---------+------------+-------+
 | Type    | Name       | Count |
 +---------+------------+-------+
@@ -6170,7 +6174,7 @@ nebula[basketballplayer]&gt; SHOW STATS
 Got 6 rows
 
 # 查看 Tag 索引，它们依然存在。
-nebula[basketballplayer]&gt; SHOW TAG INDEXES
+nebula[basketballplayer]&gt; SHOW TAG INDEXES;
 +------------------+----------+----------+
 | Index Name       | By Tag   | Columns  |
 +------------------+----------+----------+
@@ -6185,7 +6189,7 @@ Got 2 rows (time spent 523/978 us)
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 29, 2022</span>
       
     
   </small>
