@@ -6269,7 +6269,10 @@
 <li>主从集群的数据同步是异步的（近实时）。</li>
 </ul>
 <ul>
-<li>不支持多个主集群同步到 1 个从集群，只支持 1 对 1。</li>
+<li>不支持多个主集群同步到 1 个从集群。</li>
+</ul>
+<ul>
+<li>支持链式方式同步到多个从集群，例如<code>主集群-&gt;从集群1-&gt;从集群2-&gt;从集群3</code>。</li>
 </ul>
 <h2 id="_5">操作步骤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">准备工作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -6302,7 +6305,7 @@
 <p>修改配置文件时，必须修改的参数如下：</p>
 <p>- 所有配置文件里都需要用真实的机器 IP 地址替换<code>local_ip</code>的<code>127.0.0.1</code>。</p>
 <p>- 所有<code>nebula-graphd.conf</code>配置文件里设置<code>enable_authorize=true</code>。</p>
-<p>- 主从集群填写各自的<code>meta_server_addrs</code>。</p>
+<p>- 主从集群填写各自集群的<code>meta_server_addrs</code>，注意不要错填其他集群的地址。</p>
 <p>- listener 的配置文件里<code>meta_server_addrs</code>填写主集群的机器 IP，<code>meta_sync_listener</code>填写 listener 机器的 IP。</p>
 <p>- drainer 的配置文件里<code>meta_server_addrs</code>填写从集群的机器 IP。</p>
 <p>更多配置说明，请参见<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
@@ -6561,14 +6564,14 @@ nebula&gt; SET VARIABLES read_only=true;
 <h3 id="_13">如何判断数据同步进度？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <!--show sync-->
 
-<p>可以通过比较当前正在同步的 WAL 的时间戳和最新的 WAL 的时间戳，从而判断数据同步是否正常，也可以自行实现对进度的监控。</p>
+<p>暂无工具进行直接判断。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2022</span>
       
     
   </small>
