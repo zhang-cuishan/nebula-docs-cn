@@ -6302,7 +6302,8 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>修改配置文件时，必须修改的参数如下：</p>
+<p>修改配置文件时需要注意：</p>
+<p>- 将配置文件的后缀<code>.default</code>或<code>.production</code>删除。</p>
 <p>- 所有配置文件里都需要用真实的机器 IP 地址替换<code>local_ip</code>的<code>127.0.0.1</code>。</p>
 <p>- 所有<code>nebula-graphd.conf</code>配置文件里设置<code>enable_authorize=true</code>。</p>
 <p>- 主从集群填写各自集群的<code>meta_server_addrs</code>，注意不要错填其他集群的地址。</p>
@@ -6571,7 +6572,7 @@ nebula&gt; SET VARIABLES read_only=true;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 1, 2022</span>
       
     
   </small>
