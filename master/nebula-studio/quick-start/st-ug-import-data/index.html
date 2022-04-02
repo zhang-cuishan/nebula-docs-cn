@@ -6089,7 +6089,7 @@
 <p>在 <strong>上传文件</strong> 页面，点击 <strong>上传文件</strong> 按钮，并选择需要的 CSV 文件。本示例中，选择 <code>edge_serve.csv</code>、<code>edge_follow.csv</code>、<code>vertex_player.csv</code> 和 <code>vertex_team.csv</code> 文件。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>一次可以选择多个 CSV 文件，本文使用的 CSV 文件可以在<a href="../st-ug-plan-schema/">规划 Schema </a> 中下载。</p>
+<p>一次可以选择多个 CSV 文件，本文使用的 CSV 文件可以在<a href="../st-ug-plan-schema/">规划 Schema</a> 中下载。</p>
 </div>
 </li>
 <li>
@@ -6104,6 +6104,10 @@
 <li>在标签页内点击 <strong>导入数据</strong> 按钮。</li>
 <li>
 <p>在 <strong>导入数据</strong> 页面，点击 <strong>导入模版</strong> 直接通过配置文件导入数据或点击 <strong>+ 创建导入任务</strong> 按钮，完成以下任务：</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Studio 通过<strong>导入模板</strong>导入数据与 <a href="../../../nebula-importer/use-importer/">Nebula Importer</a> 大致相同，但是<strong>导入模板</strong>中配置文件的所有文件路径仅保留文件名。并且请确保在导入 YAML 文件之前上传所有 CSV 数据文件。</p>
+</div>
 <ul>
 <li>选择图空间。</li>
 <li>填写任务名称。</li>
@@ -6145,7 +6149,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
       
     
   </small>

@@ -6335,7 +6335,9 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
  <div class="highlight"><pre><span></span><code>$ sudo rpm -i nebula-graph-studio-3.2.1.x86_64.rpm --prefix<span class="o">=</span>&lt;path&gt; 
 </code></pre></div></p>
 <p>当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。</p>
-<div class="highlight"><pre><span></span><code>Created symlink from /etc/systemd/system/multi-user.target.wants/nebula-graph-studio.service to /usr/lib/systemd/system/nebula-graph-studio.service.
+<div class="highlight"><pre><span></span><code>Start installing Nebula Studio now...
+Nebula Studio has been installed.
+Nebula Studio started automatically.
 </code></pre></div>
 </li>
 <li>
@@ -6348,6 +6350,9 @@ Nebula Graph Studio（ 以下简称 Studio ）支持云端或本地部署。云�
 <p>用户可以使用以下的命令卸载 Studio。</p>
 <div class="highlight"><pre><span></span><code>$ sudo rpm -e nebula-graph-studio-3.2.1.x86_64
 </code></pre></div>
+<p>当屏幕返回以下信息时，表示 PRM 版 Studio 已经卸载。
+<div class="highlight"><pre><span></span><code>Nebula Studio removed, bye~
+</code></pre></div></p>
 <h3 id="_4">异常处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>如果在安装过程中自动启动失败或是需要手动启动或停止服务，请使用以下命令</p>
 <ul>
@@ -6617,7 +6622,7 @@ $ ./server
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
       
     
   </small>
