@@ -3825,8 +3825,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    主集群中已经有一部分存量数据了，从集群可以同步到之前的存量数据吗？
+  <a href="#data_data" class="md-nav__link">
+    主集群中已经有 data 了，从集群可以同步到之前的存量 data 吗？
   </a>
   
 </li>
@@ -3853,21 +3853,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     主从集群的机器数量、副本数量、分片数量需要相同吗？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     如果同步时出现故障，如何修复？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如何判断数据同步进度？
   </a>
   
@@ -6198,8 +6198,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    主集群中已经有一部分存量数据了，从集群可以同步到之前的存量数据吗？
+  <a href="#data_data" class="md-nav__link">
+    主集群中已经有 data 了，从集群可以同步到之前的存量 data 吗？
   </a>
   
 </li>
@@ -6226,21 +6226,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     主从集群的机器数量、副本数量、分片数量需要相同吗？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     如果同步时出现故障，如何修复？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如何判断数据同步进度？
   </a>
   
@@ -6588,23 +6588,23 @@ nebula&gt; SET VARIABLES read_only=true;
 </li>
 </ol>
 <h2 id="_9">常见问题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<h3 id="_10">主集群中已经有一部分存量数据了，从集群可以同步到之前的存量数据吗？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p>可以。drainer 接收到 listener 的 WAL 后，会发现从集群中没有对应的数据，然后会从 listener 中拉取全量数据并覆盖到从集群中的相应分片。</p>
+<h3 id="data_data">主集群中已经有 data 了，从集群可以同步到之前的存量 data 吗？<a class="headerlink" href="#data_data" title="Permanent link">&para;</a></h3>
+<p>可以。对于主集群中的存量 data，主集群的 listener 会从各个分片的 leader 节点拉取快照，然后以 WAL 的形式发送给 drainer。存量 data 相关的 WAL 发送完毕后，开始发送主集群的增量 data 相关的 WAL 给 drainer。</p>
 <h3 id="data">从集群中已经有 data 了，数据同步会有影响吗？<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
 <p>仍然会进行全量数据同步。如果从集群中的数据是主集群数据的子集，最终会数据一致；如果不是主集群数据的子集，从集群不会进行反向同步，而且这部分数据会保留，请确保主从集群数据不会冲突。</p>
 <h3 id="schema">从集群中已经有 Schema 了，数据同步会有影响吗？<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
 <p>数据同步时主集群中的 Schema 会覆盖从集群中的 Schema，因此可能导致被覆盖的 Schema 对应的数据失效或者数据不一致。请确保从集群中的 Schema 和主集群中的 Schema 没有冲突。</p>
 <h3 id="schema_1">修改主集群的 Schema 会影响数据同步吗？<a class="headerlink" href="#schema_1" title="Permanent link">&para;</a></h3>
 <p>可能会增加数据同步延迟。因为 Schema 数据和 data 数据是分开处理的（Meta listener 和 Storage listener），data 数据同步时，drainer 会检查自身的 Schema 版本，如果版本大于当前存储的版本，说明 Schema 有更新，这时候会暂缓更新，等待从集群中的 Schema 数据先更新完成。</p>
-<h3 id="_11">主从集群的机器数量、副本数量、分片数量需要相同吗？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<p>不需要。因为是以图空间为基本单位，主集群不需要知道从集群的架构信息，只需要将 WAL 发送给 listener 即可。</p>
-<h3 id="_12">如果同步时出现故障，如何修复？<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_10">主从集群的机器数量、副本数量、分片数量需要相同吗？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>不需要。因为是以图空间为基本单位，主集群不需要知道从集群的架构信息，只需要 listener 将 WAL 发送给 drainer 即可。</p>
+<h3 id="_11">如果同步时出现故障，如何修复？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>可以根据故障节点，进行如下处理：</p>
 <ul>
 <li>主集群故障：会导致同步暂停，重启主集群服务即可。</li>
 <li>listener/drainer/从集群故障：服务恢复后，会收到前一节点发送的故障期间的 WAL。例如 drainer 故障恢复后，会收到 listener 发送来的故障期间的 WAL。如果用新的节点替换故障的 drainer 节点或从集群，需要将原节点的数据复制到新节点，否则相当于重新同步全量数据。</li>
 </ul>
-<h3 id="_13">如何判断数据同步进度？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_12">如何判断数据同步进度？<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <!--show sync-->
 
 <p>暂无工具进行直接判断。</p>
@@ -6614,7 +6614,7 @@ nebula&gt; SET VARIABLES read_only=true;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2022</span>
       
     
   </small>
