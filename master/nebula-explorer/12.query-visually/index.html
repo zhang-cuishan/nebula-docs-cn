@@ -5114,6 +5114,33 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    配置项说明
+  </a>
+  
+    <nav class="md-nav" aria-label="配置项说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    点的配置项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    边的配置项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     示例
   </a>
   
@@ -6046,6 +6073,33 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    配置项说明
+  </a>
+  
+    <nav class="md-nav" aria-label="配置项说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    点的配置项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    边的配置项
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     示例
   </a>
   
@@ -6144,7 +6198,30 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">配置项说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">点的配置项<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="vertex_confi" src="https://docs-cdn.nebula-graph.com.cn/figures/vertex-config_cn.png" /></p>
+<ul>
+<li>在<strong>标签名</strong>中配置多个 Tag 查询多 Tag 的点。</li>
+<li>在<strong>筛选条件</strong>中设置一组或多组过滤条件，包括点的属性、运算符、属性值。</li>
+</ul>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>当配置多 Tag 的点时，仅企业版支持设置<strong>筛选条件</strong>查询数据。</p>
+</div>
+<h3 id="_7">边的配置项<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><img alt="vertex_confi" src="https://docs-cdn.nebula-graph.com.cn/figures/edge-config_cn.png" /></p>
+<ul>
+<li>在<strong>边类型</strong>中配置一个或多个 Edge Type。</li>
+<li>在<strong>方向</strong>中设置边的方向，包括流出、流入、双向。</li>
+<li>选择<strong>单步</strong>设置定长路径，选择<strong>范围</strong>设置变长路径。</li>
+<li>在<strong>筛选条件</strong>中设置一组或多组过滤条件，包括边的属性、运算符、属性值。</li>
+</ul>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>当配置多 Edge Type 的边时，仅企业版支持设置<strong>筛选条件</strong>查询数据。</p>
+</div>
+<h2 id="_8">示例<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <h3 id="1">示例 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>查询和球员 Yao Ming 相互关注，且年龄大于 35 岁的球员以及这些球员都效忠哪些球队，并限制最后查询结果中的效忠关系数为 6。</p>
 <p><img alt="query_visually_example_1" src="https://docs-cdn.nebula-graph.com.cn/figures/query_visaully_example_1.gif" /></p>
@@ -6154,12 +6231,14 @@
 </li>
 <li>
 <p>配置过滤条件。</p>
-<p>1. 设置第一个 player 的过滤条件为 player.name == Yao Ming。
-  2. 设置两个 player 之间边的边类型为 follow、双向、步数为 1。
-  3. 设置第二个 player 的过滤条件为 player.age &gt; 35。
-  4. 设置第二个 player 和 team 之间边的边类型为 serve，方向为流出，步数为 1。
-  5. 单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png" />选中第二个 player、team、及它们之间的 serve 边。
-  6. 单击<strong>模式查询</strong>框，然后设置<strong>结果数量限制</strong>为 6。</p>
+<ol>
+<li>设置第一个 player 的过滤条件为 player.name == Yao Ming。</li>
+<li>设置两个 player 之间边的边类型为 follow、双向、步数为 1。</li>
+<li>设置第二个 player 的过滤条件为 player.age &gt; 35。</li>
+<li>设置第二个 player 和 team 之间边的边类型为 serve，方向为流出，步数为 1。</li>
+<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png" />选中第二个 player、team、及它们之间的 serve 边。</li>
+<li>单击<strong>模式查询</strong>框，然后设置<strong>结果数量限制</strong>为 6。</li>
+</ol>
 </li>
 <li>
 <p>单击<strong>查询</strong>。系统将 6 条查询关系结果显示至画布中。</p>
@@ -6172,12 +6251,14 @@
 <li>构造查询模式，拖拽 Tag 至面板中（3 个 player 和 1 个 team）。</li>
 <li>
 <p>配置过滤条件。</p>
-<p>1. 设置第一个和第二个 player 之间边的边类型为 follow、双向、步数为 1。
-  2. 设置第一个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。
-  3. 设置第二个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。
-  4. 设置第三个 player 的过滤条件为 player.age &gt; 30。
-  5. 设置第三个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。
-  6. 单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png" />选中第三个 player、team、及它们之间的 serve 边。</p>
+<ol>
+<li>设置第一个和第二个 player 之间边的边类型为 follow、双向、步数为 1。</li>
+<li>设置第一个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>设置第二个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>设置第三个 player 的过滤条件为 player.age &gt; 30。</li>
+<li>设置第三个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png" />选中第三个 player、team、及它们之间的 serve 边。</li>
+</ol>
 </li>
 <li>
 <p>单击<strong>查询</strong>。</p>
@@ -6189,7 +6270,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2022</span>
       
     
   </small>
