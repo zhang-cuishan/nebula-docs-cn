@@ -3381,6 +3381,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-log/" class="md-nav__link">
+        审计日志（企业版）
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6066,7 +6080,8 @@
 
 
 <h1 id="_1">日志配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>Nebula Graph 使用 <a href="https://github.com/google/glog">glog</a> 打印日志，使用 <a href="https://gflags.github.io/gflags/">gflags</a> 控制日志级别，并在运行时通过 HTTP 接口动态修改日志级别，方便跟踪问题。</p>
+<p>Nebula Graph 默认使用 <a href="https://github.com/google/glog">glog</a> 打印日志，使用 <a href="https://gflags.github.io/gflags/">gflags</a> 控制日志级别，并在运行时通过 HTTP 接口动态修改日志级别，方便跟踪问题。</p>
+<p>Nebula Graph 企业版还支持<a href="../audit-log/">审计日志</a>。</p>
 <h2 id="_2">日志目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>日志的默认目录为<code>/usr/local/nebula/logs/</code>。</p>
 <p>如果在 Nebula Graph 运行过程中删除日志目录，日志不会继续打印，但是不会影响业务。重启服务可以恢复正常。</p>
@@ -6155,7 +6170,7 @@ $ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</sp
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2022</span>
       
     
   </small>
@@ -6194,13 +6209,13 @@ $ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</sp
       
       
         
-        <a href="../../../6.monitor-and-metrics/1.query-performance-metrics/" class="md-footer__link md-footer__link--next" aria-label="下一页: 查询 Nebula Graph 监控指标" rel="next">
+        <a href="../audit-log/" class="md-footer__link md-footer__link--next" aria-label="下一页: 审计日志（企业版）" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              查询 Nebula Graph 监控指标
+              审计日志（企业版）
             </div>
           </div>
           <div class="md-footer__button md-icon">
