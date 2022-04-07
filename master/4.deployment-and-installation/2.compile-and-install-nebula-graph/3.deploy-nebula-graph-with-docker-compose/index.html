@@ -6247,7 +6247,7 @@
 <h2 id="nebula_graph">部署和连接 Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>通过 Git 克隆<code>nebula-docker-compose</code>仓库的<code>3.0.0</code>分支到主机。</p>
+<p>通过 Git 克隆<code>nebula-docker-compose</code>仓库的<code>3.1.0</code>分支到主机。</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p><code>master</code>分支包含最新的未测试代码。请<strong>不要</strong>在生产环境使用此版本。</p>
@@ -6419,7 +6419,7 @@ Removing network nebula-docker-compose_nebula-net
 <h3 id="docker">如何固定 Docker 映射到外部的端口？<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <p>在目录<code>nebula-docker-compose</code>内修改文件<code>docker-compose.yaml</code>，将对应服务的<code>ports</code>设置为固定映射，例如：</p>
 <div class="highlight"><pre><span></span><code>graphd:
-    image: vesoft/nebula-graphd:v3.0.0
+    image: vesoft/nebula-graphd:release-3.1
     ...
     ports:
       - <span class="m">9669</span>:9669

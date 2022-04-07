@@ -4995,13 +4995,20 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    导航栏
+    顶部导航栏
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    左侧导航栏
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     画布
   </a>
   
@@ -5991,13 +5998,20 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    导航栏
+    顶部导航栏
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    左侧导航栏
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     画布
   </a>
   
@@ -6022,21 +6036,63 @@
 
 
 <h1 id="_1">页面概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文介绍 Explorer 的基本组成，帮忙用户了解 Explorer 的各功能。</p>
-<p>Explorer 由导航栏和画布两大模块组成。</p>
-<p><img alt="explorer-overview" src="https://docs-cdn.nebula-graph.com.cn/figures/explorer-overview-1_cn.png" /></p>
+<p>本文介绍 Nebula Explorer 的基本组成，帮忙用户了解 Nebula Explorer 的各功能。</p>
+<p>Nebula Explorer 由顶部导航栏、左侧导航栏、和画布三大模块组成。</p>
+<p><img alt="explorer-overview" src="https://docs-cdn.nebula-graph.com.cn/figures/explorer-overview_cn.png" /></p>
+<h2 id="_2">顶部导航栏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>图标/元素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Explorer</strong></td>
+<td>可视化探索及分析数据。详情参见<a href="../ex-ug-query-exploration/">开始探索</a>、<a href="../node-filtering/">节点筛选</a>、<a href="../ex-ug-graph-exploration/">探索拓展</a>。</td>
+</tr>
+<tr>
+<td><strong>Visual Query</strong></td>
+<td>可视化构造场景进行数据查询。详情参见<a href="../12.query-visually/">可视化查询</a>。</td>
+</tr>
+<tr>
+<td><img alt="create_schema" src="https://docs-cdn.nebula-graph.com.cn/figures/studio-nav-schema.png" /></td>
+<td>对 Nebula Graph 图空间进行管理。详情参见<a href="../10.create-schema/">创建 Schema</a>。</td>
+</tr>
+<tr>
+<td><img alt="import_data" src="https://docs-cdn.nebula-graph.com.cn/figures/studio-btn-download.png" /></td>
+<td>将数据批量导入 Nebula Graph。详情参见<a href="../11.import-data/">导入数据</a>。</td>
+</tr>
+<tr>
+<td><img alt="Console" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-console2.png" /></td>
+<td>对 Nebula Graph 内的数据使用 nGQL 进行查询操作。详情参见<a href="../explorer-console/">控制台</a>。</td>
+</tr>
+<tr>
+<td><img alt="language" src="https://docs-cdn.nebula-graph.com.cn/figures/navbar-language.png" /></td>
+<td>选择 Nebula Explorer 页面的语言，支持中文和英文。</td>
+</tr>
+<tr>
+<td><img alt="help" src="https://docs-cdn.nebula-graph.com.cn/figures/navbar-help.png" /></td>
+<td>帮助页面，指导和帮忙用户使用 Nebula Graph。</td>
+</tr>
+<tr>
+<td><img alt="clear_connection" src="https://docs-cdn.nebula-graph.com.cn/figures/image-icon10.png" /></td>
+<td>显示内核版本并可以断开与 Nebula Explorer 的连接。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">左侧导航栏<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>登录 Explorer 后，用户需选择并单击一个目标图空间，才可进入画布页面并解锁左侧导航栏的查询及分析功能。</p>
+<p>登录 Explorer 后，用户需选择并单击一个目标图空间，然后才可解锁左侧导航栏的查询及分析功能。详情参见<a href="../13.choose-graphspace/">选择图空间</a>。</p>
 </div>
-<p><img alt="explorer-overview-graph_space" src="https://docs-cdn.nebula-graph.com.cn/figures/explorer-overview-graphspace_cn.png" /></p>
-<h2 id="_2">导航栏<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>用户可以通过单击 Explorer 页面左侧的图标进行图数据导入、图数据分析与探索等操作。左侧导航栏的图标及描述如下：</p>
 <table>
 <thead>
 <tr>
 <th>图标</th>
-<th>描述</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -6050,35 +6106,19 @@
 </tr>
 <tr>
 <td><img alt="expand" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-expand_cn.png" /></td>
-<td>选择页面上的节点并进行自定义拓展，包括方向、步数、过滤条件等。</td>
+<td>选择页面上的节点并进行自定义拓展，包括方向、步数、过滤条件等。更多信息，参见<a href="../ex-ug-graph-exploration/">探索拓展</a>。</td>
 </tr>
 <tr>
 <td><img alt="commonNeighbor" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-commonNeighbor_cn.png" /></td>
-<td>选择页面上至少两个点并查看它们的共同邻居。</td>
+<td>选择页面上至少两个点并查看它们的共同邻居。更多信息，参见<a href="../ex-ug-graph-exploration/">探索拓展</a>。</td>
 </tr>
 <tr>
 <td><img alt="findPath" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-findPath_cn.png" /></td>
-<td>查询起点到终点之间的所有路径、最短路径和非循环路径。</td>
+<td>查询起点到终点之间的所有路径、最短路径和非循环路径。更多信息，参见<a href="../ex-ug-graph-exploration/">探索拓展</a>。</td>
 </tr>
 <tr>
 <td><img alt="propertyView" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-propertyView_cn.png" /></td>
-<td>选择是否显画布中的点或边的属性值。</td>
-</tr>
-<tr>
-<td><img alt="hide" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-miss_cn.png" /></td>
-<td>隐藏画布中选中的点边。</td>
-</tr>
-<tr>
-<td><img alt="hideReverse" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-missReverse_cn.png" /></td>
-<td>隐藏画布中未选择的所有点边。</td>
-</tr>
-<tr>
-<td><img alt="Revoke" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-Revoke_cn.png" /></td>
-<td>撤销上一步新增或隐藏的操作。</td>
-</tr>
-<tr>
-<td><img alt="Redo" src="https://docs-cdn.nebula-graph.com.cn/figures/redo_cn.png" /></td>
-<td>恢复上一步撤销的操作。</td>
+<td>选择是否显画布中的点或边的属性值。更多信息，参见<a href="../ex-ug-graph-exploration/">探索拓展</a>。</td>
 </tr>
 <tr>
 <td><img alt="snapshot" src="https://docs-cdn.nebula-graph.com.cn/figures/snapshot-history_cn.png" /></td>
@@ -6086,23 +6126,23 @@
 </tr>
 <tr>
 <td><img alt="graphSpace" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-graphSpace_cn.png" /></td>
-<td>查看所有图空间，单击图空间可创建相应图空间的画布。</td>
+<td>查看所有图空间，单击图空间可创建相应图空间的画布。更多信息，参见<a href="../13.choose-graphspace/">选择图空间</a>。</td>
 </tr>
 <tr>
 <td><img alt="Help" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-help_cn.png" /></td>
 <td>查看 Explorer 操作文档、论坛内容等。</td>
 </tr>
 <tr>
-<td><img alt="Setup" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-setup_cn.png" /></td>
+<td><img alt="Setup" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-setup2.png" /></td>
 <td>查看用户名和快捷键、修改语言设置、限制返回结果数量、清除 Explorer 链接等。</td>
-</tr>
-<tr>
-<td><img alt="Console" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-console_cn.png" /></td>
-<td>使用命令行查询，然后将查询结果导入至画布中。更多信息，参见<a href="../explorer-console/">控制台</a>。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_3">画布<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">画布<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>登录 Explorer 后，用户需选择并单击一个目标图空间，才可进入画布页面。详情参见<a href="../13.choose-graphspace/">选择图空间</a>。</p>
+</div>
 <p>图数据可视化地展示在画布中。Explorer 的画布由以下部分组成：</p>
 <ul>
 <li>顶部页签</li>
@@ -6120,7 +6160,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2022</span>
       
     
   </small>

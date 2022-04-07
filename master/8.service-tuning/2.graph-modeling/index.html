@@ -6279,7 +6279,7 @@ nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
 <p>第二种情况：使用 <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a> 语句删除点的时候，没有使用<code>WITH EDGE</code>选项。此时系统默认不删除该点关联的出边和入边，这些边将变成悬挂边。</p>
 <p>Nebula Graph master 的数据模型中，由于设计允许图中存在“悬挂边”；没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。用户可以使用 <a href="../../3.ngql-guide/7.general-query-statements/3.go/">GO</a> 和 <a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a> 语句查询到悬挂边，但无法使用 <a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a> 语句查询到悬挂边。</p>
 <p>示例：
-<div class="highlight"><pre><span></span><code>// 插入起点为“11”，终点为“13”并且都不存在与数据库中的悬挂边
+<div class="highlight"><pre><span></span><code>// 插入起点为“11”，终点为“13”并且都不存在于数据库中的悬挂边
 nebula&gt; CREATE EDGE IF NOT EXISTS e1 <span class="o">(</span>name string, age int<span class="o">)</span><span class="p">;</span>
 nebula&gt; INSERT EDGE e1 <span class="o">(</span>name, age<span class="o">)</span> VALUES <span class="s2">&quot;11&quot;</span>-&gt;<span class="s2">&quot;13&quot;</span>:<span class="o">(</span><span class="s2">&quot;n1&quot;</span>, <span class="m">1</span><span class="o">)</span><span class="p">;</span>
 
@@ -6351,7 +6351,7 @@ Empty <span class="nb">set</span> <span class="o">(</span><span class="nb">time<
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2022</span>
       
     
   </small>
