@@ -46,13 +46,14 @@ extra:
   analytics:
     provider: google
     property: UA-60523578-15
+  # branch represents code names (git clone). release represents version number used in texts.
   nebula:
     release: master
     nightly: nightly
     master: master
     base20: 2.0
     base200: 2.0.0
-    branch: v3.0.0
+    branch: release-3.1
   version:
     method: mike
   social:
@@ -62,9 +63,9 @@ extra:
     base111b: 1.1.1-beta
     base220: 2.2.1
     base300: 3.0.0
-    release: 3.2.1
+    release: 3.3.0
   explorer:
-    release: 2.2.0
+    release: 3.0.0
   exchange_ent:
     release: 3.0.0
     branch: v3.0.0
@@ -73,13 +74,13 @@ extra:
     branch: v3.0.0
     tag: v3.0.0
   importer:
-    release: 3.0.0
+    release: 3.1.0
     branch: v3.0.0
   algorithm:
     release: 3.0.0
     branch: v3.0.0
   plato:
-    release: 1.0.0
+    release: 1.1.0
     branch: v1.0.0
   sparkconnector:
     release: 3.0.0
@@ -90,21 +91,21 @@ extra:
     branch: v3.0.0
     tag: v3.0.0
   dockercompose:
-    release: 3.0.0
+    release: 3.1.0
     branch: v3.0.0
   common:
     release: 2.5.0
   dashboard:
-    release: 1.1.0
+    release: 3.0.0
     base100: 1.0.0
     branch: v1.1.0
   dashboard_ent:
-    release: 1.1.0
-  console:
     release: 3.0.0
+  console:
+    release: 3.1.0
     branch: v3.0.0
   br:
-    release: 0.6.0
+    release: 0.7.0
   cpp:
     release: 3.0.0
     branch: v3.0.0
@@ -122,9 +123,10 @@ extra:
     branch: master
     tag: v1.0.0
   operator:
-    release: 0.9.0
+    release: 1.1.0
     branch: v0.9.0
-
+  exporter:
+    release: 3.0.0
 nav:
   - 前言: README.md
   - 简介:
@@ -146,7 +148,8 @@ nav:
       - 步骤1：安装 Nebula Graph: 2.quick-start/2.install-nebula-graph.md
       - 步骤2：启动 Nebula Graph: 2.quick-start/5.start-stop-service.md
       - 步骤3：连接 Nebula Graph: 2.quick-start/3.connect-to-nebula-graph.md
-      - 步骤4：使用常用命令: 2.quick-start/4.nebula-graph-crud.md
+      - 步骤4：注册 Storage 服务: 2.quick-start/3.1add-storage-hosts.md
+      - 步骤5：使用常用命令: 2.quick-start/4.nebula-graph-crud.md
       - nGQL 命令汇总: 2.quick-start/6.cheatsheet-for-ngql-command.md
 
   - nGQL 指南:
@@ -328,6 +331,7 @@ nav:
           - Linux 内核配置: 5.configurations-and-logs/1.configurations/6.kernel-config.md
       - 日志:
           - 日志配置: 5.configurations-and-logs/2.log-management/logs.md
+          - 审计日志（企业版）: 5.configurations-and-logs/2.log-management/audit-log.md
 
   - 监控:
       - 查询 Nebula Graph 监控指标: 6.monitor-and-metrics/1.query-performance-metrics.md
