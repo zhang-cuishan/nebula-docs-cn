@@ -6127,7 +6127,7 @@
 <li>必须在原服务器上原地升级，不能修改原机器的 IP 地址、配置文件，不可更改集群拓扑。</li>
 </ul>
 <ul>
-<li>硬盘空间要求：各机器硬盘剩余空间都需要是原数据目录的<strong>三倍</strong>。</li>
+<li>硬盘空间要求：各机器硬盘剩余空间都需要是原数据目录的<strong>二倍</strong>。其中一倍空间用于容纳手动备份的数据，另一倍空间用于容纳复制到<code>dst_db_path</code>的 WAL，以及原有数据中新增的用于支持无 tag 点的 key。</li>
 </ul>
 <ul>
 <li>已知会造成数据丢失的 4 种场景，和 alter schema 以及 default value 相关，参见 <a href="https://github.com/vesoft-inc/nebula-graph/issues/857">github known issues</a>。</li>
@@ -6337,7 +6337,7 @@ A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 11, 2022</span>
       
     
   </small>
