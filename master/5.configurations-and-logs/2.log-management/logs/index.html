@@ -19,7 +19,7 @@
     
     
       
-        <title>日志配置 - Nebula Graph Database 手册</title>
+        <title>运行日志 - Nebula Graph Database 手册</title>
       
     
     
@@ -129,7 +129,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                日志配置
+                运行日志
               
             </span>
           </div>
@@ -3314,12 +3314,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          日志配置
+          运行日志
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        日志配置
+        运行日志
       </a>
       
         
@@ -3339,7 +3339,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    日志目录
+    运行日志目录
   </a>
   
 </li>
@@ -3353,21 +3353,21 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    查看日志级别
+    查看运行日志级别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    修改日志级别
+    修改运行日志级别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#rocksdb" class="md-nav__link">
-    RocksDB 日志
+    RocksDB 运行日志
   </a>
   
 </li>
@@ -6028,7 +6028,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    日志目录
+    运行日志目录
   </a>
   
 </li>
@@ -6042,21 +6042,21 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    查看日志级别
+    查看运行日志级别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    修改日志级别
+    修改运行日志级别
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#rocksdb" class="md-nav__link">
-    RocksDB 日志
+    RocksDB 运行日志
   </a>
   
 </li>
@@ -6079,12 +6079,12 @@
 
 
 
-<h1 id="_1">日志配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>Nebula Graph 默认使用 <a href="https://github.com/google/glog">glog</a> 打印日志，使用 <a href="https://gflags.github.io/gflags/">gflags</a> 控制日志级别，并在运行时通过 HTTP 接口动态修改日志级别，方便跟踪问题。</p>
-<p>Nebula Graph 企业版还支持<a href="../audit-log/">审计日志</a>。</p>
-<h2 id="_2">日志目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>日志的默认目录为<code>/usr/local/nebula/logs/</code>。</p>
-<p>如果在 Nebula Graph 运行过程中删除日志目录，日志不会继续打印，但是不会影响业务。重启服务可以恢复正常。</p>
+<h1 id="_1">运行日志<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>运行日志通常提供给 DBA 或开发人员查看，当系统出现故障，DBA 或开发人员可以根据运行日志定位问题。</p>
+<p>Nebula Graph 默认使用 <a href="https://github.com/google/glog">glog</a> 打印运行日志，使用 <a href="https://gflags.github.io/gflags/">gflags</a> 控制日志级别，并在运行时通过 HTTP 接口动态修改日志级别，方便跟踪问题。</p>
+<h2 id="_2">运行日志目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>运行日志的默认目录为<code>/usr/local/nebula/logs/</code>。</p>
+<p>如果在 Nebula Graph 运行过程中删除运行日志目录，日志不会继续打印，但是不会影响业务。重启服务可以恢复正常。</p>
 <h2 id="_3">配置说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>minloglevel</code>：最小日志级别，即不会记录低于这个级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，Nebula Graph 不会记录任何日志。</li>
@@ -6093,7 +6093,7 @@
 <li><code>v</code>：日志详细级别，值越大，日志记录越详细。可选值为<code>0</code>、<code>1</code>、<code>2</code>、<code>3</code>。</li>
 </ul>
 <p>Meta 服务、Graph 服务和 Storage 服务的日志级别可以在各自的配置文件中查看，默认路径为<code>/usr/local/nebula/etc/</code>。</p>
-<h2 id="_4">查看日志级别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">查看运行日志级别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用如下命令查看当前所有的 gflags 参数（包括日志参数）：</p>
 <div class="highlight"><pre><span></span><code>$ curl &lt;ws_ip&gt;:&lt;ws_port&gt;/flags
 </code></pre></div>
@@ -6126,8 +6126,8 @@
 </code></pre></div>
 </li>
 </ul>
-<h2 id="_5">修改日志级别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>使用如下命令修改日志级别：</p>
+<h2 id="_5">修改运行日志级别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>使用如下命令修改运行日志级别：</p>
 <div class="highlight"><pre><span></span><code>$ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;&lt;key&gt;&quot;:&lt;value&gt;[,&quot;&lt;key&gt;&quot;:&lt;value&gt;]}&#39;</span> <span class="s2">&quot;&lt;ws_ip&gt;:&lt;ws_port&gt;/flags&quot;</span>
 </code></pre></div>
 <table>
@@ -6140,11 +6140,11 @@
 <tbody>
 <tr>
 <td align="left"><code>key</code></td>
-<td align="left">待修改的日志类型，可选值请参见<a href="#_3">配置说明</a>。</td>
+<td align="left">待修改的运行日志类型，可选值请参见<a href="#_3">配置说明</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>value</code></td>
-<td align="left">日志级别，可选值请参见<a href="#_3">配置说明</a>。</td>
+<td align="left">运行日志级别，可选值请参见<a href="#_3">配置说明</a>。</td>
 </tr>
 <tr>
 <td align="left"><code>ws_ip</code></td>
@@ -6161,16 +6161,16 @@
 $ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span> <span class="s2">&quot;127.0.0.1:19669/flags&quot;</span> <span class="c1"># graphd</span>
 $ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span> <span class="s2">&quot;127.0.0.1:19559/flags&quot;</span> <span class="c1"># metad</span>
 </code></pre></div>
-<p>如果在 Nebula Graph 运行时修改了日志级别，重启服务后会恢复为配置文件中设置的级别，如果需要永久修改，请修改<a href="../../1.configurations/1.configurations/">配置文件</a>。</p>
-<h2 id="rocksdb">RocksDB 日志<a class="headerlink" href="#rocksdb" title="Permanent link">&para;</a></h2>
-<p>RocksDB 的日志通常在 <code>/usr/local/nebula/data/storage/nebula/$id/data/LOG</code>, 其中 <code>$id</code> 为实例号。该日志通常用于调试 RocksDB 参数。</p>
+<p>如果在 Nebula Graph 运行时修改了运行日志级别，重启服务后会恢复为配置文件中设置的级别，如果需要永久修改，请修改<a href="../../1.configurations/1.configurations/">配置文件</a>。</p>
+<h2 id="rocksdb">RocksDB 运行日志<a class="headerlink" href="#rocksdb" title="Permanent link">&para;</a></h2>
+<p>RocksDB 的运行日志通常在 <code>/usr/local/nebula/data/storage/nebula/$id/data/LOG</code>, 其中 <code>$id</code> 为实例号。该日志通常用于调试 RocksDB 参数。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 11, 2022</span>
       
     
   </small>
