@@ -6061,11 +6061,33 @@
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>进入 Nebula Graph 安装路径的 <code>bin</code> 目录中，找到 Nebula Console 的二进制文件。</p>
+<p>在 Nebula Console <a href="https://github.com/vesoft-inc/nebula-console/releases" title="the nebula-console Releases page">下载页面</a>，确认需要的版本，单击 <strong>Assets</strong>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>bin</code> 目录中仅有 Linux 系统可用的二进制文件，Windows系统二进制文件的获取方式参见<a href="../../nebula-console/">获取 Nebula Console</a>。</p>
+<p>建议选择<strong>最新</strong>版本。</p>
 </div>
+</li>
+<li>
+<p>在 <strong>Assets</strong> 区域找到机器运行所需的二进制文件，下载文件到机器上。</p>
+</li>
+<li>
+<p>（可选）为方便使用，重命名文件为<code>nebula-console</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在 Windows 系统中，请重命名为<code>nebula-console.exe</code>。</p>
+</div>
+</li>
+<li>
+<p>在运行 Nebula Console 的机器上执行如下命令，为用户授予 nebula-console 文件的执行权限。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows 系统请跳过此步骤。</p>
+</div>
+<div class="highlight"><pre><span></span><code>$ chmod <span class="m">111</span> nebula-console
+</code></pre></div>
+</li>
+<li>
+<p>在命令行界面中，切换工作目录至 nebula-console 文件所在目录。</p>
 </li>
 <li>
 <p>执行如下命令连接 Nebula Graph。</p>

@@ -6085,14 +6085,14 @@ nebula&gt; SUBMIT JOB STATS;
 
 # 确认作业执行成功。
 nebula&gt; SHOW JOB 98;
-+----------------+---------------+------------+----------------------------+----------------------------+
-| Job Id(TaskId) | Command(Dest) | Status     | Start Time                 | Stop Time                  |
-+----------------+---------------+------------+----------------------------+----------------------------+
-| 98             | &quot;STATS&quot;       | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
-| 0              | &quot;storaged2&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
-| 1              | &quot;storaged0&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
-| 2              | &quot;storaged1&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 |
-+----------------+---------------+------------+----------------------------+----------------------------+
++----------------+---------------+------------+----------------------------+----------------------------+-------------+
+| Job Id(TaskId) | Command(Dest) | Status     | Start Time                 | Stop Time                  | Error Code  |
++----------------+---------------+------------+----------------------------+----------------------------+-------------+
+| 98             | &quot;STATS&quot;       | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 | &quot;SUCCEEDED&quot; |
+| 0              | &quot;storaged2&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 | &quot;SUCCEEDED&quot; |
+| 1              | &quot;storaged0&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 | &quot;SUCCEEDED&quot; |
+| 2              | &quot;storaged1&quot;   | &quot;FINISHED&quot; | 2021-11-01T09:33:21.000000 | 2021-11-01T09:33:21.000000 | &quot;SUCCEEDED&quot; |
++----------------+---------------+------------+----------------------------+----------------------------+-------------+
 
 # 显示图空间统计信息。
 nebula&gt; SHOW STATS;
@@ -6113,7 +6113,7 @@ nebula&gt; SHOW STATS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

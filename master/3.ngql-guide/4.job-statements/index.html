@@ -6239,20 +6239,21 @@
 +------------+
 | New Job Id |
 +------------+
-| 34         |
+| 9          |
 +------------+
 </code></pre></div>
 <h2 id="show_job">SHOW JOB<a class="headerlink" href="#show_job" title="Permanent link">&para;</a></h2>
 <p>Meta 服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程 nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
 <p><code>job_id</code>在执行<code>SUBMIT JOB</code>语句时会返回。</p>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 34;
-+----------------+-----------------+------------+----------------------------+----------------------------+
-| Job Id(TaskId) | Command(Dest)   | Status     | Start Time                 | Stop Time                  |
-+----------------+-----------------+------------+----------------------------+----------------------------+
-| 34             | &quot;STATS&quot;         | &quot;FINISHED&quot; | 2021-11-01T03:32:27.000000 | 2021-11-01T03:32:27.000000 |
-| 0              | &quot;192.168.8.111&quot; | &quot;FINISHED&quot; | 2021-11-01T03:32:27.000000 | 2021-11-01T03:32:41.000000 |
-+----------------+-----------------+------------+----------------------------+----------------------------+
+<div class="highlight"><pre><span></span><code>nebula&gt; SHOW JOB 9;
++----------------+-----------------+------------+----------------------------+----------------------------+-------------+
+| Job Id(TaskId) | Command(Dest)   | Status     | Start Time                 | Stop Time                  | Error Code  |
++----------------+-----------------+------------+----------------------------+----------------------------+-------------+
+| 9              | &quot;STATS&quot;         | &quot;FINISHED&quot; | 2022-04-12T08:47:33.000000 | 2022-04-12T08:47:33.000000 | &quot;SUCCEEDED&quot; |
+| 0              | &quot;192.168.8.100&quot; | &quot;FINISHED&quot; | 2022-04-12T08:47:33.000000 | 2022-04-12T08:47:34.000000 | &quot;SUCCEEDED&quot; |
+| 1              | &quot;192.168.8.101&quot; | &quot;FINISHED&quot; | 2022-04-12T08:47:33.000000 | 2022-04-12T08:47:34.000000 | &quot;SUCCEEDED&quot; |
++----------------+-----------------+------------+----------------------------+----------------------------+-------------+
 </code></pre></div>
 <table>
 <thead>
@@ -6263,24 +6264,28 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">Job Id(TaskId)</td>
+<td align="left"><code>Job Id(TaskId)</code></td>
 <td align="left">第一行显示作业 ID，其他行显示作业相关的任务 ID。</td>
 </tr>
 <tr>
-<td align="left">Command(Dest)</td>
+<td align="left"><code>Command(Dest)</code></td>
 <td align="left">第一行显示执行的作业命令名称，其他行显示任务对应的 nebula-storaged 进程。</td>
 </tr>
 <tr>
-<td align="left">Status</td>
+<td align="left"><code>Status</code></td>
 <td align="left">显示作业或任务的状态。详情请参见<a href="#_2">作业状态</a>。</td>
 </tr>
 <tr>
-<td align="left">Start Time</td>
+<td align="left"><code>Start Time</code></td>
 <td align="left">显示作业或任务开始执行的时间。</td>
 </tr>
 <tr>
-<td align="left">Stop Time</td>
+<td align="left"><code>Stop Time</code></td>
 <td align="left">显示作业或任务结束执行的时间，结束后的状态包括<code>FINISHED</code>、<code>FAILED</code>或<code>STOPPED</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>Error Code</code></td>
+<td align="left">任务的错误码。</td>
 </tr>
 </tbody>
 </table>
@@ -6373,7 +6378,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

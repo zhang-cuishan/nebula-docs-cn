@@ -4769,42 +4769,55 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    信息总览
+  </a>
+  
+    <nav class="md-nav" aria-label="信息总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage_leader" class="md-nav__link">
+    Storage Leader 分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     版本
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#leader" class="md-nav__link">
-    Leader
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partition" class="md-nav__link">
-    Partition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     服务信息
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    Partition 分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     分片信息
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    长时任务
+  <a href="#_6" class="md-nav__link">
+    集群诊断
   </a>
   
 </li>
@@ -6035,42 +6048,55 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    信息总览
+  </a>
+  
+    <nav class="md-nav" aria-label="信息总览">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage_leader" class="md-nav__link">
+    Storage Leader 分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     版本
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#leader" class="md-nav__link">
-    Leader
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partition" class="md-nav__link">
-    Partition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     服务信息
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#partition" class="md-nav__link">
+    Partition 分布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     分片信息
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    长时任务
+  <a href="#_6" class="md-nav__link">
+    集群诊断
   </a>
   
 </li>
@@ -6094,34 +6120,35 @@
 
 
 <h1 id="_1">集群信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>本文主要介绍 Dashboard 的集群信息。</p>
-<p>在 Dashboard 顶部导航栏，单击<strong>集群管理</strong>，单击目标集群右侧<strong>详情</strong>，然后在左侧导航栏，单击<strong>集群信息</strong>，看到以下六个部分：</p>
+<p>本文主要介绍 Dashboard 的集群信息，包括信息总览和集群诊断。用户可以通过<strong>信息总览</strong>查看 Nebula Graph 内核相关信息，通过<strong>集群诊断</strong>查看集群的诊断信息并根据诊断报告做出相应的调整。</p>
+<p>在 Dashboard 顶部导航栏，单击<strong>集群管理</strong>，单击目标集群右侧<strong>详情</strong>，然后在左侧导航栏，单击<strong>集群信息</strong>，看到以下部分：</p>
 <ul>
-<li>版本</li>
-<li>Leader</li>
-<li>Partition</li>
-<li>服务信息</li>
-<li>分片信息</li>
-<li>长时任务</li>
+<li>信息总览</li>
+<li>集群诊断</li>
 </ul>
+<h2 id="_2">信息总览<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="coreinfo" src="https://docs-cdn.nebula-graph.com.cn/figures/clustercore-info_2022-04-11_cn.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>在查看集群信息之前，用户需要选择任意一个在线的 Graph 服务地址，输入登录 Nebula Graph 的账号（非 Dashboard 登录账号）和对应密码。</p>
-<p>多机部署时，用户可以选择任意一个在线的 Graph 服务地址。</p>
+</div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>用户需要保证 Nebula Graph 服务已经部署并启动。详细信息，参考 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</p>
+<p>用户需要保证 Nebula Graph 服务已经部署并启动。详细信息，参见 <a href="../../../4.deployment-and-installation/1.resource-preparations/" title="点击前往 Nebula Graph 安装部署">Nebula Graph 安装部署</a>。</p>
 </div>
-<h2 id="_2">版本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>显示所有服务及对应的 Nebula 版本。</p>
-<h2 id="leader">Leader<a class="headerlink" href="#leader" title="Permanent link">&para;</a></h2>
-<p>显示 Leader 数量及 Leader 的分布，点击右上角的 <strong>Balance Leader</strong> 按钮可以快速在 Nebula Graph 集群中均衡分布 Leader。</p>
-<h2 id="partition">Partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
-<p>选择指定图空间，查看指定图空间的 Partition 分布情况。</p>
-<h2 id="_3">服务信息<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>用户可以在<strong>信息总览</strong>页面查看 Nebula Graph 内核相关信息，包括 Storage 服务信息、Storage Leader 分布、Nebula Graph 各个服务的版本信息及所在节点信息、分片的分布情况及详细信息。</p>
+<h3 id="storage_leader">Storage Leader 分布<a class="headerlink" href="#storage_leader" title="Permanent link">&para;</a></h3>
+<p>显示 Leader 数量及 Leader 的分布。</p>
+<ul>
+<li>单击右上角的 <strong>Balance Leader</strong> 按钮可以快速在 Nebula Graph 集群中均衡分布 Leader。关于 Leader 的详细信息，参见 <a href="../../../1.introduction/3.nebula-graph-architecture/4.storage-service/">Storage 服务</a>。</li>
+</ul>
+<ul>
+<li>单击右上角的<strong>详情</strong>，查看 Leader 分布的详细信息。</li>
+</ul>
+<h3 id="_3">版本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>显示 Nebula Graph 所有服务版本及服务地址。单击右上角的<strong>详情</strong>，查看更多信息。</p>
+<h3 id="_4">服务信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>展示 Storage 服务的基本信息。参数说明如下：</p>
-<!-- balance-3.1
-用户可以通过右上角的 **Balance Data** 按钮启动任务，均衡分布集群中的所有分片。
--->
-
 <table>
 <thead>
 <tr>
@@ -6160,8 +6187,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_4">分片信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>显示分片信息。用户需要在左上角选择图空间，查看分片信息。也可以通过右上角的输入框，输入分片 ID，筛选展示的数据。参数说明如下：</p>
+<p>单击右上角的<strong>详情</strong>，查看更多信息。</p>
+<h3 id="partition">Partition 分布<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h3>
+<p>选择指定图空间，查看指定图空间的分片分布情况。显示所有 Storage 服务的 IP 地址、端口，及对应 Storage 服务中的分片数量。</p>
+<!-- 增加balance data 
+- 单击`balance data`，
+- 单击`balance remove` -->
+<p>单击右上角的<strong>详情</strong>，查看更多信息。</p>
+<h3 id="_5">分片信息<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>显示分片信息。用户需要在左上角选择图空间，查看分片信息。参数说明如下：</p>
 <table>
 <thead>
 <tr>
@@ -6188,45 +6222,30 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_5">长时任务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>展示所有作业的信息。查看作业信息之前，用户需要在右上角选择图空间。暂不支持在线管理作业，详情请参见<a href="../../../3.ngql-guide/4.job-statements/">作业管理</a>。参数说明如下：</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>Job ID</code></td>
-<td align="left">显示作业 ID。</td>
-</tr>
-<tr>
-<td align="left"><code>Command</code></td>
-<td align="left">显示命令类型。</td>
-</tr>
-<tr>
-<td align="left"><code>Status</code></td>
-<td align="left">显示作业或任务的状态。状态说明参见<a href="../../../3.ngql-guide/4.job-statements/#_2">作业状态</a>。</td>
-</tr>
-<tr>
-<td align="left"><code>Start Time</code></td>
-<td align="left">显示作业或任务开始执行的时间。</td>
-</tr>
-<tr>
-<td align="left"><code>Stop Time</code></td>
-<td align="left">显示作业或任务结束执行的时间，结束后的状态包括<code>FINISHED</code>、<code>FAILED</code>或<code>STOPPED</code>。</td>
-</tr>
-</tbody>
-</table>
+<p>单击右上角的<strong>详情</strong>，查看更多信息，通过右上角的输入框，输入分片 ID，筛选展示的数据。</p>
+<!-- 长时任务目前先不融合进信息总览页，等之后慢查询治理做了后放一起
+
+## 长时任务
+
+展示所有作业的信息。查看作业信息之前，用户需要在右上角选择图空间。暂不支持在线管理作业，详情请参见[作业管理](../../3.ngql-guide/4.job-statements.md)。参数说明如下：
+
+| 参数 | 说明 |
+| :--- | :--- |
+| `Job ID` | 显示作业 ID。 |
+| `Command` | 显示命令类型。 |
+| `Status` | 显示作业或任务的状态。状态说明参见[作业状态](../../3.ngql-guide/4.job-statements.md#_2)。 |
+|`Start Time`|显示作业或任务开始执行的时间。|
+| `Stop Time` | 显示作业或任务结束执行的时间，结束后的状态包括`FINISHED`、`FAILED`或`STOPPED`。 | -->
+
+<h2 id="_6">集群诊断<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>用户可以在集群信息菜单栏下，单击集群诊断定位和分析集群出现的问题。详情参见<a href="7.cluster-diagnosis.md">集群诊断</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

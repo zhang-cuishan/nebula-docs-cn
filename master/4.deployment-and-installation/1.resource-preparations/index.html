@@ -6720,14 +6720,14 @@ apt install gcc-11 g++-11
 <td align="left">分区数量</td>
 <td align="left">-</td>
 <td align="left"><code>集群硬盘数量</code> * <code>disk_partition_num_multiplier</code></td>
-<td align="left"><code>disk_partition_num_multiplier</code>是取值为 2~10 的一个整数，用于衡量硬盘性能。HDD 使用 2。</td>
+<td align="left"><code>disk_partition_num_multiplier</code>是一个用于衡量硬盘性能的整数，取值范围 2~20。建议在计算 SSD 硬盘的分区数量时使用 20 做参数值，HDD 硬盘使用 2。</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>
 <p>问题 1：为什么磁盘空间和内存都要乘以 120%？</p>
-<p>答：额外的 20%用于缓冲。</p>
+<p>答：额外的 20% 用于缓冲。</p>
 </li>
 </ul>
 <ul>
@@ -6770,7 +6770,7 @@ apt install gcc-11 g++-11
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>

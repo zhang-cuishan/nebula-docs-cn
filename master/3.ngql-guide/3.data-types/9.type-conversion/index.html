@@ -964,20 +964,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    遗留兼容问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     类型强制转换函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     示例
   </a>
   
@@ -6014,20 +6007,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    遗留兼容问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
     类型强制转换函数
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     示例
   </a>
   
@@ -6053,10 +6039,7 @@
 
 <h1 id="_1">类型转换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>类型转换是指将表达式的类型转换为另一个类型。</p>
-<h2 id="_2">遗留兼容问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>nGQL 1.0 使用 C 语言风格的类型转换（显示或隐式）：<code>(type_name)expression</code>。例如<code>YIELD (int)(TRUE)</code>，结果为<code>1</code>。但是对于不熟悉 C 语言的用户来说，很容易出错。</p>
-<p>从 nGQL 2.0 开始使用 openCypher 的方式进行类型强制转换。</p>
-<h2 id="_3">类型强制转换函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">类型强制转换函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -6078,12 +6061,16 @@
 <td align="left">将浮点或字符串转换为整数。</td>
 </tr>
 <tr>
+<td align="left">toSet()</td>
+<td align="left">将列表或集合转换为集合。</td>
+</tr>
+<tr>
 <td align="left">type()</td>
 <td align="left">返回字符串格式的关系类型。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; UNWIND [true, false, &#39;true&#39;, &#39;false&#39;, NULL] AS b \
         RETURN toBoolean(b) AS b;
 +----------+
@@ -6140,6 +6127,20 @@ nebula&gt; MATCH (n:player) \
 +-------+
 | 2     |
 +-------+
+
+nebula&gt; RETURN toSet(list[1,2,3,1,2]) AS list2set;
++-----------+
+| list2set  |
++-----------+
+| {3, 1, 2} |
++-----------+
+
+nebula&gt; RETURN toSet(set{1,2,3,1,2}) AS set2set;
++-----------+
+| set2set   |
++-----------+
+| {3, 2, 1} |
++-----------+
 </code></pre></div>
 
   <hr>
@@ -6147,7 +6148,7 @@ nebula&gt; MATCH (n:player) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
       
     
   </small>
