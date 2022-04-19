@@ -171,6 +171,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/error-code/</loc>
+         <lastmod>2022-04-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/20.appendix/history/</loc>
          <lastmod>2022-04-19</lastmod>
          <changefreq>daily</changefreq>
