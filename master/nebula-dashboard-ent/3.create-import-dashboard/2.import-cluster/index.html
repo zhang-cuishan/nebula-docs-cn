@@ -6083,7 +6083,15 @@
 <p>在连接服务节点页面完成以下配置：</p>
 <ul>
 <li>输入集群的名称，最大可输入 15 个字符，本示例设置为<code>create_1027</code>。</li>
-<li>对节点进行<strong>授权</strong>，授权需输入每个节点的 SSH 用户名及密码。</li>
+<li>
+<p>对节点进行<strong>授权</strong>，授权需输入每个节点的 SSH 用户名及密码，以及选择是否使用<code>sudo</code>执行命令。</p>
+<div class="admonition notice">
+<p class="admonition-title">Notice</p>
+<p>如果用户 SSH 账号没有操作 Nebula Graph 的权限，但是可以免密执行<code>sudo</code>命令，需要选择<strong>使用 sudo</strong>。</p>
+</div>
+</li>
+</ul>
+<ul>
 <li><strong>批量授权</strong>需要上传 CSV 文件。请根据下载的 CSV 文件，编辑每个节点授权信息，尽量确保节点信息正确，否则容易造成上传失败。</li>
 </ul>
 <ul>
@@ -6105,7 +6113,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2022</span>
       
     
   </small>

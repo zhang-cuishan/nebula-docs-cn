@@ -6423,6 +6423,11 @@
 <td align="left">BlockBasedTable 的默认块缓存大小。单位：兆字节。</td>
 </tr>
 <tr>
+<td align="left"><code>disable_page_cache</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">允许或禁止 Nebula Graph 使用操作系统的页缓存。默认为禁止状态，此时须设置充足的块缓存空间。</td>
+</tr>
+<tr>
 <td align="left"><code>engine_type</code></td>
 <td align="left"><code>rocksdb</code></td>
 <td align="left">存储引擎类型。</td>
@@ -6700,7 +6705,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2022</span>
       
     
   </small>
