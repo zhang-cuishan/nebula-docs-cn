@@ -6073,11 +6073,11 @@
 </code></pre></div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; DESCRIBE SPACE basketballplayer;
-+----+--------------------+------------------+----------------+---------+------------+--------------------+-------------+---------+
-| ID | Name               | Partition Number | Replica Factor | Charset | Collate    | Vid Type           | Atomic Edge | Comment |
-+----+--------------------+------------------+----------------+---------+------------+--------------------+-------------+---------+
-| 1  | &quot;basketballplayer&quot; | 10               | 1              | &quot;utf8&quot;  | &quot;utf8_bin&quot; | &quot;FIXED_STRING(32)&quot; | false       |         |
-+----+--------------------+------------------+----------------+---------+------------+--------------------+-------------+---------+
++----+--------------------+------------------+----------------+---------+------------+--------------------+-----------+---------+
+| ID | Name               | Partition Number | Replica Factor | Charset | Collate    | Vid Type           | Zones     | Comment |
++----+--------------------+------------------+----------------+---------+------------+--------------------+-----------+---------+
+| 1  | &quot;basketballplayer&quot; | 10               | 1              | &quot;utf8&quot;  | &quot;utf8_bin&quot; | &quot;FIXED_STRING(32)&quot; | &quot;default&quot; |         |
++----+--------------------+------------------+----------------+---------+------------+--------------------+-----------+---------+
 </code></pre></div>
 <!--
 <div class="highlight"><pre><span></span><code>nebula&gt; DESCRIBE SPACE basketballplayer;
@@ -6094,7 +6094,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2022</span>
       
     
   </small>

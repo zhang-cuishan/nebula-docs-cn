@@ -6294,7 +6294,7 @@
 </ul>
 <h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <ul>
-<li>不支持在<code>WHERE</code>子句中使用 Pattern（TODO: planning），例如<code>WHERE (v)--&gt;(v2)</code>。</li>
+<li>可以在<code>WHERE</code>子句中使用 Pattern，但是不能引入新变量。例如可以使用<code>MATCH (v:player) WHERE (v)--&gt;()&lt;--(v)</code>，不能使用<code>MATCH (v:player) WHERE (v)--&gt;(t)&lt;--(v)</code>（t 为新变量）。</li>
 </ul>
 <ul>
 <li><a href="#rank">过滤 Rank</a> 是原生 nGQL 功能。如需在 openCypher 兼容语句中直接获取 Rank 值，可以使用 rank() 函数，例如<code>MATCH (:player)-[e:follow]-&gt;() RETURN rank(e);</code>。</li>
@@ -6564,7 +6564,7 @@ nebula&gt; LOOKUP ON player \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2022</span>
       
     
   </small>
