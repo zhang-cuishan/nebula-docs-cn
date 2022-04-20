@@ -2905,6 +2905,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#submit_job_downloadingest" class="md-nav__link">
+    SUBMIT JOB DOWNLOAD/INGEST
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show_job" class="md-nav__link">
     SHOW JOB
   </a>
@@ -6135,6 +6142,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#submit_job_downloadingest" class="md-nav__link">
+    SUBMIT JOB DOWNLOAD/INGEST
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#show_job" class="md-nav__link">
     SHOW JOB
   </a>
@@ -6298,6 +6312,25 @@
 | 9          |
 +------------+
 </code></pre></div>
+<h2 id="submit_job_downloadingest">SUBMIT JOB DOWNLOAD/INGEST<a class="headerlink" href="#submit_job_downloadingest" title="Permanent link">&para;</a></h2>
+<p><code>SUBMIT JOB DOWNLOAD HDFS</code>和<code>SUBMIT JOB INGEST</code>命令用于将 SST 文件导入 Nebula Graph。详情参见<a href="../../nebula-exchange/use-exchange/ex-ug-import-from-sst/">导入 SST 文件数据</a>。</p>
+<p><code>SUBMIT JOB DOWNLOAD HDFS</code>语句会下载指定的 HDFS 上的 SST 文件。</p>
+<p><code>SUBMIT JOB INGEST</code>语句会将下载的 SST 文件导入图空间。</p>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB DOWNLOAD HDFS &quot;hdfs://192.168.10.100:9000/sst&quot;;
++------------+
+| New Job Id |
++------------+
+| 10         |
++------------+
+
+nebula&gt; SUBMIT JOB INGEST;
++------------+
+| New Job Id |
++------------+
+| 11         |
++------------+
+</code></pre></div>
 <h2 id="show_job">SHOW JOB<a class="headerlink" href="#show_job" title="Permanent link">&para;</a></h2>
 <p>Meta 服务将<code>SUBMIT JOB</code>请求解析为多个任务，然后分配给进程 nebula-storaged。<code>SHOW JOB &lt;job_id&gt;</code>语句显示当前图空间内指定作业和相关任务的信息。</p>
 <p><code>job_id</code>在执行<code>SUBMIT JOB</code>语句时会返回。</p>
@@ -6434,7 +6467,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
       
     
   </small>

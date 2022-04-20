@@ -6794,15 +6794,15 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 </li>
 <li>
 <p>执行命令下载 SST 文件：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; DOWNLOAD HDFS &quot;hdfs://&lt;hadoop_address&gt;:&lt;hadoop_port&gt;/&lt;sst_file_path&gt;&quot;;
+<div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB DOWNLOAD HDFS &quot;hdfs://&lt;hadoop_address&gt;:&lt;hadoop_port&gt;/&lt;sst_file_path&gt;&quot;;
 </code></pre></div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; DOWNLOAD HDFS &quot;hdfs://*.*.*.*:9000/sst&quot;;
+<div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB DOWNLOAD HDFS &quot;hdfs://*.*.*.*:9000/sst&quot;;
 </code></pre></div>
 </li>
 <li>
 <p>执行命令导入 SST 文件：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; INGEST;
+<div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB INGEST;
 </code></pre></div>
 </li>
 </ol>
@@ -6812,7 +6812,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <li>如果需要重新下载，请在 Nebula Graph 安装路径内的<code>data/storage/nebula</code>目录内，将对应 Space ID 目录内的<code>download</code>文件夹删除，然后重新下载 SST 文件。如果图空间是多副本，保存副本的所有机器都需要删除<code>download</code>文件夹。</li>
 </ul>
 <ul>
-<li>如果导入时出现问题需要重新导入，重新执行<code>INGEST;</code>即可。</li>
+<li>如果导入时出现问题需要重新导入，重新执行<code>SUBMIT JOB INGEST;</code>即可。</li>
 </ul>
 </div>
 <h3 id="6">步骤 6：（可选）验证数据<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
@@ -6828,7 +6828,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
       
     
   </small>
