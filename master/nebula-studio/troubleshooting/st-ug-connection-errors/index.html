@@ -4454,28 +4454,28 @@
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1.确认系统架构
+    第 1 步。确认系统架构
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2_studio" class="md-nav__link">
-    2.检查 Studio 服务是否正常启动
+    第 2 步。检查 Studio 服务是否正常启动
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3.确认访问地址
+    第 3 步。确认访问地址
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4.确认网络连通性
+    第 4 步。确认网络连通性
   </a>
   
 </li>
@@ -6352,28 +6352,28 @@
         
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    1.确认系统架构
+    第 1 步。确认系统架构
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2_studio" class="md-nav__link">
-    2.检查 Studio 服务是否正常启动
+    第 2 步。检查 Studio 服务是否正常启动
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#3" class="md-nav__link">
-    3.确认访问地址
+    第 3 步。确认访问地址
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#4" class="md-nav__link">
-    4.确认网络连通性
+    第 4 步。确认网络连通性
   </a>
   
 </li>
@@ -6406,18 +6406,10 @@
 <p>我按照文档描述启动 Studio 后访问 <code>127.0.0.1:7001</code> 或者 <code>0.0.0.0:7001</code>，但是打不开页面，为什么？</p>
 <h2 id="_2">可能的原因及解决方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>用户可以按以下顺序排查问题。</p>
-<h3 id="1">1.确认系统架构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h3 id="1">第 1 步。确认系统架构<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>需要确认部署 Studio 服务的机器是否为 x86_64 架构。目前 Studio 仅支持 x86_64 系统架构。</p>
-<h3 id="2_studio">2.检查 Studio 服务是否正常启动<a class="headerlink" href="#2_studio" title="Permanent link">&para;</a></h3>
-<ul>
-<li>使用 RPM 或 DEB 包部署的 Studio，使用<code>systemctl status nebula-graph-studio</code>查看运行状态。</li>
-</ul>
-<ul>
-<li>使用 tar 包部署的 Studio，使用<code>sudo lsof -i:7001</code>查看端口状态。</li>
-</ul>
-<ul>
-<li>
-<p>使用 Docker-compose 部署的 Studio，使用<code>docker-compose ps</code>查看运行状态。  </p>
+<h3 id="2_studio">第 2 步。检查 Studio 服务是否正常启动<a class="headerlink" href="#2_studio" title="Permanent link">&para;</a></h3>
+<p>运行 <code>docker-compose ps</code> 查看服务是否已经正常启动。  </p>
 <p>如果服务正常，返回结果如下。其中，<code>State</code> 列应全部显示为 <code>Up</code>。</p>
 <div class="highlight"><pre><span></span><code>     Name                          Command               State               Ports
 ------------------------------------------------------------------------------------------------------
@@ -6426,17 +6418,15 @@ nebula-web-docker_importer_1   nebula-importer --port<span class="o">=</span><sp
 nebula-web-docker_nginx_1      /docker-entrypoint.sh ngin ...   Up      <span class="m">0</span>.0.0.0:7001-&gt;7001/tcp, <span class="m">80</span>/tcp
 nebula-web-docker_web_1        docker-entrypoint.sh npm r ...   Up      <span class="m">0</span>.0.0.0:32784-&gt;7001/tcp
 </code></pre></div>
+<p>如果没有返回以上结果，则先停止 Studio 重新启动。详细信息，参考<a href="../../deploy-connect/st-ug-deploy/">部署 Studio</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果之前使用 <code>docker-compose up -d</code> 启动 Studio，必须运行 <code>docker-compose down</code> 命令停止 Studio。</p>
 </div>
-</li>
-</ul>
-<p>如果服务没有正常运行，请重新启动 Studio。详细信息，参考<a href="../../deploy-connect/st-ug-deploy/">部署 Studio</a>。</p>
-<h3 id="3">3.确认访问地址<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h3 id="3">第 3 步。确认访问地址<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>如果 Studio 与浏览器在同一台机器上，用户可以在浏览器里使用 <code>localhost:7001</code>、<code>127.0.0.1:7001</code> 或者 <code>0.0.0.0:7001</code> 访问 Studio。</p>
 <p>如果两者不在同一台机器上，必须在浏览器里输入 <code>&lt;studio_server_ip&gt;:7001</code>。其中，<code>studio_server_ip</code> 是指部署 Studio 服务的机器的 IP 地址。</p>
-<h3 id="4">4.确认网络连通性<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<h3 id="4">第 4 步。确认网络连通性<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>运行 <code>curl &lt;studio_server_ip&gt;:7001 -I</code> 确认是否正常。如果返回 <code>HTTP/1.1 200 OK</code>，表示网络连通正常。</p>
 <p>如果连接被拒绝，则按以下要求检查：</p>
 <ul>
@@ -6450,7 +6440,7 @@ nebula-web-docker_web_1        docker-entrypoint.sh npm r ...   Up      <span cl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
       
     
   </small>
