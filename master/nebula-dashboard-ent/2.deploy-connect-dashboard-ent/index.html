@@ -6812,6 +6812,12 @@ ldap:
 <p>例如：</p>
 <div class="highlight"><pre><span></span><code>sudo cat /var/log/messages
 </code></pre></div>
+<p>或者执行以下命令查看 Dashboard 中各个服务的日志：</p>
+<div class="highlight"><pre><span></span><code>journalctl -u {nbd-prometheus.service|nbd-alert-manager.service|nbd-stats-exporter.service|nbd-webserver.service} -b
+</code></pre></div>
+<p>例如，查看 Prometheus 服务的日志：</p>
+<div class="highlight"><pre><span></span><code>journalctl -u nbd-prometheus.service -b
+</code></pre></div>
 <h3 id="_6">卸载<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>执行以下命令卸载通过 RPM 包部署的 Dashboard。</p>
 <div class="highlight"><pre><span></span><code>sudo rpm -e &lt;package_name&gt;
@@ -6890,6 +6896,12 @@ ldap:
 <p>用户可以在<code>/var/log/syslog</code>路径下查看 Dashboard 企业版的操作日志。</p>
 <p>例如：</p>
 <div class="highlight"><pre><span></span><code>sudo cat /var/log/syslog
+</code></pre></div>
+<p>或者执行以下命令查看 Dashboard 中各个服务的日志：</p>
+<div class="highlight"><pre><span></span><code>journalctl -u {nbd-prometheus.service|nbd-alert-manager.service|nbd-stats-exporter.service|nbd-webserver.service} -b
+</code></pre></div>
+<p>例如，查看 Prometheus 服务的日志：</p>
+<div class="highlight"><pre><span></span><code>journalctl -u nbd-prometheus.service -b
 </code></pre></div>
 <h3 id="_9">卸载<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>执行以下命令卸载通过 DEB 包部署的 Dashboard。</p>

@@ -6506,6 +6506,14 @@
 <p class="admonition-title">Enterpriseonly</p>
 <p>仅企业版支持本功能。</p>
 </div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<ul>
+<li>作业执行前，建议<a href="../../backup-and-restore/3.manage-snapshot/">创建快照</a>。</li>
+<li>作业执行过程中，不要执行其他作业，例如<code>SUBMIT JOB STATS</code>、<code>REBUILD INDEX</code>等。</li>
+<li>作业执行过程中，不建议大批量写入和读取数据。</li>
+</ul>
+</div>
 <p><code>SUBMIT JOB BALANCE DATA</code>语句会在当前图空间内启动任务均衡分布分片。该命令会返回任务 ID。</p>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; SUBMIT JOB BALANCE DATA;
@@ -6735,7 +6743,7 @@ nebula&gt; SUBMIT JOB INGEST;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 21, 2022</span>
       
     
   </small>
