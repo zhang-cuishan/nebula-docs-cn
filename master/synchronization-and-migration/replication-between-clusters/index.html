@@ -6650,12 +6650,24 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>修改配置文件时需要注意：</p>
-<p>- 将配置文件的后缀<code>.default</code>或<code>.production</code>删除。</p>
-<p>- 所有配置文件里都需要用真实的机器 IP 地址替换<code>local_ip</code>的<code>127.0.0.1</code>。</p>
-<p>- 所有<code>nebula-graphd.conf</code>配置文件里设置<code>enable_authorize=true</code>。</p>
-<p>- 主从集群填写各自集群的<code>meta_server_addrs</code>，注意不要错填其他集群的地址。</p>
-<p>- listener 的配置文件里<code>meta_server_addrs</code>填写主集群的机器 IP，<code>meta_sync_listener</code>填写 listener 机器的 IP。</p>
-<p>- drainer 的配置文件里<code>meta_server_addrs</code>填写从集群的机器 IP。</p>
+<ul>
+<li>将配置文件的后缀<code>.default</code>或<code>.production</code>删除。</li>
+</ul>
+<ul>
+<li>所有配置文件里都需要用真实的机器 IP 地址替换<code>local_ip</code>的<code>127.0.0.1</code>。</li>
+</ul>
+<ul>
+<li>所有<code>nebula-graphd.conf</code>配置文件里设置<code>enable_authorize=true</code>。</li>
+</ul>
+<ul>
+<li>主从集群填写各自集群的<code>meta_server_addrs</code>，注意不要错填其他集群的地址。</li>
+</ul>
+<ul>
+<li>listener 的配置文件里<code>meta_server_addrs</code>填写主集群的机器 IP，<code>meta_sync_listener</code>填写 listener 机器的 IP。</li>
+</ul>
+<ul>
+<li>drainer 的配置文件里<code>meta_server_addrs</code>填写从集群的机器 IP。</li>
+</ul>
 <p>更多配置说明，请参见<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
 </div>
 </li>
@@ -6750,13 +6762,13 @@ nebula&gt; SHOW DRAINER CLIENTS;
 <li>
 <p>设置 listener 服务。</p>
 <div class="highlight"><pre><span></span><code>//设置 listener 服务，待同步的图空间名称为replication_basketballplayer（下文将在从集群中创建）。
-nebula&gt; ADD LISTENER SYNC META 192.168.10.103:9559 STORAGE 192.168.10.103:9789 TO SPACE replication_basketballplayer;
+nebula&gt; ADD LISTENER SYNC META 192.168.10.103:9569 STORAGE 192.168.10.103:9789 TO SPACE replication_basketballplayer;
 //查看 listener 状态。
 nebula&gt; SHOW LISTENER SYNC;
 +--------+--------+------------------------+--------------------------------+----------+
 | PartId | Type   | Host                   | SpaceName                      | Status   |
 +--------+--------+------------------------+--------------------------------+----------+
-| 0      | &quot;SYNC&quot; | &quot;&quot;192.168.10.103&quot;:9559&quot; | &quot;replication_basketballplayer&quot; | &quot;ONLINE&quot; |
+| 0      | &quot;SYNC&quot; | &quot;&quot;192.168.10.103&quot;:9569&quot; | &quot;replication_basketballplayer&quot; | &quot;ONLINE&quot; |
 | 1      | &quot;SYNC&quot; | &quot;&quot;192.168.10.103&quot;:9789&quot; | &quot;replication_basketballplayer&quot; | &quot;ONLINE&quot; |
 | 2      | &quot;SYNC&quot; | &quot;&quot;192.168.10.103&quot;:9789&quot; | &quot;replication_basketballplayer&quot; | &quot;ONLINE&quot; |
 | 3      | &quot;SYNC&quot; | &quot;&quot;192.168.10.103&quot;:9789&quot; | &quot;replication_basketballplayer&quot; | &quot;ONLINE&quot; |
@@ -6924,7 +6936,7 @@ nebula&gt; SET VARIABLES read_only=true;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2022</span>
       
     
   </small>
