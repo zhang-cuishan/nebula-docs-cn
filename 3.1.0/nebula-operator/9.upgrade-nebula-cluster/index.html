@@ -6435,7 +6435,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>编辑<code>apps_v1alpha1_nebulacluster.yaml</code>并将所有<code>version</code>的值从 3.0.0 修改至vmaster。</p>
+<p>编辑<code>apps_v1alpha1_nebulacluster.yaml</code>并将所有<code>version</code>的值从 3.0.0 修改至v3.1.0。</p>
 <p>修改后的 YAML 文件内容如下：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps.nebula-graph.io/v1alpha1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NebulaCluster</span><span class="w"></span>
@@ -6452,7 +6452,7 @@
 <span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1Gi&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-graphd</span><span class="w"></span>
-<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vmaster //将值从 3.0.0 修改至vmaster。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.1.0 //将值从 3.0.0 修改至v3.1.0。</span><span class="w"></span>
 <span class="w">    </span><span class="nt">service</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePort</span><span class="w"></span>
 <span class="w">      </span><span class="nt">externalTrafficPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Local</span><span class="w"></span>
@@ -6471,7 +6471,7 @@
 <span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1Gi&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-metad</span><span class="w"></span>
-<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vmaster //将值从 3.0.0 修改至vmaster。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.1.0 //将值从 3.0.0 修改至v3.1.0。</span><span class="w"></span>
 <span class="w">    </span><span class="nt">dataVolumeClaim</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">requests</span><span class="p">:</span><span class="w"></span>
@@ -6492,7 +6492,7 @@
 <span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1Gi&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-storaged</span><span class="w"></span>
-<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vmaster //将值从 3.0.0 修改至vmaster。</span><span class="w"></span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.1.0 //将值从 3.0.0 修改至v3.1.0。</span><span class="w"></span>
 <span class="w">    </span><span class="nt">dataVolumeClaim</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">resources</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">requests</span><span class="p">:</span><span class="w"></span>
@@ -6516,13 +6516,13 @@
 </code></pre></div>
 </li>
 <li>
-<p>等待约 2 分钟后，执行以下命令可查看到服务的镜像版本变更为vmaster。</p>
+<p>等待约 2 分钟后，执行以下命令可查看到服务的镜像版本变更为v3.1.0。</p>
 <div class="highlight"><pre><span></span><code>kubectl get pods -l app.kubernetes.io/cluster<span class="o">=</span>nebula  -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[*].spec.containers[*].image}&quot;</span> <span class="p">|</span>tr -s <span class="s1">&#39;[[:space:]]&#39;</span> <span class="s1">&#39;\n&#39;</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c
 </code></pre></div>
 <p>返回：</p>
-<div class="highlight"><pre><span></span><code>      <span class="m">1</span> vesoft/nebula-graphd:vmaster
-      <span class="m">1</span> vesoft/nebula-metad:vmaster
-      <span class="m">3</span> vesoft/nebula-storaged:vmaster  
+<div class="highlight"><pre><span></span><code>      <span class="m">1</span> vesoft/nebula-graphd:v3.1.0
+      <span class="m">1</span> vesoft/nebula-metad:v3.1.0
+      <span class="m">3</span> vesoft/nebula-storaged:v3.1.0  
 </code></pre></div>
 </li>
 </ol>
@@ -6544,11 +6544,11 @@
 </li>
 <li>
 <p>升级 Nebula Graph 集群。</p>
-<p>例如升级至 vmaster Nebula Graph 集群的命令如下。</p>
+<p>例如升级至 v3.1.0 Nebula Graph 集群的命令如下。</p>
 <div class="highlight"><pre><span></span><code>helm upgrade <span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span> nebula-operator/nebula-cluster <span class="se">\</span>
     --namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
     --set <span class="nv">nameOverride</span><span class="o">=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span> <span class="se">\</span>
-    --set nebula.version<span class="o">=</span>vmaster
+    --set nebula.version<span class="o">=</span>v3.1.0
 </code></pre></div>
 <p><code>--set nebula.version</code>的值指需要升级集群的目标版本号。</p>
 </li>
@@ -6568,9 +6568,9 @@ nebula-storaged-2   <span class="m">1</span>/1     Running   <span class="m">0</
 </code></pre></div>
 <p>查看集群版本：</p>
 <div class="highlight"><pre><span></span><code>$ kubectl get pods -l app.kubernetes.io/cluster<span class="o">=</span>nebula  -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[*].spec.containers[*].image}&quot;</span> <span class="p">|</span>tr -s <span class="s1">&#39;[[:space:]]&#39;</span> <span class="s1">&#39;\n&#39;</span> <span class="p">|</span>sort <span class="p">|</span>uniq -c
-      <span class="m">1</span> vesoft/nebula-graphd:vmaster
-      <span class="m">1</span> vesoft/nebula-metad:vmaster
-      <span class="m">3</span> vesoft/nebula-storaged:vmaster
+      <span class="m">1</span> vesoft/nebula-graphd:v3.1.0
+      <span class="m">1</span> vesoft/nebula-metad:v3.1.0
+      <span class="m">3</span> vesoft/nebula-storaged:v3.1.0
 </code></pre></div>
 </li>
 </ol>

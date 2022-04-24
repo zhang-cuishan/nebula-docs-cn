@@ -7014,7 +7014,7 @@
 
 
 <h1 id="faq">常见问题 FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<p>本文列出了使用 Nebula Graph master 时可能遇到的常见问题，用户可以使用文档中心或者浏览器的搜索功能查找相应问题。</p>
+<p>本文列出了使用 Nebula Graph 3.1.0 时可能遇到的常见问题，用户可以使用文档中心或者浏览器的搜索功能查找相应问题。</p>
 <p>如果按照文中的建议无法解决问题，请到 <a href="https://discuss.nebula-graph.com.cn/">Nebula Graph 论坛</a> 提问或提交 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub issue</a>。</p>
 <h2 id="_1">关于本手册<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">为什么手册示例和系统行为不一致？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -7031,7 +7031,7 @@
 <h2 id="_3">关于历史兼容性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition compatibility">
 <p class="admonition-title"><code>X</code>版本兼容性</p>
-<p>Nebula Graph master 与 历史版本 （包括 Nebula Graph 1.x 和 2.x) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
+<p>Nebula Graph 3.1.0 与 历史版本 （包括 Nebula Graph 1.x 和 2.x) 的数据格式、客户端通信协议均<strong>双向不兼容</strong>。
 使用<strong>老版本</strong>客户端连接<strong>新版本</strong>服务端，会导致服务进程<strong>退出</strong>。
 数据格式升级参见<a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">升级 Nebula Graph 历史版本至当前版本</a>。
 客户端与工具均需要<a href="../6.eco-tool-version/">下载对应版本</a>。</p>
@@ -7039,7 +7039,7 @@
 <!-- TODO
 !!! compatibility "`Y`版本兼容性"
 
-    Neubla Graph master 与 Nebula Graph 2.0 的数据格式兼容，客户端不兼容。
+    Neubla Graph 3.1.0 与 Nebula Graph 2.0 的数据格式兼容，客户端不兼容。
 -->
 
 <h2 id="_4">关于执行报错<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -7164,7 +7164,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>这是 Nebula Console 2.6.0 版本的变动造成的，不是 Nebula Graph 内核的变更，不影响返回数据本身的内容。</p>
 <h3 id="_6">关于悬挂边<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>悬挂边 (Dangling edge) 是指一条边的起点或者终点在数据库中不存在。</p>
-<p>Nebula Graph master 的数据模型中，由于设计允许图中存在“悬挂边”；
+<p>Nebula Graph 3.1.0 的数据模型中，由于设计允许图中存在“悬挂边”；
 没有 openCypher 中的 MERGE 语句。
 对于悬挂边的保证完全依赖应用层面。
 详见 <a href="../../3.ngql-guide/12.vertex-statements/1.insert-vertex/">INSERT VERTEX</a>, <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a>, <a href="../../3.ngql-guide/13.edge-statements/1.insert-edge/">INSERT EDGE</a>, <a href="../../3.ngql-guide/13.edge-statements/4.delete-edge/">DELETE EDGE</a>。</p>
@@ -7273,7 +7273,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <li>使用 Dashboard（企业版），在可视化页面对 graphd 和 storaged 进行快速扩缩容，详情参见<a href="../../nebula-dashboard-ent/4.cluster-operator/4.manage/">集群操作-扩缩容</a>。</li>
 <li>使用 Nebula Operator 扩缩容集群，详情参见<a href="../../nebula-operator/3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a>和<a href="../../nebula-operator/3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</li>
 </ul>
-<p>Nebula Graph master 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
+<p>Nebula Graph 3.1.0 未提供运维命令以实现自动扩缩容，参考以下步骤：</p>
 <ul>
 <li>
 <p>metad 的扩容和缩容： metad 不支持自动扩缩容。</p>
