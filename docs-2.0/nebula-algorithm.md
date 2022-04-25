@@ -51,7 +51,7 @@ Nebula Algorithm 支持的图计算算法如下。
  |StronglyConnectedComponent| 强联通分量  |社区发现|          scc          | int/string  |
  |       ShortestPath       |  最短路径   |路径规划、网络规划|      shortestpath     |   string    |
  |       TriangleCount      | 三角形计数  |网络结构分析|      trianglecount     | int/string  |
- |  GraphTriangleCount      | 全图三角形计数 |网络结构及紧密程度分析|
+ |  GraphTriangleCount      | 全图三角形计数 |网络结构及紧密程度分析|  count  | int |
  |   BetweennessCentrality  | 中介中心性  |关键节点挖掘，节点影响力计算|       betweenness     |double/string|
  |   ClosenessCentrality    | 接近中心性  |关键节点挖掘、节点影响力计算|       closeness       |double/string|
  |        DegreeStatic      |   度统计   |图结构分析|degree,inDegree,outDegree| int/string  |
