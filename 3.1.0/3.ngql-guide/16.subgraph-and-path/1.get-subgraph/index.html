@@ -6463,7 +6463,7 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES &quot;player101&quot; 
 <p>如果只是查询满足条件的路径或点，建议使用 <a href="../../7.general-query-statements/2.match/">MATCH</a> 或 <a href="../../7.general-query-statements/3.go/">GO</a> 语句。例如：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p= (v:player) -- (v2) WHERE id(v)==&quot;A&quot; RETURN p;
 
-nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD id(vertex);
+nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
 </code></pre></div>
 <h3 id="step_count_1">为什么返回结果中会出现低于<code>step_count</code>跳数的关系？<a class="headerlink" href="#step_count_1" title="Permanent link">&para;</a></h3>
 <p>查询到没有多余子图数据时会停止查询，且不会返回空值。</p>
@@ -6481,7 +6481,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD id(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2022</span>
       
     
   </small>
