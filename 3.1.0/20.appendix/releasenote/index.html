@@ -6354,6 +6354,7 @@
 <li>新增<code>KILL QUERY</code>的权限检查。当启用身份验证时，具有 GOD 角色的用户可以终止所有查询，而具有其他角色的用户只能终止自己的查询。<a href="https://github.com/vesoft-inc/nebula/pull/3896">#3896</a> </li>
 <li>新增 distcc、sccache 等编译方式的支持。<a href="https://github.com/vesoft-inc/nebula/pull/3896">#3896</a> </li>
 <li>meta dump 工具支持更多可 dump 的表。<a href="https://github.com/vesoft-inc/nebula/pull/3870">#3870</a> </li>
+<li>存储层将写操作（INSERT VERTEX 或者 EDGE）的并发控制，从报错并要求客户端重试，改为内部排队，以便客户端更简单适配。<a href="https://github.com/vesoft-inc/nebula/pull/3926">#3926</a></li>
 </ul>
 <h2 id="_2">缺陷修复<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6386,7 +6387,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2022</span>
       
     
   </small>
