@@ -43,18 +43,19 @@ extra:
     provider: google
     property: UA-60523578-15
   # branch represents code names (git clone). release represents version number used in texts.
-  nebula:
-    release: 3.1.0
-    nightly: nightly
-    master: master
-    base20: 2.0
-    base200: 2.0.0
-    branch: release-3.1
   version:
     method: mike
   social:
     - icon: 'fontawesome/brands/github'
       link: 'https://github.com/vesoft-inc/nebula-docs-cn'
+  nebula:
+    release: 3.1.0
+    tag: v3.1.0
+    branch: release-3.1
+    nightly: nightly
+    master: master
+    base20: 2.0
+    base200: 2.0.0
   studio:
     base111b: 1.1.1-beta
     base220: 2.2.1
@@ -119,6 +120,7 @@ extra:
     tag: v1.2.0
   operator:
     release: 1.1.0
+    tag: v1.1.0
     branch: release-1.1
     upgrade_from: 3.0.0
     upgrade_to: 3.1.x
