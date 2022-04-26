@@ -6850,8 +6850,8 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow YIELD dst(edge);
 <p>如果因为业务需要进行数据迁移，或者灾备恢复后需要切换主从集群，需要手动进行切换。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>在切换主从之前需要为新的主集群搭建并启动 listener 服务（示例 IP 为<code>192.168.10.105</code>），为新的从集群搭建并启动 drainer 服务（示例 IP 为<code>192.168.10.106</code>）。</p>
+</div>
 <ol>
 <li>
 <p>登录主集群，取消 drainer 和 listener 服务。</p>
@@ -6916,7 +6916,7 @@ nebula&gt; SET VARIABLES read_only=true;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2022</span>
       
     
   </small>
