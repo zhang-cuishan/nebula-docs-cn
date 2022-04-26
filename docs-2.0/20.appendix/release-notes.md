@@ -9,7 +9,7 @@
 - 优化路径以减少冗余路径和时间复杂度。[#4126](https://github.com/vesoft-inc/nebula/pull/4162) 
 - 优化获取属性的方式进而优化`MATCH`语句的性能。[#3750](https://github.com/vesoft-inc/nebula/pull/3750) 
 - 优化`GO`、`YIELD`子句，减少不必要的属性读取。[#3974](https://github.com/vesoft-inc/nebula/pull/3974) 
-- 支持获取属性时 Filter 及 Limit 下推。 [#3844](https://github.com/vesoft-inc/nebula/pull/3844) [#3839](https://github.com/vesoft-inc/nebula/pull/3839) 
+- 支持获取属性时 Filter 及`LIMIT`下推。 [#3844](https://github.com/vesoft-inc/nebula/pull/3844) [#3839](https://github.com/vesoft-inc/nebula/pull/3839) 
 - 支持`LOOKUP`聚合下推。[#3504](https://github.com/vesoft-inc/nebula/pull/3504) 
 - `maxHop`在匹配可变长度路径中是可选的。[#3881](https://github.com/vesoft-inc/nebula/pull/3881) 
 - 使用`DROP SPACE`之后图空间将进行物理删除。[#3913](https://github.com/vesoft-inc/nebula/pull/3913) 
@@ -28,7 +28,7 @@
 - 新增`KILL QUERY`的权限检查。当启用身份验证时，具有 GOD 角色的用户可以终止所有查询，而具有其他角色的用户只能终止自己的查询。[#3896](https://github.com/vesoft-inc/nebula/pull/3896) 
 - 新增 distcc、sccache 等编译方式的支持。[#3896](https://github.com/vesoft-inc/nebula/pull/3896) 
 - meta dump 工具支持更多可 dump 的表。[#3870](https://github.com/vesoft-inc/nebula/pull/3870) 
-- 存储层将写操作（INSERT VERTEX 或者 EDGE）的并发控制，从报错并要求客户端重试，改为内部排队，以便客户端更简单适配。[#3926](https://github.com/vesoft-inc/nebula/pull/3926)
+- 存储层将写操作（`INSERT VERTEX`或者`INSERT EDGE`）的并发控制，从报错并要求客户端重试，改为内部排队，以便客户端更简单适配。[#3926](https://github.com/vesoft-inc/nebula/pull/3926)
 
 ## 缺陷修复
 
