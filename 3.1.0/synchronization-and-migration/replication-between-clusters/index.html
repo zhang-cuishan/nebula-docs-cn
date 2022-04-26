@@ -3805,13 +3805,20 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    切换主从集群
+    停止/重启数据同步
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    切换主从集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     常见问题
   </a>
   
@@ -3847,21 +3854,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     主从集群的机器数量、副本数量、分片数量需要相同吗？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如果同步时出现故障，如何修复？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     如何判断数据同步进度？
   </a>
   
@@ -6474,13 +6481,20 @@
       
         <li class="md-nav__item">
   <a href="#_8" class="md-nav__link">
-    切换主从集群
+    停止/重启数据同步
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_9" class="md-nav__link">
+    切换主从集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     常见问题
   </a>
   
@@ -6516,21 +6530,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     主从集群的机器数量、副本数量、分片数量需要相同吗？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     如果同步时出现故障，如何修复？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     如何判断数据同步进度？
   </a>
   
@@ -6846,7 +6860,11 @@ nebula&gt; GO FROM &quot;player101&quot; OVER follow YIELD dst(edge);
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_8">切换主从集群<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_8">停止/重启数据同步<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>数据同步时，listener 会持续发送 WAL 给 drainer。</p>
+<p>如果需要停止数据同步，可以使用<code>stop sync</code>命令。此时 listener 会停止向 drainer 发送 WAL。</p>
+<p>如果需要重启数据同步，可以使用<code>restart sync</code>命令。此时 listener 会向 drainer 发送停止期间堆积的 WAL。如果 listener 上的 WAL 丢失， listener 会从主集群拉取快照重新进行同步。</p>
+<h2 id="_9">切换主从集群<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>如果因为业务需要进行数据迁移，或者灾备恢复后需要切换主从集群，需要手动进行切换。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6889,7 +6907,7 @@ nebula&gt; SET VARIABLES read_only=true;
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_9">常见问题<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_10">常见问题<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="data_data">主集群中已经有 data 了，从集群可以同步到之前的存量 data 吗？<a class="headerlink" href="#data_data" title="Permanent link">&para;</a></h3>
 <p>可以。对于主集群中的存量 data，主集群的 listener 会从各个分片的 leader 节点拉取快照，然后以 WAL 的形式发送给 drainer。存量 data 相关的 WAL 发送完毕后，开始发送主集群的增量 data 相关的 WAL 给 drainer。</p>
 <h3 id="data">从集群中已经有 data 了，数据同步会有影响吗？<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
@@ -6898,15 +6916,15 @@ nebula&gt; SET VARIABLES read_only=true;
 <p>数据同步时主集群中的 Schema 会覆盖从集群中的 Schema，因此可能导致被覆盖的 Schema 对应的数据失效或者数据不一致。请确保从集群中的 Schema 和主集群中的 Schema 没有冲突。</p>
 <h3 id="schema_1">修改主集群的 Schema 会影响数据同步吗？<a class="headerlink" href="#schema_1" title="Permanent link">&para;</a></h3>
 <p>可能会增加数据同步延迟。因为 Schema 数据和 data 数据是分开处理的（Meta listener 和 Storage listener），data 数据同步时，drainer 会检查自身的 Schema 版本，如果版本大于当前存储的版本，说明 Schema 有更新，这时候会暂缓更新，等待从集群中的 Schema 数据先更新完成。</p>
-<h3 id="_10">主从集群的机器数量、副本数量、分片数量需要相同吗？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_11">主从集群的机器数量、副本数量、分片数量需要相同吗？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>不需要。因为是以图空间为基本单位，主集群不需要知道从集群的架构信息，只需要 listener 将 WAL 发送给 drainer 即可。</p>
-<h3 id="_11">如果同步时出现故障，如何修复？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<h3 id="_12">如果同步时出现故障，如何修复？<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>可以根据故障节点，进行如下处理：</p>
 <ul>
 <li>主集群故障：会导致同步暂停，重启主集群服务即可。</li>
 <li>listener/drainer/从集群故障：服务恢复后，会收到前一节点发送的故障期间的 WAL。例如 drainer 故障恢复后，会收到 listener 发送来的故障期间的 WAL。如果用新的节点替换故障的 drainer 节点或从集群，需要将原节点的数据复制到新节点，否则相当于重新同步全量数据。</li>
 </ul>
-<h3 id="_12">如何判断数据同步进度？<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="_13">如何判断数据同步进度？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <!--show sync-->
 
 <p>暂无工具进行直接判断。</p>
