@@ -6534,7 +6534,7 @@
 <p>适合在线业务，因为生成时几乎不会影响业务（只是读取 Schema），导入速度快。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>虽然导入速度快，但是导入期间（大约 10 秒）会阻塞对应空间的写操作，建议在业务低峰期进行导入。</p>
+<p>导入期间（大约 10 秒）会阻塞对应空间的写操作，并且之后数小时内可能有历史数据整理，建议在业务低峰期进行导入。</p>
 </div>
 </li>
 </ul>
@@ -6774,7 +6774,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       output: /tmp/errors
     }
 
-    # 使用谷歌的 RateLimiter 来限制发送到 NebulaGraph 的请求。
+    # 使用Google Guava RateLimiter 来限制发送到 Nebula Graph 的请求。
     rate: {
       # RateLimiter 的稳定吞吐量。
       limit: 1024
@@ -7076,7 +7076,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2022</span>
       
     
   </small>
