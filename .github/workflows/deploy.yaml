@@ -26,6 +26,8 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r ./requirements.txt
+          pango-view --version # test
+
       - name: set LANG
         run: sh lang-zh.sh	  
 
