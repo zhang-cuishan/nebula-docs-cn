@@ -6676,8 +6676,8 @@ nebula&gt; SHOW JOB 122;
 <h3 id="_5">匹配点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>在 Nebula Graph 3.0.0 之前，不支持 <code>MATCH (v) RETURN v</code>。</p>
-<p>从 Nebula Graph 3.0.0 开始，支持<code>MATCH (v) RETURN v LIMIT n</code>，不需要创建索引，但是必须使用 <code>LIMIT</code> 限制输出结果数量。不可以直接执行 <code>MATCH (v) RETURN v</code>。</p>
+<p>从 Nebula Graph 3.0.0 开始，支持<code>MATCH (v) RETURN v LIMIT n</code>，不需要创建索引; 但是必须使用 <code>LIMIT</code> 限制输出结果数量。</p>
+<p>不可以直接执行 <code>MATCH (v) RETURN v</code>。</p>
 </div>
 <p>用户可以在一对括号中使用自定义变量来表示模式中的点。例如<code>(v)</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v) \
@@ -6694,7 +6694,7 @@ nebula&gt; SHOW JOB 122;
 <h3 id="tag">匹配 Tag<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h3>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>在 Nebula Graph 3.0.0 之前，匹配 Tag 的前提是  Tag 本身有索引或者 Tag 的某个属性有索引，否则，用户无法基于该 Tag 执行 <code>MATCH</code> 语句。从Nebula Graph 3.0.0 开始，匹配 Tag 可以不创建索引，但需要使用 <code>LIMIT</code> 限制输出结果数量。</p>
+<p>在 Nebula Graph 3.0.0 之前，匹配 Tag 的前提是  Tag 本身有索引或者 Tag 的某个属性有索引，否则，用户无法基于该 Tag 执行 <code>MATCH</code> 语句。从 Nebula Graph 3.0.0 开始，匹配 Tag 可以不创建索引，但需要使用 <code>LIMIT</code> 限制输出结果数量。</p>
 </div>
 <p>用户可以在点的右侧用<code>:&lt;tag_name&gt;</code>表示模式中的 Tag。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
@@ -7077,7 +7077,7 @@ nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*1..]-&gt;(v
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
       
     
   </small>

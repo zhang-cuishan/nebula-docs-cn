@@ -6319,10 +6319,6 @@
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>DELETE EDGE &lt;edge_type&gt; &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] [, &lt;src_vid&gt; -&gt; &lt;dst_vid&gt;[@&lt;rank&gt;] ...]
 </code></pre></div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>如果不指定 rank，则仅仅删除 rank 为 0 的边。需要删除所有的 rank，见如下示例。</p>
-</div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; DELETE EDGE serve &quot;player100&quot; -&gt; &quot;team204&quot;@0;
 </code></pre></div>
@@ -6338,7 +6334,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
       
     
   </small>
