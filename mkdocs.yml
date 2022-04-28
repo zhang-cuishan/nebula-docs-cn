@@ -14,8 +14,8 @@ edit_uri: 'edit/v3.0.1/docs-2.0/'
 
 # Configuration
 theme:
-  name: 'material'
-  custom_dir: overrides
+  name: material
+  custom_dir: material
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
   favicon: 'assets/images/favicon.ico'
   # modify when release: 
@@ -35,9 +35,9 @@ theme:
   language: 'zh'
 
 extra_css:
-  - 'stylesheets/logo.css'
+  - stylesheets/logo.css
   - stylesheets/note.css
-  - css/version-select.css
+  #- css/version-select.css
   - stylesheets/extra.css
 
 # Extensions
@@ -92,7 +92,6 @@ plugins:
       output_path: pdf/NebulaGraph-CN.pdf
 
 extra_javascript:
-  - js/version-select.js
   - js/config.js
   - js/jquery.js
   - js/init.js

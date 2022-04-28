@@ -6,11 +6,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+          runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 1 # fetch all commits/branches for git-revision-date-localized-plugin
+          fetch-depth: 0 # fetch all commits/branches for git-revision-date-localized-plugin
 
       - name: Setup Python
         uses: actions/setup-python@v1
