@@ -1,9 +1,14 @@
-site_name: Nebula Graph Database 手册 site_description: Documentation for Nebula Graph Database site_author: Nebula Graph site_url: https://docs.nebula-graph.com.cn/ repo_name: 'vesoft-inc/nebula-docs-cn' repo_url: 'https://github.com/vesoft-inc/nebula-docs-cn' docs_dir: docs-2.0 # Copyright
+site_name: Nebula Graph Database 手册 
+site_description: Documentation for Nebula Graph Database 
+site_author: Nebula Graph 
+site_url: https://docs.nebula-graph.com.cn/ 
+repo_name: 'vesoft-inc/nebula-docs-cn' 
+repo_url: 'https://github.com/vesoft-inc/nebula-docs-cn' 
+docs_dir: docs-2.0 
 copyright: Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
  
 # modify when release: 
 edit_uri: 'edit/v3.1.0/docs-2.0/'  
-
 
 # Configuration
 theme:
@@ -600,7 +605,7 @@ nav:
   - Nebula Bench: nebula-bench.md
 
   - 附录:
-      - Release Note: 20.appendix/releasenote.md
+      - Release Note: 20.appendix/release-note.md
       - 学习路径: 20.appendix/learning-path.md
       - 常见问题 FAQ: 20.appendix/0.FAQ.md
       - 生态工具概览: 20.appendix/6.eco-tool-version.md
