@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,34 +18,22 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
 
-      - name: apt install
-        run: |
-          sudo apt update -y
-          sudo apt install -y $(cat pkglist.txt)
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r ./requirements.txt
-     
-
-      - name: set LANG
-        run: sh lang-zh.sh	  
-
+      - name : prepare
+        run: sh ./prepare.sh
+ 
       - name: Git Config
         run: git config user.name whitewum && git config user.email min.wu@vesoft.com
 
-      - name: mike list delete
+      - name: mike 
         run: |
-          mike list
-      - name: Mike Deploy 3.1.0
-        run: |
-          #mike delete v3.1.0 -p
           mike deploy 3.1.0 -p --rebase
           mike set-default 3.1.0 -p --rebase
           mike list
+
       - name: show git branch
         run: | 
           git branch
+          git checkout .
           git checkout gh-pages
       - name: Compress
         run: |
@@ -61,7 +49,6 @@ jobs:
           port: ${{ secrets.PORT }}
           source: nebula-docs.tar.gz
           target: /usr/web
-
       - name: UnCompress
         uses: appleboy/ssh-action@master
         with:
