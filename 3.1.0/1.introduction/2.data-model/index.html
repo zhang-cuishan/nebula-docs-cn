@@ -2504,7 +2504,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">数据模型<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>本文介绍 Nebula Graph 的数据模型。数据模型是一种组织数据并说明它们如何相互关联的模型（schema）。</p>
+<p>本文介绍 Nebula Graph 的数据模型。数据模型是一种组织数据并说明它们如何相互关联的模型。</p>
 <h2 id="_2">数据模型<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <p>Nebula Graph 数据模型使用 6 种基本的数据模型：</p>
 <ul>
@@ -2523,7 +2523,7 @@
 </ul>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
-<p>Nebula Graph 2.x 的点不能没有 Tag。Nebula Graph 3.1.0 的点可以没有 Tag。</p>
+<p>Nebula Graph 2.x 及以下版本中的点必须包含至少一个 Tag。</p>
 </div>
 </li>
 </ul>
@@ -2536,13 +2536,13 @@
 <li>边是有方向的，不存在无向边。</li>
 <li>四元组 <code>&lt;起点 VID、Edge type、边排序值 (rank)、终点 VID&gt;</code> 用于唯一标识一条边。边没有 EID。</li>
 <li>一条边有且仅有一个 Edge type。</li>
-<li>一条边有且仅有一个 rank，类型为 int64，默认值为 0。</li>
+<li>一条边有且仅有一个 Rank，类型为 int64，默认值为 0。</li>
 </ul>
 <div class="admonition 关于 rank">
 <p class="admonition-title">关于</p>
-<p>rank 可以用来区分 Edge type、起始点、目的点都相同的边。该值完全由用户自己指定。     <br/>
- 读取时必须自行取得全部的 rank 值后排序过滤和拼接。     <br/>
- 不支持诸如 <code>next(), pre(), head(), tail(), max(), min(), lessThan(), moreThan()</code> 等函数功能，也不能通过创建索引加速访问或者条件过滤。 </p>
+<p>Rank 可以用来区分 Edge type、起始点、目的点都相同的边。该值完全由用户自己指定。     <br/>
+ 读取时必须自行取得全部的 Rank 值后排序过滤和拼接。     <br/>
+ 不支持诸如<code>next(), pre(), head(), tail(), max(), min(), lessThan(), moreThan()</code>等函数功能，也不能通过创建索引加速访问或者条件过滤。 </p>
 </div>
 </li>
 </ul>
@@ -2560,7 +2560,7 @@
 </ul>
 <ul>
 <li>
-<p>属性（Properties）</p>
+<p>属性（Property）</p>
 <p>属性是指以键值对（Key-value pair）形式表示的信息。</p>
 </li>
 </ul>
@@ -2620,7 +2620,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2022</span>
 </small>
 </div>
 </article>

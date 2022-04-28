@@ -2866,8 +2866,7 @@
 </ul>
 <p>EdgeA_Out 和 EdgeA_In 以方向相反的两条边的形式存在于存储层，二者组合成了逻辑上的一条边 EdgeA。EdgeA_Out 用于从起点开始的遍历请求，例如<code>(a)-[]-&gt;()</code>；EdgeA_In 用于指向目的点的遍历请求，或者说从目的点开始，沿着边的方向逆序进行的遍历请求，例如例如<code>()-[]-&gt;(a)</code>。</p>
 <p>如 EdgeA_Out 和 EdgeA_In 一样，Nebula Graph 冗余了存储每条边的信息，导致存储边所需的实际空间翻倍。因为边对应的 key 占用的硬盘空间较小，但 value 占用的空间与属性值的长度和数量成正比，所以，当边的属性值较大或数量较多时候，硬盘空间占用量会比较大。</p>
-<p>如果对边进行操作，为了保证两个键值对的最终一致性，可以开启 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">TOSS 功能</a>，开启后，会先在正向边所在的分片进行操作，然后在反向边所在分片进行操作，最后返回结果。
---&gt;</p>
+<p>如果对边进行操作，为了保证两个键值对的最终一致性，可以开启 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">TOSS 功能</a>，开启后，会先在正向边所在的分片进行操作，然后在反向边所在分片进行操作，最后返回结果。</p>
 <h3 id="_6">分片算法<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
 <p>分片策略采用<strong>静态 Hash </strong>的方式，即对点 VID 进行取模操作，同一个点的所有 Tag、出边和入边信息都会存储到同一个分片，这种方式极大地提升了查询效率。</p>
 <div class="admonition note">
@@ -2994,7 +2993,7 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2022</span>
 </small>
 </div>
 </article>
