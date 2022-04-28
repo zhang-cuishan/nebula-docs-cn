@@ -1,12 +1,4 @@
-site_name: Nebula Graph Database 手册
-site_description: Documentation for Nebula Graph Database
-site_author: Nebula Graph
-site_url: https://docs.nebula-graph.com.cn/
-repo_name: 'vesoft-inc/nebula-docs-cn'
-repo_url: 'https://github.com/vesoft-inc/nebula-docs-cn'
-docs_dir: docs-2.0
-
-# Copyright
+site_name: Nebula Graph Database 手册 site_description: Documentation for Nebula Graph Database site_author: Nebula Graph site_url: https://docs.nebula-graph.com.cn/ repo_name: 'vesoft-inc/nebula-docs-cn' repo_url: 'https://github.com/vesoft-inc/nebula-docs-cn' docs_dir: docs-2.0 # Copyright
 copyright: Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
  
 # modify when release: 
@@ -93,6 +85,7 @@ plugins:
       output_path: pdf/NebulaGraph-CN.pdf
 
 extra_javascript:
+  - js/version-select.js      
   - js/config.js
   - js/jquery.js
   - js/init.js
