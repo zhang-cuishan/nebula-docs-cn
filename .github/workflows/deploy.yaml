@@ -10,20 +10,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # fetch all commits/branches for git-revision-date-localized-plugin
+          fetch-depth: 1 # fetch all commits/branches for git-revision-date-localized-plugin
 
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
           python-version: '3.8'
           architecture: 'x64'
-
+          
+      - name : prepare
+        run: sh ./prepare.sh
+ 
       - name: Git Config
         run: git config user.name whitewum && git config user.email min.wu@vesoft.com
 
       - name: mike 
         run: |
-          sh prepare.sh
           mike list
           # mike delete v3.0.1 -p
           mike deploy 3.0.1 -p --rebase
