@@ -1,16 +1,16 @@
 site_name: Nebula Graph Database 手册
 site_description: Documentation for Nebula Graph Database
 site_author: Nebula Graph
-site_url: https://docs.nebula-graph.com.cn/
-edit_uri: 'edit/v3.0.1/docs-2.0/'
+site_url: https://docs.nebula-graph.com.cn/ 
 docs_dir: docs-2.0
-
 # repository
 repo_name: 'vesoft-inc/nebula-docs-cn'
 repo_url: 'https://github.com/vesoft-inc/nebula-docs-cn'
-
 # Copyright
 copyright: Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
+
+# modify when release: 
+edit_uri: 'edit/v3.0.1/docs-2.0/'  
 
 # Configuration
 theme:
@@ -18,6 +18,7 @@ theme:
   custom_dir: overrides
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
   favicon: 'assets/images/favicon.ico'
+  # modify when release: 
   # Change color in `stylesheets > extra.css`
   palette:
     - scheme: nebula
@@ -38,6 +39,67 @@ extra_css:
   - stylesheets/note.css
   - css/version-select.css
   - stylesheets/extra.css
+
+# Extensions
+markdown_extensions:
+  - footnotes
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+#      toc_depth: 3
+      permalink: true
+      separator: "_"
+  - mdx_truly_sane_lists
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: docs-2.0/reuse/
+  - pymdownx.arithmatex:
+      generic: true
+
+# Plugins
+plugins:
+  - search
+  - macros:
+      include_dir: docs-2.0/reuse/
+  - git-revision-date-localized
+# modify when release: 
+  - exclude:
+# Exclude files with unix-style wildcards (globs)
+      glob:
+# Exclude all files in a directory. The path starts with the directory name in docs-2.0, such as `20.appendix/*`.
+        - nebula-flink/*
+        - CHANGELOG.md
+        - spark-connector/*
+        - nebula-operator/*
+        - 4.deployment-and-installation/5.zone.md
+        - 4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md
+        - nebula-cloud/*
+# Exclude the file with the following file name.
+#        - abc.md
+# Exclude files with regular expressions (regexes)
+#    regex:
+#      - '.*\.(tmp|bin|tar)$'
+
+# modify when release: 
+  - with-pdf:
+      copyright: 2022 vesoft Inc.
+      cover_subtitle: v3.0.1
+      author: 吴敏，周瑶，梁振亚，杨怡璇，黄凤仙
+      cover: true
+      back_cover: true
+      cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
+      output_path: pdf/NebulaGraph-CN.pdf
+
+extra_javascript:
+  - js/version-select.js
+  - js/config.js
+  - js/jquery.js
+  - js/init.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# modify when release: 
 extra:
   analytics:
     provider: google
@@ -136,10 +198,10 @@ nav:
 
   - 快速入门:
       - 快速入门流程: 2.quick-start/1.quick-start-workflow.md
-      - 步骤1：安装 Nebula Graph: 2.quick-start/2.install-nebula-graph.md
-      - 步骤2：启动 Nebula Graph: 2.quick-start/5.start-stop-service.md
-      - 步骤3：连接 Nebula Graph: 2.quick-start/3.connect-to-nebula-graph.md
-      - 步骤4：使用常用命令: 2.quick-start/4.nebula-graph-crud.md
+      - 步骤1:安装 Nebula Graph: 2.quick-start/2.install-nebula-graph.md
+      - 步骤2:启动 Nebula Graph: 2.quick-start/5.start-stop-service.md
+      - 步骤3:连接 Nebula Graph: 2.quick-start/3.connect-to-nebula-graph.md
+      - 步骤4:使用常用命令: 2.quick-start/4.nebula-graph-crud.md
       - nGQL 命令汇总: 2.quick-start/6.cheatsheet-for-ngql-command.md
 
   - nGQL 指南:
@@ -522,61 +584,3 @@ nav:
 
   - English Docs: https://docs.nebula-graph.io/
   - PDF: ./pdf/NebulaGraph-CN.pdf
-
-# Extensions
-markdown_extensions:
-  - footnotes
-  - admonition
-  - codehilite:
-      guess_lang: false
-  - toc:
-#      toc_depth: 3
-      permalink: true
-      separator: "_"
-  - mdx_truly_sane_lists
-  - pymdownx.superfences
-  - pymdownx.snippets:
-      base_path: docs-2.0/reuse/
-  - pymdownx.arithmatex:
-      generic: true
-
-# Plugins
-plugins:
-  - search
-  - macros:
-      include_dir: docs-2.0/reuse/
-  - git-revision-date-localized
-
-  - exclude:
-# Exclude files with unix-style wildcards (globs)
-      glob:
-# Exclude all files in a directory. The path starts with the directory name in docs-2.0, such as `20.appendix/*`.
-        - nebula-flink/*
-        - CHANGELOG.md
-        - spark-connector/*
-        - nebula-operator/*
-        - 4.deployment-and-installation/5.zone.md
-        - 4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md
-        - nebula-cloud/*
-# Exclude the file with the following file name.
-#        - abc.md
-# Exclude files with regular expressions (regexes)
-#    regex:
-#      - '.*\.(tmp|bin|tar)$'
-
-  - with-pdf:
-      copyright: 2022 vesoft Inc.
-      cover_subtitle: v3.0.1
-      author: 吴敏，周瑶，梁振亚，杨怡璇，黄凤仙
-      cover: true
-      back_cover: true
-      cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
-      output_path: pdf/NebulaGraph-CN.pdf
-
-extra_javascript:
-  - js/version-select.js
-  - js/config.js
-  - js/jquery.js
-  - js/init.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

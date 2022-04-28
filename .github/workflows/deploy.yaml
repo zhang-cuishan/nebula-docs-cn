@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # fetch all commits/branches
+          fetch-depth: 1 # fetch all commits/branches
 
       - name: Setup Python
         uses: actions/setup-python@v1
@@ -18,32 +18,21 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
 
-      - name: apt install
-        run: |
-          sudo apt update -y
-          sudo apt install -y $(cat pkglist.txt)
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r ./requirements.txt
-      - name: set LANG
-        run: sh lang-zh.sh	  
-
       - name: Git Config
         run: git config user.name whitewum && git config user.email min.wu@vesoft.com
 
-      - name: mike list delete
+      - name: mike 
         run: |
           mike list
-      - name: Mike Deploy 3.0.1
-        run: |
-          #mike delete v3.0.1 -p
+          # mike delete v3.0.1 -p
           mike deploy 3.0.1 -p --rebase
           mike list
+
       - name: show git branch
         run: | 
           git branch
           git checkout gh-pages
+
       - name: Compress
         run: |
           tar -vczf nebula-docs.tar.gz 3.0.1 versions.json *.html
