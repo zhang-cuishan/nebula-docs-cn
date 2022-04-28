@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/3.1.0/1.introduction/3.nebula-graph-architecture/3.graph-service/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/3.1.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" rel="canonical"/>
 <link href="../../../icon/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-7.1.0" name="generator"/>
-<title>Graph 服务 - Nebula Graph Database 手册</title>
+<title>使用生态工具安装 - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.fdf4365a.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,9 +21,9 @@
 <link href="../../../stylesheets/extra.css" rel="stylesheet"/>
 <link href="../../../css/version-select.css" rel="stylesheet"/>
 <meta content="website" property="og:type"/>
-<meta content="Nebula Graph Database 手册 - Graph 服务" property="og:title"/>
+<meta content="Nebula Graph Database 手册 - 使用生态工具安装" property="og:title"/>
 <meta content="Documentation for Nebula Graph Database" property="og:description"/>
-<meta content="https://docs.nebula-graph.com.cn/3.1.0/1.introduction/3.nebula-graph-architecture/3.graph-service/" property="og:url"/>
+<meta content="https://docs.nebula-graph.com.cn/3.1.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" property="og:url"/>
 <meta content="https://docs.nebula-graph.com.cn/3.1.0assets/images/banner.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1080" property="og:image:width"/>
@@ -37,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#graph">
+<a class="md-skip" href="#nebula_graph">
           跳转至
         </a>
 </div>
@@ -61,7 +61,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Graph 服务
+              使用生态工具安装
             
           </span>
 </div>
@@ -146,8 +146,8 @@
         前言
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2">
         简介
         <span class="md-nav__icon md-icon"></span>
@@ -159,42 +159,42 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../0-0-graph/">
+<a class="md-nav__link" href="../../../1.introduction/0-0-graph/">
         图
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../0-1-graph-database/">
+<a class="md-nav__link" href="../../../1.introduction/0-1-graph-database/">
         图数据库
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../0-2.relates/">
+<a class="md-nav__link" href="../../../1.introduction/0-2.relates/">
         相关技术
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../1.what-is-nebula-graph/">
+<a class="md-nav__link" href="../../../1.introduction/1.what-is-nebula-graph/">
         什么是 Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.data-model/">
+<a class="md-nav__link" href="../../../1.introduction/2.data-model/">
         数据模型
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../2.1.path/">
+<a class="md-nav__link" href="../../../1.introduction/2.1.path/">
         路径
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../3.vid/">
+<a class="md-nav__link" href="../../../1.introduction/3.vid/">
         VID
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2_8">
         服务架构
         <span class="md-nav__icon md-icon"></span>
@@ -206,70 +206,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../1.architecture-overview/">
+<a class="md-nav__link" href="../../../1.introduction/3.nebula-graph-architecture/1.architecture-overview/">
         架构总览
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../2.meta-service/">
+<a class="md-nav__link" href="../../../1.introduction/3.nebula-graph-architecture/2.meta-service/">
         Meta 服务
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Graph 服务
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../1.introduction/3.nebula-graph-architecture/3.graph-service/">
         Graph 服务
       </a>
-<nav aria-label="目录" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#graph_1">
-    Graph 服务架构
-  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#parser">
-    Parser
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#validator">
-    Validator
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#planner">
-    Planner
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#executor">
-    Executor
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    代码结构
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    视频
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../4.storage-service/">
+<a class="md-nav__link" href="../../../1.introduction/3.nebula-graph-architecture/4.storage-service/">
         Storage 服务
       </a>
 </li>
@@ -1099,17 +1051,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/6.deploy-text-based-index/1.text-based-index-restrictions/">
+<a class="md-nav__link" href="../../6.deploy-text-based-index/1.text-based-index-restrictions/">
         全文索引限制
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">
+<a class="md-nav__link" href="../../6.deploy-text-based-index/2.deploy-es/">
         部署全文索引
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/6.deploy-text-based-index/3.deploy-listener/">
+<a class="md-nav__link" href="../../6.deploy-text-based-index/3.deploy-listener/">
         部署 Raft listener
       </a>
 </li>
@@ -1179,8 +1131,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5">
         安装部署
         <span class="md-nav__icon md-icon"></span>
@@ -1192,12 +1144,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/1.resource-preparations/">
+<a class="md-nav__link" href="../../1.resource-preparations/">
         准备资源
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_5_2">
         编译与安装
         <span class="md-nav__icon md-icon"></span>
@@ -1209,60 +1161,78 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">
+<a class="md-nav__link" href="../1.install-nebula-graph-by-compiling-the-source-code/">
         使用源码安装
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb/">
+<a class="md-nav__link" href="../2.install-nebula-graph-by-rpm-or-deb/">
         使用 RPM/DEB 包安装
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar/">
+<a class="md-nav__link" href="../4.install-nebula-graph-from-tar/">
         使用 tar.gz 文件安装
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose/">
+<a class="md-nav__link" href="../3.deploy-nebula-graph-with-docker-compose/">
         使用 Docker Compose 部署
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster/">
+<a class="md-nav__link" href="../deploy-nebula-graph-cluster/">
         使用 RPM/DEB 包部署多机集群
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          使用生态工具安装
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         使用生态工具安装
       </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    安装详情
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/standalone-deployment/">
+<a class="md-nav__link" href="../../standalone-deployment/">
         安装存算合并版 Nebula Graph
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/deploy-license/">
+<a class="md-nav__link" href="../../deploy-license/">
         设置企业版 License
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/manage-service/">
+<a class="md-nav__link" href="../../manage-service/">
         管理服务
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/connect-to-nebula-graph/">
+<a class="md-nav__link" href="../../connect-to-nebula-graph/">
         连接服务
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/manage-storage-host/">
+<a class="md-nav__link" href="../../manage-storage-host/">
         管理 Storage 主机
       </a>
 </li>
@@ -1279,7 +1249,7 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">
+<a class="md-nav__link" href="../../3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">
         升级 Nebula Graph 版本
       </a>
 </li>
@@ -1287,7 +1257,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../4.deployment-and-installation/4.uninstall-nebula-graph/">
+<a class="md-nav__link" href="../../4.uninstall-nebula-graph/">
         卸载 Nebula Graph
       </a>
 </li>
@@ -2509,38 +2479,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#graph_1">
-    Graph 服务架构
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#parser">
-    Parser
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#validator">
-    Validator
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#planner">
-    Planner
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#executor">
-    Executor
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
-    代码结构
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    视频
+    安装详情
   </a>
 </li>
 </ul>
@@ -2550,107 +2490,29 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.1.0/docs-2.0/1.introduction/3.nebula-graph-architecture/3.graph-service.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/v3.1.0/docs-2.0/4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="graph">Graph 服务<a class="headerlink" href="#graph" title="Permanent link">¶</a></h1>
-<p>Graph 服务主要负责处理查询请求，包括解析查询语句、校验语句、生成执行计划以及按照执行计划执行四个大步骤，本文将基于这些步骤介绍 Graph 服务。</p>
-<h2 id="graph_1">Graph 服务架构<a class="headerlink" href="#graph_1" title="Permanent link">¶</a></h2>
-<p><img alt="The architecture of the Graph Service" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/query-engine-architecture.png"/></p>
-<p>查询请求发送到 Graph 服务后，会由如下模块依次处理：</p>
-<ol>
-<li>
-<p><strong>Parser</strong>：词法语法解析模块。</p>
-</li>
-<li>
-<p><strong>Validator</strong>：语义校验模块。</p>
-</li>
-<li>
-<p><strong>Planner</strong>：执行计划与优化器模块。</p>
-</li>
-<li>
-<p><strong>Executor</strong>：执行引擎模块。</p>
-</li>
-</ol>
-<h2 id="parser">Parser<a class="headerlink" href="#parser" title="Permanent link">¶</a></h2>
-<p>Parser 模块收到请求后，通过 Flex（词法分析工具）和 Bison（语法分析工具）生成的词法语法解析器，将语句转换为抽象语法树（AST），在语法解析阶段会拦截不符合语法规则的语句。</p>
-<p>例如<code>GO FROM "Tim" OVER like WHERE properties(edge).likeness &gt; 8.0 YIELD dst(edge)</code>语句转换的 AST 如下。</p>
-<p><img alt="AST" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/parser-ast-tree.png"/></p>
-<h2 id="validator">Validator<a class="headerlink" href="#validator" title="Permanent link">¶</a></h2>
-<p>Validator 模块对生成的 AST 进行语义校验，主要包括：</p>
+<h1 id="nebula_graph">使用生态工具安装 Nebula Graph<a class="headerlink" href="#nebula_graph" title="Permanent link">¶</a></h1>
+<p>用户可以使用以下生态工具安装企业版和社区版的 Nebula Graph：</p>
 <ul>
-<li>校验元数据信息<p>校验语句中的元数据信息是否正确。</p>
-<p>例如解析 <code>OVER</code>、<code>WHERE</code>和<code>YIELD</code> 语句时，会查找 Schema 校验 Edge type、Tag 的信息是否存在，或者插入数据时校验插入的数据类型和 Schema 中的是否一致。</p>
-</li>
+<li>企业版 Nebula Dashboard</li>
+<li>Nebula Operator</li>
 </ul>
+<h2 id="_1">安装详情<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <ul>
-<li>校验上下文引用信息<p>校验引用的变量是否存在或者引用的属性是否属于变量。</p>
-<p>例如语句<code>$var = GO FROM "Tim" OVER like YIELD dst(edge) AS ID; GO FROM $var.ID OVER serve YIELD dst(edge)</code>，Validator 模块首先会检查变量 <code>var</code> 是否定义，其次再检查属性 <code>ID</code> 是否属于变量 <code>var</code>。</p>
-</li>
+<li>使用<strong>企业版 Nebula Dashboard</strong> 安装 Nebula Graph 的详情，参见<a href="../../../nebula-dashboard-ent/3.create-import-dashboard/1.create-cluster/">创建集群</a>。</li>
+<li>使用 <strong>Nebula Operator</strong> 安装 Nebula Graph 的详情，参见<a href="../../../nebula-operator/3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 Nebula Graph 集群</a> 或 <a href="../../../nebula-operator/3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 Nebula Graph 集群</a>。</li>
 </ul>
-<ul>
-<li>校验类型推断<p>推断表达式的结果类型，并根据子句校验类型是否正确。</p>
-<p>例如 <code>WHERE</code> 子句要求结果是 <code>bool</code>、<code>null</code> 或者 <code>empty</code>。</p>
-</li>
-</ul>
-<ul>
-<li>校验 <code>*</code> 代表的信息<p>查询语句中包含 <code>*</code> 时，校验子句时需要将 <code>*</code> 涉及的 Schema 都进行校验。</p>
-<p>例如语句<code>GO FROM "Tim" OVER * YIELD dst(edge), properties(edge).likeness, dst(edge)</code>，校验<code>OVER</code>子句时需要校验所有的 Edge type，如果 Edge type 包含 <code>like</code>和<code>serve</code>，该语句会展开为<code>GO FROM "Tim" OVER like,serve YIELD dst(edge), properties(edge).likeness, dst(edge)</code>。</p>
-</li>
-</ul>
-<ul>
-<li>校验输入输出<p>校验管道符（|）前后的一致性。</p>
-<p>例如语句<code>GO FROM "Tim" OVER like YIELD dst(edge) AS ID | GO FROM $-.ID OVER serve YIELD dst(edge)</code>，Validator 模块会校验 <code>$-.ID</code> 在管道符左侧是否已经定义。</p>
-</li>
-</ul>
-<p>校验完成后，Validator 模块还会生成一个默认可执行，但是未进行优化的执行计划，存储在目录 <code>src/planner</code> 内。</p>
-<h2 id="planner">Planner<a class="headerlink" href="#planner" title="Permanent link">¶</a></h2>
-<p>如果配置文件 <code>nebula-graphd.conf</code> 中 <code>enable_optimizer</code> 设置为 <code>false</code>，Planner 模块不会优化 Validator 模块生成的执行计划，而是直接交给 Executor 模块执行。</p>
-<p>如果配置文件 <code>nebula-graphd.conf</code>中<code>enable_optimizer</code> 设置为 <code>true</code>，Planner 模块会对 Validator 模块生成的执行计划进行优化。如下图所示。</p>
-<p><img alt="Optimizer" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/optimizer.png"/></p>
-<ul>
-<li>优化前<p>如上图右侧未优化的执行计划，每个节点依赖另一个节点，例如根节点 <code>Project</code> 依赖 <code>Filter</code>、<code>Filter</code> 依赖 <code>GetNeighbor</code>，最终找到叶子节点 <code>Start</code>，才能开始执行（并非真正执行）。</p>
-<p>在这个过程中，每个节点会有对应的输入变量和输出变量，这些变量存储在一个哈希表中。由于执行计划不是真正执行，所以哈希表中每个 key 的 value 值都为空（除了 <code>Start</code> 节点，起始数据会存储在该节点的输入变量中）。哈希表定义在仓库 <code>nebula-graph</code> 内的 <code>src/context/ExecutionContext.cpp</code> 中。</p>
-<p>例如哈希表的名称为 <code>ResultMap</code>，在建立 <code>Filter</code> 这个节点时，定义该节点从 <code>ResultMap["GN1"]</code> 中读取数据，然后将结果存储在 <code>ResultMap["Filter2"]</code> 中，依次类推，将每个节点的输入输出都确定好。</p>
-</li>
-</ul>
-<ul>
-<li>优化过程<p>Planner 模块目前的优化方式是 RBO（rule-based optimization），即预定义优化规则，然后对 Validator 模块生成的默认执行计划进行优化。新的优化规则 CBO（cost-based optimization）正在开发中。优化代码存储在仓库 <code>nebula-graph</code> 的目录 <code>src/optimizer/</code> 内。</p>
-<p>RBO 是一个自底向上的探索过程，即对于每个规则而言，都会由执行计划的根节点（示例是<code>Project</code>）开始，一步步向下探索到最底层的节点，在过程中查看是否可以匹配规则。</p>
-<p>如上图所示，探索到节点 <code>Filter</code> 时，发现依赖的节点是 <code>GetNeighbor</code>，匹配预先定义的规则，就会将 <code>Filter</code> 融入到 <code>GetNeighbor</code> 中，然后移除节点 <code>Filter</code>，继续匹配下一个规则。在执行阶段，当算子 <code>GetNeighbor</code> 调用 Storage 服务的接口获取一个点的邻边时，Storage 服务内部会直接将不符合条件的边过滤掉，这样可以极大地减少传输的数据量，该优化称为过滤下推。</p>
-</li>
-</ul>
-<h2 id="executor">Executor<a class="headerlink" href="#executor" title="Permanent link">¶</a></h2>
-<p>Executor 模块包含调度器（Scheduler）和执行器（Executor），通过调度器调度执行计划，让执行器根据执行计划生成对应的执行算子，从叶子节点开始执行，直到根节点结束。如下图所示。</p>
-<p><img alt="Executor" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/1.introduction/2.nebula-graph-architecture/executor.png"/></p>
-<p>每一个执行计划节点都一一对应一个执行算子，节点的输入输出在优化执行计划时已经确定，每个算子只需要拿到输入变量中的值进行计算，最后将计算结果放入对应的输出变量中即可，所以只需要从节点 <code>Start</code> 一步步执行，最后一个算子的输出变量会作为最终结果返回给客户端。</p>
-<h2 id="_1">代码结构<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<p>Nebula Graph 的代码层次结构如下：</p>
-<div class="highlight"><pre><span></span><code><span class="p">|</span>--src
-   <span class="p">|</span>--context    //校验期和执行期上下文
-   <span class="p">|</span>--daemons
-   <span class="p">|</span>--executor   //执行算子
-   <span class="p">|</span>--mock
-   <span class="p">|</span>--optimizer  //优化规则
-   <span class="p">|</span>--parser     //词法语法分析
-   <span class="p">|</span>--planner    //执行计划结构
-   <span class="p">|</span>--scheduler  //调度器
-   <span class="p">|</span>--service
-   <span class="p">|</span>--util       //基础组件
-   <span class="p">|</span>--validator  //语句校验
-   <span class="p">|</span>--visitor
-</code></pre></div>
-<h2 id="_2">视频<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<p>用户也可以通过视频全方位了解 Nebula Graph 的查询引擎。</p>
-<ul>
-<li><a href="https://www.bilibili.com/video/BV1xV411n7DD">nMeetup·上海 ｜全面解析 Query Engine</a>（33 分 30 秒）</li>
-</ul>
-<iframe allowfullscreen="true" border="0" frameborder="no" framespacing="0" height="480px" scrolling="no" src="//player.bilibili.com/player.html?aid=417369444&amp;bvid=BV1xV411n7DD&amp;cid=317029694&amp;page=1" width="720px"> </iframe>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>联系销售（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）获取企业版 Nebula Graph 的安装包。</p>
+</div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2022</span>
 </small>
 </div>
 </article>
@@ -2662,7 +2524,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../2.meta-service/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../deploy-nebula-graph-cluster/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2671,17 +2533,17 @@
 <span class="md-footer__direction">
                 上一页
               </span>
-              Meta 服务
+              使用 RPM/DEB 包部署多机集群
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../4.storage-service/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../../standalone-deployment/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              Storage 服务
+              安装存算合并版 Nebula Graph
             </div>
 </div>
 <div class="md-footer__button md-icon">
