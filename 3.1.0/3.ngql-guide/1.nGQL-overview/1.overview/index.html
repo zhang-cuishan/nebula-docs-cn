@@ -2703,9 +2703,13 @@ prop_value_list:
 <h3 id="ngql_opencypher_9">nGQL 完全兼容 openCypher 9 吗？<a class="headerlink" href="#ngql_opencypher_9" title="Permanent link">¶</a></h3>
 <p>不。</p>
 <div class="admonition compatibility">
-<p class="admonition-title">nGQL 部分兼容 openCypher 9 的 DQL</p>
-<p>nGQL 设计目标为兼容部分 DQL（match）。不计划兼容任何 DDL，DML，DCL。</p>
-<p>在 <a href="https://github.com/vesoft-inc/nebula/issues?q=is%3Aissue+is%3Aopen+label%3Aincompatible">Nebula Graph Issues</a> 中已经列出已知的多处不兼容项。如果发现这种类型的新问题，请提交问题并附带<code>incompatible</code>标签。在本文搜索"compatibility"或者“兼容性”查看具体不兼容细节。</p>
+<p class="admonition-title">openCypher 兼容性</p>
+<p>nGQL 设计目标仅为兼容部分的 DQL 语句(match, optional match, with等)。</p>
+<p>不计划兼容任何 DDL，DML，DCL；</p>
+<p>不计划兼容 Bolt 协议；</p>
+<p>不计划兼容 APOC 与 GDS。</p>
+<p>在本文搜索 "compatibility" 或者 “兼容性” 查看具体不兼容的细节。</p>
+<p>在 <a href="https://github.com/vesoft-inc/nebula/issues?q=is%3Aissue+is%3Aopen+label%3Aincompatible">Nebula Graph Issues</a> 中已经列出已知的兼容错误。如果发现这种类型的新问题，请提交问题并附带<code>incompatible</code>标签。</p>
 </div>
 <h3 id="ngql_opencypher_10">nGQL 和 openCypher 9 的 主要差异有哪些？<a class="headerlink" href="#ngql_opencypher_10" title="Permanent link">¶</a></h3>
 <table>
@@ -2881,7 +2885,7 @@ Feature:  Comparison of where clause
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2022</span>
 </small>
 </div>
 </article>
