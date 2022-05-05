@@ -2519,6 +2519,10 @@
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ADD HOSTS 192.168.10.100:9779, 192.168.10.101:9779, 192.168.10.102:9779;
 </code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>请确保添加的主机 IP 和配置文件<code>nebula-storaged.conf</code>中<code>local_ip</code>配置的 IP 一致，否则会导致添加 Storage 主机失败。关于配置文件的详情，参见<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。 </p>
+</div>
 </li>
 <li>
 <p>检查主机状态，确认全部在线。</p>
@@ -2538,7 +2542,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2022</span>
 </small>
 </div>
 </article>
