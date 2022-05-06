@@ -2638,7 +2638,7 @@
 </code></pre></div>
 <h2 id="return">结合 RETURN 语句使用<a class="headerlink" href="#return" title="Permanent link">¶</a></h2>
 <p>在<code>WITH</code>子句中设置别名，并通过<code>RETURN</code>子句输出结果。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; WITH [1, 2, 3] AS list  RETURN 3 IN list AS r;
+<div class="highlight"><pre><span></span><code>nebula&gt; WITH [1, 2, 3] AS `list` RETURN 3 IN `list` AS r;
 +------+
 | r    |
 +------+
@@ -2656,7 +2656,7 @@ nebula&gt; WITH 4 AS one, 3 AS two RETURN one &gt; two AS result;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
 </small>
 </div>
 </article>
