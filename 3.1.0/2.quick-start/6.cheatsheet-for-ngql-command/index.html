@@ -3325,12 +3325,12 @@ END
 </tr>
 <tr>
 <td>匹配边</td>
-<td><code>MATCH (v:player{name:"Tim Duncan"})-[e]-(v2) RETURN e</code></td>
+<td><code>MATCH (v:player{name:"Tim Duncan"})-[e]-(v2) RETURN e</code><br/><code>MATCH ()&lt;-[e]-()   RETURN e   LIMIT 3</code></td>
 <td>除了用<code>--</code>、<code>--&gt;</code>、<code>&lt;--</code>表示未命名的边之外，用户还可以在方括号中使用自定义变量命名边。例如<code>-[e]-</code>。</td>
 </tr>
 <tr>
 <td>匹配 Edge type</td>
-<td><code>MATCH ()-[e:follow]-() RETURN e</code></td>
+<td><code>MATCH ()-[e:follow]-&gt;() RETURN e LIMIT 5</code></td>
 <td>和点一样，用户可以用<code>:&lt;edge_type&gt;</code>表示模式中的 Edge type，例如<code>-[e:follow]-</code>。</td>
 </tr>
 <tr>
@@ -3410,7 +3410,7 @@ END
 </tr>
 <tr>
 <td>检索路径长度</td>
-<td><code>MATCH p=(v:player{name:"Tim Duncan"&gt;})-[*..2]-&gt;(v2) RETURN p AS Paths, length(p) AS Length</code></td>
+<td><code>MATCH p=(v:player{name:"Tim Duncan"})-[*..2]-&gt;(v2) RETURN p AS Paths, length(p) AS Length</code></td>
 <td>使用<code>length()</code>函数检索路径的长度。</td>
 </tr>
 </tbody>
@@ -3773,7 +3773,7 @@ YIELD &lt;output&gt;;
 <tr>
 <td><a href="../../3.ngql-guide/8.clauses-and-options/limit/">LIMIT</a></td>
 <td><code>YIELD &lt;var&gt; [| LIMIT [&lt;offset_value&gt;,] &lt;number_rows&gt;]</code></td>
-<td><code>O FROM "player100" OVER follow REVERSELY YIELD $$.player.name AS Friend, $$.player.age AS Age | ORDER BY $-.Age, $-.Friend | LIMIT 1, 3</code></td>
+<td><code>GO FROM "player100" OVER follow REVERSELY YIELD $$.player.name AS Friend, $$.player.age AS Age | ORDER BY $-.Age, $-.Friend | LIMIT 1, 3</code></td>
 <td>从排序结果中返回第 2 行开始的 3 行数据。</td>
 </tr>
 <tr>
@@ -4312,7 +4312,7 @@ YIELD &lt;output&gt;;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
 </small>
 </div>
 </article>

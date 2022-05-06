@@ -2559,10 +2559,10 @@ nebula&gt; MATCH (a:player)-[r]-&gt;() \
 +------------+----------------------------+
 | labels(a)  | keys(r)                    |
 +------------+----------------------------+
-| ["player"] | ["degree"]                 |
 | ["player"] | ["end_year", "start_year"] |
+| ["player"] | ["degree"]                 |
+| ["player"] | ["degree"]                 |
 +------------+----------------------------+
-
 nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) \
         WHERE a.player.name == "Tim Duncan" AND c.team.name == "Spurs" \
         RETURN nodes(p);
@@ -2585,7 +2585,7 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.player.name =
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 6, 2022</span>
 </small>
 </div>
 </article>
