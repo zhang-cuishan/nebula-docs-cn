@@ -2730,8 +2730,8 @@
 <p>例如，安装 Explorer 需要运行以下命令，默认安装路径为<code>/usr/local/nebula-explorer</code>：</p>
 <div class="highlight"><pre><span></span><code>sudo rpm -i nebula-explorer-&lt;version&gt;.x86_64.rpm
 </code></pre></div>
-<p>也可以使用以下命令安装到指定路径：
- <div class="highlight"><pre><span></span><code>sudo rpm -i nebula-explorer-xxx.rpm --prefix<span class="o">=</span>&lt;path&gt; 
+<p>也可以使用<code>--prefix</code>选项安装到指定路径：
+ <div class="highlight"><pre><span></span><code>sudo rpm -i nebula-explorer-&lt;version&gt;.x86_64.rpm --prefix<span class="o">=</span>&lt;path&gt; 
 </code></pre></div></p>
 </li>
 <li>
@@ -2743,9 +2743,8 @@
 </code></pre></div></p>
 </li>
 <li>
-<p>添加 License 后需要使用以下命令停止并重启服务。</p>
-<div class="highlight"><pre><span></span><code>systemctl stop nebula-explorer <span class="c1">#停止服务</span>
-systemctl start nebula-explorer <span class="c1">#启动服务</span>
+<p>执行以下命令启动服务。</p>
+<div class="highlight"><pre><span></span><code>systemctl start nebula-explorer
 </code></pre></div>
 </li>
 </ol>
@@ -2858,7 +2857,7 @@ bash ./stop.sh <span class="c1">#停止服务</span>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 7, 2022</span>
 </small>
 </div>
 </article>
