@@ -2539,18 +2539,18 @@
 <h2 id="_3">使用说明<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <ul>
 <li>
-<p>使用 <strong>Tag</strong> 过滤画布中的点及关联的边时：</p>
+<p>使用 <strong>Tag</strong> （标签）过滤画布中的点及关联的边时：</p>
 <ul>
 <li><strong>筛选条件</strong>面板显示图空间中的所有 Tag。</li>
 </ul>
 <ul>
-<li>Tag 图例被置灰且画布中的对应 Tag 的点及关联的边会被隐藏。</li>
+<li>Tag 图例被过滤（置灰）时，画布中的对应 Tag 的点及关联的边会被隐藏。</li>
 </ul>
 <ul>
-<li>对于多 Tag 的点，如果其任一 Tag 被选中为过滤项，则该点会被隐藏。</li>
+<li>对于多 Tag 的点，如果其任一 Tag 被过滤，则该点会被隐藏。</li>
 </ul>
 <ul>
-<li>支持通过搜索框输入对应的 Tag 进行筛选。</li>
+<li>支持通过搜索框搜索 Tag。</li>
 </ul>
 </li>
 </ul>
@@ -2561,12 +2561,15 @@
 <li>每一组筛选条件只针对带此 Tag 的数据，筛选条件包括：Tag、属性、运算符、值。如满足条件，画布中的点会被自动添加选中状态，不满足条件的点及关联的边可被设置为<strong>隐藏</strong>或<strong>置灰</strong>。其他 Tag 数据状态不受影响。</li>
 </ul>
 <ul>
-<li>如果筛选条件中配置了已被选中（置灰状态）的 Tag，画布中不会展示对应的数据。</li>
-</ul>
-</li>
+<li>通过标签过滤（置灰）的优先级最高。如果筛选条件中配置了已通过标签过滤（置灰）的 Tag，画布中不会展示对应的数据。</li>
 </ul>
 <ul>
-<li>每次进行<strong>节点筛选</strong>操作时，只能选择一个 Tag。如果要过滤多个 Tag，需要多次进行<strong>添加筛选条件</strong>操作。</li>
+<li>每次只能选择一个 Tag。如果要过滤多个 Tag，需要多次进行<strong>添加筛选条件</strong>操作。</li>
+</ul>
+<ul>
+<li>筛选条件不支持对同一个 Tag 进行多次过滤，只会显示第一次过滤的结果。</li>
+</ul>
+</li>
 </ul>
 <h2 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <h3 id="1_tag_player">示例1 过滤画布中 Tag 为 <strong>player</strong> 的所有点<a class="headerlink" href="#1_tag_player" title="Permanent link">¶</a></h3>
@@ -2581,8 +2584,7 @@
 <ol>
 <li>在左侧导航栏中，单击<strong>节点筛选</strong>图标<img alt="node-filter" src="https://docs-cdn.nebula-graph.com.cn/figures/nav-filter.png"/>。</li>
 <li>单击<strong>添加筛选条件</strong>，然后设置筛选项（本示例设置的值分别为<code>player</code>、<code>age</code>、<code>&gt;</code>、<code>33</code>）。</li>
-<li>（可选）重复第二步骤，添加多个筛选条件（本示例只需添加一次）。</li>
-<li>单击<strong>隐藏</strong>将不满足过滤条件的点隐藏，或者单击<strong>置灰</strong>将不满足过滤条件的点显示为灰色（本示例设置为<strong>置灰</strong>）。</li>
+<li>单击<strong>置灰</strong>将不满足过滤条件的点显示为灰色。</li>
 <li>打开<strong>启动筛选</strong>开关。<p><img alt="filter_node" src="https://docs-cdn.nebula-graph.com.cn/figures/vertex-filtering-example2_cn.png"/></p>
 </li>
 </ol>
@@ -2590,7 +2592,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 2, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 10, 2022</span>
 </small>
 </div>
 </article>
