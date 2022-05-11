@@ -242,13 +242,13 @@ $ kill $(lsof -t -i :7001) # stop nebula-graph-studio
    | ----- | ----- |
    | [nebula-graph-studio-{{studio.release}}.tar.gz](https://oss-cdn.nebula-graph.com.cn/nebula-graph-studio/{{studio.release}}/nebula-graph-studio-{{studio.release}}.tar.gz) | {{nebula.release}} |
 
-2. 创建`nebula-graph-studio-v{{studio.release}}`目录，并将安装包解压至目录中。
+2. 创建`nebula-graph-studio-{{studio.release}}`目录，并将安装包解压至目录中。
 
    ```bash
-   mkdir nebula-graph-studio-v{{studio.release}} && tar -zxvf nebula-graph-studio-v{{studio.release}}.tar.gz -C nebula-graph-studio-{{studio.release}}
+   mkdir nebula-graph-studio-{{studio.release}} && tar -zxvf nebula-graph-studio-{{studio.release}}.tar.gz -C nebula-graph-studio-{{studio.release}}
    ```
 
-3. 解压后进入 `nebula-graph-studio-v{{studio.release}}` 目录。
+3. 解压后进入 `nebula-graph-studio-{{studio.release}}` 目录。
 
    ```bash
    cd nebula-graph-studio-{{studio.release}}
