@@ -2521,7 +2521,7 @@
 <li>登录的用户必须拥有对应权限才能执行<code>ALTER EDGE</code>语句。详情请参见<a href="../../../7.data-security/1.authentication/3.role-list/">内置角色权限</a>。</li>
 </ul>
 <ul>
-<li>确保要修改的属性不包含索引，否则<code>ALTER EDGE</code>时会报冲突错误<code>[ERROR (-8)]: Conflict!</code>。删除索引请参见 <a href="../../14.native-index-statements/6.drop-native-index/">drop index</a>。</li>
+<li>确保要修改的属性不包含索引，否则<code>ALTER EDGE</code>时会报冲突错误<code>[ERROR (-1005)]: Conflict!</code>。删除索引请参见 <a href="../../14.native-index-statements/6.drop-native-index/">drop index</a>。</li>
 </ul>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code>ALTER EDGE &lt;edge_type_name&gt;
@@ -2556,7 +2556,7 @@ nebula&gt; ALTER EDGE e1 COMMENT = 'edge1';
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
 </small>
 </div>
 </article>
