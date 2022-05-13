@@ -2784,7 +2784,7 @@
 root# <span class="nb">echo</span> never &gt; /sys/kernel/mm/transparent_hugepage/defrag
 root# swapoff -a <span class="o">&amp;&amp;</span> swapon -a
 </code></pre></div>
-为了防止系统重启后该配置失效，可以在<code>/etc/grub.conf</code>文件添加 <code>transparent_hugepage=never</code>，使系统启动时自动关闭 THP。</p>
+为了防止系统重启后该配置失效，可以在GRUB配置文件或<code>/etc/rc.local</code>中添加相关配置，使系统启动时自动关闭 THP。</p>
 <h2 id="_3">网络<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <h3 id="netipv4tcp_slow_start_after_idle">net.ipv4.tcp_slow_start_after_idle<a class="headerlink" href="#netipv4tcp_slow_start_after_idle" title="Permanent link">¶</a></h3>
 <p><code>net.ipv4.tcp_slow_start_after_idle</code>默认值为 1，会导致闲置一段时间后拥塞窗口超时，建议设置为<code>0</code>，尤其适合大带宽高延迟场景。</p>
@@ -2829,7 +2829,7 @@ root# swapoff -a <span class="o">&amp;&amp;</span> swapon -a
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
 </small>
 </div>
 </article>
