@@ -2509,7 +2509,7 @@
 <p>以下语句会出现错误，因为<code>my_space</code>和<code>MY_SPACE</code>是两个不同的图空间。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE SPACE IF NOT EXISTS my_space (vid_type=FIXED_STRING(30));
 nebula&gt; use MY_SPACE;
-[ERROR (-8)]: SpaceNotFound:
+[ERROR (-1005)]: SpaceNotFound: 
 </code></pre></div>
 <h2 id="_3">关键字不区分大小写<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p>以下语句是等价的，因为<code>show</code>和<code>spaces</code>是关键字。</p>
@@ -2533,7 +2533,7 @@ nebula&gt; show SPACES;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
 </small>
 </div>
 </article>
