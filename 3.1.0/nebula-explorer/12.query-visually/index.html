@@ -2021,35 +2021,16 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    操作步骤
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
     页面元素
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    操作步骤
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
-    配置项说明
-  </a>
-<nav aria-label="配置项说明" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    点的配置项
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    边的配置项
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
     示例
   </a>
 <nav aria-label="示例" class="md-nav">
@@ -2524,35 +2505,16 @@
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
-    操作步骤
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
     页面元素
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    操作步骤
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
-    配置项说明
-  </a>
-<nav aria-label="配置项说明" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-    点的配置项
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-    边的配置项
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
     示例
   </a>
 <nav aria-label="示例" class="md-nav">
@@ -2581,7 +2543,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">可视化查询<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>可视化查询帮助用户通过构造查询场景，查询最终想要数据并查看与之匹配的语句。用户只需拖拽和连线即可构造可视化查询语句，系统将查询结果展示在画布上。</p>
+<p>可视化查询帮助用户通过构造查询场景，查询目标数据并查看与之匹配的语句。用户只需拖拽和连线即可构造可视化查询语句，系统将查询结果展示在画布上。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">Compatibility</p>
 <p>不兼容 3.0.0 以下版本的 Nebula Graph。</p>
@@ -2593,13 +2555,15 @@
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <ul>
 <li>已选择图空间。具体操作，参见<a href="../13.choose-graphspace/">选择图空间</a>。</li>
-<li>部分查询需先创建索引。详情参见<a href="../../3.ngql-guide/7.general-query-statements/2.match/">注意事项</a>和<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">创建索引</a>。</li>
+<li>部分查询需先创建索引。详情参见<a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH语句注意事项</a>和<a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">创建索引</a>。</li>
 </ul>
-<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
-<p>在 Explorer 页面顶部，单击 <strong>Visual Query</strong> 进入可视化查询页面。</p>
-<h2 id="_4">页面元素<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<h2 id="_3">页面元素<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
 <p><img alt="visual_overview" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-query-beta_2022-04-15_15-40-07_cn.png"/></p>
-<p>打开可视化查询页面时，用户会在<strong>可视化查询</strong>页面左侧看到图空间对应的所有 Tag (如 player 和 team) 和名为<strong>任意标签</strong> Tag。用户也可通过名为<strong>任意标签</strong>的 Tag 查询无 Tag 的点。</p>
+<p>在 Explorer 页面顶部，单击 <strong>Visual Query</strong> 进入可视化查询页面。在<strong>可视化查询</strong>页面左侧可以看到图空间对应的所有 Tag (如 player 和 team) 和名为<strong>任意标签</strong> Tag。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p><strong>任意标签</strong>的 Tag 也可以用于查询无 Tag 的点。  </p>
 <p>在可视化页面中，其他图标的描述如下表。</p>
 <table>
 <thead>
@@ -2639,23 +2603,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_5">配置项说明<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
-<h3 id="_6">点的配置项<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h2 id="_4">操作步骤<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p>在<strong>可视化查询</strong>页面左侧拖动若干个目标 Tag 到右侧创建对应 Tag 的点。</p>
+</li>
+<li>
+<p>单击点，在点边缘的锚点上按住鼠标左键拖动至另一个点，创建对应的边。</p>
+</li>
+<li>
+<p>单击点配置过滤条件。说明如下。</p>
 <p><img alt="vertex_confi" src="https://docs-cdn.nebula-graph.com.cn/figures/vertex-config_cn.png"/></p>
 <ul>
-<li>
-<p><strong>标签名</strong>：设置零、一个或多个 Tag。</p>
+<li><strong>标签名</strong>：设置零、一个或多个 Tag。</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>一个点可以有 0 到多个 Tag：</p>
-<ul>
-<li>设置 0 个 Tag 时，表示查询无 Tag 的点。</li>
-<li>设置一个 Tag 时，表示查询该 Tag 的点。</li>
-<li>设置多个 Tag 时，表示查询同时包含所有设置的 Tag 的点。           </li>
-</ul>
+<p>- 设置 0 个 Tag 时，表示查询无 Tag 的点。
+  - 设置一个 Tag 时，表示查询该 Tag 的点。
+  - 设置多个 Tag 时，表示查询同时包含所有设置的 Tag 的点。   </p>
 </div>
-</li>
-</ul>
 <ul>
 <li><strong>筛选条件</strong>：设置一组或多组针对点的过滤条件，包括点的属性、运算符、属性值。</li>
 </ul>
@@ -2663,21 +2631,19 @@
 <p class="admonition-title">Enterpriseonly</p>
 <p>当配置多 Tag 的点时，仅 Nebula Graph 企业版支持设置<strong>筛选条件</strong>查询数据。</p>
 </div>
-<h3 id="_7">边的配置项<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+</li>
+<li>
+<p>单击边配置过滤条件。说明如下。</p>
 <p><img alt="vertex_confi" src="https://docs-cdn.nebula-graph.com.cn/figures/edge-config_cn.png"/></p>
 <ul>
-<li>
-<p><strong>边类型</strong>：设置一个或多个 Edge Type。</p>
+<li><strong>边类型</strong>：设置一个或多个 Edge Type。</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>一条边有且仅有一个 Edge Type：</p>
-<ul>
-<li>设置一个 Edge Type 时，表示查询该 Edge Type 的边。</li>
-<li>设置多个 Edge Type 时，表示查询包含任一 Edge Type 的边。</li>
-</ul>
+<p>- 设置一个 Edge Type 时，表示查询该 Edge Type 的边。
+  - 设置多个 Edge Type 时，表示查询包含任一 Edge Type 的边。</p>
 </div>
-</li>
-</ul>
 <ul>
 <li><strong>方向</strong>：设置边的方向，包括流出、流入、双向。</li>
 <li><strong>单步</strong>：设置定长路径。</li>
@@ -2688,7 +2654,15 @@
 <p class="admonition-title">Enterpriseonly</p>
 <p>当配置多个 Edge Type 查询数据时，仅 Nebula Graph 企业版支持设置<strong>筛选条件</strong>查询数据。</p>
 </div>
-<h2 id="_8">示例<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+</li>
+<li>
+<p>查询场景(即模式)构建完成后，单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png"/>并框选需要返回（RETURN）的结果。</p>
+</li>
+<li>
+<p>单击<strong>可视化查询</strong>页面右上角的<strong>查询</strong>，画布中会显示查询结果。</p>
+</li>
+</ol>
+<h2 id="_5">示例<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <h3 id="1">示例 1<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
 <p>查询和球员 Yao Ming 相互关注，且年龄大于 35 岁的球员以及这些球员都效忠哪些球队，并限制最后查询结果中的效忠关系数为 6。</p>
 <p><img alt="query_visually_example_1" src="https://docs-cdn.nebula-graph.com.cn/figures/query_visaully_example_1.gif"/></p>
@@ -2699,11 +2673,11 @@
 <li>
 <p>配置过滤条件。</p>
 <ol>
-<li>设置第一个 player 的过滤条件为 player.name == Yao Ming。</li>
-<li>设置两个 player 之间边的边类型为 follow、双向、步数为 1。</li>
-<li>设置第二个 player 的过滤条件为 player.age &gt; 35。</li>
-<li>设置第二个 player 和 team 之间边的边类型为 serve，方向为流出，步数为 1。</li>
-<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png"/>选中第二个 player、team、及它们之间的 serve 边。</li>
+<li>设置第一个球员的过滤条件为 player.name == Yao Ming。</li>
+<li>设置两个球员之间边的边类型为 follow、双向、步数为 1。</li>
+<li>设置第二个球员的过滤条件为 player.age &gt; 35。</li>
+<li>设置第二个球员和球队之间边的边类型为 serve，方向为流出，步数为 1。</li>
+<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png"/>选中第二个球员、球队及它们之间的 serve 边。</li>
 <li>单击<strong>模式查询</strong>框，然后设置<strong>结果数量限制</strong>为 6。</li>
 </ol>
 </li>
@@ -2719,12 +2693,12 @@
 <li>
 <p>配置过滤条件。</p>
 <ol>
-<li>设置第一个和第二个 player 之间边的边类型为 follow、双向、步数为 1。</li>
-<li>设置第一个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
-<li>设置第二个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
-<li>设置第三个 player 的过滤条件为 player.age &gt; 30。</li>
-<li>设置第三个 player 和 team 之间的边的边类型为 serve、方向为流出、步数为 1。</li>
-<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png"/>选中第三个 player、team、及它们之间的 serve 边。</li>
+<li>设置第一个和第二个球员之间边的边类型为 follow、双向、步数为 1。</li>
+<li>设置第一个球员和球队之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>设置第二个球员和球队之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>设置第三个球员的过滤条件为 player.age &gt; 30。</li>
+<li>设置第三个球员和球队之间的边的边类型为 serve、方向为流出、步数为 1。</li>
+<li>单击<img alt="Output" src="https://docs-cdn.nebula-graph.com.cn/figures/visual-nav-output.png"/>选中第三个球员、球队及它们之间的 serve 边。</li>
 </ol>
 </li>
 <li>
@@ -2735,7 +2709,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
 </small>
 </div>
 </article>

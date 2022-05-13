@@ -2594,19 +2594,20 @@
 -->
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>如果将副本数设置为 1，用户将无法使用 <a href="../../../8.service-tuning/load-balance/">BALANCE</a> 命令为 Nebula Graph 的存储服务平衡负载或扩容。</p>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>VID 类型变更与长度限制</p>
-<ol>
+<ul>
+<li>如果将副本数设置为 1，用户将无法使用 <a href="../../../8.service-tuning/load-balance/">BALANCE</a> 命令为 Nebula Graph 的存储服务平衡负载或扩容。</li>
+</ul>
+<ul>
 <li>
-<p>在 Nebula Graph 1.x 中，VID 的类型只能为<code>INT64</code>，不支持字符型；在 Nebula Graph 2.x 中，VID 的类型支持<code>INT64</code>和<code>FIXED_STRING(&lt;N&gt;)</code>。请在创建图空间时指定 VID 类型，使用<code>INSERT</code>语句时也需要保持一致，否则会报错 VID 类型不匹配<code>Wrong vertex id type: 1001</code>。</p>
+<p>VID 类型变更与长度限制：</p>
+<ul>
+<li>在 Nebula Graph 1.x 中，VID 的类型只能为<code>INT64</code>，不支持字符型；在 Nebula Graph 2.x 中，VID 的类型支持<code>INT64</code>和<code>FIXED_STRING(&lt;N&gt;)</code>。请在创建图空间时指定 VID 类型，使用<code>INSERT</code>语句时也需要保持一致，否则会报错 VID 类型不匹配<code>Wrong vertex id type: 1001</code>。</li>
+</ul>
+<ul>
+<li>VID 最大长度必须为<code>N</code>，不可任意长度；超过该长度也会报错<code>The VID must be a 64-bit integer or a string fitting space vertex id length limit.</code>。</li>
+</ul>
 </li>
-<li>
-<p>VID 最大长度必须为<code>N</code>，不可任意长度；超过该长度也会报错<code>The VID must be a 64-bit integer or a string fitting space vertex id length limit.</code>。</p>
-</li>
-</ol>
+</ul>
 </div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
@@ -2686,7 +2687,7 @@ nebula&gt; SHOW HOSTS;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
 </small>
 </div>
 </article>
