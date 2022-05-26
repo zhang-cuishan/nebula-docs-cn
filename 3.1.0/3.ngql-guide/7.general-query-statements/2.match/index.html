@@ -2730,7 +2730,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>目前 match 语句无法查询到悬挂边。</p>
+<p>目前 MATCH 语句无法查询到悬挂边。</p>
 </div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
@@ -2799,7 +2799,7 @@ nebula&gt; SHOW JOB 122;
 <h3 id="tag">匹配 Tag<a class="headerlink" href="#tag" title="Permanent link">¶</a></h3>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
-<p>在 Nebula Graph 3.0.0 之前，匹配 Tag 的前提是  Tag 本身有索引或者 Tag 的某个属性有索引，否则，用户无法基于该 Tag 执行 <code>MATCH</code> 语句。从 Nebula Graph 3.0.0 开始，匹配 Tag 可以不创建索引，但需要使用 <code>LIMIT</code> 限制输出结果数量。</p>
+<p>在 Nebula Graph 3.0.0 之前，匹配 Tag 的前提是 Tag 本身有索引或者 Tag 的某个属性有索引，否则，用户无法基于该 Tag 执行 <code>MATCH</code> 语句。从 Nebula Graph 3.0.0 开始，匹配 Tag 可以不创建索引，但需要使用 <code>LIMIT</code> 限制输出结果数量。</p>
 </div>
 <p>用户可以在点的右侧用<code>:&lt;tag_name&gt;</code>表示模式中的 Tag。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
@@ -2827,10 +2827,6 @@ nebula&gt; MATCH (v:player:actor) \
 +----------------------------------------------------------------------------------------+
 </code></pre></div>
 <h3 id="_6">匹配点的属性<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>匹配点的属性的前提是 Tag 本身有对应属性的索引，否则，用户无法执行 <code>MATCH</code> 语句匹配该属性。</p>
-</div>
 <p>用户可以在 Tag 的右侧用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中点的属性。</p>
 <div class="highlight"><pre><span></span><code># 使用属性 name 搜索匹配的点。
 nebula&gt; MATCH (v:player{name:"Tim Duncan"}) \
@@ -3055,10 +3051,6 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})--&gt;(v2:player) \
 </code></pre></div>
 <h3 id="_13">匹配变长路径<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
 <p>用户可以在模式中使用<code>:&lt;edge_type&gt;*[minHop..maxHop]</code>匹配变长路径。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>设置边界时，<code>minHop</code> 和 <code>maxHop</code> 至少存在其中一个。</p>
-</div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>如果未设置 <code>maxHop</code> 可能会导致 graph 服务 OOM，请谨慎执行该命令。</p>
@@ -3081,6 +3073,7 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})--&gt;(v2:player) \
 </tr>
 </tbody>
 </table>
+<p>如果未指定<code>minHop</code>和<code>maxHop</code>，仅设置了<code>:&lt;edge_type&gt;*</code>，则二者都应用默认值，即<code>minHop</code>为 1，<code>maxHop</code>为无穷大。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*]-&gt;(v2) \
         RETURN v2 AS Friends;
 +-----------------------------------------------------------+
@@ -3122,7 +3115,7 @@ nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*1..]-&gt;(v2) \
 | ("player125" :player{age: 41, name: "Manu Ginobili"})     | 3         |
 +-----------------------------------------------------------+-----------+
 </code></pre></div>
-<p>如果<code>minHop</code>为<code>0</code>，模式会匹配路径上的起始点。与上个示例相比，下面的示例设置<code>minHop</code>为<code>0</code>，因为它是起始点，所以结果集中<code>"Tim Duncan"</code>比上个示例多计算一次。</p>
+<p>如果<code>minHop</code>为<code>0</code>，模式会匹配路径上的起始点。例如，与上个示例相比，下面的示例设置<code>minHop</code>为<code>0</code>。此时，因为表示<code>"Tim Duncan"</code>的点是路径的起始点，所以它在结果集中的计数为 5，比在上个示例的结果中多计一次。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*0..3]-&gt;(v2:player) \
         RETURN DISTINCT v2 AS Friends, count(v2);
 +-----------------------------------------------------------+-----------+
@@ -3180,7 +3173,7 @@ nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*1..]-&gt;(v2) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2022</span>
 </small>
 </div>
 </article>
