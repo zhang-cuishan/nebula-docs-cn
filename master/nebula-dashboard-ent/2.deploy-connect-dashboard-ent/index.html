@@ -2704,14 +2704,14 @@
 </li>
 <li>
 <p>使用<code>tar -xzvf</code>解压 TAR 包。</p>
-<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz 
+<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz -C &lt;install_path&gt;
 </code></pre></div>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-3.0.0.linux-amd64.tar.gz 
+<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-3.0.0.linux-amd64.tar.gz -C /usr/local/
 </code></pre></div>
 </li>
 <li>
-<p>使用<code>vim config/config.yaml</code>命令设置配置文件。</p>
+<p>使用<code>vim /usr/local/nebula-dashboard-ent/config/config.yaml</code>命令设置配置文件。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 数据库信息</span>
 database:
   dialect: mysql <span class="c1"># 使用的数据库类型，目前仅支持 MySQL。</span>
@@ -2749,6 +2749,14 @@ ldap:
   baseDN: <span class="nv">dc</span><span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># 查询用户数据的路径。</span>
   userFilter: <span class="s2">"&amp;(objectClass=*)"</span> <span class="c1"># 查询条件。</span>
   emailKey: mail <span class="c1"># LDAP 数据库存放邮箱信息的字段名。</span>
+monitor:
+  onStart:
+    disableNodeExporterDeploy: <span class="nb">false</span>
+    disableNebulaExporterConfig: <span class="nb">false</span>
+    disablePrometheusConfig: <span class="nb">false</span>
+    disablePrometheusRule: <span class="nb">false</span>
+    disableAlertManagerRoutes: <span class="nb">false</span>
+    disableRecoveryAlertMessage: <span class="nb">false</span>
 </code></pre></div>
 </li>
 <li>
@@ -2762,7 +2770,7 @@ ldap:
 <li>
 <p>启动 Dashboard。</p>
 <p>可以使用以下命令一键启动 Dashboard。</p>
-<p><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
+<p><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/nebula-dashboard-ent/scripts
 $ sudo ./dashboard.service start all
 </code></pre></div>
 或是执行以下命令，分别启动 prometheus、webserver、exporter 和 gateway 服务以启动 Dashboard。</p>
@@ -3027,7 +3035,7 @@ ldap:
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2022</span>
 </small>
 </div>
 </article>
