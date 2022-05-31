@@ -2518,6 +2518,10 @@
 <td align="left">将浮点或字符串转换为整数。</td>
 </tr>
 <tr>
+<td align="left">toString()</td>
+<td align="left">将非复合类型的数据，例如数字、布尔值等，转换为字符串。</td>
+</tr>
+<tr>
 <td align="left">toSet()</td>
 <td align="left">将列表或集合转换为集合。</td>
 </tr>
@@ -2585,6 +2589,13 @@ nebula&gt; MATCH (n:player) \
 | 2     |
 +-------+
 
+nebula&gt; RETURN toString(9669) AS int2str, toString(null) AS null2str;
++---------+----------+
+| int2str | null2str |
++---------+----------+
+| "9669"  | __NULL__ |
++---------+----------+
+
 nebula&gt; RETURN toSet(list[1,2,3,1,2]) AS list2set;
 +-----------+
 | list2set  |
@@ -2603,7 +2614,7 @@ nebula&gt; RETURN toSet(set{1,2,3,1,2}) AS set2set;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
 </small>
 </div>
 </article>
