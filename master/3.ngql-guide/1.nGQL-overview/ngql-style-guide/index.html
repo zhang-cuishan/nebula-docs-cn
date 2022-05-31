@@ -2605,10 +2605,10 @@ RETURN v;
 <li>
 <p>语法关键词大写，变量小写。</p>
 <p>不推荐：</p>
-<div class="highlight"><pre><span></span><code>go from "player100" over Follow
+<div class="highlight"><pre><span></span><code>match (V:player) return V limit 5;
 </code></pre></div>
 <p>推荐：</p>
-<div class="highlight"><pre><span></span><code>GO FROM "player100" OVER follow
+<div class="highlight"><pre><span></span><code>MATCH (v:player) RETURN v LIMIT 5;
 </code></pre></div>
 </li>
 </ol>
@@ -2670,10 +2670,10 @@ RETURN v;
 <li>
 <p>用英文分号（;）结束 nGQL 语句。</p>
 <p>不推荐：</p>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON player "player100"
+<div class="highlight"><pre><span></span><code>FETCH PROP ON player "player100" YIELD properties(vertex);
 </code></pre></div>
 <p>推荐：</p>
-<div class="highlight"><pre><span></span><code>FETCH PROP ON player "player100";
+<div class="highlight"><pre><span></span><code>FETCH PROP ON player "player100" YIELD properties(vertex);
 </code></pre></div>
 </li>
 <li>
@@ -2727,7 +2727,7 @@ YIELD properties($$).name AS Team, properties($^).name AS Player;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
 </small>
 </div>
 </article>
