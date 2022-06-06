@@ -2811,6 +2811,11 @@ nebula&gt; SHOW JOB 122;
 ...
 </code></pre></div>
 <p>需要匹配拥有多个 Tag 的点，可以用英文冒号（:）。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>匹配多个 Tag 的点时，不支持进行属性过滤。</p>
+<p>例如，不支持<code>match (v1:player:team) where v1.player.name=="Tim Duncan" return v1 limit 10;</code>。</p>
+</div>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG actor (name string, age int);
 nebula&gt; INSERT VERTEX actor(name, age) VALUES "player100":("Tim Duncan", 42);
 nebula&gt; MATCH (v:player:actor) \
@@ -3002,6 +3007,11 @@ nebula&gt; MATCH (v:player{name:"Tim Duncan"})--&gt;(v2:player) \
 </code></pre></div>
 <h3 id="edge_type_1">匹配多个 Edge type<a class="headerlink" href="#edge_type_1" title="Permanent link">¶</a></h3>
 <p>使用<code>|</code>可以匹配多个 Edge type，例如<code>[e:follow|:serve]</code>。第一个 Edge type 前的英文冒号（:）不可省略，后续 Edge type 前的英文冒号可以省略，例如<code>[e:follow|serve]</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>同时匹配多个 Tag 和多个 Edge type 时，不支持进行属性过滤。</p>
+<p>例如，不支持<code>MATCH (v)-[e:follow|serve]-&gt;(v2) where v.player.name=="Tim Duncan" RETURN e limit 10;</code>，其中<code>(v)</code>代表匹配点的所有 Tag。</p>
+</div>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tim Duncan"})-[e:follow|:serve]-&gt;(v2) \
         RETURN e;
 +---------------------------------------------------------------------------+
@@ -3169,7 +3179,7 @@ nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})-[e:follow*1..]-&gt;(v2) \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
 </small>
 </div>
 </article>
