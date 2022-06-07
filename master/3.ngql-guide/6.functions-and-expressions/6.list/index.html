@@ -511,11 +511,6 @@
         Schema 函数
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../5.case-expressions/">
-        CASE 表达式
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -533,11 +528,108 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    示例
+    注意事项
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    通用
+  </a>
+<nav aria-label="通用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range">
+    range()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reverse">
+    reverse()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tail">
+    tail()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#head">
+    head()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#last">
+    last()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coalesce">
+    coalesce()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reduce">
+    reduce()
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ngql">
+    原生 nGQL 语句适用
+  </a>
+<nav aria-label="原生 nGQL 语句适用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keys">
+    keys()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labels">
+    labels()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opencypher">
+    openCypher 兼容语句适用
+  </a>
+<nav aria-label="openCypher 兼容语句适用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keys_1">
+    keys()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labels_1">
+    labels()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nodes">
+    nodes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationships">
+    relationships()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.case-expressions/">
+        CASE 表达式
+      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../7.count/">
@@ -547,11 +639,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../10.collect/">
         collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../11.reduce/">
-        reduce 函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2471,8 +2558,100 @@
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_2">
-    示例
+    注意事项
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    通用
+  </a>
+<nav aria-label="通用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#range">
+    range()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reverse">
+    reverse()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tail">
+    tail()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#head">
+    head()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#last">
+    last()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#coalesce">
+    coalesce()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reduce">
+    reduce()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ngql">
+    原生 nGQL 语句适用
+  </a>
+<nav aria-label="原生 nGQL 语句适用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keys">
+    keys()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labels">
+    labels()
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opencypher">
+    openCypher 兼容语句适用
+  </a>
+<nav aria-label="openCypher 兼容语句适用" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#keys_1">
+    keys()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#labels_1">
+    labels()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nodes">
+    nodes()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationships">
+    relationships()
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2485,107 +2664,274 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="_1">列表函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
-<p>Nebula Graph 支持以下列表（List）函数。</p>
-<table>
-<thead>
-<tr>
-<th align="left">函数</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">keys(expr)</td>
-<td align="left">返回一个列表，包含字符串形式的点、边或映射的所有属性。</td>
-</tr>
-<tr>
-<td align="left">labels(vertex)</td>
-<td align="left">返回点的 Tag 列表。</td>
-</tr>
-<tr>
-<td align="left">nodes(path)</td>
-<td align="left">返回路径中所有点的列表。</td>
-</tr>
-<tr>
-<td align="left">range(start, end [, step])</td>
-<td align="left">返回<code>[start,end]</code>范围内固定步长的列表，默认步长<code>step</code>为 1。</td>
-</tr>
-<tr>
-<td align="left">relationships(path)</td>
-<td align="left">返回路径中所有关系的列表。</td>
-</tr>
-<tr>
-<td align="left">reverse(list)</td>
-<td align="left">返回将原列表逆序排列的新列表。</td>
-</tr>
-<tr>
-<td align="left">tail(list)</td>
-<td align="left">返回不包含原列表第一个元素的新列表。</td>
-</tr>
-<tr>
-<td align="left">head(list)</td>
-<td align="left">返回列表的第一个元素。</td>
-</tr>
-<tr>
-<td align="left">last(list)</td>
-<td align="left">返回列表的最后一个元素。</td>
-</tr>
-<tr>
-<td align="left">coalesce(list)</td>
-<td align="left">返回列表中第一个非空元素。</td>
-</tr>
-<tr>
-<td align="left">reduce()</td>
-<td align="left">请参见 <a href="../11.reduce/">reduce 函数</a>。</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果参数为<code>NULL</code>，则输出结果是未定义的。</p>
-</div>
-<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>本文介绍 Nebula Graph 支持的列表（List）函数。部分列表函数在原生 nGQL 语句和 openCypher 兼容语句中的语法不同。</p>
+<h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<ul>
+<li>和 SQL 一样，nGQL 的字符索引（位置）从<code>1</code>开始。但是 C 语言的字符索引是从<code>0</code>开始的。</li>
+</ul>
+<ul>
+<li>如果参数为<code>NULL</code>，则输出结果是未定义的。</li>
+</ul>
+<h2 id="_3">通用<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="range">range()<a class="headerlink" href="#range" title="Permanent link">¶</a></h3>
+<p>range()返回指定整数范围<code>[start,end]</code>内固定步长的列表。</p>
+<p>语法：<code>range(start, end [, step])</code></p>
+<ul>
+<li><code>step</code>：可选参数。步长。默认为 <code>1</code>。</li>
+</ul>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN range(1,9,2);
++-----------------+
+| range(1,9,2)    |
++-----------------+
+| [1, 3, 5, 7, 9] |
++-----------------+
+</code></pre></div>
+<h3 id="reverse">reverse()<a class="headerlink" href="#reverse" title="Permanent link">¶</a></h3>
+<p>reverse()返回将原列表逆序排列的新列表。</p>
+<p>语法：<code>reverse(&lt;list&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
-        RETURN reverse(ids), tail(ids), head(ids), last(ids), coalesce(ids);
-+-----------------------------------+-------------------------+-----------+-----------+---------------+
-| reverse(ids)                      | tail(ids)               | head(ids) | last(ids) | coalesce(ids) |
-+-----------------------------------+-------------------------+-----------+-----------+---------------+
-| [487, 521, "abc", 4923, __NULL__] | [4923, "abc", 521, 487] | __NULL__  | 487       | 4923          |
-+-----------------------------------+-------------------------+-----------+-----------+---------------+
+        RETURN reverse(ids);
++-----------------------------------+
+| reverse(ids)                      |
++-----------------------------------+
+| [487, 521, "abc", 4923, __NULL__] |
++-----------------------------------+
+</code></pre></div>
+<h3 id="tail">tail()<a class="headerlink" href="#tail" title="Permanent link">¶</a></h3>
+<p>tail()返回不包含原列表第一个元素的新列表。</p>
+<p>语法：<code>tail(&lt;list&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
+        RETURN tail(ids);
++-------------------------+
+| tail(ids)               |
++-------------------------+
+| [4923, "abc", 521, 487] |
++-------------------------+
+</code></pre></div>
+<h3 id="head">head()<a class="headerlink" href="#head" title="Permanent link">¶</a></h3>
+<p>head()返回列表的第一个元素。</p>
+<p>语法：<code>head(&lt;list&gt;)</code></p>
+<ul>
+<li>返回类型：与原列表内的元素类型相同。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
+        RETURN head(ids);
++-----------+
+| head(ids) |
++-----------+
+| __NULL__  |
++-----------+
+</code></pre></div>
+<h3 id="last">last()<a class="headerlink" href="#last" title="Permanent link">¶</a></h3>
+<p>last()返回列表的最后一个元素。</p>
+<p>语法：<code>last(&lt;list&gt;)</code></p>
+<ul>
+<li>返回类型：与原列表内的元素类型相同。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
+        RETURN last(ids);
++-----------+
+| last(ids) |
++-----------+
+| 487       |
++-----------+
+</code></pre></div>
+<h3 id="coalesce">coalesce()<a class="headerlink" href="#coalesce" title="Permanent link">¶</a></h3>
+<p>coalesce()返回列表中第一个非空元素。</p>
+<p>语法：<code>coalesce(&lt;list&gt;)</code></p>
+<ul>
+<li>返回类型：与原列表内的元素类型相同。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
+        RETURN coalesce(ids);
++---------------+
+| coalesce(ids) |
++---------------+
+| 4923          |
++---------------+
+</code></pre></div>
+<h3 id="reduce">reduce()<a class="headerlink" href="#reduce" title="Permanent link">¶</a></h3>
+<p>reduce()将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。该函数将遍历给定列表中的每个元素 e，在 e 上运行表达式并和累加器的当前结果累加，将新的结果存储在累加器中。这个函数类似于函数式语言（如 Lisp 和 Scala）中的 fold 或 reduce 方法。</p>
+<div class="admonition compatibility">
+<p class="admonition-title">openCypher 兼容性</p>
+<p>在 openCypher 中，<code>reduce()</code>函数没有定义。nGQL 使用了 Cypher 方式实现<code>reduce()</code>函数。</p>
+</div>
+<p>语法：<code>reduce(&lt;accumulator&gt; = &lt;initial&gt;, &lt;variable&gt; IN &lt;list&gt; | &lt;expression&gt;)</code></p>
+<ul>
+<li><code>accumulator</code>：在遍历列表时保存累加结果。</li>
+</ul>
+<ul>
+<li><code>initial</code>：为<code>accumulator</code>提供初始值的表达式或值。</li>
+</ul>
+<ul>
+<li><code>variable</code>：为列表引入一个变量，决定使用列表中的哪个元素。</li>
+</ul>
+<ul>
+<li><code>list</code>：列表或列表表达式。</li>
+</ul>
+<ul>
+<li><code>expression</code>：该表达式将对列表中的每个元素运行一次，并将结果累加至<code>accumulator</code>。</li>
+</ul>
+<ul>
+<li>返回类型：取决于提供的参数，以及表达式的语义。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN reduce(totalNum = -4 * 5, n IN [1, 2] | totalNum + n * 2) AS r;
++-----+
+| r   |
++-----+
+| -14 |
++-----+
 
-nebula&gt; MATCH (a:player)-[r]-&gt;() \
-        WHERE id(a) == "player100" \
-        RETURN labels(a),  keys(r);
-+------------+----------------------------+
-| labels(a)  | keys(r)                    |
-+------------+----------------------------+
-| ["player"] | ["end_year", "start_year"] |
-| ["player"] | ["degree"]                 |
-| ["player"] | ["degree"]                 |
-+------------+----------------------------+
-nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) \
-        WHERE a.player.name == "Tim Duncan" AND c.team.name == "Spurs" \
+nebula&gt; MATCH p = (n:player{name:"LeBron James"})&lt;-[:follow]-(m) \
+        RETURN  nodes(p)[0].age AS src1,  nodes(p)[1].age AS dst2,  \
+        reduce(totalAge = 100, n IN nodes(p) | totalAge + n.age) AS sum;
++------+------+-----+
+| src1 | dst2 | sum |
++------+------+-----+
+| 34   | 31   | 165 |
+| 34   | 29   | 163 |
+| 34   | 33   | 167 |
+| 34   | 26   | 160 |
+| 34   | 34   | 168 |
+| 34   | 37   | 171 |
++------+------+-----+
+
+nebula&gt; LOOKUP ON player WHERE player.name == "Tony Parker" YIELD id(vertex) AS VertexID \
+        |  GO FROM $-.VertexID over follow \
+        WHERE properties(edge).degree != reduce(totalNum = 5, n IN range(1, 3) | properties($$).age + totalNum + n) \
+        YIELD properties($$).name AS id, properties($$).age AS age, properties(edge).degree AS degree;
++---------------------+-----+--------+
+| id                  | age | degree |
++---------------------+-----+--------+
+| "Tim Duncan"        | 42  | 95     |
+| "LaMarcus Aldridge" | 33  | 90     |
+| "Manu Ginobili"     | 41  | 95     |
++---------------------+-----+--------+
+</code></pre></div>
+<h2 id="ngql">原生 nGQL 语句适用<a class="headerlink" href="#ngql" title="Permanent link">¶</a></h2>
+<h3 id="keys">keys()<a class="headerlink" href="#keys" title="Permanent link">¶</a></h3>
+<p>keys()返回一个列表，包含字符串形式的点、边的所有属性。</p>
+<p>语法：<code>keys({vertex | edge})</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player \
+        WHERE player.age  &gt; 45 \
+        YIELD keys(vertex);
++-----------------+
+| keys(VERTEX)    |
++-----------------+
+| ["age", "name"] |
+| ["age", "name"] |
++-----------------+
+</code></pre></div>
+<h3 id="labels">labels()<a class="headerlink" href="#labels" title="Permanent link">¶</a></h3>
+<p>labels()返回点的 Tag 列表。</p>
+<p>语法：<code>labels(verte)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; FETCH PROP ON * "player101", "player102", "team204" \
+        YIELD labels(vertex);
++----------------+
+| labels(VERTEX) |
++----------------+
+| ["player"]     |
+| ["player"]     |
+| ["team"]       |
++----------------+
+</code></pre></div>
+<h2 id="opencypher">openCypher 兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
+<h3 id="keys_1">keys()<a class="headerlink" href="#keys_1" title="Permanent link">¶</a></h3>
+<p>keys()返回一个列表，包含字符串形式的点、边或映射的所有属性。</p>
+<p>语法：<code>keys(&lt;vertex_or_edge&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:"Tim Duncan"})-[e]-&gt;() \
+        RETURN keys(e);
++----------------------------+
+| keys(e)                    |
++----------------------------+
+| ["end_year", "start_year"] |
+| ["degree"]                 |
+| ["degree"]                 |
++----------------------------+
+</code></pre></div>
+<h3 id="labels_1">labels()<a class="headerlink" href="#labels_1" title="Permanent link">¶</a></h3>
+<p>labels()返回点的 Tag 列表。</p>
+<p>语法：<code>labels(&lt;vertex&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v)-[e:serve]-&gt;() \
+        WHERE id(v)=="player100" \
+        RETURN labels(v);
++------------+
+| labels(v)  |
++------------+
+| ["player"] |
++------------+
+</code></pre></div>
+<h3 id="nodes">nodes()<a class="headerlink" href="#nodes" title="Permanent link">¶</a></h3>
+<p>nodes()返回路径中所有点的列表。包括点 ID、Tag、属性和值。</p>
+<p>语法：<code>nodes(&lt;path&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})--&gt;(v2) \
         RETURN nodes(p);
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| nodes(p)                                                                                                                                      |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| [("player100" :player{age: 42, name: "Tim Duncan"}), ("player101" :player{age: 36, name: "Tony Parker"}), ("team204" :team{name: "Spurs"})]   |
-| [("player100" :player{age: 42, name: "Tim Duncan"}), ("player125" :player{age: 41, name: "Manu Ginobili"}), ("team204" :team{name: "Spurs"})] |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
-nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.player.name == "Tim Duncan" AND c.team.name == "Spurs" RETURN relationships(p);
-+-----------------------------------------------------------------------------------------------------------------------------+
-| relationships(p)                                                                                                            |
-+-----------------------------------------------------------------------------------------------------------------------------+
-| [[:follow "player100"-&gt;"player101" @0 {degree: 95}], [:serve "player101"-&gt;"team204" @0 {end_year: 2018, start_year: 1999}]] |
-| [[:follow "player100"-&gt;"player125" @0 {degree: 95}], [:serve "player125"-&gt;"team204" @0 {end_year: 2018, start_year: 2002}]] |
-+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+| nodes(p)                                                                                                    |
++-------------------------------------------------------------------------------------------------------------+
+| [("player100" :player{age: 42, name: "Tim Duncan"}), ("team204" :team{name: "Spurs"})]                      |
+| [("player100" :player{age: 42, name: "Tim Duncan"}), ("player101" :player{age: 36, name: "Tony Parker"})]   |
+| [("player100" :player{age: 42, name: "Tim Duncan"}), ("player125" :player{age: 41, name: "Manu Ginobili"})] |
++-------------------------------------------------------------------------------------------------------------+
+</code></pre></div>
+<h3 id="relationships">relationships()<a class="headerlink" href="#relationships" title="Permanent link">¶</a></h3>
+<p>relationships()返回路径中所有关系的列表。</p>
+<p>语法：<code>relationships(&lt;path&gt;)</code></p>
+<ul>
+<li>返回类型：list。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:"Tim Duncan"})--&gt;(v2) \
+        RETURN relationships(p);
++-------------------------------------------------------------------------+
+| relationships(p)                                                        |
++-------------------------------------------------------------------------+
+| [[:serve "player100"-&gt;"team204" @0 {end_year: 2016, start_year: 1997}]] |
+| [[:follow "player100"-&gt;"player101" @0 {degree: 95}]]                    |
+| [[:follow "player100"-&gt;"player125" @0 {degree: 95}]]                    |
++-------------------------------------------------------------------------+
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
 </small>
 </div>
 </article>
@@ -2597,7 +2943,7 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.player.name =
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../5.case-expressions/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../4.schema/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2606,17 +2952,17 @@ nebula&gt; MATCH p = (a:player)-[]-&gt;(b)-[]-&gt;(c:team) WHERE a.player.name =
 <span class="md-footer__direction">
                 上一页
               </span>
-              CASE 表达式
+              Schema 函数
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../7.count/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../5.case-expressions/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              count 函数
+              CASE 表达式
             </div>
 </div>
 <div class="md-footer__button md-icon">
