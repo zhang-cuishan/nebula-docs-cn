@@ -497,6 +497,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../15.aggregating/">
+        聚合函数
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../2.string/">
         字符串函数
       </a>
@@ -563,11 +568,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#coalesce">
-    coalesce()
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#reduce">
     reduce()
   </a>
@@ -627,28 +627,13 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../5.case-expressions/">
-        CASE 表达式
+<a class="md-nav__link" href="../16.type-conversion/">
+        类型转换函数
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../7.count/">
-        count 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2608,11 +2593,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#coalesce">
-    coalesce()
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#reduce">
     reduce()
   </a>
@@ -2764,21 +2744,6 @@
 +-----------+
 | 487       |
 +-----------+
-</code></pre></div>
-<h3 id="coalesce">coalesce()<a class="headerlink" href="#coalesce" title="Permanent link">¶</a></h3>
-<p>coalesce()返回列表中第一个非空元素。</p>
-<p>语法：<code>coalesce(&lt;list&gt;)</code></p>
-<ul>
-<li>返回类型：与原列表内的元素类型相同。</li>
-</ul>
-<p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 4923, 'abc', 521, 487] AS ids \
-        RETURN coalesce(ids);
-+---------------+
-| coalesce(ids) |
-+---------------+
-| 4923          |
-+---------------+
 </code></pre></div>
 <h3 id="reduce">reduce()<a class="headerlink" href="#reduce" title="Permanent link">¶</a></h3>
 <p>reduce()将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。该函数将遍历给定列表中的每个元素 e，在 e 上运行表达式并和累加器的当前结果累加，将新的结果存储在累加器中。这个函数类似于函数式语言（如 Lisp 和 Scala）中的 fold 或 reduce 方法。</p>
@@ -2946,7 +2911,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == "Tony Parker" YIELD id(vertex) 
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>
@@ -2971,13 +2936,13 @@ nebula&gt; LOOKUP ON player WHERE player.name == "Tony Parker" YIELD id(vertex) 
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../5.case-expressions/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../16.type-conversion/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              CASE 表达式
+              类型转换函数
             </div>
 </div>
 <div class="md-footer__button md-icon">

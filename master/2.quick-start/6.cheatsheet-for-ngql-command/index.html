@@ -570,6 +570,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/15.aggregating/">
+        聚合函数
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/2.string/">
         字符串函数
       </a>
@@ -590,28 +595,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/5.case-expressions/">
-        CASE 表达式
+<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/16.type-conversion/">
+        类型转换函数
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/7.count/">
-        count 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../../3.ngql-guide/6.functions-and-expressions/5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2706,26 +2696,6 @@
 <td align="left">返回<code>[min, max)</code>内的一个随机 64 位整数。 用户可以只传入一个参数，该参数会判定为<code>max</code>，此时<code>min</code>默认为<code>0</code>。 如果不传入参数，此时会从带符号的 64 位 int 范围内随机返回。</td>
 </tr>
 <tr>
-<td align="left">collect()</td>
-<td align="left">将收集的所有值放在一个列表中。</td>
-</tr>
-<tr>
-<td align="left">avg()</td>
-<td align="left">返回参数的平均值。</td>
-</tr>
-<tr>
-<td align="left">count()</td>
-<td align="left">返回参数的数量。</td>
-</tr>
-<tr>
-<td align="left">max()</td>
-<td align="left">返回参数的最大值。</td>
-</tr>
-<tr>
-<td align="left">min()</td>
-<td align="left">返回参数的最小值。</td>
-</tr>
-<tr>
 <td align="left">std()</td>
 <td align="left">返回参数的总体标准差。</td>
 </tr>
@@ -2768,6 +2738,41 @@
 <tr>
 <td align="left">double radians()</td>
 <td align="left">将角度转换为弧度。<code>radians(180)</code>返回<code>3.141592653589793</code>。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><a href="../../3.ngql-guide/6.functions-and-expressions/15.aggregating/">聚合函数</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">avg()</td>
+<td align="left">返回参数的平均值。</td>
+</tr>
+<tr>
+<td align="left">count()</td>
+<td align="left">语法：<code>count({expr | *})</code> 。<br/><code>count()</code>返回总行数（包括 NULL）。<br/> <code>count(expr)</code>返回满足表达式的非空值的总数。<br/> <code>count()</code>和<code>size()</code>是不同的。</td>
+</tr>
+<tr>
+<td align="left">max()</td>
+<td align="left">返回参数的最大值。</td>
+</tr>
+<tr>
+<td align="left">min()</td>
+<td align="left">返回参数的最小值。</td>
+</tr>
+<tr>
+<td align="left">collect()</td>
+<td align="left"><code>collect()</code>函数返回一个符合表达式返回结果的列表。该函数可以将多条记录或值合并进一个列表，实现数据聚合。</td>
 </tr>
 </tbody>
 </table>
@@ -2857,12 +2862,12 @@
 <td align="left">在子字符串 b 处拆分字符串 a，返回一个字符串列表。</td>
 </tr>
 <tr>
-<td align="left">string toString()</td>
-<td align="left">将任意数据类型转换为字符串类型。</td>
+<td align="left">concat()</td>
+<td align="left"><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。<br/>语法：<code>concat(string1,string2,...)</code></td>
 </tr>
 <tr>
-<td align="left">int hash()</td>
-<td align="left">获取任意对象的哈希值。</td>
+<td align="left">concat_ws()</td>
+<td align="left"><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。</td>
 </tr>
 </tbody>
 </table>
@@ -3074,12 +3079,8 @@
 <td align="left">返回列表的最后一个元素。</td>
 </tr>
 <tr>
-<td align="left">coalesce(list)</td>
-<td align="left">返回列表中第一个非空元素。</td>
-</tr>
-<tr>
 <td align="left">reduce()</td>
-<td align="left">请参见 <a href="../../3.ngql-guide/6.functions-and-expressions/6.list/">reduce 函数</a>。</td>
+<td align="left">将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。</td>
 </tr>
 </tbody>
 </table>
@@ -3087,7 +3088,7 @@
 </ul>
 <ul>
 <li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/7.count/">count 函数</a></p>
+<p><a href="../../3.ngql-guide/6.functions-and-expressions/16.type-conversion/">类型转换函数</a></p>
 <table>
 <thead>
 <tr>
@@ -3097,105 +3098,28 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">count()</td>
-<td align="left">语法：<code>count({expr | *})</code> 。<br/><code>count()</code>返回总行数（包括 NULL）。<br/> <code>count(expr)</code>返回满足表达式的非空值的总数。<br/> <code>count()</code>和<code>size()</code>是不同的。</td>
+<td align="left">bool toBoolean()</td>
+<td align="left">将字符串转换为布尔。</td>
 </tr>
-</tbody>
-</table>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/10.collect/">collect 函数</a></p>
-<table>
-<thead>
 <tr>
-<th align="left">函数</th>
-<th align="left">说明</th>
+<td align="left">float toFloat()</td>
+<td align="left">将整数或字符串转换为浮点数。</td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td align="left">collect()</td>
-<td align="left"><code>collect()</code>函数返回一个符合表达式返回结果的列表。该函数可以将多条记录或值合并进一个列表，实现数据聚合。</td>
+<td align="left">string toString()</td>
+<td align="left">将任意数据类型转换为字符串类型。</td>
 </tr>
-</tbody>
-</table>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/6.list/">reduce 函数</a></p>
-<table>
-<thead>
 <tr>
-<th align="left">函数</th>
-<th align="left">语法</th>
-<th>说明</th>
+<td align="left">int toInteger()</td>
+<td align="left">将浮点或字符串转换为整数。</td>
 </tr>
-</thead>
-<tbody>
 <tr>
-<td align="left">reduce()</td>
-<td align="left"><code>reduce(&lt;accumulator&gt; = &lt;initial&gt;, &lt;variable&gt; IN &lt;list&gt;</code></td>
-<td><code>reduce()</code>将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。</td>
+<td align="left">set toSet()</td>
+<td align="left">将列表或集合转换为集合。</td>
 </tr>
-</tbody>
-</table>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/12.hash/">hash 函数</a></p>
-<table>
-<thead>
 <tr>
-<th align="left">函数</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">hash()</td>
-<td align="left"><code>hash()</code>函数返回参数的哈希值。其参数可以是数字、字符串、列表、布尔值、NULL 等类型的值，或者计算结果为这些类型的表达式。<code>hash()</code>函数采用 MurmurHash2 算法，种子（seed）为<code>0xc70f6907UL</code>。用户可以在 <a href="https://github.com/vesoft-inc/nebula/blob/master/src/common/base/MurmurHash2.h"><code>MurmurHash2.h</code></a> 中查看其源代码。</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/13.concat/">concat 函数</a></p>
-<table>
-<thead>
-<tr>
-<th align="left">函数</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">concat()</td>
-<td align="left"><code>concat()</code>函数至少需要两个或以上字符串参数，并将所有参数连接成一个字符串。<br/>语法：<code>concat(string1,string2,...)</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/13.concat/">concat_ws 函数</a></p>
-<table>
-<thead>
-<tr>
-<th>函数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>concat_ws()</td>
-<td><code>concat_ws()</code>函数将两个或以上字符串参数与预定义的分隔符（separator）相连接。</td>
+<td align="left">int hash()</td>
+<td align="left"><code>hash()</code>函数返回参数的哈希值。其参数可以是数字、字符串、列表、布尔值、NULL 等类型的值，或者计算结果为这些类型的表达式。</td>
 </tr>
 </tbody>
 </table>
@@ -3241,38 +3165,22 @@
 </ul>
 <ul>
 <li>
-<p><a href="../../3.ngql-guide/6.functions-and-expressions/5.case-expressions/">CASE 表达式</a></p>
-<p><code>CASE</code>表达式使用条件来过滤 nGQL 查询语句的结果，常用于<code>YIELD</code>和<code>RETURN</code>子句中。<code>CASE</code>表达式会遍历所有条件，并在满足第一个条件时停止读取后续条件，然后返回结果。如果不满足任何条件，将通过<code>ELSE</code>子句返回结果。如果没有<code>ELSE</code>子句且不满足任何条件，则返回<code>NULL</code>。</p>
-<p>语法：</p>
-<div class="highlight"><pre><span></span><code>CASE &lt;comparer&gt;
-WHEN &lt;value&gt; THEN &lt;result&gt;
-[WHEN ...]
-[ELSE &lt;default&gt;]
-END
-</code></pre></div>
+<p><a href="../../3.ngql-guide/6.functions-and-expressions/5.conditional-expressions/">条件表达式函数</a></p>
 <table>
 <thead>
 <tr>
-<th align="left">参数</th>
+<th align="left">函数</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>comparer</code></td>
-<td align="left">用于与<code>value</code>进行比较的值或者有效表达式。</td>
+<td align="left">CASE</td>
+<td align="left">使用条件来过滤 nGQL 查询语句的结果，常用于<code>YIELD</code>和<code>RETURN</code>子句中。<br/><code>CASE</code>表达式会遍历所有条件，并在满足第一个条件时停止读取后续条件，然后返回结果。<br/>如果不满足任何条件，将通过<code>ELSE</code>子句返回结果。如果没有<code>ELSE</code>子句且不满足任何条件，则返回<code>NULL</code>。</td>
 </tr>
 <tr>
-<td align="left"><code>value</code></td>
-<td align="left">和<code>comparer</code>进行比较，如果匹配，则满足此条件。</td>
-</tr>
-<tr>
-<td align="left"><code>result</code></td>
-<td align="left">如果<code>value</code>匹配<code>comparer</code>，则返回该<code>result</code>。</td>
-</tr>
-<tr>
-<td align="left"><code>default</code></td>
-<td align="left">如果没有条件匹配，则返回该<code>default</code>。</td>
+<td align="left">coalesce()</td>
+<td align="left">返回所有表达式中第一个非空元素。</td>
 </tr>
 </tbody>
 </table>
@@ -4328,7 +4236,7 @@ YIELD &lt;output&gt;;
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>

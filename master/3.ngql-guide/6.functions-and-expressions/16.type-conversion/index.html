@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Documentation for Nebula Graph Database" name="description"/>
 <meta content="Nebula Graph" name="author"/>
-<link href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/7.count/" rel="canonical"/>
+<link href="https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/16.type-conversion/" rel="canonical"/>
 <link href="../../../icon/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.3.0, mkdocs-material-7.1.0" name="generator"/>
-<title>count 函数 - Nebula Graph Database 手册</title>
+<title>类型转换函数 - Nebula Graph Database 手册</title>
 <link href="../../../assets/stylesheets/main.fdf4365a.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#count">
+<a class="md-skip" href="#_1">
           跳转至
         </a>
 </div>
@@ -52,7 +52,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              count 函数
+              类型转换函数
             
           </span>
 </div>
@@ -497,6 +497,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../15.aggregating/">
+        聚合函数
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../2.string/">
         字符串函数
       </a>
@@ -516,19 +521,14 @@
         列表函数
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../5.case-expressions/">
-        CASE 表达式
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          count 函数
+          类型转换函数
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        count 函数
+        类型转换函数
       </a>
 <nav aria-label="目录" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -537,31 +537,41 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    语法
+<a class="md-nav__link" href="#toboolean">
+    toBoolean()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    示例
+<a class="md-nav__link" href="#tofloat">
+    toFloat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tostring">
+    toString()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tointeger">
+    toInteger()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#toset">
+    toSet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash">
+    hash()
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2485,13 +2495,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-    语法
+<a class="md-nav__link" href="#toboolean">
+    toBoolean()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-    示例
+<a class="md-nav__link" href="#tofloat">
+    toFloat()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tostring">
+    toString()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tointeger">
+    toInteger()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#toset">
+    toSet()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash">
+    hash()
   </a>
 </li>
 </ul>
@@ -2501,116 +2531,130 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/6.functions-and-expressions/7.count.md" title="编辑此页">
+<a class="md-content__button md-icon" href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/3.ngql-guide/6.functions-and-expressions/16.type-conversion.md" title="编辑此页">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="count">count 函数<a class="headerlink" href="#count" title="Permanent link">¶</a></h1>
-<p><code>count()</code>函数可以计数指定的值或行数。</p>
+<h1 id="_1">类型转换函数<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<p>本文介绍 Nebula Graph 支持的类型转换函数。</p>
+<h2 id="toboolean">toBoolean()<a class="headerlink" href="#toboolean" title="Permanent link">¶</a></h2>
+<p>toBoolean()将字符串转换为布尔。</p>
+<p>语法：<code>toBoolean(&lt;value&gt;)</code></p>
 <ul>
-<li>（原生 nGQL）用户可以同时使用<code>count()</code>和<code>GROUP BY</code>对指定的值进行分组和计数，再使用<code>YIELD</code>返回结果。</li>
+<li>返回类型：bool。</li>
 </ul>
-<ul>
-<li>（openCypher 方式）用户可以使用<code>count()</code>对指定的值进行计数，再使用<code>RETURN</code>返回结果。不需要使用<code>GROUP BY</code>。</li>
-</ul>
-<h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>count({expr | *})
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; UNWIND [true, false, 'true', 'false', NULL] AS b \
+        RETURN toBoolean(b) AS b;
++----------+
+| b        |
++----------+
+| true     |
+| false    |
+| true     |
+| false    |
+| __NULL__ |
++----------+
 </code></pre></div>
+<h2 id="tofloat">toFloat()<a class="headerlink" href="#tofloat" title="Permanent link">¶</a></h2>
+<p>toFloat()将整数或字符串转换为浮点数。</p>
+<p>语法：<code>toFloat(&lt;value&gt;)</code></p>
 <ul>
-<li>count(*) 返回总行数（包括 NULL）。</li>
+<li>返回类型：float。</li>
 </ul>
-<ul>
-<li>count(expr) 返回满足表达式的非空值的总数。</li>
-</ul>
-<ul>
-<li><code>count()</code>和<code>size()</code>是不同的。</li>
-</ul>
-<h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>nebula&gt; WITH [NULL, 1, 1, 2, 2] As a UNWIND a AS b \
-        RETURN count(b), count(*), count(DISTINCT b);
-+----------+----------+-------------------+
-| count(b) | count(*) | count(distinct b) |
-+----------+----------+-------------------+
-| 4        | 5        | 2                 |
-+----------+----------+-------------------+
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN toFloat(1), toFloat('1.3'), toFloat('1e3'), toFloat('not a number');
++------------+----------------+----------------+-------------------------+
+| toFloat(1) | toFloat("1.3") | toFloat("1e3") | toFloat("not a number") |
++------------+----------------+----------------+-------------------------+
+| 1.0        | 1.3            | 1000.0         | __NULL__                |
++------------+----------------+----------------+-------------------------+
 </code></pre></div>
-<div class="highlight"><pre><span></span><code># 返回 player101 follow 的人，以及 follow player101 的人，即双向查询。
-nebula&gt; GO FROM "player101" OVER follow BIDIRECT \
-        YIELD properties($$).name AS Name \
-        | GROUP BY $-.Name YIELD $-.Name, count(*);
-+---------------------+----------+
-| $-.Name             | count(*) |
-+---------------------+----------+
-| "LaMarcus Aldridge" | 2        |
-| "Tim Duncan"        | 2        |
-| "Marco Belinelli"   | 1        |
-| "Manu Ginobili"     | 1        |
-| "Boris Diaw"        | 1        |
-| "Dejounte Murray"   | 1        |
-+---------------------+----------+
+<h2 id="tostring">toString()<a class="headerlink" href="#tostring" title="Permanent link">¶</a></h2>
+<p>toString()将任意非复合数据类型数据转换为字符串类型。</p>
+<p>语法：<code>toString(&lt;value&gt;)</code></p>
+<ul>
+<li>返回类型：string。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN toString(9669) AS int2str, toString(null) AS null2str;
++---------+----------+
+| int2str | null2str |
++---------+----------+
+| "9669"  | __NULL__ |
++---------+----------+
 </code></pre></div>
-<p>上述示例的返回结果有两列：</p>
+<h2 id="tointeger">toInteger()<a class="headerlink" href="#tointeger" title="Permanent link">¶</a></h2>
+<p>toInteger()将浮点或字符串转换为整数。</p>
+<p>语法：<code>toInteger(&lt;value&gt;)</code></p>
 <ul>
-<li><code>$-.Name</code>：查询结果包含的姓名。</li>
+<li>返回类型：int。</li>
 </ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN toInteger(1), toInteger('1'), toInteger('1e3'), toInteger('not a number');
++--------------+----------------+------------------+---------------------------+
+| toInteger(1) | toInteger("1") | toInteger("1e3") | toInteger("not a number") |
++--------------+----------------+------------------+---------------------------+
+| 1            | 1              | 1000             | __NULL__                  |
++--------------+----------------+------------------+---------------------------+
+</code></pre></div>
+<h2 id="toset">toSet()<a class="headerlink" href="#toset" title="Permanent link">¶</a></h2>
+<p>toSet()将列表或集合转换为集合。</p>
+<p>语法：<code>toSet(&lt;value&gt;)</code></p>
 <ul>
-<li><code>count(*)</code>：姓名出现的次数。</li>
+<li>返回类型：set。</li>
 </ul>
-<p>因为测试数据集<code>basketballplayer</code>中没有重复的姓名，<code>count(*)</code>列中数字<code>2</code>表示该行的人和<code>player101</code>是互相<code>follow</code>的关系。</p>
-<div class="highlight"><pre><span></span><code># 方法一：统计数据库中的年龄分布情况。
-nebula&gt; LOOKUP ON player \
-        YIELD player.age As playerage \
-        | GROUP BY $-.playerage \
-        YIELD $-.playerage as age, count(*) AS number \
-        | ORDER BY $-.number DESC, $-.age DESC;
-+-----+--------+
-| age | number |
-+-----+--------+
-| 34  | 4      |
-| 33  | 4      |
-| 30  | 4      |
-| 29  | 4      |
-| 38  | 3      |
-+-----+--------+
-...
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN toSet(list[1,2,3,1,2]) AS list2set;
++-----------+
+| list2set  |
++-----------+
+| {3, 1, 2} |
++-----------+
+</code></pre></div>
+<h2 id="hash">hash()<a class="headerlink" href="#hash" title="Permanent link">¶</a></h2>
+<p>hash()返回参数的哈希值。其参数可以是数字、字符串、列表、布尔值、NULL 等类型的值，或者计算结果为这些类型的表达式。</p>
+<p><code>hash()</code>函数采用 MurmurHash2 算法，种子（seed）为<code>0xc70f6907UL</code>。用户可以在 <a href="https://github.com/vesoft-inc/nebula/blob/master/src/common/base/MurmurHash2.h"><code>MurmurHash2.h</code></a> 中查看其源代码。</p>
+<p>在 Java 中的调用方式如下：</p>
+<div class="highlight"><pre><span></span><code><span class="n">MurmurHash2</span><span class="p">.</span><span class="na">hash64</span><span class="p">(</span><span class="s">"to_be_hashed"</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(),</span><span class="s">"to_be_hashed"</span><span class="p">.</span><span class="na">getBytes</span><span class="p">().</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc70f6907</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>语法：<code>hash(&lt;string&gt;)</code></p>
+<ul>
+<li>返回类型：int。</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN hash("abcde");
++--------------------+
+| hash("abcde")      |
++--------------------+
+| 811036730794841393 |
++--------------------+
 
-# 方法二：统计数据库中的年龄分布情况。
-nebula&gt; MATCH (n:player) \
-        RETURN n.player.age as age, count(*) as number \
-        ORDER BY number DESC, age DESC;
-+-----+--------+
-| age | number |
-+-----+--------+
-| 34  | 4      |
-| 33  | 4      |
-| 30  | 4      |
-| 29  | 4      |
-| 38  | 3      |
-+-----+--------+
-...
-</code></pre></div>
-<div class="highlight"><pre><span></span><code># 统计 Tim Duncan 关联的边数。
-nebula&gt; MATCH (v:player{name:"Tim Duncan"}) -- (v2) \
-        RETURN count(DISTINCT v2);
-+--------------------+
-| count(distinct v2) |
-+--------------------+
-| 11                 |
-+--------------------+
+nebula&gt; YIELD hash([1,2,3]);
++----------------+
+| hash([1,2,3])  |
++----------------+
+| 11093822460243 |
++----------------+
 
-# 多跳查询，统计 Tim Duncan 关联的边数，返回两列（不去重和去重）。
-nebula&gt; MATCH (n:player {name : "Tim Duncan"})-[]-&gt;(friend:player)-[]-&gt;(fof:player) \
-        RETURN count(fof), count(DISTINCT fof);
-+------------+---------------------+
-| count(fof) | count(distinct fof) |
-+------------+---------------------+
-| 4          | 3                   |
-+------------+---------------------+
+nebula&gt; YIELD hash(NULL);
++------------+
+| hash(NULL) |
++------------+
+| -1         |
++------------+
+
+nebula&gt; YIELD hash(toLower("HELLO NEBULA"));
++-------------------------------+
+| hash(toLower("HELLO NEBULA")) |
++-------------------------------+
+| -8481157362655072082          |
++-------------------------------+
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>
@@ -2622,7 +2666,7 @@ nebula&gt; MATCH (n:player {name : "Tim Duncan"})-[]-&gt;(friend:player)-[]-&gt;
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../5.case-expressions/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../6.list/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -2631,17 +2675,17 @@ nebula&gt; MATCH (n:player {name : "Tim Duncan"})-[]-&gt;(friend:player)-[]-&gt;
 <span class="md-footer__direction">
                 上一页
               </span>
-              CASE 表达式
+              列表函数
             </div>
 </div>
 </a>
-<a class="md-footer__link md-footer__link--next" href="../10.collect/" rel="next">
+<a class="md-footer__link md-footer__link--next" href="../5.conditional-expressions/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 下一页
               </span>
-              collect 函数
+              条件表达式函数
             </div>
 </div>
 <div class="md-footer__button md-icon">

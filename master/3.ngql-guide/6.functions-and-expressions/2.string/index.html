@@ -496,6 +496,11 @@
         数学函数
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../15.aggregating/">
+        聚合函数
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -601,13 +606,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tostring">
-    toString()
+<a class="md-nav__link" href="#concat">
+    concat()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hash">
-    hash()
+<a class="md-nav__link" href="#concat_ws">
+    concat_ws()
   </a>
 </li>
 </ul>
@@ -629,28 +634,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../5.case-expressions/">
-        CASE 表达式
+<a class="md-nav__link" href="../16.type-conversion/">
+        类型转换函数
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../7.count/">
-        count 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2663,13 +2653,13 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tostring">
-    toString()
+<a class="md-nav__link" href="#concat">
+    concat()
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hash">
-    hash()
+<a class="md-nav__link" href="#concat_ws">
+    concat_ws()
   </a>
 </li>
 </ul>
@@ -3036,52 +3026,106 @@ nebula&gt; RETURN substr("abcdefg",2);
 | ["b", "sketb", "llpl", "yer"] |
 +-------------------------------+
 </code></pre></div>
-<h2 id="tostring">toString()<a class="headerlink" href="#tostring" title="Permanent link">¶</a></h2>
-<p>toString()将任意非复合数据类型数据转换为字符串类型。</p>
-<p>语法：<code>toString(&lt;value&gt;)</code></p>
+<h2 id="concat">concat()<a class="headerlink" href="#concat" title="Permanent link">¶</a></h2>
+<p>concat()返回所有参数连接成的字符串。</p>
+<p>语法：<code>concat(&lt;string1&gt;,&lt;string2&gt;,...)</code></p>
 <ul>
-<li><code>value</code>：待转换的数据。</li>
+<li>函数至少需要两个或以上字符串参数。如果字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>如果任何一个的字符串参数为 <code>NULL</code>，则 <code>concat()</code> 函数返回值为<code>NULL</code>。</li>
 </ul>
 <ul>
 <li>返回类型：string。</li>
 </ul>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; RETURN toString(true);
-+----------------+
-| toString(true) |
-+----------------+
-| "true"         |
-+----------------+
+<div class="highlight"><pre><span></span><code>//连接 1，2，3
+nebula&gt; RETURN concat("1","2","3") AS r;
++-------+
+| r     |
++-------+
+| "123" |
++-------+
 
-nebula&gt; RETURN toString(12345);
-+-----------------+
-| toString(12345) |
-+-----------------+
-| "12345"         |
-+-----------------+
+//字符串参数有 NULL
+nebula&gt; RETURN concat("1","2",NULL) AS r;
++----------+
+| r        |
++----------+
+| __NULL__ |
++----------+
+
+nebula&gt; GO FROM "player100" over follow \
+        YIELD concat(src(edge), properties($^).age, properties($$).name, properties(edge).degree) AS A;
++------------------------------+
+| A                            |
++------------------------------+
+| "player10042Tony Parker95"   |
+| "player10042Manu Ginobili95" |
++------------------------------+
 </code></pre></div>
-<h2 id="hash">hash()<a class="headerlink" href="#hash" title="Permanent link">¶</a></h2>
-<p>hash()获取指定字符串的哈希值。</p>
-<p>语法：<code>hash(&lt;string&gt;)</code></p>
+<h2 id="concat_ws">concat_ws()<a class="headerlink" href="#concat_ws" title="Permanent link">¶</a></h2>
+<p>concat_ws()返回用分隔符（separator）连接的所有字符串。</p>
+<p>语法：<code>concat_ws(&lt;separator&gt;,&lt;string1&gt;,&lt;string2&gt;,... )</code></p>
 <ul>
-<li><code>string</code>：指定的字符串。</li>
+<li>函数至少需要两个或以上字符串参数。</li>
 </ul>
 <ul>
-<li>返回类型：int。</li>
+<li>如果分隔符为<code>NULL</code>时，<code>concat_ws()</code>函数才返回<code>NULL</code>。</li>
+</ul>
+<ul>
+<li>如果分隔符不为<code>NULL</code>，字符串参数只有一个，则返回该字符串参数本身。</li>
+</ul>
+<ul>
+<li>字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</li>
 </ul>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; RETURN hash("abcde");
-+--------------------+
-| hash("abcde")      |
-+--------------------+
-| 811036730794841393 |
-+--------------------+
+<div class="highlight"><pre><span></span><code>//分隔符为+，连接 a，b，c
+nebula&gt; RETURN concat_ws("+","a","b","c") AS r;
++---------+
+| r       |
++---------+
+| "a+b+c" |
++---------+
+
+//分隔符为 NULL
+neubla&gt; RETURN concat_ws(NULL,"a","b","c") AS r;
++----------+
+| r        |
++----------+
+| __NULL__ |
++----------+
+
+//分隔符为+，字符串参数有 NULL
+nebula&gt; RETURN concat_ws("+","a",NULL,"b","c") AS r;
++---------+
+| r       |
++---------+
+| "a+b+c" |
++---------+
+
+//分隔符为+。字符串参数只有一个
+nebula&gt; RETURN concat_ws("+","a") AS r;
++-----+
+| r   |
++-----+
+| "a" |
++-----+
+
+nebula&gt; GO FROM "player100" over follow \
+        YIELD concat_ws(" ",src(edge), properties($^).age, properties($$).name, properties(edge).degree) AS A;
++---------------------------------+
+| A                               |
++---------------------------------+
+| "player100 42 Tony Parker 95"   |
+| "player100 42 Manu Ginobili 95" |
++---------------------------------+
 </code></pre></div>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>
@@ -3093,7 +3137,7 @@ nebula&gt; RETURN toString(12345);
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a class="md-footer__link md-footer__link--prev" href="../1.math/" rel="prev">
+<a class="md-footer__link md-footer__link--prev" href="../15.aggregating/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -3102,7 +3146,7 @@ nebula&gt; RETURN toString(12345);
 <span class="md-footer__direction">
                 上一页
               </span>
-              数学函数
+              聚合函数
             </div>
 </div>
 </a>

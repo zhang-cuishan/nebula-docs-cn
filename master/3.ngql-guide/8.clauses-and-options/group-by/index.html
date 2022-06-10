@@ -497,6 +497,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../6.functions-and-expressions/15.aggregating/">
+        聚合函数
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../6.functions-and-expressions/2.string/">
         字符串函数
       </a>
@@ -517,28 +522,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../6.functions-and-expressions/5.case-expressions/">
-        CASE 表达式
+<a class="md-nav__link" href="../../6.functions-and-expressions/16.type-conversion/">
+        类型转换函数
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../6.functions-and-expressions/7.count/">
-        count 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../6.functions-and-expressions/10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../6.functions-and-expressions/12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../6.functions-and-expressions/13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../../6.functions-and-expressions/5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -2528,7 +2518,7 @@
 <p><code>GROUP BY</code>子句可以用于聚合数据。</p>
 <h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">¶</a></h2>
 <p>本文操作仅适用于原生 nGQL。</p>
-<p>用户也可以使用 openCypher 方式的 <a href="../../6.functions-and-expressions/7.count/">count()</a> 函数聚合数据。</p>
+<p>用户也可以使用 openCypher 方式的 <a href="../../6.functions-and-expressions/15.aggregating/">count()</a> 函数聚合数据。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt;  MATCH (v:player)&lt;-[:follow]-(:player) RETURN v.player.name AS Name, count(*) as cnt ORDER BY cnt DESC;
 +----------------------+-----+
 | Name                 | cnt |
@@ -2585,7 +2575,7 @@ nebula&gt; GO FROM "player100" OVER follow \
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>

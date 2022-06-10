@@ -497,6 +497,11 @@
       </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/15.aggregating/">
+        聚合函数
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/2.string/">
         字符串函数
       </a>
@@ -517,28 +522,13 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/5.case-expressions/">
-        CASE 表达式
+<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/16.type-conversion/">
+        类型转换函数
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/7.count/">
-        count 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/10.collect/">
-        collect 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/12.hash/">
-        hash 函数
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/13.concat/">
-        concat 函数
+<a class="md-nav__link" href="../../../3.ngql-guide/6.functions-and-expressions/5.conditional-expressions/">
+        条件表达式函数
       </a>
 </li>
 <li class="md-nav__item">
@@ -3548,7 +3538,7 @@
 <td align="left">bool</td>
 <td align="left"><code>false</code></td>
 <td align="left">否</td>
-<td align="left">生成 SST 文件时是否要基于 Nebula Graph 中图空间的 partition 进行数据重分区。开启该功能可减少 DOWNLOAD 和 INGEST SST 文件需要的时间。</td>
+<td align="left">生成 SST 文件时是否要基于 Nebula Graph 中图空间的 partition 进行数据重分区。开启该功能可减少 DOWNLOAD 和 INGEST SST 文件需要的时间。当图空间的分片数量（partition_num）大于<code>1</code>时，请设置为<code>true</code>，否则可能会导致生成的数据文件中只包含无 Tag 的点。</td>
 </tr>
 </tbody>
 </table>
@@ -3745,7 +3735,7 @@
 <div class="md-source-date">
 <small>
     
-      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      最后更新: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
 </small>
 </div>
 </article>
