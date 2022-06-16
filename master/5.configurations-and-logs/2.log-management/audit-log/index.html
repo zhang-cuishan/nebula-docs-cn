@@ -6499,7 +6499,11 @@
 </tbody>
 </table>
 <h2 id="_4">审计日志格式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>不同的存储方案和不同的格式，日志内的字段是相同的。以默认路径（<code>logs/audit/audit.log</code>）和默认 XML 格式为例说明各个字段的含义。</p>
+<p>以默认路径（<code>/usr/local/nebula/logs/audit/audit.log</code>）和默认 XML 格式为例说明各个字段的含义。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果在 Nebula Graph 运行过程中删除审计日志目录，日志不会继续打印，但是不会影响程序运行。重启服务审计日志打印可以恢复正常。</p>
+</div>
 <div class="highlight"><pre><span></span><code>&lt;AUDIT_RECORD
   <span class="nv">CATEGORY</span><span class="o">=</span><span class="s2">&quot;util&quot;</span>
   <span class="nv">TIMESTAMP</span><span class="o">=</span><span class="s2">&quot;2022-04-07 02:31:38&quot;</span>
@@ -6599,7 +6603,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 15, 2022</span>
       
     
   </small>

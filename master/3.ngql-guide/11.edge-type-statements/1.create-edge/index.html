@@ -6447,7 +6447,7 @@
 </tr>
 <tr>
 <td align="left"><code>TTL_DURATION</code></td>
-<td align="left">指定属性存活时间。超时的属性将会过期。属性值和时间戳差值之和如果小于当前时间戳，属性就会过期。默认值为<code>0</code>，表示属性永不过期。</td>
+<td align="left">指定时间戳差值，单位：秒。时间戳差值必须为 64 位非负整数。属性值和时间戳差值之和如果小于当前时间戳，属性就会过期。默认值为<code>0</code>，表示属性永不过期。</td>
 </tr>
 <tr>
 <td align="left"><code>TTL_COL</code></td>
@@ -6474,7 +6474,7 @@ nebula&gt; CREATE EDGE IF NOT EXISTS e1(p1 string, p2 int, p3 timestamp) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2022</span>
       
     
   </small>
