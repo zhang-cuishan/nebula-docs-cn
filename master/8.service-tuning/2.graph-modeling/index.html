@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/8.service-tuning/2.graph-modeling/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
     
     
       
@@ -3914,6 +3914,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    一些免费的建模工具
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6507,6 +6514,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    一些免费的建模工具
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6647,6 +6661,8 @@ Empty <span class="nb">set</span> <span class="o">(</span><span class="nb">time<
 <p>在某些场景下，图需要同时带有时序信息，以描述整个图的结构随着时间变化的情况 <sup id="fnref:twitter"><a class="footnote-ref" href="#fn:twitter">1</a></sup>。</p>
 <p>Nebula Graph master 的边可以使用 Rank 字段存放时间信息 (int64)，但是点上没有字段可以存放时间信息（存放在属性会被新写入覆盖）。一个折中的办法是在点上设计自己指向自己的自环，并将时间信息放置在自环的 Rank 上。</p>
 <p><img alt="image" src="https://docs-cdn.nebula-graph.com.cn/figures/sequence.png" /></p>
+<h2 id="_13">一些免费的建模工具<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p><a href="https://arrows.app/">arrows.app</a></p>
 <div class="footnote">
 <hr />
 <ol>
@@ -6661,7 +6677,7 @@ Empty <span class="nb">set</span> <span class="o">(</span><span class="nb">time<
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 17, 2022</span>
       
     
   </small>
@@ -6760,7 +6776,7 @@ Empty <span class="nb">set</span> <span class="o">(</span><span class="nb">time<
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"method": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
       
         <script src="../../js/version-select.js"></script>
       
