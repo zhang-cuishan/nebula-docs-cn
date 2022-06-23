@@ -13,11 +13,9 @@ edit_uri: 'edit/v3.1.0/docs-2.0/'
 # Configuration
 theme:
   name: material
-  custom_dir: material
-  static_templates:
-    - 404.html
+  custom_dir: overrides
   logo: 'https://cloud-cdn.nebula-graph.com.cn/vesoft-nebula-logo-white.png'
-  favicon: 'icon/favicon.ico'
+  favicon: 'assets/images/favicon.ico'
   # Change color in `stylesheets > extra.css`
   palette:
     - scheme: nebula
@@ -77,7 +75,8 @@ plugins:
         - spark-connector/*
         - 4.deployment-and-installation/5.zone.md
         - 4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md
-        - nebula-cloud/*
+        - nebula-cloud.md
+#        - nebula-cloud/*
 # Exclude the file with the following file name.
 #        - abc.md
 # Exclude files with regular expressions (regexes)
@@ -164,10 +163,10 @@ extra:
     branch: release-3.1
     tag: v3.1.0
   dashboard:
-    release: 1.1.0
-    tag: v1.1.0
+    release: 1.1.1
+    tag: v1.1.1
     base100: 1.0.0
-    branch: v1.1.0
+    branch: v1.1.1
   dashboard_ent:
     release: 3.0.0
     tag: v3.0.0
@@ -214,6 +213,9 @@ extra:
     release: 3.1.2
     branch: release-3.1
     tag: v3.1.2
+  cloud:
+    azureRelease: 2.6.2 # Azure云兼容的最新内核版本
+    aliyunRelease: 3.1.0 # 阿里云兼容的最新内核版本
 
 
 nav:
@@ -465,21 +467,26 @@ nav:
     - Nebula Python: 14.client/5.nebula-python-client.md
     - Nebula Go: 14.client/6.nebula-go-client.md
 
-  - Nebula Graph Cloud: nebula-cloud.md
+#  - Nebula Graph Cloud: nebula-cloud.md
 
-#  - Nebula Graph Cloud:
-#    - 什么是 Nebula Graph Cloud: nebula-cloud/1.what-is-cloud.md
-#    - 创建订阅: nebula-cloud/2.how-to-create-subsciption.md
-#    - 配置Solution: nebula-cloud/3.how-to-set-solution.md
-#    - Cloud Solution 角色身份说明: nebula-cloud/4.user-role-description.md
-#    - Solution 操作:
-#      - Solution: nebula-cloud/5.solution/5.0.introduce-solution.md
-#      - 配套的应用（Dashboard/Studio/Explorer）: nebula-cloud/5.solution/5.1.supporting-application.md
-#      - Private Link: nebula-cloud/5.solution/5.2.connection-configuration-and-use.md
-#      - 管理角色权限: nebula-cloud/5.solution/5.3.role-and-authority-management.md
-#    - 价格: nebula-cloud/6.pricing.md
-#    - 用户服务条款: nebula-cloud/7.terms-and-conditions.md
-#    - 隐私政策条款: nebula-cloud/8.privacy-policy.md
+  - Nebula Graph Cloud:
+    - 什么是 Nebula Graph Cloud: nebula-cloud/1.what-is-cloud.md
+#    - Nebula Graph Cloud Azure版:
+#      - 创建订阅: nebula-cloud/nebula-cloud-on-azure/2.how-to-create-subsciption.md
+#      - 配置Solution: nebula-cloud/nebula-cloud-on-azure/3.how-to-set-solution.md
+#      - Cloud Solution 角色身份说明: nebula-cloud/nebula-cloud-on-azure/4.user-role-description.md
+#      - Solution 操作:
+#        - Solution: nebula-cloud/nebula-cloud-on-azure/5.solution/5.0.introduce-solution.md
+#        - 配套的应用（Dashboard/Studio/Explorer）: nebula-cloud/nebula-cloud-on-azure/5.solution/5.1.supporting-application.md
+#        - Private Link: nebula-cloud/nebula-cloud-on-azure/5.solution/5.2.connection-configuration-and-use.md
+#        - 管理角色权限: nebula-cloud/nebula-cloud-on-azure/5.solution/5.3.role-and-authority-management.md
+#      - 价格: nebula-cloud/nebula-cloud-on-azure/6.pricing.md
+#      - 用户服务条款: nebula-cloud/nebula-cloud-on-azure/7.terms-and-conditions.md
+#      - 隐私政策条款: nebula-cloud/nebula-cloud-on-azure/8.privacy-policy.md
+    - Nebula Graph Cloud 阿里云版:
+      - 创建服务实例: nebula-cloud/nebula-cloud-on-alibabacloud/1.create-service-instance.md
+      - 使用服务实例: nebula-cloud/nebula-cloud-on-alibabacloud/2.use-cloud-services.md
+      - 删除服务实例: nebula-cloud/nebula-cloud-on-alibabacloud/3.delete-service-instance.md
 
   - Nebula Studio:
     - Studio 版本更新说明: nebula-studio/about-studio/st-ug-release-note.md
