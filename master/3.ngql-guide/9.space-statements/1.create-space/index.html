@@ -6066,25 +6066,99 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_21">
+          图计算
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图计算" data-md-level="1">
+        <label class="md-nav__title" for="__nav_21">
+          <span class="md-nav__icon md-icon"></span>
+          图计算
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../nebula-algorithm/" class="md-nav__link">
+      <a href="../../../graph-computing/algorithm-description/" class="md-nav__link">
+        算法简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graph-computing/nebula-algorithm/" class="md-nav__link">
         Nebula Algorithm
       </a>
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-analytics/" class="md-nav__link">
+      <a href="../../../graph-computing/nebula-analytics/" class="md-nav__link">
         Nebula Analytics
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graph-computing/use-explorer/" class="md-nav__link">
+        Nebula Explorer 工作流
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graph-computing/0.deploy-controller-analytics.md" class="md-nav__link">
+        Dag Controller
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6145,18 +6219,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_26" type="checkbox" id="__nav_26" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_25" type="checkbox" id="__nav_25" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_26">
+        <label class="md-nav__link" for="__nav_25">
           附录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="附录" data-md-level="1">
-        <label class="md-nav__title" for="__nav_26">
+        <label class="md-nav__title" for="__nav_25">
           <span class="md-nav__icon md-icon"></span>
           附录
         </label>
@@ -6454,7 +6528,7 @@
 </tr>
 <tr>
 <td align="left"><code>vid_type</code></td>
-<td align="left">必选参数。指定点 ID 的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为字符串，最大长度为<code>N</code>，超出长度会报错；<code>INT64</code>表示数据类型为整数。</td>
+<td align="left">必选参数。指定点 ID 的数据类型。可选值为<code>FIXED_STRING(&lt;N&gt;)</code>和<code>INT64</code>。<code>INT</code>等同于<code>INT64</code>。<br><code>FIXED_STRING(&lt;N&gt;)</code>表示数据类型为定长字符串，长度为<code>N</code>字节，超出长度会报错。例如，UTF-8中，一个中文字符的长度为三个字节，如果设置<code>N</code>为 12，那么<code>vid_type</code>为最多 4 个中文字符。<br><code>INT64</code>表示数据类型为整数。</td>
 </tr>
 <tr>
 <td align="left"><code>COMMENT</code></td>
@@ -6563,7 +6637,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2022</span>
       
     
   </small>

@@ -6037,25 +6037,99 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_21">
+          图计算
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图计算" data-md-level="1">
+        <label class="md-nav__title" for="__nav_21">
+          <span class="md-nav__icon md-icon"></span>
+          图计算
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../nebula-algorithm/" class="md-nav__link">
+      <a href="../../graph-computing/algorithm-description/" class="md-nav__link">
+        算法简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/nebula-algorithm/" class="md-nav__link">
         Nebula Algorithm
       </a>
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-analytics/" class="md-nav__link">
+      <a href="../../graph-computing/nebula-analytics/" class="md-nav__link">
         Nebula Analytics
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/use-explorer/" class="md-nav__link">
+        Nebula Explorer 工作流
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/0.deploy-controller-analytics.md" class="md-nav__link">
+        Dag Controller
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6116,18 +6190,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_26" type="checkbox" id="__nav_26" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_25" type="checkbox" id="__nav_25" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_26">
+        <label class="md-nav__link" for="__nav_25">
           附录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="附录" data-md-level="1">
-        <label class="md-nav__title" for="__nav_26">
+        <label class="md-nav__title" for="__nav_25">
           <span class="md-nav__icon md-icon"></span>
           附录
         </label>
@@ -6365,7 +6439,7 @@
 <li>Nebula Graph master 更擅长处理（互联网式的）有大量并发的小请求。也即：虽然全图很大（万亿点边），但是每个请求要访问到的子图本身并不大（几百万个点边）——单个请求时延不大；但这类请求的并发数量特别多——QPS 大。</li>
 </ul>
 <ul>
-<li>但对于一些交互分析型的场景，并发请求的数量不多，而每个请求要访问的子图本身特别大（亿以上）。为降低时延，可以在应用程序中将一个大的请求，拆分为多个小请求，并发发送给多个 graphd。这样可以降低单个大请求的时延，降低单个 graphd 的内存占用。另外，也可以使用<a href="../../nebula-algorithm/">图计算功能 Nebula Algorithm</a>。</li>
+<li>但对于一些交互分析型的场景，并发请求的数量不多，而每个请求要访问的子图本身特别大（亿以上）。为降低时延，可以在应用程序中将一个大的请求，拆分为多个小请求，并发发送给多个 graphd。这样可以降低单个大请求的时延，降低单个 graphd 的内存占用。另外，也可以使用<a href="../../graph-computing/nebula-algorithm/">图计算功能 Nebula Algorithm</a>。</li>
 </ul>
 <!--
 ## 水平扩展或垂直扩展
@@ -6411,7 +6485,7 @@ Nebula Graph master 支持水平扩展：
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2022</span>
       
     
   </small>

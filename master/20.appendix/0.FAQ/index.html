@@ -5980,25 +5980,99 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_21" type="checkbox" id="__nav_21" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_21">
+          图计算
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="图计算" data-md-level="1">
+        <label class="md-nav__title" for="__nav_21">
+          <span class="md-nav__icon md-icon"></span>
+          图计算
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../nebula-algorithm/" class="md-nav__link">
+      <a href="../../graph-computing/algorithm-description/" class="md-nav__link">
+        算法简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/nebula-algorithm/" class="md-nav__link">
         Nebula Algorithm
       </a>
     </li>
   
 
-    
-      
-      
-      
-
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-analytics/" class="md-nav__link">
+      <a href="../../graph-computing/nebula-analytics/" class="md-nav__link">
         Nebula Analytics
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/use-explorer/" class="md-nav__link">
+        Nebula Explorer 工作流
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graph-computing/0.deploy-controller-analytics.md" class="md-nav__link">
+        Dag Controller
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -6061,18 +6135,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_26" type="checkbox" id="__nav_26" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_25" type="checkbox" id="__nav_25" checked>
       
       
       
       
-        <label class="md-nav__link" for="__nav_26">
+        <label class="md-nav__link" for="__nav_25">
           附录
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="附录" data-md-level="1">
-        <label class="md-nav__title" for="__nav_26">
+        <label class="md-nav__title" for="__nav_25">
           <span class="md-nav__icon md-icon"></span>
           附录
         </label>
@@ -7158,7 +7232,7 @@ Got 1 rows (time spent 1235/1934 us)
 <p>nGQL 没有该功能。</p>
 <p>你必须先指定 Tag/EdgeType，或者用<code>LIMIT</code>子句限制返回数量，才能获取对应类型的所有的点和边。</p>
 <p>例如执行 <code>MATCH (n) RETURN (n)</code>. 会返回错误 <code>Scan vertices or edges need to specify a limit number, or limit number can not push down.</code>。</p>
-<p>一个办法是使用 <a href="../../nebula-algorithm/">Nebula Algorithm</a>.</p>
+<p>一个办法是使用 <a href="../../graph-computing/nebula-algorithm/">Nebula Algorithm</a>.</p>
 <p>或者指定各 Tag/Edge Type，然后再自己通过 <code>Union</code> 拼装。</p>
 <h3 id="tagedge_type">能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？<a class="headerlink" href="#tagedge_type" title="Permanent link">&para;</a></h3>
 <p>能，详情参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</p>
@@ -7170,7 +7244,7 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>因为没有对出度和入度的进行特殊处理（例如索引或者缓存），这是一个较慢的操作。特别当遇到<a href="../../8.service-tuning/super-node/">超级节点</a>时，可能会发生OOM。</p>
 <h3 id="_9">是否有办法快速获取“所有”点的出度和入度？<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>没有直接命令。</p>
-<p>可以使用 <a href="../../nebula-algorithm/">Nebula Algorithm</a>。</p>
+<p>可以使用 <a href="../../graph-computing/nebula-algorithm/">Nebula Algorithm</a>。</p>
 <h2 id="_10">关于运维<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <h3 id="_11">运行日志文件过大时如何回收日志？<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>Nebula Graph 的运行日志默认在 <code>/usr/local/nebula/logs/</code> 下，正常 INFO 级别日志文件为 <code>nebula-graphd.INFO, nebula-storaged.INFO, nebula-metad.INFO</code>，报警和错误级别后缀为 <code>.WARNING</code> 和 <code>.ERROR</code>。</p>
@@ -7285,7 +7359,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2022</span>
       
     
   </small>
