@@ -1349,6 +1349,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../6.functions-and-expressions/17.ES-function/" class="md-nav__link">
+        Elasticsearch 查询函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../6.functions-and-expressions/9.user-defined-functions/" class="md-nav__link">
         自定义函数
       </a>
@@ -6550,6 +6564,10 @@
 <p>重建索引期间，所有查询都会跳过索引并执行顺序扫描，返回结果可能不一致。</p>
 </div>
 <p>请在创建索引后，选择合适的时间为存量数据重建索引。使用索引的详情请参见 <a href="../1.create-native-index/">CREATE INDEX</a>。</p>
+<div class="admonition performance">
+<p class="admonition-title">Performance</p>
+<p>通过修改配置文件中的<code>rebuild_index_part_rate_limit</code> 和 <code>snapshot_batch_size</code> 两个参数，可优化重建索引的速度，另外，更大参数可能会导致更高的内存和网络占用，详情请参见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/#misc">Storage服务配置</a>。</p>
+</div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>REBUILD {TAG | EDGE} INDEX [&lt;index_name_list&gt;];
 
@@ -6600,7 +6618,7 @@ nebula&gt; SHOW JOB 31;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>

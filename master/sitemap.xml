@@ -521,6 +521,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/17.ES-function/</loc>
+         <lastmod>2022-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/2.string/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>

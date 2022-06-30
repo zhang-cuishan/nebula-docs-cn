@@ -1349,6 +1349,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../3.ngql-guide/6.functions-and-expressions/17.ES-function/" class="md-nav__link">
+        Elasticsearch 查询函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../3.ngql-guide/6.functions-and-expressions/9.user-defined-functions/" class="md-nav__link">
         自定义函数
       </a>
@@ -6514,7 +6528,10 @@
 <li>全文索引不支持搜索属性值为<code>NULL</code>的属性。</li>
 </ul>
 <ul>
-<li>不支持修改 Elastic Search 中的索引，只能删除重建。</li>
+<li>写入数据时，Elasticsearch 会自动创建相应的索引。在 Nebula Graph 中创建全文索引，但是未写入数据，查询时会报错<code>text search not found</code>。</li>
+</ul>
+<ul>
+<li>不支持修改 Elasticsearch 中的索引，只能删除重建。</li>
 </ul>
 <ul>
 <li>不支持管道符。</li>
@@ -6537,13 +6554,16 @@
 <ul>
 <li>使用 K8s 方式部署的 Nebula Graph 集群不支持全文索引。</li>
 </ul>
+<ul>
+<li>不能与 <a href="../../../3.ngql-guide/6.functions-and-expressions/17.ES-function/">calles()</a> 函数同时使用。</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>
