@@ -966,6 +966,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/0.deploy-controller-analytics/</loc>
+         <lastmod>2022-06-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/graph-computing/algorithm-description/</loc>
          <lastmod>2022-06-30</lastmod>
          <changefreq>daily</changefreq>
