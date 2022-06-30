@@ -1413,8 +1413,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tagslabels" class="md-nav__link">
-    tags()和labels()
+  <a href="#tags_labels" class="md-nav__link">
+    tags() 和labels()
   </a>
   
 </li>
@@ -6675,8 +6675,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tagslabels" class="md-nav__link">
-    tags()和labels()
+  <a href="#tags_labels" class="md-nav__link">
+    tags() 和labels()
   </a>
   
 </li>
@@ -6762,7 +6762,7 @@
 <p>由于 vertex、edge、vertices、edges、path 属于关键字，使用时需要用<code>AS &lt;alias&gt;</code>设置别名才能正常使用。例如<code>GO FROM "player100" OVER follow YIELD edge AS e;</code>。</p>
 </div>
 <h3 id="idvertex">id(vertex)<a class="headerlink" href="#idvertex" title="Permanent link">&para;</a></h3>
-<p>id(vertex)返回点 ID。</p>
+<p>id(vertex) 返回点 ID。</p>
 <p>语法：<code>id(vertex)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -6777,7 +6777,7 @@
 +-------------+
 </code></pre></div>
 <h3 id="propertiesvertex">properties(vertex)<a class="headerlink" href="#propertiesvertex" title="Permanent link">&para;</a></h3>
-<p>properties(vertex)返回点的所有属性。</p>
+<p>properties(vertex) 返回点的所有属性。</p>
 <p>语法：<code>properties(vertex)</code></p>
 <ul>
 <li>返回类型：map。</li>
@@ -6793,7 +6793,7 @@
 +-------------------------------------+
 </code></pre></div>
 <h3 id="propertiesedge">properties(edge)<a class="headerlink" href="#propertiesedge" title="Permanent link">&para;</a></h3>
-<p>properties(edge)返回边的所有属性。</p>
+<p>properties(edge) 返回边的所有属性。</p>
 <p>语法：<code>properties(edge)</code></p>
 <ul>
 <li>返回类型：map。</li>
@@ -6809,7 +6809,7 @@
 +------------------+
 </code></pre></div>
 <h3 id="typeedge">type(edge)<a class="headerlink" href="#typeedge" title="Permanent link">&para;</a></h3>
-<p>type(edge)返回边的 Edge type。</p>
+<p>type(edge) 返回边的 Edge type。</p>
 <p>语法：<code>type(edge)</code></p>
 <ul>
 <li>返回类型：string。</li>
@@ -6825,7 +6825,7 @@
 +-------------+-------------+------------+------------+
 </code></pre></div>
 <h3 id="srcedge">src(edge)<a class="headerlink" href="#srcedge" title="Permanent link">&para;</a></h3>
-<p>src(edge)返回边的起始点 ID。</p>
+<p>src(edge) 返回边的起始点 ID。</p>
 <p>语法：<code>src(edge)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -6841,7 +6841,7 @@
 +-------------+-------------+
 </code></pre></div>
 <h3 id="dstedge">dst(edge)<a class="headerlink" href="#dstedge" title="Permanent link">&para;</a></h3>
-<p>dst(edge)返回边的目的点 ID。</p>
+<p>dst(edge) 返回边的目的点 ID。</p>
 <p>语法：<code>dst(edge)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -6857,7 +6857,7 @@
 +-------------+-------------+
 </code></pre></div>
 <h3 id="rankedge">rank(edge)<a class="headerlink" href="#rankedge" title="Permanent link">&para;</a></h3>
-<p>rank(edge)返回边的 rank。</p>
+<p>rank(edge) 返回边的 rank。</p>
 <p>语法：<code>rank(edge)</code></p>
 <ul>
 <li>返回类型：int。</li>
@@ -6905,7 +6905,7 @@
 <h2 id="opencypher">openCypher 兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <p>openCypher 兼容语句的<code>RETURN</code>和<code>WHERE</code>子句中可以使用如下介绍的函数。</p>
 <h3 id="id">id()<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
-<p>id()返回点 ID。</p>
+<p>id() 返回点 ID。</p>
 <p>语法：<code>id(&lt;vertex&gt;)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -6921,8 +6921,8 @@
 | &quot;player102&quot; |
 ...
 </code></pre></div>
-<h3 id="tagslabels">tags()和labels()<a class="headerlink" href="#tagslabels" title="Permanent link">&para;</a></h3>
-<p>tags()和labels()返回点的 Tag。</p>
+<h3 id="tags_labels">tags() 和labels()<a class="headerlink" href="#tags_labels" title="Permanent link">&para;</a></h3>
+<p>tags() 和labels() 返回点的 Tag。</p>
 <p>语法：<code>tags(&lt;vertex&gt;)</code>、<code>labels(&lt;vertex&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6937,7 +6937,7 @@
 +------------+
 </code></pre></div>
 <h3 id="properties">properties()<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h3>
-<p>properties()返回点或边的所有属性。</p>
+<p>properties() 返回点或边的所有属性。</p>
 <p>语法：<code>properties(&lt;vertex_or_edge&gt;)</code></p>
 <ul>
 <li>返回类型：map。</li>
@@ -6953,7 +6953,7 @@
 ...
 </code></pre></div>
 <h3 id="type">type()<a class="headerlink" href="#type" title="Permanent link">&para;</a></h3>
-<p>type()返回边的 Edge type。</p>
+<p>type() 返回边的 Edge type。</p>
 <p>语法：<code>type(&lt;edge&gt;)</code></p>
 <ul>
 <li>返回类型：string。</li>
@@ -6970,7 +6970,7 @@
 +----------+
 </code></pre></div>
 <h3 id="src">src()<a class="headerlink" href="#src" title="Permanent link">&para;</a></h3>
-<p>src()返回边的起始点 ID。</p>
+<p>src() 返回边的起始点 ID。</p>
 <p>语法：<code>src(&lt;edge&gt;)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -6987,7 +6987,7 @@
 ...
 </code></pre></div>
 <h3 id="dst">dst()<a class="headerlink" href="#dst" title="Permanent link">&para;</a></h3>
-<p>dst()返回边的目的点 ID。</p>
+<p>dst() 返回边的目的点 ID。</p>
 <p>语法：<code>dst(&lt;edge&gt;)</code></p>
 <ul>
 <li>返回类型：和点 ID 的类型保持一致。</li>
@@ -7004,7 +7004,7 @@
 +-------------+
 </code></pre></div>
 <h3 id="startnode">startNode()<a class="headerlink" href="#startnode" title="Permanent link">&para;</a></h3>
-<p>startNode()获取一条边或一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。</p>
+<p>startNode() 获取一条边或一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。</p>
 <p>语法：<code>startNode(&lt;path&gt;)</code></p>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
@@ -7016,7 +7016,7 @@
 +----------------------------------------------------+
 </code></pre></div>
 <h3 id="endnode">endNode()<a class="headerlink" href="#endnode" title="Permanent link">&para;</a></h3>
-<p>endNode()获取一条边或一条路径并返回它的目的点信息，包括点 ID、Tag、属性和值。</p>
+<p>endNode() 获取一条边或一条路径并返回它的目的点信息，包括点 ID、Tag、属性和值。</p>
 <p>语法：<code>endNode(&lt;path&gt;)</code></p>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
@@ -7028,7 +7028,7 @@
 +----------------------------------+
 </code></pre></div>
 <h3 id="rank">rank()<a class="headerlink" href="#rank" title="Permanent link">&para;</a></h3>
-<p>rank()返回边的 rank。</p>
+<p>rank() 返回边的 rank。</p>
 <p>语法：<code>rank(&lt;edge&gt;)</code></p>
 <ul>
 <li>返回类型：int。</li>
@@ -7050,7 +7050,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>

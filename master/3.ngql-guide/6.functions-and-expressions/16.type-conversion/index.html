@@ -6494,7 +6494,7 @@
 <h1 id="_1">类型转换函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>本文介绍 Nebula Graph 支持的类型转换函数。</p>
 <h2 id="toboolean">toBoolean()<a class="headerlink" href="#toboolean" title="Permanent link">&para;</a></h2>
-<p>toBoolean()将字符串转换为布尔。</p>
+<p>toBoolean() 将字符串转换为布尔。</p>
 <p>语法：<code>toBoolean(&lt;value&gt;)</code></p>
 <ul>
 <li>返回类型：bool。</li>
@@ -6513,7 +6513,7 @@
 +----------+
 </code></pre></div>
 <h2 id="tofloat">toFloat()<a class="headerlink" href="#tofloat" title="Permanent link">&para;</a></h2>
-<p>toFloat()将整数或字符串转换为浮点数。</p>
+<p>toFloat() 将整数或字符串转换为浮点数。</p>
 <p>语法：<code>toFloat(&lt;value&gt;)</code></p>
 <ul>
 <li>返回类型：float。</li>
@@ -6527,7 +6527,7 @@
 +------------+----------------+----------------+-------------------------+
 </code></pre></div>
 <h2 id="tostring">toString()<a class="headerlink" href="#tostring" title="Permanent link">&para;</a></h2>
-<p>toString()将任意非复合数据类型数据转换为字符串类型。</p>
+<p>toString() 将任意非复合数据类型数据转换为字符串类型。</p>
 <p>语法：<code>toString(&lt;value&gt;)</code></p>
 <ul>
 <li>返回类型：string。</li>
@@ -6541,7 +6541,7 @@
 +---------+----------+
 </code></pre></div>
 <h2 id="tointeger">toInteger()<a class="headerlink" href="#tointeger" title="Permanent link">&para;</a></h2>
-<p>toInteger()将浮点或字符串转换为整数。</p>
+<p>toInteger() 将浮点或字符串转换为整数。</p>
 <p>语法：<code>toInteger(&lt;value&gt;)</code></p>
 <ul>
 <li>返回类型：int。</li>
@@ -6555,7 +6555,7 @@
 +--------------+----------------+------------------+---------------------------+
 </code></pre></div>
 <h2 id="toset">toSet()<a class="headerlink" href="#toset" title="Permanent link">&para;</a></h2>
-<p>toSet()将列表或集合转换为集合。</p>
+<p>toSet() 将列表或集合转换为集合。</p>
 <p>语法：<code>toSet(&lt;value&gt;)</code></p>
 <ul>
 <li>返回类型：set。</li>
@@ -6569,7 +6569,7 @@
 +-----------+
 </code></pre></div>
 <h2 id="hash">hash()<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h2>
-<p>hash()返回参数的哈希值。其参数可以是数字、字符串、列表、布尔值、NULL 等类型的值，或者计算结果为这些类型的表达式。</p>
+<p>hash() 返回参数的哈希值。其参数可以是数字、字符串、列表、布尔值、NULL 等类型的值，或者计算结果为这些类型的表达式。</p>
 <p><code>hash()</code>函数采用 MurmurHash2 算法，种子（seed）为<code>0xc70f6907UL</code>。用户可以在 <a href="https://github.com/vesoft-inc/nebula/blob/master/src/common/base/MurmurHash2.h"><code>MurmurHash2.h</code></a> 中查看其源代码。</p>
 <p>在 Java 中的调用方式如下：</p>
 <div class="highlight"><pre><span></span><code><span class="n">MurmurHash2</span><span class="p">.</span><span class="na">hash64</span><span class="p">(</span><span class="s">&quot;to_be_hashed&quot;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(),</span><span class="s">&quot;to_be_hashed&quot;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">().</span><span class="na">length</span><span class="p">,</span><span class="w"> </span><span class="mh">0xc70f6907</span><span class="p">)</span><span class="w"></span>
@@ -6613,7 +6613,7 @@ nebula&gt; YIELD hash(toLower(&quot;HELLO NEBULA&quot;));
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>

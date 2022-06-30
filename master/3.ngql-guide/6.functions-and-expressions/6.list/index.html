@@ -6678,7 +6678,7 @@
 </ul>
 <h2 id="_3">通用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="range">range()<a class="headerlink" href="#range" title="Permanent link">&para;</a></h3>
-<p>range()返回指定整数范围<code>[start,end]</code>内固定步长的列表。</p>
+<p>range() 返回指定整数范围<code>[start,end]</code>内固定步长的列表。</p>
 <p>语法：<code>range(start, end [, step])</code></p>
 <ul>
 <li><code>step</code>：可选参数。步长。默认为 <code>1</code>。</li>
@@ -6695,7 +6695,7 @@
 +-----------------+
 </code></pre></div>
 <h3 id="reverse">reverse()<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h3>
-<p>reverse()返回将原列表逆序排列的新列表。</p>
+<p>reverse() 返回将原列表逆序排列的新列表。</p>
 <p>语法：<code>reverse(&lt;list&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6710,7 +6710,7 @@
 +-----------------------------------+
 </code></pre></div>
 <h3 id="tail">tail()<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
-<p>tail()返回不包含原列表第一个元素的新列表。</p>
+<p>tail() 返回不包含原列表第一个元素的新列表。</p>
 <p>语法：<code>tail(&lt;list&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6725,7 +6725,7 @@
 +-------------------------+
 </code></pre></div>
 <h3 id="head">head()<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
-<p>head()返回列表的第一个元素。</p>
+<p>head() 返回列表的第一个元素。</p>
 <p>语法：<code>head(&lt;list&gt;)</code></p>
 <ul>
 <li>返回类型：与原列表内的元素类型相同。</li>
@@ -6740,7 +6740,7 @@
 +-----------+
 </code></pre></div>
 <h3 id="last">last()<a class="headerlink" href="#last" title="Permanent link">&para;</a></h3>
-<p>last()返回列表的最后一个元素。</p>
+<p>last() 返回列表的最后一个元素。</p>
 <p>语法：<code>last(&lt;list&gt;)</code></p>
 <ul>
 <li>返回类型：与原列表内的元素类型相同。</li>
@@ -6755,7 +6755,7 @@
 +-----------+
 </code></pre></div>
 <h3 id="reduce">reduce()<a class="headerlink" href="#reduce" title="Permanent link">&para;</a></h3>
-<p>reduce()将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。该函数将遍历给定列表中的每个元素 e，在 e 上运行表达式并和累加器的当前结果累加，将新的结果存储在累加器中。这个函数类似于函数式语言（如 Lisp 和 Scala）中的 fold 或 reduce 方法。</p>
+<p>reduce() 将表达式逐个应用于列表中的元素，然后和累加器中的当前结果累加，最后返回完整结果。该函数将遍历给定列表中的每个元素 e，在 e 上运行表达式并和累加器的当前结果累加，将新的结果存储在累加器中。这个函数类似于函数式语言（如 Lisp 和 Scala）中的 fold 或 reduce 方法。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">openCypher 兼容性</p>
 <p>在 openCypher 中，<code>reduce()</code>函数没有定义。nGQL 使用了 Cypher 方式实现<code>reduce()</code>函数。</p>
@@ -6815,7 +6815,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 </code></pre></div>
 <h2 id="ngql">原生 nGQL 语句适用<a class="headerlink" href="#ngql" title="Permanent link">&para;</a></h2>
 <h3 id="keys">keys()<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h3>
-<p>keys()返回一个列表，包含字符串形式的点、边的所有属性。</p>
+<p>keys() 返回一个列表，包含字符串形式的点、边的所有属性。</p>
 <p>语法：<code>keys({vertex | edge})</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6832,7 +6832,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 +-----------------+
 </code></pre></div>
 <h3 id="labels">labels()<a class="headerlink" href="#labels" title="Permanent link">&para;</a></h3>
-<p>labels()返回点的 Tag 列表。</p>
+<p>labels() 返回点的 Tag 列表。</p>
 <p>语法：<code>labels(verte)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6850,7 +6850,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 </code></pre></div>
 <h2 id="opencypher">openCypher 兼容语句适用<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <h3 id="keys_1">keys()<a class="headerlink" href="#keys_1" title="Permanent link">&para;</a></h3>
-<p>keys()返回一个列表，包含字符串形式的点、边或映射的所有属性。</p>
+<p>keys() 返回一个列表，包含字符串形式的点、边或映射的所有属性。</p>
 <p>语法：<code>keys(&lt;vertex_or_edge&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6867,7 +6867,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 +----------------------------+
 </code></pre></div>
 <h3 id="labels_1">labels()<a class="headerlink" href="#labels_1" title="Permanent link">&para;</a></h3>
-<p>labels()返回点的 Tag 列表。</p>
+<p>labels() 返回点的 Tag 列表。</p>
 <p>语法：<code>labels(&lt;vertex&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6883,7 +6883,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 +------------+
 </code></pre></div>
 <h3 id="nodes">nodes()<a class="headerlink" href="#nodes" title="Permanent link">&para;</a></h3>
-<p>nodes()返回路径中所有点的列表。包括点 ID、Tag、属性和值。</p>
+<p>nodes() 返回路径中所有点的列表。包括点 ID、Tag、属性和值。</p>
 <p>语法：<code>nodes(&lt;path&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6900,7 +6900,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
 +-------------------------------------------------------------------------------------------------------------+
 </code></pre></div>
 <h3 id="relationships">relationships()<a class="headerlink" href="#relationships" title="Permanent link">&para;</a></h3>
-<p>relationships()返回路径中所有关系的列表。</p>
+<p>relationships() 返回路径中所有关系的列表。</p>
 <p>语法：<code>relationships(&lt;path&gt;)</code></p>
 <ul>
 <li>返回类型：list。</li>
@@ -6922,7 +6922,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>
