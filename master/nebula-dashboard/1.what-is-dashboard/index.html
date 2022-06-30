@@ -6491,6 +6491,9 @@
 <ul>
 <li>监控集群本身的信息，包括集群的服务信息、分区信息、配置和长时任务。</li>
 </ul>
+<ul>
+<li>支持全局调整监控数据的页面更新频率。</li>
+</ul>
 <h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>如果有以下任一需求，都可以使用 Dashboard：</p>
 <ul>
@@ -6503,12 +6506,7 @@
 <li>故障发生后，需要复盘问题，确认故障发生时间、异常现象。</li>
 </ul>
 <h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>监控数据默认更新频率约为 7 秒。</li>
-</ul>
-<ul>
-<li>监控数据默认保留 14 天，即只能查询最近 14 天内的监控数据。</li>
-</ul>
+<p>监控数据默认保留 14 天，即只能查询最近 14 天内任意时间段的监控数据。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>监控服务由 prometheus 提供，更新频率和保留时间等都可以自行修改。详情请参见 <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/">prometheus 官方文档</a>。</p>
@@ -6545,7 +6543,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
       
     
   </small>
