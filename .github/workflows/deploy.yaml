@@ -26,7 +26,8 @@ jobs:
 
       - name: mike 
         run: |
-          mike deploy 3.2.0 -p --rebase
+          mike delete 3.2.0
+          #mike deploy 3.2.0 -p --rebase
           mike list
 
       - name: show git branch
