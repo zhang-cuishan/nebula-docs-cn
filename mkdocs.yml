@@ -225,7 +225,9 @@ extra:
   cloud:
     azureRelease: 2.6.2 # Azure云兼容的最新内核版本
     aliyunRelease: 3.1.0 # 阿里云兼容的最新内核版本
-
+  Ent:
+    ent-begin: <!--
+    ent-end: -->
 
 nav:
   - 前言: README.md
