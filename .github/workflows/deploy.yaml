@@ -26,6 +26,7 @@ jobs:
 
       - name: mike 
         run: |
+          git fetch origin gh-pages --depth=1
           mike deploy 3.2.0 -p --rebase
           mike list
       - name: show git branch
