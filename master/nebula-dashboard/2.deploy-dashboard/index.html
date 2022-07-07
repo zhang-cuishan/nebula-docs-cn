@@ -7132,6 +7132,10 @@ scrape_configs:
       target: <span class="s2">&quot;127.0.0.1:8090&quot;</span>  //  nebula-http-gateway 服务的 IP 和端口号。
     prometheus:
       target: <span class="s2">&quot;127.0.0.1:9090&quot;</span>  // Prometheus 服务的 IP 和端口号。
+    graph:
+      target: <span class="s2">&quot;127.0.0.1:19669&quot;</span>    // 用于获取 Graph 服务的运行配置。
+    storage:
+      target: <span class="s2">&quot;127.0.0.1:19779&quot;</span>   // 用于获取 Storage 服务的运行配置。      
     nebulaServer:
       ip: <span class="s2">&quot;192.168.8.143&quot;</span>  // 任一 Graph 服务的机器 IP。
       port: <span class="m">9669</span> // Graph 服务的端口号。
@@ -7236,7 +7240,13 @@ scrape_configs:
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;prometheus&quot;</span><span class="p">:{</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prometheus:9090&quot;</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="err">Prome</span><span class="kc">t</span><span class="err">heus</span><span class="w"> </span><span class="err">服务的地址和端口号。</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;graph&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;graphd:19669&quot;</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="err">用于获取</span><span class="w"> </span><span class="err">Graph</span><span class="w"> </span><span class="err">服务的运行配置。</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;storage&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">      </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;graphd:19779&quot;</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="err">用于获取</span><span class="w"> </span><span class="err">S</span><span class="kc">t</span><span class="err">orage</span><span class="w"> </span><span class="err">服务的运行配置。</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w">        </span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;nebulaServer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;192.168.8.131&quot;</span><span class="p">,</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="err">任一</span><span class="w"> </span><span class="err">Graph</span><span class="w"> </span><span class="err">服务的机器</span><span class="w"> </span><span class="err">IP。</span><span class="w"></span>
@@ -7292,7 +7302,7 @@ $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7003<span cl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 7, 2022</span>
       
     
   </small>
