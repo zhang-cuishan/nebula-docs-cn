@@ -521,11 +521,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/17.ES-function/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/3.ngql-guide/6.functions-and-expressions/2.string/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
@@ -766,11 +761,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/deploy-license/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/manage-service/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
@@ -861,11 +851,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/5.configurations-and-logs/2.log-management/audit-log/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/5.configurations-and-logs/2.log-management/logs/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
@@ -901,11 +886,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/7.data-security/1.authentication/4.ldap/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/8.service-tuning/2.graph-modeling/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
@@ -922,11 +902,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/8.service-tuning/compaction/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/8.service-tuning/load-balance/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -966,27 +941,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/0.deploy-controller-analytics/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/graph-computing/algorithm-description/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/graph-computing/nebula-algorithm/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/nebula-analytics/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/use-explorer/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1142,11 +1102,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/parameter-reference/ex-ug-parameter/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/use-exchange/ex-ug-export-from-nebula/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1401,11 +1356,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-limitations/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
@@ -1512,11 +1462,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/synchronization-and-migration/2.balance-syntax/</loc>
-         <lastmod>2022-07-07</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/synchronization-and-migration/replication-between-clusters/</loc>
          <lastmod>2022-07-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
