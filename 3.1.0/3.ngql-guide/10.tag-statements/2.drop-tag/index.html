@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/3.1.0/3.ngql-guide/10.tag-statements/2.drop-tag/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -6454,7 +6454,7 @@
 <p><code>DROP TAG</code>语句可以删除当前工作空间内所有点上的指定 Tag。</p>
 <p>点可以有一个或多个 Tag。</p>
 <ul>
-<li>如果某个点只有一个 Tag，删除这个 Tag 后，用户就<strong>无法访问</strong>这个点，下次 Compaction 操作时会删除该点，但与该点相邻的<strong>边仍然存在</strong>——这会造成悬挂边。</li>
+<li>如果某个点只有一个 Tag，删除这个 Tag 后，该点变为无 Tag 的点。与该点相邻的边仍然存在——这会造成悬挂边。</li>
 </ul>
 <ul>
 <li>如果某个点有多个 Tag，删除其中一个 Tag，仍然可以访问这个点，但是<strong>无法访问</strong>已删除 Tag 所定义的所有属性。</li>
@@ -6486,7 +6486,7 @@ nebula&gt; DROP TAG test;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2022</span>
       
     
   </small>
@@ -6585,7 +6585,7 @@ nebula&gt; DROP TAG test;
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "header.autohide", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"method": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../../js/version-select.js"></script>
       
