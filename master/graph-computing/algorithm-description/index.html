@@ -6856,6 +6856,16 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
     不同图计算工具支持的算法不同，参数也不同。详情参见下文说明。
 -->
 
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>执行图计算时不仅需要设置算法的参数，对数据源也有要求。数据源需要包含起点和终点。PageRank、DegreeWithTime、SSSP、APSP、LPA、HANP、Louvain 算法还需要包含权重（weight）。</p>
+<ul>
+<li>如果数据源来自 HDFS，需要指定 CSV 文件，包含<code>src</code>和<code>dst</code>列，部分算法还需要包含<code>weight</code>列。</li>
+</ul>
+<ul>
+<li>如果数据源来自 Nebula Graph，需要指定边类型，该类型的边提供<code>src</code>和<code>dst</code>列，部分算法还需要指定边类型的某个属性作为<code>weight</code>列。</li>
+</ul>
+</div>
 <h2 id="_2">节点重要度算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="pagerank">PageRank<a class="headerlink" href="#pagerank" title="Permanent link">&para;</a></h3>
 <p>PageRank（页面排序）算法根据点之间的关系（边）计算点的相关性和重要性，通常使用在搜索引擎页面排名中。如果一个网页被很多其他网页链接，说明这个网页比较重要（PageRank 值较高）；如果一个 PageRank 值很高的网页链接到其他网页，那么被链接到的网页的 PageRank 值会提高。</p>
@@ -6872,6 +6882,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -6905,6 +6918,34 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left">点的 PageRank 值。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="kcore">KCore<a class="headerlink" href="#kcore" title="Permanent link">&para;</a></h3>
 <p>KCore 算法用于计算出没有小于 K 度的点组成的子图，通常使用在社区发现、金融风控等场景。其计算结果是判断点重要性最常用的参考值之一，体现了点的传播能力。</p>
 <p>参数说明如下。</p>
@@ -6920,6 +6961,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -6932,17 +6976,7 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <tr>
 <td align="left"><code>TYPE</code></td>
 <td align="left"><code>vertex</code></td>
-<td align="left">计算类型。取值：<code>vertex</code>、<code>subgraph</code>。<code>vertex</code>表示为每个点计算核数。</td>
-</tr>
-<tr>
-<td align="left"><code>VERTICES</code></td>
-<td align="left"><code>0</code></td>
-<td align="left">点的数量。如果设置为<code>0</code>，系统会自动计算。</td>
-</tr>
-<tr>
-<td align="left"><code>EDGES</code></td>
-<td align="left"><code>0</code></td>
-<td align="left">边的数量。如果设置为<code>0</code>，系统会自动计算。</td>
+<td align="left">计算类型。取值：<code>vertex</code>、<code>subgraph</code>。<code>vertex</code>表示为每个点计算核心度，<code>subgraph</code>表示计算邻居。</td>
 </tr>
 <tr>
 <td align="left"><code>KMIN</code></td>
@@ -6954,13 +6988,62 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <td align="left"><code>1000000</code></td>
 <td align="left">范围计算时设置 K 的最大值。仅在<code>TYPE</code>=<code>subgraph</code>时生效。</td>
 </tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=vertex</code>时的输出参数</p>
+<table>
+<thead>
 <tr>
-<td align="left"><code>ITERATIONS</code></td>
-<td align="left"><code>10</code></td>
-<td align="left">最大迭代次数。</td>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的核心度。</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=subgraph</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出点的邻居。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="degreecentralitynstepdegree">DegreeCentrality（NStepDegree）<a class="headerlink" href="#degreecentralitynstepdegree" title="Permanent link">&para;</a></h3>
@@ -6984,6 +7067,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -6993,11 +7079,6 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><code>IS_DIRECTED</code></td>
-<td align="left"><code>true</code></td>
-<td align="left">是否考虑边的方向。如果设置为<code>false</code>，系统会自动添加反向边。</td>
-</tr>
 <tr>
 <td align="left"><code>STEP</code></td>
 <td align="left"><code>3</code></td>
@@ -7017,6 +7098,96 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p><code>TYPE=both</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>BOTH_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的双向度中心性。</td>
+</tr>
+<tr>
+<td align="left"><code>OUT_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的出方向度中心性。</td>
+</tr>
+<tr>
+<td align="left"><code>IN_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的入方向度中心性。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=out</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>OUT_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的出方向度中心性。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=in</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>IN_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的入方向度中心性。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="degreewithtime">DegreeWithTime<a class="headerlink" href="#degreewithtime" title="Permanent link">&para;</a></h3>
 <p>DegreeWithTime 算法是基于边的时间范围统计邻居，查找出图中的流行点。</p>
 <div class="admonition note">
@@ -7024,6 +7195,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <p>仅 Nebula Analytics 支持该算法。</p>
 </div>
 <p>参数说明如下。</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7034,27 +7208,112 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>ITERATIONS</code></td>
-<td align="left"><code>10</code></td>
-<td align="left">最大迭代次数。</td>
-</tr>
-<tr>
-<td align="left"><code>IS_DIRECTED</code></td>
-<td align="left"><code>true</code></td>
-<td align="left">是否考虑边的方向。如果设置为<code>false</code>，系统会自动添加反向边。</td>
+<td align="left"><code>TYPE</code></td>
+<td align="left"><code>both</code></td>
+<td align="left">计算的边的方向。取值：<code>in</code>、<code>out</code>、<code>both</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>BEGIN_TIME</code></td>
 <td align="left">-</td>
-<td align="left">起始时间。</td>
+<td align="left">起始时间。格式为<code>yyyy-MM-dd HH:mm:ss.SSS</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>END_TIME</code></td>
 <td align="left">-</td>
-<td align="left">结束时间。</td>
+<td align="left">结束时间。格式为<code>yyyy-MM-dd HH:mm:ss.SSS</code>。</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=both</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>BOTH_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的双向流行度。</td>
+</tr>
+<tr>
+<td align="left"><code>OUT_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的出方向流行度。</td>
+</tr>
+<tr>
+<td align="left"><code>IN_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的入方向流行度。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=out</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>OUT_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的出方向流行度。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=in</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>IN_DEGREE</code></td>
+<td align="left">int</td>
+<td align="left">输出点的入方向流行度。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 <h3 id="betweennesscentrality">BetweennessCentrality<a class="headerlink" href="#betweennesscentrality" title="Permanent link">&para;</a></h3>
 <p>BetweennessCentrality（中介中心性）算法是一种检测点对图中信息流的影响量的方法，用于查找从图的一部分到另一部分时作为桥梁的点。每个点都会根据通过该点的最短路径的数量获得一个分数，即中介中心性分数。</p>
 <p>参数说明如下。</p>
@@ -7069,6 +7328,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7102,6 +7364,34 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left">点的中介中心性分数。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="closenesscentrality">ClosenessCentrality<a class="headerlink" href="#closenesscentrality" title="Permanent link">&para;</a></h3>
 <p>ClosenessCentrality（紧密中心性）算法用于计算一个点到所有其他可达点的最短距离的平均值的倒数。值越大，点在图中的位置越靠近中心，也可以用来衡量信息从该点传输到其他点的时间长短。</p>
 <p>参数说明如下。</p>
@@ -7119,6 +7409,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7128,11 +7421,6 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><code>ITERATIONS</code></td>
-<td align="left"><code>10</code></td>
-<td align="left">最大迭代次数。</td>
-</tr>
 <tr>
 <td align="left"><code>IS_DIRECTED</code></td>
 <td align="left"><code>true</code></td>
@@ -7147,6 +7435,34 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left">点的紧密中心性分数。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_3">路径算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="apsp">APSP<a class="headerlink" href="#apsp" title="Permanent link">&para;</a></h3>
 <p>APSP（全图最短路径）算法用于寻找图中两点之间的所有最短路径。</p>
@@ -7155,22 +7471,37 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <p>仅 Nebula Analytics 支持该算法。</p>
 </div>
 <p>参数说明如下。</p>
+<ul>
+<li>
+<p>输出参数</p>
 <table>
 <thead>
 <tr>
 <th align="left">参数</th>
-<th align="left">默认值</th>
+<th align="left">类型</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>WEIGHT</code></td>
-<td align="left">-</td>
-<td align="left">边的最大权重。</td>
+<td align="left"><code>VID1</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">起点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VID2</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">终点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>DISTANCE</code></td>
+<td align="left">double</td>
+<td align="left">输出<code>VID1</code>到<code>VID2</code>的距离。</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 <h3 id="sssp">SSSP<a class="headerlink" href="#sssp" title="Permanent link">&para;</a></h3>
 <p>SSSP（单源最短路径）算法用于计算给定的一个点（起始点）出发到其余各点的最短路径长度。通常使用在网络路由、路径设计等场景。</p>
 <p>参数说明如下。</p>
@@ -7185,6 +7516,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7195,17 +7529,40 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>WEIGHT</code></td>
-<td align="left">-</td>
-<td align="left">边的最大权重。</td>
-</tr>
-<tr>
 <td align="left"><code>ROOT</code></td>
 <td align="left">-</td>
 <td align="left">起始点的 VID。</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>DISTANCE</code></td>
+<td align="left">double</td>
+<td align="left">输出<code>ROOT</code>到<code>VID</code>的距离。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="bfs">BFS<a class="headerlink" href="#bfs" title="Permanent link">&para;</a></h3>
@@ -7225,6 +7582,9 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7234,11 +7594,6 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><code>WEIGHT</code></td>
-<td align="left">-</td>
-<td align="left">边的最大权重。</td>
-</tr>
 <tr>
 <td align="left"><code>IS_DIRECTED</code></td>
 <td align="left"><code>true</code></td>
@@ -7251,6 +7606,34 @@ Nebula Graph 支持多种图计算工具，本文介绍这些工具支持的算�
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ROOT</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">起始点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VISITED</code></td>
+<td align="left">int</td>
+<td align="left">输出<code>ROOT</code>访问过的点数量。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
 </li>
 </ul>
 <!--
@@ -7300,6 +7683,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7328,6 +7714,34 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>LABEL</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出标签相同的点的 ID。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="hanp">HANP<a class="headerlink" href="#hanp" title="Permanent link">&para;</a></h3>
 <p>HANP（Hop Attenuation &amp; Node Preference）算法是LPA算法的优化算法，考虑了标签的其他信息，例如度的信息、距离信息等，同时在传播时引入了衰减系数，防止过渡传播。</p>
 <p>参数说明如下。</p>
@@ -7344,6 +7758,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7377,6 +7794,34 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>LABEL</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出标签相同的点的 ID。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="connectedcomponent">ConnectedComponent<a class="headerlink" href="#connectedcomponent" title="Permanent link">&para;</a></h3>
 <p>ConnectedComponent（联通分量）算法用于计算出图中的一个子图，当中所有节点都相互连接。考虑路径方向的为强联通分量（strongly connected component），不考虑路径方向的为弱联通分量（weakly connected component）。</p>
 <div class="admonition note">
@@ -7395,6 +7840,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7418,6 +7866,34 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>LABEL</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出标签相同的点的 ID。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="louvain">Louvain<a class="headerlink" href="#louvain" title="Permanent link">&para;</a></h3>
 <p>Louvain 算法是基于模块度的社区发现算法，该算法在效率和效果上都表现较好，并且能够发现层次性的社区结构，其优化目标是最大化整个社区网络的模块度。模块度用于区分社区内和社区间链路密度的差异，是衡量每个点划分社区的好坏。通常情况下，一个优秀的分群方法将会使得社区内部的模块度高于社区与社区之间。</p>
 <p>参数说明如下。</p>
@@ -7434,6 +7910,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7467,6 +7946,34 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>LABEL</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出标签相同的点的 ID。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_5">图特征算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="trianglecount">TriangleCount<a class="headerlink" href="#trianglecount" title="Permanent link">&para;</a></h3>
 <p>TriangleCount（三角计数）算法用于统计图中三角形个数。三角形越多，代表图中节点关联程度越高，组织关系越严密。</p>
@@ -7485,6 +7992,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7513,6 +8023,86 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p><code>OPT=1</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>COUNT</code></td>
+<td align="left">int</td>
+<td align="left">输出全图的三角形数量。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>OPT=2</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">输出每个点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>COUNT</code></td>
+<td align="left">int</td>
+<td align="left">输出每个点的三角形数量。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>OPT=3</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID1</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出构成三角形的点 A 的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VID2</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出构成三角形的点 B 的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VID3</code></td>
+<td align="left">与<code>VID</code>类型相同</td>
+<td align="left">输出构成三角形的点 C 的 ID。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_6">聚类算法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="clusteringcoefficient">ClusteringCoefficient<a class="headerlink" href="#clusteringcoefficient" title="Permanent link">&para;</a></h3>
 <p>ClusteringCoefficient（聚集系数）算法用于计算图中节点的聚集程度。在各类反映真实世界的网络结构，特别是社交网络结构中，各个点之间倾向于形成密度相对较高的网络群，也就是说，相对于在两个点之间随机连接而得到的网络，真实世界网络的聚集系数更高。</p>
@@ -7531,6 +8121,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7559,6 +8152,60 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p><code>TYPE=local</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left">输出每个点的聚集系数。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>TYPE=global</code>时的输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left">输出全图的聚集系数。只有一行数据。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_7">相似度算法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="jaccard">Jaccard<a class="headerlink" href="#jaccard" title="Permanent link">&para;</a></h3>
 <p>Jaccard（杰卡德相似度）算法用于计算两个点（或集合）的相似程度，预测他们之间的关系。适用于社交网上的好友推荐、关系预测等场景。</p>
@@ -7577,6 +8224,9 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 <ul>
 <li>
 <p>Nebula Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
 <table>
 <thead>
 <tr>
@@ -7605,13 +8255,46 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </table>
 </li>
 </ul>
+<ul>
+<li>
+<p>输出参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>VID1</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">第一个点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VID2</code></td>
+<td align="left">创建图空间时<code>vid_type</code>决定</td>
+<td align="left">第二个点的 ID。</td>
+</tr>
+<tr>
+<td align="left"><code>VALUE</code></td>
+<td align="left">double</td>
+<td align="left"><code>VID1</code>和<code>VID2</code>的相似度。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 29, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 8, 2022</span>
       
     
   </small>
