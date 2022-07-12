@@ -6485,7 +6485,12 @@
 <p>运行以下命令对 meta 服务的地址为<code>127.0.0.1:9559</code>的整个集群进行全量备份操作，并将备份文件保存到本地的 <code>/home/nebula/backup/</code>路径下。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>如果有多个 metad 地址，可以使用其中任意一个。</p>
+<ul>
+<li>如果有多个 metad 地址，可以使用其中任意一个。</li>
+</ul>
+<ul>
+<li>备份至本地时，默认只备份 leader metad 的数据，因此有多个 metad 节时，需要手动将备份后的 leader metad 的目录（路径为<code>&lt;storage_path&gt;/meta</code>）拷贝并覆盖其他 follower meatd 节点的对应目录。</li>
+</ul>
 </div>
 <div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --storage <span class="s2">&quot;local:///home/nebula/backup/&quot;</span>
 </code></pre></div>
@@ -6590,7 +6595,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2022</span>
       
     
   </small>
