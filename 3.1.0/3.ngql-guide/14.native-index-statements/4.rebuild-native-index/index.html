@@ -6439,8 +6439,10 @@
 <h1 id="rebuild_index">REBUILD INDEX<a class="headerlink" href="#rebuild_index" title="Permanent link">&para;</a></h1>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>索引功能不会自动对其创建之前已存在的存量数据生效————在索引重建完成之前，无法基于该索引使用<code>LOOKUP</code>和<code>MATCH</code>语句查询到存量数据。</p>
-<p>重建索引期间，所有查询都会跳过索引并执行顺序扫描，返回结果可能不一致。</p>
+<ul>
+<li>索引功能不会自动对其创建之前已存在的存量数据生效————在索引重建完成之前，无法基于该索引使用<code>LOOKUP</code>和<code>MATCH</code>语句查询到存量数据。</li>
+<li>索引的重建未完成时，依赖索引的查询仅能使用部分索引，因此不能获得准确结果。</li>
+</ul>
 </div>
 <p>请在创建索引后，选择合适的时间为存量数据重建索引。使用索引的详情请参见 <a href="../1.create-native-index/">CREATE INDEX</a>。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -6493,7 +6495,7 @@ nebula&gt; SHOW JOB 31;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 13, 2022</span>
       
     
   </small>
