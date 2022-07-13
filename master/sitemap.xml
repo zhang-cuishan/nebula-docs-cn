@@ -186,12 +186,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-note/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/write-tools/</loc>
          <lastmod>2022-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/write-tools/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/dashboard-comm-release-note/</loc>
+         <lastmod>2022-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/dashboard-ent-release-note/</loc>
+         <lastmod>2022-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/explorer-release-note/</loc>
+         <lastmod>2022-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/nebula-comm-release-note/</loc>
+         <lastmod>2022-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/nebula-ent-release-note/</loc>
+         <lastmod>2022-07-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/studio-release-note/</loc>
          <lastmod>2022-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1357,11 +1382,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-limitations/</loc>
-         <lastmod>2022-07-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-release-note/</loc>
          <lastmod>2022-07-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
