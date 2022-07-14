@@ -6805,7 +6805,13 @@
 <li>选择并下载符合版本的 Dashboard。关于 Dashboard 和 Nebula Graph 的版本对应关系，参见<a href="../1.what-is-dashboard-ent/">版本兼容性</a>。</li>
 </ul>
 <ul>
-<li>准备版本为 5.7 以上的 <a href="https://www.mysql.com/cn/">MySQL</a> 环境，创建名称为<code>dashboard</code>的数据库，字符集为<code>utf8</code>。</li>
+<li>
+<p>Dashboard 支持 SQLite 和 MySQL 存储 Dashboard 元数据。如果用户使用 MySQL，需准备版本为 5.7 以上的 <a href="https://www.mysql.com/cn/">MySQL</a> 环境，创建名称为<code>dashboard</code>的数据库，字符集为<code>utf8</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果使用 SQLite 存储 Dashboard 元数据，则无需准备 SQLite 环境。 </p>
+</div>
+</li>
 </ul>
 <ul>
 <li>
@@ -6871,35 +6877,48 @@
 </li>
 <li>
 <p>使用<code>vim /usr/local/nebula-dashboard-ent/config/config.yaml</code>命令设置配置文件。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 数据库信息</span>
+<div class="highlight"><pre><span></span><code>server:
+  host: <span class="m">0</span>.0.0.0 <span class="c1"># 指定能访问 Dashboard 的地址段。</span>
+  port: <span class="m">7005</span> <span class="c1"># 访问 Dashboard 企业版服务的默认端口。</span>
+  certFile: <span class="s2">&quot;&quot;</span> <span class="c1"># 通过 HTTPS 访问 Dashboard 的本地设备证书路径。</span>
+  keyFile: <span class="s2">&quot;&quot;</span> <span class="c1"># 通过 HTTPS 访问 Dashboard 的本地设备证书密钥路径。</span>
+
 database:
-  dialect: mysql <span class="c1"># 使用的数据库类型，目前仅支持 MySQL。</span>
+  dialect: sqlite <span class="c1"># 使用的数据库类型，目前支持 SQLite 和 MySQL，默认使用 SQLite。</span>
+  autoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true。</span>
+  <span class="c1"># SQLite 相关信息，当 dialect 为 sqlite 时配置。</span>
+  sqliteFilePath: data/dashboard.sqlite.db <span class="c1"># SQLite 数据库保存信息的默认路径。</span>
+  <span class="c1"># MySQL 相关信息，当 dialect 为 mysql 时配置。</span>
   host: <span class="m">192</span>.168.8.157 <span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
   port: <span class="m">3306</span> <span class="c1"># 连接的 MySQL 数据库的端口号。</span>
   username: root <span class="c1"># 登陆 MySQL 的账户。</span>
   password: nebula <span class="c1"># 登陆 MySQL 的密码。</span>
   name: dashboard <span class="c1"># 对应的数据库名称。</span>
-  autoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true。</span>
+
 <span class="c1"># exporter 端口信息</span>
 exporter:
   nodePort: <span class="m">9100</span> <span class="c1"># node-exporter 服务的端口。</span>
   nebulaPort: <span class="m">9200</span> <span class="c1"># nebula-stats-exporter 服务的端口。</span>
+
 <span class="c1"># 服务信息</span>
 proxy:
   prometheus:
     target: <span class="s2">&quot;127.0.0.1:9090&quot;</span> <span class="c1"># prometheus 服务的 IP 地址和端口。</span>
   alertmanager:
     target: <span class="s2">&quot;127.0.0.1:9093&quot;</span> <span class="c1"># alertmanager 服务的 IP 地址和端口。</span>
+
 <span class="c1"># 邀请 LDAP 账号的发件人邮箱信息</span>
 mail:
   host: smtp.office365.com <span class="c1">#  SMTP 服务器地址。</span>
   port: <span class="m">587</span> <span class="c1"># SMTP 服务器的端口号。</span>
   username: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的用户名。</span>
   password: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的密码。</span>
+
 <span class="c1"># 系统信息</span>
 system:
-  webAddress: http://127.0.0.1:7005 <span class="c1"># 邮件被邀请人连接 Dashboard 的访问地址。</span>
+  webAddress: http://127.0.0.1:7005 <span class="c1"># 外网访问 Dashboard 的地址，也可以设置为域名。用于一些接口回调，例如邮件被邀请人可以使用此链接访问 Dashboard。</span>
   messageStore: <span class="m">90</span> <span class="c1"># 保存告警消息的天数，默认 90 天。</span>
+
 <span class="c1"># LDAP 信息</span>
 ldap:
   server: ldap://127.0.0.1 <span class="c1"># LDAP 服务器地址。</span>
@@ -6908,14 +6927,11 @@ ldap:
   baseDN: <span class="nv">dc</span><span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># 查询用户数据的路径。</span>
   userFilter: <span class="s2">&quot;&amp;(objectClass=*)&quot;</span> <span class="c1"># 查询条件。</span>
   emailKey: mail <span class="c1"># LDAP 数据库存放邮箱信息的字段名。</span>
-monitor:
-  onStart:
-    disableNodeExporterDeploy: <span class="nb">false</span>
-    disableNebulaExporterConfig: <span class="nb">false</span>
-    disablePrometheusConfig: <span class="nb">false</span>
-    disablePrometheusRule: <span class="nb">false</span>
-    disableAlertManagerRoutes: <span class="nb">false</span>
-    disableRecoveryAlertMessage: <span class="nb">false</span>
+...
+<span class="c1"># 备份和恢复</span>
+br:
+backupLogsDir: <span class="s2">&quot;logs/br/backupLogsDir&quot;</span>
+restoreLogsDir: <span class="s2">&quot;logs/br/restoreLogsDir&quot;</span>
 </code></pre></div>
 </li>
 <li>
@@ -7030,24 +7046,37 @@ $ sudo /dashboard/scripts/dashboard.service restart all <span class="c1">#重启
 <p>也可以使用以下命令安装到指定路径：</p>
 <div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-dashboard-ent-xxx.rpm --prefix<span class="o">=</span>&lt;path&gt; 
 </code></pre></div>
-<p>在可视化的安装过程中，用户需要输入 License 的路径，MySQL 相关的信息，包括连接 MySQL 的 IP和端口，登录 MySQL 的账户及密码，MySQL 数据库名称。</p>
+<p>在可视化的安装过程中，用户需要输入 License 的路径，选择存放元数据的数据库，目前支持 SQLite 和 MySQL。</p>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path(~/nebula.license): /home/vesoft/nebula.license  # license的存放路径。
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SQLite</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path<span class="o">(</span>~/nebula.license<span class="o">)</span>: /home/vesoft/license/nebula.license
 
-Do you want to start the service now?[Y/N]: y
+Which database <span class="k">do</span> you want to use? <span class="o">[</span>sqlite <span class="p">|</span> mysql<span class="o">]</span>:sqlite <span class="c1"># 不填默认为 SQLite。</span>
 
-Step1: set mysql database config
-
-Enter mysql host(127.0.0.1): 192.168.8.157  # 连接的 MySQL 数据库的 IP 地址。
-
-Enter mysql service port(3306):  # 连接的 MySQL 数据库的端口号。默认3306。
-
-Enter mysql username(root): # 登录 MySQL 的账户。
-
-Enter mysql password(nebula): # 登录 MySQL 的密码。
-
-Enter mysql database name(dashboard): # MySQL 数据库名称。
+Do you want to start the service now? <span class="o">[</span>Y/N<span class="o">]</span>: y      
 </code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">MySQL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path<span class="o">(</span>~/nebula.license<span class="o">)</span>: /home/vesoft/license/nebula.license  <span class="c1"># license的存放路径。</span>
+
+Which database <span class="k">do</span> you want to use? <span class="o">[</span>sqlite <span class="p">|</span> mysql<span class="o">]</span>:mysql
+
+Step1: <span class="nb">set</span> mysql database config
+
+Enter mysql host<span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="m">192</span>.168.8.157  <span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
+
+Enter mysql service port<span class="o">(</span><span class="m">3306</span><span class="o">)</span>:  <span class="c1"># 连接的 MySQL 数据库的端口号。默认3306。</span>
+
+Enter mysql username<span class="o">(</span>root<span class="o">)</span>: <span class="c1"># 登录 MySQL 的账户。</span>
+
+Enter mysql password<span class="o">(</span>nebula<span class="o">)</span>: <span class="c1"># 登录 MySQL 的密码。</span>
+
+Enter mysql database name<span class="o">(</span>dashboard<span class="o">)</span>: <span class="c1"># MySQL 数据库名称。</span>
+
+Do you want to start the service now? <span class="o">[</span>Y/N<span class="o">]</span>: y
+</code></pre></div>
+</div>
+</div>
 </li>
 <li>
 <p>（可选）使用以下命令查看所有服务状态、启动服务。</p>
@@ -7115,24 +7144,37 @@ ldap:
 <p class="admonition-title">Note</p>
 <p>使用 DEB 包安装 Dashboard 企业版时不支持自定义安装路径。</p>
 </div>
-<p>在可视化的安装过程中，用户需要输入 License 的路径，MySQL 相关的信息，包括连接 MySQL 的 IP和端口，登录 MySQL 的账户及密码，MySQL 数据库名称。</p>
+<p>在可视化的安装过程中，用户需要输入 License 的路径，选择存放元数据的数据库，目前支持 SQLite 和 MySQL。</p>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path(~/nebula.license): /home/vesoft/nebula.license  # license的存放路径。
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">SQLite</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path<span class="o">(</span>~/nebula.license<span class="o">)</span>: /home/vesoft/license/nebula.license
 
-Do you want to start the service now?[Y/N]: y
+Which database <span class="k">do</span> you want to use? <span class="o">[</span>sqlite <span class="p">|</span> mysql<span class="o">]</span>:sqlite <span class="c1"># 不填默认为 SQLite。</span>
 
-Step1: set mysql database config
-
-Enter mysql host(127.0.0.1): 192.168.8.157  # 连接的 MySQL 数据库的 IP 地址。
-
-Enter mysql service port(3306):  # 连接的 MySQL 数据库的端口号。默认3306。
-
-Enter mysql username(root): # 登录 MySQL 的账户。
-
-Enter mysql password(nebula): # 登录 MySQL 的密码。
-
-Enter mysql database name(dashboard): # MySQL 数据库名称。
+Do you want to start the service now? <span class="o">[</span>Y/N<span class="o">]</span>: y      
 </code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">MySQL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>Nebula Dashboard Enterprise version need license, please enter the license file path<span class="o">(</span>~/nebula.license<span class="o">)</span>: /home/vesoft/license/nebula.license  <span class="c1"># license的存放路径。</span>
+
+Which database <span class="k">do</span> you want to use? <span class="o">[</span>sqlite <span class="p">|</span> mysql<span class="o">]</span>:mysql
+
+Step1: <span class="nb">set</span> mysql database config
+
+Enter mysql host<span class="o">(</span><span class="m">127</span>.0.0.1<span class="o">)</span>: <span class="m">192</span>.168.8.157  <span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
+
+Enter mysql service port<span class="o">(</span><span class="m">3306</span><span class="o">)</span>:  <span class="c1"># 连接的 MySQL 数据库的端口号。默认3306。</span>
+
+Enter mysql username<span class="o">(</span>root<span class="o">)</span>: <span class="c1"># 登录 MySQL 的账户。</span>
+
+Enter mysql password<span class="o">(</span>nebula<span class="o">)</span>: <span class="c1"># 登录 MySQL 的密码。</span>
+
+Enter mysql database name<span class="o">(</span>dashboard<span class="o">)</span>: <span class="c1"># MySQL 数据库名称。</span>
+
+Do you want to start the service now? <span class="o">[</span>Y/N<span class="o">]</span>: y
+</code></pre></div>
+</div>
+</div>
 </li>
 <li>
 <p>（可选）使用以下命令查看所有服务状态、启动服务。</p>
@@ -7196,7 +7238,7 @@ ldap:
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 14, 2022</span>
       
     
   </small>
