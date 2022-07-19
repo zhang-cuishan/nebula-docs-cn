@@ -8,7 +8,7 @@ docs_dir: docs-2.0
 copyright: Copyright &copy; 2022 Nebula Graph - 浙ICP备20010487号
  
 # modify when release: 
-edit_uri: 'edit/master/docs-2.0/'  
+edit_uri: 'edit/v3.2.0/docs-2.0/'  
 
 # Configuration
 theme:
@@ -76,7 +76,7 @@ plugins:
         - spark-connector/*
         - 4.deployment-and-installation/5.zone.md
         - 4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-200-to-latest.md
-        # 仅发布包含企业版功能的文档版本时，注释以下页面
+        # 发布包含企业版功能的文档版本时，注释以下页面
         # begin
         - 3.ngql-guide/6.functions-and-expressions/17.ES-function.md
         - 4.deployment-and-installation/deploy-license.md
@@ -89,6 +89,7 @@ plugins:
         - nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage.md
         - synchronization-and-migration/replication-between-clusters.md
         - 20.appendix/8.about-license/
+        - 20.appendix/release-notes/nebula-ent-release-note.md
         # end
         
 
@@ -101,7 +102,7 @@ plugins:
 # modify when release: 
   - with-pdf:
       copyright: 2022 vesoft Inc.
-      cover_subtitle: master
+      cover_subtitle: v3.2.0
       author: 吴敏，周瑶，梁振亚，杨怡璇，黄凤仙
       cover: true
       back_cover: true
@@ -134,18 +135,19 @@ extra:
     - icon: 'fontawesome/brands/github'
       link: 'https://github.com/vesoft-inc/nebula-docs-cn'
   nebula:
-    release: master
+    release: 3.2.0
     nightly: nightly
     master: master
     base20: 2.0
     base200: 2.0.0
-    branch: master
-    tag: master
+    branch: release-3.2
+    tag: v3.2.0
   studio:
     base111b: 1.1.1-beta
     base220: 2.2.1
     base300: 3.0.0
     release: 3.4.0
+    branch: release-3.4
     tag: v3.4.0
   explorer:
     release: 3.1.0
@@ -160,9 +162,9 @@ extra:
     branch: v3.0.0
     tag: v3.0.0
   importer:
-    release: 3.1.0
-    branch: release-3.1
-    tag: v3.1.0
+    release: 3.2.0
+    branch: release-3.2
+    tag: v3.2.0
   algorithm:
     release: 3.0.0
     branch: v3.0.0
@@ -188,26 +190,26 @@ extra:
     branch: release-3.2
     tag: v3.2.0
   dashboard:
-    release: 3.0.0
-    tag: v3.0.0
+    release: 3.1.0
+    tag: v3.1.0
     base100: 1.0.0
-    branch: release-3.0
+    branch: release-3.1
   dashboard_ent:
     release: 3.1.0
     tag: v3.1.0
     branch: release-3.1
   console:
-    release: 3.0.0
-    branch: v3.0.0
-    tag: v3.0.0
+    release: 3.2.0
+    branch: release-3.2
+    tag: v3.2.0
   br:
     release: 0.6.1
     branch: master
     tag: v0.6.1
   cpp:
-    release: 3.0.0
-    branch: v3.0.0
-    tag: v3.0.0
+    release: 3.0.2
+    branch: v3.0.2
+    tag: v3.0.2
   java:
     release: 3.0.0
     branch: v3.0.0
@@ -217,34 +219,34 @@ extra:
     branch: release-3.1
     tag: v3.1.0
   go:
-    release: 3.1.0
-    branch: release-3.1
-    tag: v3.1.0
+    release: 3.2.0
+    branch: release-3.2
+    tag: v3.2.0
   bench:
     release: 1.2.0
     branch: release-1.2
     tag: v1.2.0
   operator:
-    release: 1.1.0
-    tag: v1.1.0
-    branch: release-1.1
+    release: 1.2.0
+    tag: v1.2.0
+    branch: release-1.2
     upgrade_from: 3.0.0
     upgrade_to: 3.1.x
   exporter:
-    release: 3.1.0
-    branch: release-3.1
-    tag: v3.1.0
+    release: 3.2.0
+    branch: release-3.2
+    tag: v3.2.0
   gateway:
-    release: 3.1.2
-    branch: release-3.1
-    tag: v3.1.2
+    release: 3.2.0
+    branch: release-3.2
+    tag: v3.2.0
   cloud:
     azureRelease: 3.1.1 # Azure云兼容的最新内核版本
     aliyunRelease: 3.1.1 # 阿里云兼容的最新内核版本
     azureLatestRelease: 3.1.0 # 支持Azure云的最新文档版本
     aliyunLatestRelease: 3.1.0 # 支持阿里云的最新文档版本
   ent:
-    ent_begin: <!-- # 文档包含企业版时需补全该注释（<!-- -->），只包含社区版时只保留注释头（<!--）
+    ent_begin: <!-- #文档包含企业版时需补全该注释（<!-- -->），只包含社区版时只保留注释头（<!--）
     ent_end: --> #文档包含企业版时需补全该注释（<!-- -->），只包含社区版时只保留注释尾（-->）
 
 
@@ -497,7 +499,7 @@ nav:
 
   - Nebula Graph Cloud: nebula-cloud.md
 
-#ent
+
 #  - Nebula Graph Cloud:
 #    - 什么是 Nebula Graph Cloud: nebula-cloud/1.what-is-cloud.md
 #    - Nebula Graph Cloud Azure版:
@@ -648,7 +650,7 @@ nav:
       - 配置 Nebula Graph 集群:
         - 自定义 Nebula Graph 集群的配置参数: nebula-operator/8.custom-cluster-configurations/8.1.custom-conf-parameter.md
         - 回收 PV: nebula-operator/8.custom-cluster-configurations/8.2.pv-reclaim.md 
-        - 均衡扩容后的 Storage 数据: nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage.md
+#ent        - 均衡扩容后的 Storage 数据: nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage.md
       - 升级 Nebula Graph 集群: nebula-operator/9.upgrade-nebula-cluster.md   
       - 连接 Nebula Graph 数据库: nebula-operator/4.connect-to-nebula-graph-service.md
       - 故障自愈: nebula-operator/5.operator-failover.md
@@ -660,11 +662,11 @@ nav:
 
     - Nebula Algorithm: graph-computing/nebula-algorithm.md
 
-#ent    - Nebula Analytics: graph-computing/nebula-analytics.md
+    - Nebula Analytics: graph-computing/nebula-analytics.md
 
-#ent    - Nebula Explorer 工作流: graph-computing/use-explorer.md
+    - Nebula Explorer 工作流: graph-computing/use-explorer.md
     
-#ent    - Dag Controller: graph-computing/0.deploy-controller-analytics.md
+    - Dag Controller: graph-computing/0.deploy-controller-analytics.md
 
   - Nebula Spark Connector: nebula-spark-connector.md
       
@@ -675,13 +677,13 @@ nav:
   - 附录:
       - Release Note:
         - Nebula Graph 社区版: 20.appendix/release-notes/nebula-comm-release-note.md
-        - Nebula Graph 企业版: 20.appendix/release-notes/nebula-ent-release-note.md
+#ent        - Nebula Graph 企业版: 20.appendix/release-notes/nebula-ent-release-note.md
         - Nebula Studio: 20.appendix/release-notes/studio-release-note.md
         - Nebula Dashboard 社区版: 20.appendix/release-notes/dashboard-comm-release-note.md
         - Nebula Dashboard 企业版: 20.appendix/release-notes/dashboard-ent-release-note.md
         - Nebula Explorer: 20.appendix/release-notes/explorer-release-note.md
       - 学习路径: 20.appendix/learning-path.md
-#ent      - 关于 License: 20.appendix/8.about-license.md
+      - 关于 License: 20.appendix/8.about-license.md
       - 常见问题 FAQ: 20.appendix/0.FAQ.md
       - 生态工具概览: 20.appendix/6.eco-tool-version.md
       - 导入工具选择: 20.appendix/write-tools.md
