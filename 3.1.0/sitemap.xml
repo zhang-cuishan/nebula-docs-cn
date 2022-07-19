@@ -6,16 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-algorithm/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-analytics/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-bench/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
@@ -976,6 +966,31 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/graph-computing/0.deploy-controller-analytics/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/graph-computing/algorithm-description/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/graph-computing/nebula-algorithm/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/graph-computing/nebula-analytics/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/graph-computing/use-explorer/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-cloud/1.what-is-cloud/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
@@ -1081,6 +1096,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-dashboard-ent/11.dashboard-ent-license/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-dashboard-ent/11.manage-package/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-dashboard-ent/2.deploy-connect-dashboard-ent/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
@@ -1152,6 +1177,11 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-dashboard-ent/4.cluster-operator/7.cluster-diagnosis/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-dashboard-ent/4.cluster-operator/8.backup-and-restore/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1256,27 +1286,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/10.create-schema/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/11.import-data/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/12.query-visually/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/13.choose-graphspace/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/ex-ug-graph-exploration/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1286,22 +1296,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/ex-ug-query-exploration/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/ex-ug-shortcuts/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/explorer-console/</loc>
-         <lastmod>2022-07-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/node-filtering/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1326,12 +1321,117 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/db-management/10.create-schema/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/db-management/11.import-data/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/db-management/explorer-console/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/deploy-connect/3.explorer-license/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/deploy-connect/ex-ug-connect/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/deploy-connect/ex-ug-deploy/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/graph-explorer/13.choose-graphspace/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/graph-explorer/ex-ug-graph-exploration/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/graph-explorer/ex-ug-query-exploration/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/graph-explorer/graph-algorithm/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/graph-explorer/node-filtering/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/1.prepare-resources/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/2.create-workflow/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/3.workflow-management/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/4.jobs-management/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflows/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-cancel-job/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-desc-job/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-desc-task/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-get-jobs/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-get-workflow-jobs/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/api-post-jobs/</loc>
+         <lastmod>2022-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.1.0/nebula-explorer/workflow/workflow-api/workflow-api-overview/</loc>
          <lastmod>2022-07-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
