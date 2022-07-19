@@ -10,4 +10,5 @@ weasyprint==54.2
 mkdocs-with-pdf==0.9.3
 qrcode==4.0.0
 mkdocs-exclude
+Markdown==3.3.7
 
