@@ -5457,6 +5457,123 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17_8_6" type="checkbox" id="__nav_17_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17_8_6">
+          工作流 API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工作流 API" data-md-level="3">
+        <label class="md-nav__title" for="__nav_17_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          工作流 API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-post-jobs/" class="md-nav__link">
+        新增作业
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-get-jobs/" class="md-nav__link">
+        获取所有作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-get-workflow-jobs/" class="md-nav__link">
+        获取指定工作流的作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-desc-job/" class="md-nav__link">
+        查询指定作业详情
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-cancel-job/" class="md-nav__link">
+        取消作业运行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-desc-task/" class="md-nav__link">
+        获取指定任务的运行结果数据
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6762,7 +6879,7 @@
 
 
 <h1 id="nebula_go">Nebula Go<a class="headerlink" href="#nebula_go" title="Permanent link">&para;</a></h1>
-<p><a href="https://github.com/vesoft-inc/nebula-go/tree/release-3.1">Nebula Go</a> 是一款 Go 语言的客户端，可以连接、管理 Nebula Graph 图数据库。</p>
+<p><a href="https://github.com/vesoft-inc/nebula-go/tree/release-3.2">Nebula Go</a> 是一款 Go 语言的客户端，可以连接、管理 Nebula Graph 图数据库。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>已安装 Go，版本为 1.13 及以上。</p>
 <h2 id="_2">版本对照表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -6776,7 +6893,7 @@
 <tbody>
 <tr>
 <td align="left">3.2.0</td>
-<td align="left">3.1.0</td>
+<td align="left">3.2.0</td>
 </tr>
 <tr>
 <td align="left">2.6.x</td>
@@ -6791,8 +6908,8 @@
 <h2 id="nebula_go_1">下载 Nebula Go<a class="headerlink" href="#nebula_go_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>（推荐）如果需要下载指定版本的 Nebula Go，请使用选项<code>--branch</code>指定分支。例如安装 v3.1.0发布版本，请执行如下命令：</p>
-<div class="highlight"><pre><span></span><code>$ git clone --branch release-3.1 https://github.com/vesoft-inc/nebula-go.git
+<p>（推荐）如果需要下载指定版本的 Nebula Go，请使用选项<code>--branch</code>指定分支。例如安装 v3.2.0发布版本，请执行如下命令：</p>
+<div class="highlight"><pre><span></span><code>$ git clone --branch release-3.2 https://github.com/vesoft-inc/nebula-go.git
 </code></pre></div>
 </li>
 </ul>
@@ -6805,17 +6922,17 @@
 </ul>
 <h2 id="_3">安装或更新<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>安装或更新的命令如下：</p>
-<div class="highlight"><pre><span></span><code>$ go get -u -v github.com/vesoft-inc/nebula-go/v3@v3.1.0
+<div class="highlight"><pre><span></span><code>$ go get -u -v github.com/vesoft-inc/nebula-go/v3@v3.2.0
 </code></pre></div>
 <h2 id="_4">核心代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>详细示例请参见 <a href="https://github.com/vesoft-inc/nebula-go/blob/release-3.1/basic_example/graph_client_basic_example.go">graph_client_basic_example</a> 和 <a href="https://github.com/vesoft-inc/nebula-go/blob/release-3.1/gorountines_example/graph_client_goroutines_example.go">graph_client_goroutines_example</a>。</p>
+<p>详细示例请参见 <a href="https://github.com/vesoft-inc/nebula-go/blob/release-3.2/basic_example/graph_client_basic_example.go">graph_client_basic_example</a> 和 <a href="https://github.com/vesoft-inc/nebula-go/blob/release-3.2/gorountines_example/graph_client_goroutines_example.go">graph_client_goroutines_example</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2022</span>
       
     
   </small>
