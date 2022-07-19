@@ -3698,7 +3698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../8.service-tuning/load-balance.md" class="md-nav__link">
+      <a href="../../8.service-tuning/load-balance/" class="md-nav__link">
         Storage 负载均衡
       </a>
     </li>
@@ -5366,6 +5366,123 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17_8_6" type="checkbox" id="__nav_17_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17_8_6">
+          工作流 API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工作流 API" data-md-level="3">
+        <label class="md-nav__title" for="__nav_17_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          工作流 API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-post-jobs/" class="md-nav__link">
+        新增作业
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-get-jobs/" class="md-nav__link">
+        获取所有作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-get-workflow-jobs/" class="md-nav__link">
+        获取指定工作流的作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-desc-job/" class="md-nav__link">
+        查询指定作业详情
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-cancel-job/" class="md-nav__link">
+        取消作业运行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-explorer/workflow/workflow-api/api-desc-task/" class="md-nav__link">
+        获取指定任务的运行结果数据
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6608,7 +6725,7 @@
 <p>确认<code>nebula-dashboard</code>服务所在机器的 IP 地址，在浏览器中输入<code>&lt;IP&gt;:7003</code>打开登录页面。</p>
 </li>
 <li>
-<p>输入 Nebula Graph 数据库的账号和密码，单击登录。</p>
+<p>输入 Nebula Graph 数据库的账号和密码。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>输入 Nebula Graph 数据库的账号和密码前，确保在<code>config.json</code>文件中配置了部署 Graph 服务的机器 IP。更多信息，参见<a href="../2.deploy-dashboard/">部署 Dashboard</a>。</p>
@@ -6619,8 +6736,18 @@
 <ul>
 <li>如果 Nebula Graph 未启用身份验证，用户只能使用默认用户<code>root</code>和任意密码连接 Dashboard。</li>
 </ul>
-<p>如何启用身份验证请参见<a href="../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</p>
-<p><img alt="登录页面" src="https://docs-cdn.nebula-graph.com.cn/figures/login_cn.png" /></p>
+<p>有关如何启用身份验证请参见<a href="../../7.data-security/1.authentication/1.authentication/">身份验证</a>。</p>
+</li>
+<li>
+<p>选择 Nebula Graph 的版本。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>请确保选择的版本与<code>config.json</code>文件中配置的 Nebula Graph 版本一致,否则会有兼容性问题。更多信息，参见<a href="../2.deploy-dashboard/">部署 Dashboard</a>。</p>
+</div>
+<p><img alt="登录页面" src="https://docs-cdn.nebula-graph.com.cn/figures/dashboard_login_page_2022-07-18_17-31-19_cn.png" /></p>
+</li>
+<li>
+<p>单击<strong>登录</strong>。</p>
 </li>
 </ol>
 
@@ -6629,7 +6756,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2022</span>
       
     
   </small>

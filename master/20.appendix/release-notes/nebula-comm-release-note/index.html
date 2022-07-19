@@ -3698,7 +3698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../8.service-tuning/load-balance.md" class="md-nav__link">
+      <a href="../../../8.service-tuning/load-balance/" class="md-nav__link">
         Storage 负载均衡
       </a>
     </li>
@@ -5316,6 +5316,123 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_17_8_6" type="checkbox" id="__nav_17_8_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_17_8_6">
+          工作流 API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="工作流 API" data-md-level="3">
+        <label class="md-nav__title" for="__nav_17_8_6">
+          <span class="md-nav__icon md-icon"></span>
+          工作流 API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-post-jobs/" class="md-nav__link">
+        新增作业
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-get-jobs/" class="md-nav__link">
+        获取所有作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-get-workflow-jobs/" class="md-nav__link">
+        获取指定工作流的作业列表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-desc-job/" class="md-nav__link">
+        查询指定作业详情
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-cancel-job/" class="md-nav__link">
+        取消作业运行
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/workflow/workflow-api/api-desc-task/" class="md-nav__link">
+        获取指定任务的运行结果数据
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6626,7 +6743,7 @@
 <h1 id="nebula_graph_master_release_notes">Nebula Graph 社区版 master release notes<a class="headerlink" href="#nebula_graph_master_release_notes" title="Permanent link">&para;</a></h1>
 <h2 id="_1">功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>增加 <a href="../3.ngql-guide/6.functions-and-expressions/2.string.md">extract() 函数</a>。</li>
+<li>增加 <a href="../../../3.ngql-guide/6.functions-and-expressions/2.string/">extract() 函数</a>。</li>
 </ul>
 <h2 id="_2">优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
@@ -6711,6 +6828,12 @@
 <ul>
 <li>修复删除全文索引时崩溃的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/4384">#4384</a></li>
 </ul>
+<ul>
+<li>修复当发送 PUT 请求，请求体为空时，服务崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/4405">#4405</a></li>
+</ul>
+<ul>
+<li>修复当在有索引的基础上删除点和边时，语句中的 VID 的长度超出定义的长度时，Storage 服务崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/4406">#4406</a>  </li>
+</ul>
 <h2 id="_4">历史版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://nebula-graph.com.cn/tags/release-note/">历史版本</a></p>
 
@@ -6719,7 +6842,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2022</span>
       
     
   </small>
