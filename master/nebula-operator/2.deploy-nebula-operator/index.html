@@ -6945,14 +6945,14 @@
 <p>安装 Nebula Operator。</p>
 <div class="highlight"><pre><span></span><code>helm install nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>&lt;namespace_name&gt; --version<span class="o">=</span><span class="si">${</span><span class="nv">chart_version</span><span class="si">}</span>
 </code></pre></div>
-<p>例如，安装1.1.0版的 Operator 命令如下。</p>
-<div class="highlight"><pre><span></span><code>helm install nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.1.0
+<p>例如，安装1.2.0版的 Operator 命令如下。</p>
+<div class="highlight"><pre><span></span><code>helm install nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.2.0
 </code></pre></div>
 <ul>
 <li>上述命令中的<code>nebula-operator-system</code>为用户创建的命名空间。如果用户未创建该命名空间，可以执行<code>kubectl create namespace nebula-operator-system</code>进行创建。用户也可创建其他命名空间。</li>
 </ul>
 <ul>
-<li><code>1.1.0</code>为 Nebula Operator chart 的版本。当 Chart 中只有一个默认版本时，可不指定。执行<code>helm search repo -l nebula-operator</code>查看 Chart 版本。</li>
+<li><code>1.2.0</code>为 Nebula Operator chart 的版本。当 Chart 中只有一个默认版本时，可不指定。执行<code>helm search repo -l nebula-operator</code>查看 Chart 版本。</li>
 </ul>
 <p>用户可在执行安装 Nebula Operator chart 命令时自定义其配置。更多信息，查看下文<strong>自定义配置 Chart</strong>。</p>
 </li>
@@ -6963,7 +6963,7 @@
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">abby@master ~</span><span class="p p-Indicator">]</span><span class="l l-Scalar l-Scalar-Plain">$ helm show values nebula-operator/nebula-operator</span><span class="w">   </span>
 <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">nebulaOperator</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-operator:v1.1.0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-operator:v1.2.0</span><span class="w"></span>
 <span class="w">    </span><span class="nt">imagePullPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Always</span><span class="w"></span>
 <span class="w">  </span><span class="nt">kubeRBACProxy</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0</span><span class="w"></span>
@@ -7016,8 +7016,8 @@
 <tbody>
 <tr>
 <td align="left"><code>image.nebulaOperator.image</code></td>
-<td align="left"><code>vesoft/nebula-operator:v1.1.0</code></td>
-<td align="left">Nebula Operator 的镜像，版本为1.1.0。</td>
+<td align="left"><code>vesoft/nebula-operator:v1.2.0</code></td>
+<td align="left">Nebula Operator 的镜像，版本为1.2.0。</td>
 </tr>
 <tr>
 <td align="left"><code>image.nebulaOperator.imagePullPolicy</code></td>
@@ -7086,7 +7086,7 @@
 </ul>
 <p>有关可以更新的配置项，查看上文<strong>自定义配置 Chart</strong>。</p>
 <p>例如，更新 Nebula Operator 的 AdmissionWebhook 机制为关闭状态（默认开启 AdmissionWebhook）。</p>
-<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.1.0 --set admissionWebhook.create<span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.2.0 --set admissionWebhook.create<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 <p>更多信息，参考 <a href="https://helm.sh/docs/helm/helm_update/">Helm 升级</a>。</p>
 </li>
@@ -7103,11 +7103,11 @@
 </code></pre></div>
 </li>
 <li>
-<p>升级 Nebula Operator 至 1.1.0 版本。</p>
-<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>&lt;namespace_name&gt; --version<span class="o">=</span><span class="m">1</span>.1.0
+<p>升级 Nebula Operator 至 1.2.0 版本。</p>
+<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>&lt;namespace_name&gt; --version<span class="o">=</span><span class="m">1</span>.2.0
 </code></pre></div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.1.0
+<div class="highlight"><pre><span></span><code>helm upgrade nebula-operator nebula-operator/nebula-operator --namespace<span class="o">=</span>nebula-operator-system --version<span class="o">=</span><span class="m">1</span>.2.0
 </code></pre></div>
 <p>输出：</p>
 <div class="highlight"><pre><span></span><code>Release <span class="s2">&quot;nebula-operator&quot;</span> has been upgraded. Happy Helming!
@@ -7125,12 +7125,12 @@ Nebula Operator installed!
 <p>拉取最新的 CRD 配置文件。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>升级 Operator 后，需要同时升级相应的 CRD 配置，否则 Nebula Graph 集群创建会失败。有关 CRD 的配置，参见 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.1.0/config/crd/bases/apps.nebula-graph.io_nebulaclusters.yaml">apps.nebula-graph.io_nebulaclusters.yaml</a>。</p>
+<p>升级 Operator 后，需要同时升级相应的 CRD 配置，否则 Nebula Graph 集群创建会失败。有关 CRD 的配置，参见 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.2.0/config/crd/bases/apps.nebula-graph.io_nebulaclusters.yaml">apps.nebula-graph.io_nebulaclusters.yaml</a>。</p>
 </div>
 <ol>
 <li>
 <p>下载 Nebula Operator chart 至本地。</p>
-<div class="highlight"><pre><span></span><code>helm pull nebula-operator/nebula-operator --version<span class="o">=</span><span class="m">1</span>.1.0
+<div class="highlight"><pre><span></span><code>helm pull nebula-operator/nebula-operator --version<span class="o">=</span><span class="m">1</span>.2.0
 </code></pre></div>
 <ul>
 <li><code>--version</code>: 升级版本号。如不指定，则默认为最新版本。</li>
@@ -7138,8 +7138,8 @@ Nebula Operator installed!
 </li>
 <li>
 <p>执行<code>tar -zxvf</code>解压安装包。</p>
-<p>例如：解压 1.1.0 chart 包至<code>/tmp</code>路径下。</p>
-<div class="highlight"><pre><span></span><code>tar -zxvf nebula-operator-1.1.0.tgz -C /tmp
+<p>例如：解压 1.2.0 chart 包至<code>/tmp</code>路径下。</p>
+<div class="highlight"><pre><span></span><code>tar -zxvf nebula-operator-1.2.0.tgz -C /tmp
 </code></pre></div>
 <ul>
 <li><code>-C /tmp</code>: 如不指定，则默认解压至当前路径。</li>
