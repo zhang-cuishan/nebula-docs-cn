@@ -12,3 +12,4 @@ qrcode
 mkdocs-exclude
 mkdocs-redirects
 mkdocs-minify-plugin
+Markdown==3.3.7
