@@ -90,6 +90,7 @@ $ sudo /usr/local/nebula/scripts/nebula.service start all
 [INFO] Done
 ```
 
+{{ ent.ent_begin }}
 或者：
 
 ```bash
@@ -101,6 +102,7 @@ $ systemctl start nebula
 ```bash
 $ systemctl enable nebula
 ```
+{{ ent.ent_end }}
 
 ### 容器部署
 
@@ -141,11 +143,13 @@ $ sudo /usr/local/nebula/scripts/nebula.service stop all
 [INFO] Done
 ```
 
+{{ ent.ent_begin }}
 或者：
 
 ```bash
 $ systemctl stop nebula
 ```
+{{ ent.ent_end }}
 
 ### 容器部署
 
@@ -211,6 +215,7 @@ $ sudo /usr/local/nebula/scripts/nebula.service status all
     [INFO] nebula-storaged: Running as 25646, Listening on 9779
     ```
 
+{{ ent.ent_begin }}
 也可以使用`systemctl`命令查看 Nebula Graph 服务状态：
 
 ```bash
@@ -230,6 +235,7 @@ $ systemctl status nebula
 3月 28 04:13:24 xxxxxx systemd[1]: Started nebula.service.
 ...
 ```
+{{ ent.ent_end }}
 
 Nebula Graph 服务由 Meta 服务、Graph 服务和 Storage 服务共同提供，这三种服务的配置文件都保存在安装目录的`etc`目录内，默认路径为`/usr/local/nebula/etc/`，用户可以检查相应的配置文件排查问题。
 
