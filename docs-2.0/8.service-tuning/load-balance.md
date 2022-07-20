@@ -249,9 +249,9 @@ nebula> SHOW HOSTS;
   ```ngql
   nebula> DROP HOSTS 192.168.10.104:9779,192.168.10.105:9779;
   ```
--->
 
 {{ ent.ent_end }}
+
 ## 均衡 leader 分布
 
 用户可以使用命令`BALANCE LEADER`均衡 leader 分布。
