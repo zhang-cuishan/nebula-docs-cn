@@ -6782,15 +6782,18 @@
 
   <h1>Source manage service</h1>
 
-<p>Nebula Graph 支持通过脚本或 systemd 管理服务。</p>
-<div class="admonition enterpriseonly">
-<p class="admonition-title">Enterpriseonly</p>
-<p>仅企业版支持使用 systemd 管理服务。</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>这两种方式互不兼容，选择使用其中一种。</p>
-</div>
+<p>Nebula Graph 支持通过脚本管理服务。</p>
+<!--
+
+!!! enterpriseonly
+
+    企业版还支持使用 systemd 管理服务。
+
+!!! danger
+
+    这两种方式互不兼容，选择使用其中一种。
+
+-->
 <h2 id="_1">使用脚本管理服务<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>使用脚本<code>nebula.service</code>管理服务，包括启动、停止、重启、中止和查看。</p>
 <div class="admonition note">
