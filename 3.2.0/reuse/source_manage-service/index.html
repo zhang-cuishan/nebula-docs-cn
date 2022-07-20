@@ -6916,12 +6916,18 @@
 <span class="o">[</span>INFO<span class="o">]</span> Starting nebula-storaged...
 <span class="o">[</span>INFO<span class="o">]</span> Done
 </code></pre></div>
-<p>或者：</p>
+<!--
+或者：
+
 <div class="highlight"><pre><span></span><code>$ systemctl start nebula
 </code></pre></div>
-<p>如果需要设置开机自动启动，命令如下：</p>
+
+如果需要设置开机自动启动，命令如下：
+
 <div class="highlight"><pre><span></span><code>$ systemctl <span class="nb">enable</span> nebula
 </code></pre></div>
+-->
+
 <h3 id="_4">容器部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>对于使用 Docker Compose 部署的 Nebula Graph，在<code>nebula-docker-compose/</code>目录内执行如下命令启动服务：</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-docker-compose<span class="o">]</span>$ docker-compose up -d
@@ -6952,9 +6958,13 @@ Creating nebula-docker-compose_graphd_1    ... <span class="k">done</span>
 <span class="o">[</span>INFO<span class="o">]</span> Stopping nebula-storaged...
 <span class="o">[</span>INFO<span class="o">]</span> Done
 </code></pre></div>
-<p>或者：</p>
+<!--
+或者：
+
 <div class="highlight"><pre><span></span><code>$ systemctl stop nebula
 </code></pre></div>
+-->
+
 <h3 id="_6">容器部署<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在<code>nebula-docker-compose/</code>目录内执行如下命令停止 Nebula Graph 服务：</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-docker-compose<span class="o">]</span>$ docker-compose down
@@ -7009,7 +7019,9 @@ Removing network nebula-docker-compose_nebula-net
 </code></pre></div>
 </li>
 </ul>
-<p>也可以使用<code>systemctl</code>命令查看 Nebula Graph 服务状态：</p>
+<!--
+也可以使用`systemctl`命令查看 Nebula Graph 服务状态：
+
 <div class="highlight"><pre><span></span><code>$ systemctl status nebula
 ● nebula.service
    Loaded: loaded <span class="o">(</span>/usr/lib/systemd/system/nebula.service<span class="p">;</span> disabled<span class="p">;</span> vendor preset: disabled<span class="o">)</span>
@@ -7026,6 +7038,8 @@ Removing network nebula-docker-compose_nebula-net
 3月 <span class="m">28</span> <span class="m">04</span>:13:24 xxxxxx systemd<span class="o">[</span><span class="m">1</span><span class="o">]</span>: Started nebula.service.
 ...
 </code></pre></div>
+-->
+
 <p>Nebula Graph 服务由 Meta 服务、Graph 服务和 Storage 服务共同提供，这三种服务的配置文件都保存在安装目录的<code>etc</code>目录内，默认路径为<code>/usr/local/nebula/etc/</code>，用户可以检查相应的配置文件排查问题。</p>
 <h3 id="_8">容器部署<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>在<code>nebula-docker-compose</code>目录内执行如下命令查看 Nebula Graph 服务状态：</p>
