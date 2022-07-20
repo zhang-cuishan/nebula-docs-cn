@@ -199,7 +199,7 @@ $ kill $(lsof -t -i :7001) # stop nebula-graph-studio
 用户可以使用以下的命令卸载 Studio。
 
 ```bash
-$ sudo dpkg -r nebula-graph-studio-{{studio.release}}.x86_64
+$ sudo dpkg -r nebula-graph-studio
 ```
 
 ## Docker 部署 Studio
