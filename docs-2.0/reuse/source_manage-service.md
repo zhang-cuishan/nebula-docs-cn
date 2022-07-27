@@ -1,13 +1,16 @@
-Nebula Graph 支持通过脚本或 systemd 管理服务。本文详细介绍这两种方式。
+Nebula Graph 支持通过脚本管理服务。
+
+{{ ent.ent_begin }}
 
 !!! enterpriseonly
 
-    仅企业版支持使用 systemd 管理服务。
-  
+    企业版还支持使用 systemd 管理服务。
+
 !!! danger
 
     这两种方式互不兼容，选择使用其中一种。
 
+{{ ent.ent_end }}
 ## 使用脚本管理服务
 
 使用脚本`nebula.service`管理服务，包括启动、停止、重启、中止和查看。
@@ -39,6 +42,7 @@ $ sudo /usr/local/nebula/scripts/nebula.service
 |`storaged`|管理 Storage 服务。|
 |`all`|管理所有服务。|
 
+{{ ent.ent_begin }}
 ## 使用 systemd 管理服务
 
 为方便使用，Nebula Graph 企业版支持用 systemd 管理服务，通过`systemctl`启动、停止、重启和查看服务。
@@ -51,8 +55,6 @@ $ sudo /usr/local/nebula/scripts/nebula.service
     
     - 对于其他方式安装的企业版 Nebula Graph，需要用户手动将`.service`文件移动到`/usr/lib/systemd/system`目录内，并修改`.service`文件内的`ExecStart`的文件路径，才可以正常使用`systemctl`命令。
     
-
-
 ### 语法
 
 ```bash
@@ -70,6 +72,8 @@ $ systemctl <start | stop | restart | status > <nebula | nebula-metad | nebula-g
 |`nebula-graphd`|管理 Graph 服务。|
 |`nebula-storaged`|管理 Storage 服务。|
 
+{{ ent.ent_end }}
+
 ## 启动 Nebula Graph 服务
 
 ### 非容器部署
@@ -86,6 +90,7 @@ $ sudo /usr/local/nebula/scripts/nebula.service start all
 [INFO] Done
 ```
 
+{{ ent.ent_begin }}
 或者：
 
 ```bash
@@ -97,6 +102,7 @@ $ systemctl start nebula
 ```bash
 $ systemctl enable nebula
 ```
+{{ ent.ent_end }}
 
 ### 容器部署
 
@@ -137,11 +143,13 @@ $ sudo /usr/local/nebula/scripts/nebula.service stop all
 [INFO] Done
 ```
 
+{{ ent.ent_begin }}
 或者：
 
 ```bash
 $ systemctl stop nebula
 ```
+{{ ent.ent_end }}
 
 ### 容器部署
 
@@ -207,6 +215,7 @@ $ sudo /usr/local/nebula/scripts/nebula.service status all
     [INFO] nebula-storaged: Running as 25646, Listening on 9779
     ```
 
+{{ ent.ent_begin }}
 也可以使用`systemctl`命令查看 Nebula Graph 服务状态：
 
 ```bash
@@ -226,6 +235,7 @@ $ systemctl status nebula
 3月 28 04:13:24 xxxxxx systemd[1]: Started nebula.service.
 ...
 ```
+{{ ent.ent_end }}
 
 Nebula Graph 服务由 Meta 服务、Graph 服务和 Storage 服务共同提供，这三种服务的配置文件都保存在安装目录的`etc`目录内，默认路径为`/usr/local/nebula/etc/`，用户可以检查相应的配置文件排查问题。
 
