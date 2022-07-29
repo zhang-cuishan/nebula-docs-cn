@@ -1565,6 +1565,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    匹配最短路径
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6994,6 +7001,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    匹配最短路径
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7496,6 +7510,17 @@ nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*1..]-&gt;(v
 | (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) | (&quot;team204&quot; :team{name: &quot;Spurs&quot;}) |
 +----------------------------------------------------+----------------------------------+
 </code></pre></div>
+<h3 id="_15">匹配最短路径<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>用户可以用 <code>shortestPath</code> 表示模式中的路径。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = shortestPath((a:player)-[e:follow*..2]-(b:player))\
+        WHERE a.player.age &gt;  45 AND b.player.age &lt; 30 \
+        RETURN p;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| p                                                                                                                                                                                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| &lt;(&quot;player144&quot; :player{age: 47, name: &quot;Shaquille O&#39;Neal&quot;})-[:follow@0 {degree: 80}]-&gt;(&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;})&lt;-[:follow@0 {degree: 99}]-(&quot;player113&quot; :player{age: 29, name: &quot;Dejounte Murray&quot;})&gt; |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></pre></div>
 <h2 id="match_1">多MATCH检索<a class="headerlink" href="#match_1" title="Permanent link">&para;</a></h2>
 <p>不同的模式有不同的筛选条件时，可以使用多<code>MATCH</code>，会返回模式完全匹配的行。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (m)-[]-&gt;(n) WHERE id(m)==&quot;player100&quot; \
@@ -7520,7 +7545,7 @@ nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*1..]-&gt;(v
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 29, 2022</span>
       
     
   </small>
