@@ -6829,6 +6829,10 @@ YIELD [VERTICES AS &lt;vertex_alias&gt;] [, EDGES AS &lt;edge_alias&gt;];
 <ul>
 <li><code>YIELD</code>：定义需要返回的输出。可以仅返回点或边。必须设置别名。</li>
 </ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code>GET SUBGRAPH</code>语句不支持使用<code>WHERE</code>子句。</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>GET SUBGRAPH</code>语句检索的路径类型为<code>trail</code>，即检索的路径只有点可以重复，边不可以重复。详情请参见<a href="../../../1.introduction/2.1.path/">路径</a>。</p>
@@ -6921,7 +6925,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
       
     
   </small>
