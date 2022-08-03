@@ -6976,7 +6976,7 @@ YIELD [VERTICES AS &lt;vertex_alias&gt;] [, EDGES AS &lt;edge_alias&gt;];
 </div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>以下面的示例图进行演示。</p>
-<p><img alt="A sample graph for GET SUBGRAPH" src="https://docs-cdn.nebula-graph.com.cn/figures/dataset-for-crud.png" /></p>
+<p><img alt="A sample graph for GET SUBGRAPH" src="https://docs-cdn.nebula-graph.com.cn/figures/subgraph_2022_8_3.png" /></p>
 <p>插入测试数据：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE SPACE IF NOT EXISTS subgraph(partition_num=15, replica_factor=1, vid_type=fixed_string(30));
 nebula&gt; USE subgraph;
@@ -7062,7 +7062,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 3, 2022</span>
       
     
   </small>
