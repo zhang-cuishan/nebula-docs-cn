@@ -6423,27 +6423,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    功能
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     优化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     缺陷修复
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     历史版本
   </a>
   
@@ -6696,27 +6689,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    功能
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     优化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     缺陷修复
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     历史版本
   </a>
   
@@ -6741,11 +6727,10 @@
 
 
 <h1 id="nebula_graph_master_release_notes">Nebula Graph 社区版 master release notes<a class="headerlink" href="#nebula_graph_master_release_notes" title="Permanent link">&para;</a></h1>
-<h2 id="_1">功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">优化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>增加 <a href="../../../3.ngql-guide/6.functions-and-expressions/2.string/">extract() 函数</a>。</li>
+<li>支持 <a href="../../../3.ngql-guide/6.functions-and-expressions/2.string/">extract() 函数</a>。</li>
 </ul>
-<h2 id="_2">优化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>优化配置文件，增加部分配置。 <a href="https://github.com/vesoft-inc/nebula/pull/4310">#4310</a></li>
 </ul>
@@ -6762,7 +6747,7 @@
 <li>剔除点的预测过滤器。 <a href="https://github.com/vesoft-inc/nebula/pull/4249">#4249</a></li>
 </ul>
 <ul>
-<li>减少移动数据时连接操作的数据复制量。 <a href="https://github.com/vesoft-inc/nebula/pull/4283">#4283</a></li>
+<li>减少连接操作的数据复制量。 <a href="https://github.com/vesoft-inc/nebula/pull/4283">#4283</a></li>
 </ul>
 <ul>
 <li>通过下标获取属性值，减少属性查询的时间。 <a href="https://github.com/vesoft-inc/nebula/pull/4242">#4242</a></li>
@@ -6774,7 +6759,7 @@
 <li>优化查询子图的循环条件。 <a href="https://github.com/vesoft-inc/nebula/pull/4226">#4226</a></li>
 </ul>
 <ul>
-<li>减少移动数据时 Traverse 和 AppendVertices 操作符的数据复制量。 <a href="https://github.com/vesoft-inc/nebula/pull/4176">#4176</a></li>
+<li>减少 Traverse 和 AppendVertices 操作符的数据复制量。 <a href="https://github.com/vesoft-inc/nebula/pull/4176">#4176</a></li>
 </ul>
 <ul>
 <li>改善优化规则，去除无效的项目操作符。 <a href="https://github.com/vesoft-inc/nebula/pull/4157">#4157</a></li>
@@ -6782,7 +6767,7 @@
 <ul>
 <li>使用 Arena Allocator 优化内存分配。 <a href="https://github.com/vesoft-inc/nebula/pull/4239">#4239</a></li>
 </ul>
-<h2 id="_3">缺陷修复<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">缺陷修复<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>修复 Web 服务在接收一些特殊攻击消息时崩溃的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/4334">#4334</a></li>
 </ul>
@@ -6799,7 +6784,7 @@
 <li>修复查找具有 NULL 属性的索引时 Storage 服务崩溃的问题。 <a href="https://github.com/vesoft-inc/nebula/pull/4234">#4234</a></li>
 </ul>
 <ul>
-<li>修复重启后独立守护进程退出的缺陷。 <a href="https://github.com/vesoft-inc/nebula/pull/4269">#4269</a></li>
+<li>修复存算合并版 Nebula Graph 重启后守护进程退出的缺陷。 <a href="https://github.com/vesoft-inc/nebula/pull/4269">#4269</a></li>
 </ul>
 <ul>
 <li>修复 Graphviz 在线工具由于两次 JSON 转换导致 Join 点格式的解释结果不正确的缺陷。 <a href="https://github.com/vesoft-inc/nebula/pull/4280">#4280</a></li>
@@ -6834,7 +6819,7 @@
 <ul>
 <li>修复当在有索引的基础上删除点和边时，语句中的 VID 的长度超出定义的长度时，Storage 服务崩溃的问题。<a href="https://github.com/vesoft-inc/nebula/pull/4406">#4406</a>  </li>
 </ul>
-<h2 id="_4">历史版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">历史版本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><a href="https://nebula-graph.com.cn/tags/release-note/">历史版本</a></p>
 
   <hr>
@@ -6842,7 +6827,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
       
     
   </small>
