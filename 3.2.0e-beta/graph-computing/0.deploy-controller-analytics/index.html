@@ -6428,20 +6428,27 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    前提条件
+    版本兼容性
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    准备工作
+    前提条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    准备工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     注意事项
   </a>
   
@@ -6462,14 +6469,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     下一步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     常见问题
   </a>
   
@@ -6484,14 +6491,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     如果一个作业中的某个任务失败，能否从失败的任务开始重新执行？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     如果任务结果保存很慢，或任务间数据传输很慢，如何加速？
   </a>
   
@@ -6917,20 +6924,27 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    前提条件
+    版本兼容性
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    准备工作
+    前提条件
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    准备工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     注意事项
   </a>
   
@@ -6951,14 +6965,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     下一步
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     常见问题
   </a>
   
@@ -6973,14 +6987,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     如果一个作业中的某个任务失败，能否从失败的任务开始重新执行？
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     如果任务结果保存很慢，或任务间数据传输很慢，如何加速？
   </a>
   
@@ -7064,23 +7078,41 @@
 <p>本文介绍如何使用 Dag Controller。</p>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
-<p>仅企业版支持本功能。</p>
+<p>如需获取 Dag Controller 安装包，请发送邮件至 inquiry@vesoft.com。</p>
 </div>
-<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">版本兼容性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Dag Controller、Nebula Analytics 版本和 Nebula Graph 内核的版本对应关系如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Dag Controller 版本</th>
+<th align="left">Nebula Analytics 版本</th>
+<th>Nebula Graph 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">3.2.1、3.2.0</td>
+<td align="left">3.2.0</td>
+<td>3.2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>已部署 2.2.x 或以上版本的 <a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html">HDFS</a>。</li>
 </ul>
 <ul>
 <li>已安装 1.8 版本的 JDK。</li>
 </ul>
-<h2 id="_2">准备工作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">准备工作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>不同的环境安装包和命令略有区别，本文的准备工作如下：</p>
 <ul>
 <li>操作系统为 CentOS 7。</li>
 <li>如果 Nebula Analytics 和 Dag Controller 分别部署在多台机器，请确保机器网络互通。</li>
 <li>如果 Nebula Analytics 是分布式架构，请确保路径、端口等配置相同。</li>
 </ul>
-<h2 id="_3">注意事项<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">注意事项<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>BFS、SSSP 算法需要对参数<code>root</code>做校验，只支持一个上游组件，且必须要指定行和列。存在多个文件时，随机取一个，找不到行、列或者文件时直接报错。</li>
 </ul>
@@ -7136,7 +7168,7 @@ ssh-add ~/.ssh/id_rsa
 $ sudo chown &lt;user&gt;:&lt;user&gt; -R &lt;install path&gt;
 </code></pre></div>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh dag-ctrl-3.2.0-centos.x86_64.rpm --prefix=/home/vesoft/dag-ctrl
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh dag-ctrl-3.2.1-centos.x86_64.rpm --prefix=/home/vesoft/dag-ctrl
 $ sudo chown vesoft:vesoft -R /home/vesoft/dag-ctrl
 </code></pre></div>
 </li>
@@ -7174,14 +7206,14 @@ $ ./scripts/start.sh
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_4">下一步<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">下一步<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Nebula Analytics 和 Dag Controller 都配置并启动成功后，在 Nebula Explorer 上进行资源配置后即可进行复杂图计算。详情参见<a href="../../nebula-explorer/workflow/1.prepare-resources/">资源配置</a>。</p>
-<h2 id="_5">常见问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">常见问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="graph_dag_controller">如果 Graph 服务返回的查询结果数据量过大，会导致 Dag Controller 服务崩溃吗？<a class="headerlink" href="#graph_dag_controller" title="Permanent link">&para;</a></h3>
 <p>Dag Controller 服务仅仅提供调度功能，不会崩溃，但是数据量过大可能会导致 Nebula Analytics 服务读写 HDFS 或者 Nebula Graph 时内存不足而崩溃。</p>
-<h3 id="_6">如果一个作业中的某个任务失败，能否从失败的任务开始重新执行？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">如果一个作业中的某个任务失败，能否从失败的任务开始重新执行？<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>暂不支持，只能整体重新执行。</p>
-<h3 id="_7">如果任务结果保存很慢，或任务间数据传输很慢，如何加速？<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_8">如果任务结果保存很慢，或任务间数据传输很慢，如何加速？<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>Dag Controller 包含图查询组件和图计算组件。图查询是发送请求给 Graph 进程进行查询，因此只能增大 Graph 服务的内存进行加速；图计算是由 Nebula Analytics 提供的分布式节点进行计算，可以增大计算集群规模进行加速。</p>
 <h3 id="hdfs_running">HDFS 服务器无法连接时，任务状态一直为<code>running</code>怎么办？<a class="headerlink" href="#hdfs_running" title="Permanent link">&para;</a></h3>
 <p>为 HDFS 连接设置超时时间、次数，配置如下：</p>
@@ -7221,7 +7253,7 @@ $ ./scripts/start.sh
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
       
     
   </small>
