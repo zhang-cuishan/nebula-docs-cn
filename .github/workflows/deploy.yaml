@@ -37,8 +37,8 @@ jobs:
           git checkout gh-pages
       - name: Compress
         run: |
-          sed -i 's/{\"version\": \"3.2.0e-beta\", \"title": "3.2.0e-beta\", \"aliases\": \[\]},//g' versions.json
-          tar -vczf nebula-docs.tar.gz 3.2.0e-beta versions.json *.html
+          #sed -i 's/{\"version\": \"3.2.0e-beta\", \"title": "3.2.0e-beta\", \"aliases\": \[\]},//g' versions.json
+          tar -vczf nebula-docs.tar.gz 3.2.0e-beta *.html
           # not public this branch; but push to web service
           
       - name: Transfer
