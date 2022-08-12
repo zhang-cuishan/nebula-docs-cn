@@ -6806,7 +6806,7 @@
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>备份至本地时，默认只备份 leader metad 的数据，因此有多个 metad 节时，需要手动将备份后的 leader metad 的目录（路径为<code>&lt;storage_path&gt;/meta</code>）拷贝并覆盖其他 follower meatd 节点的对应目录。</p>
+<p>备份至本地时，默认只备份 leader metad 的数据，因此当有多个 metad 节点时，需要手动将备份后的 leader metad 的目录（路径为<code>&lt;storage_path&gt;/meta</code>）拷贝并覆盖其他 follower meatd 节点的对应目录。</p>
 </div>
 <div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --storage <span class="s2">&quot;local:///home/nebula/backup/&quot;</span>
 </code></pre></div>
