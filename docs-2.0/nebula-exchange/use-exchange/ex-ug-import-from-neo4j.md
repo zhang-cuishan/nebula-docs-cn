@@ -195,7 +195,6 @@ Exchange 读取 Neo4j 数据时需要完成以下工作：
       server: "bolt://192.168.*.*:7687"
       user: neo4j
       password:neo4j
-      database:neo4j
       exec: "match (n:team) return n.id as id,n.name as name"
       fields: [name]
       nebula.fields: [name]
@@ -220,7 +219,6 @@ Exchange 读取 Neo4j 数据时需要完成以下工作：
       server: "bolt://192.168.*.*:7687"
       user: neo4j
       password:neo4j
-      database:neo4j
       exec: "match (a:player)-[r:follow]->(b:player) return a.id as src, b.id as dst, r.degree as degree  order by id(r)"
       fields: [degree]
       nebula.fields: [degree]
