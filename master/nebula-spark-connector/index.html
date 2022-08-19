@@ -7091,7 +7091,7 @@
 <span class="w">  </span><span class="p">.</span><span class="n">build</span><span class="p">()</span><span class="w"></span>
 <span class="n">df</span><span class="p">.</span><span class="n">write</span><span class="p">.</span><span class="n">nebula</span><span class="p">(</span><span class="n">config</span><span class="p">,</span><span class="w"> </span><span class="n">nebulaWriteEdgeConfig</span><span class="p">).</span><span class="n">writeEdges</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
-<p>默认写入模式为<code>insert</code>，可以通过<code>withWriteMode</code>配置修改为<code>update</code>：</p>
+<p>默认写入模式为<code>insert</code>，可以通过<code>withWriteMode</code>配置修改为<code>update</code>或<code>delete</code>：</p>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">NebulaConnectionConfig</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="n">builder</span><span class="p">()</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="n">withMetaAddress</span><span class="p">(</span><span class="s">&quot;127.0.0.1:9559&quot;</span><span class="p">)</span><span class="w"></span>
@@ -7194,7 +7194,12 @@
 <tr>
 <td align="left"><code>withWriteMode</code></td>
 <td align="left">否</td>
-<td align="left">写入模式。可选值为<code>insert</code>和<code>update</code>。默认为<code>insert</code>。</td>
+<td align="left">写入模式。可选值为<code>insert</code>、<code>update</code>和<code>delete</code>。默认为<code>insert</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>withDeleteEdge</code></td>
+<td align="left">否</td>
+<td align="left">删除点时是否删除该点关联的边。默认为<code>false</code>。当<code>withWriteMode</code>为<code>delete</code>时生效。</td>
 </tr>
 </tbody>
 </table>
@@ -7280,7 +7285,7 @@
 <tr>
 <td align="left"><code>withWriteMode</code></td>
 <td align="left">否</td>
-<td align="left">写入模式。可选值为<code>insert</code>和<code>update</code>。默认为<code>insert</code>。</td>
+<td align="left">写入模式。可选值为<code>insert</code>、<code>update</code>和<code>delete</code>。默认为<code>insert</code>。</td>
 </tr>
 </tbody>
 </table>
@@ -7294,7 +7299,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2022</span>
       
     
   </small>
