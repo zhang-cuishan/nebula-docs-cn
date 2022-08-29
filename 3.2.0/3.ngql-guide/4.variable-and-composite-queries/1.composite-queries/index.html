@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/3.2.0/3.ngql-guide/4.variable-and-composite-queries/1.composite-queries/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.2">
     
     
       
@@ -60,7 +60,7 @@
   
 
 
-  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){if(document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document.forms.feedback){var e,a=document.forms.feedback;for(e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
@@ -6780,17 +6780,13 @@
 <li>（原生 nGQL）可以用管道符（|）将多个查询连接起来，上一个查询的结果可以作为下一个查询的输入。</li>
 </ul>
 <h2 id="opencypher">OpenCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
-<p>在复合查询中，请<strong>不要</strong>混用 opencypher 兼容语句和原生 nGQL 语句，例如<code>MATCH ... | GO ... | YIELD ...</code>，混用两种语句，行为是未定义的。</p>
+<p>在复合查询中，请<strong>不要</strong>混用 opencypher 兼容语句和原生 nGQL 语句，例如<code>MATCH ... | GO ... | YIELD ...</code>。</p>
 <ul>
 <li>如果使用 openCypher 兼容语句（<code>MATCH</code>、<code>RETURN</code>、<code>WITH</code>等），请不要使用管道符或分号组合子句。</li>
 </ul>
 <ul>
 <li>如果使用原生 nGQL 语句（<code>FETCH</code>、<code>GO</code>、<code>LOOKUP</code>等），必须使用管道符或分号组合子句。</li>
 </ul>
-<div class="admonition danger">
-<p class="admonition-title">行为未定义</p>
-<p>不要混用 openCypher 兼容语句和原生 nGQL 语句，行为是未定义的。</p>
-</div>
 <h2 id="_2">复合查询不支持事务<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>例如一个查询由三个子查询 A、B、C 组成，A 是一个读操作，B 是一个计算操作，C 是一个写操作，如果在执行过程中，任何一个操作执行失败，则整个结果是未定义的：没有回滚，而且写入的内容取决于执行程序。</p>
 <div class="admonition note">
@@ -6839,7 +6835,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS id | \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2022</span>
       
     
   </small>

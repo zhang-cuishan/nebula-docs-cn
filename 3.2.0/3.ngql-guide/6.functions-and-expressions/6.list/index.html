@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://docs.nebula-graph.com.cn/3.2.0/3.ngql-guide/6.functions-and-expressions/6.list/">
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.4.2">
     
     
       
@@ -60,7 +60,7 @@
   
 
 
-  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){if(document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document.forms.feedback){var e,a=document.forms.feedback;for(e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
@@ -6991,9 +6991,6 @@
 <ul>
 <li>和 SQL 一样，nGQL 的字符索引（位置）从<code>1</code>开始。但是 C 语言的字符索引是从<code>0</code>开始的。</li>
 </ul>
-<ul>
-<li>如果参数为<code>NULL</code>，则输出结果是未定义的。</li>
-</ul>
 <h2 id="_3">通用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="range">range()<a class="headerlink" href="#range" title="Permanent link">&para;</a></h3>
 <p>range() 返回指定整数范围<code>[start,end]</code>内固定步长的列表。</p>
@@ -7240,7 +7237,7 @@ nebula&gt; LOOKUP ON player WHERE player.name == &quot;Tony Parker&quot; YIELD i
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2022</span>
       
     
   </small>
