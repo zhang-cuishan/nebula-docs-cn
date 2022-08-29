@@ -6855,7 +6855,46 @@ nebula&gt; RETURN DATE<span class="o">(</span><span class="s2">&quot;23333&quot;
 <p><code>time()</code>支持的属性名称包括<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
 <h2 id="datetime">DATETIME<a class="headerlink" href="#datetime" title="Permanent link">&para;</a></h2>
 <p><code>DATETIME</code>包含日期和时间。NebulaGraph 检索和显示<code>DATETIME</code>的格式为<code>YYYY-MM-DDThh:mm:ss.msmsmsususus</code>。支持的范围是<code>-32768-01-01T00:00:00.000000</code>到<code>32767-12-31T23:59:59.999999</code>。</p>
-<p><code>datetime()</code>支持的属性名称包括<code>year</code>、<code>month</code>、<code>day</code>、<code>hour</code>、<code>minute</code>和<code>second</code>。</p>
+<ul>
+<li><code>datetime()</code>支持的属性名称包括<code>year</code>、<code>month</code>、<code>day</code>、<code>hour</code>、<code>minute</code>和<code>second</code>。</li>
+</ul>
+<ul>
+<li><code>datetime()</code>可将<code>TIMESTAMP</code>类型的日期值转换成<code>DATETIME</code>类型的日期值。<code>TIMESTAMP</code>类型的日期值取值范围：<code>0~9223372036</code>。</li>
+</ul>
+<ul>
+<li><code>datetime()</code>支持<code>int</code>类型的参数，该<code>int</code>参数表示时间戳。</li>
+</ul>
+<div class="highlight"><pre><span></span><code># 获取当前时间。
+nebula&gt; RETURN datetime();
++----------------------------+
+| datetime()                 |
++----------------------------+
+| 2022-08-29T06:37:08.933000 |
++----------------------------+
+
+# 获取当前时间的小时。
+nebula&gt; RETURN datetime().hour;
++-----------------+
+| datetime().hour |
++-----------------+
+| 6               |
++-----------------+
+
+# 将时间戳转换成 DATETIME 类型的格式。
+nebula&gt; RETURN datetime(timestamp(1625469277));
++---------------------------------+
+| datetime(timestamp(1625469277)) |
++---------------------------------+
+| 2021-07-05T07:14:37.000000      |
++---------------------------------+
+
+nebula&gt; RETURN datetime(1625469277);
++----------------------------+
+| datetime(1625469277)       |
++----------------------------+
+| 2021-07-05T07:14:37.000000 |
++----------------------------+
+</code></pre></div>
 <h2 id="timestamp">TIMESTAMP<a class="headerlink" href="#timestamp" title="Permanent link">&para;</a></h2>
 <p><code>TIMESTAMP</code>包含日期和时间。支持的范围是 UTC 时间的<code>1970-01-01T00:00:01</code>到<code>2262-04-11T23:47:16</code>。</p>
 <p><code>TIMESTAMP</code>还有以下特点：</p>
@@ -6869,8 +6908,14 @@ nebula&gt; RETURN DATE<span class="o">(</span><span class="s2">&quot;23333&quot;
 <li>插入<code>TIMESTAMP</code>的方式包括时间戳、<code>timestamp()</code>函数和<code>now()</code>函数。</li>
 </ul>
 <ul>
-<li>
-<p><code>timestamp()</code>函数支持传入空值获取当前时区的时间戳，还接受 string 类型的参数。</p>
+<li><code>timestamp()</code>函数支持传入空值获取当前时区的时间戳。</li>
+</ul>
+<ul>
+<li><code>timestamp()</code>函数可将<code>DATETIME</code>类型的日期值转换成<code>TIMESTAMP</code>类型的日期值，且传入的参数为<code>string</code>类型。</li>
+</ul>
+<ul>
+<li>底层存储的数据格式为<strong> 64 位 int</strong>。</li>
+</ul>
 <div class="highlight"><pre><span></span><code># 传入当前时间。
 nebula&gt; RETURN timestamp();
 +-------------+
@@ -6886,16 +6931,19 @@ nebula&gt; RETURN timestamp(&quot;2022-01-05T06:18:43&quot;);
 +----------------------------------+
 | 1641363523                       |
 +----------------------------------+
+
+# 传入 datetime()。
+nebula&gt; RETURN timestamp(datetime(&quot;2022-08-29T07:53:10.939000&quot;));
++---------------------------------------------------+
+| timestamp(datetime(&quot;2022-08-29T07:53:10.939000&quot;)) |
++---------------------------------------------------+
+| 1661759590                                        |
++---------------------------------------------------+    
 </code></pre></div>
-<div class="admonition compatibility">
-<p class="admonition-title">历史版本兼容性</p>
-<p>在 NebulaGraph 3.0.0 版本前，传入 timestamp() 函数的时间字符串可包含毫秒和微秒；从 3.0.0 版本起，传入 timestamp() 函数的时间字符串不支持包含毫秒和微秒。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>传入<code>timestamp()</code>函数的时间字符串不支持包含毫秒和微秒，但是通过<code>timestamp(datetime())</code>传入的时间字符串支持包含毫秒和微秒。</p>
 </div>
-</li>
-</ul>
-<ul>
-<li>底层存储的数据格式为<strong> 64 位 int</strong>。</li>
-</ul>
 <h2 id="duration">DURATION<a class="headerlink" href="#duration" title="Permanent link">&para;</a></h2>
 <p><code>DURATION</code>是一段连续的时间，由<code>years</code>、<code>months</code>、<code>days</code>、<code>hours</code>、<code>minutes</code>、<code>seconds</code>六个Key自由组合成的Map类型数据表示。例如<code>duration({years: 12, months: 5, days: 14, hours: 16, minutes: 12, seconds: 70})</code>。</p>
 <p><code>DURATION</code>还有以下特点：</p>
@@ -6982,7 +7030,7 @@ nebula&gt; WITH date(&#39;1984-10-11&#39;) as x, duration({years: 12, days: 14, 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 29, 2022</span>
       
     
   </small>
