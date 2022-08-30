@@ -120,7 +120,7 @@ drainer：机器 IP 地址为`192.168.10.104`，只启动 drainer 服务。
   +------------------+------+----------+-----------------+--------------+----------------------+
   | Host             | Port | Status   | Role            | Git Info Sha | Version              |
   +------------------+------+----------+-----------------+--------------+----------------------+
-  | "192.168.10.103" | 9559 | "ONLINE" | "META_LISTENER" | "xxxxxxx"    |  "ent-3.1.0"         |
+  | "192.168.10.103" | 9569 | "ONLINE" | "META_LISTENER" | "xxxxxxx"    |  "ent-3.1.0"         |
   +------------------+------+----------+-----------------+--------------+----------------------+
   ```
 
@@ -319,7 +319,7 @@ drainer：机器 IP 地址为`192.168.10.104`，只启动 drainer 服务。
 
   ```
   nebula> SIGN IN DRAINER SERVICE(192.168.10.106:9889);
-  nebula> ADD LISTENER SYNC META 192.168.10.105:9559 STORAGE 192.168.10.105:9789 TO SPACE basketballplayer;
+  nebula> ADD LISTENER SYNC META 192.168.10.105:9569 STORAGE 192.168.10.105:9789 TO SPACE basketballplayer;
   nebula> REMOVE DRAINER;
   ```
 
