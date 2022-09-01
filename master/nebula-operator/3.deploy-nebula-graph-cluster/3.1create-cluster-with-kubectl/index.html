@@ -60,7 +60,7 @@
   
 
 
-  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-15","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-60523578-7","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
   
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
@@ -6955,8 +6955,6 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
 <!--
 1. 企业版集群示例，创建名为`apps_v1alpha1_nebulacluster.yaml`的文件。
 
@@ -7079,9 +7077,9 @@
   !!! enterpriseonly
 
         拉取企业版 NebulaGraph 集群镜像前，请确保已联系销售人员（[inqury@vesoft.com](mailto:inqury@vesoft.com)）获取企业版 NebulaGraph 集群的镜像信息。
--->
+  -->
 
-<ol>
+</li>
 <li>
 <p>创建 NebulaGraph 集群。</p>
 <div class="highlight"><pre><span></span><code>kubectl create -f apps_v1alpha1_nebulacluster.yaml
@@ -7089,8 +7087,6 @@
 <p>返回：</p>
 <div class="highlight"><pre><span></span><code>nebulacluster.apps.nebula-graph.io/nebula created
 </code></pre></div>
-</li>
-</ol>
 <!--
 3. 配置集群 License。
 
@@ -7107,9 +7103,9 @@
 
   <div class="highlight"><pre><span></span><code>kubectl get secrets nebula-license -o yaml
 </code></pre></div>
--->
+  -->
 
-<ol>
+</li>
 <li>
 <p>查看 NebulaGraph 集群状态。</p>
 <div class="highlight"><pre><span></span><code>kubectl get nebulaclusters.apps.nebula-graph.io nebula
@@ -7207,7 +7203,7 @@ nebula-storaged-4   <span class="m">1</span>/1     Running   <span class="m">0</
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 1, 2022</span>
       
     
   </small>
