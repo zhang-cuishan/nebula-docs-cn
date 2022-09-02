@@ -6657,6 +6657,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#storage_error_more_than_one_request_trying_to_addupdatedelete_one_edgevertex_at_he_same_time" class="md-nav__link">
+    如何处理报错信息Storage Error: More than one request trying to add/update/delete one edge/vertex at he same time.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7100,6 +7107,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#storage_error_more_than_one_request_trying_to_addupdatedelete_one_edgevertex_at_he_same_time" class="md-nav__link">
+    如何处理报错信息Storage Error: More than one request trying to add/update/delete one edge/vertex at he same time.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7424,6 +7438,8 @@
 <h3 id="nebula-storagedinfo_metaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfo_hbprocessorcpp54_reject_wrong_cluster_host_xxxx9771">如何处理 <code>nebula-storaged.INFO</code> 中错误日志 <code>MetaClient.cpp:65] Heartbeat failed, status:Wrong cluster!</code> 或者 <code>nebula-metad.INFO</code> 含有错误日志<code>HBProcessor.cpp:54] Reject wrong cluster host "x.x.x.x":9771!</code><a class="headerlink" href="#nebula-storagedinfo_metaclientcpp65_heartbeat_failed_statuswrong_cluster_nebula-metadinfo_hbprocessorcpp54_reject_wrong_cluster_host_xxxx9771" title="Permanent link">&para;</a></h3>
 <p>报错的原因可能是用户修改了 metad 的 ip 或者端口信息，或者 storage 之前加入过其他集群。请尝试以下解决方法：</p>
 <p>用户到 storage 部署的机器所在的安装目录（默认安装目录为 <code>/usr/local/nebula</code>）下面将<code>cluster.id</code>文件删除，然后重启 storaged 服务。</p>
+<h3 id="storage_error_more_than_one_request_trying_to_addupdatedelete_one_edgevertex_at_he_same_time">如何处理报错信息<code>Storage Error: More than one request trying to add/update/delete one edge/vertex at he same time.</code><a class="headerlink" href="#storage_error_more_than_one_request_trying_to_addupdatedelete_one_edgevertex_at_he_same_time" title="Permanent link">&para;</a></h3>
+<p>上述报错表示当前版本不允许同时对一个点或者一条边进行并发操作。如出现此报错请重新执行操作命令。</p>
 <h2 id="_5">关于设计与功能<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="time_spent">返回消息中 <code>time spent</code> 的含义是什么？<a class="headerlink" href="#time_spent" title="Permanent link">&para;</a></h3>
 <p>将命令<code>SHOW SPACES</code>返回的消息作为示例：</p>
@@ -7632,7 +7648,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 2, 2022</span>
       
     
   </small>
