@@ -7107,10 +7107,12 @@ $ sudo chown vesoft:vesoft -R /home/vesoft/dag-ctrl
 </code></pre></div>
 </li>
 <li>
-<p>配置<code>tasks.yaml</code>文件，路径为<code>dag-ctrl/etc/tasks.yaml</code>。只需配置算法文件的具体路径（<code>exec_file</code>参数），如果有多台机器，请确保路径一致。其它参数是算法的执行参数，后续在<a href="../../nebula-explorer/workflow/2.create-workflow/">可视化工作流页面</a>配置。</p>
+<p>配置<code>tasks.yaml</code>文件，路径为<code>dag-ctrl/etc/tasks.yaml</code>。只需配置算法文件的具体路径（<code>exec_file</code>参数）。当前所有<code>exec_file</code>参数都配置为<code>run_algo.sh</code>文件的路径。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>算法文件由 Nebula Analytics 提供，请在上文安装 Nebula Analytics 路径下查找目录<code>scripts</code>。所有算法文件都在该目录内。  </p>
+<p>- 算法文件由 Nebula Analytics 提供，请在上文安装 Nebula Analytics 路径下查找目录<code>scripts</code>。所有算法文件都在该目录内。<br />
+  - 如果有多台机器，请确保路径一致。
+  - 其它参数是算法的执行参数，后续在<a href="../../nebula-explorer/workflow/2.create-workflow/">可视化工作流页面</a>配置。</p>
 </div>
 <div class="highlight"><pre><span></span><code>exec_file: /home/xxx/nebula-analytics/scripts/run_algo.sh
 </code></pre></div>
