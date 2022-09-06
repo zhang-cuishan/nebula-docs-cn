@@ -4731,46 +4731,46 @@
     节点管理
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    服务管理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    更新配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    成员管理
-  </a>
-  
-    <nav class="md-nav" aria-label="成员管理">
+    <nav class="md-nav" aria-label="节点管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    添加集群管理员
+  <a href="#_3" class="md-nav__link">
+    添加节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    其他操作
+  <a href="#_4" class="md-nav__link">
+    节点其他操作
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    服务管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    更新配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    成员管理
+  </a>
   
 </li>
       
@@ -6726,46 +6726,46 @@
     节点管理
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    服务管理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    更新配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    成员管理
-  </a>
-  
-    <nav class="md-nav" aria-label="成员管理">
+    <nav class="md-nav" aria-label="节点管理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    添加集群管理员
+  <a href="#_3" class="md-nav__link">
+    添加节点
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    其他操作
+  <a href="#_4" class="md-nav__link">
+    节点其他操作
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    服务管理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    更新配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    成员管理
+  </a>
   
 </li>
       
@@ -6797,13 +6797,18 @@
 <h1 id="_1">集群操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>本文主要介绍 Dashboard 企业版的集群操作，包括节点管理、扩缩容、服务管理、更新配置、成员管理和版本升级。</p>
 <h2 id="_2">节点管理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在节点管理页面中，展示所有的节点详情信息，包括节点名称、Host 及 SSH 用户名称、CPU 核等信息。</p>
+<p>节点管理页面展示所有的节点详情信息，包括节点名称、Host 及 SSH 用户名称、CPU 核等信息，并且支持添加节点、查看节点监控、管理节点服务等操作。</p>
+<h3 id="_3">添加节点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>单击<strong>添加节点</strong>，输入待添加节点的 Host 信息、SSH 端口号、SSH 用户、认证方式、安装包等，单击<strong>确认</strong>。</p>
+<p>关于认证方式的说明如下：</p>
 <ul>
-<li>单击<strong>添加节点</strong>输入 Host 信息、SSH 端口号、用户、密码信息，选择 NebulaGraph 安装包，可快速添加节点。</li>
+<li>SSH 密码：输入 SSH 用户对应的密码。</li>
 </ul>
 <ul>
-<li>
-<p>在节点列表中，单击 <img alt="plus" src="https://docs-cdn.nebula-graph.com.cn/figures/Plus_cn.png" /> 按钮，查看对应节点服务名、服务类型、服务状态、运行路径等信息。</p>
+<li>SSH 密钥：单击<strong>上传</strong>，选择节点的私钥文件。需要提前在待添加节点上生成密钥文件，并将私钥发送给当前电脑（非 Dashboard 机器）。如果设置了短密码（passphrase），也需要填写。</li>
+</ul>
+<h3 id="_4">节点其他操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在节点列表中，单击 <img alt="plus" src="https://docs-cdn.nebula-graph.com.cn/figures/Plus_cn.png" /> 按钮，查看对应节点的服务名、服务类型、服务状态、运行路径等信息。</p>
 <ul>
 <li>单击<strong>节点监控</strong>可快速跳转至节点监控页面，详情信息见<a href="../2.monitor/">集群监控</a>。</li>
 </ul>
@@ -6811,38 +6816,38 @@
 <li>单击<strong>服务管理</strong>可快速跳转至服务管理页面。</li>
 </ul>
 <ul>
-<li>单击<strong>编辑节点</strong>可修改 SSH 端口号、用户名、密码。</li>
+<li>单击<strong>编辑节点</strong>可修改节点设置。</li>
 </ul>
 <ul>
-<li>当节点上无服务时，可以<strong>删除节点</strong>。</li>
-</ul>
-</li>
+<li>当节点上无服务时，可以<strong>删除节点</strong>。删除服务请参见下文<strong>扩缩容</strong>部分。</li>
 </ul>
 <!--
 ## 扩缩容
 
-!!! enterpriseonly 
+!!! enterpriseonly
 
-    只有创建或导入企业版 NebulaGraph 集群时，用户才会在左侧导航栏中看到扩缩容功能。
+    仅企业版 NebulaGraph 支持扩缩容。
 
 - 在扩缩容页面，用户可以快速**添加节点**、**批量导入节点**，并对已存在的节点添加 **Graph 服务**及 **Storage 服务**。
-- 单击**重置**按钮，可以恢复到初始状态。
+- 单击**重置**按钮，可以取消所有未执行的操作，恢复到初始状态。
 
 !!! caution
 
     - 目前仅支持对 graphd 和 storaged 进行扩缩容，不支持移除或添加 metad 服务。扩缩容集群时，建议提前备份数据，以便故障发生时回滚数据。关于扩缩容，详情参见[如何扩缩容](../../20.appendix/0.FAQ.md#_11)。
 
-    - 集群中每种类型的服务至少要有一个，且单个节点上仅能部署一个同类型服务。
+    - 集群中每种类型的服务至少要有一个，且单个节点上仅能部署一个同类型服务。    
 
 在该示例中，新增了节点为`192.168.8.143`和`192.168.8.167`的 Storage 服务，删除了节点为`192.168.8.169`的 Graph 服务。虚线框并置灰服务名表示移除的服务，实线框表示添加的服务。
 
 在下方的**服务**中，绿色表示即将新增的服务，红色表示即将移除的服务。可以修改新增服务的端口号和 HTTP 端口号信息。
 
+修改后，在页面下方单击**确定**。
+
 ![扩缩容](https://docs-cdn.nebula-graph.com.cn/figures/scaling-ds-2022_4-14_cn.png)
 
 -->
 
-<h2 id="_3">服务管理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_5">服务管理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>在服务管理页面，用户可以选择服务类型、服务状态、Host 对展示的数据进行筛选，快速选中一个或多个服务，一键启动/停止/重启服务。</li>
 </ul>
@@ -6853,7 +6858,7 @@
 <p class="admonition-title">Danger</p>
 <p>单击<strong>停止</strong>/<strong>重启</strong>，会立即中断进行中的任务，可能会导致数据不一致，请在业务低峰期执行该操作。</p>
 </div>
-<h2 id="_4">更新配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_6">更新配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>更新配置页面可以修改 Storage 及 Graph 服务的配置文件，具体参数及说明见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a>和 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>。更新配置文件为批量操作，将会修改每一个 Storage/Graph 的配置文件。</p>
 <ul>
 <li>单击保存后，在下一次服务重启后配置即生效。</li>
@@ -6867,23 +6872,22 @@
 </div>
 </li>
 </ul>
-<h2 id="_5">成员管理<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>所有角色为<code>admin</code>的账户和角色为<code>user</code>的集群创建者可以为集群添加管理员。默认集群创建者为集群的<code>owner</code>角色，并显示在<strong>成员管理</strong>页面。添加的集群管理员为集群的<code>operator</code>角色。</p>
-<p>关于账户的角色详情，参见<a href="../../5.account-management/">权限管理</a>。</p>
-<h3 id="_6">添加集群管理员<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>集群管理员必需是用户创建的 Dashboard 企业版账户。关于如何创建账户，参见<a href="../../5.account-management/">权限管理</a>。</p>
-<p>添加集群管理员步骤如下：</p>
-<ol>
-<li>在 Dashboard 企业版顶部导航栏，单击<strong>集群管理</strong>。</li>
-<li>在目标集群右侧，单击<strong>详情</strong>。</li>
-<li>在左侧导航栏，单击<strong>集群操作</strong>-&gt;<strong>成员管理</strong>。</li>
-<li>在<strong>成员管理</strong>页面，单击左上方的搜索框。</li>
-<li>在下拉列表中，选择需要添加的账户，然后单击右侧的<strong>添加</strong>。</li>
-</ol>
-<h3 id="_7">其他操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="_7">成员管理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><strong>成员管理</strong>页面默认只包含集群创建者账户（<code>owner</code>角色）。<code>owner</code>角色账户可以添加、删除集群管理员（<code>operator</code>角色）。</p>
 <ul>
-<li>在<strong>成员管理</strong>页面右上方的搜索框中，搜索集群管理员。</li>
-<li>单击<img alt="delete" src="https://docs-cdn.nebula-graph.com.cn/figures/alert_delete_cn.png" />删除集群管理员。</li>
+<li>
+<p>添加集群管理员：单击左上方搜索框，在下拉列表中，选择需要添加的账户，然后单击右侧的<strong>添加</strong>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>集群管理员必需是用户创建的 Dashboard 企业版账户。关于如何创建账户，参见<a href="../../5.account-management/">权限管理</a>。</p>
+</div>
+</li>
+</ul>
+<ul>
+<li>删除集群管理员：在集群管理员右侧操作列单击<img alt="delete" src="https://docs-cdn.nebula-graph.com.cn/figures/alert_delete_cn.png" />，然后单击<strong>确认</strong>。</li>
+</ul>
+<ul>
+<li>转移<code>owner</code>角色：在<code>owner</code>角色右侧操作列，单击<strong>转移</strong>，选择要转移的目标账户，然后单击<strong>确认</strong>。</li>
 </ul>
 <h2 id="_8">版本升级<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>Dashboard 企业版支持升级现有 NebulaGraph 集群的版本。</p>
@@ -6930,7 +6934,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 6, 2022</span>
       
     
   </small>
