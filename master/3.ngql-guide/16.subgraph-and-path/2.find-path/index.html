@@ -6768,6 +6768,10 @@
 
 <h1 id="find_path">FIND PATH<a class="headerlink" href="#find_path" title="Permanent link">&para;</a></h1>
 <p><code>FIND PATH</code>语句查找指定起始点和目的点之间的路径。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>用户可在配置文件<code>nebula-graphd.conf</code>中添加<code>num_operator_threads</code>参数提高<code>FIND PATH</code>的查询性能。<code>num_operator_threads</code>的取值为<code>2</code>~<code>10</code>，该值不能超过 Graph 服务所在机器的 CPU 核心个数，建议设置为 Graph 服务所在机器的 CPU 核心个数。关于配置文件的详细信息，参见 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>。</p>
+</div>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>FIND { SHORTEST | ALL | NOLOOP } PATH [WITH PROP] FROM &lt;vertex_id_list&gt; TO &lt;vertex_id_list&gt;
 OVER &lt;edge_type_list&gt; [REVERSELY | BIDIRECT] 
@@ -6873,7 +6877,7 @@ YIELD path as &lt;alias&gt;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2022</span>
       
     
   </small>
