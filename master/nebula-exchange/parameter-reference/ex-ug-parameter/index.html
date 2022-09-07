@@ -5815,6 +5815,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#oracle" class="md-nav__link">
+    Oracle 源特有参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#clickhouse" class="md-nav__link">
     ClickHouse 源特有参数
   </a>
@@ -6008,6 +6015,20 @@
     <li class="md-nav__item">
       <a href="../../use-exchange/ex-ug-import-from-mysql/" class="md-nav__link">
         导入 MySQL/PostgreSQL 数据
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-exchange/ex-ug-import-from-oracle/" class="md-nav__link">
+        导入 Oracle 数据
       </a>
     </li>
   
@@ -6897,6 +6918,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#oracle" class="md-nav__link">
+    Oracle 源特有参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#clickhouse" class="md-nav__link">
     ClickHouse 源特有参数
   </a>
@@ -7634,6 +7662,62 @@
 </tr>
 </tbody>
 </table>
+<h3 id="oracle">Oracle 源特有参数<a class="headerlink" href="#oracle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">数据类型</th>
+<th align="left">默认值</th>
+<th align="left">是否必须</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>tags.url</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">Oracle 数据库连接地址。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.driver</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">Oracle 驱动地址。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.user</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">拥有读取权限的 Oracle 用户名。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.password</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">用户名对应密码。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.table</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">需要作为数据源的表名称。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.sentence</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">是</td>
+<td align="left">查询数据源的语句。例如<code>"select playerid, name, age from player"</code>。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="clickhouse">ClickHouse 源特有参数<a class="headerlink" href="#clickhouse" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -8001,7 +8085,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2022</span>
       
     
   </small>

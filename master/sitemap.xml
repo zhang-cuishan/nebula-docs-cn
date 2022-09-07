@@ -1186,6 +1186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/use-exchange/ex-ug-import-from-oracle/</loc>
+         <lastmod>2022-09-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/use-exchange/ex-ug-import-from-orc/</loc>
          <lastmod>2022-09-07</lastmod>
          <changefreq>daily</changefreq>
