@@ -7369,7 +7369,8 @@ nebula&gt; SHOW LISTENER SYNC;
 </li>
 <li>
 <p>进入图空间<code>replication_basketballplayer</code>，设置 drainer 服务。</p>
-<div class="highlight"><pre><span></span><code>//设置 drainer 服务。
+<div class="highlight"><pre><span></span><code>nebula&gt; USE replication_basketballplayer;
+//设置 drainer 服务。
 nebula&gt; ADD DRAINER 192.168.10.104:9889;
 //查看 drainer 状态。
 nebula&gt; SHOW DRAINERS;
@@ -7381,13 +7382,12 @@ nebula&gt; SHOW DRAINERS;
 </code></pre></div>
 </li>
 <li>
-<p>修改图空间为只读。</p>
+<p>修改图空间<code>replication_basketballplayer</code>为只读。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>修改为只读是防止误操作导致数据不一致。只影响该图空间，其他图空间仍然可以读写。</p>
 </div>
-<div class="highlight"><pre><span></span><code>nebula&gt; USE replication_basketballplayer;
-//设置当前图空间为只读。
+<div class="highlight"><pre><span></span><code>//设置当前图空间为只读。
 nebula&gt; SET VARIABLES read_only=true;
 //查看当前图空间的读写属性。
 nebula&gt; GET VARIABLES read_only;
@@ -7492,7 +7492,7 @@ nebula&gt; SET VARIABLES read_only=true;
 <h3 id="data_data">主集群中已经有 data 了，从集群可以同步到之前的存量 data 吗？<a class="headerlink" href="#data_data" title="Permanent link">&para;</a></h3>
 <p>可以。对于主集群中的存量 data，主集群的 listener 会从各个分片的 leader 节点拉取快照，然后以 WAL 的形式发送给 drainer。存量 data 相关的 WAL 发送完毕后，开始发送主集群的增量 data 相关的 WAL 给 drainer。</p>
 <h3 id="data">从集群中已经有 data 了，数据同步会有影响吗？<a class="headerlink" href="#data" title="Permanent link">&para;</a></h3>
-<p>仍然会进行全量数据同步。如果从集群中的数据是主集群数据的子集，最终会数据一致；如果不是主集群数据的子集，从集群不会进行反向同步，而且这部分数据会保留，请确保主从集群数据不会冲突。</p>
+<p>仍然会进行全量数据同步。如果从集群中的数据是主集群数据的子集，最终会数据一致；如果不是主集群数据的子集，从集群不会进行反向同步，而且这部分数据可能会受到影响，请确保主从集群数据不会冲突；建议保持从集群数据为空。</p>
 <h3 id="schema">从集群中已经有 Schema 了，数据同步会有影响吗？<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
 <p>数据同步时主集群中的 Schema 会覆盖从集群中的 Schema，因此可能导致被覆盖的 Schema 对应的数据失效或者数据不一致。请确保从集群中的 Schema 和主集群中的 Schema 没有冲突。</p>
 <h3 id="schema_1">修改主集群的 Schema 会影响数据同步吗？<a class="headerlink" href="#schema_1" title="Permanent link">&para;</a></h3>
@@ -7515,7 +7515,7 @@ nebula&gt; SET VARIABLES read_only=true;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 7, 2022</span>
       
     
   </small>
