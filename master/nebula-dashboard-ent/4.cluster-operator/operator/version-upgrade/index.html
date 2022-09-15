@@ -7197,19 +7197,36 @@
 <li>在目标集群右侧，单击<strong>详情</strong>。</li>
 <li>在左侧导航栏，单击<strong>集群操作</strong>-&gt;<strong>版本升级</strong>。</li>
 <li>
-<p>在<strong>版本升级</strong>页面确认<strong>当前NebulaGraph版本</strong>，选择<strong>待升级目标版本</strong>，单击<strong>下一步</strong>。</p>
+<p>在<strong>版本升级</strong>页面确认<strong>当前NebulaGraph版本</strong>，选择<strong>待升级目标版本</strong>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果没有找到合适的版本，单击<strong>包管理中心</strong>，下载或上传所需的版本安装包。详情参见<a href="../../../system-settings/manage-package/">安装包管理</a>。</p>
 </div>
 </li>
+</ol>
+<!-- -->
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+<ol>
 <li>
-<p>进行升级检查，然后单击<strong>下一步</strong>。
-   集群在升级期间将会停机，升级完成后会自动重启服务。升级前您可以通过<strong>查看诊断报告</strong>了解集群线上运行情况，从而帮助您判断当前集群停机升级是否合适。</p>
+<p>单击<strong>上传证书</strong>上传 Dashboard 企业版 License（如升级社区版 NebulaGraph 集群，忽略此步）。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>此步骤仅针对升级企业版 NebulaGraph 集群。</p>
+</div>
+</li>
+</ol>
+<!-- -->
+
+<ol>
+<li>
+<p>单击<strong>下一步</strong>，进行升级检查，然后再单击<strong>下一步</strong>。</p>
+<p>集群在升级期间将会停机，升级完成后会自动重启服务。升级前您可以通过<strong>查看诊断报告</strong>了解集群线上运行情况，从而帮助您判断当前集群停机升级是否合适。</p>
 </li>
 <li>
-<p>再次确认升级信息，包括<strong>集群名称</strong>、<strong>当前NebulaGraph版本</strong>和<strong>待升级NebulaGraph版本</strong>，然后单击<strong>升级</strong>。
-   用户可以在在<a href="../../../10.tasks/">任务中心</a>查看升级任务信息，类型为<code>version update</code>。</p>
+<p>再次确认升级信息，包括<strong>集群名称</strong>、<strong>当前NebulaGraph版本</strong>和<strong>待升级NebulaGraph版本</strong>，然后单击<strong>升级</strong>。</p>
+<p>用户可以在在<a href="../../../10.tasks/">任务中心</a>查看升级任务信息，类型为<code>version update</code>。</p>
 </li>
 </ol>
 
@@ -7218,7 +7235,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2022</span>
       
     
   </small>
