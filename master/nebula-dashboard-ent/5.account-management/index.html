@@ -5100,6 +5100,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#oauth20" class="md-nav__link">
+    OAuth2.0 账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     普通账户
   </a>
@@ -7205,6 +7212,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#oauth20" class="md-nav__link">
+    OAuth2.0 账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     普通账户
   </a>
@@ -7266,65 +7280,18 @@
 
 <h1 id="_1">权限管理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>用户可以使用不同账户登录 NebulaGraph Dashboard 企业版，不同账户拥有不同权限。本文介绍账户类型、账户角色及角色权限等。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 LDAP 账户 或 OAuth2.0 账户前，需要配置相关的协议。详情参见<a href="../system-settings/single-sign-on/">单点登录</a>。</p>
+</div>
 <h2 id="_2">账户类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>Dashboard 企业版的初始化账户名为<code>nebula</code>和密码为<code>nebula</code>。使用初始化账户名和密码登录 Dashboard 企业版后，即可创建不同类型的账户：LDAP 账户和普通账户。</p>
+<p>Dashboard 企业版的初始化账户名为<code>nebula</code>和密码为<code>nebula</code>。使用初始化账户名和密码登录 Dashboard 企业版后，即可创建不同类型的账户：LDAP 账户、OAuth2.0 账户和普通账户。</p>
 <h3 id="ldap">LDAP 账户<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
 <p>Dashboard 企业版通过对接 <a href="https://ldap.com/">LDAP（Lightweight Directory Access Protocol）</a>，使得用户可以使用企业内部账户体系登录 Dashboard 企业版。</p>
-<p>使用 LDAP 账户前，需要进行 LDAP 配置：</p>
-<ol>
-<li>在 Dashboard 企业版的安装路径中，如<code>nebula-graph-dashboard-ent/nebula-dashboard-ent/config</code>，找到配置文件<code>config.yaml</code>。</li>
-<li>
-<p>在<code>config.yaml</code>中，添加以下内容。
-  <div class="highlight"><pre><span></span><code>ldap:
-  server: ldap://127.0.0.1
-  bindDN: cn=admin,dc=vesoft,dc=com
-  bindPassword: kenshin
-  baseDN: dc=vesoft,dc=com
-  userFilter: &quot;&amp;(objectClass=*)&quot;
-  emailKey: mail    
-</code></pre></div></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>server</td>
-<td>LDAP 服务器地址。</td>
-</tr>
-<tr>
-<td>bindDN</td>
-<td>LDAP 服务器登录用户名。</td>
-</tr>
-<tr>
-<td>bindPassword</td>
-<td>LDAP 服务器登录密码。</td>
-</tr>
-<tr>
-<td>baseDN</td>
-<td>查询用户数据的路径。</td>
-</tr>
-<tr>
-<td>userFilter</td>
-<td>查询条件。</td>
-</tr>
-<tr>
-<td>emailKey</td>
-<td>LDAP 数据库存放邮箱信息的字段名。</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>重启 Dashboard 企业版生效配置。</p>
-</li>
-</ol>
-<p>成功配置 LDAP 后，使用 Dashboard 企业版的初始化账户名<code>nebula</code>和密码<code>nebula</code> 登录 Dashboard 企业版，然后可创建 LDAP 账户。关于如何创建账户，参见<a href="#_5">创建账户</a>。</p>
+<h3 id="oauth20">OAuth2.0 账户<a class="headerlink" href="#oauth20" title="Permanent link">&para;</a></h3>
+<p>Dashboard 企业版基于 <a href="https://oauth.net/2/">OAuth2.0</a> 协议，使用 access_token 来授权第三方应用访问受保护的信息。</p>
 <h3 id="_3">普通账户<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>除了 LDAP 账户，其他账户均为普通账户。</p>
+<p>Dashboard 企业版支持用户自行创建本地账号。</p>
 <h2 id="_4">账户角色<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>用户可以为账户设置不同的角色，不同的角色拥有的权限不同。Dashboard 企业版中的账户角色有两种类型：系统角色（<code>admin</code>和<code>user</code>）和集群角色（<code>owner</code>和<code>operator</code>）。</p>
 <p>系统角色和集群角色的关系及介绍如下。</p>
@@ -7380,16 +7347,10 @@
 <li>
 <p>选择创建方式并填入信息，然后单击<strong>确定</strong>。</p>
 <ul>
-<li>
-<p>邀请：设置被邀请人的企业邮箱和角色。被邀请人单击邮件中的 <strong>Accept</strong> 按钮激活账户后，然后单击<strong>登录</strong>自动跳转至 Dashboard 企业版登录页面。被邀请人使用企业邮箱账号和邮箱密码即可登录 Dashboard 企业版。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>选择<strong>邀请</strong>方式添加账户时，确保企业 LDAP 服务器中已添加被邀请人的邮箱。</p>
-</div>
-</li>
+<li>邀请（LDAP 或 OAuth2.0 账户）：设置被邀请人的账号类型、企业邮箱和角色。被邀请人单击邮件中的 <strong>Accept</strong> 按钮激活账户后，然后单击<strong>登录</strong>自动跳转至 Dashboard 企业版登录页面。被邀请人使用企业邮箱账号和邮箱密码即可登录 Dashboard 企业版。</li>
 </ul>
 <ul>
-<li>创建账户：设置新账户的登录名称、密码、角色。关于角色的详情，参见<a href="#_4">账户角色</a>。</li>
+<li>创建账户（普通账户）：设置新账户的登录名称、密码、角色。关于角色的详情，参见上文。</li>
 </ul>
 </li>
 </ol>
@@ -7399,7 +7360,7 @@
 <li>
 <p>用户可以查看账户的用户名、账号类型、角色、关联集群、创建时间。</p>
 <ul>
-<li><strong>账号类型</strong>：包括 <strong>platform</strong> 和 <strong>ldap</strong>。<strong>platform</strong> 为普通账户；<strong>ldap</strong> 为 LDAP 账户。</li>
+<li><strong>账号类型</strong>：包括 <strong>ldap</strong>、 <strong>oauth2.0</strong> 和 <strong>platform</strong>。<strong>platform</strong> 表示普通账户。</li>
 <li><strong>角色</strong>：显示角色名，包括 <strong>admin</strong> 和 <strong>user</strong>。关于角色的详情，参见上文。</li>
 <li><strong>关联集群</strong>：显示该账户可以操作的所有集群。如果集群为该账户所创建，相关集群附带<code>owner</code>标签。</li>
 </ul>
@@ -7421,7 +7382,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2022</span>
       
     
   </small>

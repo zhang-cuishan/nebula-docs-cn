@@ -7306,7 +7306,6 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES &quot;player101&quot; 
 | nodes                     | relationships |
 +---------------------------+---------------+
 | [(&quot;player101&quot; :player{})] | []            |
-| []                        | []            |
 +---------------------------+---------------+
 </code></pre></div>
 <p>因为<code>player101</code>没有<code>follow</code>类型的入边。所以仅返回点<code>player101</code>。</p>
@@ -7356,7 +7355,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2022</span>
       
     
   </small>

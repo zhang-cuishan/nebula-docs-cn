@@ -5144,9 +5144,87 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          单点登录
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         单点登录
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP 设置
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP 设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    入口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth20" class="md-nav__link">
+    OAuth2.0 设置
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth2.0 设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    入口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7106,6 +7184,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ldap" class="md-nav__link">
+    LDAP 设置
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP 设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    入口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oauth20" class="md-nav__link">
+    OAuth2.0 设置
+  </a>
+  
+    <nav class="md-nav" aria-label="OAuth2.0 设置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    入口
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    设置说明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7125,14 +7265,122 @@
 
 
 <h1 id="_1">单点登录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>TODO</p>
+<p>NebulaGraph Dashboard 企业版支持普通账户、LDAP 账户和 OAuth2.0 账户。本文介绍如何在 Dashboard 上配置 LDAP 和 OAuth2.0 协议。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>配置完成后，请参见<a href="../../5.account-management/">权限管理</a>创建账户和邀请激活。</li>
+<li>可以在左侧导航栏里通过开关快速开启或关闭 LDAP 或 OAuth2.0 登录方式。</li>
+</ul>
+</div>
+<h2 id="ldap">LDAP 设置<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h2>
+<h3 id="_2">入口<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在 Dashboard 企业版顶部导航栏，单击<strong>平台设置</strong>。</li>
+<li>在左侧导航栏单击<strong>单点登录</strong>-&gt;<strong>LDAP</strong>。</li>
+</ol>
+<h3 id="_3">设置说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">示例</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>LDAP Server Address</code></td>
+<td align="left"><code>ldap://192.168.10.100</code></td>
+<td align="left">LDAP 服务器地址。</td>
+</tr>
+<tr>
+<td align="left"><code>Bind DN</code></td>
+<td align="left"><code>cn=admin,dc=vesoft,dc=com</code></td>
+<td align="left">LDAP 服务器登录用户名。</td>
+</tr>
+<tr>
+<td align="left"><code>Password</code></td>
+<td align="left"><code>123456</code></td>
+<td align="left">LDAP 服务器登录密码。</td>
+</tr>
+<tr>
+<td align="left"><code>Base DN</code></td>
+<td align="left"><code>dc=vesoft,dc=com</code></td>
+<td align="left">查询用户数据的路径。</td>
+</tr>
+<tr>
+<td align="left"><code>User Filter</code></td>
+<td align="left"><code>&amp;(objectClass=*)</code></td>
+<td align="left">查询条件。</td>
+</tr>
+<tr>
+<td align="left"><code>Email Key</code></td>
+<td align="left"><code>mail</code></td>
+<td align="left">LDAP 数据库存放邮箱信息的字段名。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="oauth20">OAuth2.0 设置<a class="headerlink" href="#oauth20" title="Permanent link">&para;</a></h2>
+<h3 id="_4">入口<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在 Dashboard 企业版顶部导航栏，单击<strong>平台设置</strong>。</li>
+<li>在左侧导航栏单击<strong>单点登录</strong>-&gt;<strong>OAuth2.0</strong>。</li>
+</ol>
+<h3 id="_5">设置说明<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">示例</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ClientID</code></td>
+<td align="left"><code>4953xxx-mmnoge13xx.apps.googleusercontent.com</code></td>
+<td align="left">应用的 ClientId。</td>
+</tr>
+<tr>
+<td align="left"><code>ClientSecret</code></td>
+<td align="left"><code>GOCxxx-xaytomFexxx</code></td>
+<td align="left">应用的 ClientSecret。</td>
+</tr>
+<tr>
+<td align="left"><code>RedirectURL</code></td>
+<td align="left"><code>http://dashboard.vesoft-inc.com/login</code></td>
+<td align="left">重定向到 Dashboard 的 URL。</td>
+</tr>
+<tr>
+<td align="left"><code>AuthURL</code></td>
+<td align="left"><code>https://accounts.google.com/o/oauth2/auth</code></td>
+<td align="left">认证 URL。</td>
+</tr>
+<tr>
+<td align="left"><code>TokenURL</code></td>
+<td align="left"><code>https://oauth2.googleapis.com/token</code></td>
+<td align="left">获取 access_token 的URL。</td>
+</tr>
+<tr>
+<td align="left"><code>UserInfoURL</code></td>
+<td align="left"><code>https://www.googleapis.com/oauth2/v1/userinfo</code></td>
+<td align="left">获取用户信息的 URL。</td>
+</tr>
+<tr>
+<td align="left"><code>Name</code></td>
+<td align="left"><code>vesoft</code></td>
+<td align="left">Oauth 的名称。</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2022</span>
       
     
   </small>

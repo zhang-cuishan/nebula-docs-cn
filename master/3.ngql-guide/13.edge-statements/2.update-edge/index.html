@@ -7253,11 +7253,11 @@ SET &lt;update_prop&gt;
 nebula&gt; GO FROM &quot;player100&quot; \
         OVER serve \
         YIELD properties(edge).start_year, properties(edge).end_year;
-+------------------+----------------+
-| serve.start_year | serve.end_year |
-+------------------+----------------+
-| 1997             | 2016           |
-+------------------+----------------+
++-----------------------------+---------------------------+
+| properties(EDGE).start_year | properties(EDGE).end_year |
++-----------------------------+---------------------------+
+| 1997                        | 2016                      |
++-----------------------------+---------------------------+
 
 // 修改属性 start_year 的值，并返回 end_year 和新的 start_year。
 
@@ -7277,7 +7277,7 @@ nebula&gt; UPDATE EDGE ON serve &quot;player100&quot; -&gt; &quot;team204&quot;@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 21, 2022</span>
       
     
   </small>
