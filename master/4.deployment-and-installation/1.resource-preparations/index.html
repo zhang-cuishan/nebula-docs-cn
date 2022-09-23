@@ -7854,8 +7854,8 @@ apt install gcc-11 g++-11
 <tr>
 <td align="left">硬盘空间</td>
 <td align="left">Bytes</td>
-<td align="left"><code>点和边的总数</code> * <code>属性的平均字节大小</code> * 6 * 120%</td>
-<td align="left">由于边存在存储放大现象，所以需要<code>点和边的总数</code> * <code>属性的平均字节大小</code> * 6 的空间，详情请参见<a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">切边与存储放大</a>。</td>
+<td align="left"><code>点和边的总数</code> * <code>属性的平均字节大小</code> * 7.5 * 120%</td>
+<td align="left">由于边存在存储放大现象，所以需要<code>点和边的总数</code> * <code>属性的平均字节大小</code> * 7.5 的空间，详情请参见<a href="../../1.introduction/3.nebula-graph-architecture/4.storage-service/">切边与存储放大</a>。</td>
 </tr>
 <tr>
 <td align="left">内存</td>
@@ -7873,14 +7873,20 @@ apt install gcc-11 g++-11
 </table>
 <ul>
 <li>
-<p>问题 1：为什么磁盘空间和内存都要乘以 120%？</p>
+<p>问题 1：为什么硬盘空间的预估公式中需要乘以 7.5？</p>
+<p>答：因为根据测试值，相比原始数据文件（csv），单副本所占用的空间约为之前的 2.5 倍；另外索引会另外占用硬盘空间，每个被索引的点或边占用 16 字节的内存，索引的占用硬盘空间可按经验估算为：被索引的点或边总数 * 50 字节。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>问题 2：为什么磁盘空间和内存都要乘以 120%？</p>
 <p>答：额外的 20% 用于缓冲。</p>
 </li>
 </ul>
 <ul>
 <li>
-<p>问题 2：如何获取 RocksDB 实例数量？</p>
-<p>答：在<code>etc</code>目录内查看配置文件<code>nebula-storaged.conf</code>，<code>--data_path</code>选项中的每个目录对应一个 RocksDB 实例，目录总数即是 RocksDB 实例数量。</p>
+<p>问题 3：如何获取 RocksDB 实例数量？</p>
+<p>答：每个图空间对应一个 RocksDB 实例，并且<code>--data_path</code>选项（<code>etc</code>目录下的<code>nebula-storaged.conf</code>文件中）中的每个目录对应一个 RocksDB 实例。即，RocksDB 实例数量 = 图空间总数 * 目录总数。</p>
 </li>
 </ul>
 <div class="admonition note">
@@ -7893,7 +7899,7 @@ apt install gcc-11 g++-11
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2022</span>
       
     
   </small>

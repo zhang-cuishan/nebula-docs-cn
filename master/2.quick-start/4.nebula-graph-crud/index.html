@@ -8014,7 +8014,7 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;];
 </li>
 </ul>
 <ul>
-<li><code>UPDATE</code>边<div class="highlight"><pre><span></span><code>UPDATE EDGE &lt;source vid&gt; -&gt; &lt;destination vid&gt; [@rank] OF &lt;edge_type&gt;
+<li><code>UPDATE</code>边<div class="highlight"><pre><span></span><code>UPDATE EDGE ON &lt;edge_type&gt; &lt;source vid&gt; -&gt; &lt;destination vid&gt; [@rank] 
 SET &lt;properties to be updated&gt; [WHEN &lt;condition&gt;] [YIELD &lt;columns to be output&gt;];
 </code></pre></div>
 </li>
@@ -8039,7 +8039,7 @@ nebula&gt; FETCH PROP ON player &quot;player100&quot; YIELD properties(vertex);
 </li>
 </ul>
 <ul>
-<li>用<code>UPDATE</code>修改某条边的<code>degree</code>属性，然后用<code>FETCH</code>检查结果。<div class="highlight"><pre><span></span><code>nebula&gt; UPDATE EDGE &quot;player101&quot; -&gt; &quot;player100&quot; OF follow SET degree = 96;
+<li>用<code>UPDATE</code>修改某条边的<code>degree</code>属性，然后用<code>FETCH</code>检查结果。<div class="highlight"><pre><span></span><code>nebula&gt; UPDATE EDGE ON follow &quot;player101&quot; -&gt; &quot;player100&quot; SET degree = 96;
 
 nebula&gt; FETCH PROP ON follow &quot;player101&quot; -&gt; &quot;player100&quot; YIELD properties(edge);
 +------------------+
@@ -8148,7 +8148,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2022</span>
       
     
   </small>
