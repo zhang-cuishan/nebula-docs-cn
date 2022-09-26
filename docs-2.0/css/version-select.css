@@ -2,7 +2,7 @@
   #version-selector {
     padding: .6rem .8rem;
   }
-  label.md-nav__title {
+  div>nav>label.md-nav__title {
     box-shadow: none;
   }
 }
