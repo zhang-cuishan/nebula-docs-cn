@@ -20,5 +20,5 @@
 
 /* 修复版本选择框上边缘被box-shadow覆盖的情况 */
 div>nav>label.md-nav__title {
-  box-shadow: 0 0 0 0;
+  box-shadow: none!important;
 }
