@@ -7392,9 +7392,9 @@ nebula&gt; SHOW CREATE SPACE my_space_4;
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
 | Host        | Port | HTTP port | Status   | Leader count | Leader distribution            | Partition distribution         | Version |
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
-| &quot;storaged0&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged1&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged2&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged0&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 8            | &quot;basketballplayer:3, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged1&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 9            | &quot;basketballplayer:4, test:5&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged2&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 3            | &quot;basketballplayer:3&quot;           | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
 </code></pre></div>
 <p>如果需要均衡负载，请执行如下命令：</p>
@@ -7403,9 +7403,9 @@ nebula&gt; SHOW HOSTS;
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
 | Host        | Port | HTTP port | Status   | Leader count | Leader distribution            | Partition distribution         | Version |
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
-| &quot;storaged0&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:3, test:4&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged1&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:4, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
-| &quot;storaged2&quot; | 9779 | 19669     | &quot;ONLINE&quot; | 6            | &quot;basketballplayer:3, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged0&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:3, test:4&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged1&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 7            | &quot;basketballplayer:4, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
+| &quot;storaged2&quot; | 9779 | 19779     | &quot;ONLINE&quot; | 6            | &quot;basketballplayer:3, test:3&quot;   | &quot;basketballplayer:10, test:10&quot; | &quot;3.1.0&quot; |
 +-------------+------+-----------+----------+--------------+--------------------------------+--------------------------------+---------+
 </code></pre></div>
 
@@ -7414,7 +7414,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
       
     
   </small>

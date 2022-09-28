@@ -7201,7 +7201,7 @@
 
 
 <h1 id="show_stats">SHOW STATS<a class="headerlink" href="#show_stats" title="Permanent link">&para;</a></h1>
-<p><code>SHOW STATS</code>语句显示最近<code>STATS</code>作业收集的图空间统计信息。</p>
+<p><code>SHOW STATS</code>语句显示最近一次<code>SUBMIT JOB STATS</code>作业收集的图空间统计信息。</p>
 <p>图空间统计信息包含：</p>
 <ul>
 <li>点的总数</li>
@@ -7209,6 +7209,10 @@
 <li>每个 Tag 关联的点的总数</li>
 <li>每个 Edge type 关联的边的总数</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>SHOW STATS</code>返回的不是实时数据。因为返回的数据是最近一次 <a href="../../../4.job-statements/">SUBMIT JOB STATS</a> 作业收集的数据。返回的数据可能包含 <a href="../../../8.clauses-and-options/ttl-options/">TTL</a> 过期数据，该过期数据会在下次执行 <a href="../../../../8.service-tuning/compaction/">Compaction 操作</a>时被删除并不纳入统计。</p>
+</div>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>在需要查看统计信息的图空间中执行<code>SUBMIT JOB STATS</code>。详情请参见 <a href="../../../4.job-statements/">SUBMIT JOB STATS</a>。</p>
 <div class="admonition caution">
@@ -7260,7 +7264,7 @@ nebula&gt; SHOW STATS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
       
     
   </small>

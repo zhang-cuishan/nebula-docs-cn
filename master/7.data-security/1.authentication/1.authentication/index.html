@@ -7239,10 +7239,6 @@
 <h1 id="_1">身份验证<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>身份验证用于将会话映射到特定用户，从而实现访问控制。</p>
 <p>当客户端连接到 NebulaGraph 时，NebulaGraph 会创建一个会话，会话中存储连接的各种信息，如果开启了身份验证，就会将会话映射到对应的用户。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>默认情况下，身份验证功能是关闭的，用户可以使用 root 用户名和任意密码连接到 NebulaGraph。</p>
-</div>
 <p>NebulaGraph 支持两种身份验证方式：本地身份验证和 LDAP 验证。</p>
 <h2 id="_2">本地身份验证<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>本地身份验证是指在服务器本地存储用户名、加密密码，当用户尝试访问 NebulaGraph 时，将进行身份验证。</p>
@@ -7251,7 +7247,16 @@
 <li>
 <p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>），设置如下参数：</p>
 <ul>
-<li><code>--enable_authorize</code>：是否启用身份验证，可选值：<code>true</code>、<code>false</code>。</li>
+<li>
+<p><code>--enable_authorize</code>：是否启用身份验证，可选值：<code>true</code>、<code>false</code>。   </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>默认情况下，身份验证功能是关闭的，用户可以使用<code>root</code>用户名和任意密码连接到 NebulaGraph。</li>
+<li>开启身份验证后，默认的 God 角色账号为<code>root</code>，密码为<code>nebula</code>。角色详情请参见<a href="../3.role-list/">内置角色权限</a>。</li>
+</ul>
+</div>
+</li>
 </ul>
 <ul>
 <li><code>--failed_login_attempts</code>：可选项，需要手动添加该参数。单个 Graph 节点允许连续输入错误密码的次数。超过该次数时，账户会被锁定。如果有多个 Graph 节点，允许的次数为<code>节点数 * 次数</code>。</li>
@@ -7264,10 +7269,6 @@
 <p>重启 NebulaGraph 服务。</p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>开启身份验证后，默认的 God 角色账号为<code>root</code>，密码为<code>nebula</code>。角色详情请参见<a href="../3.role-list/">内置角色权限</a>。</p>
-</div>
 <!-- -->
 
 <h2 id="openldap">OpenLDAP 验证<a class="headerlink" href="#openldap" title="Permanent link">&para;</a></h2>
@@ -7284,7 +7285,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
       
     
   </small>
