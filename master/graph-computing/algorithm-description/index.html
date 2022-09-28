@@ -6845,6 +6845,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#node2vec" class="md-nav__link">
+    Node2Vec
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7465,6 +7472,13 @@
           <li class="md-nav__item">
   <a href="#trianglecount" class="md-nav__link">
     TriangleCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node2vec" class="md-nav__link">
+    Node2Vec
   </a>
   
 </li>
@@ -8329,35 +8343,6 @@ NebulaGraph 支持多种图计算工具，本文介绍这些工具支持的算�
 </ul>
 </li>
 </ul>
-<!--
-### Node2Vec
-
-Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习方法，提出了用于网络中可伸缩特征学习的半监督算法，使用 SGD 优化一个自定义的基于图的目标函数，该方法可以最大化的在 D 维特征空间保留节点的网络领域信息；在随机游走的基础上设计了一种二阶随机游走的过程，相当于对 DeepWalk 算法的一种扩展，它保留了邻居节点的图特征。适用于节点功能相似性比较、节点结构相似性比较、社团聚类等场景。
-
-!!! note
-
-    仅 NebulaGraph Algorithm 支持该算法。
-
-参数说明如下。
-
-|参数|默认值|说明|
-|:--|:--|:--|
-|`maxIter`|`10`|最大迭代次数。|
-|`lr`|`0.025`||
-|`dataNumPartition`|`10`||
-|`modelNumPartition`|`10`||
-|`dim`|`10`|映射维度。|
-|`window`|`3`||
-|`walkLength`|`5`|随机步长。|
-|`numWalks`|`3`|每个节点的随机步长数。|
-|`p`|`1.0`|回退参数。|
-|`q`|`1.0`|前进参数。|
-|`directed`|`false`||
-|`degree`|`30`||
-|`embSeparate`|`","`||
-|`modelPath`|`"hdfs://127.0.0.1:9000/model"`||
--->
-
 <h2 id="_4">社区发现算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="lpa">LPA<a class="headerlink" href="#lpa" title="Permanent link">&para;</a></h3>
 <p>LPA（标签传播）算法是一种基于图的半监督学习方法，其基本思路是用已标记点的标签信息去预测未标记点的标签信息。利用样本间的关系建图，点包括已标注和未标注数据，其边表示两个点的相似度，点的标签按相似度传递给其他点。标签数据就像是一个源头，可以对无标签数据进行标注，点的相似度越大，标签越容易传播。</p>
@@ -8796,6 +8781,87 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
 </ul>
 </li>
 </ul>
+<h3 id="node2vec">Node2Vec<a class="headerlink" href="#node2vec" title="Permanent link">&para;</a></h3>
+<p>Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习方法，提出了用于网络中可伸缩特征学习的半监督算法，使用 SGD 优化一个自定义的基于图的目标函数，该方法可以最大化的在 D 维特征空间保留节点的网络领域信息；在随机游走的基础上设计了一种二阶随机游走的过程，相当于对 DeepWalk 算法的一种扩展，它保留了邻居节点的图特征。适用于节点功能相似性比较、节点结构相似性比较、社团聚类等场景。</p>
+<p>参数说明如下。</p>
+<!--
+- NebulaGraph Algorithm
+
+  |参数|默认值|说明|
+  |:--|:--|:--|
+  |`maxIter`|`10`|最大迭代次数。|
+  |`lr`|`0.025`||
+  |`dataNumPartition`|`10`||
+  |`modelNumPartition`|`10`||
+  |`dim`|`10`|映射维度。|
+  |`window`|`3`||
+  |`walkLength`|`5`|随机步长。|
+  |`numWalks`|`3`|每个节点的随机步长数。|
+  |`p`|`1.0`|回退参数。|
+  |`q`|`1.0`|前进参数。|
+  |`directed`|`false`||
+  |`degree`|`30`||
+  |`embSeparate`|`","`||
+  |`modelPath`|`"hdfs://127.0.0.1:9000/model"`||
+-->
+
+<ul>
+<li>
+<p>NebulaGraph Analytics</p>
+<ul>
+<li>
+<p>传入参数</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>is_weighted</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">随机游走是否有偏差。</td>
+</tr>
+<tr>
+<td align="left"><code>p</code></td>
+<td align="left"><code>1.0</code></td>
+<td align="left">随机游走的后向偏差。</td>
+</tr>
+<tr>
+<td align="left"><code>q</code></td>
+<td align="left"><code>0.5</code></td>
+<td align="left">随机游走的前向偏差。</td>
+</tr>
+<tr>
+<td align="left"><code>epoch</code></td>
+<td align="left"><code>1</code></td>
+<td align="left">迭代次数。</td>
+</tr>
+<tr>
+<td align="left"><code>step</code></td>
+<td align="left"><code>10</code></td>
+<td align="left">每次迭代的步数。</td>
+</tr>
+<tr>
+<td align="left"><code>rate</code></td>
+<td align="left"><code>0.02</code></td>
+<td align="left">随机游走的比例。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p>输出参数</p>
+<p>输出多个列，同一列中的点是有关联的。</p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="_6">聚类算法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="clusteringcoefficient">ClusteringCoefficient<a class="headerlink" href="#clusteringcoefficient" title="Permanent link">&para;</a></h3>
 <p>ClusteringCoefficient（聚集系数）算法用于计算图中节点的聚集程度。在各类反映真实世界的网络结构，特别是社交网络结构中，各个点之间倾向于形成密度相对较高的网络群，也就是说，相对于在两个点之间随机连接而得到的网络，真实世界网络的聚集系数更高。</p>
@@ -8987,7 +9053,7 @@ Node2Vec算法在 DeepWalk 的基础上提出了更加合理的图特征学习�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
       
     
   </small>

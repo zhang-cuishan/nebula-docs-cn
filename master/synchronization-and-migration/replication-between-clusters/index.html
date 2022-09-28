@@ -7987,16 +7987,14 @@ nebula&gt; SET VARIABLES read_only=true;
 <li>listener/drainer/从集群故障：服务恢复后，会收到前一节点发送的故障期间的 WAL。例如 drainer 故障恢复后，会收到 listener 发送来的故障期间的 WAL。如果用新的节点替换故障的 drainer 节点或从集群，需要将原节点的数据复制到新节点，否则相当于重新同步全量数据。</li>
 </ul>
 <h3 id="_16">如何判断数据同步进度？<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<!--show sync-->
-
-<p>暂无工具进行直接判断。</p>
+<p>用户可以执行<code>SHOW SYNC STATUS</code>查看主集群发送数据的状态，执行<code>SHOW DRAINER SYNC STATUS</code>查看从集群接收数据的状态。如果同时满足主集群中的所有数据都发送成功，并且从集群成功接收所有数据，则说明数据同步完成。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2022</span>
       
     
   </small>
