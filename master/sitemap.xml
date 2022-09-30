@@ -121,17 +121,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/2.install-nebula-graph/</loc>
-         <lastmod>2022-09-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.1add-storage-hosts/</loc>
-         <lastmod>2022-09-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.connect-to-nebula-graph/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -141,12 +131,47 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/5.start-stop-service/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/6.cheatsheet-for-ngql-command/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/6.cheatsheet-for-ngql-command/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/2.quick-start-on-cloud/1.create-instance-on-cloud/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/2.quick-start-on-cloud/2.connect-to-nebulagraph-on-cloud/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/2.quick-start-on-cloud/3.how-to-query-on-cloud/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.quick-start-on-premise/2.install-nebula-graph/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.quick-start-on-premise/3.1add-storage-hosts/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.quick-start-on-premise/3.connect-to-nebula-graph/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.quick-start-on-premise/4.nebula-graph-crud/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.quick-start-on-premise/5.start-stop-service/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1631,12 +1656,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/reuse/source_create_instance_aliyun/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/reuse/source_install-nebula-graph-by-rpm-or-deb/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/reuse/source_manage-service/</loc>
+         <lastmod>2022-09-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/reuse/source_ngql_for_quick_start/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
