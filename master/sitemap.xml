@@ -121,21 +121,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/1.quick-start-workflow/</loc>
-         <lastmod>2022-09-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/3.1add-storage-hosts/</loc>
-         <lastmod>2022-09-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/4.nebula-graph-crud/</loc>
-         <lastmod>2022-09-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/2.quick-start/6.cheatsheet-for-ngql-command/</loc>
          <lastmod>2022-09-30</lastmod>
          <changefreq>daily</changefreq>
