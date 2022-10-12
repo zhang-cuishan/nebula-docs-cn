@@ -1376,6 +1376,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/ngql-template/</loc>
+         <lastmod>2022-10-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/deploy-connect/3.explorer-license/</loc>
          <lastmod>2022-10-12</lastmod>
          <changefreq>daily</changefreq>
