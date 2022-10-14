@@ -6776,17 +6776,17 @@
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>执行<code>INSERT VERTEX</code>语句需要当前登录的用户拥有指定图空间的<a href="../../../7.data-security/1.authentication/3.role-list/">插入点权限</a>，否则会报错。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [tag_props, [tag_props] ...]
-VALUES VID: ([prop_value_list])
+<div class="highlight"><pre><span></span><code>INSERT VERTEX [IF NOT EXISTS] [tag_with_properties, [tag_with_properties] ...]
+VALUES VID: ([property_value_list])
 
-tag_props:
-  tag_name ([prop_name_list])
+tag_with_properties:
+  tag_name ([property_name_list])
 
-prop_name_list:
-   [prop_name [, prop_name] ...]
+property_name_list:
+   [property_name [, property_name] ...]
 
-prop_value_list:
-   [prop_value [, prop_value] ...]   
+property_value_list:
+   [property_value [, property_value] ...]   
 </code></pre></div>
 <!---
 // 忽略已存在索引插入点
@@ -6964,7 +6964,7 @@ nebula&gt; FETCH PROP ON t2 &quot;1&quot; YIELD properties(vertex);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2022</span>
       
     
   </small>
