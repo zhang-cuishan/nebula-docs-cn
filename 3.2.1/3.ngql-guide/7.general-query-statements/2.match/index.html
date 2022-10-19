@@ -7352,7 +7352,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 <p class="admonition-title">Note</p>
 <p>匹配边的属性的前提是 Edge type 本身有对应属性的索引，否则，用户无法执行 <code>MATCH</code> 语句匹配该属性。</p>
 </div>
-<p>用户可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中 Edge type 的属性，例如<code>[e:follow{likeness:95}]</code>。</p>
+<p>可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中 Edge type 的属性，例如<code>[e:follow{degree:95}]</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e:follow{degree:95}]-&gt;(v2) \
         RETURN e;
 +--------------------------------------------------------+
@@ -7361,6 +7361,19 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 | [:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}]     |
 | [:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}]     |
 +--------------------------------------------------------+
+</code></pre></div>
+<p>也可以用<code>&lt;ref&gt;.&lt;prop_value&gt;</code>表示模式中 Edge type 的属性，例如<code>e.degree</code>。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e:follow]-(v2)
+        WHERE id(v) == &#39;player100&#39; AND e.degree &gt; 90
+        RETURN v2.player.name, e.degree;
++-------------------+----------+
+| v2.player.name    | e.degree |
++-------------------+----------+
+| &quot;Tony Parker&quot;     | 95       |
+| &quot;Manu Ginobili&quot;   | 95       |
+| &quot;Dejounte Murray&quot; | 99       |
+| &quot;Tony Parker&quot;     | 95       |
++-------------------+----------+
 </code></pre></div>
 <h3 id="edge_type_1">匹配多个 Edge type<a class="headerlink" href="#edge_type_1" title="Permanent link">&para;</a></h3>
 <p>使用<code>|</code>可以匹配多个 Edge type，例如<code>[e:follow|:serve]</code>。第一个 Edge type 前的英文冒号（:）不可省略，后续 Edge type 前的英文冒号可以省略，例如<code>[e:follow|serve]</code>。</p>
@@ -7549,7 +7562,7 @@ nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*1..]-&gt;(v
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2022</span>
       
     
   </small>
