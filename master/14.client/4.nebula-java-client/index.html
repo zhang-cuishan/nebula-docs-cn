@@ -3534,7 +3534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../6.monitor-and-metrics/3.bbox/3.1.bbox.md" class="md-nav__link">
+      <a href="../../6.monitor-and-metrics/3.bbox/3.1.bbox/" class="md-nav__link">
         黑匣子介绍
       </a>
     </li>
@@ -7519,7 +7519,19 @@
 </code></pre></div>
 <p>如果没有 Maven 管理项目，请手动<a href="https://repo1.maven.org/maven2/com/vesoft/">下载 JAR 包</a>进行安装。</p>
 <h3 id="_4">核心代码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>NebulaGraph Java 客户端提供 Connection Pool 和 Session Pool 两种使用方式，使用 Connection Pool 需要用户自行管理 Session 实例。</p>
+<ul>
+<li>
+<p>Session Pool</p>
+<p>详细示例请参见 <a href="https://github.com/vesoft-inc/nebula-java/blob/v3.0.0/examples/src/main/java/com/vesoft/nebula/examples/GraphSessionPoolExample.java">GraphSessionPoolExample</a>。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Connection Pool</p>
 <p>详细示例请参见 <a href="https://github.com/vesoft-inc/nebula-java/blob/v3.0.0/examples/src/main/java/com/vesoft/nebula/examples/GraphClientExample.java">GraphClientExample</a>。</p>
+</li>
+</ul>
 <h2 id="java">Java 相关库<a class="headerlink" href="#java" title="Permanent link">&para;</a></h2>
 <p>以下由非常酷的社区用户提供和维护，欢迎大家参与测试和贡献。</p>
 <ul>
@@ -7533,7 +7545,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
       
     
   </small>
