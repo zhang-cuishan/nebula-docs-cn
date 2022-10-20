@@ -926,6 +926,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/6.monitor-and-metrics/3.bbox/3.2.bbox-reviewer/</loc>
+         <lastmod>2022-10-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/7.data-security/4.ssl/</loc>
          <lastmod>2022-10-20</lastmod>
          <changefreq>daily</changefreq>
