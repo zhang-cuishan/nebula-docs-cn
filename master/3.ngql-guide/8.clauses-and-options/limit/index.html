@@ -6157,6 +6157,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-explorer/faq/" class="md-nav__link">
+        常见问题 FAQ
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7018,20 +7032,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../graph-computing/0.deploy-controller-analytics/" class="md-nav__link">
-        Dag Controller
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -7620,17 +7620,6 @@ nebula&gt; GO 3 STEPS FROM &quot;player102&quot; OVER * BIDIRECT\
 | &quot;Giannis Antetokounmpo&quot; | 24  |
 | &quot;Kyle Anderson&quot;         | 25  |
 +-------------------------+-----+
-
-nebula&gt; MATCH (v:player) RETURN v.player.name AS Name, v.player.age AS Age \
-        ORDER BY Age LIMIT rand32(5);
-+-------------------------+-----+
-| Name                    | Age |
-+-------------------------+-----+
-| &quot;Luka Doncic&quot;           | 20  |
-| &quot;Ben Simmons&quot;           | 22  |
-| &quot;Kristaps Porzingis&quot;    | 23  |
-| &quot;Giannis Antetokounmpo&quot; | 24  |
-+-------------------------+-----+
 </code></pre></div>
 <h3 id="skip">单独使用 SKIP<a class="headerlink" href="#skip" title="Permanent link">&para;</a></h3>
 <p><code>SKIP</code>可以单独使用，用于设置偏移量，返回指定位置之后的数据。</p>
@@ -7675,7 +7664,7 @@ NebulaGraph master 未实现 `LIMIT` 语句的存储层下推优化，类似 `MA
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2022</span>
       
     
   </small>
