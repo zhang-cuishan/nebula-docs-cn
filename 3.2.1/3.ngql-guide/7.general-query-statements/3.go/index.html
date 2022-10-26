@@ -6956,13 +6956,23 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
 | &quot;player101&quot; |
 +-------------+
 </code></pre></div>
+<div class="highlight"><pre><span></span><code># 用 * 表示所有边类型。
+nebula&gt; GO FROM &quot;player100&quot; OVER * YIELD dst(edge);
++-------------+
+| dst(EDGE)   |
++-------------+
+| &quot;player125&quot; |
+| &quot;player101&quot; |
+| &quot;team204&quot;   |
++-------------+
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 26, 2022</span>
       
     
   </small>
