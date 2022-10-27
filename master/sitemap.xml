@@ -1391,6 +1391,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/dbuser_management/</loc>
+         <lastmod>2022-10-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/draft/</loc>
          <lastmod>2022-10-27</lastmod>
          <changefreq>daily</changefreq>
