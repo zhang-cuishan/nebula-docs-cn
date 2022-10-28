@@ -7501,6 +7501,10 @@
 <h2 id="_3">操作说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">添加节点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>具体设置参见<a href="../node/">节点管理</a>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>节点添加后，数据不会自动负载均衡。请在<a href="../../cluster-information/overview-info/">信息总览</a>页面选择图空间执行<code>Balance Data</code>和<code>Balance Leader</code>操作。</p>
+</div>
 <h3 id="_5">批量导入节点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>下载 CSV 模板并填写，然后上传 CSV 文件并选择安装包。单击<strong>确认</strong>即可批量导入节点。</p>
 <h3 id="_6">修改服务<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -7523,7 +7527,10 @@
 <li>目前仅支持对 graphd 和 storaged 进行扩缩容，不支持移除或添加 metad 服务。扩缩容集群时，建议提前备份数据，以便故障发生时回滚数据。关于扩缩容，详情参见<a href="../../../../20.appendix/0.FAQ/#_11">如何扩缩容</a>。</li>
 </ul>
 <ul>
-<li>集群中每种类型的服务至少要有一个，且单个节点上仅能部署一个同类型服务。    </li>
+<li>集群中每种类型的服务至少要有一个，且单个节点上仅能部署一个同类型服务。</li>
+</ul>
+<ul>
+<li>移除 Storage 服务时需要迁移节点上存储的数据。请在<a href="../../cluster-information/overview-info/">信息总览</a>页面执行<code>Balance Data Remove</code>操作。</li>
 </ul>
 </div>
 <p>在该示例中，新增了节点为<code>192.168.8.143</code>和<code>192.168.8.167</code>的 Storage 服务，删除了节点为<code>192.168.8.169</code>的 Graph 服务。虚线框并置灰服务名表示移除的服务，实线框表示添加的服务。</p>
@@ -7536,7 +7543,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 8, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2022</span>
       
     
   </small>
