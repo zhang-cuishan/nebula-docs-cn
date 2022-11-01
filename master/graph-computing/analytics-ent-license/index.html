@@ -12,14 +12,14 @@
         <meta name="author" content="NebulaGraph">
       
       
-        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/graph-computing/nebula-analytics/">
+        <link rel="canonical" href="https://docs.nebula-graph.com.cn/master/graph-computing/analytics-ent-license/">
       
       <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.5.4">
     
     
       
-        <title>NebulaGraph Analytics - NebulaGraph Database 手册</title>
+        <title>NebulaGraph Analytics License - NebulaGraph Database 手册</title>
       
     
     
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebulagraph_analytics" class="md-skip">
+        <a href="#nebulagraph_analytics_license" class="md-skip">
           跳转至
         </a>
       
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NebulaGraph Analytics
+              NebulaGraph Analytics License
             
           </span>
         </div>
@@ -7159,49 +7159,35 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    前提条件
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    适用场景
+    获取方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nebulagraph_analytics_license_1" class="md-nav__link">
+    NebulaGraph Analytics License 说明
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    使用限制
+    使用方式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    版本兼容性
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    支持算法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nebulagraph_analytics_1" class="md-nav__link">
-    安装 NebulaGraph Analytics
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    使用方法
+    续期操作
   </a>
   
 </li>
@@ -7220,359 +7206,135 @@
                 
                   
 
-  <a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/graph-computing/nebula-analytics.md" title="编辑此页" class="md-content__button md-icon">
+  <a href="https://github.com/vesoft-inc/nebula-docs-cn/edit/master/docs-2.0/graph-computing/analytics-ent-license.md" title="编辑此页" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="nebulagraph_analytics">NebulaGraph Analytics<a class="headerlink" href="#nebulagraph_analytics" title="Permanent link">&para;</a></h1>
-<p>NebulaGraph Analytics 是一款高性能图计算框架工具，支持对 NebulaGraph 数据库中的数据执行图分析。</p>
-<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="nebulagraph_analytics_license">NebulaGraph Analytics License<a class="headerlink" href="#nebulagraph_analytics_license" title="Permanent link">&para;</a></h1>
+<p>License 是为用户提供的软件授权证书。用户在部署 NebulaGraph Analytics 时，需要设置 License 才能正常启动 NebulaGraph Analytics。本文介绍 NebulaGraph Analytics 的 License 相关信息。</p>
+<h2 id="_1">注意事项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://www.nebula-graph.com.cn/contact">联系我们</a>获取 Nebula Analytics 安装包。</li>
-<li><a href="../analytics-ent-license/">准备 Nebula Analytics License</a>。</li>
+<li>没有设置 License 时，NebulaGraph Analytics 无法启动。</li>
 </ul>
-<h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>支持将数据源为 NebulaGraph 集群、HDFS 上的 CSV 文件或本地 CSV 文件中的数据导入 NebulaGraph Analytics，并将图计算结果输出至 NebulaGraph 集群、HDFS 上的 CSV 文件或本地 CSV 文件。</p>
-<h2 id="_3">使用限制<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>输入和输出均为 NebulaGraph 集群时，图计算结果只能输出到数据源所在的图空间。</p>
-<h2 id="_4">版本兼容性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>NebulaGraph Analytics 版本和 NebulaGraph 内核的版本对应关系如下。</p>
+<ul>
+<li>请勿修改 License，否则会导致 License 失效。</li>
+</ul>
+<ul>
+<li>License 快过期时，请<a href="https://www.nebula-graph.com.cn/contact">联系我们</a>申请续期。</li>
+</ul>
+<ul>
+<li>
+<p>License 的过期缓冲为 14 天：</p>
+<ul>
+<li>过期前 30 天和过期当天，服务启动时会打印日志进行提醒。</li>
+</ul>
+<ul>
+<li>过期后仍可继续使用 14 天。</li>
+</ul>
+<ul>
+<li>过期 14 天后，服务无法启动，并会打印日志进行提醒。</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">获取方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.nebula-graph.com.cn/contact">联系我们</a>申请 NebulaGraph Analytics License。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>填写 <a href="https://wj.qq.com/s2/10158890/69a8">NebulaGraph Analytics 试用申请</a>可获取 30 天免费试用的 License。</p>
+</div>
+<h2 id="nebulagraph_analytics_license_1">NebulaGraph Analytics License 说明<a class="headerlink" href="#nebulagraph_analytics_license_1" title="Permanent link">&para;</a></h2>
+<p>NebulaGraph Analytics License 是一个名为<code>nebula.license</code>的文件，内容示例如下：</p>
+<div class="highlight"><pre><span></span><code>----------License Content Start----------
+<span class="o">{</span>
+  <span class="s2">&quot;vendor&quot;</span>: <span class="s2">&quot;vesoft&quot;</span>,
+  <span class="s2">&quot;organization&quot;</span>: <span class="s2">&quot;vesoft&quot;</span>,
+  <span class="s2">&quot;issuedDate&quot;</span>: <span class="s2">&quot;2022-11-01T16:00:00.000Z&quot;</span>,
+  <span class="s2">&quot;expirationDate&quot;</span>: <span class="s2">&quot;2023-11-01T15:59:59.000Z&quot;</span>,
+  <span class="s2">&quot;product&quot;</span>: <span class="s2">&quot;nebula_graph_analytics&quot;</span>,
+  <span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;&gt;3.0.0&quot;</span>,
+  <span class="s2">&quot;licenseType&quot;</span>: <span class="s2">&quot;enterprise&quot;</span>,
+  <span class="s2">&quot;gracePeriod&quot;</span>: <span class="m">14</span>,
+  <span class="s2">&quot;analytics&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;nodes&quot;</span>: <span class="m">3</span>,
+    <span class="s2">&quot;vcpu&quot;</span>: <span class="m">3</span>
+  <span class="o">}</span>
+  <span class="s2">&quot;clusterCode&quot;</span>: <span class="s2">&quot;BAIAEAiAQAAG&quot;</span>
+<span class="o">}</span>
+----------License Content End----------
+
+----------License Key Start----------
+Rrjip5c+xxxxxxxxxxxxxk5Yg<span class="o">==</span>
+----------License Key End----------
+</code></pre></div>
+<p>License 文件包含生效时间、过期时间等信息。说明如下。</p>
 <table>
 <thead>
 <tr>
-<th align="left">NebulaGraph 版本</th>
-<th align="left">NebulaGraph Analytics 版本</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">3.3.0</td>
-<td align="left">3.3.0</td>
-</tr>
-<tr>
-<td align="left">3.1.0 ~ 3.2.x</td>
-<td align="left">3.2.0</td>
-</tr>
-<tr>
-<td align="left">3.0.x</td>
-<td align="left">1.0.x</td>
-</tr>
-<tr>
-<td align="left">2.6.x</td>
-<td align="left">0.9.0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_5">支持算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>NebulaGraph Analytics 支持的图计算算法如下。</p>
-<table>
-<thead>
-<tr>
-<th align="left">算法名</th>
+<th align="left">参数</th>
 <th align="left">说明</th>
-<th align="left">分类</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">APSP</td>
-<td align="left">全图最短路径</td>
-<td align="left">路径</td>
+<td align="left"><code>vendor</code></td>
+<td align="left">发放渠道。</td>
 </tr>
 <tr>
-<td align="left">SSSP</td>
-<td align="left">单源最短路径</td>
-<td align="left">路径</td>
+<td align="left"><code>organization</code></td>
+<td align="left">用户名称。</td>
 </tr>
 <tr>
-<td align="left">BFS</td>
-<td align="left">广度优先遍历</td>
-<td align="left">路径</td>
+<td align="left"><code>issuedDate</code></td>
+<td align="left">License 生效时间。</td>
 </tr>
 <tr>
-<td align="left">ShortestPath</td>
-<td align="left">最短路径</td>
-<td align="left">路径</td>
+<td align="left"><code>expirationDate</code></td>
+<td align="left">License 过期时间。</td>
 </tr>
 <tr>
-<td align="left">PageRank</td>
-<td align="left">页面排序</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>product</code></td>
+<td align="left">产品类型。NebulaGraph Analytics 的产品类型为<code>nebula_graph_analytics</code>。</td>
 </tr>
 <tr>
-<td align="left">KCore</td>
-<td align="left">K核</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>version</code></td>
+<td align="left">版本支持的信息。</td>
 </tr>
 <tr>
-<td align="left">DegreeCentrality</td>
-<td align="left">度中心性</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>licenseType</code></td>
+<td align="left">License 类型（预留参数）。包括<code>enterprise</code>、<code>samll_bussiness</code>、<code>pro</code>、<code>individual</code>。</td>
 </tr>
 <tr>
-<td align="left">DegreeWithTime</td>
-<td align="left">基于边的时间范围统计邻居</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>gracePeriod</code></td>
+<td align="left">证书过期后可继续使用服务的缓冲时间（单位天），超过缓冲期后停止服务。试用版的 License 过期后无缓冲期，默认值为 0。</td>
 </tr>
 <tr>
-<td align="left">BetweennessCentrality</td>
-<td align="left">中介中心性</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>nodes</code></td>
+<td align="left">集群中 Analytics 服务的数量限制。</td>
 </tr>
 <tr>
-<td align="left">ClosenessCentrality</td>
-<td align="left">紧密中心性</td>
-<td align="left">节点重要度</td>
+<td align="left"><code>vcpu</code></td>
+<td align="left">集群中 Analytics 服务的总线程数量限制。</td>
 </tr>
 <tr>
-<td align="left">TriangleCount</td>
-<td align="left">三角计数</td>
-<td align="left">图特征</td>
-</tr>
-<tr>
-<td align="left">Node2Vec</td>
-<td align="left">图神经网络</td>
-<td align="left">图特征</td>
-</tr>
-<tr>
-<td align="left">Tree_stat</td>
-<td align="left">树结构统计</td>
-<td align="left">图特征</td>
-</tr>
-<tr>
-<td align="left">HyperANF</td>
-<td align="left">图平均距离估算</td>
-<td align="left">图特征</td>
-</tr>
-<tr>
-<td align="left">LPA</td>
-<td align="left">标签传播</td>
-<td align="left">社区发现</td>
-</tr>
-<tr>
-<td align="left">HANP</td>
-<td align="left">标签传播进阶版</td>
-<td align="left">社区发现</td>
-</tr>
-<tr>
-<td align="left">WCC</td>
-<td align="left">弱联通分量</td>
-<td align="left">社区发现</td>
-</tr>
-<tr>
-<td align="left">LOUVAIN</td>
-<td align="left">鲁汶</td>
-<td align="left">社区发现</td>
-</tr>
-<tr>
-<td align="left">InfoMap</td>
-<td align="left">社区分类</td>
-<td align="left">社区发现</td>
-</tr>
-<tr>
-<td align="left">Clustering Coefficient</td>
-<td align="left">聚集系数</td>
-<td align="left">聚类</td>
-</tr>
-<tr>
-<td align="left">Jaccard</td>
-<td align="left">杰卡德相似度</td>
-<td align="left">相似度</td>
+<td align="left"><code>clusterCode</code></td>
+<td align="left">用户的硬件信息，也是集群的唯一标识码。试用版的 License 中无此参数。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="nebulagraph_analytics_1">安装 NebulaGraph Analytics<a class="headerlink" href="#nebulagraph_analytics_1" title="Permanent link">&para;</a></h2>
+<h2 id="_3">使用方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>关于如何使用 NebulaGraph Analytics License，参见<a href="../nebula-analytics/">NebulaGraph Analytics</a>。</p>
+<h2 id="_4">续期操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>按照以下操作续期 NebulaGraph Analytics License。</p>
 <ol>
-<li>
-<p>在多个机器安装由多个 NebulaGraph Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-analytics-3.3.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-analytics
-</code></pre></div>
-</li>
-<li>
-<p>拷贝 License 至所有机器的 NebulaGraph Analytics 安装路径的<code>scripts</code>目录内。</p>
-</li>
+<li><a href="https://www.nebula-graph.com.cn/contact">联系我们</a>申请新的 NebulaGraph Analytics License 文件<code>nebula.license</code>。</li>
+<li>在 NebulaGraph Analytics 的安装目录下（例如，<code>/usr/local/nebula-analytics/scripts/</code>），使用新的 License 文件替换旧的 License 文件。</li>
 </ol>
-<!--
-### 编译安装
-
-编译安装 NebulaGraph Analytics 的准备工作和编译 NebulaGraph 类似，详情参见[准备资源](4.deployment-and-installation/1.resource-preparations.md)。
-
-1. 克隆仓库`analytics`。
-
-  <div class="highlight"><pre><span></span><code>$ git clone -b release-3.3 https://github.com/vesoft-inc/nebula-analytics.git
-</code></pre></div>
-
-2. 进入目录`nebula-analytics`。
-
-  <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-analytics
-</code></pre></div>
-
-3. 执行脚本安装编译依赖。
-
-  <div class="highlight"><pre><span></span><code>$ sudo ./docker/install-dependencies.sh
-</code></pre></div>
-
-4. 下载并编译静态链接库。
-
-  <div class="highlight"><pre><span></span><code>$ ./3rdtools.sh distclean <span class="o">&amp;&amp;</span> ./3rdtools.sh install
-</code></pre></div>
-
-5. 编译 NebulaGraph Analytics
-
-  <div class="highlight"><pre><span></span><code>$ ./build.sh
-</code></pre></div>
--->
-
-<h2 id="_6">使用方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>安装完成后，用户可以设置不同算法的参数，然后执行脚本，即可获得算法的结果，并导出为指定格式。</p>
-<ol>
-<li>
-<p>选择 NebulaGraph Analytics 集群的任一节点，进入目录<code>scripts</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
-</code></pre></div>
-</li>
-<li>
-<p>确认数据源和输出路径。配置方法如下：</p>
-<ul>
-<li>
-<p>数据源为 NebulaGraph 集群</p>
-<ol>
-<li>
-<p>修改配置文件<code>nebula.conf</code>，设置 NebulaGraph 集群相关信息。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 连接 NebulaGraph 时的重试次数。</span>
---retry<span class="o">=</span><span class="m">3</span>  
-<span class="c1"># 要读取或写入的图空间名称。</span>
---space<span class="o">=</span>baskeyballplayer  
-
-<span class="c1"># 读取 NebulaGraph 设置</span>
-<span class="c1"># NebulaGraph 的 metad leader服务地址，例如为192.168.8.101。</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.8.101:9559
-<span class="c1"># 要读取的边的名称。</span>
---edges<span class="o">=</span>LIKES  
-<span class="c1"># 要读取的作为边的权重属性的名称。可以是属性名，也可以是 _rank。</span>
-<span class="c1">#--edge_data_fields </span>
-<span class="c1"># 每次扫描读取的行数。</span>
---read_batch_size<span class="o">=</span><span class="m">10000</span>  
-
-<span class="c1"># 写回 NebulaGraph 设置</span>
-<span class="c1"># NebulaGraph 的 graphd 服务地址。</span>
---graph_server_addrs<span class="o">=</span><span class="m">192</span>.168.8.100:9669  
-<span class="c1"># NebulaGraph 的登录用户名。</span>
---user<span class="o">=</span>root  
-<span class="c1"># NebulaGraph 的登录密码。</span>
---password<span class="o">=</span>nebula 
-<span class="c1"># 写回 NebulaGraph 时采用的模式: insert 和 update。</span>
---mode<span class="o">=</span>insert  
-<span class="c1"># 写回到 NebulaGraph 的 Tag 名称。</span>
---tag<span class="o">=</span>pagerank  
-<span class="c1"># 写回到 NebulaGraph 的 Tag 对应的属性名称。</span>
---prop<span class="o">=</span>pr  
-<span class="c1"># 写回到 NebulaGraph 的 Tag 对应的属性的类型。</span>
---type<span class="o">=</span>double 
-<span class="c1"># 写回时，每次写入的行数。</span>
---write_batch_size<span class="o">=</span><span class="m">1000</span> 
-<span class="c1"># 写回失败的数据所存储的文件。</span>
---err_file<span class="o">=</span>/home/xxx/analytics/err.txt 
-</code></pre></div>
-</li>
-<li>
-<p>修改需要使用的算法脚本，例如<code>run_pagerank.sh</code>，设置相关参数。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 集群所有机器所运行的进程数之和，推荐每台机器为 1 或者 NUMA 架构的 node 数。</span>
-<span class="nv">WNUM</span><span class="o">=</span><span class="m">3</span> 
-<span class="c1"># 每个进程的线程数，推荐最大设置为机器的硬件线程数。</span>
-<span class="nv">WCORES</span><span class="o">=</span><span class="m">4</span>  
-<span class="c1"># 数据源路径</span>
-<span class="c1"># 可以通过文件 nebula.conf 设置从 NebulaGraph 读取：</span>
-<span class="nv">INPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT</span><span class="p">:=</span><span class="s2">&quot;nebula:</span><span class="nv">$PROJECT</span><span class="s2">/scripts/nebula.conf&quot;</span><span class="si">}</span>  
-<span class="c1"># 也可以通过本地或 HDFS 上的 CSV 文件读取：</span>
-<span class="c1"># #INPUT=${INPUT:=&quot;$PROJECT/data/graph/v100_e2150_ua_c3.csv&quot;}</span>
-
-<span class="c1"># 图计算结果输出路径</span>
-<span class="c1"># 可以输出至 NebulaGraph 集群，如果数据源也为 NebulaGraph，结果会输出至 nebula.conf 指定的图空间。</span>
-<span class="nv">OUTPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT</span><span class="p">:=</span><span class="s2">&quot;nebula:</span><span class="nv">$PROJECT</span><span class="s2">/scripts/nebula.conf&quot;</span><span class="si">}</span>
-<span class="c1"># 也可以输出至本地或 HDFS 上的 CSV 文件：</span>
-<span class="c1"># OUTPUT=${OUTPUT:=&#39;hdfs://192.168.8.100:9000/_test/output&#39;}</span>
-
-<span class="c1"># true 为有向图，false 为无向图。</span>
-<span class="nv">IS_DIRECTED</span><span class="o">=</span><span class="si">${</span><span class="nv">IS_DIRECTED</span><span class="p">:=true</span><span class="si">}</span>
-<span class="c1"># 是否进行 ID 编码</span>
-<span class="nv">NEED_ENCODE</span><span class="o">=</span><span class="si">${</span><span class="nv">NEED_ENCODE</span><span class="p">:=true</span><span class="si">}</span>
-<span class="c1"># 数据源的点 ID 类型，例如：string、int32、int64。</span>
-<span class="nv">VTYPE</span><span class="o">=</span><span class="si">${</span><span class="nv">VTYPE</span><span class="p">:=int32</span><span class="si">}</span>
-<span class="c1"># 编码类型。distributed 为分布式点ID编码，single 为单机点 ID 编码。</span>
-<span class="nv">ENCODER</span><span class="o">=</span><span class="si">${</span><span class="nv">ENCODER</span><span class="p">:=</span><span class="s2">&quot;distributed&quot;</span><span class="si">}</span>
-<span class="c1"># PageRank 算法的参数。不同算法的参数不同。</span>
-<span class="nv">EPS</span><span class="o">=</span><span class="si">${</span><span class="nv">EPS</span><span class="p">:=0.0001</span><span class="si">}</span>
-<span class="nv">DAMPING</span><span class="o">=</span><span class="si">${</span><span class="nv">DAMPING</span><span class="p">:=0.85</span><span class="si">}</span>
-<span class="c1"># 迭代次数</span>
-<span class="nv">ITERATIONS</span><span class="o">=</span><span class="si">${</span><span class="nv">ITERATIONS</span><span class="p">:=100</span><span class="si">}</span>
-</code></pre></div>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>
-<p>数据源为本地或 HDFS 上的 CSV 文件</p>
-<p>修改需要使用的算法脚本，例如<code>run_pagerank.sh</code>，设置相关参数。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 集群所有机器所运行的进程数之和，推荐每台机器为 1 或者 NUMA 架构的 node 数。</span>
-<span class="nv">WNUM</span><span class="o">=</span><span class="m">3</span> 
-<span class="c1"># 每个进程的线程数，推荐最大设置为机器的硬件线程数。</span>
-<span class="nv">WCORES</span><span class="o">=</span><span class="m">4</span>  
-<span class="c1"># 数据源路径</span>
-<span class="c1"># 可以通过文件 nebula.conf 设置从 NebulaGraph 读取：</span>
-<span class="c1"># INPUT=${INPUT:=&quot;nebula:$PROJECT/scripts/nebula.conf&quot;}  </span>
-<span class="c1"># 也可以通过本地或 HDFS 上的 CSV 文件读取：</span>
-<span class="nv">INPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">INPUT</span><span class="p">:=</span><span class="s2">&quot;</span><span class="nv">$PROJECT</span><span class="s2">/data/graph/v100_e2150_ua_c3.csv&quot;</span><span class="si">}</span>
-
-<span class="c1"># 图计算结果输出路径</span>
-<span class="c1"># 可以输出至 NebulaGraph 集群，如果数据源也为 NebulaGraph，结果会输出至 nebula.conf 指定的图空间。</span>
-<span class="c1"># OUTPUT=${OUTPUT:=&quot;nebula:$PROJECT/scripts/nebula.conf&quot;}</span>
-<span class="c1"># 也可以输出至本地或 HDFS 上的 CSV 文件：</span>
-<span class="nv">OUTPUT</span><span class="o">=</span><span class="si">${</span><span class="nv">OUTPUT</span><span class="p">:=</span><span class="s1">&#39;hdfs://192.168.8.100:9000/_test/output&#39;</span><span class="si">}</span>
-
-<span class="c1"># true 为有向图，false 为无向图。</span>
-<span class="nv">IS_DIRECTED</span><span class="o">=</span><span class="si">${</span><span class="nv">IS_DIRECTED</span><span class="p">:=true</span><span class="si">}</span>
-<span class="c1"># 是否进行 ID 编码</span>
-<span class="nv">NEED_ENCODE</span><span class="o">=</span><span class="si">${</span><span class="nv">NEED_ENCODE</span><span class="p">:=true</span><span class="si">}</span>
-<span class="c1"># 数据源的点 ID 类型，例如：string、int32、int64。</span>
-<span class="nv">VTYPE</span><span class="o">=</span><span class="si">${</span><span class="nv">VTYPE</span><span class="p">:=int32</span><span class="si">}</span>
-<span class="c1"># 编码类型。distributed 为分布式点ID编码，single 为单机点 ID 编码。</span>
-<span class="nv">ENCODER</span><span class="o">=</span><span class="si">${</span><span class="nv">ENCODER</span><span class="p">:=</span><span class="s2">&quot;distributed&quot;</span><span class="si">}</span>
-<span class="c1"># PageRank 算法的参数。不同算法的参数不同。</span>
-<span class="nv">EPS</span><span class="o">=</span><span class="si">${</span><span class="nv">EPS</span><span class="p">:=0.0001</span><span class="si">}</span>
-<span class="nv">DAMPING</span><span class="o">=</span><span class="si">${</span><span class="nv">DAMPING</span><span class="p">:=0.85</span><span class="si">}</span>
-<span class="c1"># 迭代次数</span>
-<span class="nv">ITERATIONS</span><span class="o">=</span><span class="si">${</span><span class="nv">ITERATIONS</span><span class="p">:=100</span><span class="si">}</span>
-</code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>修改配置文件<code>cluster</code>，设置执行算法的 NebulaGraph Analytics 集群节点和任务分配权重。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># NebulaGraph Analytics 集群节点 IP 地址:任务分配权重</span>
-<span class="m">192</span>.168.8.200:1
-<span class="m">192</span>.168.8.201:1
-<span class="m">192</span>.168.8.202:1
-</code></pre></div>
-</li>
-<li>
-<p>执行算法脚本。例如：</p>
-<div class="highlight"><pre><span></span><code>./run_pagerank.sh
-</code></pre></div>
-</li>
-<li>
-<p>在输出路径查看计算结果。</p>
-<ul>
-<li>输出至 NebulaGraph 集群，请根据<code>nebula.conf</code>的设置查看计算结果。</li>
-</ul>
-<ul>
-<li>输出至 HDFS 上的 CSV 文件或本地 CSV 文件，请根据图计算脚本内的<code>OUTPUT</code>设置查看计算结果，计算结果为<code>.gz</code>格式的压缩文件。</li>
-</ul>
-</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NebulaGraph Analytics License 过期后，用户无法正常使用 Analytics。为了保证业务正常运行，请及时更新 License。</p>
+</div>
 
   <hr>
 <div class="md-source-file">
