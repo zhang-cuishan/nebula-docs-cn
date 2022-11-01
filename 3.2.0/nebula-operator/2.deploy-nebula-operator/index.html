@@ -6073,30 +6073,10 @@
     前提条件
   </a>
   
-    <nav class="md-nav" aria-label="前提条件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    安装软件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    软件说明
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     操作步骤
   </a>
   
@@ -6144,7 +6124,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     后续操作
   </a>
   
@@ -6808,30 +6788,10 @@
     前提条件
   </a>
   
-    <nav class="md-nav" aria-label="前提条件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    安装软件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    软件说明
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     操作步骤
   </a>
   
@@ -6879,7 +6839,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     后续操作
   </a>
   
@@ -6910,8 +6870,7 @@
 <h2 id="_1">背景信息<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="../1.introduction-to-nebula-operator/">NebulaGraph Operator</a> 为用户管理 NebulaGraph 集群，使用户无需在生产环境中手动安装、扩展、升级和卸载 NebulaGraph，减轻用户管理不同应用版本的负担。</p>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">安装软件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>安装 NebulaGraph Operator 前，用户需要安装以下软件并确保安装版本的正确性：</p>
+<p>安装 NebulaGraph Operator 前，用户需要安装以下软件并确保安装版本的正确性（NebulaGraph Operator 不负责处理安装这些软件过程中出现的问题）。</p>
 <table>
 <thead>
 <tr>
@@ -6932,47 +6891,16 @@
 <td><a href="https://github.com/coredns/coredns">CoreDNS</a></td>
 <td>>= 1.6.0</td>
 </tr>
-<tr>
-<td><a href="https://cert-manager.io">CertManager</a></td>
-<td>>= 1.2.0</td>
-</tr>
-<tr>
-<td><a href="https://openkruise.io">OpenKruise</a></td>
-<td>>= 0.8.0</td>
-</tr>
 </tbody>
 </table>
-<p>如果使用基于角色的访问控制的策略，用户需开启 <a href="https://kubernetes.io/docs/admin/authorization/rbac">RBAC</a>（可选）。</p>
-<h3 id="_4">软件说明<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>以下内容为 NebulaGraph Operator 使用的第三方项目，NebulaGraph Operator 不负责处理安装这些软件过程中出现的问题。</p>
+<ul>
+<li>如果使用基于角色的访问控制的策略，用户需开启 <a href="https://kubernetes.io/docs/admin/authorization/rbac">RBAC</a>（可选）。</li>
+<li><a href="https://coredns.io/">CoreDNS</a> 是一个灵活的、可扩展的 DNS 服务器，被<a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a>在集群内作为集群内 Pods 的 DNS 服务器。NebulaGraph 集群中的每个组件通过 DNS 解析类似<code>x.default.svc.cluster.local</code>这样的域名相互通信。</li>
+</ul>
 </div>
-<ul>
-<li>
-<p><a href="https://coredns.io/">CoreDNS</a></p>
-<p>CoreDNS 是一个灵活的、可扩展的 DNS 服务器，被<a href="https://github.com/coredns/deployment/tree/master/kubernetes">安装</a>在集群内作为集群内 Pods 的 DNS 服务器。</p>
-<p>NebulaGraph 集群中的每个组件通过 DNS 解析类似<code>x.default.svc.cluster.local</code>这样的域名相互通信。</p>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="https://cert-manager.io/">cert-manager</a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果用户已将 NebulaGraph Operator 配置项<code>admissionWebhook.create</code>的值设为<code>false</code>，无需安装 cert-manager。有关配置项的详情，请参考下文<strong>安装 NebulaGraph Operator </strong>中的<strong>自定义配置 Chart </strong>部分。</p>
-</div>
-<p>cert-manager 是一个自动化管理证书的工具，利用 Kubernetes API 扩展功能，使用 Webhook 服务器提供对 cert-manager 资源的动态准入控制。用户可参考 <a href="https://cert-manager.io/docs/installation/kubernetes/">cert-manager installation documentation</a> 安装 cert-manager。</p>
-<p>cert-manager 用于验证 NebulaGraph 的每个组件副本。如果用户在生产环境中运行它并关心 NebulaGraph 的高可用性，建议将<code>admissionWebhook.create</code>的值设为<code>true</code>，然后再安装 cert-manager。</p>
-</li>
-</ul>
-<ul>
-<li>
-<p><a href="https://openkruise.io/">OpenKruise</a></p>
-<p>OpenKruise 是 Kubernetes 的一整套标准扩展，能与原始的 Kubernetes 一起工作，为应用 Pod、Sidecar 容器，甚至是节点中的镜像的管理供更强大和高效的功能。NebulaGraph Operator 启动时需要用到 OpenKruise 开启针对 StatefulSet 的高级功能。用户可参考 <a href="https://openkruise.io/docs/installation">openkruise installation documentation</a> 安装 OpenKruise。</p>
-</li>
-</ul>
-<h2 id="_5">操作步骤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="nebulagraph_operator_1">安装 NebulaGraph Operator<a class="headerlink" href="#nebulagraph_operator_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -7239,7 +7167,7 @@ NebulaGraph Operator installed!
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_6">后续操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_4">后续操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用 NebulaGraph Operator 自动化部署 NebulaGraph 集群。更多信息，请参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 部署 NebulaGraph 集群</a>或者<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/">使用 Helm 部署 NebulaGraph 集群</a>。</p>
 
   <hr>
@@ -7247,7 +7175,7 @@ NebulaGraph Operator installed!
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2022</span>
       
     
   </small>
