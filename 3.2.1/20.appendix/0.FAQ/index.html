@@ -7455,7 +7455,7 @@
 <li>导入数据时，手动 <a href="../../8.service-tuning/compaction/">compaction</a>，加速读的速度。</li>
 </ul>
 <ul>
-<li>增加 Graph 服务与 Storage 服务的 RPC 连接超时时间，在<code>nebula-storaged.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为 60000 毫秒。</li>
+<li>增加 Graph 服务与 Storage 服务的 RPC 连接超时时间，在<code>nebula-graphd.conf</code>文件里面修改<code>--storage_client_timeout_ms</code>参数的值。该值的单位为毫秒（ms），默认值为 60000 毫秒。</li>
 </ul>
 <!--提示：请在配置文件开头添加--local_config=true 再重启服务。-->
 
