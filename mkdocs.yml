@@ -281,12 +281,6 @@ nav:
       - 步骤 1：创建云服务实例: 2.quick-start/2.quick-start-on-cloud/1.create-instance-on-cloud.md
       - 步骤 2：连接 NebulaGraph: 2.quick-start/2.quick-start-on-cloud/2.connect-to-nebulagraph-on-cloud.md
       - 步骤 3：管理数据: 2.quick-start/2.quick-start-on-cloud/3.how-to-query-on-cloud.md
-    - 本地部署: 
-      - 步骤 1：安装 NebulaGraph: 2.quick-start/3.quick-start-on-premise/2.install-nebula-graph.md
-      - 步骤 2：启动 NebulaGraph: 2.quick-start/3.quick-start-on-premise/5.start-stop-service.md
-      - 步骤 3：连接 NebulaGraph: 2.quick-start/3.quick-start-on-premise/3.connect-to-nebula-graph.md
-      - 步骤 4：注册 Storage 服务: 2.quick-start/3.quick-start-on-premise/3.1add-storage-hosts.md
-      - 步骤 5：使用基本 nGQL 命令: 2.quick-start/3.quick-start-on-premise/4.nebula-graph-crud.md
     - nGQL 命令汇总: 2.quick-start/6.cheatsheet-for-ngql-command.md
 
   - nGQL 指南:
@@ -439,15 +433,21 @@ nav:
       - 作业管理: 3.ngql-guide/4.job-statements.md
 
   - 安装部署:
-      - 准备资源: 4.deployment-and-installation/1.resource-preparations.md
-      - 编译与安装:
-          - 使用源码安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code.md
-          - 使用 RPM/DEB 包安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md
-          - 使用 tar.gz 文件安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar.md
-          - 使用 Docker Compose 部署: 4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md
-          - 使用 RPM/DEB 包部署多机集群: 4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster.md
-          - 使用生态工具安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals.md
-      - 安装存算合并版 NebulaGraph: 4.deployment-and-installation/standalone-deployment.md
+    - 本地部署: 
+      - 步骤 1：安装 NebulaGraph: 2.quick-start/3.quick-start-on-premise/2.install-nebula-graph.md
+      - 步骤 2：启动 NebulaGraph: 2.quick-start/3.quick-start-on-premise/5.start-stop-service.md
+      - 步骤 3：连接 NebulaGraph: 2.quick-start/3.quick-start-on-premise/3.connect-to-nebula-graph.md
+      - 步骤 4：注册 Storage 服务: 2.quick-start/3.quick-start-on-premise/3.1add-storage-hosts.md
+      - 步骤 5：使用基本 nGQL 命令: 2.quick-start/3.quick-start-on-premise/4.nebula-graph-crud.md
+    - 准备资源: 4.deployment-and-installation/1.resource-preparations.md
+    - 编译与安装:
+      - 使用源码安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code.md
+      - 使用 RPM/DEB 包安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md
+      - 使用 tar.gz 文件安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/4.install-nebula-graph-from-tar.md
+      - 使用 Docker Compose 部署: 4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md
+      - 使用 RPM/DEB 包部署多机集群: 4.deployment-and-installation/2.compile-and-install-nebula-graph/deploy-nebula-graph-cluster.md
+      - 使用生态工具安装: 4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals.md
+    - 安装存算合并版 NebulaGraph: 4.deployment-and-installation/standalone-deployment.md
 #ent
 #ent      - 设置 NebulaGraph 企业版 License: 4.deployment-and-installation/deploy-license.md      
       - 管理服务: 4.deployment-and-installation/manage-service.md
@@ -723,7 +723,8 @@ nav:
   - 附录:
       - Release Note:
         - NebulaGraph 社区版: 20.appendix/release-notes/nebula-comm-release-note.md
-        - NebulaGraph 企业版: 20.appendix/release-notes/nebula-ent-release-note.md
+#ent
+#ent        - NebulaGraph 企业版: 20.appendix/release-notes/nebula-ent-release-note.md
         - NebulaGraph Studio: 20.appendix/release-notes/studio-release-note.md
         - NebulaGraph Dashboard 社区版: 20.appendix/release-notes/dashboard-comm-release-note.md
         - NebulaGraph Dashboard 企业版: 20.appendix/release-notes/dashboard-ent-release-note.md
