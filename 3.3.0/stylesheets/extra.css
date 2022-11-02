@@ -4,8 +4,8 @@
 
 /* NebulaGraph 黑夜主题色 */
 :root{
-  --md-primary-fg-color: #6b2e38; /* 导航栏页面颜色 */
-  --md-accent-fg-color: #f04949; /* 选中/悬浮颜色 */
+  --md-primary-fg-color: #C65467; /* 导航栏页面颜色 */
+  --md-accent-fg-color: #bb7d7c; /* 选中/悬浮颜色 */
 }
 
 /* NebulaGraph 白天主题色 */
