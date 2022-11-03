@@ -5463,13 +5463,6 @@
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    前提条件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
     配置步骤
   </a>
   
@@ -5481,7 +5474,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     后续操作
   </a>
   
@@ -7472,13 +7465,6 @@
         
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
-    前提条件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
     配置步骤
   </a>
   
@@ -7490,7 +7476,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     后续操作
   </a>
   
@@ -7714,14 +7700,7 @@ sudo nohup ./nebula-explorer-server &gt; explorer.log <span class="m">2</span>&g
 <h2 id="dag_controller">配置 Dag Controller<a class="headerlink" href="#dag_controller" title="Permanent link">&para;</a></h2>
 <p>Dag Controller 是一款任务编排调度工具，可以编排调度有向无环图（DAG）类型的作业，该作业由多个任务组成，且任务之间存在先后关系，组成一个有向无环图（DAG）。</p>
 <p>Dag Controller 可以结合 NebulaGraph Analytics 进行复杂的图计算。例如 Dag Controller 将算法调用请求发送给 NebulaGraph Analytics ，NebulaGraph Analytics 保存结果至 NebulaGraph 或 HDFS，Dag Controller 再将上次的计算结果作为下一个算法任务的输入创建新的任务。</p>
-<h3 id="_12">前提条件<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
-<ul>
-<li>已部署 2.2.x 或以上版本的 <a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html">HDFS</a>。</li>
-</ul>
-<ul>
-<li>已安装 1.8 版本的 JDK。</li>
-</ul>
-<h3 id="_13">配置步骤<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<h3 id="_12">配置步骤<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>配置 Dag Controller 机器 SSH 免密登录 NebulaGraph Analytics 机器，以及 NebulaGraph Analytics 集群内所有节点间的 SSH 相互免密登录。</p>
@@ -7801,7 +7780,7 @@ ssh-add ~/.ssh/id_rsa
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_14">后续操作<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h2 id="_13">后续操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
 <p>启动成功后，在浏览器地址栏输入 <code>http://&lt;ip_address&gt;:7002</code>。</p>
 <p>在浏览器窗口中看到以下登录界面表示已经成功部署并启动了 Explorer。</p>
 <p><img alt="Nebula Explorer 登录页面" src="https://docs-cdn.nebula-graph.com.cn/figures/explorer_deploy_cn.png" /></p>
