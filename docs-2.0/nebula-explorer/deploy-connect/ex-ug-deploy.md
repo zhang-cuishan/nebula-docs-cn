@@ -227,12 +227,6 @@ Dag Controller 是一款任务编排调度工具，可以编排调度有向无�
 
 Dag Controller 可以结合 NebulaGraph Analytics 进行复杂的图计算。例如 Dag Controller 将算法调用请求发送给 NebulaGraph Analytics ，NebulaGraph Analytics 保存结果至 NebulaGraph 或 HDFS，Dag Controller 再将上次的计算结果作为下一个算法任务的输入创建新的任务。
 
-### 前提条件
-
-- 已部署 2.2.x 或以上版本的 [HDFS](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html)。
-
-- 已安装 1.8 版本的 JDK。
-
 ### 配置步骤
 
 1. 配置 Dag Controller 机器 SSH 免密登录 NebulaGraph Analytics 机器，以及 NebulaGraph Analytics 集群内所有节点间的 SSH 相互免密登录。
