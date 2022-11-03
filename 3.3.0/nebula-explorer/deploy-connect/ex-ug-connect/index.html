@@ -7374,8 +7374,9 @@
 <p><strong>Host</strong>：填写 NebulaGraph 的 Graph 服务本机 IP 地址及端口。格式为 <code>ip:port</code>。如果端口未修改，则使用默认端口 <code>9669</code>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>即使 NebulaGraph 数据库与 Explorer 部署在同一台机器上，用户也必须在 <strong>Host</strong> 字段填写这台机器的本机 IP 地址，而不是 <code>127.0.0.1</code> 或者 <code>localhost</code>。</p>
 </div>
+<p>- 即使 NebulaGraph 数据库与 Explorer 部署在同一台机器上，用户也必须在 <strong>Host</strong> 字段填写这台机器的本机 IP 地址，而不是 <code>127.0.0.1</code> 或者 <code>localhost</code>。
+  - 在新的标签页连接另一个 NebulaGraph 数据库时，会覆盖旧标签页的会话。如果需要同时登录多个 NebulaGraph 数据库，可以用不同的浏览器或者无痕模式。</p>
 </li>
 </ul>
 <ul>
