@@ -5,7 +5,13 @@ NebulaGraph Analytics 是一款高性能图计算框架工具，支持对 Nebula
 ## 前提条件
 
 - [联系我们](https://www.nebula-graph.com.cn/contact)获取 Nebula Analytics 安装包。
+
 - [准备 Nebula Analytics License](analytics-ent-license.md)。
+
+- 已部署 2.2.x 或以上版本的 [HDFS](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html)。
+
+- 已安装 1.8 版本的 JDK。
+
 
 ## 适用场景
 
