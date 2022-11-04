@@ -7480,8 +7480,19 @@
 <h2 id="nebulagraph_analytics_1">安装 NebulaGraph Analytics<a class="headerlink" href="#nebulagraph_analytics_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>在多个机器安装由多个 NebulaGraph Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-analytics-3.3.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-analytics
+<p>安装 NebulaGraph Analytics。</p>
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh &lt;analytics_package_name&gt; --prefix &lt;install_path&gt;
+$ sudo chown &lt;user&gt;:&lt;user&gt; -R &lt;install path&gt;
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh nebula-analytics-3.3.0-centos.x86_64.rpm --prefix=/home/vesoft/nebula-analytics
+$ sudo chown vesoft:vesoft -R /home/vesoft/nebula-analytics
+</code></pre></div>
+</li>
+<li>
+<p>配置<code>set_env.sh</code>文件，路径为<code>nebula-analytics/scripts/set_env.sh</code>。配置正确的 Hadoop 路径和 JDK 路径。如果有多台机器，请确保路径一致。</p>
+<div class="highlight"><pre><span></span><code>export HADOOP_HOME=&lt;hadoop_path&gt;
+export JAVA_HOME=&lt;java_path&gt;
 </code></pre></div>
 </li>
 <li>
@@ -7673,7 +7684,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 4, 2022</span>
       
     
   </small>
