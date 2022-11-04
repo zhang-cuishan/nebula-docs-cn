@@ -56,7 +56,7 @@ NebulaGraph Exchange 版本（即 JAR 包版本）和 NebulaGraph 内核的版�
 |NebulaGraph 版本|Exchange client 版本|
 |:---|:---|
 |nightly     |3.0-SNAPSHOT|
-|3.3.0       |3.3.0       |
+|3.0.0 ~ 3.3.0 |3.3.0       |
 |3.0.0 ~ 3.2.x |3.0.0       |
 |2.6.x       |2.6.x       |
 |2.5.x       |2.5.x       |
