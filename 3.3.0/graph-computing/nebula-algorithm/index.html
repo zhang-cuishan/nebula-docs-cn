@@ -7664,10 +7664,6 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </li>
 </ol>
 <h3 id="_9">直接提交算法包<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>使用封装好的算法包有一定的局限性，例如落库到 NebulaGraph 时，落库的图空间中创建的 Tag 的属性名称必须和代码内预设的名称保持一致。如果用户有开发能力，推荐使用第一种方法。</p>
-</div>
 <ol>
 <li>
 <p>设置<a href="https://github.com/vesoft-inc/nebula-algorithm/blob/v3.0.0/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
@@ -7786,7 +7782,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>当配置为 <code>sink: nebula</code> 的时候，意味着算法运算结果将被写回 NebulaGraph 集群，这对写回到的 TAG 中的属性名有隐含的约定，具体算法写回的属性名称请参考 <a href="https://github.com/vesoft-inc/nebula-algorithm">GitHub README</a></p>
+<p>当配置为 <code>sink: nebula</code> 的时候，意味着算法运算结果将被写回 NebulaGraph 集群，这对写回到的 TAG 中的属性名有隐含的约定。详情参考本文<strong>支持算法</strong>部分。</p>
 </div>
 </li>
 <li>
