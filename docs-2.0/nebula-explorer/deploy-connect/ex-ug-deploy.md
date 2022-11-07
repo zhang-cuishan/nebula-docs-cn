@@ -104,7 +104,7 @@ sudo ./dag-ctrl/scripts/stop.sh #停止 Dag Controller 服务
 sudo rpm -e nebula-explorer-<version>.x86_64
 ```
 
-## 使用 DEB 包部署
+## DEB 部署
 
 ### 安装
 
