@@ -7318,10 +7318,10 @@
 <li>NebulaGraph 1.x 只支持 VID 类型为<code>INT64</code>，从 2.x 开始支持<code>INT64</code>和<code>FIXED_STRING(&lt;N&gt;)</code>。在<code>CREATE SPACE</code>中通过参数<code>vid_type</code>可以指定 VID 类型。</li>
 </ul>
 <ul>
-<li>可以使用<code>id()</code>函数，指定或引用该点的 VID；</li>
+<li>可以使用<code>id()</code>函数，指定或引用该点的 VID。</li>
 </ul>
 <ul>
-<li>可以使用<code>LOOKUP</code>或者<code>MATCH</code>语句，来通过属性索引查找对应的 VID;</li>
+<li>可以使用<code>LOOKUP</code>或者<code>MATCH</code>语句，来通过属性索引查找对应的 VID。</li>
 </ul>
 <ul>
 <li>性能上，直接通过 VID 找到点的语句性能最高，例如<code>DELETE xxx WHERE id(xxx) == "player100"</code>，或者<code>GO FROM "player100"</code>等语句。通过属性先查找 VID，再进行图操作的性能会变差，例如<code>LOOKUP | GO FROM $-.ids</code>等语句，相比前者多了一次内存或硬盘的随机读（<code>LOOKUP</code>）以及一次序列化（<code>|</code>）。</li>
@@ -7335,7 +7335,7 @@
 <li>通过有唯一性的属性组合来生成 VID，属性访问依赖于属性索引。</li>
 </ul>
 <ul>
-<li>通过 snowflake 等算法生成 VID，属性访问依赖于属性索引；</li>
+<li>通过 snowflake 等算法生成 VID，属性访问依赖于属性索引。</li>
 </ul>
 <ul>
 <li>如果个别记录的主键特别长，但绝大多数记录的主键都很短的情况，不要将<code>FIXED_STRING(&lt;N&gt;)</code>的<code>N</code>设置成超大，这会浪费大量内存和硬盘，也会降低性能。此时可通过 BASE64，MD5，hash 编码加拼接的方式来生成。</li>
