@@ -8107,12 +8107,11 @@ nebula&gt; RETURN round(314.15926, -1);
 +--------------+
 </code></pre></div>
 <h2 id="size">size()<a class="headerlink" href="#size" title="Permanent link">&para;</a></h2>
-<p>size() 返回列表或映射中元素的数量。</p>
-<p>语法：<code>size(&lt;expression&gt;)</code></p>
+<p>size() 返回列表或映射中元素的数量，或者返回字符串的长度。</p>
+<p>语法：<code>size({&lt;expression&gt;|&lt;string&gt;})</code></p>
 <ul>
 <li><code>expression</code>：列表或映射的表达式。</li>
-</ul>
-<ul>
+<li><code>string</code>：指定的字符串。</li>
 <li>返回类型：int。</li>
 </ul>
 <p>示例：</p>
@@ -8122,6 +8121,13 @@ nebula&gt; RETURN round(314.15926, -1);
 +-----------------+
 | 4               |
 +-----------------+
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nebula&gt; RETURN size(&quot;basketballplayer&quot;) as size;
++------+
+| size |
++------+
+| 16   |
++------+
 </code></pre></div>
 <h2 id="range">range()<a class="headerlink" href="#range" title="Permanent link">&para;</a></h2>
 <p>range() 返回指定范围（<code>[start,end]</code>）中指定步长的值组成的列表。</p>

@@ -7586,12 +7586,13 @@
 +----------------------------+
 </code></pre></div>
 <h2 id="length">length()<a class="headerlink" href="#length" title="Permanent link">&para;</a></h2>
-<p>length() 返回指定字符串的长度，单位：字节。</p>
-<p>语法：<code>length(&lt;string&gt;)</code></p>
+<p>length() 返回：
+  - 指定字符串的长度，单位：字节。
+  - 路径的长度，单位：跳。</p>
+<p>语法：<code>length({&lt;string&gt;|&lt;path&gt;})</code></p>
 <ul>
 <li><code>string</code>：指定的字符串。</li>
-</ul>
-<ul>
+<li><code>path</code>：指定的路径，使用变量表示。</li>
 <li>返回类型：int。</li>
 </ul>
 <p>示例：</p>
@@ -7601,6 +7602,15 @@
 +----------------------+
 | 10                   |
 +----------------------+
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2) return length(p);
++-----------+
+| length(p) |
++-----------+
+| 1         |
+| 1         |
+| 1         |
++-----------+
 </code></pre></div>
 <h2 id="trim">trim()<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
 <p>trim() 删除指定字符串头部和尾部的空格。</p>
