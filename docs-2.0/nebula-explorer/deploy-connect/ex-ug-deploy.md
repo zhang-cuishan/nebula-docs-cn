@@ -146,7 +146,7 @@ sudo rpm -e nebula-explorer-<version>.x86_64
    cd nebula-explorer
 
    # 启动 Explorer。
-   sudo ./scripts/start.sh
+   sudo ./lib/start.sh
 
    # （可选）启动 Dag Controller。
    sudo ./dag-ctrl/scripts/start.sh
