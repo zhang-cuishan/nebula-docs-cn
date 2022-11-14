@@ -7638,10 +7638,10 @@ sudo ./dag-ctrl/scripts/stop.sh <span class="c1">#停止 Dag Controller 服务</
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-explorer
 
 <span class="c1"># 启动 Explorer。</span>
-sudo ./lib/start.sh
+sudo ./scripts/start.sh
 
 <span class="c1"># （可选）启动 Dag Controller。</span>
-sudo ./dag-ctrl/lib/start.sh
+sudo ./dag-ctrl/scripts/start.sh
 </code></pre></div>
 </li>
 </ol>
@@ -7714,7 +7714,7 @@ $ ssh-copy-id -i ~/.ssh/id_rsa.pub &lt;B_user&gt;@&lt;B_IP&gt;
 <p>按同样方法设置 A 免密登录机器 B-2、B-3 等，以及集群 B 内所有机器的互相免密登录。</p>
 </li>
 <li>
-<p>在 Dag Controller 机器上执行<code>eval $(ssh-agent)</code>启动 ssh agent，然后执行<code>ssh-add ~/.ssh/id_rsa</code>将私钥交给 ssh-agent 管理。</p>
+<p>在 Dag Controller 机器上执行<code>eval $(ssh-agent)</code>启动 ssh-agent，然后执行<code>ssh-add ~/.ssh/id_rsa</code>将私钥交给 ssh-agent 管理。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>ssh-agent是密钥管理器，用来管理多个密钥，并为其他需要使用 SSH 密钥对的程序提供代理。</p>
