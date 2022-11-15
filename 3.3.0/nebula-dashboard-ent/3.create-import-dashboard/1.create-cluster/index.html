@@ -7254,9 +7254,9 @@
 <li>
 <p>在创建集群页面，完成以下配置：</p>
 <ul>
-<li>输入<strong>集群名称</strong>，最大可输入 15 个字符，本示例设置为<code>test</code>。</li>
+<li>输入<strong>集群名称</strong>，最大可输入 15 个字符。</li>
 <li>
-<p>选择 NebulaGraph 安装版本。本示例设置为<code>企业版 v3.1.0</code>。</p>
+<p>选择 NebulaGraph 安装版本。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Dashboard 默认内置企业版的 NebulaGraph 安装包。如果用户需要安装其他版本的 NebulaGraph，可以在<strong>安装包管理</strong>页面下载或上传，详情参见<a href="../../system-settings/manage-package/">安装包管理</a>。</p>
@@ -7277,17 +7277,17 @@
 <p>添加节点信息，提供两种方式：</p>
 <ul>
 <li>
-<p><strong>添加节点</strong>，添加单个节点的相关信息，可多次添加。</p>
-<p><img alt="cluster" src="https://docs-cdn.nebula-graph.com.cn/figures/create-cluster-2022-04-08_cn.png" /></p>
-<ol>
-<li>配置每个 Host 的 IP 信息，本示例设置为<code>192.168.8.129</code>。</li>
-<li>配置 SSH 信息，本示例设置如下：SSH 端口号为<code>22</code>，SSH 用户名为 <code>vesoft</code>，SSH 密码为<code>nebula</code>。</li>
-<li>选择 NebulaGraph 安装包，本示例为<code>nebula-graph-ent-3.1.0-ent.el7.x86_64.rpm</code>。</li>
-<li>自定义集群的安装路径。本示例为默认安装路径<code>.nebula/cluster</code>。</li>
-<li>（可选）输入节点名，可以对节点进行备注。本示例设置为<code>Node_1</code>。       </li>
-</ol>
+<p><strong>添加节点</strong>，输入待添加节点的 Host 信息、SSH 端口号、SSH 用户、认证方式、安装包等。</p>
+<p>关于认证方式的说明如下：</p>
+<ul>
+<li>SSH 密码：输入 SSH 用户对应的密码。</li>
+</ul>
+<ul>
+<li>SSH 密钥：单击<strong>上传</strong>，选择节点的私钥文件。需要提前在待添加节点上生成密钥文件，并将私钥发送给当前电脑（非 Dashboard 机器）。如果设置了短密码（passphrase），也需要填写。  </li>
+</ul>
 </li>
 </ul>
+<p><img alt="cluster" src="https://docs-cdn.nebula-graph.com.cn/figures/create-cluster-221115_cn.png" /></p>
 <ul>
 <li><strong>批量导入节点</strong>，批量添加多个节点的相关信息。批量导入需要先选择安装包后单击<strong>下载 CSV 模版</strong>。按照模版填写后上传，尽量确保节点信息正确，否则容易造成上传失败。</li>
 </ul>
@@ -7316,7 +7316,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2022</span>
       
     
   </small>
