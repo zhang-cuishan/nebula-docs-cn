@@ -7453,7 +7453,7 @@ nebula&gt; CREATE TAG INDEX IF NOT EXISTS name ON player(name(20));
 //重建原生索引。
 nebula&gt; REBUILD TAG INDEX;
 
-//创建全文索引，索引名称需要以 NebulaGraph 开头。
+//创建全文索引，索引名称需要以 `nebula` 开头。
 nebula&gt; CREATE FULLTEXT TAG INDEX nebula_index_1 ON player(name);
 
 //重建全文索引。
@@ -7540,7 +7540,7 @@ nebula&gt; DROP FULLTEXT INDEX nebula_index_1;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2022</span>
       
     
   </small>
