@@ -7532,6 +7532,30 @@ nebula&gt; MATCH (n:player) \
 | 25  | [&quot;Joel Embiid&quot;, &quot;Kyle Anderson&quot;]                                         |
 +-----+--------------------------------------------------------------------------+
 ...
+
+nebula&gt; GO FROM &quot;player100&quot; OVER serve \
+        YIELD properties($$).name AS name \
+        | GROUP BY $-.name \
+        YIELD collect($-.name) AS name;
++-----------+
+| name      |
++-----------+
+| [&quot;Spurs&quot;] |
++-----------+
+
+nebula&gt; LOOKUP ON player \
+        YIELD player.age As playerage \
+        | GROUP BY $-.playerage \
+        YIELD collect($-.playerage) AS playerage;
++------------------+
+| playerage        |
++------------------+
+| [22]             |
+| [47]             |
+| [43]             |
+| [25, 25]         |
++------------------+
+...
 </code></pre></div>
 <h2 id="_2">聚合示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt;  GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS dst, properties($$).age AS age \
