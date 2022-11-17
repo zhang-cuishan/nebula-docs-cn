@@ -6033,6 +6033,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out" class="md-nav__link">
+    任务运行失败，报错no available namenodes: dial tcp xx.xx.xx.xx:8020: connect: connection timed out怎么办？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout" class="md-nav__link">
+    任务运行失败，报错org.apache.hadoop.net.ConnectTimeoutException: 60000 millis timeout怎么办？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#broadcasthpp193_check_failed_size_trecv_bytes_sizeofchunk_tail_t_recv_message_too_small_0" class="md-nav__link">
     任务运行失败，报错broadcast.hpp:193] Check failed: (size_t)recv_bytes &gt;= sizeof(chunk_tail_t) recv message too small: 0怎么办？
   </a>
@@ -7328,6 +7342,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out" class="md-nav__link">
+    任务运行失败，报错no available namenodes: dial tcp xx.xx.xx.xx:8020: connect: connection timed out怎么办？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout" class="md-nav__link">
+    任务运行失败，报错org.apache.hadoop.net.ConnectTimeoutException: 60000 millis timeout怎么办？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#broadcasthpp193_check_failed_size_trecv_bytes_sizeofchunk_tail_t_recv_message_too_small_0" class="md-nav__link">
     任务运行失败，报错broadcast.hpp:193] Check failed: (size_t)recv_bytes &gt;= sizeof(chunk_tail_t) recv message too small: 0怎么办？
   </a>
@@ -7410,6 +7438,15 @@
 <p>修改上述配置后需要重启 Dag Controller 使配置生效。</p>
 </li>
 </ol>
+<h2 id="no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out">任务运行失败，报错<code>no available namenodes: dial tcp xx.xx.xx.xx:8020: connect: connection timed out</code>怎么办？<a class="headerlink" href="#no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out" title="Permanent link">&para;</a></h2>
+<p>请检查 HDFS 的 namenode 端口是否开放。</p>
+<h2 id="orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout">任务运行失败，报错<code>org.apache.hadoop.net.ConnectTimeoutException: 60000 millis timeout</code>怎么办？<a class="headerlink" href="#orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout" title="Permanent link">&para;</a></h2>
+<p>请检查 HDFS 的 datanode 端口是否开放。</p>
+<p>如果没有开放端口，还可能报类似如下错误：</p>
+<ul>
+<li><code>Check failed: false close hdfs-file failed</code></li>
+<li><code>org.apache.hadoop.ipc.RemoteException(java.io.IOException): File /analytics/xx/tasks/analytics_xxx/xxx.csv could only be replicated to 0 nodes instead of minReplication</code></li>
+</ul>
 <h2 id="broadcasthpp193_check_failed_size_trecv_bytes_sizeofchunk_tail_t_recv_message_too_small_0">任务运行失败，报错<code>broadcast.hpp:193] Check failed: (size_t)recv_bytes &gt;= sizeof(chunk_tail_t) recv message too small: 0</code>怎么办？<a class="headerlink" href="#broadcasthpp193_check_failed_size_trecv_bytes_sizeofchunk_tail_t_recv_message_too_small_0" title="Permanent link">&para;</a></h2>
 <p>任务要处理的数据量过小，但是配置的计算节点数与进程数太多。需要在提交作业时设置较小的<code>clusterSize</code>和<code>processes</code>。</p>
 

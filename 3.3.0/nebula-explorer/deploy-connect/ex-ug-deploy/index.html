@@ -7542,6 +7542,15 @@
 </div>
 </li>
 </ul>
+<ul>
+<li>
+<p>如果需要使用图计算，需要部署 HDFS。namenode 默认使用 8020 端口，datanode 默认使用 50010 端口。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>如果 HDFS 端口不通，可能会提示连接超时。</p>
+</div>
+</li>
+</ul>
 <h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>Explorer 从 3.2.0 版本开始内置了 Dag Controller 安装包，用于提供图计算服务。用户可以自行决定是否启动 Dag Controller 服务。如果没有启动 Dag Controller 服务， Explorer 中的 <strong>Workflow</strong> 菜单将显示为灰色无法点击。</p>
 <h2 id="rpm">RPM 部署<a class="headerlink" href="#rpm" title="Permanent link">&para;</a></h2>
