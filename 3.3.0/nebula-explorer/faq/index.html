@@ -7439,9 +7439,9 @@
 </li>
 </ol>
 <h2 id="no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out">任务运行失败，报错<code>no available namenodes: dial tcp xx.xx.xx.xx:8020: connect: connection timed out</code>怎么办？<a class="headerlink" href="#no_available_namenodes_dial_tcp_xxxxxxxx8020_connect_connection_timed_out" title="Permanent link">&para;</a></h2>
-<p>请检查 HDFS 的 namenode 端口是否开放。</p>
+<p>请检查 HDFS 的 namenode 端口 8020 是否开放。</p>
 <h2 id="orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout">任务运行失败，报错<code>org.apache.hadoop.net.ConnectTimeoutException: 60000 millis timeout</code>怎么办？<a class="headerlink" href="#orgapachehadoopnetconnecttimeoutexception_60000_millis_timeout" title="Permanent link">&para;</a></h2>
-<p>请检查 HDFS 的 datanode 端口是否开放。</p>
+<p>请检查 HDFS 的 datanode 端口 50010 是否开放。</p>
 <p>如果没有开放端口，还可能报类似如下错误：</p>
 <ul>
 <li><code>Check failed: false close hdfs-file failed</code></li>
