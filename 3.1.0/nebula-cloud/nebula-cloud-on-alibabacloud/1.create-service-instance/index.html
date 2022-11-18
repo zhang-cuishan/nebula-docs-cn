@@ -4107,14 +4107,14 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前提条件
+    账号与权限
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    选择套餐
+    资源与费用
   </a>
   
 </li>
@@ -4157,6 +4157,20 @@
     <li class="md-nav__item">
       <a href="../2.use-cloud-services/" class="md-nav__link">
         使用服务实例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.scaling-services" class="md-nav__link">
+        扩缩容服务
       </a>
     </li>
   
@@ -6976,14 +6990,14 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    前提条件
+    账号与权限
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    选择套餐
+    资源与费用
   </a>
   
 </li>
@@ -7035,11 +7049,9 @@
 <p class="admonition-title">Caution</p>
 <p>通过 NebulaGraph Cloud 阿里云版创建的 NebulaGraph、Nebula Dashboard 和 Nebula Explorer 等服务都是企业版，试用期 14 天。如需长期使用，发送邮件<a href="mailto:inquiry@vesoft.com">申请正式许可证</a>，之后<a href="../../../4.deployment-and-installation/deploy-license/#nebula_graph_license_3">续期许可证</a>。</p>
 </div>
-<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">账号与权限<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>准备<a href="https://help.aliyun.com/document_detail/324606.html">阿里云账号</a>。</li>
-</ul>
-<ul>
 <li>
 <p>如果使用 RAM 用户创建实例，需为其添加以下权限：</p>
 <ul>
@@ -7051,123 +7063,15 @@
 </ul>
 </li>
 </ul>
-<h2 id="_3">选择套餐<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>NebulaGraph Cloud 阿里云版支持多个版本的套餐，套餐配置如下表所示。在创建服务实例前，根据需求确认创建时需要选择的套餐。</p>
-<table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>基础版</th>
-<th>标准版</th>
-<th>高可用版</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Graph 节点数量</td>
-<td>1（混合部署）</td>
-<td>1</td>
-<td>3</td>
-</tr>
-<tr>
-<td>Graph 节点 CPU 核数</td>
-<td>4（集群共享）</td>
-<td>16</td>
-<td>16</td>
-</tr>
-<tr>
-<td>Graph 节点内存空间</td>
-<td>16 GB（集群共享）</td>
-<td>64 GB</td>
-<td>64 GB</td>
-</tr>
-<tr>
-<td>Graph 节点硬盘空间</td>
-<td>自定义（集群共享）</td>
-<td>20 GB</td>
-<td>20 GB</td>
-</tr>
-<tr>
-<td>Storage 节点数量</td>
-<td>1（混合部署）</td>
-<td>自定义</td>
-<td>自定义</td>
-</tr>
-<tr>
-<td>Storage 节点 CPU 核数</td>
-<td>4（集群共享）</td>
-<td>16</td>
-<td>16</td>
-</tr>
-<tr>
-<td>Storage 节点内存空间</td>
-<td>16 GB（集群共享）</td>
-<td>32 GB</td>
-<td>32 GB</td>
-</tr>
-<tr>
-<td>Storage 节点硬盘空间</td>
-<td>自定义（集群共享）</td>
-<td>自定义</td>
-<td>自定义</td>
-</tr>
-<tr>
-<td>Explorer 节点数量</td>
-<td>1（混合部署）</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Explorer CPU 核数</td>
-<td>4（集群共享）</td>
-<td>4</td>
-<td>16</td>
-</tr>
-<tr>
-<td>Explorer 内存空间</td>
-<td>16 GB（集群共享）</td>
-<td>32 GB</td>
-<td>64 GB</td>
-</tr>
-<tr>
-<td>Explorer 硬盘空间</td>
-<td>自定义（集群共享）</td>
-<td>100 GB</td>
-<td>100 GB</td>
-</tr>
-<tr>
-<td>Dashboard 节点数量</td>
-<td>1（混合部署）</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Dashboard CPU 核数</td>
-<td>4（集群共享）</td>
-<td>4</td>
-<td>16</td>
-</tr>
-<tr>
-<td>Dashboard 内存空间</td>
-<td>16 GB（集群共享）</td>
-<td>32 GB</td>
-<td>64 GB</td>
-</tr>
-<tr>
-<td>Dashboard 硬盘空间</td>
-<td>自定义（集群共享）</td>
-<td>100 GB</td>
-<td>100 GB</td>
-</tr>
-</tbody>
-</table>
+<h2 id="_3">资源与费用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>NebulaGraph Cloud 阿里云版支持免费试用和付费使用。两种使用方式有不同的资源归属和费用消耗。</p>
+<p>付费版服务实例创建在用户的阿里云账号下，资源费用由用户承担。实例内 NebulaGraph 相关服务的许可证到期后，其中的数据仍然保留在用户的阿里云资源中，直到资源被用户删除。</p>
+<p>免费试用版服务实例使用的资源属于阿里云，资源费用由阿里云承担。实例内 NebulaGraph 相关服务的许可证到期后，其中的数据仍然保留在试用的阿里云资源中，直到资源过期或被用户删除。资源的试用时间为 30 天，到期后资源内保存的数据不保留。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>基础版套餐将所有 NebulaGraph 服务节点部署在同一台 ECS 服务器上。</p>
 </div>
 <h2 id="_4">创建付费版服务实例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>付费版服务实例创建在用户的阿里云账号下，资源费用由用户承担。实例内 NebulaGraph 相关服务的许可证到期后，其中的数据仍然保留在用户的阿里云资源中。</p>
-<p>付费版服务实例的创建步骤如下。</p>
 <ol>
 <li>
 <p>登录阿里云计算巢<a href="https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService">推荐服务</a>页面，搜索 <strong>NebulaGraph</strong>。</p>
@@ -7179,23 +7083,28 @@
 <p>在云市场的 <strong>NebulaGraph Enterprise</strong> 产品页，选择<strong>套餐版本</strong>和<strong>购买时长</strong>（即 NebulaGraph 服务的许可证有效期），并单击<strong>立即购买</strong>。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>当前云市场显示的价格并非实际售价，购买时需通过右侧的钉钉客服确认实际价格。</p>
+<p>当前云市场显示的部分价格并非实际售价，购买时需通过右侧的钉钉客服确认实际价格。</p>
 </div>
 </li>
 <li>
 <p>在<strong>确认订单</strong>页面，选择要创建实例的<strong>地域</strong>。</p>
 </li>
 <li>
-<p>在<strong>基本信息配置</strong>区域，完成以下设置。</p>
-<ol>
-<li>选择 NebulaGraph 版本。</li>
-<li>设置 NebulaGraph 集群名称。</li>
-<li>设置实例密码，即 NebulaGraph 集群中 ECS 服务器的登录密码。</li>
-</ol>
+<p>在<strong>付费模式设置</strong>区域，指定 ECS 服务器的付费方式。默认为<strong>按量付费</strong>。</p>
+<ul>
+<li><strong>按量付费</strong>：按照计费周期计费，在每个结算周期生成账单并从账户中扣除相应费用。详情参见<a href="https://help.aliyun.com/document_detail/40653.html">按量付费</a>。</li>
+</ul>
+<ul>
+<li><strong>包年包月</strong>：先付费后使用。详情参见<a href="https://help.aliyun.com/document_detail/56220.html">包年包月</a>。选择包年包月模式需要指定<strong>购买时长周期</strong>和<strong>购买时长</strong>。<strong>购买时长周期</strong>当前仅支持 <strong>Month</strong>，即按月购买。</li>
+</ul>
 </li>
 <li>
-<p>在<strong>集群配置</strong>或 <strong>NebulaGraph 配置</strong>区域，完成数据盘相关设置。</p>
-<p>不同套餐需要设置的内容有所区别，根据界面说明完成设置。</p>
+<p>在<strong>套餐选择</strong>区域，根据需要选择套餐版本。</p>
+<!-- 选择自定义套餐可单击编辑按钮调整集群配置。 -->
+
+</li>
+<li>
+<p>在 <strong>NebulaGraph 配置</strong>区域，完成数据盘和 ECS 服务器密码设置。</p>
 </li>
 <li>
 <p>在<strong>基础设施配置</strong>区域，完成以下设置。</p>
@@ -7214,10 +7123,10 @@
 </ol>
 </li>
 <li>
-<p>在<strong>温馨提示</strong>中，选中<strong>我同意告知服务商我的联系方式</strong>，</p>
+<p>在<strong>温馨提示</strong>区域，选中<strong>我同意告知服务商我的联系方式</strong>，以便购买后发放许可证。</p>
 </li>
 <li>
-<p>在<strong>确认订单</strong>页面底部，单击<strong>我已接受协议，前往支付</strong>。</p>
+<p>在页面底部，单击<strong>我已接受协议，前往支付</strong>。</p>
 </li>
 <li>
 <p>在<strong>支付</strong>页面，选择支付方式，之后单击页面底部的<strong>支付</strong>。</p>
@@ -7236,12 +7145,10 @@
 </li>
 </ol>
 <h2 id="_5">创建免费版试用版服务实例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>免费试用版服务实例使用的资源属于阿里云，资源费用由阿里云承担。实例内 NebulaGraph 相关服务的许可证到期后，其中的数据仍然保留在试用的阿里云资源中，直到资源过期。资源的试用时间为 30 天，到期后资源内保存的数据不保留。</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>免费试用实例不可在生产环境中使用。</p>
 </div>
-<p>免费试用版服务实例的创建步骤如下。</p>
 <ol>
 <li>
 <p>登录阿里云计算巢<a href="https://computenest.console.aliyun.com/user/cn-hangzhou/recommendService">推荐服务</a>页面，搜索 <strong>NebulaGraph</strong>。</p>
@@ -7254,28 +7161,18 @@
 <p>申请通过后才能继续执行以下步骤。</p>
 </li>
 <li>
-<p>选择模板。<strong>集群部署</strong>模板支持标准版和高可用版套餐，<strong>单机部署</strong>模板支持基础版套餐。</p>
-</li>
-<li>
-<p>设置服务实例名称。</p>
+<p>设置<strong>服务实例名称</strong>。</p>
 </li>
 <li>
 <p>选择要创建实例的<strong>地域</strong>。</p>
 </li>
 <li>
-<p>在<strong>基本信息配置</strong>区域，完成以下设置。</p>
-<ol>
-<li>选择 NebulaGraph 版本。</li>
-<li>设置 NebulaGraph 集群名称。</li>
-<li>设置实例密码，即 NebulaGraph 集群中 ECS 服务器的登录密码。</li>
-</ol>
-</li>
-<li>
 <p>在<strong>套餐选择</strong>区域，根据需要选择套餐版本。</p>
+<!-- 选择自定义套餐可单击编辑按钮调整集群配置。 -->
+
 </li>
 <li>
-<p>在<strong>集群配置</strong>或 <strong>NebulaGraph 配置</strong>区域，完成数据盘相关设置。</p>
-<p>不同套餐需要设置的内容有所区别，根据界面说明完成设置。</p>
+<p>在 <strong>NebulaGraph 配置</strong>区域，完成数据盘相关设置。</p>
 </li>
 <li>
 <p>在<strong>基础设施配置</strong>区域，选择<strong>交换机可用区</strong>。</p>
@@ -7313,7 +7210,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 18, 2022</span>
       
     
   </small>
