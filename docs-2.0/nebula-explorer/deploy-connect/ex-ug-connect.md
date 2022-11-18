@@ -12,23 +12,20 @@
 
 - Nebula Graph 数据库登录账号信息，包括用户名和密码。
 
-  !!! Note
-  
-        如果 Nebula Graph 已经启用了身份验证，并且已经创建了不同角色的用户，用户只能使用被分配到的账号和密码登录数据库。如果未启用身份验证，用户可以使用 `root` 用户名和任意密码登录数据库。关于启用身份验证，参考 [Nebula Graph 用户手册](../../README.md "点击进入 Nebula Graph 用户手册")。
-
 ## 连接数据库
 
 按以下步骤连接 Nebula Graph 数据库：
 
 1. 在 Explorer 的**配置数据库**页面上，输入以下信息：
 
-   - **Host**：填写 Nebula Graph 的 Graph 服务本机 IP 地址及端口。格式为 `ip:port`。如果端口未修改，则使用默认端口 `9669`。
+   - **Host**：填写 NebulaGraph 的 Graph 服务本机 IP 地址及端口。格式为 `ip:port`。如果端口未修改，则使用默认端口 `9669`。
 
     !!! Note
 
-        即使 Nebula Graph 数据库与 Explorer 部署在同一台机器上，用户也必须在 **Host** 字段填写这台机器的本机 IP 地址，而不是 `127.0.0.1` 或者 `localhost`。
+        - 即使 NebulaGraph 数据库与 Explorer 部署在同一台机器上，用户也必须在 **Host** 字段填写这台机器的本机 IP 地址，而不是 `127.0.0.1` 或者 `localhost`。
+        - 在新的标签页连接另一个 NebulaGraph 数据库时，会覆盖旧标签页的会话。如果需要同时登录多个 NebulaGraph 数据库，可以用不同的浏览器或者无痕模式。
 
-   - **用户名**和**密码**：根据 Nebula Graph 的身份验证设置填写登录账号和密码。
+   - **用户名**和**密码**：根据 NebulaGraph 的[身份验证](../../7.data-security/1.authentication/1.authentication.md)设置填写登录账号和密码。
      - 如果未启用身份验证，可以填写默认用户名 `root` 和任意密码。
      - 如果已启用身份验证，但是未创建账号信息，用户只能以 GOD 角色登录，必须填写 `root` 及对应的密码 `nebula`。
      - 如果已启用身份验证，同时又创建了不同的用户并分配了角色，不同角色的用户使用自己的账号和密码登录。
