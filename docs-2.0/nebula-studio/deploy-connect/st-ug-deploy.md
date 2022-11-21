@@ -300,13 +300,13 @@ $ kill $(lsof -t -i :7001) # stop nebula-graph-studio
   $ cd nebula-studio
   ```
 
-3. 更新并安装 NebulaGraph Studio chart，命名为`my-studio`。
+3. 更新并安装 Helm Chart，命名为`my-studio`。
 
   ```bash
   $ helm upgrade --install my-studio --set service.type=NodePort --set service.port={30070} deployment/helm
   ```
 
-  NebulaGraph Studio chart 配置参数说明如下。
+  Helm Chart 配置参数说明如下。
 
   | 参数 | 默认值 | 描述 |
   |:---|:---|:---|
