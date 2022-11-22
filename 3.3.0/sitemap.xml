@@ -1016,6 +1016,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.3.0/graph-computing/nebula-analytics/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/3.3.0/graph-computing/use-explorer/</loc>
+         <lastmod>2022-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.3.0/nebula-dashboard/1.what-is-dashboard/</loc>
          <lastmod>2022-11-22</lastmod>
          <changefreq>daily</changefreq>
