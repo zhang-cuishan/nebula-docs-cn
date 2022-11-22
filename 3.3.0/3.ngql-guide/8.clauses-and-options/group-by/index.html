@@ -1801,7 +1801,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用函数进行分组和计算
+    隐式分组
   </a>
   
 </li>
@@ -7116,7 +7116,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    用函数进行分组和计算
+    隐式分组
   </a>
   
 </li>
@@ -7185,7 +7185,6 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow BIDIRECT \
 | &quot;Aron Baynes&quot;       | 1          |
 +---------------------+------------+
 </code></pre></div>
-<h2 id="_3">用函数进行分组和计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code># 查找所有连接到 player100 的点，并根据起始点进行分组，返回 degree 的总和。
 nebula&gt; GO FROM &quot;player100&quot; OVER follow \
         YIELD src(edge) AS player, properties(edge).degree AS degree \
@@ -7198,6 +7197,23 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow \
 +----------------+
 </code></pre></div>
 <p><code>sum()</code>函数详情请参见<a href="../../6.functions-and-expressions/1.math/">内置数学函数</a>。</p>
+<h2 id="_3">隐式分组<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在上述 nGQL 语句中明确写出<code>GROUP BY</code>并起到分组字段作用的用法称为<code>GROUP BY</code>显示用法；而在 openCypher 语句中<code>GROUP BY</code>的用法是隐式的，即在语句中不用写出<code>GROUP BY</code>也可起到分组字段的作用。nGQL 语句中显示地<code>GROUP BY</code>用法与 openCypher 语句中的隐式地<code>GROUP BY</code>用法相同，并且 nGQL 语句兼容 openCypher 的用法，即也支持隐式地使用<code>GROUP BY</code>。有关<code>GROUP BY</code>的隐式用法，请参见<a href="https://stackoverflow.com/questions/52722671/how-to-make-group-by-in-a-cypher-query">how-to-make-group-by-in-a-cypher-query</a>。</p>
+<p>例如：查询 34 岁以上的球员中完全重叠服役的区间。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; LOOKUP ON player WHERE player.age &gt; 34 YIELD id(vertex) AS v | \
+        GO FROM $-.v OVER serve YIELD serve.start_year AS start_year, serve.end_year AS end_year | \
+        YIELD $-.start_year, $-.end_year, count(*) AS count | \
+        ORDER BY $-.count DESC | LIMIT 5;
++---------------+-------------+-------+
+| $-.start_year | $-.end_year | count |
++---------------+-------------+-------+
+| 2018          | 2019        | 3     |
+| 1998          | 2004        | 2     |
+| 2012          | 2013        | 2     |
+| 2007          | 2012        | 2     |
+| 2010          | 2011        | 2     |
++---------------+-------------+-------+ 
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
