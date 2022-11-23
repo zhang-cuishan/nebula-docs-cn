@@ -7572,6 +7572,11 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) \
         WITH v, properties(v) as props, keys(properties(v)) as kk \
         LIMIT 10000 WHERE [i in kk where props[i] == &quot;Tim Duncan&quot;] \
         RETURN v;
++----------------------------------------------------+
+| v                                                  |
++----------------------------------------------------+
+| (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;}) |
++----------------------------------------------------+
 </code></pre></div>
 <h3 id="id">匹配点 ID<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
 <p>用户可以使用点 ID 去匹配点。<code>id()</code>函数可以检索点的 ID。</p>
@@ -7727,6 +7732,15 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
         WITH e, properties(e) as props, keys(properties(e)) as kk \
         LIMIT 10000 WHERE [i in kk where props[i] == 90] \
         RETURN e;
++----------------------------------------------------+
+| e                                                  |
++----------------------------------------------------+
+| [:follow &quot;player125&quot;-&gt;&quot;player100&quot; @0 {degree: 90}] |
+| [:follow &quot;player140&quot;-&gt;&quot;player114&quot; @0 {degree: 90}] |
+| [:follow &quot;player133&quot;-&gt;&quot;player144&quot; @0 {degree: 90}] |
+| [:follow &quot;player133&quot;-&gt;&quot;player114&quot; @0 {degree: 90}] |
+...
++----------------------------------------------------+
 </code></pre></div>
 <h3 id="edge_type_1">匹配多个 Edge type<a class="headerlink" href="#edge_type_1" title="Permanent link">&para;</a></h3>
 <p>使用<code>|</code>可以匹配多个 Edge type，例如<code>[e:follow|:serve]</code>。第一个 Edge type 前的英文冒号（:）不可省略，后续 Edge type 前的英文冒号可以省略，例如<code>[e:follow|serve]</code>。</p>
