@@ -7883,8 +7883,8 @@
 </tr>
 <tr>
 <td>匹配点的属性</td>
-<td><code>MATCH (v:player{name:"Tim Duncan"}) RETURN v</code></td>
-<td>用户可以在 Tag 的右侧用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中点的属性。</td>
+<td><code>MATCH (v:player{name:"Tim Duncan"}) RETURN v</code> <br><br><code>MATCH (v) WITH v, properties(v) as props, keys(properties(v)) as kk LIMIT 10000 WHERE [i in kk where props[i] == "Tim Duncan"] RETURN v</code></td>
+<td>用户可以在 Tag 的右侧用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中点的属性；或者不指定 Tag 直接匹配点的属性。</td>
 </tr>
 <tr>
 <td>匹配单点 ID</td>
@@ -7918,8 +7918,8 @@
 </tr>
 <tr>
 <td>匹配边的属性</td>
-<td><code>MATCH (v:player{name:"Tim Duncan"})-[e:follow{degree:95}]-&gt;(v2) RETURN e</code></td>
-<td>用户可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中 Edge type 的属性，例如<code>[e:follow{likeness:95}]</code>。</td>
+<td><code>MATCH (v:player{name:"Tim Duncan"})-[e:follow{degree:95}]-&gt;(v2) RETURN e</code> <br><br><code>MATCH ()-[e]-&gt;() WITH e, properties(e) as props, keys(properties(e)) as kk LIMIT 10000 WHERE [i in kk where props[i] == 90] RETURN e</code></td>
+<td>用户可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中 Edge type 的属性，例如<code>[e:follow{likeness:95}]</code>；或者不指定 Edge type 直接匹配边的属性。</td>
 </tr>
 <tr>
 <td>匹配多个 Edge type</td>

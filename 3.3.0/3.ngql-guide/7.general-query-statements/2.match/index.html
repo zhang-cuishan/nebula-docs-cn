@@ -7567,6 +7567,12 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) \
 <p class="admonition-title">openCypher 兼容性</p>
 <p>在 openCypher 9 中，<code>=</code>是相等运算符，在 nGQL 中，<code>==</code>是相等运算符，<code>=</code>是赋值运算符。</p>
 </div>
+<p>用户也可以不指定 Tag，直接匹配点的属性。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v) \
+        WITH v, properties(v) as props, keys(properties(v)) as kk \
+        LIMIT 10000 WHERE [i in kk where props[i] == &quot;Tim Duncan&quot;] \
+        RETURN v;
+</code></pre></div>
 <h3 id="id">匹配点 ID<a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
 <p>用户可以使用点 ID 去匹配点。<code>id()</code>函数可以检索点的 ID。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v) \
@@ -7706,10 +7712,6 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 +----------------------------------------------------+
 </code></pre></div>
 <h3 id="_10">匹配边的属性<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>匹配边的属性的前提是 Edge type 本身有对应属性的索引，否则，用户无法执行 <code>MATCH</code> 语句匹配该属性。</p>
-</div>
 <p>用户可以用<code>{&lt;prop_name&gt;: &lt;prop_value&gt;}</code>表示模式中 Edge type 的属性，例如<code>[e:follow{likeness:95}]</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e:follow{degree:95}]-&gt;(v2) \
         RETURN e;
@@ -7719,6 +7721,12 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 | [:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}]     |
 | [:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}]     |
 +--------------------------------------------------------+
+</code></pre></div>
+<p>用户也可以不指定 Edge type，直接匹配边的属性。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH ()-[e]-&gt;() \
+        WITH e, properties(e) as props, keys(properties(e)) as kk \
+        LIMIT 10000 WHERE [i in kk where props[i] == 90] \
+        RETURN e;
 </code></pre></div>
 <h3 id="edge_type_1">匹配多个 Edge type<a class="headerlink" href="#edge_type_1" title="Permanent link">&para;</a></h3>
 <p>使用<code>|</code>可以匹配多个 Edge type，例如<code>[e:follow|:serve]</code>。第一个 Edge type 前的英文冒号（:）不可省略，后续 Edge type 前的英文冒号可以省略，例如<code>[e:follow|serve]</code>。</p>
