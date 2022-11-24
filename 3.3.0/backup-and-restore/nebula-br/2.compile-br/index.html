@@ -19,7 +19,7 @@
     
     
       
-        <title>编译 BR - NebulaGraph Database 手册</title>
+        <title>安装 BR - NebulaGraph Database 手册</title>
       
     
     
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              编译 BR
+              安装 BR
             
           </span>
         </div>
@@ -3643,12 +3643,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          编译 BR
+          安装 BR
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        编译 BR
+        安装 BR
       </a>
       
         
@@ -3668,15 +3668,69 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    使用二进制文件安装
+    安装说明
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    版本兼容性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#br_1" class="md-nav__link">
+    安装 BR
+  </a>
+  
+    <nav class="md-nav" aria-label="安装 BR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用二进制文件安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     使用源码安装
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    安装 Agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    常见问题
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_list_cluster_no_agent_failure" class="md-nav__link">
+    报错E_LIST_CLUSTER_NO_AGENT_FAILURE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7081,15 +7135,69 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    使用二进制文件安装
+    安装说明
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    版本兼容性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#br_1" class="md-nav__link">
+    安装 BR
+  </a>
+  
+    <nav class="md-nav" aria-label="安装 BR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    使用二进制文件安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     使用源码安装
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    安装 Agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    常见问题
+  </a>
+  
+    <nav class="md-nav" aria-label="常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_list_cluster_no_agent_failure" class="md-nav__link">
+    报错E_LIST_CLUSTER_NO_AGENT_FAILURE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7115,7 +7223,27 @@
 
 <h1 id="br">安装 BR<a class="headerlink" href="#br" title="Permanent link">&para;</a></h1>
 <p>本文介绍如何安装 BR。</p>
-<h2 id="_1">使用二进制文件安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">安装说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用 BR 工具备份和恢复 NebulaGraph 时，需要安装 NebulaGraph Agent 服务。Agent 是集群中每台机器的一个守护进程，用于启停 NebulaGraph 服务和上传、下载备份文件。BR 工具和 Agent 插件的安装方式如下文。</p>
+<h2 id="_2">版本兼容性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">NebulaGraph 社区版</th>
+<th align="left">BR 社区版</th>
+<th align="left">Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">3.3.0</td>
+<td align="left">3.3.0</td>
+<td align="left">0.2.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="br_1">安装 BR<a class="headerlink" href="#br_1" title="Permanent link">&para;</a></h2>
+<h3 id="_3">使用二进制文件安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>下载 BR。</p>
@@ -7139,7 +7267,7 @@ Nebula Backup And Restore Utility Tool,V-3.3.0
 </code></pre></div>
 </li>
 </ol>
-<h2 id="_2">使用源码安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_4">使用源码安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>使用源码安装 BR 前，准备工作如下：</p>
 <ul>
 <li>安装 <a href="https://github.com/golang/go" title="Click to go to GitHub">Go</a> 1.14.x 或更新版本。</li>
@@ -7166,6 +7294,60 @@ Nebula Backup And Restore Utility Tool,V-3.3.0
 <div class="highlight"><pre><span></span><code><span class="o">[</span>nebula-br<span class="o">]</span>$ bin/br version
 NebulaGraph Backup And Restore Utility Tool,V-3.3.0
 </code></pre></div>
+<h2 id="agent">安装 Agent<a class="headerlink" href="#agent" title="Permanent link">&para;</a></h2>
+<p>NebulaGraph Agent 以二进制形式存在各个机器的安装目录中，通过 RPC 协议对 BR 工具提供服务。</p>
+<p>在<strong>每台机器</strong>中，进行以下操作：</p>
+<ol>
+<li>
+<p>下载 Agent。</p>
+<div class="highlight"><pre><span></span><code>wget https://github.com/vesoft-inc/nebula-agent/releases/download/v0.2.0/agent-0.2.0-linux-amd64
+</code></pre></div>
+</li>
+<li>
+<p>修改 Agent 的名称为<code>agent</code>。</p>
+<div class="highlight"><pre><span></span><code>sudo mv agent-0.2.0-linux-amd64 agent
+</code></pre></div>
+</li>
+<li>
+<p>授予 Agent 可执行权限。</p>
+<div class="highlight"><pre><span></span><code>sudo chmod +x agent
+</code></pre></div>
+</li>
+<li>
+<p>执行以下命令启动 Agent。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>启动 Agent 前，确保已经启动集群中的 Meta 服务，并且 Agent 有对应 NebulaGraph 服务目录和备份目录的读写权限。</p>
+</div>
+<div class="highlight"><pre><span></span><code>sudo nohup ./nebula_agent --agent=&quot;&lt;agent_node_ip&gt;:8888&quot; --meta=&quot;&lt;metad_node_ip&gt;:9559&quot; &gt; nebula_agent.log 2&gt;&amp;1 &amp;
+</code></pre></div>
+<ul>
+<li><code>--agent</code>：Agent 所在机器的 IP 地址和访问端口。</li>
+<li><code>--meta</code>：集群中任一 Meta 服务所在机器的 IP 地址和访问端口。</li>
+<li><code>--ratelimit</code>：可选项，限制文件上传和下载的速度，防止带宽被占满导致其他服务不可用。单位：Bytes。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>sudo nohup ./nebula_agent --agent=&quot;192.168.8.129:8888&quot; --meta=&quot;192.168.8.129:9559&quot; --ratelimit=1048576 &gt; nebula_agent.log 2&gt;&amp;1 &amp;
+</code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p><code>--agent</code>配置的 IP 地址需要和<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a>中 Meta 和 Storage 服务的地址格式保持一致，即都使用真实 IP 地址或者都使用<code>127.0.0.1</code>，否则 Agent 无法启动。</p>
+</div>
+</li>
+<li>
+<p>连接服务并查看 Agent 的运行状态。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; SHOW HOSTS AGENT;
++-----------------+------+----------+---------+--------------+---------+
+| Host            | Port | Status   | Role    | Git Info Sha | Version |
++-----------------+------+----------+---------+--------------+---------+
+| &quot;192.168.8.129&quot; | 8888 | &quot;ONLINE&quot; | &quot;AGENT&quot; | &quot;96646b8&quot;    |         |
++-----------------+------+----------+---------+--------------+---------+  
+</code></pre></div>
+</li>
+</ol>
+<h2 id="_5">常见问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="e_list_cluster_no_agent_failure">报错<code>E_LIST_CLUSTER_NO_AGENT_FAILURE</code><a class="headerlink" href="#e_list_cluster_no_agent_failure" title="Permanent link">&para;</a></h3>
+<p>如果操作过程中遇见<code>E_LIST_CLUSTER_NO_AGENT_FAILURE</code>错误，可能是由于 Agent 服务没有启动或者 Agent 服务没有被注册至 Meta 服务。首先执行<code>SHOW HOSTS AGENT</code>查看集群上所有节点的 Agent 服务的状态，当时状态显示为<code>OFFLINE</code>时表示注册 Agent 失败， 然后检查启动 Agent 服务的命令中的<code>--meta</code>参数是否正确。</p>
 
   <hr>
 <div class="md-source-file">

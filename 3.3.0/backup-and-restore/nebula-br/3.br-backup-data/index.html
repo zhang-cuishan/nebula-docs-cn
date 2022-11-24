@@ -3634,7 +3634,7 @@
   
     <li class="md-nav__item">
       <a href="../2.compile-br/" class="md-nav__link">
-        编译 BR
+        安装 BR
       </a>
     </li>
   
@@ -7128,16 +7128,13 @@
 
 
 <h1 id="br">使用 BR 备份数据<a class="headerlink" href="#br" title="Permanent link">&para;</a></h1>
-<p>BR 编译成功后，可以备份整个图空间的数据，本文介绍如何使用 BR 备份数据。</p>
+<p>成功安装 BR 工具后，可以备份整个图空间的数据，本文介绍如何使用 BR 备份数据。</p>
 <h2 id="_1">准备工作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>BR 编译完成。如何编译 BR，请参见<a href="../2.compile-br/">编译 BR</a>。</li>
+<li><a href="../2.compile-br/">安装 BR 和 Agent</a> 并在集群中的每个主机上运行 Agent。</li>
 </ul>
 <ul>
 <li>确认 NebulaGraph 服务正在运行中。</li>
-</ul>
-<ul>
-<li>已下载 <a href="https://github.com/vesoft-inc/nebula-agent">nebula-agent</a> 并在集群中的每个主机上运行代理服务。</li>
 </ul>
 <ul>
 <li>
@@ -7149,17 +7146,17 @@
 </li>
 </ul>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>运行以下命令对整个集群进行全量备份操作。</p>
+<p>在 BR 工具的安装路径下（编译安装的默认路径为<code>./bin/br</code>）运行以下命令对整个集群进行全量备份操作。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>确保备份文件的路径存在。</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt;
+<div class="highlight"><pre><span></span><code>$ ./br backup full --meta &lt;ip_address&gt; --storage &lt;storage_path&gt;
 </code></pre></div>
 <p>例如：</p>
 <ul>
 <li>
-<p>运行以下命令对 meta 服务的地址为<code>127.0.0.1:9559</code>的整个集群进行全量备份操作，并将备份文件保存到本地的 <code>/home/nebula/backup/</code>路径下。</p>
+<p>运行以下命令对 meta 服务的地址为<code>192.168.8.129:9559</code>的整个集群进行全量备份操作，并将备份文件保存到本地的 <code>/home/nebula/backup/</code>路径下。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>如果有多个 metad 地址，可以使用其中任意一个。</p>
@@ -7168,14 +7165,14 @@
 <p class="admonition-title">Caution</p>
 <p>备份至本地时，默认只备份 leader metad 的数据，因此当有多个 metad 节点时，需要手动将备份后的 leader metad 的目录（路径为<code>&lt;storage_path&gt;/meta</code>）拷贝并覆盖其他 follower meatd 节点的对应目录。</p>
 </div>
-<div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --storage <span class="s2">&quot;local:///home/nebula/backup/&quot;</span>
+<div class="highlight"><pre><span></span><code>$ ./br backup full --meta <span class="s2">&quot;192.168.8.129:9559&quot;</span> --storage <span class="s2">&quot;local:///home/nebula/backup/&quot;</span>
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
-<p>运行以下命令对 meta 服务的地址为<code>127.0.0.1:9559</code>的整个集群进行全量备份操作，并将备份文件保存到兼容 s3 协议的对象存储服务 <code>br-test</code> 桶下的<code>backup</code>中。</p>
-<div class="highlight"><pre><span></span><code>$ ./bin/br backup full --meta <span class="s2">&quot;127.0.0.1:9559&quot;</span> --s3.endpoint <span class="s2">&quot;http://127.0.0.1:9000&quot;</span> --storage<span class="o">=</span><span class="s2">&quot;s3://br-test/backup/&quot;</span> --s3.access_key<span class="o">=</span>minioadmin --s3.secret_key<span class="o">=</span>minioadmin --s3.region<span class="o">=</span>default
+<p>运行以下命令对 meta 服务的地址为<code>192.168.8.129:9559</code>的整个集群进行全量备份操作，并将备份文件保存到兼容 s3 协议的对象存储服务 <code>br-test</code> 桶下的<code>backup</code>中。</p>
+<div class="highlight"><pre><span></span><code>$ ./br backup full --meta <span class="s2">&quot;192.168.8.129:9559&quot;</span> --s3.endpoint <span class="s2">&quot;http://192.168.8.129:9000&quot;</span> --storage<span class="o">=</span><span class="s2">&quot;s3://br-test/backup/&quot;</span> --s3.access_key<span class="o">=</span>minioadmin --s3.secret_key<span class="o">=</span>minioadmin --s3.region<span class="o">=</span>default
 </code></pre></div>
 </li>
 </ul>
@@ -7224,7 +7221,7 @@
 <td>stringArray</td>
 <td>否</td>
 <td>无</td>
-<td>(实验性功能)指定要备份的图空间名字，未指定将备份所有图空间。</td>
+<td>（实验性功能）指定要备份的图空间名字，未指定将备份所有图空间。可指定多个图空间，用法为<code>--spaces nba_01 --spaces nba_02</code>。</td>
 </tr>
 <tr>
 <td><code>--storage</code></td>
@@ -7305,7 +7302,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../2.compile-br/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 编译 BR" rel="prev">
+        <a href="../2.compile-br/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装 BR" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -7314,7 +7311,7 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              编译 BR
+              安装 BR
             </div>
           </div>
         </a>
