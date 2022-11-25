@@ -3686,7 +3686,7 @@
   
     <li class="md-nav__item">
       <a href="../2.compile-br/" class="md-nav__link">
-        编译 BR
+        安装 BR
       </a>
     </li>
   
@@ -7147,7 +7147,7 @@
 
 
 <h1 id="backuprestore">什么是 Backup&amp;Restore<a class="headerlink" href="#backuprestore" title="Permanent link">&para;</a></h1>
-<p>Backup&amp;Restore（简称 BR）是一款命令行界面（CLI）工具，可以帮助备份 Nebula Graph 的图空间数据，或者通过备份文件恢复数据。</p>
+<p>Backup&amp;Restore（简称 BR）是一款命令行界面（CLI）工具，可以帮助备份 NebulaGraph 的图空间数据，或者通过备份文件恢复数据。</p>
 <h2 id="_1">功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>一键操作备份和恢复数据。</li>
@@ -7161,16 +7161,14 @@
 </ul>
 <h2 id="_2">限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Nebula Graph 版本需要为 v3.1.0。</li>
+<li>NebulaGraph 版本需要为 v3.1.0。</li>
 <li>数据备份仅支持全量备份，不支持增量备份。</li>
 <li>仅支持单 metad 部署的本地文件的备份和恢复。</li>
 <li>Nebula Listener 暂时不支持备份，且全文索引也不支持备份。</li>
 <li>如果备份数据到本地磁盘，备份的文件将会放置在每个服务器的本地路径中。也可以在本地挂载 NFS 文件系统，以便将备份数据还原到不同的主机上。</li>
-<li>备份图空间只能恢复到原集群，不能跨集群恢复。</li>
 <li>数据备份过程中，指定图空间中的 DDL 和 DML 语句将会阻塞，我们建议在业务低峰期进行操作，例如凌晨 2 点至 5 点。</li>
-<li>数据恢复仅支持在相同拓扑的集群上进行，即原集群和目标集群的主机数量必须相同。</li>
+<li>备份图空间只能恢复到原集群，不能跨集群恢复，并且集群的主机数量必须相同；还原指定图空间时将清除集群中其余所有图空间。</li>
 <li>数据恢复需要删除数据并重启，建议离线进行。</li>
-<li>（实验性功能）如果备份 A 集群中的某个指定图空间，此备份无法还原至另一个集群 B，还原该指定图空间时将清除集群中其余所有图空间。</li>
 </ul>
 <!-- - 备份或恢复部署在 Docker 中的数据时，需要做好网络配置，例如 IP 和端口的映射。 -->
 
@@ -7270,7 +7268,7 @@
 <h2 id="br">如何使用 BR<a class="headerlink" href="#br" title="Permanent link">&para;</a></h2>
 <p>可以按照如下步骤使用 BR：</p>
 <ol>
-<li><a href="../2.compile-br/">编译 BR</a></li>
+<li><a href="../2.compile-br/">安装 BR</a></li>
 <li><a href="../3.br-backup-data/">使用 BR 备份数据</a></li>
 <li><a href="../4.br-restore-data/">使用 BR 恢复数据</a></li>
 </ol>
@@ -7285,7 +7283,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
       
     
   </small>
@@ -7335,13 +7333,13 @@
       
       
         
-        <a href="../2.compile-br/" class="md-footer__link md-footer__link--next" aria-label="下一页: 编译 BR" rel="next">
+        <a href="../2.compile-br/" class="md-footer__link md-footer__link--next" aria-label="下一页: 安装 BR" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              编译 BR
+              安装 BR
             </div>
           </div>
           <div class="md-footer__button md-icon">
