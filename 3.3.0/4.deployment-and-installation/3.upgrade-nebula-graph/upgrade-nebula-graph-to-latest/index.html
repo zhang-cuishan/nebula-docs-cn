@@ -7478,7 +7478,7 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
 <h3 id="_7">升级过程中是否可以通过客户端写入数据？<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>不可以。升级过程中需要停止所有服务。</p>
 <h3 id="space_0_not_found">升级过程中出现<code>Space 0 not found</code>。<a class="headerlink" href="#space_0_not_found" title="Permanent link">&para;</a></h3>
-<p>当升级过程中出现<code>Space 0 not found</code>告警信息时，用户可以忽略这个信息。因为升级过程会从磁盘读取所有 Space ID，而<code>0</code>（路径为<code>&lt;nebula_storagepath&gt;/data/storage/nebula/0</code>）并不会存在磁盘上，所以 localCache 里不会有 Space <code>0</code>相关数据。之所以可以忽略是因为 Space <code>0</code> 不含用户数据，它只用来存 JobManager 的 Task 状态。</p>
+<p>当升级过程中出现<code>Space 0 not found</code>告警信息时，用户可以忽略这个信息。升级过程会从磁盘读取所有 Space ID，而<code>0</code>（路径为<code>&lt;nebula_storagepath&gt;/data/storage/nebula/0</code>）并不会存在磁盘上。Space <code>0</code> 用来存储 Storage 服务的元信息，并不包含用户数据，因此不会影响升级。</p>
 <h3 id="graph_storage">如果某台机器只有 Graph 服务，没有 Storage 服务，如何升级？<a class="headerlink" href="#graph_storage" title="Permanent link">&para;</a></h3>
 <p>只需要升级 Graph 服务对应的二进制文件和配置文件。</p>
 <h3 id="permission_denied">操作报错 <code>Permission denied</code>。<a class="headerlink" href="#permission_denied" title="Permanent link">&para;</a></h3>
