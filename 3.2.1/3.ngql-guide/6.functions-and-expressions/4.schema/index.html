@@ -7319,7 +7319,7 @@
 +-------------+
 </code></pre></div>
 <h3 id="startnode">startNode()<a class="headerlink" href="#startnode" title="Permanent link">&para;</a></h3>
-<p>startNode() 获取一条边或一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。</p>
+<p>startNode() 获取一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。</p>
 <p>语法：<code>startNode(&lt;path&gt;)</code></p>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
@@ -7331,7 +7331,7 @@
 +----------------------------------------------------+
 </code></pre></div>
 <h3 id="endnode">endNode()<a class="headerlink" href="#endnode" title="Permanent link">&para;</a></h3>
-<p>endNode() 获取一条边或一条路径并返回它的目的点信息，包括点 ID、Tag、属性和值。</p>
+<p>endNode() 获取一条路径并返回它的目的点信息，包括点 ID、Tag、属性和值。</p>
 <p>语法：<code>endNode(&lt;path&gt;)</code></p>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
@@ -7365,7 +7365,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
       
     
   </small>
