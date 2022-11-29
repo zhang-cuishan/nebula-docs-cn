@@ -7186,6 +7186,7 @@
 <li>修复表达式的语法错误导致崩溃的问题。</li>
 <li>修复<code>LOOKUP</code>语句导致崩溃的问题。</li>
 <li>修复复合<code>MATCH</code>语句导致崩溃的问题。</li>
+<li>修复<code>YIELD 1 AS number MINUS YIELD 2 AS number</code>语句导致崩溃的问题。</li>
 <li>修复多<code>MATCH</code>语句优化阶段崩溃的问题。</li>
 <li>修复收集变量类型导致崩溃的问题。</li>
 <li>修复表达式非法导致崩溃的问题。</li>
@@ -7195,9 +7196,8 @@
 <li>修复重建全文索引失败的问题。</li>
 <li>修复使用 logrotate 的问题。</li>
 <li>修复数据恢复时机器密钥丢失的问题。</li>
-<li>修复取消快照 future 时主机无法停止的问题。</li>
+<li>修复取消发送快照后主机无法停止的问题。</li>
 <li>修复缓存大小溢出和死锁的问题。</li>
-<li>修复 MetaDaemon 缺少<code>RETURN</code>子句的问题。</li>
 <li>修复 Raft 的脑裂问题。</li>
 <li>修复 Meta listener 验证 License 的问题。</li>
 <li>修复 Meta listener 不清理数据的问题。</li>
@@ -7212,6 +7212,10 @@
 <li>修复使用 ElasticSearch 保存审计日志时，没有记录 DML 和 DQL 类型的审计日志的问题。</li>
 <li>修复当<code>ENABLE_BREAKPAD</code>启用时，如果日志目录不存在，会导致服务无法启动的问题。</li>
 <li>修复如果 GOD 角色的用户名不为<code>root</code>，Meta 服务初始化时会自动创建<code>root</code>用户的问题。</li>
+<li>修复DROP SPACE后备份失败的问题。</li>
+<li>修复扫描边或者点未处理TTL的问题。</li>
+<li>修复INSERT和检查TTL字段时时间不一致的问题。</li>
+<li>修复当VID类型为string时，集群间同步可能失败的问题。</li>
 </ul>
 <h2 id="_4">历史版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://nebula-graph.com.cn/tags/release-note/">历史版本</a></p>
