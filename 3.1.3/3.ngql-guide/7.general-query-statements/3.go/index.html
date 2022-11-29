@@ -7190,7 +7190,8 @@ YIELD [DISTINCT] &lt;return_list&gt;
 <p><code>WHERE &lt;conditions&gt;</code>：指定遍历的过滤条件。用户可以在起始点、目的点和边使用<code>WHERE</code>子句，还可以结合<code>AND</code>、<code>OR</code>、<code>NOT</code>、<code>XOR</code>一起使用。详情参见 <a href="../../8.clauses-and-options/where/">WHERE</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>遍历多个 Edge type 时，<code>WHERE</code>子句有一些限制。例如不支持<code>WHERE edge1.prop1 &gt; edge2.prop2</code>。</p>
+<p>- 遍历多个 Edge type 时，<code>WHERE</code>子句有一些限制。例如不支持<code>WHERE edge1.prop1 &gt; edge2.prop2</code>。
+  - GO 语句执行时先遍历所有的点，然后再根据过滤器条件进行过滤。</p>
 </div>
 </li>
 </ul>
