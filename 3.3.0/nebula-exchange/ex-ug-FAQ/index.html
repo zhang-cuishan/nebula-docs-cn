@@ -6391,8 +6391,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#qyarn-cluster" class="md-nav__link">
-    Q：Yarn-Cluster 模式下如何提交？
+  <a href="#qjavalangclassnotfoundexception_comvesoftnebulaexchangeexchange" class="md-nav__link">
+    Q：报错java.lang.ClassNotFoundException: com.vesoft.nebula.exchange.Exchange
   </a>
   
 </li>
@@ -7256,8 +7256,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#qyarn-cluster" class="md-nav__link">
-    Q：Yarn-Cluster 模式下如何提交？
+  <a href="#qjavalangclassnotfoundexception_comvesoftnebulaexchangeexchange" class="md-nav__link">
+    Q：报错java.lang.ClassNotFoundException: com.vesoft.nebula.exchange.Exchange
   </a>
   
 </li>
@@ -7430,8 +7430,8 @@
   &lt;/profile&gt;
 </code></pre></div>
 <h2 id="_2">执行问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="qyarn-cluster">Q：Yarn-Cluster 模式下如何提交？<a class="headerlink" href="#qyarn-cluster" title="Permanent link">&para;</a></h3>
-<p>在 Yarn-Cluster 模式下提交任务，请参考如下命令：</p>
+<h3 id="qjavalangclassnotfoundexception_comvesoftnebulaexchangeexchange">Q：报错<code>java.lang.ClassNotFoundException: com.vesoft.nebula.exchange.Exchange</code><a class="headerlink" href="#qjavalangclassnotfoundexception_comvesoftnebulaexchangeexchange" title="Permanent link">&para;</a></h3>
+<p>在 Yarn-Cluster 模式下提交任务，请参考如下命令，<strong>尤其是示例中的两个</strong><code>--conf</code>：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">$SPARK_HOME</span>/bin/spark-submit --class com.vesoft.nebula.exchange.Exchange <span class="se">\</span>
 --master yarn-cluster <span class="se">\</span>
 --files application.conf <span class="se">\</span>
