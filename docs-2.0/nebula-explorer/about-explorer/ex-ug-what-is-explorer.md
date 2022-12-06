@@ -1,6 +1,6 @@
 # 什么是 NebulaGraph Explorer
 
-NebulaGraph Explorer （简称 Explorer）是一款可以通过 Web 访问的可视化图探索工具，搭配 NebulaGraph 内核使用，用于与图数据进行可视化交互。即使没有图数据操作经验，用户也可以快速成为图专家。
+NebulaGraph Explorer （简称 Explorer）是一款可以通过 Web 访问的可视化图探索工具，搭配 NebulaGraph 内核使用，用于与图数据进行可视化交互。即使没有图数据操作经验，用户也可以快速成为图专家。 
 
 !!! enterpriseonly
 
