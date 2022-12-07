@@ -28,7 +28,7 @@ theme:
         name: Switch to light mode
   features:
     - navigation.top
-    - header.autohide
+    # - header.autohide
     - content.tabs.link
   language: 'zh'
 
