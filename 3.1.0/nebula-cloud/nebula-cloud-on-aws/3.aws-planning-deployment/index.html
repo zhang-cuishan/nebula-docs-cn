@@ -7197,7 +7197,7 @@
 </tr>
 <tr>
 <td>弹性 IP 地址</td>
-<td>5 到 15 个（由主机数量决定）</td>
+<td>1 个（堡垒机）</td>
 </tr>
 <tr>
 <td>安全组</td>
@@ -7216,24 +7216,20 @@
 <td>1 个</td>
 </tr>
 <tr>
-<td>EC2 实例（Nebula Explorer 主机）</td>
+<td>EC2 实例（Workbench）</td>
 <td>1 个</td>
 </tr>
 <tr>
-<td>EC2 实例（graphd 主机）</td>
+<td>EC2 实例（graphd）</td>
 <td>1 到 3 个</td>
 </tr>
 <tr>
-<td>EC2 实例（metad 主机）</td>
-<td>1 或 3 个</td>
-</tr>
-<tr>
-<td>EC2 实例（storaged 主机）</td>
+<td>EC2 实例（storaged）</td>
 <td>1 或 3 或 5 或 7 个</td>
 </tr>
 </tbody>
 </table>
-<p>弹性 IP 地址和 EC2 实例的数量由实际部署架构决定。</p>
+<p>EC2 实例的数量由实际部署架构决定。</p>
 <p>如果所需资源的额度不足，先申请提升资源额度再部署集群。</p>
 <h2 id="aws">AWS 地域<a class="headerlink" href="#aws" title="Permanent link">&para;</a></h2>
 <p>如需在默认地域（us-east-1）以外部署集群，建议先在 <a href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/">AWS Regional Services</a> 页面确认目标地域支持部署 NebulaGraph 服务集群需要的所有服务。</p>
@@ -7254,7 +7250,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 7, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2022</span>
       
     
   </small>
