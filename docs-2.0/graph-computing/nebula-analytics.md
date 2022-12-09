@@ -145,8 +145,6 @@ NebulaGraph Analytics 支持的图计算算法如下。
       --space=baskeyballplayer  
 
       # 读取 NebulaGraph 设置
-      # NebulaGraph 的 metad leader服务地址，例如为192.168.8.101。
-      --meta_server_addrs=192.168.8.101:9559
       # 要读取的边的名称。
       --edges=LIKES  
       # 要读取的作为边的权重属性的名称。可以是属性名，也可以是 _rank。
@@ -173,6 +171,12 @@ NebulaGraph Analytics 支持的图计算算法如下。
       --write_batch_size=1000 
       # 写回失败的数据所存储的文件。
       --err_file=/home/xxx/analytics/err.txt 
+      
+      # 其他设置
+      # 服务访问超时时间
+      --graphd_timeout=60000
+      --metad_timeout=60000
+      --storaged_timeout=60000
       ```
     
     2. 修改需要使用的算法脚本，例如`run_pagerank.sh`，设置相关参数。
