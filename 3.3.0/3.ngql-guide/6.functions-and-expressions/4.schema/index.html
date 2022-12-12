@@ -7572,6 +7572,10 @@
 | &quot;player100&quot; | &quot;player125&quot; |
 +-------------+-------------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>src(edge) 和 <a href="../../5.operators/5.property-reference/">properties(<code>$^</code>)</a> 查找起始点的语义不同。src(edge) 始终表示图数据库中边的起始点 ID，而 properties(<code>$^</code>) 表示探索开始时的点数据，例如示例中<code>GO FROM "player100"</code>中<code>player100</code>这个点的数据。</p>
+</div>
 <h3 id="dstedge">dst(edge)<a class="headerlink" href="#dstedge" title="Permanent link">&para;</a></h3>
 <p>dst(edge) 返回边的目的点 ID。</p>
 <p>语法：<code>dst(edge)</code></p>
@@ -7588,6 +7592,10 @@
 | &quot;player100&quot; | &quot;player125&quot; |
 +-------------+-------------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>dst(edge) 始终表示图数据库中边的目的点 ID。</p>
+</div>
 <h3 id="rankedge">rank(edge)<a class="headerlink" href="#rankedge" title="Permanent link">&para;</a></h3>
 <p>rank(edge) 返回边的 rank。</p>
 <p>语法：<code>rank(edge)</code></p>
@@ -7782,7 +7790,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 12, 2022</span>
       
     
   </small>
