@@ -1462,7 +1462,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    注意事项
+    使用限制
   </a>
   
 </li>
@@ -7283,7 +7283,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    注意事项
+    使用限制
   </a>
   
 </li>
@@ -7475,20 +7475,26 @@
 <ul>
 <li><code>clause_2</code>：支持<code>ORDER BY</code>、<code>LIMIT</code>子句。</li>
 </ul>
-<h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>除以下三种情况之外，请确保 <code>MATCH</code> 语句有<strong>至少</strong>一个<a href="../../14.native-index-statements/1.create-native-index/">索引</a>可用。</p>
+<h2 id="_2">使用限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>未创建<a href="../../14.native-index-statements/1.create-native-index/">索引</a>时，仅以下情况支持使用<code>MATCH</code>查询。当使用<code>MATCH</code>语句出现报错时，用户可以创建并重建索引后执行查询语句。</p>
 <ul>
 <li><code>MATCH</code>语句中<code>WHERE</code>子句使用 id() 函数指定了点的 VID，不需要创建索引即可执行。</li>
 </ul>
 <ul>
-<li>当遍历所有点边时，例如<code>MATCH (v) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
+<li>当遍历所有点或边时，例如<code>MATCH (v) RETURN v LIMIT N</code>、<code>MATCH ()-[e]-&gt;() RETURN e LIMIT N</code>。</li>
 </ul>
 <ul>
-<li>当遍历指定 Tag 的点或指定 Edge Type 的边时，例如<code>MATCH (v:player) RETURN v LIMIT N</code>，不需要创建索引，但必须使用<code>LIMIT</code>限制输出结果数量。</li>
+<li>当遍历指定 Tag 的点，例如<code>MATCH (v:player) RETURN v LIMIT N</code>。</li>
+</ul>
+<ul>
+<li>当遍历指定 Edge Type 并指定边的方向，例如<code>MATCH ()-[e:follow]-&gt;() RETURN e LIMIT N</code>。</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>目前 MATCH 语句无法查询到悬挂边。</p>
+<ul>
+<li>目前 MATCH 语句无法查询到悬挂边。</li>
+<li>不支持没有索引时同时遍历指定的 Tag 和 Edge Type，例如执行<code>MATCH (v:player)-[e:follow]-&gt;() RETURN e LIMIT N</code>会报错。</li>
+</ul>
 </div>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
