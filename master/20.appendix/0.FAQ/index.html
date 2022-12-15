@@ -4256,7 +4256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4921,7 +4921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7366,40 +7366,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#host_host_offline" class="md-nav__link">
-    修改 Host 名称后，旧的 Host 一直显示 OFFLINE 怎么办？
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    关于连接
-  </a>
-  
-    <nav class="md-nav" aria-label="关于连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    防火墙中需要开放哪些端口？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    如何测试端口是否已开放？
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -7816,40 +7782,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#host_host_offline" class="md-nav__link">
-    修改 Host 名称后，旧的 Host 一直显示 OFFLINE 怎么办？
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    关于连接
-  </a>
-  
-    <nav class="md-nav" aria-label="关于连接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    防火墙中需要开放哪些端口？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    如何测试端口是否已开放？
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -8141,7 +8073,58 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <p>执行<code>rpm -qa |grep nebula</code>即可查看版本。</p>
 </li>
 </ul>
-<!--
+<!-- -->
+<h1 id="_12">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h1>
+<h3 id="host_host_offline">修改 Host 名称后，旧的 Host 一直显示 <code>OFFLINE</code> 怎么办？<a class="headerlink" href="#host_host_offline" title="Permanent link">&para;</a></h3>
+<p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
+<h2 id="_13">关于连接<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">防火墙中需要开放哪些端口？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
+<table>
+<thead>
+<tr>
+<th>服务类型</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta</td>
+<td>9559, 9560, 19559</td>
+</tr>
+<tr>
+<td>Graph</td>
+<td>9669, 19669</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>9777 ~ 9780, 19779</td>
+</tr>
+</tbody>
+</table>
+<p>如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。</p>
+<p>周边工具各自使用不用的端口，请参考各工具文档。</p>
+<h3 id="_15">如何测试端口是否已开放？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>用户可以使用如下 telnet 命令检查端口状态：</p>
+<div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果无法使用 telnet 命令，请先检查主机中是否安装并启动了 telnet。</p>
+</div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>// 如果端口已开放：
+$ telnet <span class="m">192</span>.168.1.10 <span class="m">9669</span>
+Trying <span class="m">192</span>.168.1.10...
+Connected to <span class="m">192</span>.168.1.10.
+Escape character is <span class="s1">&#39;^]&#39;</span>.
+
+// 如果端口未开放：
+$ telnet <span class="m">192</span>.168.1.10 <span class="m">9777</span>
+Trying <span class="m">192</span>.168.1.10...
+telnet: connect to address <span class="m">192</span>.168.1.10: Connection refused
+</code></pre></div>
+<!-- --><!--）
 ### 如何扩缩容（仅限企业版）
 
 - 使用 Dashboard（企业版），在可视化页面对 graphd 和 storaged 进行快速扩缩容，详情参见[集群操作-扩缩容](../nebula-dashboard-ent/4.cluster-operator/operator/scale.md)。
@@ -8165,64 +8148,14 @@ NebulaGraph 3.3.0 未提供运维命令以实现自动扩缩容，参考以下�
 
   storaged 扩缩容之后，还需要运行 [Balance Data 和 Balance Leader 命令](../8.service-tuning/load-balance.md)。
 
--->
-
-<h3 id="host_host_offline">修改 Host 名称后，旧的 Host 一直显示 <code>OFFLINE</code> 怎么办？<a class="headerlink" href="#host_host_offline" title="Permanent link">&para;</a></h3>
-<p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
-<h2 id="_12">关于连接<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h3 id="_13">防火墙中需要开放哪些端口？<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
-<table>
-<thead>
-<tr>
-<th>服务类型</th>
-<th>端口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Meta</td>
-<td>9559, 9560, 19559, 19560</td>
-</tr>
-<tr>
-<td>Graph</td>
-<td>9669, 19669, 19670</td>
-</tr>
-<tr>
-<td>Storage</td>
-<td>9777 ~ 9780, 19779, 19780</td>
-</tr>
-</tbody>
-</table>
-<p>如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。</p>
-<p>周边工具各自使用不用的端口，请参考各工具文档。</p>
-<h3 id="_14">如何测试端口是否已开放？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>用户可以使用如下 telnet 命令检查端口状态：</p>
-<div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>如果无法使用 telnet 命令，请先检查主机中是否安装并启动了 telnet。</p>
-</div>
-<p>示例：</p>
-<div class="highlight"><pre><span></span><code>// 如果端口已开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9669</span>
-Trying <span class="m">192</span>.168.1.10...
-Connected to <span class="m">192</span>.168.1.10.
-Escape character is <span class="s1">&#39;^]&#39;</span>.
-
-// 如果端口未开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9777</span>
-Trying <span class="m">192</span>.168.1.10...
-telnet: connect to address <span class="m">192</span>.168.1.10: Connection refused
-</code></pre></div>
+<!-- -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

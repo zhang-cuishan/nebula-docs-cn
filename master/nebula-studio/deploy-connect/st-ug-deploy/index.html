@@ -4416,7 +4416,41 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#helm_studio" class="md-nav__link">
+    Helm 部署 Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="Helm 部署 Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    卸载
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
     后续操作
   </a>
   
@@ -4437,7 +4471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -5102,7 +5136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7517,7 +7551,41 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#helm_studio" class="md-nav__link">
+    Helm 部署 Studio
+  </a>
+  
+    <nav class="md-nav" aria-label="Helm 部署 Studio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    卸载
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
     后续操作
   </a>
   
@@ -7878,7 +7946,112 @@ $ ./server
 <p><img alt="NebulaGraph Studio 登录界面" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-000-cn.png" title="NebulaGraph Studio 登录界面" /></p>
 </li>
 </ol>
-<h2 id="_13">后续操作<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="helm_studio">Helm 部署 Studio<a class="headerlink" href="#helm_studio" title="Permanent link">&para;</a></h2>
+<p>本小节介绍如何在 Kubernetes 中使用 Helm 部署并启动 Studio。</p>
+<h3 id="_13">前提条件<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>安装 Studio 前，用户需要安装以下软件并确保安装版本的正确性：</p>
+<table>
+<thead>
+<tr>
+<th>软件</th>
+<th>版本要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://kubernetes.io">Kubernetes</a></td>
+<td>>= 1.14</td>
+</tr>
+<tr>
+<td><a href="https://helm.sh">Helm</a></td>
+<td>>= 3.2.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_14">操作步骤<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>克隆 Studio 的源代码到主机。</p>
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/vesoft-inc/nebula-studio.git
+</code></pre></div>
+</li>
+<li>
+<p>进入<code>nebula-studio</code>目录。</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-studio
+</code></pre></div>
+</li>
+<li>
+<p>更新并安装 Helm Chart，命名为<code>my-studio</code>。</p>
+<div class="highlight"><pre><span></span><code>$ helm upgrade --install my-studio --set service.type<span class="o">=</span>NodePort --set service.port<span class="o">={</span><span class="m">30070</span><span class="o">}</span> deployment/helm
+</code></pre></div>
+<p>Helm Chart 配置参数说明如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">replicaCount</td>
+<td align="left">0</td>
+<td align="left">Deployment 的副本数。</td>
+</tr>
+<tr>
+<td align="left">image.nebulaStudio.name</td>
+<td align="left">vesoft/nebula-graph-studio</td>
+<td align="left">nebula-graph-studio 镜像的仓库地址。</td>
+</tr>
+<tr>
+<td align="left">image.nebulaStudio.version</td>
+<td align="left">v3.2.0</td>
+<td align="left">nebula-graph-studio 的版本。</td>
+</tr>
+<tr>
+<td align="left">service.type</td>
+<td align="left">ClusterIP</td>
+<td align="left">服务类型，必须为<code>NodePort</code>，<code>ClusterIP</code>或<code>LoadBalancer</code>其中之一。</td>
+</tr>
+<tr>
+<td align="left">service.port</td>
+<td align="left">7001</td>
+<td align="left">nebula-graph-studio 中 web 服务的端口。</td>
+</tr>
+<tr>
+<td align="left">service.nodePort</td>
+<td align="left">32701</td>
+<td align="left">Kubernetes 集群外部访问 nebula-studio 的代理端口。</td>
+</tr>
+<tr>
+<td align="left">resources.nebulaStudio</td>
+<td align="left">{}</td>
+<td align="left">nebula-studio 的资源限制/请求。</td>
+</tr>
+<tr>
+<td align="left">persistent.storageClassName</td>
+<td align="left">""</td>
+<td align="left">storageClass 名称，如果不指定就使用默认值。</td>
+</tr>
+<tr>
+<td align="left">persistent.size</td>
+<td align="left">5Gi</td>
+<td align="left">存储盘大小。</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>启动成功后，在浏览器地址栏输入<code>http://&lt;node_address&gt;:30070</code>。
+   如果在浏览器窗口中能看到以下登录界面，表示已经成功部署并启动 Studio。</p>
+<p><img alt="NebulaGraph Studio 登录界面" src="https://docs-cdn.nebula-graph.com.cn/figures/st-ug-000-cn.png" title="NebulaGraph Studio 登录界面" /></p>
+</li>
+</ol>
+<h3 id="_15">卸载<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ helm uninstall my-studio
+</code></pre></div>
+<h2 id="_16">后续操作<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
 <p>进入 Studio 登录界面后，用户需要连接 NebulaGraph。详细信息，参考<a href="../st-ug-connect/">连接数据库</a>。</p>
 
   <hr>
@@ -7886,7 +8059,7 @@ $ ./server
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>
@@ -7936,13 +8109,13 @@ $ ./server
       
       
         
-        <a href="../st-ug-deploy-by-helm/" class="md-footer__link md-footer__link--next" aria-label="下一页: 使用 Helm 部署 Studio" rel="next">
+        <a href="../st-ug-connect/" class="md-footer__link md-footer__link--next" aria-label="下一页: 连接数据库" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              使用 Helm 部署 Studio
+              连接数据库
             </div>
           </div>
           <div class="md-footer__button md-icon">

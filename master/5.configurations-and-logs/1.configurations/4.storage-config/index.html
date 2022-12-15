@@ -3422,20 +3422,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    超级节点处理（出入边数量极多的点）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    数据量大而内存不够时
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4378,7 +4364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -5043,7 +5029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7391,20 +7377,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    超级节点处理（出入边数量极多的点）
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    数据量大而内存不够时
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -7849,7 +7821,33 @@ disable_auto_compactions
 </li>
 </ul>
 <p>参数的详细说明请参见 <a href="https://rocksdb.org/">RocksDB 官方文档</a>。</p>
-<!--
+<!-- -->
+<h1 id="_3">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h2 id="_4">超级节点处理（出入边数量极多的点）<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在每个点出发的查询获取到边时，直接截断。目的是避免超级节点的邻边过多，单个查询占用过多的硬盘和内存。截取前 <code>max_edge_returned_per_vertex</code> 个边，多余的边不返回。该参数作用于全局，不用于单个 space。</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性名</th>
+<th align="left">默认值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">max_edge_returned_per_vertex</td>
+<td align="left">2147483647</td>
+<td align="left">每个稠密点，最多返回多少条边，多余的边截断不返回。配置文件默认未设置。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">数据量大而内存不够时<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>一个图空间至少占用大约 300 MB 的内存。</p>
+</div>
+<p>如果数据量很大但内存不够，则可以尝试把 storage 配置中的<code>enable_partitioned_index_filter</code>设置为<code>true</code>，减少<code>rocksdb_block_cache</code>。但由于缓存了较少的 RocksDB 索引，性能可能会受影响。此外，当通过语句拉取大量数据时，仍存在 OOM 的可能。</p>
+<!-- --><!--）
 
 ## storage cache 配置
 
@@ -7882,32 +7880,7 @@ disable_auto_compactions
 |`ng_black_box_dump_period_seconds`    |`5`                     |黑匣子采集指标的时间间隔。单位：秒。|
 |`ng_black_box_file_lifetime_seconds`    |`1800`                     |采集指标后生成文件的保存时间。单位：秒|
 
--->
-
-<h2 id="_3">超级节点处理（出入边数量极多的点）<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在每个点出发的查询获取到边时，直接截断。目的是避免超级节点的邻边过多，单个查询占用过多的硬盘和内存。截取前 <code>max_edge_returned_per_vertex</code> 个边，多余的边不返回。该参数作用于全局，不用于单个 space。</p>
-<table>
-<thead>
-<tr>
-<th align="left">属性名</th>
-<th align="left">默认值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">max_edge_returned_per_vertex</td>
-<td align="left">2147483647</td>
-<td align="left">每个稠密点，最多返回多少条边，多余的边截断不返回。配置文件默认未设置。</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_4">数据量大而内存不够时<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>一个图空间至少占用大约 300 MB 的内存。</p>
-</div>
-<p>如果数据量很大但内存不够，则可以尝试把 storage 配置中的<code>enable_partitioned_index_filter</code>设置为<code>true</code>，减少<code>rocksdb_block_cache</code>。但由于缓存了较少的 RocksDB 索引，性能可能会受影响。此外，当通过语句拉取大量数据时，仍存在 OOM 的可能。</p>
+<!-- -->
 
   <hr>
 <div class="md-source-file">

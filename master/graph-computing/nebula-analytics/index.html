@@ -4256,7 +4256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4921,7 +4921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7358,7 +7358,15 @@
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.nebula-graph.com.cn/contact">联系我们</a>获取 Nebula Analytics 安装包。</li>
+</ul>
+<ul>
 <li><a href="../analytics-ent-license/">准备 Nebula Analytics License</a>。</li>
+</ul>
+<ul>
+<li>已部署 2.2.x 或以上版本的 <a href="https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/ClusterSetup.html">HDFS</a>。</li>
+</ul>
+<ul>
+<li>已安装 1.8 版本的 JDK。</li>
 </ul>
 <h2 id="_2">适用场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>支持将数据源为 NebulaGraph 集群、HDFS 上的 CSV 文件或本地 CSV 文件中的数据导入 NebulaGraph Analytics，并将图计算结果输出至 NebulaGraph 集群、HDFS 上的 CSV 文件或本地 CSV 文件。</p>
@@ -7513,8 +7521,19 @@
 <h2 id="nebulagraph_analytics_1">安装 NebulaGraph Analytics<a class="headerlink" href="#nebulagraph_analytics_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>在多个机器安装由多个 NebulaGraph Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-analytics-3.3.0-centos.x86_64.rpm  --prefix /home/xxx/nebula-analytics
+<p>安装 NebulaGraph Analytics。</p>
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh &lt;analytics_package_name&gt; --prefix &lt;install_path&gt;
+$ sudo chown &lt;user&gt;:&lt;user&gt; -R &lt;install path&gt;
+</code></pre></div>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>$ sudo rpm -ivh nebula-analytics-3.3.0-centos.x86_64.rpm --prefix=/home/vesoft/nebula-analytics
+$ sudo chown vesoft:vesoft -R /home/vesoft/nebula-analytics
+</code></pre></div>
+</li>
+<li>
+<p>配置<code>set_env.sh</code>文件，路径为<code>nebula-analytics/scripts/set_env.sh</code>。配置正确的 Hadoop 路径和 JDK 路径。如果有多台机器，请确保路径一致。</p>
+<div class="highlight"><pre><span></span><code>export HADOOP_HOME=&lt;hadoop_path&gt;
+export JAVA_HOME=&lt;java_path&gt;
 </code></pre></div>
 </li>
 <li>
@@ -7574,8 +7593,6 @@
 --space<span class="o">=</span>baskeyballplayer  
 
 <span class="c1"># 读取 NebulaGraph 设置</span>
-<span class="c1"># NebulaGraph 的 metad leader服务地址，例如为192.168.8.101。</span>
---meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.8.101:9559
 <span class="c1"># 要读取的边的名称。</span>
 --edges<span class="o">=</span>LIKES  
 <span class="c1"># 要读取的作为边的权重属性的名称。可以是属性名，也可以是 _rank。</span>
@@ -7602,6 +7619,12 @@
 --write_batch_size<span class="o">=</span><span class="m">1000</span> 
 <span class="c1"># 写回失败的数据所存储的文件。</span>
 --err_file<span class="o">=</span>/home/xxx/analytics/err.txt 
+
+<span class="c1"># 其他设置</span>
+<span class="c1"># 服务访问超时时间</span>
+--graphd_timeout<span class="o">=</span><span class="m">60000</span>
+--metad_timeout<span class="o">=</span><span class="m">60000</span>
+--storaged_timeout<span class="o">=</span><span class="m">60000</span>
 </code></pre></div>
 </li>
 <li>
@@ -7706,7 +7729,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

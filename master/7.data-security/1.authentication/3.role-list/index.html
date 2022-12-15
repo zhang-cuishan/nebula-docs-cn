@@ -3591,13 +3591,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    角色权限
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -4308,7 +4301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4973,7 +4966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7258,13 +7251,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    角色权限
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -7362,19 +7348,8 @@
 </ul>
 </li>
 </ul>
-<!--
-- Basic
-
-  - 对权限内的图空间拥有 Schema 的**只读**权限。
-
-  - 对权限内的图空间可以自定义 Tag 和 Edge Type 的数据的**读写**权限。
-
-!!! enterpriseonly
-
-    Basic 角色仅在企业版中提供。
-
--->
-
+<!-- -->
+<h1 id="_3">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -7382,7 +7357,7 @@
 <li>一个用户在一个图空间内只能拥有一个角色权限。授权用户请参见<a href="../2.management-user/">用户管理</a>。</li>
 </ul>
 </div>
-<h2 id="_3">角色权限<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">角色权限<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>各角色的执行权限如下。</p>
 <table>
 <thead>
@@ -7513,7 +7488,20 @@
 <p>Show operations 为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
 只有 God 角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</p>
 </div>
-<!--
+<!-- -->
+<h1 id="_5">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<!-- --><!--）
+- Basic
+
+  - 对权限内的图空间拥有 Schema 的**只读**权限。
+
+  - 对权限内的图空间可以自定义 Tag 和 Edge Type 的数据的**读写**权限。
+
+!!! enterpriseonly
+
+    Basic 角色仅在企业版中提供。
+
+<!-- --><!-- --><!--）
 ## Basic 角色(企业版)
 
 ### 语法
@@ -7583,7 +7571,7 @@ nebula&gt; SHOW GRANTS test
 
     对于 Basic 角色用户，显式指定无读权限的 Tag/Edge Type 将报错，未显式指定无读权限的 Tag/Edge Type 不会报错。在遍历过程中，所有查询无法读取无权限的 Tag/Edge Type 及其上的属性。Edge Type 的读权限可控制边的扩展行为，在遍历过程中，如果 Edge Type 无权限，将不会进行拓展；Tag 的读权限不控制点的拓展行为，拓展过程中即使点上 Tag 无权限，仍可进行拓展。
 
--->
+<!-- -->
 
   <hr>
 <div class="md-source-file">

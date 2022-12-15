@@ -4256,7 +4256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4921,7 +4921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7705,10 +7705,6 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
 </li>
 </ol>
 <h3 id="_9">直接提交算法包<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>使用封装好的算法包有一定的局限性，例如落库到 NebulaGraph 时，落库的图空间中创建的 Tag 的属性名称必须和代码内预设的名称保持一致。如果用户有开发能力，推荐使用第一种方法。</p>
-</div>
 <ol>
 <li>
 <p>设置<a href="https://github.com/vesoft-inc/nebula-algorithm/blob/v3.0.0/nebula-algorithm/src/main/resources/application.conf">配置文件</a>。</p>
@@ -7825,6 +7821,10 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当配置为 <code>sink: nebula</code> 的时候，意味着算法运算结果将被写回 NebulaGraph 集群，这对写回到的 TAG 中的属性名有隐含的约定。详情参考本文<strong>支持算法</strong>部分。</p>
+</div>
 </li>
 <li>
 <p>提交图计算任务。</p>
@@ -7846,7 +7846,7 @@ val <span class="nv">louvainResult</span> <span class="o">=</span> PageRankAlgo.
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

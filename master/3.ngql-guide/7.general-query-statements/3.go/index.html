@@ -4315,7 +4315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4980,7 +4980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7343,12 +7343,15 @@ YIELD [DISTINCT] &lt;return_list&gt;
 <p><code>WHERE &lt;conditions&gt;</code>：指定遍历的过滤条件。用户可以在起始点、目的点和边使用<code>WHERE</code>子句，还可以结合<code>AND</code>、<code>OR</code>、<code>NOT</code>、<code>XOR</code>一起使用。详情参见 <a href="../../8.clauses-and-options/where/">WHERE</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>遍历多个 Edge type 时，<code>WHERE</code>子句有一些限制。例如不支持<code>WHERE edge1.prop1 &gt; edge2.prop2</code>。</p>
+<ul>
+<li>遍历多个 Edge type 时，<code>WHERE</code>子句有一些限制。例如不支持<code>WHERE edge1.prop1 &gt; edge2.prop2</code>。</li>
+<li>GO 语句执行时先遍历所有的点，然后再根据过滤器条件进行过滤。</li>
+</ul>
 </div>
 </li>
 </ul>
 <ul>
-<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用 <a href="../../6.functions-and-expressions/4.schema/">Schema 函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>等，暂不支持嵌套函数。详情参见 <a href="../../8.clauses-and-options/yield/">YIELD</a>。</li>
+<li><code>YIELD [DISTINCT] &lt;return_list&gt;</code>：定义需要返回的输出。<code>&lt;return_list&gt;</code>建议使用 <a href="../../6.functions-and-expressions/4.schema/">Schema 相关函数</a>，当前支持<code>src(edge)</code>、<code>dst(edge)</code>、<code>type(edge)</code>等，暂不支持嵌套函数。详情参见 <a href="../../8.clauses-and-options/yield/">YIELD</a>。</li>
 </ul>
 <ul>
 <li><code>SAMPLE &lt;sample_list&gt;</code>：用于在结果集中取样。详情参见 <a href="../../8.clauses-and-options/sample/">SAMPLE</a>。</li>
@@ -7524,7 +7527,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

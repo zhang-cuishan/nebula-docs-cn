@@ -4447,7 +4447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -5112,7 +5112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7627,12 +7627,13 @@
 +----------------------------+
 </code></pre></div>
 <h2 id="length">length()<a class="headerlink" href="#length" title="Permanent link">&para;</a></h2>
-<p>length() 返回指定字符串的长度，单位：字节。</p>
-<p>语法：<code>length(&lt;string&gt;)</code></p>
+<p>length() 返回：
+  - 指定字符串的长度，单位：字节。
+  - 路径的长度，单位：跳。</p>
+<p>语法：<code>length({&lt;string&gt;|&lt;path&gt;})</code></p>
 <ul>
 <li><code>string</code>：指定的字符串。</li>
-</ul>
-<ul>
+<li><code>path</code>：指定的路径，使用变量表示。</li>
 <li>返回类型：int。</li>
 </ul>
 <p>示例：</p>
@@ -7642,6 +7643,15 @@
 +----------------------+
 | 10                   |
 +----------------------+
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2) return length(p);
++-----------+
+| length(p) |
++-----------+
+| 1         |
+| 1         |
+| 1         |
++-----------+
 </code></pre></div>
 <h2 id="trim">trim()<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
 <p>trim() 删除指定字符串头部和尾部的空格。</p>
@@ -8064,7 +8074,7 @@ nebula&gt; MATCH (a:player)-[b:serve]-(c:team{name: &quot;Lakers&quot;}) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

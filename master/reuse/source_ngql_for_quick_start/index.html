@@ -4256,7 +4256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -4921,7 +4921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7541,6 +7541,10 @@ vid_type = {FIXED_STRING(&lt;N&gt;) | INT64}
 <p>执行如下语句创建名为<code>basketballplayer</code>的图空间。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE SPACE basketballplayer(partition_num=15, replica_factor=1, vid_type=fixed_string(30));
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果报错提示<code>[ERROR (-1005)]: Host not enough!</code>，请检查是否已<a href="https://docs.nebula-graph.com.cn/3.3.0/2.quick-start/3.quick-start-on-premise/3.1add-storage-hosts/">添加 Storage 主机</a>。</p>
+</div>
 </li>
 <li>
 <p>执行命令<code>SHOW HOSTS</code>检查分片的分布情况，确保平衡分布。</p>
@@ -8008,7 +8012,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;}) RETURN v;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>

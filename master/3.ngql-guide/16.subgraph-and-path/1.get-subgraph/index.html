@@ -4342,7 +4342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm/" class="md-nav__link">
+      <a href="../../../nebula-studio/deploy-connect/st-ug-deploy-by-helm.md" class="md-nav__link">
         使用 Helm 部署 Studio
       </a>
     </li>
@@ -5007,7 +5007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/backup-and-restore.md" class="md-nav__link">
         备份恢复
       </a>
     </li>
@@ -7388,8 +7388,9 @@ YIELD [VERTICES AS &lt;vertex_alias&gt;] [, EDGES AS &lt;edge_alias&gt;];
 <ul>
 <li><strong>仅支持</strong><code>AND</code>运算符。</li>
 <li><strong>仅支持</strong>过滤目的点，点的格式为<code>$$.tagName.propName</code>。</li>
+<li><strong>支持</strong>过滤边，边的格式为<code>edge_type.propName</code>。</li>
 <li><strong>支持</strong>数学函数、聚合函数、字符串函数、日期时间函数、列表函数中的通用函数和类型转化函数。</li>
-<li><strong>不支持</strong>聚合函数、Schema 函数、条件表达式函数、谓词函数、geo 函数和自定义函数，列表函数中除通用函数以外的函数。</li>
+<li><strong>不支持</strong>聚合函数、Schema 相关函数、条件表达式函数、谓词函数、geo 函数和自定义函数，列表函数中除通用函数以外的函数。</li>
 </ul>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>以下面的示例图进行演示。</p>
@@ -7447,6 +7448,19 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES &quot;player101&quot; 
 <p><img alt="GET SUBGRAPH FROM &quot;101&quot; OUT serve" src="https://docs-cdn.nebula-graph.com.cn/figures/subgraph-2-22-5-7.png" /></p>
 </li>
 </ul>
+<ul>
+<li>查询从点<code>player101</code>开始、0~2 跳、<code>follow</code>类型边<code>degree</code>大于 90，年龄大于 30 的子图，同时展示边的属性。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH WITH PROP 2 STEPS FROM &quot;player101&quot; \
+    WHERE follow.degree &gt; 90 AND $$.player.age &gt; 30 \
+    YIELD VERTICES AS nodes, EDGES AS relationships;
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| nodes                                                                                                       | relationships                                                                                                                                                |
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| [(&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})]                                                       | [[:follow &quot;player101&quot;-&gt;&quot;player100&quot; @0 {degree: 95}], [:follow &quot;player101&quot;-&gt;&quot;player125&quot; @0 {degree: 95}], [:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}]] |
+| [(&quot;player125&quot; :player{age: 41, name: &quot;Manu Ginobili&quot;}), (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;})] | [[:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}]]                                                                                                         |
++-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></pre></div>
+</li>
+</ul>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h3 id="step_count">为什么返回结果中会出现超出<code>step_count</code>跳数之外的关系？<a class="headerlink" href="#step_count" title="Permanent link">&para;</a></h3>
 <p>为了展示子图的完整性，会在满足条件的所有点上额外查询一跳。例如下图。</p>
@@ -7478,7 +7492,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>
