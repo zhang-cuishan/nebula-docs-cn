@@ -3429,6 +3429,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    metrics 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    session 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental" class="md-nav__link">
+    experimental 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7522,6 +7557,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    metrics 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    session 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimental" class="md-nav__link">
+    experimental 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7847,7 +7917,14 @@
 </tbody>
 </table>
 <!-- -->
-<h1 id="_3">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<h2 id="audit">audit 配置<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅 NebulaGraph 企业版支持审计日志功能。</p>
+</div>
+<p>详细参数说明参见<a href="../../2.log-management/audit-log/">审计日志</a>。</p>
+<!-- -->
+
 <h2 id="metrics">metrics 配置<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -7910,32 +7987,43 @@
 </tbody>
 </table>
 <!-- -->
-<h1 id="_4">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
-<!-- --><!--）
-## audit 配置
 
-!!! enterpriseonly
-
-    仅 NebulaGraph 企业版支持审计日志功能。
-
-详细参数说明参见[审计日志](../2.log-management/audit-log.md)。
-
-<!-- --><!-- --><!--）
-
-## Black box 配置
-
-!!! enterpriseonly
-
-    仅企业版支持黑匣子功能配置。
-
-| 名称                 | 预设值                    | 说明                               |
-| :------------------- | :------------------------ | :------------------------------------------ |
-|`ng_black_box_switch`    |`true`                     |是否开启黑匣子功能。|
-|`ng_black_box_home`    |`black_box`                     |存储黑匣子数据的目录名称。|
-|`ng_black_box_dump_period_seconds`    |`5`                     |黑匣子采集指标的时间间隔。单位：秒。|
-|`ng_black_box_file_lifetime_seconds`    |`1800`                     |采集指标后生成文件的保存时间。单位：秒|
-
-
+<h2 id="black_box">Black box 配置<a class="headerlink" href="#black_box" title="Permanent link">&para;</a></h2>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅企业版支持黑匣子功能配置。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ng_black_box_switch</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否开启黑匣子功能。</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_home</code></td>
+<td align="left"><code>black_box</code></td>
+<td align="left">存储黑匣子数据的目录名称。</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_dump_period_seconds</code></td>
+<td align="left"><code>5</code></td>
+<td align="left">黑匣子采集指标的时间间隔。单位：秒。</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_file_lifetime_seconds</code></td>
+<td align="left"><code>1800</code></td>
+<td align="left">采集指标后生成文件的保存时间。单位：秒</td>
+</tr>
+</tbody>
+</table>
 <!-- -->
 
   <hr>

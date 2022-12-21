@@ -2165,6 +2165,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    保留的数据
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7424,6 +7438,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    保留的数据
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7464,8 +7492,14 @@
 </li>
 </ul>
 <!-- -->
-<h1 id="_3">文档包含企业版时需补全该注释（），只包含社区版时只保留注释头（<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
-<h2 id="_4">语法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+
+<p>!!! enterpriseonly</p>
+<div class="codehilite"><pre><span></span><code>  - 企业版 NebulaGraph 支持先运行`SET VARIABLE read_only=true`阻止向 NebulaGraph 写入数据，再运行`CLEAR SPACE`。数据清除成功后运行`SET VARIABLE read_only=false`即可重新允许写入。
+</code></pre></div>
+
+<!-- -->
+
+<h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;
 </code></pre></div>
 <table>
@@ -7489,7 +7523,7 @@
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>CLEAR SPACE basketballplayer;
 </code></pre></div>
-<h2 id="_5">保留的数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_4">保留的数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>图空间中，<code>CLEAR SPACE</code>不会删除的数据包括：</p>
 <ul>
 <li>Tag 信息。</li>
@@ -7591,13 +7625,6 @@ nebula[basketballplayer]&gt; SHOW TAG INDEXES;
 +------------------+----------+----------+
 Got 2 rows (time spent 523/978 us)
 </code></pre></div>
-<!-- --><!--）
-
-  !!! enterpriseonly
-
-      - 企业版 NebulaGraph 支持先运行`SET VARIABLE read_only=true`阻止向 NebulaGraph 写入数据，再运行`CLEAR SPACE`。数据清除成功后运行`SET VARIABLE read_only=false`即可重新允许写入。
-
-<!-- -->
 
   <hr>
 <div class="md-source-file">
