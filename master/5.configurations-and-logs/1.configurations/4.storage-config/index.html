@@ -3430,13 +3430,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-value_separation" class="md-nav__link">
-    Key-Value separation 配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#misc" class="md-nav__link">
     misc 配置
   </a>
@@ -7544,13 +7537,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-value_separation" class="md-nav__link">
-    Key-Value separation 配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#misc" class="md-nav__link">
     misc 配置
   </a>
@@ -7881,38 +7867,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="key-value_separation">Key-Value separation 配置<a class="headerlink" href="#key-value_separation" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">预设值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>rocksdb_enable_kv_separation</code></td>
-<td align="left"><code>false</code></td>
-<td align="left">是否启用 BlobDB KV 分离存储功能。开启后可以提高查询性能。</td>
-</tr>
-<tr>
-<td align="left"><code>rocksdb_kv_separation_threshold</code></td>
-<td align="left"><code>100</code></td>
-<td align="left">RocksDB KV 分离的阈值，在 flush 或 compaction 期间，大于或等于该阈值的值将被写入blob文件。单位：字节。</td>
-</tr>
-<tr>
-<td align="left"><code>rocksdb_blob_compression</code></td>
-<td align="left"><code>lz4</code></td>
-<td align="left">BlobDB 的压缩算法，可选值：<code>no</code>、<code>snappy</code>、<code>lz4</code>、<code>lz4hc</code>、<code>zlib</code>、<code>bzip2</code>、<code>zstd</code>。</td>
-</tr>
-<tr>
-<td align="left"><code>rocksdb_enable_blob_garbage_collection</code></td>
-<td align="left"><code>true</code></td>
-<td align="left">在 compaction 过程中是否对 BlobDB 进行垃圾收集。</td>
-</tr>
-</tbody>
-</table>
+<!-- 等rocksdb的bug解决后放出来
+## Key-Value separation 配置
+
+| 名称                | 预设值                    | 说明                               |
+| :------------------| :------------------------| :------------------------------- |
+| `rocksdb_enable_kv_separation`   |  `false`   |  是否启用 BlobDB KV 分离存储功能。开启后可以提高查询性能。    |
+| `rocksdb_kv_separation_threshold`  | `100`    |   RocksDB KV 分离的阈值，在 flush 或 compaction 期间，大于或等于该阈值的值将被写入blob文件。单位：字节。   |
+| `rocksdb_blob_compression`  | `lz4`    | BlobDB 的压缩算法，可选值：`no`、`snappy`、`lz4`、`lz4hc`、`zlib`、`bzip2`、`zstd`。     |
+| `rocksdb_enable_blob_garbage_collection`  | `true`    | 在 compaction 过程中是否对 BlobDB 进行垃圾收集。     | -->
+
 <h2 id="misc">misc 配置<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -8167,7 +8131,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>
       
     
   </small>

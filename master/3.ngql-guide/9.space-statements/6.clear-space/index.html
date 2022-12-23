@@ -7474,6 +7474,10 @@
 
 <h1 id="clear_space">CLEAR SPACE<a class="headerlink" href="#clear_space" title="Permanent link">&para;</a></h1>
 <p><code>CLEAR SPACE</code>语句用于清空图空间中的点和边，但不会删除图空间本身以及其中的 Schema 信息。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议在执行<code>CLEAR SPACE</code>操作之后，立即执行<a href="../../4.job-statements/#submit_job_compact"><code>SUBMIT JOB COMPACT</code></a>操作以提升查询性能。需要注意的是，COMPACT 操作可能会影响查询性能，建议在业务低峰期（例如凌晨）执行该操作。</p>
+</div>
 <h2 id="_1">权限要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>只有 <a href="../../../7.data-security/1.authentication/3.role-list/">God 角色</a>的用户可以执行<code>CLEAR SPACE</code>语句。</p>
 <h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -7481,22 +7485,18 @@
 <li>数据清除后，<strong>如无备份，无法恢复</strong>。使用该功能务必谨慎。</li>
 <li><code>CLEAR SPACE</code>不是原子性操作。如果执行出错，请重新执行，避免残留数据。</li>
 <li>图空间中的数据量越大，<code>CLEAR SPACE</code>消耗的时间越长。如果<code>CLEAR SPACE</code>的执行因客户端连接超时而失败，可以增大 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>中<code>storage_client_timeout_ms</code>参数的值。</li>
-<li>
-<p>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止。这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏。</p>
+<li>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止。这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏。</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul>
-<li>社区版 NebulaGraph 不支持在运行<code>CLEAR SPACE</code>的同时禁止写入。</li>
-</ul>
+<p>社区版 NebulaGraph 不支持在运行<code>CLEAR SPACE</code>的同时禁止写入。</p>
 </div>
-</li>
-</ul>
 <!-- -->
 
-<p>!!! enterpriseonly</p>
-<div class="codehilite"><pre><span></span><code>  - 企业版 NebulaGraph 支持先运行`SET VARIABLE read_only=true`阻止向 NebulaGraph 写入数据，再运行`CLEAR SPACE`。数据清除成功后运行`SET VARIABLE read_only=false`即可重新允许写入。
-</code></pre></div>
-
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>企业版 NebulaGraph 支持先运行<code>SET VARIABLE read_only=true</code>阻止向 NebulaGraph 写入数据，再运行<code>CLEAR SPACE</code>。数据清除成功后运行<code>SET VARIABLE read_only=false</code>即可重新允许写入。</p>
+</div>
 <!-- -->
 
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -7631,7 +7631,7 @@ Got 2 rows (time spent 523/978 us)
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>
       
     
   </small>
