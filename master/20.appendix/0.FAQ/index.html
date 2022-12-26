@@ -7539,29 +7539,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    关于连接
-  </a>
-  
-    <nav class="md-nav" aria-label="关于连接">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    防火墙中需要开放哪些端口？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    如何测试端口是否已开放？
+  <a href="#dmp" class="md-nav__link">
+    如何查看 dmp 文件？
   </a>
   
 </li>
@@ -7996,29 +7976,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    关于连接
-  </a>
-  
-    <nav class="md-nav" aria-label="关于连接">
-      <ul class="md-nav__list">
-        
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    防火墙中需要开放哪些端口？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    如何测试端口是否已开放？
+  <a href="#dmp" class="md-nav__link">
+    如何查看 dmp 文件？
   </a>
   
 </li>
@@ -8349,36 +8309,56 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 
 <h3 id="host_host_offline">修改 Host 名称后，旧的 Host 一直显示 <code>OFFLINE</code> 怎么办？<a class="headerlink" href="#host_host_offline" title="Permanent link">&para;</a></h3>
 <p><code>OFFLINE</code> 状态的 Host 将在一天后自动删除。</p>
-<h2 id="_13">关于连接<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<h3 id="_14">防火墙中需要开放哪些端口？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
-<p>如果没有修改过<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件</a> 中预设的端口，请在防火墙中开放如下端口：</p>
-<table>
-<thead>
-<tr>
-<th>服务类型</th>
-<th>端口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Meta</td>
-<td>9559, 9560, 19559</td>
-</tr>
-<tr>
-<td>Graph</td>
-<td>9669, 19669</td>
-</tr>
-<tr>
-<td>Storage</td>
-<td>9777 ~ 9780, 19779</td>
-</tr>
-</tbody>
-</table>
-<p>如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。</p>
-<p>周边工具各自使用不用的端口，请参考各工具文档。</p>
-<h3 id="_15">如何测试端口是否已开放？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>用户可以使用如下 telnet 命令检查端口状态：</p>
-<div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
+<h3 id="dmp">如何查看 dmp 文件？<a class="headerlink" href="#dmp" title="Permanent link">&para;</a></h3>
+<p>dmp 文件是错误报告文件，详细记录了进程退出的信息，可以用操作系统自带的 gdb 工具查看。Coredump 文件默认保存在启动二进制的当前目录下（默认为<code>/usr/local/nebula</code>目录），在 NebulaGraph 服务 crash 时，系统会自动生成。</p>
+<ol>
+<li>查看 Core 文件进程名字，pid 一般为数值。
+   <div class="highlight"><pre><span></span><code>$ file core.&lt;pid&gt;
+</code></pre></div></li>
+<li>使用 gdb 调试。
+   <div class="highlight"><pre><span></span><code>$ gdb &lt;process.name&gt; core.&lt;pid&gt;
+</code></pre></div></li>
+<li>查看文件内容。
+   <div class="highlight"><pre><span></span><code>$(gdb) bt
+</code></pre></div>
+例如：</li>
+</ol>
+<div class="highlight"><pre><span></span><code> $ file core.1316027
+ core.1316027: ELF <span class="m">64</span>-bit LSB core file, x86-64, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, SVR4-style, from <span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad --flagfile /home/k&#39;</span>, real uid: <span class="m">1008</span>, effective uid: <span class="m">1008</span>, real gid: <span class="m">1008</span>, effective gid: <span class="m">1008</span>, execfn: <span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad&#39;</span>, platform: <span class="s1">&#39;x86_64&#39;</span>
+
+ $ gdb /home/workspace/fork/nebula-debug/bin/nebula-metad core.1316027
+
+ <span class="k">$(</span>gdb<span class="k">)</span> bt
+ <span class="c1">#0  0x00007f9de58fecf5 in __memcpy_ssse3_back () from /lib64/libc.so.6</span>
+ <span class="c1">#1  0x0000000000eb2299 in void std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_construct&lt;char*&gt;(char*, char*, std::forward_iterator_tag) ()</span>
+ <span class="c1">#2  0x0000000000ef71a7 in nebula::meta::cpp2::QueryDesc::QueryDesc(nebula::meta::cpp2::QueryDesc const&amp;) ()</span>
+ ...
+ <span class="sb">```</span>
+
+如果用户不清楚 dmp 打印出来的相关信息，可以将打印出来的内容，带上操作系统版本、硬件配置、Core文件产生前后的错误日志和可能导致错误的操作贴在 <span class="o">[</span>NebulaGraph 论坛<span class="o">](</span>https://discuss.nebula-graph.com.cn/<span class="o">)</span>上寻求帮助。
+
+<span class="c1">## 关于连接</span>
+
+<span class="c1">### 防火墙中需要开放哪些端口？</span>
+
+如果没有修改过<span class="o">[</span>配置文件<span class="o">](</span>../5.configurations-and-logs/1.configurations/1.configurations.md<span class="o">)</span> 中预设的端口，请在防火墙中开放如下端口：
+
+<span class="p">|</span>服务类型<span class="p">|</span>端口<span class="p">|</span>
+<span class="p">|</span>-<span class="p">|</span>-<span class="p">|</span>
+<span class="p">|</span>Meta<span class="p">|</span><span class="m">9559</span>, <span class="m">9560</span>, <span class="m">19559</span><span class="p">|</span>
+<span class="p">|</span>Graph<span class="p">|</span><span class="m">9669</span>, <span class="m">19669</span><span class="p">|</span>
+<span class="p">|</span>Storage<span class="p">|</span><span class="m">9777</span> ~ <span class="m">9780</span>, <span class="m">19779</span><span class="p">|</span>
+
+如果修改过配置文件中预设的端口，请找出实际使用的端口并在防火墙中开放它们。
+
+周边工具各自使用不用的端口，请参考各工具文档。
+
+<span class="c1">### 如何测试端口是否已开放？</span>
+
+用户可以使用如下 telnet 命令检查端口状态：
+
+<span class="sb">```</span>bash
+telnet &lt;ip&gt; &lt;port&gt;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -8402,7 +8382,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2022</span>
       
     
   </small>
