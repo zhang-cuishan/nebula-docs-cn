@@ -8337,6 +8337,112 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 
 如果用户不清楚 dmp 打印出来的相关信息，可以将打印出来的内容，带上操作系统版本、硬件配置、Core文件产生前后的错误日志和可能导致错误的操作贴在 <span class="o">[</span>NebulaGraph 论坛<span class="o">](</span>https://discuss.nebula-graph.com.cn/<span class="o">)</span>上寻求帮助。
 
+<span class="c1">### 如何通过 systemctl 设置开机自动启动 NebulaGraph 服务？</span>
+
+<span class="m">1</span>. 执行 <span class="sb">`</span>systemctl <span class="nb">enable</span><span class="sb">`</span> 启动 metad、graphd 和 storaged 服务。
+
+   <span class="sb">```</span>
+   <span class="o">[</span>root<span class="o">]</span><span class="c1"># systemctl enable nebula-metad.service</span>
+   Created symlink from /etc/systemd/system/multi-user.target.wants/nebula-metad.service to /usr/lib/systemd/system/nebula-metad.service.
+   <span class="o">[</span>root<span class="o">]</span><span class="c1"># systemctl enable nebula-graphd.service</span>
+   Created symlink from /etc/systemd/system/multi-user.target.wants/nebula-graphd.service to /usr/lib/systemd/system/nebula-graphd.service.
+   <span class="o">[</span>root<span class="o">]</span><span class="c1"># systemctl enable nebula-storaged.service</span>
+   Created symlink from /etc/systemd/system/multi-user.target.wants/nebula-storaged.service to /usr/lib/systemd/system/nebula-storaged.service.
+   <span class="sb">```</span>
+
+<span class="m">2</span>. 配置 metad、graphd 和 storaged 的 service 文件，设置服务自动拉起。
+
+  !!! caution
+
+    在配置service文件时需注意以下几点：
+    - PIDFile、ExecStart、ExecReload、ExecStop 参数的路径需要与服务器上的一致。
+    - RestartSec 为重启前等待的时长<span class="o">(</span>秒<span class="o">)</span>，可根据实际情况修改。
+    - （可选）StartLimitInterval 为无限次重启，默认是 <span class="m">10</span> 秒内如果重启超过 <span class="m">5</span> 次则不再重启，设置为 <span class="m">0</span> 表示不限次数重启。
+    - （可选）LimitNOFILE 为服务最大文件打开数，默认为1024，可根据实际情况修改。
+
+   配置 metad 服务的 service 文件：
+   <span class="sb">```</span>
+   $ vi /usr/lib/systemd/system/nebula-metad.service
+
+   <span class="o">[</span>Unit<span class="o">]</span>
+   <span class="nv">Description</span><span class="o">=</span>Nebula Graph Metad Service
+   <span class="nv">After</span><span class="o">=</span>network.target
+
+   <span class="o">[</span>Service <span class="o">]</span>
+   <span class="nv">Type</span><span class="o">=</span>forking
+   <span class="nv">Restart</span><span class="o">=</span>always
+   <span class="nv">RestartSec</span><span class="o">=</span>15s
+   <span class="nv">PIDFile</span><span class="o">=</span>/usr/local/nebula/pids/nebula-metad.pid
+   <span class="nv">ExecStart</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service start metad
+   <span class="nv">ExecReload</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service restart metad
+   <span class="nv">ExecStop</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service stop metad
+   <span class="nv">PrivateTmp</span><span class="o">=</span><span class="nb">true</span>
+   <span class="nv">StartLimitInterval</span><span class="o">=</span><span class="m">0</span>
+   <span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">1024</span>
+
+   <span class="o">[</span>Install<span class="o">]</span>
+   <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+   <span class="sb">```</span>
+
+   配置 graphd 服务的 service 文件：
+   <span class="sb">```</span>
+   $ vi /usr/lib/systemd/system/nebula-graphd.service
+   <span class="o">[</span>Unit<span class="o">]</span>
+   <span class="nv">Description</span><span class="o">=</span>Nebula Graph Graphd Service
+   <span class="nv">After</span><span class="o">=</span>network.target
+
+   <span class="o">[</span>Service<span class="o">]</span>
+   <span class="nv">Type</span><span class="o">=</span>forking
+   <span class="nv">Restart</span><span class="o">=</span>always
+   <span class="nv">RestartSec</span><span class="o">=</span>15s
+   <span class="nv">PIDFile</span><span class="o">=</span>/usr/local/nebula/pids/nebula-graphd.pid
+   <span class="nv">ExecStart</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service start graphd
+   <span class="nv">ExecReload</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service restart graphd
+   <span class="nv">ExecStop</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service stop graphd
+   <span class="nv">PrivateTmp</span><span class="o">=</span><span class="nb">true</span>
+   <span class="nv">StartLimitInterval</span><span class="o">=</span><span class="m">0</span>
+   <span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">1024</span>
+
+   <span class="o">[</span>Install<span class="o">]</span>
+   <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+   <span class="sb">```</span>
+
+   配置 storaged 服务的 service 文件：
+   <span class="sb">```</span>
+   $ vi /usr/lib/systemd/system/nebula-storaged.service
+   <span class="o">[</span>Unit<span class="o">]</span>
+   <span class="nv">Description</span><span class="o">=</span>Nebula Graph Storaged Service
+   <span class="nv">After</span><span class="o">=</span>network.target
+
+   <span class="o">[</span>Service<span class="o">]</span>
+   <span class="nv">Type</span><span class="o">=</span>forking
+   <span class="nv">Restart</span><span class="o">=</span>always
+   <span class="nv">RestartSec</span><span class="o">=</span>15s
+   <span class="nv">PIDFile</span><span class="o">=</span>/usr/local/nebula/pids/nebula-storaged.pid
+   <span class="nv">ExecStart</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service start storaged
+   <span class="nv">ExecReload</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service restart storaged
+   <span class="nv">ExecStop</span><span class="o">=</span>/usr/local/nebula/scripts/nebula.service stop storaged
+   <span class="nv">PrivateTmp</span><span class="o">=</span><span class="nb">true</span>
+   <span class="nv">StartLimitInterval</span><span class="o">=</span><span class="m">0</span>
+   <span class="nv">LimitNOFILE</span><span class="o">=</span><span class="m">1024</span>
+
+   <span class="o">[</span>Install<span class="o">]</span>
+   <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+   <span class="sb">```</span>
+<span class="m">3</span>. reload 配置文件。
+
+   <span class="sb">```</span>
+   <span class="o">[</span>root<span class="o">]</span><span class="c1"># sudo systemctl daemon-reload</span>
+   <span class="sb">```</span>
+
+<span class="m">4</span>. 重启服务。
+
+   <span class="sb">```</span>
+   $ systemctl restart nebula-metad.service
+   $ systemctl restart nebula-graphd.service
+   $ systemctl restart nebula-storaged.service
+   <span class="sb">```</span>
+
 <span class="c1">## 关于连接</span>
 
 <span class="c1">### 防火墙中需要开放哪些端口？</span>
@@ -8382,7 +8488,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 26, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 28, 2022</span>
       
     
   </small>
