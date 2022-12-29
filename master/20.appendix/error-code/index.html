@@ -7496,6 +7496,21 @@
 <td align="left">没有找到当前服务</td>
 </tr>
 <tr>
+<td align="left"><code>E_DRAINER_NOT_FOUND</code></td>
+<td align="left"><code>-21</code></td>
+<td align="left">drainer 不存在</td>
+</tr>
+<tr>
+<td align="left"><code>E_DRAINER_CLIENT_NOT_FOUND</code></td>
+<td align="left"><code>-22</code></td>
+<td align="left">drainer 客户端不存在</td>
+</tr>
+<tr>
+<td align="left"><code>E_PART_STOPPED</code></td>
+<td align="left"><code>-23</code></td>
+<td align="left">当前 partition 已经被停止</td>
+</tr>
+<tr>
 <td align="left"><code>E_BACKUP_FAILED</code></td>
 <td align="left"><code>-24</code></td>
 <td align="left">备份失败</td>
@@ -7836,6 +7851,11 @@
 <td align="left">agent 没有汇报心跳</td>
 </tr>
 <tr>
+<td align="left"><code>E_GRAPH_MEMORY_EXCEEDED</code></td>
+<td align="left"><code>-2600</code></td>
+<td align="left">Graph 内存超出</td>
+</tr>
+<tr>
 <td align="left"><code>E_CONSENSUS_ERROR</code></td>
 <td align="left"><code>-3001</code></td>
 <td align="left">选举时无法达成共识</td>
@@ -8125,6 +8145,86 @@
 <td align="left"><code>-3532</code></td>
 <td align="left">Raft 已经同步数据</td>
 </tr>
+<tr>
+<td align="left"><code>E_STORAGE_MEMORY_EXCEEDED</code></td>
+<td align="left"><code>-3600</code></td>
+<td align="left">Storage 内存超出</td>
+</tr>
+<tr>
+<td align="left"><code>E_LOG_GAP</code></td>
+<td align="left"><code>-4001</code></td>
+<td align="left">drainer 日志落后</td>
+</tr>
+<tr>
+<td align="left"><code>E_LOG_STALE</code></td>
+<td align="left"><code>-4002</code></td>
+<td align="left">drainer 日志过期</td>
+</tr>
+<tr>
+<td align="left"><code>E_INVALID_DRAINER_STORE</code></td>
+<td align="left"><code>-4003</code></td>
+<td align="left">drainer 数据存储无效</td>
+</tr>
+<tr>
+<td align="left"><code>E_SPACE_MISMATCH</code></td>
+<td align="left"><code>-4004</code></td>
+<td align="left">图空间不匹配</td>
+</tr>
+<tr>
+<td align="left"><code>E_PART_MISMATCH</code></td>
+<td align="left"><code>-4005</code></td>
+<td align="left">分区不匹配</td>
+</tr>
+<tr>
+<td align="left"><code>E_DATA_CONFLICT</code></td>
+<td align="left"><code>-4006</code></td>
+<td align="left">数据冲突</td>
+</tr>
+<tr>
+<td align="left"><code>E_REQ_CONFLICT</code></td>
+<td align="left"><code>-4007</code></td>
+<td align="left">请求冲突</td>
+</tr>
+<tr>
+<td align="left"><code>E_DATA_ILLEGAL</code></td>
+<td align="left"><code>-4008</code></td>
+<td align="left">数据非法</td>
+</tr>
+<tr>
+<td align="left"><code>E_CACHE_CONFIG_ERROR</code></td>
+<td align="left"><code>-5001</code></td>
+<td align="left">缓存配置错误</td>
+</tr>
+<tr>
+<td align="left"><code>E_NOT_ENOUGH_SPACE</code></td>
+<td align="left"><code>-5002</code></td>
+<td align="left">空间不足</td>
+</tr>
+<tr>
+<td align="left"><code>E_CACHE_MISS</code></td>
+<td align="left"><code>-5003</code></td>
+<td align="left">没有命中缓存</td>
+</tr>
+<tr>
+<td align="left"><code>E_POOL_NOT_FOUND</code></td>
+<td align="left"><code>-5005</code></td>
+<td align="left">写缓存失败</td>
+</tr>
+<tr>
+<td align="left"><code>E_NODE_NUMBER_EXCEED_LIMIT</code></td>
+<td align="left"><code>-7001</code></td>
+<td align="left">机器节点数超出限制</td>
+</tr>
+<tr>
+<td align="left"><code>E_PARSING_LICENSE_FAILURE</code></td>
+<td align="left"><code>-7002</code></td>
+<td align="left">解析证书失败</td>
+</tr>
+<tr>
+<td align="left"><code>E_UNKNOWN</code></td>
+<td align="left"><code>-8000</code></td>
+<td align="left">未知错误</td>
+</tr>
 </tbody>
 </table>
 <!--
@@ -8137,27 +8237,6 @@
 |``|`-2029`| 缺少有效的 drainer|
 |``|`-3061`| 客户端和服务端版本不兼容|
 |``|`-3062`| 获取 ID 序号失败|
-
-//企业版
-|`E_DRAINER_NOT_FOUND`|`-21`| drainer 不存在|
-|`E_DRAINER_CLIENT_NOT_FOUND`|`-22`| drainer 客户端不存在|
-|`E_PART_STOPPED`|`-23`| 当前 partition 已经被停止|
-
-|`E_LOG_GAP`|`-4001`| drainer 日志落后|
-|`E_LOG_STALE`|`-4002`| drainer 日志过期|
-|`E_INVALID_DRAINER_STORE`|`-4003`| drainer 数据存储无效|
-|`E_SPACE_MISMATCH`|`-4004`| 图空间不匹配|
-|`E_PART_MISMATCH`|`-4005`| 分区不匹配|
-|`E_DATA_CONFLICT`|`-4006`| 数据冲突|
-|`E_REQ_CONFLICT`|`-4007`| 请求冲突|
-|`E_DATA_ILLEGAL`|`-4008`| 数据非法|
-|`E_CACHE_CONFIG_ERROR`|`-5001`| 缓存配置错误|
-|`E_NOT_ENOUGH_SPACE`|`-5002`| 空间不足|
-|`E_CACHE_MISS`|`-5003`| 没有命中缓存|
-|`E_POOL_NOT_FOUND`|`-5005`| 写缓存失败|
-|`E_NODE_NUMBER_EXCEED_LIMIT`|`-7001`| 机器节点数超出限制|
-|`E_PARSING_LICENSE_FAILURE`|`-7002`| 解析证书失败|
-|`E_UNKNOWN`|`-8000`| 未知错误|
 -->
 
   <hr>
@@ -8165,7 +8244,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 29, 2022</span>
       
     
   </small>
