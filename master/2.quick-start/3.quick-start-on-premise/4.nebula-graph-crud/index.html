@@ -8133,7 +8133,7 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES &quot;player101&quot; 
 </ul>
 <h3 id="ngql_3">nGQL 语法<a class="headerlink" href="#ngql_3" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>GO</code><div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; STEPS ] FROM &lt;vertex_list&gt;
+<li><code>GO</code><div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; {STEP|STEPS}] FROM &lt;vertex_list&gt;
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
 YIELD [DISTINCT] &lt;return_list&gt;

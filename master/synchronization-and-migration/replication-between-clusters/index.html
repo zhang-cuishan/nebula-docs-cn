@@ -4175,6 +4175,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#wal" class="md-nav__link">
+    WAL 日志文件过期了对集群数据同步有影响吗？
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7733,6 +7740,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#wal" class="md-nav__link">
+    WAL 日志文件过期了对集群数据同步有影响吗？
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7837,6 +7851,9 @@
 </ul>
 <ul>
 <li>所有<code>nebula-graphd.conf</code>配置文件里设置<code>enable_authorize=true</code>。</li>
+</ul>
+<ul>
+<li>在主集群的<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>文件中，配置<code>--snapshot_send_files=false</code>。</li>
 </ul>
 <ul>
 <li>主从集群填写各自集群的<code>meta_server_addrs</code>，注意不要错填其他集群的地址。</li>
@@ -8278,13 +8295,15 @@ nebula&gt; ADD LISTENER SYNC META 192.168.10.105:9569 STORAGE 192.168.10.105:978
 </ul>
 <h3 id="_16">如何判断数据同步进度？<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>用户可以执行<code>SHOW SYNC STATUS</code>查看主集群发送数据的状态，执行<code>SHOW DRAINER SYNC STATUS</code>查看从集群接收数据的状态。如果同时满足主集群中的所有数据都发送成功，并且从集群成功接收所有数据，则说明数据同步完成。</p>
+<h3 id="wal">WAL 日志文件过期了对集群数据同步有影响吗？<a class="headerlink" href="#wal" title="Permanent link">&para;</a></h3>
+<p>如果 WAL 日志文件过期了（超过了<code>--wal-ttl</code>设置的时间），数据会不同步。用户可以通过手动在 Meta 和 Storage 服务的配置文件中添加<code>--snapshot_send_files=false</code>配置以同步数据。更新文件中的配置后，需要重启服务。关于配置文件的详细信息，参见<a href="../../5.configurations-and-logs/1.configurations/1.configurations/">配置文件简介</a>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
       
     
   </small>

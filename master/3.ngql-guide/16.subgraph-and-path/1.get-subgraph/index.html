@@ -7515,7 +7515,7 @@
 <h1 id="get_subgraph">GET SUBGRAPH<a class="headerlink" href="#get_subgraph" title="Permanent link">&para;</a></h1>
 <p><code>GET SUBGRAPH</code>语句查询并返回一个通过从指定点出发对图进行游走而生成的子图。在<code>GET SUBGRAPH</code>语句中，用户可以指定游走的步数以及游走所经过的边的类型或方向。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>GET SUBGRAPH [WITH PROP] [&lt;step_count&gt; STEPS] FROM {&lt;vid&gt;, &lt;vid&gt;...}
+<div class="highlight"><pre><span></span><code>GET SUBGRAPH [WITH PROP] [&lt;step_count&gt; {STEP|STEPS}] FROM {&lt;vid&gt;, &lt;vid&gt;...}
 [{IN | OUT | BOTH} &lt;edge_type&gt;, &lt;edge_type&gt;...]
 [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]]
 YIELD [VERTICES AS &lt;vertex_alias&gt;] [, EDGES AS &lt;edge_alias&gt;];
@@ -7651,7 +7651,7 @@ nebula&gt; GO 1 STEPS FROM &quot;A&quot; OVER follow YIELD src(edge),dst(edge);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
       
     
   </small>

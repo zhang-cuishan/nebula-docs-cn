@@ -7463,7 +7463,7 @@
 <h2 id="opencypher">openCypher 兼容性<a class="headerlink" href="#opencypher" title="Permanent link">&para;</a></h2>
 <p>本文操作仅适用于原生 nGQL。</p>
 <h2 id="_1">语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; STEPS ] FROM &lt;vertex_list&gt;
+<div class="highlight"><pre><span></span><code>GO [[&lt;M&gt; TO] &lt;N&gt; {STEP|STEPS} ] FROM &lt;vertex_list&gt;
 OVER &lt;edge_type_list&gt; [{REVERSELY | BIDIRECT}]
 [ WHERE &lt;conditions&gt; ]
 YIELD [DISTINCT] &lt;return_list&gt;
@@ -7483,10 +7483,10 @@ YIELD [DISTINCT] &lt;return_list&gt;
     &lt;col_name&gt; [AS &lt;col_alias&gt;] [, &lt;col_name&gt; [AS &lt;col_alias&gt;] ...]
 </code></pre></div>
 <ul>
-<li><code>&lt;N&gt; STEPS</code>：指定跳数。如果没有指定跳数，默认值<code>N</code>为<code>1</code>。如果<code>N</code>为<code>0</code>，NebulaGraph 不会检索任何边。</li>
+<li><code>&lt;N&gt; {STEP|STEPS}</code>：指定跳数。如果没有指定跳数，默认值<code>N</code>为<code>1</code>。如果<code>N</code>为<code>0</code>，NebulaGraph 不会检索任何边。</li>
 </ul>
 <ul>
-<li><code>M TO N STEPS</code>：遍历<code>M~N</code>跳的边。如果<code>M</code>为<code>0</code>，输出结果和<code>M</code>为<code>1</code>相同，即<code>GO 0 TO 2</code>和<code>GO 1 TO 2</code>是相同的。</li>
+<li><code>M TO N {STEP|STEPS}</code>：遍历<code>M~N</code>跳的边。如果<code>M</code>为<code>0</code>，输出结果和<code>M</code>为<code>1</code>相同，即<code>GO 0 TO 2</code>和<code>GO 1 TO 2</code>是相同的。</li>
 </ul>
 <ul>
 <li><code>&lt;vertex_list&gt;</code>：用逗号分隔的点 ID 列表，或特殊的引用符<code>$-.id</code>。详情参见<a href="../../5.operators/4.pipe/">管道符</a>。</li>
@@ -7686,7 +7686,7 @@ nebula&gt; GO FROM &quot;player100&quot; OVER follow WHERE properties($$).name I
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
       
     
   </small>
