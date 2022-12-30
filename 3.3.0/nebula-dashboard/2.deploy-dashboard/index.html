@@ -4670,6 +4670,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mac_node-exporter" class="md-nav__link">
+    Mac 部署node-exporter服务
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7346,6 +7353,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mac_node-exporter" class="md-nav__link">
+    Mac 部署node-exporter服务
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7718,13 +7732,23 @@ $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7003<span cl
 </ul>
 <h2 id="_5">后续操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><a href="../3.connect-dashboard/">连接 Dashboard</a></p>
+<h2 id="mac_node-exporter">Mac 部署<code>node-exporter</code>服务<a class="headerlink" href="#mac_node-exporter" title="Permanent link">&para;</a></h2>
+<ul>
+<li>对于 Mac 用户，还可以执行'brew install node_exporter'来安装<code>node-exporter</code>服务</li>
+</ul>
+<ul>
+<li>执行'brew services start node_exporter'启动<code>node-exporter</code>服务</li>
+</ul>
+<ul>
+<li>启动后，可以通过http://localhost:9100/查看</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
       
     
   </small>
