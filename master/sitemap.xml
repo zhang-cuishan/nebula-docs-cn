@@ -1221,11 +1221,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/other-settings/</loc>
-         <lastmod>2022-12-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/single-sign-on/</loc>
          <lastmod>2022-12-30</lastmod>
          <changefreq>daily</changefreq>

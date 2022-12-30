@@ -5394,20 +5394,6 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/system-settings/other-settings/" class="md-nav__link">
-        其他设置
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -7561,6 +7547,10 @@ nebula&gt; GRANT ROLE ADMIN ON basketballplayer TO test2;
 --ldap_scheme<span class="o">=</span>ldap
 <span class="c1"># 绑定目标对象的 DN</span>
 --ldap_basedn<span class="o">=</span><span class="nv">ou</span><span class="o">=</span>it,dc<span class="o">=</span>sys,dc<span class="o">=</span>com
+<span class="c1"># OpenLDAP 服务器登录用户名。支持匿名访问时，该项为选填，否则为必填。</span>
+--ldap_binddn<span class="o">=</span><span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>example,dc<span class="o">=</span>org
+<span class="c1"># OpenLDAP 服务器登录密码。支持匿名访问时，该项为选填，否则为必填。</span>
+--ldap_bindpasswd<span class="o">=</span>admin
 </code></pre></div>
 </li>
 </ul>
@@ -7587,7 +7577,7 @@ Welcome to NebulaGraph!
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
       
     
   </small>
