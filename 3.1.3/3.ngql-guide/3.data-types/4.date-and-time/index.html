@@ -7257,17 +7257,17 @@
 <h2 id="date">DATE<a class="headerlink" href="#date" title="Permanent link">&para;</a></h2>
 <p><code>DATE</code>包含日期，但是不包含时间。Nebula Graph 检索和显示<code>DATE</code>的格式为<code>YYYY-MM-DD</code>。支持的范围是<code>-32768-01-01</code>到<code>32767-12-31</code>。</p>
 <p><code>date()</code>支持的属性名称包括<code>year</code>、<code>month</code>和<code>day</code>。<code>date()</code>支持输入<code>YYYY</code>、<code>YYYY-MM</code>或<code>YYYY-MM-DD</code>，未输入的月份或日期默认为<code>01</code>。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; RETURN DATE<span class="o">({</span>year:-123, month:12, day:3<span class="o">})</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>DATE<span class="o">({</span>year:-123,<span class="w"> </span>month:12,<span class="w"> </span>day:3<span class="o">})</span><span class="p">;</span>
 +------------------------------------+
-<span class="p">|</span> date<span class="o">({</span>year:-<span class="o">(</span><span class="m">123</span><span class="o">)</span>,month:12,day:3<span class="o">})</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>date<span class="o">({</span>year:-<span class="o">(</span><span class="m">123</span><span class="o">)</span>,month:12,day:3<span class="o">})</span><span class="w"> </span><span class="p">|</span>
 +------------------------------------+
-<span class="p">|</span> -123-12-03                         <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>-123-12-03<span class="w">                         </span><span class="p">|</span>
 +------------------------------------+
-nebula&gt; RETURN DATE<span class="o">(</span><span class="s2">&quot;23333&quot;</span><span class="o">)</span><span class="p">;</span>
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>DATE<span class="o">(</span><span class="s2">&quot;23333&quot;</span><span class="o">)</span><span class="p">;</span>
 +---------------+
-<span class="p">|</span> date<span class="o">(</span><span class="s2">&quot;23333&quot;</span><span class="o">)</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>date<span class="o">(</span><span class="s2">&quot;23333&quot;</span><span class="o">)</span><span class="w"> </span><span class="p">|</span>
 +---------------+
-<span class="p">|</span> <span class="m">23333</span>-01-01   <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="m">23333</span>-01-01<span class="w">   </span><span class="p">|</span>
 +---------------+
 </code></pre></div>
 <h2 id="time">TIME<a class="headerlink" href="#time" title="Permanent link">&para;</a></h2>
@@ -7402,7 +7402,7 @@ nebula&gt; WITH date(&#39;1984-10-11&#39;) as x, duration({years: 12, days: 14, 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

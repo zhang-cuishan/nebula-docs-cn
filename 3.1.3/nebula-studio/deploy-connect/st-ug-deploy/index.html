@@ -7448,15 +7448,15 @@ Nebula Studio（ 以下简称 Studio ）支持云端或本地部署。云服务�
 <li>
 <p>使用<code>sudo rpm -i &lt;rpm_name&gt;</code>命令安装 RPM 包。</p>
 <p>例如，安装 Studio 3.3.2 版本需要运行以下命令，默认安装路径为<code>/usr/local/nebula-graph-studio</code>：</p>
-<p><div class="highlight"><pre><span></span><code>$ sudo rpm -i nebula-graph-studio-3.3.2.x86_64.rpm
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>rpm<span class="w"> </span>-i<span class="w"> </span>nebula-graph-studio-3.3.2.x86_64.rpm
 </code></pre></div>
  也可以使用以下命令安装到指定路径：
- <div class="highlight"><pre><span></span><code>$ sudo rpm -i nebula-graph-studio-3.3.2.x86_64.rpm --prefix<span class="o">=</span>&lt;path&gt; 
+ <div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>rpm<span class="w"> </span>-i<span class="w"> </span>nebula-graph-studio-3.3.2.x86_64.rpm<span class="w"> </span>--prefix<span class="o">=</span>&lt;path&gt;<span class="w"> </span>
 </code></pre></div></p>
 <p>当屏幕返回以下信息时，表示 PRM 版 Studio 已经成功启动。</p>
-<div class="highlight"><pre><span></span><code>Start installing Nebula Studio now...
-Nebula Studio has been installed.
-Nebula Studio started automatically.
+<div class="highlight"><pre><span></span><code>Start<span class="w"> </span>installing<span class="w"> </span>Nebula<span class="w"> </span>Studio<span class="w"> </span>now...
+Nebula<span class="w"> </span>Studio<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>installed.
+Nebula<span class="w"> </span>Studio<span class="w"> </span>started<span class="w"> </span>automatically.
 </code></pre></div>
 </li>
 <li>
@@ -7467,29 +7467,29 @@ Nebula Studio started automatically.
 </ol>
 <h3 id="_3">卸载<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>用户可以使用以下的命令卸载 Studio。</p>
-<div class="highlight"><pre><span></span><code>$ sudo rpm -e nebula-graph-studio-3.3.2.x86_64
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>rpm<span class="w"> </span>-e<span class="w"> </span>nebula-graph-studio-3.3.2.x86_64
 </code></pre></div>
 <p>当屏幕返回以下信息时，表示 PRM 版 Studio 已经卸载。
-<div class="highlight"><pre><span></span><code>Nebula Studio removed, bye~
+<div class="highlight"><pre><span></span><code>Nebula<span class="w"> </span>Studio<span class="w"> </span>removed,<span class="w"> </span>bye~
 </code></pre></div></p>
 <h3 id="_4">异常处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>如果在安装过程中自动启动失败或是需要手动启动或停止服务，请使用以下命令：</p>
 <ul>
 <li>手动启动服务
-<div class="highlight"><pre><span></span><code>$ bash /usr/local/nebula-graph-studio/scripts/rpm/start.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/usr/local/nebula-graph-studio/scripts/rpm/start.sh
 </code></pre></div></li>
 </ul>
 <ul>
 <li>手动停止服务
-<div class="highlight"><pre><span></span><code>$ bash /usr/local/nebula-graph-studio/scripts/rpm/stop.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bash<span class="w"> </span>/usr/local/nebula-graph-studio/scripts/rpm/stop.sh
 </code></pre></div></li>
 </ul>
 <p>如果启动服务时遇到报错报错 <code>ERROR: bind EADDRINUSE 0.0.0.0:7001</code>，用户可以通过以下命令查看端口 7001 是否被占用。
-<div class="highlight"><pre><span></span><code>$ lsof -i:7001
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsof<span class="w"> </span>-i:7001
 </code></pre></div></p>
 <p>如果端口被占用，且无法结束该端口上进程，用户可以通过以下命令修改 Studio 服务启动端口，并重新启动服务。
-<div class="highlight"><pre><span></span><code>//修改 studio 服务启动端口
-$ vi config/example-config.yaml
+<div class="highlight"><pre><span></span><code>//修改<span class="w"> </span>studio<span class="w"> </span>服务启动端口
+$<span class="w"> </span>vi<span class="w"> </span>config/example-config.yaml
 
 //修改
 web:
@@ -7498,10 +7498,10 @@ web:
 <span class="c1">#  tasks_dir:</span>
 <span class="c1">#  sqlitedb_file_path:</span>
 <span class="c1">#  ip:</span>
-  port: <span class="m">7001</span> // 修改这个端口号，改成任意一个当前可用的即可
+<span class="w">  </span>port:<span class="w"> </span><span class="m">7001</span><span class="w"> </span>//<span class="w"> </span>修改这个端口号，改成任意一个当前可用的即可
 
 //重启服务
-$ systemctl restart nebula-graph-studio.service
+$<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>nebula-graph-studio.service
 </code></pre></div></p>
 <h2 id="deb_studio">DEB 部署 Studio<a class="headerlink" href="#deb_studio" title="Permanent link">&para;</a></h2>
 <h3 id="_5">前提条件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -7558,7 +7558,7 @@ $ systemctl restart nebula-graph-studio.service
 <li>
 <p>使用<code>sudo dpkg -i &lt;deb_name&gt;</code>命令安装 DEB 包。</p>
 <p>例如，安装 Studio 3.3.2 版本需要运行以下命令：</p>
-<div class="highlight"><pre><span></span><code>$ sudo dpkg -i nebula-graph-studio-3.3.2.x86_64.deb
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-graph-studio-3.3.2.x86_64.deb
 </code></pre></div>
 </li>
 <li>
@@ -7569,7 +7569,7 @@ $ systemctl restart nebula-graph-studio.service
 </ol>
 <h3 id="_7">卸载<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>用户可以使用以下的命令卸载 Studio。</p>
-<div class="highlight"><pre><span></span><code>$ sudo dpkg -r nebula-graph-studio
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-r<span class="w"> </span>nebula-graph-studio
 </code></pre></div>
 <h2 id="tar_studio">tar 包部署 Studio<a class="headerlink" href="#tar_studio" title="Permanent link">&para;</a></h2>
 <h3 id="_8">前提条件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
@@ -7619,13 +7619,13 @@ $ systemctl restart nebula-graph-studio.service
 </li>
 <li>
 <p>解压 tar 包。</p>
-<div class="highlight"><pre><span></span><code>tar -xvf nebula-graph-studio-3.3.2.x86_64.tar.gz
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xvf<span class="w"> </span>nebula-graph-studio-3.3.2.x86_64.tar.gz
 </code></pre></div>
 </li>
 <li>
 <p>部署 nebula-graph-studio 并启动。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula-graph-studio
-$ ./server
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>nebula-graph-studio
+$<span class="w"> </span>./server
 </code></pre></div>
 </li>
 <li>
@@ -7636,7 +7636,7 @@ $ ./server
 </li>
 </ol>
 <p>用户可以采用 <code>kill &lt;pid&gt;</code> 的方式来关停服务：
-<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7001<span class="k">)</span> <span class="c1"># stop nebula-graph-studio</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:7001<span class="k">)</span><span class="w"> </span><span class="c1"># stop nebula-graph-studio</span>
 </code></pre></div></p>
 <h2 id="docker_studio">Docker 部署 Studio<a class="headerlink" href="#docker_studio" title="Permanent link">&para;</a></h2>
 <h3 id="_11">前提条件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
@@ -7667,13 +7667,13 @@ $ ./server
 <ul>
 <li>
 <p>（可选）在中国大陆从 Docker Hub 拉取 Docker 镜像的速度可能比较慢，用户可以使用 <code>registry-mirrors</code> 参数配置加速镜像。例如，如果要使用 Docker 中国区官方镜像、网易镜像和中国科技大学的镜像，则按以下格式配置 <code>registry-mirrors</code> 参数：</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
-<span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;https://registry.docker-cn.com&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;http://hub-mirror.c.163.com&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span><span class="w"></span>
-<span class="w">  </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;registry-mirrors&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;https://registry.docker-cn.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;http://hub-mirror.c.163.com&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>配置文件的路径和方法因操作系统和/或 Docker Desktop 版本而异。详细信息参考 <a href="https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file" title="点击前往 Docker 文档中心">Docker Daemon 配置文档</a>。</p>
 </li>
@@ -7700,25 +7700,25 @@ $ ./server
 </li>
 <li>
 <p>创建<code>nebula-graph-studio-3.3.2</code>目录，并将安装包解压至目录中。</p>
-<div class="highlight"><pre><span></span><code>mkdir nebula-graph-studio-3.3.2 <span class="o">&amp;&amp;</span> tar -zxvf nebula-graph-studio-3.3.2.tar.gz -C nebula-graph-studio-3.3.2
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>nebula-graph-studio-3.3.2<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>tar<span class="w"> </span>-zxvf<span class="w"> </span>nebula-graph-studio-3.3.2.tar.gz<span class="w"> </span>-C<span class="w"> </span>nebula-graph-studio-3.3.2
 </code></pre></div>
 </li>
 <li>
 <p>解压后进入 <code>nebula-graph-studio-3.3.2</code> 目录。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-graph-studio-3.3.2
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nebula-graph-studio-3.3.2
 </code></pre></div>
 </li>
 <li>
 <p>拉取 Studio 的 Docker 镜像。</p>
-<div class="highlight"><pre><span></span><code>docker-compose pull
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>pull
 </code></pre></div>
 </li>
 <li>
 <p>构建并启动 Studio 服务。其中，<code>-d</code> 表示在后台运行服务容器。</p>
-<div class="highlight"><pre><span></span><code>docker-compose up -d
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
 <p>当屏幕返回以下信息时，表示 Docker 版 Studio 已经成功启动。</p>
-<div class="highlight"><pre><span></span><code>Creating docker_web_1      ... <span class="k">done</span>
+<div class="highlight"><pre><span></span><code>Creating<span class="w"> </span>docker_web_1<span class="w">      </span>...<span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 </li>
 <li>
@@ -7739,7 +7739,7 @@ $ ./server
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

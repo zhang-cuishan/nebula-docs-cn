@@ -7190,7 +7190,7 @@
 <p>Meta 服务、Graph 服务和 Storage 服务的日志级别可以在各自的配置文件中查看，默认路径为<code>/usr/local/nebula/etc/</code>。</p>
 <h2 id="_4">查看运行日志级别<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>使用如下命令查看当前所有的 gflags 参数（包括日志参数）：</p>
-<div class="highlight"><pre><span></span><code>$ curl &lt;ws_ip&gt;:&lt;ws_port&gt;/flags
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>&lt;ws_ip&gt;:&lt;ws_port&gt;/flags
 </code></pre></div>
 <table>
 <thead>
@@ -7212,18 +7212,18 @@
 </table>
 <p>示例如下：</p>
 <ul>
-<li>查看 Meta 服务当前的最小日志级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19559/flags <span class="p">|</span> grep <span class="s1">&#39;minloglevel&#39;</span>
+<li>查看 Meta 服务当前的最小日志级别：<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span><span class="m">127</span>.0.0.1:19559/flags<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;minloglevel&#39;</span>
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>查看 Storage 服务当前的日志详细级别：<div class="highlight"><pre><span></span><code>$ curl <span class="m">127</span>.0.0.1:19779/flags <span class="p">|</span> grep -w <span class="s1">&#39;v&#39;</span>
+<li>查看 Storage 服务当前的日志详细级别：<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span><span class="m">127</span>.0.0.1:19779/flags<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-w<span class="w"> </span><span class="s1">&#39;v&#39;</span>
 </code></pre></div>
 </li>
 </ul>
 <h2 id="_5">修改运行日志级别<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>使用如下命令修改运行日志级别：</p>
-<div class="highlight"><pre><span></span><code>$ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;&lt;key&gt;&quot;:&lt;value&gt;[,&quot;&lt;key&gt;&quot;:&lt;value&gt;]}&#39;</span> <span class="s2">&quot;&lt;ws_ip&gt;:&lt;ws_port&gt;/flags&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;&lt;key&gt;&quot;:&lt;value&gt;[,&quot;&lt;key&gt;&quot;:&lt;value&gt;]}&#39;</span><span class="w"> </span><span class="s2">&quot;&lt;ws_ip&gt;:&lt;ws_port&gt;/flags&quot;</span>
 </code></pre></div>
 <table>
 <thead>
@@ -7252,9 +7252,9 @@
 </tbody>
 </table>
 <p>示例如下：</p>
-<div class="highlight"><pre><span></span><code>$ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span> <span class="s2">&quot;127.0.0.1:19779/flags&quot;</span> <span class="c1"># storaged</span>
-$ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span> <span class="s2">&quot;127.0.0.1:19669/flags&quot;</span> <span class="c1"># graphd</span>
-$ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -d <span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span> <span class="s2">&quot;127.0.0.1:19559/flags&quot;</span> <span class="c1"># metad</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span><span class="w"> </span><span class="s2">&quot;127.0.0.1:19779/flags&quot;</span><span class="w"> </span><span class="c1"># storaged</span>
+$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span><span class="w"> </span><span class="s2">&quot;127.0.0.1:19669/flags&quot;</span><span class="w"> </span><span class="c1"># graphd</span>
+$<span class="w"> </span>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;minloglevel&quot;:0,&quot;v&quot;:3}&#39;</span><span class="w"> </span><span class="s2">&quot;127.0.0.1:19559/flags&quot;</span><span class="w"> </span><span class="c1"># metad</span>
 </code></pre></div>
 <p>如果在 Nebula Graph 运行时修改了运行日志级别，重启服务后会恢复为配置文件中设置的级别，如果需要永久修改，请修改<a href="../../1.configurations/1.configurations/">配置文件</a>。</p>
 <h2 id="rocksdb">RocksDB 运行日志<a class="headerlink" href="#rocksdb" title="Permanent link">&para;</a></h2>
@@ -7265,7 +7265,7 @@ $ curl -X PUT -H <span class="s2">&quot;Content-Type: application/json&quot;</sp
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

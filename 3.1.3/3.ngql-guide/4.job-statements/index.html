@@ -7534,7 +7534,7 @@ nebula&gt; SUBMIT JOB INGEST;
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h3 id="_3">如何排查作业问题？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><code>SUBMIT JOB</code>操作使用的是 HTTP 端口，请检查 Storage 服务机器上的 HTTP 端口是否正常工作。用户可以执行如下命令调试：</p>
-<div class="highlight"><pre><span></span><code>curl <span class="s2">&quot;http://{storaged-ip}:19779/admin?space={space_name}&amp;op=compact&quot;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="s2">&quot;http://{storaged-ip}:19779/admin?space={space_name}&amp;op=compact&quot;</span>
 </code></pre></div>
 
   <hr>
@@ -7542,7 +7542,7 @@ nebula&gt; SUBMIT JOB INGEST;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

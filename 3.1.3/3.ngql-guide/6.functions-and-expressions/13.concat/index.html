@@ -7226,29 +7226,29 @@
 <div class="highlight"><pre><span></span><code>concat<span class="o">(</span>string1,string2,...<span class="o">)</span>
 </code></pre></div>
 <h3 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>//连接 <span class="m">1</span>，2，3
-nebula&gt; RETURN concat<span class="o">(</span><span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;2&quot;</span>,<span class="s2">&quot;3&quot;</span><span class="o">)</span> AS r<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>//连接<span class="w"> </span><span class="m">1</span>，2，3
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat<span class="o">(</span><span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;2&quot;</span>,<span class="s2">&quot;3&quot;</span><span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +-------+
-<span class="p">|</span> r     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">     </span><span class="p">|</span>
 +-------+
-<span class="p">|</span> <span class="s2">&quot;123&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;123&quot;</span><span class="w"> </span><span class="p">|</span>
 +-------+
 
-//字符串参数有 NULL
-nebula&gt; RETURN concat<span class="o">(</span><span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;2&quot;</span>,NULL<span class="o">)</span> AS r<span class="p">;</span>
+//字符串参数有<span class="w"> </span>NULL
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat<span class="o">(</span><span class="s2">&quot;1&quot;</span>,<span class="s2">&quot;2&quot;</span>,NULL<span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +----------+
-<span class="p">|</span> r        <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">        </span><span class="p">|</span>
 +----------+
-<span class="p">|</span> __NULL__ <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>__NULL__<span class="w"> </span><span class="p">|</span>
 +----------+
 
-nebula&gt; GO FROM <span class="s2">&quot;player100&quot;</span> over follow <span class="se">\</span>
-        YIELD concat<span class="o">(</span>src<span class="o">(</span>edge<span class="o">)</span>, properties<span class="o">(</span>$^<span class="o">)</span>.age, properties<span class="o">(</span><span class="nv">$$</span><span class="o">)</span>.name, properties<span class="o">(</span>edge<span class="o">)</span>.degree<span class="o">)</span> AS A<span class="p">;</span>
+nebula&gt;<span class="w"> </span>GO<span class="w"> </span>FROM<span class="w"> </span><span class="s2">&quot;player100&quot;</span><span class="w"> </span>over<span class="w"> </span>follow<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>YIELD<span class="w"> </span>concat<span class="o">(</span>src<span class="o">(</span>edge<span class="o">)</span>,<span class="w"> </span>properties<span class="o">(</span>$^<span class="o">)</span>.age,<span class="w"> </span>properties<span class="o">(</span><span class="nv">$$</span><span class="o">)</span>.name,<span class="w"> </span>properties<span class="o">(</span>edge<span class="o">)</span>.degree<span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>A<span class="p">;</span>
 +------------------------------+
-<span class="p">|</span> A                            <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>A<span class="w">                            </span><span class="p">|</span>
 +------------------------------+
-<span class="p">|</span> <span class="s2">&quot;player10042Tony Parker95&quot;</span>   <span class="p">|</span>
-<span class="p">|</span> <span class="s2">&quot;player10042Manu Ginobili95&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;player10042Tony Parker95&quot;</span><span class="w">   </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;player10042Manu Ginobili95&quot;</span><span class="w"> </span><span class="p">|</span>
 +------------------------------+
 </code></pre></div>
 <h2 id="concat_ws">concat_ws() 函数<a class="headerlink" href="#concat_ws" title="Permanent link">&para;</a></h2>
@@ -7263,48 +7263,48 @@ nebula&gt; GO FROM <span class="s2">&quot;player100&quot;</span> over follow <sp
 <li>字符串参数存在<code>NULL</code>值时，忽略<code>NULL</code>值，继续连接下一个参数。</li>
 </ul>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>concat_ws<span class="o">(</span>separator,string1,string2,... <span class="o">)</span>
+<div class="highlight"><pre><span></span><code>concat_ws<span class="o">(</span>separator,string1,string2,...<span class="w"> </span><span class="o">)</span>
 </code></pre></div>
 <h3 id="_4">示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>//分隔符为+，连接 a，b，c
-nebula&gt; RETURN concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span>,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span> AS r<span class="p">;</span>
+<div class="highlight"><pre><span></span><code>//分隔符为+，连接<span class="w"> </span>a，b，c
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span>,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +---------+
-<span class="p">|</span> r       <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">       </span><span class="p">|</span>
 +---------+
-<span class="p">|</span> <span class="s2">&quot;a+b+c&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;a+b+c&quot;</span><span class="w"> </span><span class="p">|</span>
 +---------+
 
-//分隔符为 NULL
-neubla&gt; RETURN concat_ws<span class="o">(</span>NULL,<span class="s2">&quot;a&quot;</span>,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span> AS r<span class="p">;</span>
+//分隔符为<span class="w"> </span>NULL
+neubla&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat_ws<span class="o">(</span>NULL,<span class="s2">&quot;a&quot;</span>,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +----------+
-<span class="p">|</span> r        <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">        </span><span class="p">|</span>
 +----------+
-<span class="p">|</span> __NULL__ <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>__NULL__<span class="w"> </span><span class="p">|</span>
 +----------+
 
-//分隔符为+，字符串参数有 NULL
-nebula&gt; RETURN concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span>,NULL,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span> AS r<span class="p">;</span>
+//分隔符为+，字符串参数有<span class="w"> </span>NULL
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span>,NULL,<span class="s2">&quot;b&quot;</span>,<span class="s2">&quot;c&quot;</span><span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +---------+
-<span class="p">|</span> r       <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">       </span><span class="p">|</span>
 +---------+
-<span class="p">|</span> <span class="s2">&quot;a+b+c&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;a+b+c&quot;</span><span class="w"> </span><span class="p">|</span>
 +---------+
 
 //分隔符为+。字符串参数只有一个
-nebula&gt; RETURN concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span><span class="o">)</span> AS r<span class="p">;</span>
+nebula&gt;<span class="w"> </span>RETURN<span class="w"> </span>concat_ws<span class="o">(</span><span class="s2">&quot;+&quot;</span>,<span class="s2">&quot;a&quot;</span><span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +-----+
-<span class="p">|</span> r   <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">   </span><span class="p">|</span>
 +-----+
-<span class="p">|</span> <span class="s2">&quot;a&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="p">|</span>
 +-----+
 
-nebula&gt; GO FROM <span class="s2">&quot;player100&quot;</span> over follow <span class="se">\</span>
-        YIELD concat_ws<span class="o">(</span><span class="s2">&quot; &quot;</span>,src<span class="o">(</span>edge<span class="o">)</span>, properties<span class="o">(</span>$^<span class="o">)</span>.age, properties<span class="o">(</span><span class="nv">$$</span><span class="o">)</span>.name, properties<span class="o">(</span>edge<span class="o">)</span>.degree<span class="o">)</span> AS A<span class="p">;</span>
+nebula&gt;<span class="w"> </span>GO<span class="w"> </span>FROM<span class="w"> </span><span class="s2">&quot;player100&quot;</span><span class="w"> </span>over<span class="w"> </span>follow<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>YIELD<span class="w"> </span>concat_ws<span class="o">(</span><span class="s2">&quot; &quot;</span>,src<span class="o">(</span>edge<span class="o">)</span>,<span class="w"> </span>properties<span class="o">(</span>$^<span class="o">)</span>.age,<span class="w"> </span>properties<span class="o">(</span><span class="nv">$$</span><span class="o">)</span>.name,<span class="w"> </span>properties<span class="o">(</span>edge<span class="o">)</span>.degree<span class="o">)</span><span class="w"> </span>AS<span class="w"> </span>A<span class="p">;</span>
 +---------------------------------+
-<span class="p">|</span> A                               <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>A<span class="w">                               </span><span class="p">|</span>
 +---------------------------------+
-<span class="p">|</span> <span class="s2">&quot;player100 42 Tony Parker 95&quot;</span>   <span class="p">|</span>
-<span class="p">|</span> <span class="s2">&quot;player100 42 Manu Ginobili 95&quot;</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;player100 42 Tony Parker 95&quot;</span><span class="w">   </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;player100 42 Manu Ginobili 95&quot;</span><span class="w"> </span><span class="p">|</span>
 +---------------------------------+
 </code></pre></div>
 
@@ -7313,7 +7313,7 @@ nebula&gt; GO FROM <span class="s2">&quot;player100&quot;</span> over follow <sp
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

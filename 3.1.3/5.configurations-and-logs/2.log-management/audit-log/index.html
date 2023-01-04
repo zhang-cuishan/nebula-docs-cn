@@ -7285,34 +7285,34 @@
 <h2 id="_4">审计日志格式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>不同的存储方案和不同的格式，日志内的字段是相同的。以默认路径（<code>logs/audit/audit.log</code>）和默认 XML 格式为例说明各个字段的含义。</p>
 <div class="highlight"><pre><span></span><code>&lt;AUDIT_RECORD
-  <span class="nv">CATEGORY</span><span class="o">=</span><span class="s2">&quot;util&quot;</span>
-  <span class="nv">TIMESTAMP</span><span class="o">=</span><span class="s2">&quot;2022-04-07 02:31:38&quot;</span>
-  <span class="nv">TERMINAL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">CONNECTION_ID</span><span class="o">=</span><span class="s2">&quot;1649298693144580&quot;</span>
-  <span class="nv">CONNECTION_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
-  <span class="nv">CONNECTION_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">USER</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
-  <span class="nv">CLIENT_HOST</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
-  <span class="nv">HOST</span><span class="o">=</span><span class="s2">&quot;192.168.8.111&quot;</span>
-  <span class="nv">SPACE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">QUERY</span><span class="o">=</span><span class="s2">&quot;use basketballplayer1&quot;</span>
-  <span class="nv">QUERY_STATUS</span><span class="o">=</span><span class="s2">&quot;-1005&quot;</span>
-  <span class="nv">QUERY_MESSAGE</span><span class="o">=</span><span class="s2">&quot;SpaceNotFound: &quot;</span>
+<span class="w">  </span><span class="nv">CATEGORY</span><span class="o">=</span><span class="s2">&quot;util&quot;</span>
+<span class="w">  </span><span class="nv">TIMESTAMP</span><span class="o">=</span><span class="s2">&quot;2022-04-07 02:31:38&quot;</span>
+<span class="w">  </span><span class="nv">TERMINAL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_ID</span><span class="o">=</span><span class="s2">&quot;1649298693144580&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">USER</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
+<span class="w">  </span><span class="nv">CLIENT_HOST</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="w">  </span><span class="nv">HOST</span><span class="o">=</span><span class="s2">&quot;192.168.8.111&quot;</span>
+<span class="w">  </span><span class="nv">SPACE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">QUERY</span><span class="o">=</span><span class="s2">&quot;use basketballplayer1&quot;</span>
+<span class="w">  </span><span class="nv">QUERY_STATUS</span><span class="o">=</span><span class="s2">&quot;-1005&quot;</span>
+<span class="w">  </span><span class="nv">QUERY_MESSAGE</span><span class="o">=</span><span class="s2">&quot;SpaceNotFound: &quot;</span>
 /&gt;
 &lt;AUDIT_RECORD
-  <span class="nv">CATEGORY</span><span class="o">=</span><span class="s2">&quot;util&quot;</span>
-  <span class="nv">TIMESTAMP</span><span class="o">=</span><span class="s2">&quot;2022-04-07 02:31:39&quot;</span>
-  <span class="nv">TERMINAL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">CONNECTION_ID</span><span class="o">=</span><span class="s2">&quot;1649298693144580&quot;</span>
-  <span class="nv">CONNECTION_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
-  <span class="nv">CONNECTION_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">USER</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
-  <span class="nv">CLIENT_HOST</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
-  <span class="nv">HOST</span><span class="o">=</span><span class="s2">&quot;192.168.8.111&quot;</span>
-  <span class="nv">SPACE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
-  <span class="nv">QUERY</span><span class="o">=</span><span class="s2">&quot;use basketballplayer&quot;</span>
-  <span class="nv">QUERY_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
-  <span class="nv">QUERY_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">CATEGORY</span><span class="o">=</span><span class="s2">&quot;util&quot;</span>
+<span class="w">  </span><span class="nv">TIMESTAMP</span><span class="o">=</span><span class="s2">&quot;2022-04-07 02:31:39&quot;</span>
+<span class="w">  </span><span class="nv">TERMINAL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_ID</span><span class="o">=</span><span class="s2">&quot;1649298693144580&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<span class="w">  </span><span class="nv">CONNECTION_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">USER</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
+<span class="w">  </span><span class="nv">CLIENT_HOST</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span>
+<span class="w">  </span><span class="nv">HOST</span><span class="o">=</span><span class="s2">&quot;192.168.8.111&quot;</span>
+<span class="w">  </span><span class="nv">SPACE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="w">  </span><span class="nv">QUERY</span><span class="o">=</span><span class="s2">&quot;use basketballplayer&quot;</span>
+<span class="w">  </span><span class="nv">QUERY_STATUS</span><span class="o">=</span><span class="s2">&quot;0&quot;</span>
+<span class="w">  </span><span class="nv">QUERY_MESSAGE</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
 /&gt;
 </code></pre></div>
 <table>
@@ -7383,7 +7383,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>

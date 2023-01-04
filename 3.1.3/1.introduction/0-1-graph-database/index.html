@@ -7474,13 +7474,13 @@
 </ul>
 <p><img alt="" src="https://dist.neo4j.com/wp-content/uploads/20200131191103/Neo4j-Fabric-LDBC-sharding-scheme.jpg" /></p>
 <p>其语法风格大体是
-<div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">graphA</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">S1</span><span class="p">.</span><span class="m">1</span><span class="w"> </span><span class="err">从</span><span class="w"> </span><span class="n">Shard</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="err">读</span><span class="w"></span>
-<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span><span class="w"></span>
-<span class="k">Return</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">title</span><span class="w"></span>
-<span class="w">    </span><span class="k">UNION</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="n">S2</span><span class="p">.</span><span class="w"> </span><span class="err">在代理服务器</span><span class="w"> </span><span class="n">Join</span><span class="w"> </span><span class="err">结果</span><span class="w"></span>
-<span class="n">USE</span><span class="w"> </span><span class="n">graphB</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">S1</span><span class="p">.</span><span class="m">2</span><span class="w"> </span><span class="err">从</span><span class="w"> </span><span class="n">Shard</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="err">读</span><span class="w"></span>
-<span class="k">MATCH</span><span class="w"> </span><span class="err">（</span><span class="n">move</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span><span class="w"></span>
-<span class="k">RETURN</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">title</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">graphA</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">S1</span><span class="p">.</span><span class="m">1</span><span class="w"> </span><span class="err">从</span><span class="w"> </span><span class="n">Shard</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="err">读</span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">movie</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span>
+<span class="k">Return</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">title</span>
+<span class="w">    </span><span class="k">UNION</span><span class="w">   </span><span class="err">#</span><span class="w"> </span><span class="n">S2</span><span class="p">.</span><span class="w"> </span><span class="err">在代理服务器</span><span class="w"> </span><span class="n">Join</span><span class="w"> </span><span class="err">结果</span>
+<span class="n">USE</span><span class="w"> </span><span class="n">graphB</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">S1</span><span class="p">.</span><span class="m">2</span><span class="w"> </span><span class="err">从</span><span class="w"> </span><span class="n">Shard</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="err">读</span>
+<span class="k">MATCH</span><span class="w"> </span><span class="err">（</span><span class="n">move</span><span class="p">:</span><span class="n">Movie</span><span class="p">)</span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">movie</span><span class="p">.</span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">title</span>
 </code></pre></div></p>
 <p><img alt="" src="https://docs-cdn.nebula-graph.com.cn/books/images/fabric.png" /></p>
 <h4 id="titan_janusgraph">第二代（分布式）图数据库：Titan 和其后继者 JanusGraph<a class="headerlink" href="#titan_janusgraph" title="Permanent link">&para;</a></h4>
@@ -7620,7 +7620,7 @@ Oracle graph<sup id="fnref:Oracle"><a class="footnote-ref" href="#fn:Oracle">18<
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
       
     
   </small>
