@@ -2904,6 +2904,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.ngql-guide/17.query-tuning-statements/2.kill-session/" class="md-nav__link">
+        终止会话
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7666,7 +7680,7 @@ nebula&gt; RETURN $p2.b AS b;
 </li>
 </ul>
 <h3 id="_3">导出执行结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>导出命令执行的返回结果，可以保存为 CSV 文件、 DOT 文件或者 Prfile/Explain 结果。</p>
+<p>导出命令执行的返回结果，可以保存为 CSV 文件、 DOT 文件或者 Profile/Explain 结果。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -7709,9 +7723,7 @@ nebula&gt; PROFILE FORMAT=&quot;dot&quot; GO FROM &quot;player100&quot; OVER fol
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ul>
-<li>相比于 studio 中的截图、CSV 文件，因为保有更多信息量和拥有更好的可读性，经由此命令输出的文本文件内容是首推的在 GitHub issue、论坛中报告执行计划、图查询调优的方式。</li>
-</ul>
+<p>相比于 Studio 中的截图、CSV 文件，因为保有更多信息量和拥有更好的可读性，经由此命令输出的文本文件内容是首推的在 GitHub issue、论坛中报告执行计划、图查询调优的方式。</p>
 </div>
 <p>示例：</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; :profile profile.log

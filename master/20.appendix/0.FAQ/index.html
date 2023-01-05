@@ -2904,6 +2904,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.ngql-guide/17.query-tuning-statements/2.kill-session/" class="md-nav__link">
+        终止会话
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7552,6 +7566,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#max_sessions_per_ip_per_user" class="md-nav__link">
+    会话数量达到max_sessions_per_ip_per_user所设值上限时怎么办？
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -8019,6 +8040,13 @@
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     如何测试端口是否已开放？
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max_sessions_per_ip_per_user" class="md-nav__link">
+    会话数量达到max_sessions_per_ip_per_user所设值上限时怎么办？
   </a>
   
 </li>
@@ -8522,13 +8550,23 @@ $<span class="w"> </span>telnet<span class="w"> </span><span class="m">192</span
 Trying<span class="w"> </span><span class="m">192</span>.168.1.10...
 telnet:<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>address<span class="w"> </span><span class="m">192</span>.168.1.10:<span class="w"> </span>Connection<span class="w"> </span>refused
 </code></pre></div>
+<h3 id="max_sessions_per_ip_per_user">会话数量达到<code>max_sessions_per_ip_per_user</code>所设值上限时怎么办？<a class="headerlink" href="#max_sessions_per_ip_per_user" title="Permanent link">&para;</a></h3>
+<p>当会话数量达到上限时，即超过<code>max_sessions_per_ip_per_user</code>所设值，在连接 NebulaGraph 的时候，会出现以下报错：</p>
+<div class="highlight"><pre><span></span><code>Fail to create a new session from connection pool, fail to authenticate, error: Create Session failed: Too many sessions created from 127.0.0.1 by user root. the threshold is 2. You can change it by modifying &#39;max_sessions_per_ip_per_user&#39; in nebula-graphd.conf
+</code></pre></div>
+<p>用户可以通过以下三种方式解决问题：</p>
+<ol>
+<li>执行<code>KILL SESSION</code>命令，关闭不需要的 Session。详情参见<a href="../../3.ngql-guide/17.query-tuning-statements/2.kill-session/">终止会话</a>。</li>
+<li>在 <a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务的配置文件</a><code>nebula_graphd.conf</code>中增大<code>max_sessions_per_ip_per_user</code>的值，增加可以创建的会话总数。重启 Graph 服务使配置生效。</li>
+<li>在 <a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务的配置文件</a><code>nebula_graphd.conf</code>中减小<code>session_idle_timeout_secs</code>参数的值，降低空闲会话的超时时间。重启 Graph 服务使配置生效。</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
       
     
   </small>
