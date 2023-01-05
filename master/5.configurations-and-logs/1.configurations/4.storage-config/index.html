@@ -7610,8 +7610,8 @@
 </tr>
 <tr>
 <td align="left"><code>timezone_name</code></td>
-<td align="left">-</td>
-<td align="left">指定 NebulaGraph 的时区。初始配置文件中未设置该参数，如需使用请手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见 <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
+<td align="left"><code>UTC+00:00:00</code></td>
+<td align="left">指定 NebulaGraph 的时区。初始配置文件中未设置该参数，如需使用请手动添加。格式请参见 <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>local_config</code></td>
@@ -7800,12 +7800,12 @@
 <tr>
 <td align="left"><code>rocksdb_compression</code></td>
 <td align="left"><code>lz4</code></td>
-<td align="left">压缩算法，可选值：<code>no</code>、<code>snappy</code>、<code>lz4</code>、<code>lz4hc</code>、<code>zlib</code>、<code>bzip2</code>、<code>zstd</code>。</td>
+<td align="left">压缩算法，可选值：<code>no</code>、<code>snappy</code>、<code>lz4</code>、<code>lz4hc</code>、<code>zlib</code>、<code>bzip2</code>、<code>zstd</code>。<br>该参数会修改每一层的压缩算法，如需为不同层级设置不同的压缩算法，请使用<code>rocksdb_compression_per_level</code>参数。</td>
 </tr>
 <tr>
 <td align="left"><code>rocksdb_compression_per_level</code></td>
 <td align="left">-</td>
-<td align="left">为不同级别设置不同的压缩算法。</td>
+<td align="left">为不同层级设置不同的压缩算法。优先级高于<code>rocksdb_compression</code>。例如<code>no:no:lz4:lz4:snappy:zstd:snappy</code>。<br>也可以不设置某个层级的压缩算法，例如<code>no:no:lz4:lz4::zstd</code>，此时 L4、L6 层使用<code>rocksdb_compression</code>参数的压缩算法。</td>
 </tr>
 <tr>
 <td align="left"><code>enable_rocksdb_statistics</code></td>
@@ -7834,8 +7834,8 @@
 </tr>
 <tr>
 <td align="left"><code>enable_partitioned_index_filter</code></td>
-<td align="left">-</td>
-<td align="left">设置为<code>true</code>可以降低 bloom 过滤器占用的内存大小，但是在某些随机寻道（random-seek）的情况下，可能会降低读取性能。</td>
+<td align="left"><code>false</code></td>
+<td align="left">设置为<code>true</code>可以降低 bloom 过滤器占用的内存大小，但是在某些随机寻道（random-seek）的情况下，可能会降低读取性能。初始配置文件中未设置该参数，如需使用请手动添加。</td>
 </tr>
 </tbody>
 </table>
@@ -8086,8 +8086,8 @@ disable_auto_compactions
 <tbody>
 <tr>
 <td align="left">max_edge_returned_per_vertex</td>
-<td align="left">2147483647</td>
-<td align="left">每个稠密点，最多返回多少条边，多余的边截断不返回。配置文件默认未设置。</td>
+<td align="left"><code>2147483647</code></td>
+<td align="left">每个稠密点，最多返回多少条边，多余的边截断不返回。初始配置文件中未设置该参数，如需使用请手动添加。</td>
 </tr>
 </tbody>
 </table>
@@ -8103,7 +8103,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
       
     
   </small>
