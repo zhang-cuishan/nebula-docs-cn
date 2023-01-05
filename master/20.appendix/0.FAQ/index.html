@@ -8296,15 +8296,15 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <h3 id="nebulagraph_1">如何查看 NebulaGraph 版本<a class="headerlink" href="#nebulagraph_1" title="Permanent link">&para;</a></h3>
 <p>服务运行时：<code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
 <p>服务未运行时：在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到 version 和 GitHub 上的 commit ID，例如：</p>
-<div class="highlight"><pre><span></span><code>$ ./nebula-graphd --version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./nebula-graphd<span class="w"> </span>--version
 </code></pre></div>
 <ul>
 <li>
 <p>Docker Compose 部署</p>
 <p>查看 Docker Compose 部署的 NebulaGraph 版本，方式和编译安装类似，只是要先进入容器内部，示例命令如下：</p>
-<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it nebula-docker-compose_graphd_1 bash
-<span class="nb">cd</span> bin/
-./nebula-graphd --version
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>nebula-docker-compose_graphd_1<span class="w"> </span>bash
+<span class="nb">cd</span><span class="w"> </span>bin/
+./nebula-graphd<span class="w"> </span>--version
 </code></pre></div>
 </li>
 </ul>
@@ -8363,16 +8363,16 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 </code></pre></div>
 例如：</li>
 </ol>
-<div class="highlight"><pre><span></span><code> $ file core.1316027
- core.1316027: ELF <span class="m">64</span>-bit LSB core file, x86-64, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, SVR4-style, from <span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad --flagfile /home/k&#39;</span>, real uid: <span class="m">1008</span>, effective uid: <span class="m">1008</span>, real gid: <span class="m">1008</span>, effective gid: <span class="m">1008</span>, execfn: <span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad&#39;</span>, platform: <span class="s1">&#39;x86_64&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>$<span class="w"> </span>file<span class="w"> </span>core.1316027
+<span class="w"> </span>core.1316027:<span class="w"> </span>ELF<span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span>LSB<span class="w"> </span>core<span class="w"> </span>file,<span class="w"> </span>x86-64,<span class="w"> </span>version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>SYSV<span class="o">)</span>,<span class="w"> </span>SVR4-style,<span class="w"> </span>from<span class="w"> </span><span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad --flagfile /home/k&#39;</span>,<span class="w"> </span>real<span class="w"> </span>uid:<span class="w"> </span><span class="m">1008</span>,<span class="w"> </span>effective<span class="w"> </span>uid:<span class="w"> </span><span class="m">1008</span>,<span class="w"> </span>real<span class="w"> </span>gid:<span class="w"> </span><span class="m">1008</span>,<span class="w"> </span>effective<span class="w"> </span>gid:<span class="w"> </span><span class="m">1008</span>,<span class="w"> </span>execfn:<span class="w"> </span><span class="s1">&#39;/home/workspace/fork/nebula-debug/bin/nebula-metad&#39;</span>,<span class="w"> </span>platform:<span class="w"> </span><span class="s1">&#39;x86_64&#39;</span>
 
- $ gdb /home/workspace/fork/nebula-debug/bin/nebula-metad core.1316027
+<span class="w"> </span>$<span class="w"> </span>gdb<span class="w"> </span>/home/workspace/fork/nebula-debug/bin/nebula-metad<span class="w"> </span>core.1316027
 
- <span class="k">$(</span>gdb<span class="k">)</span> bt
- <span class="c1">#0  0x00007f9de58fecf5 in __memcpy_ssse3_back () from /lib64/libc.so.6</span>
- <span class="c1">#1  0x0000000000eb2299 in void std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_construct&lt;char*&gt;(char*, char*, std::forward_iterator_tag) ()</span>
- <span class="c1">#2  0x0000000000ef71a7 in nebula::meta::cpp2::QueryDesc::QueryDesc(nebula::meta::cpp2::QueryDesc const&amp;) ()</span>
- ...
+<span class="w"> </span><span class="k">$(</span>gdb<span class="k">)</span><span class="w"> </span>bt
+<span class="w"> </span><span class="c1">#0  0x00007f9de58fecf5 in __memcpy_ssse3_back () from /lib64/libc.so.6</span>
+<span class="w"> </span><span class="c1">#1  0x0000000000eb2299 in void std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_construct&lt;char*&gt;(char*, char*, std::forward_iterator_tag) ()</span>
+<span class="w"> </span><span class="c1">#2  0x0000000000ef71a7 in nebula::meta::cpp2::QueryDesc::QueryDesc(nebula::meta::cpp2::QueryDesc const&amp;) ()</span>
+<span class="w"> </span>...
 </code></pre></div>
 <p>如果用户不清楚 dmp 打印出来的相关信息，可以将打印出来的内容，带上操作系统版本、硬件配置、Core文件产生前后的错误日志和可能导致错误的操作贴在 <a href="https://discuss.nebula-graph.com.cn/">NebulaGraph 论坛</a>上寻求帮助。</p>
 <h3 id="systemctl_nebulagraph">如何通过 systemctl 设置开机自动启动 NebulaGraph 服务？<a class="headerlink" href="#systemctl_nebulagraph" title="Permanent link">&para;</a></h3>
@@ -8504,23 +8504,23 @@ $ systemctl restart nebula-storaged.service
 <p>周边工具各自使用不用的端口，请参考各工具文档。</p>
 <h3 id="_15">如何测试端口是否已开放？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>用户可以使用如下 telnet 命令检查端口状态：</p>
-<div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
+<div class="highlight"><pre><span></span><code>telnet<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>&lt;port&gt;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果无法使用 telnet 命令，请先检查主机中是否安装并启动了 telnet。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>// 如果端口已开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9669</span>
-Trying <span class="m">192</span>.168.1.10...
-Connected to <span class="m">192</span>.168.1.10.
-Escape character is <span class="s1">&#39;^]&#39;</span>.
+<div class="highlight"><pre><span></span><code>//<span class="w"> </span>如果端口已开放：
+$<span class="w"> </span>telnet<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span><span class="m">9669</span>
+Trying<span class="w"> </span><span class="m">192</span>.168.1.10...
+Connected<span class="w"> </span>to<span class="w"> </span><span class="m">192</span>.168.1.10.
+Escape<span class="w"> </span>character<span class="w"> </span>is<span class="w"> </span><span class="s1">&#39;^]&#39;</span>.
 
-// 如果端口未开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9777</span>
-Trying <span class="m">192</span>.168.1.10...
-telnet: connect to address <span class="m">192</span>.168.1.10: Connection refused
+//<span class="w"> </span>如果端口未开放：
+$<span class="w"> </span>telnet<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span><span class="m">9777</span>
+Trying<span class="w"> </span><span class="m">192</span>.168.1.10...
+telnet:<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>address<span class="w"> </span><span class="m">192</span>.168.1.10:<span class="w"> </span>Connection<span class="w"> </span>refused
 </code></pre></div>
 
   <hr>

@@ -7469,22 +7469,22 @@
 <ul>
 <li>
 <p>列出在本地的备份目录。</p>
-<div class="highlight"><pre><span></span><code>./br show --storage local://&lt;storage_path&gt;
+<div class="highlight"><pre><span></span><code>./br<span class="w"> </span>show<span class="w"> </span>--storage<span class="w"> </span>local://&lt;storage_path&gt;
 </code></pre></div>
 <p>例如，可以使用以下命令列出在本地<code>/backup/</code>路径中的备份目录的信息。</p>
-<div class="highlight"><pre><span></span><code>./br show --storage <span class="s2">&quot;local:///backup/&quot;</span>
+<div class="highlight"><pre><span></span><code>./br<span class="w"> </span>show<span class="w"> </span>--storage<span class="w"> </span><span class="s2">&quot;local:///backup/&quot;</span>
 +----------------------------+---------------------+------------------------+-------------+------------+----------------------------+
-<span class="p">|</span>            NAME            <span class="p">|</span>     CREATE TIME     <span class="p">|</span>         SPACES         <span class="p">|</span> FULL BACKUP <span class="p">|</span> ALL SPACES <span class="p">|</span>      BASE BACKUP NAME      <span class="p">|</span>
+<span class="p">|</span><span class="w">            </span>NAME<span class="w">            </span><span class="p">|</span><span class="w">     </span>CREATE<span class="w"> </span>TIME<span class="w">     </span><span class="p">|</span><span class="w">         </span>SPACES<span class="w">         </span><span class="p">|</span><span class="w"> </span>FULL<span class="w"> </span>BACKUP<span class="w"> </span><span class="p">|</span><span class="w"> </span>ALL<span class="w"> </span>SPACES<span class="w"> </span><span class="p">|</span><span class="w">      </span>BASE<span class="w"> </span>BACKUP<span class="w"> </span>NAME<span class="w">      </span><span class="p">|</span>
 +----------------------------+---------------------+------------------------+-------------+------------+----------------------------+
-<span class="p">|</span> BACKUP_2022_08_11_06_12_43 <span class="p">|</span> <span class="m">2022</span>-08-11 <span class="m">06</span>:12:43 <span class="p">|</span> basketballplayer       <span class="p">|</span> <span class="nb">true</span>        <span class="p">|</span> <span class="nb">true</span>       <span class="p">|</span>                            <span class="p">|</span>
-<span class="p">|</span> BACKUP_2022_08_11_08_27_14 <span class="p">|</span> <span class="m">2022</span>-08-11 <span class="m">08</span>:27:15 <span class="p">|</span> basketballplayer,br    <span class="p">|</span> <span class="nb">false</span>       <span class="p">|</span> <span class="nb">true</span>       <span class="p">|</span> BACKUP_2022_08_11_06_12_43 <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>BACKUP_2022_08_11_06_12_43<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-08-11<span class="w"> </span><span class="m">06</span>:12:43<span class="w"> </span><span class="p">|</span><span class="w"> </span>basketballplayer<span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="nb">true</span><span class="w">        </span><span class="p">|</span><span class="w"> </span><span class="nb">true</span><span class="w">       </span><span class="p">|</span><span class="w">                            </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>BACKUP_2022_08_11_08_27_14<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">2022</span>-08-11<span class="w"> </span><span class="m">08</span>:27:15<span class="w"> </span><span class="p">|</span><span class="w"> </span>basketballplayer,br<span class="w">    </span><span class="p">|</span><span class="w"> </span><span class="nb">false</span><span class="w">       </span><span class="p">|</span><span class="w"> </span><span class="nb">true</span><span class="w">       </span><span class="p">|</span><span class="w"> </span>BACKUP_2022_08_11_06_12_43<span class="w"> </span><span class="p">|</span>
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>列出在兼容 S3 协议的对象存储服务<code>nebula-br-test</code>桶下的<code>/</code>中的备份的信息。</p>
-<div class="highlight"><pre><span></span><code>./br show --s3.access_key QImbbGDjfQEYxxxx --s3.secret_key dVSJZfl7tnoFq7Z5zt6sfYnvi63bxxxx  --s3.region us-east-1 --storage s3://nebula-br-test/ --s3.endpoint http://192.168.8.xxx:9000/
+<div class="highlight"><pre><span></span><code>./br<span class="w"> </span>show<span class="w"> </span>--s3.access_key<span class="w"> </span>QImbbGDjfQEYxxxx<span class="w"> </span>--s3.secret_key<span class="w"> </span>dVSJZfl7tnoFq7Z5zt6sfYnvi63bxxxx<span class="w">  </span>--s3.region<span class="w"> </span>us-east-1<span class="w"> </span>--storage<span class="w"> </span>s3://nebula-br-test/<span class="w"> </span>--s3.endpoint<span class="w"> </span>http://192.168.8.xxx:9000/
 </code></pre></div>
 </li>
 </ul>
@@ -7505,12 +7505,12 @@
 <li>
 <p>基于云存储备份恢复数据。</p>
 <p>将兼容 S3 协议的对象存储服务<code>nebula-br-test</code>桶下的<code>/</code>路径中的<code>BACKUP_2022_08_12_07_37_02</code>备份数据，恢复到 Meta 服务的地址为<code>192.168.8.129:9559</code>的集群中。</p>
-<div class="highlight"><pre><span></span><code>./br restore full --meta <span class="m">192</span>.168.8.129:9559 --s3.accesskey QImbbGDjfQEYxxxx --s3.secretkey dVSJZfl7tnoFq7Z5zt6sfYnvi63bxxxx  --s3.region us-east-1 --storage s3://nebula-br-test/ --s3.endpoint http://192.168.8.xxx:9000/ --log <span class="s2">&quot;3.log&quot;</span> --name BACKUP_2022_08_12_07_37_02
+<div class="highlight"><pre><span></span><code>./br<span class="w"> </span>restore<span class="w"> </span>full<span class="w"> </span>--meta<span class="w"> </span><span class="m">192</span>.168.8.129:9559<span class="w"> </span>--s3.accesskey<span class="w"> </span>QImbbGDjfQEYxxxx<span class="w"> </span>--s3.secretkey<span class="w"> </span>dVSJZfl7tnoFq7Z5zt6sfYnvi63bxxxx<span class="w">  </span>--s3.region<span class="w"> </span>us-east-1<span class="w"> </span>--storage<span class="w"> </span>s3://nebula-br-test/<span class="w"> </span>--s3.endpoint<span class="w"> </span>http://192.168.8.xxx:9000/<span class="w"> </span>--log<span class="w"> </span><span class="s2">&quot;3.log&quot;</span><span class="w"> </span>--name<span class="w"> </span>BACKUP_2022_08_12_07_37_02
 </code></pre></div>
 </li>
 </ul>
 <p>如果返回以下信息，表示数据已经恢复成功。</p>
-<div class="highlight"><pre><span></span><code>Restore succeed.
+<div class="highlight"><pre><span></span><code>Restore<span class="w"> </span>succeed.
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

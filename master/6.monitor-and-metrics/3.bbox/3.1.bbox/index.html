@@ -7484,14 +7484,14 @@
 <h2 id="_4">黑匣子文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">目录结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>在<code>black_box</code>目录下，系统根据当前机器上运行的 NebulaGraph 的各个服务的进程号，自动创建以相应进程号命名的目录。在每个目录下，默认每 5 秒生成一个二进制文件，记录这段时间内的操作系统性能指标数据。文件名格式为<code>black_box.{timestamp_id}.log</code>，其中<code>timestamp_id</code>为文件生成时的时间戳。服务重启后，进程号变化会导致日志写到新的目录下。</p>
-<div class="highlight"><pre><span></span><code>├── <span class="m">5776</span> <span class="c1"># 服务进程号</span>
-│   ├── black_box.1665472900.log <span class="c1"># 黑匣子文件</span>
-│   ├── black_box.1665472905.log
-│   ...
-├── <span class="m">5787</span>
-│   ├── black_box.1665728450.log
-│   ├── black_box.1665728455.log
-│   ...
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span><span class="m">5776</span><span class="w"> </span><span class="c1"># 服务进程号</span>
+│<span class="w">   </span>├──<span class="w"> </span>black_box.1665472900.log<span class="w"> </span><span class="c1"># 黑匣子文件</span>
+│<span class="w">   </span>├──<span class="w"> </span>black_box.1665472905.log
+│<span class="w">   </span>...
+├──<span class="w"> </span><span class="m">5787</span>
+│<span class="w">   </span>├──<span class="w"> </span>black_box.1665728450.log
+│<span class="w">   </span>├──<span class="w"> </span>black_box.1665728455.log
+│<span class="w">   </span>...
 ...
 </code></pre></div>
 <p>黑匣子文件的保留时长默认为 30 分钟（1800 秒），超过 30 分钟的文件会被自动删除。</p>

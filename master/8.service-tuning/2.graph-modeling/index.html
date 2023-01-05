@@ -7686,33 +7686,33 @@ nebula&gt; MATCH (v1:player)-[e:temp]-&gt;() return collect(e.tmp);
 <p>第二种情况：使用 <a href="../../3.ngql-guide/12.vertex-statements/4.delete-vertex/">DELETE VERTEX</a> 语句删除点的时候，没有使用<code>WITH EDGE</code>选项。此时系统默认不删除该点关联的出边和入边，这些边将变成悬挂边。</p>
 <p>NebulaGraph 3.4.0 的数据模型中，由于设计允许图中存在“悬挂边”；没有 openCypher 中的 MERGE 语句。对于悬挂边的保证完全依赖应用层面。用户可以使用 <a href="../../3.ngql-guide/7.general-query-statements/3.go/">GO</a> 和 <a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a> 语句查询到悬挂边，但无法使用 <a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a> 语句查询到悬挂边。</p>
 <p>示例：
-<div class="highlight"><pre><span></span><code>// 插入起点为“11”，终点为“13”并且都不存在于数据库中的悬挂边
-nebula&gt; CREATE EDGE IF NOT EXISTS e1 <span class="o">(</span>name string, age int<span class="o">)</span><span class="p">;</span>
-nebula&gt; INSERT EDGE e1 <span class="o">(</span>name, age<span class="o">)</span> VALUES <span class="s2">&quot;11&quot;</span>-&gt;<span class="s2">&quot;13&quot;</span>:<span class="o">(</span><span class="s2">&quot;n1&quot;</span>, <span class="m">1</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>//<span class="w"> </span>插入起点为“11”，终点为“13”并且都不存在于数据库中的悬挂边
+nebula&gt;<span class="w"> </span>CREATE<span class="w"> </span>EDGE<span class="w"> </span>IF<span class="w"> </span>NOT<span class="w"> </span>EXISTS<span class="w"> </span>e1<span class="w"> </span><span class="o">(</span>name<span class="w"> </span>string,<span class="w"> </span>age<span class="w"> </span>int<span class="o">)</span><span class="p">;</span>
+nebula&gt;<span class="w"> </span>INSERT<span class="w"> </span>EDGE<span class="w"> </span>e1<span class="w"> </span><span class="o">(</span>name,<span class="w"> </span>age<span class="o">)</span><span class="w"> </span>VALUES<span class="w"> </span><span class="s2">&quot;11&quot;</span>-&gt;<span class="s2">&quot;13&quot;</span>:<span class="o">(</span><span class="s2">&quot;n1&quot;</span>,<span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
 
-// 使用 GO 语句查询
-nebula&gt; GO FROM <span class="s2">&quot;11&quot;</span> over e1 YIELD properties<span class="o">(</span>edge<span class="o">)</span><span class="p">;</span>
+//<span class="w"> </span>使用<span class="w"> </span>GO<span class="w"> </span>语句查询
+nebula&gt;<span class="w"> </span>GO<span class="w"> </span>FROM<span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="w"> </span>over<span class="w"> </span>e1<span class="w"> </span>YIELD<span class="w"> </span>properties<span class="o">(</span>edge<span class="o">)</span><span class="p">;</span>
 +----------------------+
-<span class="p">|</span> properties<span class="o">(</span>EDGE<span class="o">)</span>     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>properties<span class="o">(</span>EDGE<span class="o">)</span><span class="w">     </span><span class="p">|</span>
 +----------------------+
-<span class="p">|</span> <span class="o">{</span>age: <span class="m">1</span>, name: <span class="s2">&quot;n1&quot;</span><span class="o">}</span> <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="o">{</span>age:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;n1&quot;</span><span class="o">}</span><span class="w"> </span><span class="p">|</span>
 +----------------------+
 
-// 使用 LOOKUP 语句查询
-nebula&gt; LOOKUP ON e1 YIELD EDGE AS r<span class="p">;</span>
+//<span class="w"> </span>使用<span class="w"> </span>LOOKUP<span class="w"> </span>语句查询
+nebula&gt;<span class="w"> </span>LOOKUP<span class="w"> </span>ON<span class="w"> </span>e1<span class="w"> </span>YIELD<span class="w"> </span>EDGE<span class="w"> </span>AS<span class="w"> </span>r<span class="p">;</span>
 +-------------------------------------------------------+
-<span class="p">|</span> r                                                     <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>r<span class="w">                                                     </span><span class="p">|</span>
 +-------------------------------------------------------+
-<span class="p">|</span> <span class="o">[</span>:e2 <span class="s2">&quot;11&quot;</span>-&gt;<span class="s2">&quot;13&quot;</span> @0 <span class="o">{</span>age: <span class="m">1</span>, name: <span class="s2">&quot;n1&quot;</span><span class="o">}]</span>              <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="o">[</span>:e2<span class="w"> </span><span class="s2">&quot;11&quot;</span>-&gt;<span class="s2">&quot;13&quot;</span><span class="w"> </span>@0<span class="w"> </span><span class="o">{</span>age:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>name:<span class="w"> </span><span class="s2">&quot;n1&quot;</span><span class="o">}]</span><span class="w">              </span><span class="p">|</span>
 +-------------------------------------------------------+
 
-// 使用 MATCH 查询，不能查询到悬挂边
-nebula&gt; MATCH <span class="o">()</span>-<span class="o">[</span>e:e1<span class="o">]</span>-&gt;<span class="o">()</span> RETURN e LIMIT <span class="m">100</span><span class="p">;</span>
+//<span class="w"> </span>使用<span class="w"> </span>MATCH<span class="w"> </span>查询，不能查询到悬挂边
+nebula&gt;<span class="w"> </span>MATCH<span class="w"> </span><span class="o">()</span>-<span class="o">[</span>e:e1<span class="o">]</span>-&gt;<span class="o">()</span><span class="w"> </span>RETURN<span class="w"> </span>e<span class="w"> </span>LIMIT<span class="w"> </span><span class="m">100</span><span class="p">;</span>
 +---+
-<span class="p">|</span> e <span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>e<span class="w"> </span><span class="p">|</span>
 +---+
 +---+
-Empty <span class="nb">set</span> <span class="o">(</span><span class="nb">time</span> spent <span class="m">3153</span>/3573 us<span class="o">)</span>
+Empty<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="o">(</span><span class="nb">time</span><span class="w"> </span>spent<span class="w"> </span><span class="m">3153</span>/3573<span class="w"> </span>us<span class="o">)</span>
 </code></pre></div></p>
 <ul>
 <li><a href="https://www.bilibili.com/video/BV1GR4y1F7ko">NebulaGraph 的悬挂边小科普</a>（2 分 28 秒）</li>

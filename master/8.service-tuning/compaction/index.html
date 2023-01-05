@@ -7601,7 +7601,7 @@ nebula&gt; SUBMIT JOB COMPACT;
 
 <ul>
 <li>为控制<code>Compaction</code>的写入速率，请在配置文件<code>nebula-storaged.conf</code>中设置如下参数（注：此参数限制全部写入，包括正常写入和 Compaction）：<div class="highlight"><pre><span></span><code><span class="c1"># 写入速度限制为 20MB/S。</span>
---rocksdb_rate_limit<span class="o">=</span><span class="m">20</span> <span class="o">(</span><span class="k">in</span> MB/s<span class="o">)</span>
+--rocksdb_rate_limit<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="o">(</span><span class="k">in</span><span class="w"> </span>MB/s<span class="o">)</span>
 </code></pre></div>
 </li>
 </ul>

@@ -7676,85 +7676,85 @@
 </li>
 <li>
 <p>使用<code>tar -xzvf</code>解压 TAR 包。</p>
-<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz -C &lt;install_path&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>&lt;install_path&gt;
 </code></pre></div>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>$ tar -xzvf nebula-dashboard-ent-3.2.0.linux-amd64.tar.gz -C /usr/local/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-3.2.0.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/local/
 </code></pre></div>
 </li>
 <li>
 <p>使用<code>vim /usr/local/nebula-dashboard-ent/etc/config.yaml</code>命令设置配置文件。</p>
-<div class="highlight"><pre><span></span><code>Name: dashboard-api
-Host: <span class="m">0</span>.0.0.0    <span class="c1"># 指定能访问 Dashboard 的地址。</span>
-Port: <span class="m">7005</span>  <span class="c1"># 访问 Dashboard 企业版服务的默认端口。</span>
-MaxBytes: <span class="m">1073741824</span> <span class="c1"># Http 可接受请求的最大 ContentLength，默认为 1048576。取值范围：0 ~ 8388608。</span>
-Timeout: <span class="m">15000</span>  <span class="c1"># 访问超时时间。</span>
-Debug:      <span class="c1"># 是否开启Debug模式。</span>
-  Enable: <span class="nb">false</span>
-Log:     <span class="c1"># Dashboard 运行日志设置。</span>
-  KeepDays: <span class="m">7</span>    <span class="c1"># 日志保留天数。</span>
-  Mode: console   <span class="c1"># 日志保存方式。</span>
+<div class="highlight"><pre><span></span><code>Name:<span class="w"> </span>dashboard-api
+Host:<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w">    </span><span class="c1"># 指定能访问 Dashboard 的地址。</span>
+Port:<span class="w"> </span><span class="m">7005</span><span class="w">  </span><span class="c1"># 访问 Dashboard 企业版服务的默认端口。</span>
+MaxBytes:<span class="w"> </span><span class="m">1073741824</span><span class="w"> </span><span class="c1"># Http 可接受请求的最大 ContentLength，默认为 1048576。取值范围：0 ~ 8388608。</span>
+Timeout:<span class="w"> </span><span class="m">15000</span><span class="w">  </span><span class="c1"># 访问超时时间。</span>
+Debug:<span class="w">      </span><span class="c1"># 是否开启Debug模式。</span>
+<span class="w">  </span>Enable:<span class="w"> </span><span class="nb">false</span>
+Log:<span class="w">     </span><span class="c1"># Dashboard 运行日志设置。</span>
+<span class="w">  </span>KeepDays:<span class="w"> </span><span class="m">7</span><span class="w">    </span><span class="c1"># 日志保留天数。</span>
+<span class="w">  </span>Mode:<span class="w"> </span>console<span class="w">   </span><span class="c1"># 日志保存方式。</span>
 Database:
-  Dialect: sqlite  <span class="c1"># 使用的数据库类型，目前支持 SQLite 和 MySQL，默认使用 SQLite。</span>
-  AutoMigrate: <span class="nb">true</span> <span class="c1"># 自动创建数据库表，默认为 true。</span>
-  Host: <span class="m">127</span>.0.0.1 <span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
-  Port: <span class="m">3306</span>  <span class="c1"># 连接的 MySQL 数据库的端口号。</span>
-  Username: root <span class="c1"># 登录 MySQL 的账户。</span>
-  Password: nebula <span class="c1"># 登录 MySQL 的密码。</span>
-  Name: dashboard <span class="c1"># 对应的数据库名称。</span>
+<span class="w">  </span>Dialect:<span class="w"> </span>sqlite<span class="w">  </span><span class="c1"># 使用的数据库类型，目前支持 SQLite 和 MySQL，默认使用 SQLite。</span>
+<span class="w">  </span>AutoMigrate:<span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="c1"># 自动创建数据库表，默认为 true。</span>
+<span class="w">  </span>Host:<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span><span class="c1"># 连接的 MySQL 数据库的 IP 地址。</span>
+<span class="w">  </span>Port:<span class="w"> </span><span class="m">3306</span><span class="w">  </span><span class="c1"># 连接的 MySQL 数据库的端口号。</span>
+<span class="w">  </span>Username:<span class="w"> </span>root<span class="w"> </span><span class="c1"># 登录 MySQL 的账户。</span>
+<span class="w">  </span>Password:<span class="w"> </span>nebula<span class="w"> </span><span class="c1"># 登录 MySQL 的密码。</span>
+<span class="w">  </span>Name:<span class="w"> </span>dashboard<span class="w"> </span><span class="c1"># 对应的数据库名称。</span>
 
 <span class="c1"># exporter 端口信息  </span>
 Exporter:
-  NodePort: <span class="m">9100</span> <span class="c1"># node-exporter 服务的端口。</span>
-  NebulaPort: <span class="m">9200</span> <span class="c1"># nebula-stats-exporter 服务的端口。</span>
+<span class="w">  </span>NodePort:<span class="w"> </span><span class="m">9100</span><span class="w"> </span><span class="c1"># node-exporter 服务的端口。</span>
+<span class="w">  </span>NebulaPort:<span class="w"> </span><span class="m">9200</span><span class="w"> </span><span class="c1"># nebula-stats-exporter 服务的端口。</span>
 
 <span class="c1"># 服务信息  </span>
 Proxy:
-  PrometheusAddr: <span class="m">127</span>.0.0.1:9090 <span class="c1"># prometheus 服务的 IP 地址和端口。</span>
-  AlertmanagerAddr: <span class="m">127</span>.0.0.1:9093 <span class="c1"># alertmanager 服务的 IP 地址和端口。</span>
+<span class="w">  </span>PrometheusAddr:<span class="w"> </span><span class="m">127</span>.0.0.1:9090<span class="w"> </span><span class="c1"># prometheus 服务的 IP 地址和端口。</span>
+<span class="w">  </span>AlertmanagerAddr:<span class="w"> </span><span class="m">127</span>.0.0.1:9093<span class="w"> </span><span class="c1"># alertmanager 服务的 IP 地址和端口。</span>
 
 <span class="c1"># 邀请 LDAP 账号的发件人邮箱信息  </span>
 Mail:
-  Host: smtp.office365.com <span class="c1">#  SMTP 服务器地址。</span>
-  Port: <span class="m">587</span> <span class="c1"># SMTP 服务器的端口号。</span>
-  Username: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的用户名。</span>
-  Password: <span class="s2">&quot;&quot;</span> <span class="c1"># SMTP 服务器的密码。</span>
+<span class="w">  </span>Host:<span class="w"> </span>smtp.office365.com<span class="w"> </span><span class="c1">#  SMTP 服务器地址。</span>
+<span class="w">  </span>Port:<span class="w"> </span><span class="m">587</span><span class="w"> </span><span class="c1"># SMTP 服务器的端口号。</span>
+<span class="w">  </span>Username:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="c1"># SMTP 服务器的用户名。</span>
+<span class="w">  </span>Password:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="c1"># SMTP 服务器的密码。</span>
 
 <span class="c1"># 系统信息  </span>
 System:
-  WebAddress: http://127.0.0.1:7005 <span class="c1"># 外网访问 Dashboard 的地址，也可以设置为域名。用于一些接口回调，例如邮件被邀请人可以使用此链接访问 Dashboard。</span>
-  MessageStore: <span class="m">90</span> <span class="c1"># 保存告警消息的天数，默认 90 天。</span>
+<span class="w">  </span>WebAddress:<span class="w"> </span>http://127.0.0.1:7005<span class="w"> </span><span class="c1"># 外网访问 Dashboard 的地址，也可以设置为域名。用于一些接口回调，例如邮件被邀请人可以使用此链接访问 Dashboard。</span>
+<span class="w">  </span>MessageStore:<span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="c1"># 保存告警消息的天数，默认 90 天。</span>
 
 <span class="c1"># LDAP 信息  </span>
 LDAP:
-  Server: ldap://127.0.0.1 <span class="c1"># LDAP 服务器地址。</span>
-  BindDN: <span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># LDAP 服务器登录用户名。</span>
-  BindPassword: <span class="s2">&quot;&quot;</span> <span class="c1"># LDAP 服务器登录密码。</span>
-  BaseDN: <span class="nv">dc</span><span class="o">=</span>vesoft,dc<span class="o">=</span>com <span class="c1"># 查询用户数据的路径。</span>
-  UserFilter: <span class="s2">&quot;&amp;(objectClass=*)&quot;</span> <span class="c1"># 查询条件。</span>
-  EmailKey: mail <span class="c1"># LDAP 数据库存放邮箱信息的字段名。</span>
+<span class="w">  </span>Server:<span class="w"> </span>ldap://127.0.0.1<span class="w"> </span><span class="c1"># LDAP 服务器地址。</span>
+<span class="w">  </span>BindDN:<span class="w"> </span><span class="nv">cn</span><span class="o">=</span>admin,dc<span class="o">=</span>vesoft,dc<span class="o">=</span>com<span class="w"> </span><span class="c1"># LDAP 服务器登录用户名。</span>
+<span class="w">  </span>BindPassword:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="c1"># LDAP 服务器登录密码。</span>
+<span class="w">  </span>BaseDN:<span class="w"> </span><span class="nv">dc</span><span class="o">=</span>vesoft,dc<span class="o">=</span>com<span class="w"> </span><span class="c1"># 查询用户数据的路径。</span>
+<span class="w">  </span>UserFilter:<span class="w"> </span><span class="s2">&quot;&amp;(objectClass=*)&quot;</span><span class="w"> </span><span class="c1"># 查询条件。</span>
+<span class="w">  </span>EmailKey:<span class="w"> </span>mail<span class="w"> </span><span class="c1"># LDAP 数据库存放邮箱信息的字段名。</span>
 </code></pre></div>
 </li>
 <li>
 <p>拷贝 License 至<code>nebula-dashboard-ent</code>目录下。</p>
-<div class="highlight"><pre><span></span><code>$ cp -r &lt;license&gt; &lt;dashboard_path&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>&lt;license&gt;<span class="w"> </span>&lt;dashboard_path&gt;
 </code></pre></div>
 <p>例如：
-<div class="highlight"><pre><span></span><code>$ cp -r nebula.license /usr/local/nebula-dashboard-ent
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>nebula.license<span class="w"> </span>/usr/local/nebula-dashboard-ent
 </code></pre></div></p>
 </li>
 <li>
 <p>启动 Dashboard。</p>
 <p>可以使用以下命令一键启动 Dashboard。</p>
-<p><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/nebula-dashboard-ent/scripts
-$ sudo ./dashboard.service start all
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/local/nebula-dashboard-ent/scripts
+$<span class="w"> </span>sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>all
 </code></pre></div>
 或是执行以下命令，分别启动 Prometheus、nebula-dashboard-server、nebula-stats-exporter 和 Alertmanager 依赖服务以启动 Dashboard。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> scripts
-$ sudo ./dashboard.service start prometheus <span class="c1"># 启动 Prometheus 服务</span>
-$ sudo ./dashboard.service start webserver <span class="c1">#启动 nebula-dashboard-server 服务</span>
-$ sudo ./dashboard.service start exporter <span class="c1">#启动 nebula-stats-exporter 服务</span>
-$ sudo ./dashboard.service start alertmanager <span class="c1">#启动 Alertmanager 服务</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>scripts
+$<span class="w"> </span>sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>prometheus<span class="w"> </span><span class="c1"># 启动 Prometheus 服务</span>
+$<span class="w"> </span>sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>webserver<span class="w"> </span><span class="c1">#启动 nebula-dashboard-server 服务</span>
+$<span class="w"> </span>sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>exporter<span class="w"> </span><span class="c1">#启动 nebula-stats-exporter 服务</span>
+$<span class="w"> </span>sudo<span class="w"> </span>./dashboard.service<span class="w"> </span>start<span class="w"> </span>alertmanager<span class="w"> </span><span class="c1">#启动 Alertmanager 服务</span>
 </code></pre></div>
 </li>
 </ol>
@@ -7764,9 +7764,9 @@ $ sudo ./dashboard.service start alertmanager <span class="c1">#启动 Alertmana
 </div>
 <h3 id="dashboard_1">管理 Dashboard 服务<a class="headerlink" href="#dashboard_1" title="Permanent link">&para;</a></h3>
 <p>Dashboard 使用脚本<code>dashboard.service</code>管理服务，包括启动、停止和查看。</p>
-<div class="highlight"><pre><span></span><code>$ sudo &lt;dashboard_path&gt;/dashboard/scripts/dashboard.service
-<span class="o">[</span>-v<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span>
-&lt;start<span class="p">|</span>stop<span class="p">|</span>status&gt;  &lt;prometheus<span class="p">|</span>webserver<span class="p">|</span>exporter<span class="p">|</span>gateway<span class="p">|</span>all&gt;
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>&lt;dashboard_path&gt;/dashboard/scripts/dashboard.service
+<span class="o">[</span>-v<span class="o">]</span><span class="w"> </span><span class="o">[</span>-h<span class="o">]</span>
+&lt;start<span class="p">|</span>stop<span class="p">|</span>status&gt;<span class="w">  </span>&lt;prometheus<span class="p">|</span>webserver<span class="p">|</span>exporter<span class="p">|</span>gateway<span class="p">|</span>all&gt;
 </code></pre></div>
 <table>
 <thead>
@@ -7824,10 +7824,10 @@ $ sudo ./dashboard.service start alertmanager <span class="c1">#启动 Alertmana
 </table>
 <h3 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Dashboard 的安装在当前目录下，用户可以用以下命令管理服务。</p>
-<div class="highlight"><pre><span></span><code>$ sudo /dashboard/scripts/dashboard.service start all <span class="c1">#启动 Dashboard 所有服务。</span>
-$ sudo /dashboard/scripts/dashboard.service stop all <span class="c1">#停止 Dashboard 所有服务。</span>
-$ sudo /dashboard/scripts/dashboard.service status all <span class="c1">#查看 Dashboard 所有服务状态。</span>
-$ sudo /dashboard/scripts/dashboard.service restart all <span class="c1">#重启 Dashboard 所有服务状态。</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>/dashboard/scripts/dashboard.service<span class="w"> </span>start<span class="w"> </span>all<span class="w"> </span><span class="c1">#启动 Dashboard 所有服务。</span>
+$<span class="w"> </span>sudo<span class="w"> </span>/dashboard/scripts/dashboard.service<span class="w"> </span>stop<span class="w"> </span>all<span class="w"> </span><span class="c1">#停止 Dashboard 所有服务。</span>
+$<span class="w"> </span>sudo<span class="w"> </span>/dashboard/scripts/dashboard.service<span class="w"> </span>status<span class="w"> </span>all<span class="w"> </span><span class="c1">#查看 Dashboard 所有服务状态。</span>
+$<span class="w"> </span>sudo<span class="w"> </span>/dashboard/scripts/dashboard.service<span class="w"> </span>restart<span class="w"> </span>all<span class="w"> </span><span class="c1">#重启 Dashboard 所有服务状态。</span>
 </code></pre></div>
 <h2 id="rpm">使用 RPM 包部署<a class="headerlink" href="#rpm" title="Permanent link">&para;</a></h2>
 <h3 id="_4">安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -7842,10 +7842,10 @@ $ sudo /dashboard/scripts/dashboard.service restart all <span class="c1">#重启
 <li>
 <p>使用<code>sudo rpm -ivh &lt;package_name&gt;</code>命令安装 RPM 包。</p>
 <p>例如，安装 Dashboard 企业版需要运行以下命令，默认安装路径为<code>/usr/local/nebula-dashboard-ent</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-dashboard-ent-&lt;version&gt;.x86_64.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>nebula-dashboard-ent-&lt;version&gt;.x86_64.rpm
 </code></pre></div>
 <p>也可以使用以下命令安装到指定路径：</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -ivh nebula-dashboard-ent-xxx.rpm --prefix<span class="o">=</span>&lt;path&gt; 
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>nebula-dashboard-ent-xxx.rpm<span class="w"> </span>--prefix<span class="o">=</span>&lt;path&gt;<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
@@ -7908,7 +7908,7 @@ ldap:
 <li>
 <p>使用<code>sudo dpkg -i &lt;package_name&gt;</code>命令安装 DEB 包。</p>
 <p>例如，安装 Dashboard 企业版需要运行以下命令，默认安装路径为<code>/usr/local/nebula-dashboard-ent</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-dashboard-ent-3.2.0.ubuntu1804.amd64.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-dashboard-ent-3.2.0.ubuntu1804.amd64.deb
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
