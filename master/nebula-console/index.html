@@ -7666,7 +7666,7 @@ nebula&gt; RETURN $p2.b AS b;
 </li>
 </ul>
 <h3 id="_3">导出执行结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>导出命令执行的返回结果，可以保存为 CSV 文件或 DOT 文件。</p>
+<p>导出命令执行的返回结果，可以保存为 CSV 文件、 DOT 文件或者 Prfile/Explain 结果。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -7697,6 +7697,30 @@ nebula&gt; PROFILE FORMAT=&quot;dot&quot; GO FROM &quot;player100&quot; OVER fol
 </code></pre></div>
 </li>
 </ul>
+<ul>
+<li>
+<p>导出 PROFILE/EXPLAIN 结果到文件命令如下：</p>
+<p><div class="highlight"><pre><span></span><code>nebula&gt; :profile &lt;file_name&gt;;
+</code></pre></div>
+或者</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :explain &lt;file_name&gt;;
+</code></pre></div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>相比于 studio 中的截图、CSV 文件，因为保有更多信息量和拥有更好的可读性，经由此命令输出的文本文件内容是首推的在 GitHub issue、论坛中报告执行计划、图查询调优的方式。</li>
+</ul>
+</div>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; :profile profile.log
+nebula&gt; PROFILE GO FROM &quot;player102&quot; OVER serve YIELD dst(edge);
+nebula&gt; :profile profile.dot
+nebula&gt; PROFILE FORMAT=&quot;dot&quot; GO FROM &quot;player102&quot; OVER serve YIELD dst(edge);
+nebula&gt; :explain explain.log
+nebula&gt; EXPLAIN GO FROM &quot;player102&quot; OVER serve YIELD dst(edge);
+</code></pre></div>
 <h3 id="_4">加载测试数据集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>测试数据集名称为 basketballplayer，详细 Schema 信息和数据信息请使用相关<code>SHOW</code>命令查看。</p>
 <p>加载测试数据集命令如下：</p>
@@ -7758,7 +7782,7 @@ Bye root!
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
       
     
   </small>
