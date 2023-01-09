@@ -4121,27 +4121,34 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    套餐版本
+    数据备份
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    创建付费版服务实例
+    套餐版本
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    创建免费版试用版服务实例
+    创建付费版服务实例
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    创建免费版试用版服务实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     常见问题
   </a>
   
@@ -7142,27 +7149,34 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    套餐版本
+    数据备份
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    创建付费版服务实例
+    套餐版本
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    创建免费版试用版服务实例
+    创建付费版服务实例
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    创建免费版试用版服务实例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     常见问题
   </a>
   
@@ -7250,9 +7264,20 @@
 <td>否</td>
 <td>否</td>
 </tr>
+<tr>
+<td>数据盘快照费用</td>
+<td><strong>阿里云承担</strong></td>
+<td>用户承担（可关闭功能）</td>
+</tr>
 </tbody>
 </table>
-<h2 id="_4">套餐版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">数据备份<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在创建服务实例时，系统会默认开启数据盘自动快照备份，用于周期性备份 NebulaGraph 数据。</p>
+<p>创建付费版服务实例前需<a href="https://help.aliyun.com/document_detail/108381.html">开通快照</a>。免费试用实例使用的是阿里云官方账号下的资源，已开通快照，无需用户手动开通。</p>
+<p>默认的快照备份策略为每天 00:00 创建快照。</p>
+<p>创建快照会产生费用，详情参见<a href="https://help.aliyun.com/document_detail/56159.htm">快照计费</a>。</p>
+<p>如需删除快照、修改或删除自动快照策略，参见<a href="https://help.aliyun.com/document_detail/108376.html">快照文档</a>。</p>
+<h2 id="_5">套餐版本<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>NebulaGraph Cloud 阿里云版支持如下套餐版本。</p>
 <table>
 <thead>
@@ -7277,7 +7302,7 @@
 </tbody>
 </table>
 <p>付费版和免费试用版服务实例支持的套餐版本有所不同，详情参见创建实例页面。</p>
-<h2 id="_5">创建付费版服务实例<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">创建付费版服务实例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>登录<a href="https://home.console.aliyun.com/home/dashboard/ProductAndService">阿里云控制台</a>。</p>
@@ -7363,7 +7388,7 @@
 <p>部署的平均耗时为 10 分钟。完成后实例的状态变为<strong>已部署</strong>。</p>
 </li>
 </ol>
-<h2 id="_6">创建免费版试用版服务实例<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">创建免费版试用版服务实例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
 <p>免费试用实例不可在生产环境中使用。</p>
@@ -7414,7 +7439,7 @@
 <p>部署的平均耗时为 10 分钟。完成后实例的状态变为<strong>已部署</strong>。</p>
 </li>
 </ol>
-<h2 id="_7">常见问题<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_8">常见问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>Q：服务实例的状态显示为<strong>部署失败</strong>怎么处理？</p>
 <ol>
 <li>如果使用 RAM 账号创建的实例，确认为该账号授予了本文前提条件中指定的权限。</li>
@@ -7427,7 +7452,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>
