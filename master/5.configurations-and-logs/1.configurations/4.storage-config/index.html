@@ -7878,6 +7878,11 @@
 </thead>
 <tbody>
 <tr>
+<td align="left"><code>query_concurrently</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否开启多线程查询。开启后可以提高单个查询的时延性能，但大压力下会降低整体的吞吐量。</td>
+</tr>
+<tr>
 <td align="left"><code>auto_remove_invalid_space</code></td>
 <td align="left"><code>true</code></td>
 <td align="left">在执行<code>DROP SPACE</code>后，会删除指定图空间，该参数设置是否同时删除指定图空间内的所有数据。当值为<code>true</code>时，同时删除指定图空间内的所有数据。</td>
