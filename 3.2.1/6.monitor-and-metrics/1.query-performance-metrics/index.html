@@ -6935,7 +6935,7 @@
 </div>
 <h2 id="http">通过 HTTP 端口查询监控指标<a class="headerlink" href="#http" title="Permanent link">&para;</a></h2>
 <h3 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>curl -G <span class="s2">&quot;http://&lt;ip&gt;:&lt;port&gt;/stats?stats=&lt;metric_name_list&gt; [&amp;format=json]&quot;</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;http://&lt;ip&gt;:&lt;port&gt;/stats?stats=&lt;metric_name_list&gt; [&amp;format=json]&quot;</span>
 </code></pre></div>
 <table>
 <thead>
@@ -6972,7 +6972,7 @@
 <li>
 <p>查询单个监控指标</p>
 <p>查询 Graph 服务中，最近 10 分钟的请求总数。</p>
-<div class="highlight"><pre><span></span><code>$ curl -G <span class="s2">&quot;http://192.168.8.40:19669/stats?stats=num_queries.sum.600&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;http://192.168.8.40:19669/stats?stats=num_queries.sum.600&quot;</span>
 num_queries.sum.600<span class="o">=</span><span class="m">400</span>
 </code></pre></div>
 </li>
@@ -6981,7 +6981,7 @@ num_queries.sum.600<span class="o">=</span><span class="m">400</span>
 <li>
 <p>查询多个监控指标</p>
 <p>查询 Meta 服务中，最近 1 分钟的心跳平均延迟和最近 10 分钟 P99 心跳（1%最慢的心跳）的平均延迟。</p>
-<div class="highlight"><pre><span></span><code>$ curl -G <span class="s2">&quot;http://192.168.8.40:19559/stats?stats=heartbeat_latency_us.avg.60,heartbeat_latency_us.p99.600&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;http://192.168.8.40:19559/stats?stats=heartbeat_latency_us.avg.60,heartbeat_latency_us.p99.600&quot;</span>
 heartbeat_latency_us.avg.60<span class="o">=</span><span class="m">281</span>
 heartbeat_latency_us.p99.600<span class="o">=</span><span class="m">985</span>
 </code></pre></div>
@@ -6991,7 +6991,7 @@ heartbeat_latency_us.p99.600<span class="o">=</span><span class="m">985</span>
 <li>
 <p>查询监控指标并以 JSON 格式返回</p>
 <p>查询 Storage 服务中，最近 10 分钟新增的点数量，并以 JSON 格式返回结果。</p>
-<div class="highlight"><pre><span></span><code>$ curl -G <span class="s2">&quot;http://192.168.8.40:19779/stats?stats=num_add_vertices.sum.600&amp;format=json&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;http://192.168.8.40:19779/stats?stats=num_add_vertices.sum.600&amp;format=json&quot;</span>
 <span class="o">[{</span><span class="s2">&quot;value&quot;</span>:1,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;num_add_vertices.sum.600&quot;</span><span class="o">}]</span>
 </code></pre></div>
 </li>
@@ -7000,7 +7000,7 @@ heartbeat_latency_us.p99.600<span class="o">=</span><span class="m">985</span>
 <li>
 <p>查询服务器的所有监控指标</p>
 <p>不指定查询某个监控指标时，会返回该服务器上所有的监控指标。</p>
-<div class="highlight"><pre><span></span><code>$ curl -G <span class="s2">&quot;http://192.168.8.40:19559/stats&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>curl<span class="w"> </span>-G<span class="w"> </span><span class="s2">&quot;http://192.168.8.40:19559/stats&quot;</span>
 heartbeat_latency_us.avg.5<span class="o">=</span><span class="m">304</span>
 heartbeat_latency_us.avg.60<span class="o">=</span><span class="m">308</span>
 heartbeat_latency_us.avg.600<span class="o">=</span><span class="m">299</span>
@@ -7484,6 +7484,10 @@ num_heartbeats.sum.3600<span class="o">=</span><span class="m">2364</span>
 </tbody>
 </table>
 <h3 id="_6">图空间级别监控指标<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>图空间级别监控指标是动态创建的, 只有当图空间内触发该行为时，对应的指标才会创建，用户才能查询到。</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -7541,10 +7545,6 @@ num_heartbeats.sum.3600<span class="o">=</span><span class="m">2364</span>
 <td>索引扫描（IndexScan）算子执行时间。</td>
 </tr>
 <tr>
-<td><code>num_oom_queries</code></td>
-<td>导致内存耗尽的语句数量。</td>
-</tr>
-<tr>
 <td><code>num_auth_failed_sessions_bad_username_password</code></td>
 <td>因用户名密码错误导验证失败的会话数量。</td>
 </tr>
@@ -7593,7 +7593,7 @@ num_heartbeats.sum.3600<span class="o">=</span><span class="m">2364</span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>

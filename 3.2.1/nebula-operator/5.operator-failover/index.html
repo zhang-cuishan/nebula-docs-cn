@@ -6759,7 +6759,7 @@
 </li>
 <li>
 <p>待所有 Pods 都处于<code>Running</code>状态时，模拟故障，删除名为<code>&lt;cluster_name&gt;-storaged-2</code> Pod。</p>
-<p><div class="highlight"><pre><span></span><code>kubectl delete pod &lt;cluster-name&gt;-storaged-2 --now
+<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>pod<span class="w"> </span>&lt;cluster-name&gt;-storaged-2<span class="w"> </span>--now
 </code></pre></div>
 <code>&lt;cluster_name&gt;</code>为 NebulaGraph 集群的名称。</p>
 </li>
@@ -6767,13 +6767,13 @@
 <p>NebulaGraph Operator 自动创建名为<code>&lt;cluster-name&gt;-storaged-2</code>的 Pod，以修复故障。</p>
 <p>执行<code>kubectl get pods</code>查看<code>&lt;cluster-name&gt;-storaged-2</code>Pod 的创建状态。</p>
 <div class="highlight"><pre><span></span><code>...
-nebula-cluster-storaged-1        <span class="m">1</span>/1     Running             <span class="m">0</span>          5d23h
-nebula-cluster-storaged-2        <span class="m">0</span>/1     ContainerCreating   <span class="m">0</span>          1s
+nebula-cluster-storaged-1<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">             </span><span class="m">0</span><span class="w">          </span>5d23h
+nebula-cluster-storaged-2<span class="w">        </span><span class="m">0</span>/1<span class="w">     </span>ContainerCreating<span class="w">   </span><span class="m">0</span><span class="w">          </span>1s
 ...
 </code></pre></div>
 <p><div class="highlight"><pre><span></span><code>...
-nebula-cluster-storaged-1        <span class="m">1</span>/1     Running     <span class="m">0</span>          5d23h
-nebula-cluster-storaged-2        <span class="m">1</span>/1     Running     <span class="m">0</span>          4m2s
+nebula-cluster-storaged-1<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>5d23h
+nebula-cluster-storaged-2<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">     </span><span class="m">0</span><span class="w">          </span>4m2s
 ...
 </code></pre></div>
 当<code>&lt;cluster-name&gt;-storaged-2</code>的状态由<code>ContainerCreating</code>变为<code>Running</code>时，说明自愈成功。</p>
@@ -6785,7 +6785,7 @@ nebula-cluster-storaged-2        <span class="m">1</span>/1     Running     <spa
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>

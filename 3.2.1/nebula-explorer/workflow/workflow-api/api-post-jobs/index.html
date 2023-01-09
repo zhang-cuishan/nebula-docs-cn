@@ -6966,7 +6966,7 @@
 <h3 id="_4">请求示例<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>以下图为例，在 nGQL 语句使用自定义参数<code>name</code>。在创建作业时传入参数值<code>Tim Duncan</code>。</p>
 <p><img alt="api-postjob" src="https://docs-cdn.nebula-graph.com.cn/figures/api-postjob-220715-cn.png" /></p>
-<div class="highlight"><pre><span></span><code>curl -i -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -H <span class="s2">&quot;Cookie: &quot;</span><span class="nv">explorer_token</span><span class="o">=</span>eyJhbxxx<span class="s2">&quot;&quot;</span> -d <span class="s1">&#39;{&quot;input&quot;:{&quot;query_1&quot;:{&quot;name&quot;:&quot;Tim Duncan&quot;}}}&#39;</span> http://192.168.8.145:7002/api-open/v1/workflows/4216617528/jobs
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: &quot;</span><span class="nv">explorer_token</span><span class="o">=</span>eyJhbxxx<span class="s2">&quot;&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;input&quot;:{&quot;query_1&quot;:{&quot;name&quot;:&quot;Tim Duncan&quot;}}}&#39;</span><span class="w"> </span>http://192.168.8.145:7002/api-open/v1/workflows/4216617528/jobs
 </code></pre></div>
 <h2 id="_5">返回参数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <table>
@@ -7028,7 +7028,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>

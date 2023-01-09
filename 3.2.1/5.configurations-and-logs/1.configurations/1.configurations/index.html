@@ -6855,17 +6855,17 @@
 </div>
 <h2 id="_2">查看配置项列表与说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>使用以下命令获取二进制文件对应服务的所有配置项信息：</p>
-<div class="highlight"><pre><span></span><code>&lt;binary&gt; --help
+<div class="highlight"><pre><span></span><code>&lt;binary&gt;<span class="w"> </span>--help
 </code></pre></div>
 <p>例如：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 获取 Meta 配置项的帮助信息</span>
-$ /usr/local/nebula/bin/nebula-metad  --help
+$<span class="w"> </span>/usr/local/nebula/bin/nebula-metad<span class="w">  </span>--help
 
 <span class="c1"># 获取 Graph 配置项的帮助信息</span>
-$ /usr/local/nebula/bin/nebula-graphd --help
+$<span class="w"> </span>/usr/local/nebula/bin/nebula-graphd<span class="w"> </span>--help
 
 <span class="c1"># 获取 Storage 配置项的帮助信息</span>
-$ /usr/local/nebula/bin/nebula-storaged --help
+$<span class="w"> </span>/usr/local/nebula/bin/nebula-storaged<span class="w"> </span>--help
 </code></pre></div>
 <p>以上示例使用了二进制文件的默认存储路径<code>/usr/local/nebula/bin/</code>。如果修改了 NebulaGraph 安装路径，使用实际路径查询配置项信息。</p>
 <h2 id="_3">查看运行配置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -6878,13 +6878,13 @@ $ /usr/local/nebula/bin/nebula-storaged --help
 
 <p>例如：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 获取 Meta 服务的运行配置</span>
-curl <span class="m">127</span>.0.0.1:19559/flags
+curl<span class="w"> </span><span class="m">127</span>.0.0.1:19559/flags
 
 <span class="c1"># 获取 Graph 服务的运行配置</span>
-curl <span class="m">127</span>.0.0.1:19669/flags
+curl<span class="w"> </span><span class="m">127</span>.0.0.1:19669/flags
 
 <span class="c1"># 获取 Storage 服务的运行配置</span>
-curl <span class="m">127</span>.0.0.1:19779/flags
+curl<span class="w"> </span><span class="m">127</span>.0.0.1:19779/flags
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -6975,7 +6975,7 @@ curl <span class="m">127</span>.0.0.1:19779/flags
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>

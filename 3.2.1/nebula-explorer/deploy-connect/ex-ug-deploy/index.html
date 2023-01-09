@@ -7052,40 +7052,40 @@
 <li>
 <p>使用<code>sudo rpm -i &lt;rpm&gt;</code>命令安装 RPM 包。</p>
 <p>例如，安装 Explorer 需要运行以下命令，默认安装路径为<code>/usr/local/nebula-explorer</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -i nebula-explorer-&lt;version&gt;.x86_64.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-i<span class="w"> </span>nebula-explorer-&lt;version&gt;.x86_64.rpm
 </code></pre></div>
 <p>也可以使用<code>--prefix</code>选项安装到指定路径：
- <div class="highlight"><pre><span></span><code>sudo rpm -i nebula-explorer-&lt;version&gt;.x86_64.rpm --prefix<span class="o">=</span>&lt;path&gt; 
+ <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-i<span class="w"> </span>nebula-explorer-&lt;version&gt;.x86_64.rpm<span class="w"> </span>--prefix<span class="o">=</span>&lt;path&gt;<span class="w"> </span>
 </code></pre></div></p>
 </li>
 <li>
 <p>拷贝 License 至安装路径下。</p>
-<div class="highlight"><pre><span></span><code>cp -r &lt;license&gt; &lt;explorer_path&gt;
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>&lt;license&gt;<span class="w"> </span>&lt;explorer_path&gt;
 </code></pre></div>
 <p>例如：
- <div class="highlight"><pre><span></span><code>cp -r nebula.license /usr/local/nebula-explorer
+ <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>nebula.license<span class="w"> </span>/usr/local/nebula-explorer
 </code></pre></div></p>
 </li>
 <li>
 <p>执行以下命令启动服务。</p>
-<div class="highlight"><pre><span></span><code>systemctl start nebula-explorer
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>start<span class="w"> </span>nebula-explorer
 </code></pre></div>
 </li>
 </ol>
 <h3 id="_3">启停服务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>支持使用 systemctl 服务控制项目启停。</p>
-<p><div class="highlight"><pre><span></span><code>systemctl status nebula-explorer <span class="c1">#查看服务状态</span>
-systemctl stop nebula-explorer <span class="c1">#停止服务</span>
-systemctl start nebula-explorer <span class="c1">#启动服务</span>
+<p><div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>nebula-explorer<span class="w"> </span><span class="c1">#查看服务状态</span>
+systemctl<span class="w"> </span>stop<span class="w"> </span>nebula-explorer<span class="w"> </span><span class="c1">#停止服务</span>
+systemctl<span class="w"> </span>start<span class="w"> </span>nebula-explorer<span class="w"> </span><span class="c1">#启动服务</span>
 </code></pre></div>
 也可以在安装目录下使用以下命令，手动启动或停止服务。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ./scripts/rpm
-bash ./start.sh <span class="c1">#启动服务</span>
-bash ./stop.sh <span class="c1">#停止服务</span>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>./scripts/rpm
+bash<span class="w"> </span>./start.sh<span class="w"> </span><span class="c1">#启动服务</span>
+bash<span class="w"> </span>./stop.sh<span class="w"> </span><span class="c1">#停止服务</span>
 </code></pre></div>
 <h3 id="_4">卸载<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>使用以下的命令卸载 Explorer。</p>
-<div class="highlight"><pre><span></span><code>sudo rpm -e nebula-explorer-&lt;version&gt;.x86_64
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-e<span class="w"> </span>nebula-explorer-&lt;version&gt;.x86_64
 </code></pre></div>
 <h2 id="deb">使用 DEB 包部署<a class="headerlink" href="#deb" title="Permanent link">&para;</a></h2>
 <h3 id="_5">安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -7100,7 +7100,7 @@ bash ./stop.sh <span class="c1">#停止服务</span>
 <li>
 <p>使用<code>sudo dpkg -i &lt;package_name&gt;</code>命令安装 DEB 包。</p>
 <p>例如，安装 Explorer 需要运行以下命令，默认安装路径为<code>/usr/local/nebula-explorer</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -i nebula-explorer-3.1.0.x86_64.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-explorer-3.1.0.x86_64.deb
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -7109,30 +7109,30 @@ bash ./stop.sh <span class="c1">#停止服务</span>
 </li>
 <li>
 <p>拷贝 License 至<code>nebula-explorer</code>目录下。</p>
-<div class="highlight"><pre><span></span><code>sudo cp -r &lt;license&gt; &lt;explorer_path&gt;
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>&lt;license&gt;<span class="w"> </span>&lt;explorer_path&gt;
 </code></pre></div>
 <p>例如：
- <div class="highlight"><pre><span></span><code>sudo cp -r nebula.license /usr/local/nebula-explorer
+ <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span>nebula.license<span class="w"> </span>/usr/local/nebula-explorer
 </code></pre></div></p>
 </li>
 <li>
 <p>执行以下命令启动服务。</p>
-<div class="highlight"><pre><span></span><code>sudo systemctl start nebula-explorer.service
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>nebula-explorer.service
 </code></pre></div>
 <p>或者在<code>nebula-explorer/lib</code>目录下执行以下命令，启动服务。</p>
-<div class="highlight"><pre><span></span><code>sudo bash ./start.sh
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>./start.sh
 </code></pre></div>
 </li>
 </ol>
 <h3 id="_6">查看服务状态<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo systemctl status nebula-explorer.service
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>nebula-explorer.service
 </code></pre></div>
 <h3 id="_7">停止服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>sudo systemctl stop nebula-explorer.service
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>nebula-explorer.service
 </code></pre></div>
 <h3 id="_8">卸载<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>使用以下的命令卸载 Explorer。</p>
-<div class="highlight"><pre><span></span><code>sudo dpkg -r nebula-explorer
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-r<span class="w"> </span>nebula-explorer
 </code></pre></div>
 <h2 id="tar">TAR 包部署<a class="headerlink" href="#tar" title="Permanent link">&para;</a></h2>
 <h3 id="_9">安装及部署<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
@@ -7146,27 +7146,27 @@ bash ./stop.sh <span class="c1">#停止服务</span>
 </li>
 <li>
 <p>使用 <code>tar -xvf</code> 解压 tar 包。</p>
-<div class="highlight"><pre><span></span><code>tar -xvf nebula-explorer-&lt;version&gt;.tar.gz
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xvf<span class="w"> </span>nebula-explorer-&lt;version&gt;.tar.gz
 </code></pre></div>
 </li>
 <li>
 <p>拷贝 License 至<code>nebula-explorer</code>目录下。</p>
-<div class="highlight"><pre><span></span><code>cp -r &lt;license&gt; &lt;explorer_path&gt;
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>&lt;license&gt;<span class="w"> </span>&lt;explorer_path&gt;
 </code></pre></div>
 <p>例如：
- <div class="highlight"><pre><span></span><code>cp -r nebula.license /usr/local/nebula-explorer
+ <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>nebula.license<span class="w"> </span>/usr/local/nebula-explorer
 </code></pre></div></p>
 </li>
 <li>
 <p>进入<code>nebula-explorer</code>文件夹，启动 Explorer。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> nebula-explorer
-nohup ./nebula-explorer-server <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nebula-explorer
+nohup<span class="w"> </span>./nebula-explorer-server<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
 <h3 id="_10">停止服务<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>用户可以采用<code>kill pid</code>的方式来关停服务：</p>
-<div class="highlight"><pre><span></span><code><span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7002<span class="k">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:7002<span class="k">)</span>
 </code></pre></div>
 <h2 id="_11">后续操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
 <p>启动成功后，在浏览器地址栏输入 <code>http://&lt;ip_address&gt;:7002</code>。</p>
@@ -7183,7 +7183,7 @@ nohup ./nebula-explorer-server <span class="p">&amp;</span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
       
     
   </small>
