@@ -7504,14 +7504,18 @@
 </code></pre></div></li>
 </ul>
 <ul>
-<li>终止所有会话
+<li>
+<p>终止所有会话
   <div class="highlight"><pre><span></span><code>nebula&gt; SHOW SESSIONS | YIELD $-.SessionId as sid | KILL SESSION $-.sid
 
 // 或者
 nebula&gt; SHOW SESSIONS | KILL SESSIONS $-.SessionId
-</code></pre></div>
-  !!! caution
-      终止所有会话时，当前会话也会被终止。请谨慎使用。</li>
+</code></pre></div></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>终止所有会话时，当前会话也会被终止。请谨慎使用。</p>
+</div>
+</li>
 </ul>
 </li>
 </ul>
@@ -7521,7 +7525,7 @@ nebula&gt; SHOW SESSIONS | KILL SESSIONS $-.SessionId
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
       
     
   </small>
