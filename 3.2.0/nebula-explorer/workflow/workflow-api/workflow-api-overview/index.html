@@ -6827,7 +6827,7 @@
 <h2 id="_1">请求方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>支持使用 curl 调用 API 接口实现对应的功能。</p>
 <p>格式如下：</p>
-<div class="highlight"><pre><span></span><code>curl &lt;options&gt; http://&lt;explorer_address&gt;:&lt;explorer_port&gt;/&lt;api_path&gt;?<span class="o">{</span>&lt;body&gt;<span class="o">}</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>&lt;options&gt;<span class="w"> </span>http://&lt;explorer_address&gt;:&lt;explorer_port&gt;/&lt;api_path&gt;?<span class="o">{</span>&lt;body&gt;<span class="o">}</span>
 </code></pre></div>
 <ul>
 <li><code>&lt;options&gt;</code>：curl 支持大量选项，工作流使用较多的是<code>-X</code>、<code>-H</code>、<code>-d</code>。关于选项的详细说明，参见 <a href="https://curl.se/docs/manpage.html">curl 官方文档</a>。</li>
@@ -6846,7 +6846,7 @@
 </ul>
 <h2 id="token">获取授权 Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h2>
 <p>使用 API 时，需要做 Token 信息校验。请使用如下命令获取 Token 信息。</p>
-<div class="highlight"><pre><span></span><code>curl -i -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -H <span class="s2">&quot;Authorization: Bearer &lt;account_base64_encode&gt;&quot;</span> -d <span class="s1">&#39;{&quot;address&quot;:&quot;&lt;nebula_address&gt;&quot;,&quot;port&quot;:&lt;nebula_port&gt;}&#39;</span> http://&lt;explorer_address&gt;:&lt;explorer_port&gt;/api-open/v1/connect
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer &lt;account_base64_encode&gt;&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;address&quot;:&quot;&lt;nebula_address&gt;&quot;,&quot;port&quot;:&lt;nebula_port&gt;}&#39;</span><span class="w"> </span>http://&lt;explorer_address&gt;:&lt;explorer_port&gt;/api-open/v1/connect
 </code></pre></div>
 <ul>
 <li><code>&lt;account_base64_encode&gt;</code>：Base64 编码后的 NebulaGraph 账号和密码。编码前格式为<code>账号:密码</code>，下文示例为<code>root:123</code>，编码后为<code>cm9vdDoxMjM=</code>。</li>
@@ -6856,7 +6856,7 @@
 <li><code>&lt;explorer_port&gt;</code>：NebulaGraph Explorer 访问端口。</li>
 </ul>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>curl -i -X POST -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -H <span class="s2">&quot;Authorization: Bearer cm9vdDoxMjM=&quot;</span> -d <span class="s1">&#39;{&quot;address&quot;:&quot;192.168.8.111&quot;,&quot;port&quot;:9669}&#39;</span> http://192.168.8.145:7002/api-open/v1/connect
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-i<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer cm9vdDoxMjM=&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;address&quot;:&quot;192.168.8.111&quot;,&quot;port&quot;:9669}&#39;</span><span class="w"> </span>http://192.168.8.145:7002/api-open/v1/connect
 </code></pre></div>
 <p>返回结果：</p>
 <div class="highlight"><pre><span></span><code><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -6866,13 +6866,13 @@
 <span class="na">Date</span><span class="o">:</span> <span class="l">Thu, 14 Jul 2022 06:47:01 GMT</span>
 <span class="na">Content-Length</span><span class="o">:</span> <span class="l">54</span>
 
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>需要关注的参数如下：</p>
 <ul>
@@ -7012,7 +7012,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>

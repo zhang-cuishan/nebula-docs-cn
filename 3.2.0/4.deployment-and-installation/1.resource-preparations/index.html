@@ -7152,51 +7152,51 @@
 <ul>
 <li>
 <p>CentOS、RedHat、Fedora 用户请执行如下命令：</p>
-<div class="highlight"><pre><span></span><code>$ yum update
-$ yum install -y make <span class="se">\</span>
-                 m4 <span class="se">\</span>
-                 git <span class="se">\</span>
-                 wget <span class="se">\</span>
-                 unzip <span class="se">\</span>
-                 xz <span class="se">\</span>
-                 readline-devel <span class="se">\</span>
-                 ncurses-devel <span class="se">\</span>
-                 zlib-devel <span class="se">\</span>
-                 gcc <span class="se">\</span>
-                 gcc-c++ <span class="se">\</span>
-                 cmake <span class="se">\</span>
-                 curl <span class="se">\</span>
-                 redhat-lsb-core <span class="se">\</span>
-                 bzip2
-// 仅 CentOS <span class="m">8</span>+、RedHat <span class="m">8</span>+、Fedora 需要安装 libstdc++-static 和 libasan。
-$ yum install -y libstdc++-static libasan
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>yum<span class="w"> </span>update
+$<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>m4<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>xz<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>readline-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>ncurses-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>zlib-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>gcc<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>gcc-c++<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>redhat-lsb-core<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>bzip2
+//<span class="w"> </span>仅<span class="w"> </span>CentOS<span class="w"> </span><span class="m">8</span>+、RedHat<span class="w"> </span><span class="m">8</span>+、Fedora<span class="w"> </span>需要安装<span class="w"> </span>libstdc++-static<span class="w"> </span>和<span class="w"> </span>libasan。
+$<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libstdc++-static<span class="w"> </span>libasan
 </code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Debian 和 Ubuntu 用户请执行如下命令：</p>
-<div class="highlight"><pre><span></span><code>$ apt-get update
-$ apt-get install -y make <span class="se">\</span>
-                     m4 <span class="se">\</span>
-                     git <span class="se">\</span>
-                     wget <span class="se">\</span>
-                     unzip <span class="se">\</span>
-                     xz-utils <span class="se">\</span>
-                     curl <span class="se">\</span>
-                     lsb-core <span class="se">\</span>
-                     build-essential <span class="se">\</span>
-                     libreadline-dev <span class="se">\</span>
-                     ncurses-dev <span class="se">\</span>
-                     cmake
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>m4<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>xz-utils<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>lsb-core<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>build-essential<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>libreadline-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>ncurses-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>cmake
 </code></pre></div>
 </li>
 </ul>
 </li>
 <li>
 <p>检查主机上的 G++ 和 CMake 版本是否正确。版本信息请参见<a href="#_3">软件要求</a>。</p>
-<div class="highlight"><pre><span></span><code>$ g++ --version
-$ cmake --version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>g++<span class="w"> </span>--version
+$<span class="w"> </span>cmake<span class="w"> </span>--version
 </code></pre></div>
 <p>如果版本正确，则软件依赖已准备完毕，忽略后续步骤；如果不正确，根据不符合版本要求的软件执行后续步骤。</p>
 </li>
@@ -7466,7 +7466,7 @@ apt install gcc-11 g++-11
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>

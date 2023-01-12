@@ -7093,21 +7093,21 @@ $ sudo chown vesoft:vesoft -R /home/vesoft/dag-ctrl
 </li>
 <li>
 <p>配置<code>dag-ctrl-api.yaml</code>文件，路径为<code>dag-ctrl/etc/dag-ctrl-api.yaml</code>。配置 NebulaGraph Analytics 机器的用户名及端口，如果有多台机器，请确保使用相同用户名。</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># NebulaGraph Analytics 机器的用户名以及 SSH 端口。</span><span class="w"></span>
-<span class="nt">SSH</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">UserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1"># NebulaGraph Analytics 机器的用户名以及 SSH 端口。</span>
+<span class="nt">SSH</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">UserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft</span>
+<span class="w">  </span><span class="nt">Port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">22</span>
 
-<span class="c1">#任务和作业的并行线程池大小。</span><span class="w"></span>
-<span class="nt">JobPool</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Sleep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">    </span><span class="c1"># 3 秒检查一次有没有未执行的作业。</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">    </span><span class="c1"># 同时可以执行 3 个作业。</span><span class="w"></span>
-<span class="nt">TaskPool</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">CheckStatusSleep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">    </span><span class="c1"># 1 秒检查一次任务状态。</span><span class="w"></span>
-<span class="w">  </span><span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">    </span><span class="c1">#同时可以执行 10 个任务。</span><span class="w"></span>
+<span class="c1">#任务和作业的并行线程池大小。</span>
+<span class="nt">JobPool</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Sleep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">    </span><span class="c1"># 3 秒检查一次有没有未执行的作业。</span>
+<span class="w">  </span><span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">    </span><span class="c1"># 同时可以执行 3 个作业。</span>
+<span class="nt">TaskPool</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">CheckStatusSleep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w">    </span><span class="c1"># 1 秒检查一次任务状态。</span>
+<span class="w">  </span><span class="nt">Size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">    </span><span class="c1">#同时可以执行 10 个任务。</span>
 
-<span class="nt">Dag</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">VarDataListMaxSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">    </span><span class="c1"># 如果读取 HDFS 的列，则限制为每次 100 条数据。</span><span class="w"></span>
+<span class="nt">Dag</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">VarDataListMaxSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w">    </span><span class="c1"># 如果读取 HDFS 的列，则限制为每次 100 条数据。</span>
 </code></pre></div>
 </li>
 <li>
@@ -7120,7 +7120,7 @@ $ sudo chown vesoft:vesoft -R /home/vesoft/dag-ctrl
 <li>其它参数是算法的执行参数，后续在<a href="../../nebula-explorer/workflow/2.create-workflow/">可视化工作流页面</a>配置。</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code>exec_file: /home/xxx/nebula-analytics/scripts/run_algo.sh
+<div class="highlight"><pre><span></span><code>exec_file:<span class="w"> </span>/home/xxx/nebula-analytics/scripts/run_algo.sh
 </code></pre></div>
 </li>
 <li>
@@ -7148,13 +7148,13 @@ $ ./scripts/start.sh
 <p>为 HDFS 连接设置超时时间、次数，配置如下：</p>
 <div class="highlight"><pre><span></span><code>&lt;configuration&gt;
 &lt;property&gt;
-    &lt;name&gt;ipc.client.connect.timeout&lt;/name&gt;
-    &lt;value&gt;3000&lt;/value&gt;
+<span class="w">    </span>&lt;name&gt;ipc.client.connect.timeout&lt;/name&gt;
+<span class="w">    </span>&lt;value&gt;3000&lt;/value&gt;
 &lt;/property&gt;
 
 &lt;property&gt;
-    &lt;name&gt;ipc.client.connect.max.retries.on.timeouts&lt;/name&gt;
-    &lt;value&gt;3&lt;/value&gt;
+<span class="w">    </span>&lt;name&gt;ipc.client.connect.max.retries.on.timeouts&lt;/name&gt;
+<span class="w">    </span>&lt;value&gt;3&lt;/value&gt;
 &lt;/property&gt;
 &lt;/configuration&gt;
 </code></pre></div>
@@ -7182,7 +7182,7 @@ $ ./scripts/start.sh
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>

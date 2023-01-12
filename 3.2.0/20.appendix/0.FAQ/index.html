@@ -7578,15 +7578,15 @@ nebula &gt; MATCH (s)&lt;-[e]-() WHERE id(s) == &quot;given&quot; RETURN count(e
 <h3 id="nebulagraph_1">如何查看 NebulaGraph 版本<a class="headerlink" href="#nebulagraph_1" title="Permanent link">&para;</a></h3>
 <p>服务运行时：<code>nebula-console</code> 中执行命令 <code>SHOW HOSTS META</code>，详见 <a href="../../3.ngql-guide/7.general-query-statements/6.show/6.show-hosts/">SHOW HOSTS</a></p>
 <p>服务未运行时：在安装路径的<code>bin</code>目录内，执行<code>./&lt;binary_name&gt; --version</code>命令，可以查看到 version 和 GitHub 上的 commit ID，例如：</p>
-<div class="highlight"><pre><span></span><code>$ ./nebula-graphd --version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./nebula-graphd<span class="w"> </span>--version
 </code></pre></div>
 <ul>
 <li>
 <p>Docker Compose 部署</p>
 <p>查看 Docker Compose 部署的 NebulaGraph 版本，方式和编译安装类似，只是要先进入容器内部，示例命令如下：</p>
-<div class="highlight"><pre><span></span><code>docker <span class="nb">exec</span> -it nebula-docker-compose_graphd_1 bash
-<span class="nb">cd</span> bin/
-./nebula-graphd --version
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>nebula-docker-compose_graphd_1<span class="w"> </span>bash
+<span class="nb">cd</span><span class="w"> </span>bin/
+./nebula-graphd<span class="w"> </span>--version
 </code></pre></div>
 </li>
 </ul>
@@ -7653,23 +7653,23 @@ NebulaGraph 3.2.0 未提供运维命令以实现自动扩缩容，参考以下�
 <p>周边工具各自使用不用的端口，请参考各工具文档。</p>
 <h3 id="_14">如何测试端口是否已开放？<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <p>用户可以使用如下 telnet 命令检查端口状态：</p>
-<div class="highlight"><pre><span></span><code>telnet &lt;ip&gt; &lt;port&gt;
+<div class="highlight"><pre><span></span><code>telnet<span class="w"> </span>&lt;ip&gt;<span class="w"> </span>&lt;port&gt;
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>如果无法使用 telnet 命令，请先检查主机中是否安装并启动了 telnet。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>// 如果端口已开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9669</span>
-Trying <span class="m">192</span>.168.1.10...
-Connected to <span class="m">192</span>.168.1.10.
-Escape character is <span class="s1">&#39;^]&#39;</span>.
+<div class="highlight"><pre><span></span><code>//<span class="w"> </span>如果端口已开放：
+$<span class="w"> </span>telnet<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span><span class="m">9669</span>
+Trying<span class="w"> </span><span class="m">192</span>.168.1.10...
+Connected<span class="w"> </span>to<span class="w"> </span><span class="m">192</span>.168.1.10.
+Escape<span class="w"> </span>character<span class="w"> </span>is<span class="w"> </span><span class="s1">&#39;^]&#39;</span>.
 
-// 如果端口未开放：
-$ telnet <span class="m">192</span>.168.1.10 <span class="m">9777</span>
-Trying <span class="m">192</span>.168.1.10...
-telnet: connect to address <span class="m">192</span>.168.1.10: Connection refused
+//<span class="w"> </span>如果端口未开放：
+$<span class="w"> </span>telnet<span class="w"> </span><span class="m">192</span>.168.1.10<span class="w"> </span><span class="m">9777</span>
+Trying<span class="w"> </span><span class="m">192</span>.168.1.10...
+telnet:<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>address<span class="w"> </span><span class="m">192</span>.168.1.10:<span class="w"> </span>Connection<span class="w"> </span>refused
 </code></pre></div>
 
   <hr>
@@ -7677,7 +7677,7 @@ telnet: connect to address <span class="m">192</span>.168.1.10: Connection refus
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 12, 2023</span>
       
     
   </small>
