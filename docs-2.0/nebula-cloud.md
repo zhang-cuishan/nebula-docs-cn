@@ -4,8 +4,9 @@ NebulaGraph Cloud（简称 Cloud）是一套集成了 NebulaGraph 数据库和�
 
 Cloud 支持：
 
-- 基于 Azure 的全托管云服务，即 NebulaGraph Cloud Azure 版。
-- 基于阿里云的半托管云服务，即 NebulaGraph Cloud 阿里云版。
+- 基于阿里云的自管云服务，即 NebulaGraph Cloud 阿里云版。
+- 基于 AWS 的自管云服务，即 NebulaGraph Cloud AWS 版。
+- 基于 Azure 的自管云服务，即 NebulaGraph Cloud Azure 版。
 
 !!! note
 
