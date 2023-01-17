@@ -7497,6 +7497,10 @@
 <p>简单绑定认证会根据登录账号和 Graph 服务配置信息，拼接成 OpenLDAP 可以识别的 DN，然后根据 DN 和密码，在 OpenLDAP 上进行验证。</p>
 <h3 id="searchbindauth">搜索绑定认证（SearchBindAuth）<a class="headerlink" href="#searchbindauth" title="Permanent link">&para;</a></h3>
 <p>搜索绑定认证会读取 Graph 服务配置信息，查询配置信息中的<code>uid</code>和登录账号是否匹配，如果匹配，就读取这个 DN，然后用 DN 和密码，在 OpenLDAP 上进行验证。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>NebulaGraph 仅支持使用 OpenLDAP 中的<code>uid</code>属性指定用户名进行搜索绑定认证。</p>
+</div>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>已安装 <a href="https://www.openldap.org/">OpenLDAP</a>。</li>
@@ -7591,7 +7595,7 @@ Welcome<span class="w"> </span>to<span class="w"> </span>NebulaGraph!
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
       
     
   </small>
