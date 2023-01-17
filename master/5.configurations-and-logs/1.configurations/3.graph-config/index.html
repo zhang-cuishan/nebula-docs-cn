@@ -7840,6 +7840,16 @@
 <td>Graph 服务与 Storage 服务的 RPC 连接超时时间。初始配置文件中未设置该参数，使用需手动添加。默认值为<code>60000</code>毫秒。</td>
 </tr>
 <tr>
+<td><code>enable_record_slow_query</code></td>
+<td><code>true</code></td>
+<td>是否启用慢查询记录。<br/>仅企业版 NebulaGraph 支持设置该参数。</td>
+</tr>
+<tr>
+<td><code>slow_query_limit</code></td>
+<td><code>100</code></td>
+<td>慢查询记录的最大条数。<br/>仅企业版 NebulaGraph 支持设置该参数。</td>
+</tr>
+<tr>
 <td><code>slow_query_threshold_us</code></td>
 <td><code>200000</code></td>
 <td>定义超过多长时间的查询为慢查询。单位：微秒。</td>
@@ -7955,7 +7965,7 @@
 <tr>
 <td><code>max_sessions_per_ip_per_user</code></td>
 <td><code>300</code></td>
-<td>相同用户和 IP 地址可以创建的最大会话数。</td>
+<td>相同用户和 IP 地址可以创建的最大活跃会话数。</td>
 </tr>
 </tbody>
 </table>
@@ -8069,7 +8079,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
       
     
   </small>
