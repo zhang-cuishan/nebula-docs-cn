@@ -7677,6 +7677,10 @@ $ sudo chown vesoft:vesoft -R /home/vesoft/nebula-analytics
 </li>
 <li>
 <p>配置<code>set_env.sh</code>文件，路径为<code>nebula-analytics/scripts/set_env.sh</code>。配置正确的 Hadoop 路径和 JDK 路径。如果有多台机器，请确保路径一致。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MPICH 进程管理器和 MPICH 库使用的 TCP 端口范围默认为 10000 到 10100。如需调整，修改<code>set_env.sh</code>文件中环境变量<code>MPIR_CVAR_CH3_PORT_RANGE</code>的值。</p>
+</div>
 <div class="highlight"><pre><span></span><code>export HADOOP_HOME=&lt;hadoop_path&gt;
 export JAVA_HOME=&lt;java_path&gt;
 </code></pre></div>
@@ -7874,7 +7878,7 @@ export JAVA_HOME=&lt;java_path&gt;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
       
     
   </small>
