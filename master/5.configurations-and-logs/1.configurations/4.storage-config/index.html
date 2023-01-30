@@ -3458,13 +3458,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage_cache" class="md-nav__link">
-    storage cache 配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#black_box" class="md-nav__link">
     Black box 配置
   </a>
@@ -7614,13 +7607,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#storage_cache" class="md-nav__link">
-    storage cache 配置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#black_box" class="md-nav__link">
     Black box 配置
   </a>
@@ -8077,67 +8063,26 @@ disable_auto_compactions
 <p>参数的详细说明请参见 <a href="https://rocksdb.org/">RocksDB 官方文档</a>。</p>
 <!-- -->
 
-<h2 id="storage_cache">storage cache 配置<a class="headerlink" href="#storage_cache" title="Permanent link">&para;</a></h2>
-<div class="admonition enterpriseonly">
-<p class="admonition-title">Enterpriseonly</p>
-<p>仅企业版支持 storage cache 配置。</p>
-</div>
-<table>
-<thead>
-<tr>
-<th align="left">名称</th>
-<th align="left">预设值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>enable_storage_cache</code></td>
-<td align="left"><code>false</code></td>
-<td align="left">是否开启 Storage 缓存功能。</td>
-</tr>
-<tr>
-<td align="left"><code>storage_cache_capacity</code></td>
-<td align="left"><code>0</code></td>
-<td align="left">为 Storage 缓存预留的内存大小，取值需要稍大于<code>vertex_pool_capacity</code>和<code>negative_pool_capacity</code>的总和。单位：兆字节。</td>
-</tr>
-<tr>
-<td align="left"><code>storage_cache_entries_power</code></td>
-<td align="left"><code>20</code></td>
-<td align="left">预估 Storage 节点上缓存条目的个数，计算公式：2<span class="arithmatex">\(^{&lt;设置值&gt;}\)</span>。例如当设置的值为<code>20</code>时，表示缓存条目的个数为 2<span class="arithmatex">\(^{20}\)</span>。建议设置的值为<code>log2(该 Storage 中点的数量)</code>，最大值可设置为<code>31</code>。</td>
-</tr>
-<tr>
-<td align="left"><code>enable_vertex_pool</code></td>
-<td align="left"><code>false</code></td>
-<td align="left">是否使用点的缓存池。仅在启用 Storage 缓存功能时生效。</td>
-</tr>
-<tr>
-<td align="left"><code>vertex_pool_capacity</code></td>
-<td align="left"><code>50</code></td>
-<td align="left">点缓存池的大小。 单位：兆字节。</td>
-</tr>
-<tr>
-<td align="left"><code>vertex_item_ttl</code></td>
-<td align="left"><code>300</code></td>
-<td align="left">点缓存条目的有效时间。单位：秒。</td>
-</tr>
-<tr>
-<td align="left"><code>enable_negative_pool</code></td>
-<td align="left"><code>false</code></td>
-<td align="left">是否添加消极缓存池（消极缓存池表示 Key 不存在于数据库中的数据缓存池）。仅当<code>enable_storage_cache</code>为<code>true</code>时有效。</td>
-</tr>
-<tr>
-<td align="left"><code>negative_pool_capacity</code></td>
-<td align="left"><code>50</code></td>
-<td align="left">消极缓存池的大小。 单位：兆字节。</td>
-</tr>
-<tr>
-<td align="left"><code>negative_item_ttl</code></td>
-<td align="left"><code>300</code></td>
-<td align="left">消极缓存条目的有效时间。单位：秒。</td>
-</tr>
-</tbody>
-</table>
+<!-- open after being fully tested
+
+## storage cache 配置
+
+!!! enterpriseonly
+
+    仅企业版支持 storage cache 配置。
+
+| 名称                           | 预设值  | 说明                               |
+| :-----------------------------| :------| :------------------------------- |
+| `enable_storage_cache`        | `false`|  是否开启 Storage 缓存功能。|
+| `storage_cache_capacity`      | `0`    |  为 Storage 缓存预留的内存大小，取值需要稍大于`vertex_pool_capacity`和`negative_pool_capacity`的总和。单位：兆字节。|
+| `storage_cache_entries_power` | `20`   |  预估 Storage 节点上缓存条目的个数，计算公式：2$^{<设置值>}$。例如当设置的值为`20`时，表示缓存条目的个数为 2$^{20}$。建议设置的值为`log2(该 Storage 中点的数量)`，最大值可设置为`31`。|
+| `enable_vertex_pool`          | `false`| 是否使用点的缓存池。仅在启用 Storage 缓存功能时生效。  |
+| `vertex_pool_capacity`        | `50`   | 点缓存池的大小。 单位：兆字节。|
+| `vertex_item_ttl`             | `300`  | 点缓存条目的有效时间。单位：秒。 |
+| `enable_negative_pool`       | `false`| 是否添加消极缓存池（消极缓存池表示 Key 不存在于数据库中的数据缓存池）。仅当`enable_storage_cache`为`true`时有效。  |
+| `negative_pool_capacity`     | `50`   | 消极缓存池的大小。 单位：兆字节。  |
+| `negative_item_ttl`          | `300`  | 消极缓存条目的有效时间。单位：秒。  | -->
+
 <h2 id="black_box">Black box 配置<a class="headerlink" href="#black_box" title="Permanent link">&para;</a></h2>
 <div class="admonition enterpriseonly">
 <p class="admonition-title">Enterpriseonly</p>
@@ -8248,7 +8193,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>
