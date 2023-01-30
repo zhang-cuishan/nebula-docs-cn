@@ -7588,11 +7588,12 @@
 </code></pre></div>
 <h2 id="_4">属性模式<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>点和边是图的基本结构。nGQL 在这两种结构上都可以增加属性，方便实现更丰富的模型。</p>
-<p>在模式中，属性的表示方式为：用花括号括起一些键值对，用英文逗号分隔。例如一个点有两个属性：</p>
-<div class="highlight"><pre><span></span><code>(a {name: &#39;Andres&#39;, sport: &#39;Brazilian Ju-Jitsu&#39;})
+<p>在模式中，属性的表示方式为：用花括号括起一些键值对，用英文逗号分隔，并且需要指定属性所属的 Tag 或者 Edge type。</p>
+<p>例如一个点有两个属性：</p>
+<div class="highlight"><pre><span></span><code>(a:player{name: &quot;Tim Duncan&quot;, age: 42})
 </code></pre></div>
 <p>在这个点上可以有一条边是：</p>
-<div class="highlight"><pre><span></span><code>(a)-[{blocked: false}]-&gt;(b)
+<div class="highlight"><pre><span></span><code>(a)-[e:follow{degree: 95}]-&gt;(b)
 </code></pre></div>
 <h2 id="_5">边模式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>描述一条边最简单的方法是使用箭头连接两个点。</p>
@@ -7641,7 +7642,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>
