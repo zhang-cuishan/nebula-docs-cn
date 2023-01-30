@@ -8398,9 +8398,9 @@
 </thead>
 <tbody>
 <tr>
-<td>作为MATCH语句的可选项去匹配图数据库中的模式</td>
-<td><code>MATCH (m)-[]-&gt;(n) WHERE id(m)=="player100" OPTIONAL MATCH (n)-[]-&gt;(l) WHERE id(n)=="player125" RETURN id(m),id(n),id(l)</code></td>
-<td>如果图数据库中没有对应的模式，对应的列返回NULL。</td>
+<td>作为<code>MATCH</code>语句的可选项去匹配图数据库中的模式</td>
+<td><code>MATCH (m)-[]-&gt;(n) WHERE id(m)=="player100" OPTIONAL MATCH (n)-[]-&gt;(l) RETURN id(m),id(n),id(l)</code></td>
+<td>如果图数据库中没有对应的模式，对应的列返回<code>NULL</code>。</td>
 </tr>
 </tbody>
 </table>
@@ -9292,7 +9292,7 @@ YIELD &lt;output&gt;;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>

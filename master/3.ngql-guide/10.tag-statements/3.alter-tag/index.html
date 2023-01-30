@@ -7540,6 +7540,10 @@
 <ul>
 <li>确保新增的属性名不与已存在或被删除的属性名同名，否则新增属性会失败。</li>
 </ul>
+<ul>
+<li>允许增加<code>FIXED_STRING</code>和<code>INT</code>类型的长度。</li>
+<li>允许<code>FIXED_STRING</code>类型转换为<code>STRING</code>类型、<code>FLOAT</code>类型转换为<code>DOUBLE</code>类型。</li>
+</ul>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ALTER TAG &lt;tag_name&gt;
     &lt;alter_definition&gt; [[, alter_definition] ...]
@@ -7569,6 +7573,9 @@ nebula&gt; ALTER TAG t1 ADD (p3 int, p4 string);
 nebula&gt; ALTER TAG t1 TTL_DURATION = 2, TTL_COL = &quot;p2&quot;;
 nebula&gt; ALTER TAG t1 COMMENT = &#39;test1&#39;;
 nebula&gt; ALTER TAG t1 ADD (p5 double NOT NULL DEFAULT 0.4 COMMENT &#39;p5&#39;) COMMENT=&#39;test2&#39;;
+// 修改 TAG `t1` 的 `p3` 属性为 INT8 类型
+nebula&gt; ALTER TAG t1 CHANGE (p3 int8, p4 string);
+[ERROR(-1005)]: Unsupported!
 </code></pre></div>
 <h2 id="tag">修改 Tag 说明<a class="headerlink" href="#tag" title="Permanent link">&para;</a></h2>
 <p>尝试使用刚修改的 Tag 可能会失败，因为修改是异步实现的。为确保数据同步，后续操作能顺利进行，请等待 2 个心跳周期（20 秒）。</p>
@@ -7579,7 +7586,7 @@ nebula&gt; ALTER TAG t1 ADD (p5 double NOT NULL DEFAULT 0.4 COMMENT &#39;p5&#39;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>
