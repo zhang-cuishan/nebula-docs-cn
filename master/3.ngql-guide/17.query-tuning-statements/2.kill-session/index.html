@@ -7527,7 +7527,7 @@
 <p>终止多个会话</p>
 <div class="highlight"><pre><span></span><code>SHOW SESSIONS 
 | YIELD $-.SessionId AS sid [WHERE &lt;filter_clause&gt;]
-| KILL {SESSION|SESSIONS} $.sid
+| KILL {SESSION|SESSIONS} $-.sid
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -7597,7 +7597,7 @@ nebula&gt; SHOW SESSIONS | KILL SESSIONS $-.SessionId
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 31, 2023</span>
       
     
   </small>

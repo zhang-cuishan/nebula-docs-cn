@@ -7858,12 +7858,16 @@ nebula&gt; &gt; SHOW GRANTS test;
 nebula&gt; REVOKE READ,WRITE EDGE * FROM test;
 
 # 查询 test 用户权限
-nebula&gt; SHOW GRANTS test
+nebula&gt; SHOW GRANTS test;
 +--------+------------+------------+------------+-------------+
 | user   | READ(TAG)  | READ(EDGE) | WRITE(TAG) | WRITE(EDGE) |
 +--------+------------+------------+------------+-------------+
 | &quot;test&quot; | [&quot;player&quot;] | []         | [&quot;player&quot;] | []          |
 +--------+------------+------------+------------+-------------+
+
+# Basic 角色用户读取无权限的数据时，将会出现以下报错
+nebula&gt;  MATCH (v:player)-[:likex]-() RETURN v;
+[ERROR (-1008)]: PermissionError: Edge `likex&#39; does not exist or is not readable.
 </code></pre></div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -7876,7 +7880,7 @@ nebula&gt; SHOW GRANTS test
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>

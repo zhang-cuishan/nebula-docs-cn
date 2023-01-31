@@ -7754,6 +7754,16 @@ nebula&gt; RETURN timestamp(datetime(&quot;2022-08-29T07:53:10.939000&quot;));
 </code></pre></div>
 </li>
 <li>
+<p>查询<code>test1</code>的属性<code>p1</code>是否为<code>2021-03-17</code>。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:date1) RETURN v.date1.p1 == date(&quot;2021-03-17&quot;);
++----------------------------------+
+| (v.date1.p1==date(&quot;2021-03-17&quot;)) |
++----------------------------------+
+| true                             |
++----------------------------------+
+</code></pre></div>
+</li>
+<li>
 <p>获取<code>test1</code>的属性<code>p1</code>的月份。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS date1_index ON date1(p1);
 nebula&gt; REBUILD TAG INDEX date1_index;
@@ -7763,6 +7773,18 @@ nebula&gt; MATCH (v:date1) RETURN v.date1.p1.month;
 +------------------+
 | 3                |
 +------------------+
+</code></pre></div>
+</li>
+<li>
+<p>查找 Tag <code>date1</code>中属性<code>p3</code>小于<code>2023-01-01T00:00:00.000000</code>的值。</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:date1)  \
+WHERE v.date1.p3 &lt; datetime(&quot;2023-01-01T00:00:00.000000&quot;) \
+RETURN v.date1.p3;
++----------------------------+
+| v.date1.p3                 |
++----------------------------+
+| 2017-03-04T14:30:40.003000 |
++----------------------------+
 </code></pre></div>
 </li>
 <li>
@@ -7818,7 +7840,7 @@ nebula&gt; WITH date(&#39;1984-10-11&#39;) as x, duration({years: 12, days: 14, 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
       
     
   </small>
