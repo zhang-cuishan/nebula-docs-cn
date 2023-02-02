@@ -7738,6 +7738,16 @@ nebula&gt; $var1 = GO FROM &quot;player101&quot; OVER follow \
 | &quot;player100&quot; |
 | &quot;player125&quot; |
 +-------------+
+
+# 查找 player 钟年龄大于 30 且小于 32 的点，返回去掉重复属性的值。
+nebula&gt; LOOKUP ON player  \
+        WHERE player.age &lt; 32 and player.age &gt;30  \
+        YIELD DISTINCT properties(vertex).age as v;
++--------+
+| v      |
++--------+
+| 31     |
++--------+
 </code></pre></div>
 <h3 id="yield_5">独立使用 YIELD 语句<a class="headerlink" href="#yield_5" title="Permanent link">&para;</a></h3>
 <p><code>YIELD</code>可以计算表达式并返回结果。</p>
@@ -7781,7 +7791,7 @@ nebula&gt; YIELD \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 8, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>

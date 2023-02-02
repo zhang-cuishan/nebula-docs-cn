@@ -7619,7 +7619,7 @@
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>LOOKUP ON {&lt;vertex_tag&gt; | &lt;edge_type&gt;}
 [WHERE &lt;expression&gt; [AND &lt;expression&gt; ...]]
-YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
+YIELD [DISTINCT] &lt;return_list&gt; [AS &lt;alias&gt;]
 [&lt;clause&gt;];
 
 &lt;return_list&gt;
@@ -7630,6 +7630,9 @@ YIELD &lt;return_list&gt; [AS &lt;alias&gt;]
 </ul>
 <ul>
 <li><code>YIELD</code>：定义需要返回的输出。详情请参见 <a href="../../8.clauses-and-options/yield/"><code>YIELD</code></a>。</li>
+</ul>
+<ul>
+<li><code>DISTINCT</code>：聚合输出结果，返回去重后的结果集。</li>
 </ul>
 <ul>
 <li><code>AS</code>：设置别名。</li>
@@ -7869,7 +7872,7 @@ nebula&gt; LOOKUP ON follow YIELD edge AS e| \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>
