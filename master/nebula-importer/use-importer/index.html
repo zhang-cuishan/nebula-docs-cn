@@ -1450,20 +1450,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3.ngql-guide/6.functions-and-expressions/17.ES-function/" class="md-nav__link">
-        Elasticsearch 查询函数
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../3.ngql-guide/6.functions-and-expressions/9.user-defined-functions/" class="md-nav__link">
         自定义函数
       </a>
@@ -8119,6 +8105,12 @@ $<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>
 <span class="w">  </span><span class="nt">vertex</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">vid</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">      </span><span class="nt">concatItems</span><span class="p">:</span><span class="w"> </span><span class="c1"># &quot;c1{index0}c2{index1}2&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;c1&quot;</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c2</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;2&quot;</span>
 <span class="w">      </span><span class="nt">function</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hash</span>
 <span class="w">      </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">abc</span>
 <span class="w">    </span><span class="nt">tags</span><span class="p">:</span>
@@ -8168,6 +8160,12 @@ $<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>
 <td align="left">-</td>
 <td align="left">否</td>
 <td align="left">点 ID 对应 CSV 文件中列的序号。</td>
+</tr>
+<tr>
+<td align="left"><code>files.schema.vertex.vid.concatItem</code></td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">用于连接两个或多个数组，连接项可以是<code>string</code>、<code>int</code>或者混合。<code>string</code>代表常量，<code>int</code>表示索引列。如果设置了<code>concatItem</code>，<code>index</code>参数将不生效。</td>
 </tr>
 <tr>
 <td align="left"><code>files.schema.vertex.vid.function</code></td>
