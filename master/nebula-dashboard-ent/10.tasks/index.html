@@ -5332,21 +5332,35 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    运行中的任务
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    历史任务
+    任务类型
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    删除任务
+    入口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运行中的任务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    历史任务
   </a>
   
 </li>
@@ -7459,21 +7473,35 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    运行中的任务
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    历史任务
+    任务类型
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    删除任务
+    入口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    运行中的任务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    历史任务
   </a>
   
 </li>
@@ -7499,30 +7527,43 @@
 
 
 <h1 id="_1">任务中心<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>在 NebulaGraph Dashboard 企业版中集群的创建和扩缩容需要一定的等待时间，用户可以通过任务中心功能感知此类操作的进度。任务中心展示正在进行的操作的进度及历史操作。</p>
-<p>任务中心的任务指用户对集群做的操作。目前任务中心支持的任务类型包括集群创建和集群扩缩容。</p>
-<p>在 NebulaGraph Dashboard 企业版顶部导航栏中，单击<strong>任务中心</strong>可查看相关任务信息。</p>
-<h2 id="_2">运行中的任务<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在<strong>任务中心</strong>页面中，单击<strong>运行中任务</strong>后，用户可看到创建中或扩缩容中的集群的任务的进度。</p>
+<p>NebulaGraph Dashboard 企业版支持展示正在运行的任务的进度和已结束的历史任务的信息。</p>
+<h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>单击任务名称可查看正在进行中的任务的 ID、节点名称、操作类型、触发时间、操作人。</li>
-<li>单击<strong>任务信息</strong>查看任务详情。</li>
+<li>不支持取消进行中的任务。</li>
+<li>不支持删除历史任务。</li>
 </ul>
-<h2 id="_3">历史任务<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在<strong>任务中心</strong>页面的<strong>历史任务</strong>页签中，显示所有结束的任务。</p>
+<h2 id="_3">任务类型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>目前任务中心支持的任务类型包括：</p>
 <ul>
-<li>用户可通过任务状态、类型、触发时间筛序历史任务。</li>
+<li><strong>install</strong>：创建集群。</li>
+<li><strong>scale</strong>：扩缩容。</li>
+<li><strong>version update</strong>：版本升级。</li>
+<li><strong>package upload</strong>：上传安装包。</li>
+<li><strong>package download</strong>：下载安装包。</li>
+<li><strong>package deploy</strong>：添加节点时部署安装包。</li>
+</ul>
+<h2 id="_4">入口<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>在 NebulaGraph Dashboard 企业版顶部导航栏中，单击<strong>任务中心</strong>可查看相关任务信息。</p>
+<h2 id="_5">运行中的任务<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>单击<strong>运行中任务</strong>页签，用户可以查看运行中的任务进度。</p>
+<ul>
+<li>单击任务名称可以查看正在进行中的任务的 ID、节点名称、类型、创建时间、操作人。</li>
+<li>单击<strong>任务信息</strong>可以查看任务详情。</li>
+</ul>
+<h2 id="_6">历史任务<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>单击<strong>历史任务</strong>页签，用户可以查看所有结束的任务。</p>
+<ul>
+<li>用户可通过任务状态、类型、时间段筛选历史任务。</li>
 <li>在目标历史任务右侧，单击<strong>任务信息</strong>查看历史任务的详情；单击<strong>任务日志</strong>查看任务执行日志。</li>
 </ul>
-<h2 id="_4">删除任务<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>目前不可取消正在进行中的任务，也不可删除历史任务。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>
