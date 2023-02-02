@@ -8132,13 +8132,20 @@ $<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>
 <span class="w">            </span><span class="nt">index</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gender</span>
 <span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">defaultValue</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;male&quot;</span>
 <span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">phone</span>
 <span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">            </span><span class="nt">nullable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wechat</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">email</span>
 <span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="w">            </span><span class="nt">nullable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">            </span><span class="nt">nullValue</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;__NULL__&quot;</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">address</span>
+<span class="w">            </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">            </span><span class="nt">nullable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">            </span><span class="nt">alternativeIndices</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">7</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
 </code></pre></div>
 <table>
 <thead>
@@ -8215,6 +8222,18 @@ $<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>
 <td align="left"><code>""</code></td>
 <td align="left">否</td>
 <td align="left"><code>nullable</code>设置为<code>true</code>时，属性的值与<code>nullValue</code>相等则将该属性值设置为<code>NULL</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>files.schema.vertex.tags.props.alternativeIndices</code></td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">当<code>nullable</code>为<code>false</code>时忽略。该属性根据索引顺序从 csv 中获取，直到不等于<code>nullValue</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>files.schema.vertex.tags.props.defaultValue</code></td>
+<td align="left">-</td>
+<td align="left">否当<code>nullable</code>为<code>false</code>时忽略。根据<code>index</code>和<code>alternativeIndices</code>获取的所有值为<code>nullValue</code>时设置默认值。</td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
@@ -8334,7 +8353,7 @@ $<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
       
     
   </small>
