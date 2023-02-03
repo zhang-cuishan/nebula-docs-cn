@@ -6855,35 +6855,6 @@ nebula-storaged-2<span class="w">   </span><span class="m">1</span>/1<span class
 </code></pre></div>
 </li>
 </ol>
-<!--
-## 扩缩容集群
-
-!!! enterpriseonly
-
-    - 仅支持通过 v1.1.0 及以上版本的 NebulaGraph Operator 扩缩容企业版的 NebulaGraph 集群。
-    - 不支持扩缩容社区版的 NebulaGraph 集群。
-
-用户可通过定义 NebulaGraph 中不同服务对应的`replicas`的值扩缩容 Nebuala Graph 集群。
-
-例如，扩容 NebulaGraph 集群中 Storage 的副本数为 5（原始值为 2），命令如下：
-
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>nebula-operator/nebula-cluster<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--set<span class="w"> </span><span class="nv">nameOverride</span><span class="o">=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--set<span class="w"> </span>nebula.storageClassName<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">STORAGE_CLASS_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--set<span class="w"> </span>nebula.storaged.replicas<span class="o">=</span><span class="m">5</span>
-</code></pre></div>
-
-同理，将 NebulaGraph 集群中服务对应的`replicas`的值设置成小于原始值，即可实现集群服务的缩容。
-
-!!! caution
-
-    目前仅支持对 NebulaGraph 集群中的 Graph 服务和 Storage 服务进行扩缩容，不支持扩缩容 Meta 服务。
-
-用户可点击 [nebula-cluster/values.yaml](https://github.com/vesoft-inc/nebula-operator/blob/v1.2.0/charts/nebula-cluster/values.yaml) 查看 NebulaGraph Cluster 集群 Chart 的更多配置。有关文件中配置项的解释，参考下文** NebulaGraph 集群 Chart 配置参数说明**。
-
--->
-
 <h2 id="_2">删除集群<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>使用 Helm 删除集群的命令如下：</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>uninstall<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -7151,7 +7122,7 @@ nebula-storaged-2<span class="w">   </span><span class="m">1</span>/1<span class
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
       
     
   </small>
