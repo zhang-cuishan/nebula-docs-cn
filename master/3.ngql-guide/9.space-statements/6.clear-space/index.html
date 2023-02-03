@@ -7533,14 +7533,6 @@
 <p class="admonition-title">Note</p>
 <p>社区版 NebulaGraph 不支持在运行<code>CLEAR SPACE</code>的同时禁止写入。</p>
 </div>
-<!-- -->
-
-<div class="admonition enterpriseonly">
-<p class="admonition-title">Enterpriseonly</p>
-<p>企业版 NebulaGraph 支持先运行<code>SET VARIABLE read_only=true</code>阻止向 NebulaGraph 写入数据，再运行<code>CLEAR SPACE</code>。数据清除成功后运行<code>SET VARIABLE read_only=false</code>即可重新允许写入。</p>
-</div>
-<!-- -->
-
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;
 </code></pre></div>
