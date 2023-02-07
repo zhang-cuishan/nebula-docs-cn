@@ -26,7 +26,7 @@
 - 修复索引相关的缺陷：
 
   - 全文索引 [#5214](https://github.com/vesoft-inc/nebula/pull/5214) [#5260](https://github.com/vesoft-inc/nebula/pull/5260)
-  - 字符串索引 [5126](https://github.com/vesoft-inc/nebula/pull/5126)
+  - 字符串索引 [#5126](https://github.com/vesoft-inc/nebula/pull/5126)
 
 - 修复查询语句的缺陷：
 
