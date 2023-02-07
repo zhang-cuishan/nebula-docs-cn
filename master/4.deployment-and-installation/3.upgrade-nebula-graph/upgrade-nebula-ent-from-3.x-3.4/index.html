@@ -7536,7 +7536,7 @@
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>请确保 3.4.0 集群的 Meta 服务和 Storage 服务的配置文件中的<code>--data_path</code>参数的值与 3.x 集群的配置文件中的<code>--data_path</code>参数的值相同。否则，升级后的集群无法启动。</p>
+<p>请确保 3.4.0 集群的 Meta 服务和 Storage 服务的配置文件中的<code>--data_path</code>参数设置的存储路径数量与 3.x 集群的配置文件中的<code>--data_path</code>参数配置的路径数量相同。否则，升级后的集群无法启动。</p>
 </div>
 </li>
 <li>
@@ -7548,7 +7548,7 @@
 <ul>
 <li>
 <p>升级 Storage 服务：</p>
-<p>语法：</p>
+<p>命令：</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./bin/db_upgrader<span class="w">  </span>--max_concurrent_parts<span class="o">=</span>&lt;num&gt;<span class="w"> </span>--src_db_path<span class="o">=</span>&lt;source_storage_data_path&gt;<span class="w"> </span>--dst_db_path<span class="o">=</span>&lt;destination_storage_data_path&gt;
 </code></pre></div>
 <table>
@@ -7586,7 +7586,7 @@ sudo<span class="w"> </span>./bin/db_upgrader<span class="w"> </span>--src_db_pa
 <ul>
 <li>
 <p>升级 Meta 服务：</p>
-<p>语法：</p>
+<p>命令：</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./bin/meta_upgrader<span class="w"> </span>--src_meta_path<span class="o">=</span>&lt;source_meta_data_path&gt;<span class="w"> </span>--dst_meta_path<span class="o">=</span>&lt;destination_meta_data_path&gt;
 </code></pre></div>
 <table>
@@ -7599,11 +7599,11 @@ sudo<span class="w"> </span>./bin/db_upgrader<span class="w"> </span>--src_db_pa
 <tbody>
 <tr>
 <td align="left"><code>--src_meta_path</code></td>
-<td align="left">指定源 Meta 数据目录的绝对路径。下述示例源数据的目录为<code>/usr/local/nebula-ent-3.1.0/data/storage</code>。</td>
+<td align="left">指定源 Meta 数据目录的绝对路径。下述示例源数据的目录为<code>/usr/local/nebula-ent-3.1.0/data/meta</code>。</td>
 </tr>
 <tr>
 <td align="left"><code>--dst_meta_path</code></td>
-<td align="left">指定目标 Meta 数据目录的绝对路径。本文示例的目标数据目录为<code>/usr/local/nebula-ent-3.4/data/storage</code>。</td>
+<td align="left">指定目标 Meta 数据目录的绝对路径。本文示例的目标数据目录为<code>/usr/local/nebula-ent-3.4/data/meta</code>。</td>
 </tr>
 </tbody>
 </table>
