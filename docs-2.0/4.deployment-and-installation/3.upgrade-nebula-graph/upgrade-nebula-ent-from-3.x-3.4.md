@@ -30,7 +30,7 @@
 
   - 升级 Storage 服务：
 
-    语法：
+    命令：
 
     ```bash
     sudo ./bin/db_upgrader  --max_concurrent_parts=<num> --src_db_path=<source_storage_data_path> --dst_db_path=<destination_storage_data_path>
@@ -58,7 +58,7 @@
 
   - 升级 Meta 服务：
 
-    语法：
+    命令：
 
     ```bash
     sudo ./bin/meta_upgrader --src_meta_path=<source_meta_data_path> --dst_meta_path=<destination_meta_data_path>
