@@ -7686,8 +7686,16 @@
 </ol>
 <h2 id="nebulagraph_license_3">续期 NebulaGraph 企业版 License<a class="headerlink" href="#nebulagraph_license_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>发送邮件至<code>inqury@vesoft.com</code>申请新的 NebulaGraph 企业版 License。</li>
-<li>在所有包含 Meta 服务的机器上，路径为每个 Meta 服务安装目录的<code>share/resources/</code>内，使用新的 License 文件<code>nebula.license</code>替换旧的 License 文件。</li>
+<li>
+<p>发送邮件至<code>inqury@vesoft.com</code>申请新的 NebulaGraph 企业版 License。</p>
+</li>
+<li>
+<p>在所有包含 Meta 服务的机器上，路径为每个 Meta 服务安装目录的<code>share/resources/</code>内，使用新的 License 文件<code>nebula.license</code>替换旧的 License 文件。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议使用<code>cp</code>、<code>scp</code>命令替换 License 文件或使用 vi 等工具编辑原文件的内容实现替换。如果使用<code>mv</code>命令，替换后需要重启所有 Meta 服务器。</p>
+</div>
+</li>
 <li>
 <p>重启 Storage 和 Graph 服务。关于重启操作，参见<a href="../manage-service/">启动服务</a>。如果用户的 License 的过期时间在到期后的缓冲期内（默认 14 天），则无需重启 Storage 和 Graph 服务。</p>
 <div class="admonition note">
@@ -7717,7 +7725,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
       
     
   </small>
