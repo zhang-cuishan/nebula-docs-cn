@@ -7610,7 +7610,7 @@
 <li><strong>集群扩容和缩容</strong>：通过在控制循环中调用 NebulaGraph 原生提供的扩缩容接口，NebulaGraph 封装 NebulaGraph Operator 实现了扩缩容的逻辑，用户可以通过 YAML 配置进行简单的扩缩容，且保证数据的稳定性。更多信息参考<a href="../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/#_3">使用 Kubeclt 扩缩容集群</a> 或<a href="../3.deploy-nebula-graph-cluster/3.2create-cluster-with-helm/#_2">使用 Helm 扩缩容集群</a>。</li>
 </ul>
 <ul>
-<li><strong>集群升级</strong>：支持升级 3.0.0 版的 NebulaGraph 集群至 3.3.x 版。</li>
+<li><strong>集群升级</strong>：支持升级 3.0.0 版的 NebulaGraph 集群至 3.4.0 版。</li>
 </ul>
 <ul>
 <li><strong>故障自愈</strong>：NebulaGraph Operator 调用 NebulaGraph 集群提供的接口，动态地感知服务状态。一旦发现异常，NebulaGraph Operator 自动进行容错处理。更多信息参考<a href="../5.operator-failover/">故障自愈</a>。</li>
@@ -7629,6 +7629,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>3.0.0 ~ 3.4.0</td>
+<td>1.4.0</td>
+</tr>
 <tr>
 <td>3.0.0 ~ 3.3.x</td>
 <td>1.3.0</td>
