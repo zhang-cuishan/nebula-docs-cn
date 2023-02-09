@@ -7262,6 +7262,10 @@
 
 <h1 id="nebulagraph_v3x_v340">升级 NebulaGraph v3.x 至 v3.4.0<a class="headerlink" href="#nebulagraph_v3x_v340" title="Permanent link">&para;</a></h1>
 <p>NebulaGraph v3.x 升级至 v3.4.0，只需要使用 v3.4.0的 RPM/DEB 包进行升级操作即可，或者<a href="../../2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code/">编译 v3.4.0</a> 之后重新安装。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>在升级部署了全文索引的 NebulaGraph 前，需要手动删除 Elasticsearch (ES) 中的全文索引。在升级后需要重新使用<code>SIGN IN</code>语句登录 ES 并重新创建全文索引。用户可通过 cURL 命令手动删除 ES 中全文索引。命令为<code>curl -XDELETE -u &lt;es_username&gt;:&lt;es_password&gt; '&lt;es_access_ip&gt;:&lt;port&gt;/&lt;fullindex_name&gt;'</code>，例如<code>curl -XDELETE -u elastic:elastic 'http://192.168.8.223:9200/nebula_index_2534'</code>。如果 ES 没有设置用户名及密码，则无需指定<code>-u</code>选项。 </p>
+</div>
 <h2 id="rpmdeb">RPM/DEB 包升级步骤<a class="headerlink" href="#rpmdeb" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
