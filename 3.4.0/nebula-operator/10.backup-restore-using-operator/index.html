@@ -7691,7 +7691,20 @@
 <ul>
 <li>Nebula Operator 版本 &gt;= 1.4.0。</li>
 <li>Kubernetes 上部署的企业版 NebulaGraph 集群正在运行。</li>
-<li>在创建集群的 YAML 中，设置了<code>spec.enableBR</code>为<code>true</code>。详细信息参见<a href=""></a>。</li>
+<li>
+<p>在创建集群的 YAML 中，设置了<code>spec.enableBR</code>为<code>true</code>。</p>
+<div class="highlight"><pre><span></span><code>// 集群 YAML 文件示例部分内容。
+apiVersion: apps.nebula-graph.io/v1alpha1
+kind: NebulaCluster
+metadata:
+  name: nebula
+spec:  
+enableBR: true // 设置为 true 时，启用备份和恢复功能。
+...
+</code></pre></div>
+</li>
+</ul>
+<ul>
 <li>只支持使用 S3 协议的存储服务（例如 AWS S3，Minio 等）备份和恢复数据。</li>
 <li>集群中有足够的计算资源以恢复数据。</li>
 </ul>
@@ -7952,7 +7965,7 @@ Storaged Pod的init容器下载备份数据，下载成功由agent容器进行�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
       
     
   </small>
