@@ -59,7 +59,7 @@ CentOS 7.9.2009
   # spark-submit \
   # --master "spark://master_ip:7077" \
   # --driver-memory=2G --executor-memory=30G  \
-  # --num-executors=3 --executor-cores=20 \
+  # --total-executor-cores=60 --executor-cores=20 \
   # --class com.vesoft.nebula.exchange.Exchange \
   # nebula-exchange-3.0-SNAPSHOT.jar -c export_to_csv.conf
   
@@ -158,7 +158,7 @@ CentOS 7.9.2009
   # spark-submit \
   # --master "spark://master_ip:7077" \
   # --driver-memory=2G --executor-memory=30G  \
-  # --num-executors=3 --executor-cores=20 \
+  # --total-executor-cores=60 --executor-cores=20 \
   # --class com.vesoft.nebula.exchange.Exchange \
   # nebula-exchange-3.0-SNAPSHOT.jar -c export_to_nebula.conf
   
