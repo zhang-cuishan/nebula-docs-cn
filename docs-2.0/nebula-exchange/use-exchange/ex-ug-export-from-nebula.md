@@ -252,7 +252,7 @@ CentOS 7.9.2009
   }
   ```
 
-1. 使用如下命令导出 NebulaGraph 中的数据。
+3. 使用如下命令导出 NebulaGraph 中的数据。
   
   !!! note
 
