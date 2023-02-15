@@ -7813,6 +7813,8 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 如果有多个地址，格式为 &quot;ip1:port&quot;,&quot;ip2:port&quot;,&quot;ip3:port&quot;。
       # 不同地址之间以英文逗号 (,) 隔开。
       graph:[&quot;127.0.0.1:9669&quot;]
+      #任意一个 Meta 服务的地址。
+      #如果您的 NebulaGraph 在虚拟网络中，如k8s，请配置 Leader Meta的地址。
       meta:[&quot;127.0.0.1:9559&quot;]
     }
     # 填写的账号必须拥有 NebulaGraph 相应图空间的写数据权限。

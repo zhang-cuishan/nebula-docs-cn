@@ -7709,7 +7709,7 @@
 # spark-submit \
 # --master &quot;spark://master_ip:7077&quot; \
 # --driver-memory=2G --executor-memory=30G  \
-# --num-executors=3 --executor-cores=20 \
+# --total-executor-cores=60 --executor-cores=20 \
 # --class com.vesoft.nebula.exchange.Exchange \
 # nebula-exchange-3.0-SNAPSHOT.jar -c export_to_csv.conf
 
@@ -7727,7 +7727,8 @@
     address:{
       graph:[&quot;127.0.0.1:9669&quot;]
 
-      # the address of any of the meta services
+      # the address of any of the meta services.
+      # if your NebulaGraph server is in virtual network like k8s, please config the leader address of meta.
       meta:[&quot;127.0.0.1:9559&quot;]
     }
     user: root
@@ -7807,7 +7808,7 @@
 # spark-submit \
 # --master &quot;spark://master_ip:7077&quot; \
 # --driver-memory=2G --executor-memory=30G  \
-# --num-executors=3 --executor-cores=20 \
+# --total-executor-cores=60 --executor-cores=20 \
 # --class com.vesoft.nebula.exchange.Exchange \
 # nebula-exchange-3.0-SNAPSHOT.jar -c export_to_nebula.conf
 
@@ -7824,7 +7825,8 @@
     address:{
       graph:[&quot;127.0.0.1:9669&quot;]
 
-      # the address of any of the meta services
+      # the address of any of the meta services.
+      # if your NebulaGraph server is in virtual network like k8s, please config the leader address of meta.
       meta:[&quot;127.0.0.1:9559&quot;]
     }
     user: root
