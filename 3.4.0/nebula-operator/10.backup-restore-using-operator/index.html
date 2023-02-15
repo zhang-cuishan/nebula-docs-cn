@@ -7714,8 +7714,7 @@ enableBR: true // 设置为 true 时，启用备份和恢复功能。
 <li>NebulaGraph Operator 支持全量备份和增量备份。</li>
 <li>数据备份过程中，指定图空间中的 DDL 和 DML 语句将会阻塞，我们建议在业务低峰期进行操作，例如凌晨 2 点至 5 点。</li>
 <li>执行增量备份的集群和指定的上一次备份的集群需为同一个，并且和指定的上一次备份的（存储桶）路径需相同。</li>
-<li>确保每次增量备份距离上一次备份的时间小于一个wal_ttl的时间。</li>
-<li>确保 Agent 有对应 NebulaGraph 安装目录和备份目录的读写权限。</li>
+<li>确保每次增量备份距离上一次备份的时间小于一个<code>wal_ttl</code>的时间。</li>
 <li>不支持备份指定图空间数据。</li>
 </ul>
 <h3 id="_5">全量备份<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
