@@ -7529,9 +7529,8 @@
 
 
 <h1 id="pv">回收 PV<a class="headerlink" href="#pv" title="Permanent link">&para;</a></h1>
-<p>NebulaGraph Operator 使用持久化卷 PV（Persistent Volume）和持久化卷声明 PVC（Persistent Volume Claim）来存储持久化数据。如果用户不小心删除了一个 NebulaGraph 集群，PV 和 PVC 对象及其数据仍可保留，以确保数据安全。</p>
-<p>用户可以在集群的 CR 实例的配置文件中通过参数<code>enablePVReclaim</code>定义是否回收 PV。</p>
-<p>如果用户需要删除图空间并想保留相关数据，可以更新 NebulaGraph 集群，即设置<code>enablePVReclaim</code>为<code>true</code>。</p>
+<p>NebulaGraph Operator 使用持久化卷 PV（Persistent Volume）和持久化卷声明 PVC（Persistent Volume Claim）来存储持久化数据。如果用户不小心删除了一个 NebulaGraph 集群，默认 PV 和 PVC 对象及其数据仍可保留，以确保数据安全。</p>
+<p>用户也可以在集群实例的配置文件中通过设置参数<code>spec.enablePVReclaim</code>为<code>true</code>来定义在删除集群后自动删除 PVC 以释放数据。至于在删除 PVC 后是否删除 PV，用户需要自定义 PV 的回收策略。参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy">StorageClass 中设置 reclaimPolicy</a>和 <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#reclaiming">PV Reclaiming</a> 了解 PV 回收策略。</p>
 <h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>已使用 K8s 创建一个集群。具体步骤，参见<a href="../../3.deploy-nebula-graph-cluster/3.1create-cluster-with-kubectl/">使用 Kubectl 创建 NebulaGraph 集群</a>。</p>
 <h2 id="_2">操作步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -7626,6 +7625,7 @@
 <p>执行<code>kubectl apply -f nebula_cluster.yaml</code>使上述更新生效。</p>
 </li>
 </ol>
+<p>当集群删除后，系统将会自动删除 PVC 以回收存储资源。是否删除 PV，取决于 PV 的回收策略。</p>
 
   <hr>
 <div class="md-source-file">
