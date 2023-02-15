@@ -7817,12 +7817,12 @@ nebula&gt; INSERT EDGE serve(start_year, end_year) VALUES &quot;player101&quot; 
 <li>查询从点<code>player101</code>开始、0~2 跳、<code>follow</code>类型边<code>degree</code>大于 90，年龄大于 30 的子图，同时展示边的属性。<div class="highlight"><pre><span></span><code>nebula&gt; GET SUBGRAPH WITH PROP 2 STEPS FROM &quot;player101&quot; \
     WHERE follow.degree &gt; 90 AND $$.player.age &gt; 30 \
     YIELD VERTICES AS nodes, EDGES AS relationships;
-+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| nodes                                                                                                       | relationships                                                                                                                                                |
-+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| [(&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})]                                                       | [[:follow &quot;player101&quot;-&gt;&quot;player100&quot; @0 {degree: 95}], [:follow &quot;player101&quot;-&gt;&quot;player125&quot; @0 {degree: 95}], [:follow &quot;player100&quot;-&gt;&quot;player101&quot; @0 {degree: 95}]] |
-| [(&quot;player125&quot; :player{age: 41, name: &quot;Manu Ginobili&quot;}), (&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;})] | [[:follow &quot;player100&quot;-&gt;&quot;player125&quot; @0 {degree: 95}]]                                                                                                         |
-+-------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------+------------------------------------------------------+
+| nodes                                                 | relationships                                        |
++-------------------------------------------------------+------------------------------------------------------+
+| [(&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})] | [[:follow &quot;player101&quot;-&gt;&quot;player100&quot; @0 {degree: 95}]] |
+| [(&quot;player100&quot; :player{age: 42, name: &quot;Tim Duncan&quot;})]  | []                                                   |
++-------------------------------------------------------+------------------------------------------------------+
 </code></pre></div>
 </li>
 </ul>
