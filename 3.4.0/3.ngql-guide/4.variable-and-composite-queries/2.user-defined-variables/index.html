@@ -7686,7 +7686,10 @@
 <p>用户可以在复合查询中使用自定义变量。复合查询的详细信息请参见<a href="../1.composite-queries/">复合查询</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>自定义变量区分大小写。</p>
+<ul>
+<li>自定义变量区分大小写。</li>
+<li>在包含扩展的自定义变量的复合语句中，用英文分号<code>;</code>结束定义变量的语句。详情参见 <a href="../../1.nGQL-overview/ngql-style-guide/">nGQL 风格指南</a>。</li>
+</ul>
 </div>
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; $var = GO FROM &quot;player100&quot; OVER follow YIELD dst(edge) AS id; \
@@ -7706,7 +7709,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
       
     
   </small>
