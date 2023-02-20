@@ -981,6 +981,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/3.4.0/8.service-tuning/enable_autofdo_for_nebulagraph/</loc>
+         <lastmod>2023-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/3.4.0/8.service-tuning/load-balance/</loc>
          <lastmod>2023-02-20</lastmod>
          <changefreq>daily</changefreq>
