@@ -571,6 +571,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#docker_desktop" class="md-nav__link">
+    使用 Docker Desktop 一键部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     云上部署
   </a>
@@ -7547,6 +7554,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#docker_desktop" class="md-nav__link">
+    使用 Docker Desktop 一键部署
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     云上部署
   </a>
@@ -7662,7 +7676,32 @@
 
 
 <h1 id="_1">快速入门概览<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>用户可通过云及本地两种部署方式快速入门 NebulaGraph。快速入门将介绍如何通过云和本地两种部署方式简单地使用 NebulaGraph，包括部署、连接 NebulaGraph，以及基础的增删改查操作。</p>
+<p>用户可通过 Docker Desktop、云、本地三种部署方式快速入门 NebulaGraph。快速入门将介绍如何通过 Docker Desktop、云、本地三种部署方式简单地使用 NebulaGraph，包括部署、连接 NebulaGraph，以及基础的增删改查操作。</p>
+<h2 id="docker_desktop">使用 Docker Desktop 一键部署<a class="headerlink" href="#docker_desktop" title="Permanent link">&para;</a></h2>
+<p>按照以下步骤可以快速在 Docker Desktop 中部署 NebulaGraph。</p>
+<ol>
+<li>
+<p>安装 <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a>。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>如果在 Windows 端安装 Docker Desktop 需<a href="https://docs.docker.com/desktop/install/windows-install/">安装 WSL 2</a>。</p>
+</div>
+</li>
+<li>
+<p>在仪表盘中单击<code>Extensions</code>或<code>Add Extensions</code>打开Extensions Marketplace 搜索 NebulaGraph ，也可以点击 <a href="https://hub.docker.com/extensions/weygu/nebulagraph-dd-ext">NebulaGraph</a> 在 Docker Desktop 打开。</p>
+</li>
+<li>导航到 NebulaGraph 的扩展市场。</li>
+<li>
+<p>点击<code>Install</code>下载 NebulaGraph。</p>
+<p><img alt="docker" src="https://docs-cdn.nebula-graph.com.cn/figures/docker.png" /></p>
+</li>
+<li>
+<p>可以点击<code>Update</code>快速更新新版本。</p>
+<p><img alt="docker-update" src="https://docs-cdn.nebula-graph.com.cn/figures/docker-update.png" /></p>
+</li>
+</ol>
+<iframe src="//player.bilibili.com/player.html?aid=853353222&bvid=BV1VL4y1V7C2&cid=581214591&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 <h2 id="_2">云上部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">使用流程图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><img alt="cloud_workflow_pic" src="https://docs-cdn.nebula-graph.com.cn/figures/cloudworkflow_2022-09-28_15-12-11.png" /></p>
@@ -7786,7 +7825,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2023</span>
       
     
   </small>
