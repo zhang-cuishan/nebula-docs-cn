@@ -3378,6 +3378,26 @@
     修改配置
   </a>
   
+    <nav class="md-nav" aria-label="修改配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在配置文件中修改配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    使用命令动态修改配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7697,6 +7717,26 @@
     修改配置
   </a>
   
+    <nav class="md-nav" aria-label="修改配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    在配置文件中修改配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    使用命令动态修改配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -7827,6 +7867,12 @@ curl<span class="w"> </span><span class="m">127</span>.0.0.1:19779/flags
 </div>
 <p>关于 NebulaGraph 的配置相关的更多信息，参见 <a href="https://siwei.io/sketches/nebula-config-explained/">NebulaGraph Config</a>。</p>
 <h2 id="_5">修改配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>用户可以在配置文件中修改 NebulaGraph 的配置，或使用命令动态修改配置。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>同时使用两种方式修改配置会导致配置信息失去统一的管理方式，可能造成配置混乱。建议仅使用配置文件管理配置，或在通过命令动态更新配置后对配置文件做相同的修改，以保证一致性。</p>
+</div>
+<h3 id="_6">在配置文件中修改配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>默认情况下，所有 NebulaGraph 服务从配置文件获取配置。用户可以按照以下步骤修改配置并使其生效。</p>
 <ul>
 <li>
@@ -7856,6 +7902,18 @@ curl<span class="w"> </span><span class="m">127</span>.0.0.1:19779/flags
 <p>具体操作，参见<a href="../../../nebula-operator/8.custom-cluster-configurations/8.1.custom-conf-parameter/">自定义集群的配置参数</a>。</p>
 </li>
 </ul>
+<h3 id="_7">使用命令动态修改配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>用户可以通过<code>curl</code>命令动态修改 NebulaGraph 服务的配置。例如，修改 Storage 服务的<code>wal_ttl</code>参数为<code>600</code>，命令如下：</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="s1">&#39;{&quot;wal_ttl&quot;:&quot;600&quot;}&#39;</span><span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://192.168.15.6:19779/flags&quot;</span>
+</code></pre></div>
+<p>其中，<code>{"wal_ttl":"600"}</code>为待修改的配置参数及其值；<code>192.168.15.6:19779</code>为 Storage 服务的 IP 地址和 HTTP 端口号。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<ul>
+<li>动态修改配置功能仅适用于原型验证和测试环境，不建议在生产环境中使用。因为当<code>local_config</code>值设置为<code>true</code>时，动态修改的配置不会持久化，重启服务后配置会恢复为初始配置。</li>
+<li>仅支持动态修改<strong>部分</strong>配置参数，具体支持的参数列表，参见各服务配置中<strong>是否支持运行时动态修改</strong>的描述。</li>
+</ul>
+</div>
 
   <hr>
 <div class="md-source-file">
