@@ -7999,6 +7999,18 @@
 | {age: 46, name: &quot;Grant Hill&quot;}       |
 +-------------------------------------+
 </code></pre></div>
+<p>用户也可以使用属性引用符（<code>$^</code>和<code>$$</code>）替代函数<code>properties()</code>中的<code>vertex</code>参数来获取点的所有属性。</p>
+<ul>
+<li><code>$^</code>表示探索开始时的点数据。例如<code>GO FROM "player100" OVER follow reversely YIELD properties($^)</code>中，<code>$^</code>指<code>player100</code>这个点。</li>
+</ul>
+<ul>
+<li><code>$$</code>表示探索结束的终点数据。</li>
+</ul>
+<p><code>properties($^)</code>和<code>properties($$)</code>一般用于<code>GO</code>语句中。更多信息，请参见<a href="../../5.operators/5.property-reference/">属性引用符</a>。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>用户可以通过<code>properties().&lt;property_name&gt;</code>来获取点的指定属性。但是不建议使用这种方式获取指定属性，因为<code>properties()</code>函数返回所有属性，这样会降低查询性能。</p>
+</div>
 <h3 id="propertiesedge">properties(edge)<a class="headerlink" href="#propertiesedge" title="Permanent link">&para;</a></h3>
 <p>properties(edge) 返回边的所有属性。</p>
 <p>语法：<code>properties(edge)</code></p>
@@ -8015,6 +8027,10 @@
 | {degree: 95}     |
 +------------------+
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>用户可以通过<code>properties(edge).&lt;property_name&gt;</code>来获取边的指定属性。但是不建议使用这种方式获取指定属性，因为<code>properties(edge)</code>函数返回边的所有属性，这样会降低查询性能。</p>
+</div>
 <h3 id="typeedge">type(edge)<a class="headerlink" href="#typeedge" title="Permanent link">&para;</a></h3>
 <p>type(edge) 返回边的 Edge type。</p>
 <p>语法：<code>type(edge)</code></p>
