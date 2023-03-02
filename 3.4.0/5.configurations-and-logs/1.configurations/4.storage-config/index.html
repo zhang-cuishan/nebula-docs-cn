@@ -8120,17 +8120,72 @@
 <p class="admonition-title">Caution</p>
 <p>下表中的<code>snapshot</code>与 NebulaGraph 快照是不同的概念，这里的<code>snapshot</code>指 Raft 同步过程中 leader 上的存量数据。</p>
 </div>
-<p>| 名称 | 预设值 | 说明 |是否支持运行时动态修改|
-| :-- | :----- | :--- |
-| <code>query_concurrently</code> | <code>true</code> | 是否开启多线程查询。开启后可以提高单个查询的时延性能，但大压力下会降低整体的吞吐量。 |支持|
-| <code>auto_remove_invalid_space</code> | <code>true</code> | 在执行<code>DROP SPACE</code>后，会删除指定图空间，该参数设置是否同时删除指定图空间内的所有数据。当值为<code>true</code>时，同时删除指定图空间内的所有数据。 |支持|
-| <code>num_io_threads</code> | <code>16</code> | 网络 I/O 线程的数量，用于发送 RPC 请求和接收响应。 |支持|
-| <code>num_worker_threads</code> | <code>32</code> | Storage 的 RPC 服务的工作线程数量。 |支持|
-| <code>max_concurrent_subtasks</code> | <code>10</code> | TaskManager 并发执行子任务的最大个数。 |支持|
-| <code>snapshot_part_rate_limit</code> | <code>10485760</code> | Raft leader 向 Raft group 中其它成员同步存量数据时的限速。单位：字节/秒。 |支持|
-| <code>snapshot_batch_size</code> | <code>1048576</code> | Raft leader 向 Raft group 中其它成员同步存量数据时每批发送的数据量。单位：字节。 |支持|
-| <code>rebuild_index_part_rate_limit</code> | <code>4194304</code> | 重建索引过程中，Raft leader 向 Raft group 中其它成员同步索引数据时的限速。单位：字节/秒。 |支持|
-| <code>rebuild_index_batch_size</code> | <code>1048576</code> | 重建索引过程中，Raft leader 向 Raft group 中其它成员同步索引数据时每批发送的数据量。单位：字节。 |支持|</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>query_concurrently</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否开启多线程查询。开启后可以提高单个查询的时延性能，但大压力下会降低整体的吞吐量。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>auto_remove_invalid_space</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">在执行<code>DROP SPACE</code>后，会删除指定图空间，该参数设置是否同时删除指定图空间内的所有数据。当值为<code>true</code>时，同时删除指定图空间内的所有数据。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>num_io_threads</code></td>
+<td align="left"><code>16</code></td>
+<td align="left">网络 I/O 线程的数量，用于发送 RPC 请求和接收响应。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>num_worker_threads</code></td>
+<td align="left"><code>32</code></td>
+<td align="left">Storage 的 RPC 服务的工作线程数量。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>max_concurrent_subtasks</code></td>
+<td align="left"><code>10</code></td>
+<td align="left">TaskManager 并发执行子任务的最大个数。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>snapshot_part_rate_limit</code></td>
+<td align="left"><code>10485760</code></td>
+<td align="left">Raft leader 向 Raft group 中其它成员同步存量数据时的限速。单位：字节/秒。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>snapshot_batch_size</code></td>
+<td align="left"><code>1048576</code></td>
+<td align="left">Raft leader 向 Raft group 中其它成员同步存量数据时每批发送的数据量。单位：字节。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>rebuild_index_part_rate_limit</code></td>
+<td align="left"><code>4194304</code></td>
+<td align="left">重建索引过程中，Raft leader 向 Raft group 中其它成员同步索引数据时的限速。单位：字节/秒。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>rebuild_index_batch_size</code></td>
+<td align="left"><code>1048576</code></td>
+<td align="left">重建索引过程中，Raft leader 向 Raft group 中其它成员同步索引数据时每批发送的数据量。单位：字节。</td>
+<td align="left">支持</td>
+</tr>
+</tbody>
+</table>
 <h2 id="rocksdb_options">rocksdb options 配置<a class="headerlink" href="#rocksdb_options" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
