@@ -63,7 +63,7 @@ NebulaGraph Analytics 支持的图计算算法如下。
 
 ## 安装 NebulaGraph Analytics
 
-1. 安装 NebulaGraph Analytics。
+1. 安装 NebulaGraph Analytics。在多个机器安装由多个 NebulaGraph Analytics 服务构成的集群时，需要安装路径相同，并设置节点间 SSH 免密登录。
 
   ```
   $ sudo rpm -ivh <analytics_package_name> --prefix <install_path>
