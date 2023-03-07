@@ -82,14 +82,14 @@ plugins:
 #      - '.*\.(tmp|bin|tar)$'
 
 # modify when release:
-  - with-pdf:
-      copyright: 2022 vesoft Inc.
-      cover_subtitle: v3.0.2
-      author: 吴敏，周瑶，梁振亚，杨怡璇，黄凤仙
-      cover: true
-      back_cover: true
-      cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
-      output_path: pdf/NebulaGraph-CN.pdf
+#  - with-pdf:
+#      copyright: 2022 vesoft Inc.
+#      cover_subtitle: v3.0.2
+#      author: 吴敏，周瑶，梁振亚，杨怡璇，黄凤仙
+#      cover: true
+#      back_cover: true
+#      cover_logo: 'https://cloud-cdn.nebula-graph.com.cn/nebula-for-pdf.png'
+#      output_path: pdf/NebulaGraph-CN.pdf
 
 extra_javascript:
   - js/version-select.js
@@ -581,4 +581,4 @@ nav:
       - 思维导图: 20.appendix/mind-map.md
 
   - English Docs: https://docs.nebula-graph.io/
-  - PDF: ./pdf/NebulaGraph-CN.pdf
+#  - PDF: ./pdf/NebulaGraph-CN.pdf
