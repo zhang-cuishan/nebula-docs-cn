@@ -6010,21 +6010,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pdf/NebulaGraph-CN.pdf" class="md-nav__link">
-        PDF
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -6234,7 +6219,7 @@
 <p>集群中的每个机器都需要部署<code>node-exporter</code>服务。</p>
 </div>
 <p>在目录<code>node-exporter</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./node-exporter --web.listen-address<span class="o">=</span><span class="s2">&quot;:9100&quot;</span> <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nohup<span class="w"> </span>./node-exporter<span class="w"> </span>--web.listen-address<span class="o">=</span><span class="s2">&quot;:9100&quot;</span><span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:9100</code>检查服务是否正常启动。</p>
 <h3 id="nebula-stats-exporter">部署<code>nebula-stats-exporter</code>服务<a class="headerlink" href="#nebula-stats-exporter" title="Permanent link">&para;</a></h3>
@@ -6246,49 +6231,49 @@
 <li>
 <p>在目录<code>nebula-stats-exporter</code>内修改文件<code>config.yaml</code>，配置所有服务的 HTTP 端口，示例如下：</p>
 <div class="highlight"><pre><span></span><code>clusters:
-  - name: nebula
-    instances:
-      - name: metad0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19559</span>
-        componentType: metad
-      - name: metad1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19559</span>
-        componentType: metad
-      - name: metad2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19559</span>
-        componentType: metad
-      - name: graphd0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19669</span>
-        componentType: graphd
-      - name: graphd1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19669</span>
-        componentType: graphd
-      - name: graphd2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19669</span>
-        componentType: graphd
-      - name: storaged0
-        endpointIP: <span class="m">192</span>.168.8.157
-        endpointPort: <span class="m">19779</span>
-        componentType: storaged
-      - name: storaged1
-        endpointIP: <span class="m">192</span>.168.8.155
-        endpointPort: <span class="m">19779</span>
-        componentType: storaged
-      - name: storaged2
-        endpointIP: <span class="m">192</span>.168.8.154
-        endpointPort: <span class="m">19779</span>
-        componentType: storaged
+<span class="w">  </span>-<span class="w"> </span>name:<span class="w"> </span>nebula
+<span class="w">    </span>instances:
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>metad0
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.157
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19559</span>
+<span class="w">        </span>componentType:<span class="w"> </span>metad
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>metad1
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.155
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19559</span>
+<span class="w">        </span>componentType:<span class="w"> </span>metad
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>metad2
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.154
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19559</span>
+<span class="w">        </span>componentType:<span class="w"> </span>metad
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>graphd0
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.157
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19669</span>
+<span class="w">        </span>componentType:<span class="w"> </span>graphd
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>graphd1
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.155
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19669</span>
+<span class="w">        </span>componentType:<span class="w"> </span>graphd
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>graphd2
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.154
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19669</span>
+<span class="w">        </span>componentType:<span class="w"> </span>graphd
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>storaged0
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.157
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19779</span>
+<span class="w">        </span>componentType:<span class="w"> </span>storaged
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>storaged1
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.155
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19779</span>
+<span class="w">        </span>componentType:<span class="w"> </span>storaged
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>storaged2
+<span class="w">        </span>endpointIP:<span class="w"> </span><span class="m">192</span>.168.8.154
+<span class="w">        </span>endpointPort:<span class="w"> </span><span class="m">19779</span>
+<span class="w">        </span>componentType:<span class="w"> </span>storaged
 </code></pre></div>
 </li>
 <li>
 <p>执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup  ./nebula-stats-exporter --listen-address<span class="o">=</span><span class="s2">&quot;:9200&quot;</span> --bare-metal --bare-metal-config<span class="o">=</span>./config.yaml <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nohup<span class="w">  </span>./nebula-stats-exporter<span class="w"> </span>--listen-address<span class="o">=</span><span class="s2">&quot;:9200&quot;</span><span class="w"> </span>--bare-metal<span class="w"> </span>--bare-metal-config<span class="o">=</span>./config.yaml<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -6302,20 +6287,20 @@
 <li>
 <p>在目录<code>prometheus</code>内修改文件<code>prometheus.yaml</code>，配置<code>node-exporter</code>服务和<code>nebula-stats-exporter</code>服务的 IP 地址和端口，示例如下：</p>
 <div class="highlight"><pre><span></span><code>global:
-  scrape_interval:     5s
-  evaluation_interval: 5s
+<span class="w">  </span>scrape_interval:<span class="w">     </span>5s
+<span class="w">  </span>evaluation_interval:<span class="w"> </span>5s
 scrape_configs:
-  - job_name: <span class="s1">&#39;nebula-stats-exporter&#39;</span>
-    static_configs:
-      - targets: <span class="o">[</span>
-          <span class="s1">&#39;192.168.xx.100:9200&#39;</span>  <span class="c1">#  nebula-stats-exporter 服务的 IP 地址和端口。</span>
-        <span class="o">]</span>
-  - job_name: <span class="s1">&#39;node-exporter&#39;</span>
-    static_configs:
-      - targets: <span class="o">[</span>
-          <span class="s1">&#39;192.168.xx.100:9100&#39;</span>,  <span class="c1">#  node-exporter 服务的 IP 地址和端口。</span>
-          <span class="s1">&#39;192.168.xx.101:9100&#39;</span>
-        <span class="o">]</span>
+<span class="w">  </span>-<span class="w"> </span>job_name:<span class="w"> </span><span class="s1">&#39;nebula-stats-exporter&#39;</span>
+<span class="w">    </span>static_configs:
+<span class="w">      </span>-<span class="w"> </span>targets:<span class="w"> </span><span class="o">[</span>
+<span class="w">          </span><span class="s1">&#39;192.168.xx.100:9200&#39;</span><span class="w">  </span><span class="c1">#  nebula-stats-exporter 服务的 IP 地址和端口。</span>
+<span class="w">        </span><span class="o">]</span>
+<span class="w">  </span>-<span class="w"> </span>job_name:<span class="w"> </span><span class="s1">&#39;node-exporter&#39;</span>
+<span class="w">    </span>static_configs:
+<span class="w">      </span>-<span class="w"> </span>targets:<span class="w"> </span><span class="o">[</span>
+<span class="w">          </span><span class="s1">&#39;192.168.xx.100:9100&#39;</span>,<span class="w">  </span><span class="c1">#  node-exporter 服务的 IP 地址和端口。</span>
+<span class="w">          </span><span class="s1">&#39;192.168.xx.101:9100&#39;</span>
+<span class="w">        </span><span class="o">]</span>
 </code></pre></div>
 <ul>
 <li>scrape_interval：收集监控数据的间隔时间。默认为 1 分钟。</li>
@@ -6326,7 +6311,7 @@ scrape_configs:
 </li>
 <li>
 <p>执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./prometheus --config.file<span class="o">=</span>./prometheus.yaml <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nohup<span class="w"> </span>./prometheus<span class="w"> </span>--config.file<span class="o">=</span>./prometheus.yaml<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -6337,39 +6322,39 @@ scrape_configs:
 <p>只需要在<code>nebula-dashboard</code>服务所在机器部署<code>nebula-http-gateway</code>服务。</p>
 </div>
 <p>在目录<code>nebula-http-gateway</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./nebula-httpd <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nohup<span class="w"> </span>./nebula-httpd<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:8090</code>检查服务是否正常启动。</p>
 <h3 id="dashboard_2">部署<code>dashboard</code>服务<a class="headerlink" href="#dashboard_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>在目录<code>nebula-dashboard</code>内修改文件<code>config.json</code>，配置 Graph 服务的 IP 地址，端口和配置代理服域名，示例如下：</p>
-<div class="highlight"><pre><span></span><code>  port: <span class="m">7003</span>
-  proxy:
-    gateway:
-      target: <span class="s2">&quot;127.0.0.1:8090&quot;</span>  //  nebula-http-gateway 服务的 IP 和端口号。
-    prometheus:
-      target: <span class="s2">&quot;127.0.0.1:9090&quot;</span>  // Prometheus 服务的 IP 和端口号。
-    nebulaServer:
-      ip: <span class="s2">&quot;192.168.8.143&quot;</span>  // 部署 Graph 服务的机器 IP。
-      port: <span class="m">9669</span> // Graph 服务的端口号。
-  ...
+<div class="highlight"><pre><span></span><code><span class="w">  </span>port:<span class="w"> </span><span class="m">7003</span>
+<span class="w">  </span>proxy:
+<span class="w">    </span>gateway:
+<span class="w">      </span>target:<span class="w"> </span><span class="s2">&quot;127.0.0.1:8090&quot;</span><span class="w">  </span>//<span class="w">  </span>nebula-http-gateway<span class="w"> </span>服务的<span class="w"> </span>IP<span class="w"> </span>和端口号。
+<span class="w">    </span>prometheus:
+<span class="w">      </span>target:<span class="w"> </span><span class="s2">&quot;127.0.0.1:9090&quot;</span><span class="w">  </span>//<span class="w"> </span>Prometheus<span class="w"> </span>服务的<span class="w"> </span>IP<span class="w"> </span>和端口号。
+<span class="w">    </span>nebulaServer:
+<span class="w">      </span>ip:<span class="w"> </span><span class="s2">&quot;192.168.8.143&quot;</span><span class="w">  </span>//<span class="w"> </span>部署<span class="w"> </span>Graph<span class="w"> </span>服务的机器<span class="w"> </span>IP。
+<span class="w">      </span>port:<span class="w"> </span><span class="m">9669</span><span class="w"> </span>//<span class="w"> </span>Graph<span class="w"> </span>服务的端口号。
+<span class="w">  </span>...
 </code></pre></div>
 </li>
 <li>
 <p>在目录<code>nebula-dashboard</code>内执行如下命令启动服务：</p>
-<div class="highlight"><pre><span></span><code>$ nohup ./dashboard <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>nohup<span class="w"> </span>./dashboard<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
 </li>
 </ol>
 <p>服务启动后，可以在浏览器中输入<code>&lt;IP&gt;:7003</code>检查服务是否正常启动。</p>
 <h2 id="dashboard_3">停止 Dashboard<a class="headerlink" href="#dashboard_3" title="Permanent link">&para;</a></h2>
 <p>如果需要停止 Dashboard，可以使用<code>kill &lt;pid&gt;</code>的方式停止，示例如下：</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9100<span class="k">)</span> <span class="c1"># 停止 node-exporter 服务</span>
-$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9200<span class="k">)</span> <span class="c1"># 停止 nebula-stats-exporter 服务</span>
-$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :9090<span class="k">)</span> <span class="c1"># 停止 prometheus 服务</span>
-$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :8090<span class="k">)</span> <span class="c1"># 停止 nebula-http-gateway 服务</span>
-$ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7003<span class="k">)</span> <span class="c1"># 停止 dashboard 服务</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:9100<span class="k">)</span><span class="w"> </span><span class="c1"># 停止 node-exporter 服务</span>
+$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:9200<span class="k">)</span><span class="w"> </span><span class="c1"># 停止 nebula-stats-exporter 服务</span>
+$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:9090<span class="k">)</span><span class="w"> </span><span class="c1"># 停止 prometheus 服务</span>
+$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:8090<span class="k">)</span><span class="w"> </span><span class="c1"># 停止 nebula-http-gateway 服务</span>
+$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span><span class="k">$(</span>lsof<span class="w"> </span>-t<span class="w"> </span>-i<span class="w"> </span>:7003<span class="k">)</span><span class="w"> </span><span class="c1"># 停止 dashboard 服务</span>
 </code></pre></div>
 
   <hr>
@@ -6377,7 +6362,7 @@ $ <span class="nb">kill</span> <span class="k">$(</span>lsof -t -i :7003<span cl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
       
     
   </small>
