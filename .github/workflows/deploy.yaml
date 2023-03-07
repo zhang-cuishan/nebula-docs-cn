@@ -45,7 +45,7 @@ jobs:
           git checkout gh-pages
       - name: Compress
         run: |
-          tar -vczf nebula-docs.tar.gz 2.6.2 versions.json *.html
+          tar -vczf 2.6.2.tar.gz 2.6.2 versions.json *.html
           
       - name: Transfer
         # uses: garygrossgarten/github-action-scp@release
@@ -55,7 +55,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          source: nebula-docs.tar.gz
+          source: 2.6.2.tar.gz
           target: /usr/web
 
       - name: UnCompress
@@ -67,7 +67,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             mkdir -p /usr/web/nebula-docs/
-            tar -xzf /usr/web/nebula-docs.tar.gz -C /usr/web/nebula-docs/
+            tar -xzf /usr/web/2.6.2.tar.gz -C /usr/web/nebula-docs/
 #            pip3 install --upgrade pip
 #            pip3 install -r /usr/web/nebula-docs/requirement.txt
       # - name: Deploy
