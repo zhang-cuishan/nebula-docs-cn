@@ -6009,21 +6009,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pdf/NebulaGraph-CN.pdf" class="md-nav__link">
-        PDF
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -6138,7 +6123,7 @@
 <p>Nebula Graph 创建的快照以目录的形式存储，例如<code>SNAPSHOT_2021_03_09_08_43_12</code>，后缀<code>2021_03_09_08_43_12</code>根据创建时间（UTC）自动生成。</p>
 <p>创建快照时，快照目录会自动在 leader Meta 服务器和所有 Storage 服务器的目录<code>checkpoints</code>内创建。</p>
 <p>为了快速定位快照所在路径，可以使用 Linux 命令<code>find</code>。例如：</p>
-<div class="highlight"><pre><span></span><code>$ find <span class="p">|</span>grep <span class="s1">&#39;SNAPSHOT_2021_03_09_08_43_12&#39;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>find<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="s1">&#39;SNAPSHOT_2021_03_09_08_43_12&#39;</span>
 ./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12
 ./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12/data
 ./data/meta2/nebula/0/checkpoints/SNAPSHOT_2021_03_09_08_43_12/data/000081.sst
@@ -6203,11 +6188,11 @@ nebula&gt; SHOW SNAPSHOTS;
 <ol>
 <li>
 <p>创建快照后，会在 leader Meta 服务器和所有 Storage 服务器的安装目录内生成<code>checkpoints</code>目录，保存创建的快照。以本文为例，当存在 2 个图空间时，创建的快照分别保存在<code>/usr/local/nebula/data/meta/nebula/0/checkpoints</code>、<code>/usr/local/nebula/data/storage/nebula/3/checkpoints</code>和<code>/usr/local/nebula/data/storage/nebula/4/checkpoints</code>中。</p>
-<div class="highlight"><pre><span></span><code>$ ls /usr/local/nebula/data/meta/nebula/0/checkpoints/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>/usr/local/nebula/data/meta/nebula/0/checkpoints/
 SNAPSHOT_2021_03_09_09_10_52
-$ ls /usr/local/nebula/data/storage/nebula/3/checkpoints/
+$<span class="w"> </span>ls<span class="w"> </span>/usr/local/nebula/data/storage/nebula/3/checkpoints/
 SNAPSHOT_2021_03_09_09_10_52
-$ ls /usr/local/nebula/data/storage/nebula/4/checkpoints/
+$<span class="w"> </span>ls<span class="w"> </span>/usr/local/nebula/data/storage/nebula/4/checkpoints/
 SNAPSHOT_2021_03_09_09_10_52
 </code></pre></div>
 </li>
@@ -6231,7 +6216,7 @@ SNAPSHOT_2021_03_09_09_10_52
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
       
     
   </small>

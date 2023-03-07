@@ -6110,21 +6110,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../pdf/NebulaGraph-CN.pdf" class="md-nav__link">
-        PDF
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -6478,90 +6463,90 @@
 <li>
 <p>安装依赖包。</p>
 <ul>
-<li>CentOS、RedHat、Fedora 用户请执行如下命令：<div class="highlight"><pre><span></span><code>$ yum update
-$ yum install -y make <span class="se">\</span>
-                 m4 <span class="se">\</span>
-                 git <span class="se">\</span>
-                 wget <span class="se">\</span>
-                 unzip <span class="se">\</span>
-                 xz <span class="se">\</span>
-                 readline-devel <span class="se">\</span>
-                 ncurses-devel <span class="se">\</span>
-                 zlib-devel <span class="se">\</span>
-                 gcc <span class="se">\</span>
-                 gcc-c++ <span class="se">\</span>
-                 cmake <span class="se">\</span>
-                 gettext <span class="se">\</span>
-                 curl <span class="se">\</span>
-                 redhat-lsb-core <span class="se">\</span>
-                 bzip2
-// 仅 CentOS <span class="m">8</span>+、RedHat <span class="m">8</span>+、Fedora 需要安装 libstdc++-static 和 libasan。
-$ yum install -y libstdc++-static libasan
+<li>CentOS、RedHat、Fedora 用户请执行如下命令：<div class="highlight"><pre><span></span><code>$<span class="w"> </span>yum<span class="w"> </span>update
+$<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>m4<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>xz<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>readline-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>ncurses-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>zlib-devel<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>gcc<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>gcc-c++<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>gettext<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>redhat-lsb-core<span class="w"> </span><span class="se">\</span>
+<span class="w">                 </span>bzip2
+//<span class="w"> </span>仅<span class="w"> </span>CentOS<span class="w"> </span><span class="m">8</span>+、RedHat<span class="w"> </span><span class="m">8</span>+、Fedora<span class="w"> </span>需要安装<span class="w"> </span>libstdc++-static<span class="w"> </span>和<span class="w"> </span>libasan。
+$<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libstdc++-static<span class="w"> </span>libasan
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li>Debian 和 Ubuntu 用户请执行如下命令：<div class="highlight"><pre><span></span><code>$ apt-get update
-$ apt-get install -y make <span class="se">\</span>
-                     m4 <span class="se">\</span>
-                     git <span class="se">\</span>
-                     wget <span class="se">\</span>
-                     unzip <span class="se">\</span>
-                     xz-utils <span class="se">\</span>
-                     curl <span class="se">\</span>
-                     lsb-core <span class="se">\</span>
-                     build-essential <span class="se">\</span>
-                     libreadline-dev <span class="se">\</span>
-                     ncurses-dev <span class="se">\</span>
-                     cmake <span class="se">\</span>
-                     gettext
+<li>Debian 和 Ubuntu 用户请执行如下命令：<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt-get<span class="w"> </span>update
+$<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>m4<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>git<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>unzip<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>xz-utils<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>lsb-core<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>build-essential<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>libreadline-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>ncurses-dev<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>gettext
 </code></pre></div>
 </li>
 </ul>
 </li>
 <li>
 <p>检查主机上的 GCC 和 CMake 版本是否正确。版本信息请参见<a href="#_4">软件要求</a>。</p>
-<div class="highlight"><pre><span></span><code>$ g++ --version
-$ cmake --version
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>g++<span class="w"> </span>--version
+$<span class="w"> </span>cmake<span class="w"> </span>--version
 </code></pre></div>
 <p>如果版本正确，用户可以跳过本小节。如果不正确，请根据如下步骤安装：</p>
 <ol>
 <li>
 <p>克隆仓库<code>nebula</code>到主机。</p>
-<div class="highlight"><pre><span></span><code>$ git clone -b v2.6.2 https://github.com/vesoft-inc/nebula.git
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>v2.6.2<span class="w"> </span>https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 <p>如需安装特定版本的 Nebula Graph，使用<code>--branch</code>或<code>-b</code>选项指定相应的 nebula-common 分支。 例如，指定2.6.2，命令如下：</p>
-<div class="highlight"><pre><span></span><code>$ git clone --branch v2.6.2 https://github.com/vesoft-inc/nebula.git
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--branch<span class="w"> </span>v2.6.2<span class="w"> </span>https://github.com/vesoft-inc/nebula.git
 </code></pre></div>
 </li>
 <li>
 <p>进入目录<code>nebula</code>。</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> nebula
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>nebula
 </code></pre></div>
 </li>
 <li>
 <p>执行如下命令安装和启用 GCC 和 CMake。</p>
-<div class="highlight"><pre><span></span><code>// 安装 CMake。
-$ ./third-party/install-cmake.sh cmake-install
+<div class="highlight"><pre><span></span><code>//<span class="w"> </span>安装<span class="w"> </span>CMake。
+$<span class="w"> </span>./third-party/install-cmake.sh<span class="w"> </span>cmake-install
 
-// 启用 CMake。
-$ <span class="nb">source</span> cmake-install/bin/enable-cmake.sh
+//<span class="w"> </span>启用<span class="w"> </span>CMake。
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>cmake-install/bin/enable-cmake.sh
 
-//opt 目录添加写权限。
-$ sudo mkdir /opt/vesoft <span class="o">&amp;&amp;</span> sudo chmod -R a+w /opt/vesoft
+//opt<span class="w"> </span>目录添加写权限。
+$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/opt/vesoft<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>chmod<span class="w"> </span>-R<span class="w"> </span>a+w<span class="w"> </span>/opt/vesoft
 
-// 安装 GCC。安装到 opt 目录需要写权限，用户也可以修改为其他目录。
-$ ./third-party/install-gcc.sh --prefix<span class="o">=</span>/opt
+//<span class="w"> </span>安装<span class="w"> </span>GCC。安装到<span class="w"> </span>opt<span class="w"> </span>目录需要写权限，用户也可以修改为其他目录。
+$<span class="w"> </span>./third-party/install-gcc.sh<span class="w"> </span>--prefix<span class="o">=</span>/opt
 
-// 启用 GCC。
-$ <span class="nb">source</span> /opt/vesoft/toolset/gcc/7.5.0/enable
+//<span class="w"> </span>启用<span class="w"> </span>GCC。
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/opt/vesoft/toolset/gcc/7.5.0/enable
 </code></pre></div>
 </li>
 </ol>
 </li>
 <li>
 <p>执行脚本<code>install-third-party.sh</code>。</p>
-<div class="highlight"><pre><span></span><code>$ ./third-party/install-third-party.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./third-party/install-third-party.sh
 </code></pre></div>
 </li>
 </ol>
@@ -6827,7 +6812,7 @@ $ <span class="nb">source</span> /opt/vesoft/toolset/gcc/7.5.0/enable
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 7, 2023</span>
       
     
   </small>
