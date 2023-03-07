@@ -15,10 +15,10 @@
     在 NebulaGraph 3.2 的版本中，允许存在无 Tag 的点，但从 NebulaGraph 3.3.0 开始默认不支持无 Tag 的点。
     
 NebulaGraph 是一款开源的、分布式的、易扩展的原生图数据库，能够承载数千亿个点和数万亿条边的超大规模数据集，并且提供毫秒级查询。
--->
+
 
 <a href="https://www.bilibili.com/video/BV12R4y1e7U7"><img src="https://docs-cdn.nebula-graph.com.cn/figures/picture1.png" alt="3.4.0发布"></a>
- 
+-->
 
 ## 快速开始
 
