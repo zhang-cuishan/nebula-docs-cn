@@ -7912,10 +7912,6 @@
 <p><a href="https://github.com/vesoft-inc/nebula-spark-connector/releases/tag/v3.4.0">Release notes</a></p>
 <h2 id="nebulagraph_spark_connector_1">获取 NebulaGraph Spark Connector<a class="headerlink" href="#nebulagraph_spark_connector_1" title="Permanent link">&para;</a></h2>
 <h3 id="_5">编译打包<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>安装 Spark 2.4.x 或 2.2.x。</p>
-</div>
 <ol>
 <li>
 <p>克隆仓库<code>nebula-spark-connector</code>。</p>
@@ -7923,39 +7919,33 @@
 </code></pre></div>
 </li>
 <li>
-<p>编译打包。不同版本的 Spark 步骤略有不同。</p>
+<p>进入目录<code>nebula-spark-connector</code>。</p>
+</li>
+<li>
+<p>编译打包。不同版本的 Spark 命令略有不同。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>需已安装对应版本 Spark。</p>
+</div>
 <ul>
 <li>
-<p>Spark 2.4.x</p>
-<ol>
-<li>
-<p>进入目录<code>nebula-spark-connector</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nebula-spark-connector/nebula-spark-connector
+<p>Spark 2.4</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-Dgpg.skip<span class="w"> </span>-Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-pl<span class="w"> </span>nebula-spark-connector<span class="w"> </span>-am<span class="w"> </span>-Pscala-2.11<span class="w"> </span>-Pspark-2.4
 </code></pre></div>
-</li>
-<li>
-<p>编译打包。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-Dgpg.skip<span class="w"> </span>-Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span>
-</code></pre></div>
-</li>
-</ol>
 </li>
 </ul>
 <ul>
 <li>
-<p>Spark 2.2.x</p>
-<ol>
-<li>
-<p>进入目录<code>nebula-spark-connector_2.2</code>。</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>nebula-spark-connector/nebula-spark-connector_2.2
+<p>Spark 2.2</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-Dgpg.skip<span class="w"> </span>-Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-pl<span class="w"> </span>nebula-spark-connector_2.2<span class="w"> </span>-am<span class="w"> </span>-Pscala-2.11<span class="w"> </span>-Pspark-2.2
 </code></pre></div>
 </li>
+</ul>
+<ul>
 <li>
-<p>编译打包。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-Dgpg.skip<span class="w"> </span>-Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span>
+<p>Spark 3.x</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-Dgpg.skip<span class="w"> </span>-Dmaven.javadoc.skip<span class="o">=</span><span class="nb">true</span><span class="w"> </span>-pl<span class="w"> </span>nebula-spark-connector_3.0<span class="w"> </span>-am<span class="w"> </span>-Pscala-2.12<span class="w"> </span>-Pspark-3.0
 </code></pre></div>
-</li>
-</ol>
 </li>
 </ul>
 </li>
@@ -8338,7 +8328,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2023</span>
       
     
   </small>
