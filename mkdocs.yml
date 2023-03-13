@@ -758,4 +758,4 @@ nav:
       - 思维导图: 20.appendix/mind-map.md
       - 错误码: 20.appendix/error-code.md
 
-#  - PDF: ./pdf/NebulaGraph-CN.pdf
+  - PDF: ./pdf/NebulaGraph-CN.pdf
