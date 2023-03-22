@@ -19,7 +19,7 @@
     
     
       
-        <title>升级 v3.x 至 v3.4（企业版） - NebulaGraph Database 手册</title>
+        <title>升级 NebulaGraph 至 v3.4（企业版） - NebulaGraph Database 手册</title>
       
     
     
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              升级 v3.x 至 v3.4（企业版）
+              升级 NebulaGraph 至 v3.4（企业版）
             
           </span>
         </div>
@@ -3197,21 +3197,7 @@
   
     <li class="md-nav__item">
       <a href="../upgrade-nebula-graph-to-latest/" class="md-nav__link">
-        升级 v2.x 至 v3.4（社区版）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.x 至 v3.4（社区版）
+        升级 NebulaGraph 至 v3.4（社区版）
       </a>
     </li>
   
@@ -3234,12 +3220,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          升级 v3.x 至 v3.4（企业版）
+          升级 NebulaGraph 至 v3.4（企业版）
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        升级 v3.x 至 v3.4（企业版）
+        升级 NebulaGraph 至 v3.4（企业版）
       </a>
       
         
@@ -7707,11 +7693,17 @@
 
 
 <h1 id="nebulagraph_3x_340">升级企业版 NebulaGraph 3.x 至 3.4.0<a class="headerlink" href="#nebulagraph_3x_340" title="Permanent link">&para;</a></h1>
-<p>本文以企业版 NebulaGraph 3.1.0 为例，介绍如何升级至 3.4.0。</p>
+<p>本文以企业版 NebulaGraph 3.1.0 为例，介绍如何升级 v3.x 至 v3.4.0。</p>
 <h2 id="_1">升级说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>此升级操作仅适用于升级企业版 NebulaGraph 3.x 至 3.4.0。<!--因为企业版 NebulaGraph 3.4 中一个分片对应一个 RocksDB 实例不同于 3.4 之前的一个图空间对应一个 RocksDB 实例。--> 如果您的企业版 NebulaGraph 版本低于 3.0.0，请先升级到企业版 3.1.0 再升级到 3.4.0。具体操作请参见<a href="https://docs.nebula-graph.com.cn/3.1.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/">升级 NebulaGraph 2.x 至 3.1.0</a>。</li>
+<li>此升级操作仅适用于升级企业版 NebulaGraph 3.x（x &lt; 4）至 3.4.0。</li>
 </ul>
+<!--因为企业版 NebulaGraph 3.4 中一个分片对应一个 RocksDB 实例不同于 3.4 之前的一个图空间对应一个 RocksDB 实例。因此企业版3.4.0和之前版本数据格式不兼容-->
+
+<p>!!! note</p>
+<div class="codehilite"><pre><span></span><code>    如果您的企业版 NebulaGraph 版本低于 3.0.0，请先升级到企业版 3.1.0 再升级到 3.4.0。具体操作请参见[升级 NebulaGraph 2.x 至 3.1.0](https://docs.nebula-graph.com.cn/3.1.0/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/)。
+</code></pre></div>
+
 <ul>
 <li>执行升级操作的集群 IP 地址必须与原集群相同。</li>
 </ul>
@@ -7843,7 +7835,7 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2023</span>
       
     
   </small>
@@ -7877,7 +7869,7 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../upgrade-nebula-from-300-to-latest/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 升级 v3.x 至 v3.4（社区版）" rel="prev">
+        <a href="../upgrade-nebula-graph-to-latest/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 升级 NebulaGraph 至 v3.4（社区版）" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -7886,7 +7878,7 @@ nebula&gt; MATCH (v) RETURN v LIMIT 5;
               <span class="md-footer__direction">
                 上一页
               </span>
-              升级 v3.x 至 v3.4（社区版）
+              升级 NebulaGraph 至 v3.4（社区版）
             </div>
           </div>
         </a>
