@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nebulagraph_2x_330" class="md-skip">
+        <a href="#nebulagraph_330" class="md-skip">
           跳转至
         </a>
       
@@ -3365,20 +3365,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.0.x 至当前版本
-      </a>
     </li>
   
 
@@ -7411,10 +7397,15 @@
   </a>
 
 
-<h1 id="nebulagraph_2x_330">升级 NebulaGraph 2.x 至 3.3.0 版本<a class="headerlink" href="#nebulagraph_2x_330" title="Permanent link">&para;</a></h1>
-<p>本文以 NebulaGraph 2.6.1 版本升级到 3.3.0 版本为例，介绍 NebulaGraph 2.x 版本升级到 3.x 版本的方法。</p>
+<h1 id="nebulagraph_330">升级 NebulaGraph 至 3.3.0 版本<a class="headerlink" href="#nebulagraph_330" title="Permanent link">&para;</a></h1>
+<p>本文以 NebulaGraph 2.6.1 版本升级到 3.3.0 版本为例，介绍 NebulaGraph 2.x、3.x 版本升级到 3.3.0 版本的方法。</p>
+<!-- 
+- 3.0.0版本默认开启无tag点，升级2.x至3.0.0需要升级工具。
+- 针对版本间的升级3.0.0到3.2.x，不需要升级工具，此时需要单独的版本间的升级文档。
+- 在3.3.0版本默认关闭无tag点，数据结构无变化，此时升级2.x至3.x不要升级工具，也不需要单独的版本间的升级文档。-->
+
 <h2 id="_1">适用版本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>本文适用于将 NebulaGraph 从 2.0.0 及之后的 2.x 版本升级到 3.3.0 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
+<p>本文适用于将 NebulaGraph 从 2.0.0 及之后的 2.x、3.x 版本升级到 3.3.0 版本。不适用于 2.0.0 之前的历史版本（含 1.x 版本）。如需升级历史版本，将其根据最新的 2.x 版本文档升级到最新的 2.x 版本，然后根据本文的说明升级到 3.x 版本。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>如需从 2.0.0 之前的版本（含 1.x 版本）升级到 3.3.0，还需找到 3.3.0 版本文件中<code>share/resources</code>目录下的<code>date_time_zonespec.csv</code>文件，将其复制到 NebulaGraph 安装路径下的相同目录内。也可从 <a href="https://github.com/vesoft-inc/nebula/blob/master/resources/date_time_zonespec.csv">GitHub</a> 下载该文件。</p>
@@ -7476,10 +7467,10 @@
 <h2 id="_4">升级准备<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>根据操作系统和架构下载 NebulaGraph 3.3.0 版本的 TAR 文件并解压，升级过程中需要其中的二进制文件。TAR 包下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
+<p>根据操作系统和架构下载 NebulaGraph 3.3.0 版本的包文件并解压，升级过程中需要其中的二进制文件。下载地址参见 <a href="https://nebula-graph.io/download/">Download 页面</a>。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>编译源码或者下载RPM/DEB包也可以获取新版二进制文件。</p>
+<p>编译源码或者下载 RPM/DEB、TAR 包都可以获取新版二进制文件。</p>
 </div>
 </li>
 </ul>
@@ -7516,16 +7507,22 @@
 <p class="admonition-title">Note</p>
 <p>如果超过 20 分钟不能停止服务，放弃本次升级，在<a href="https://discuss.nebula-graph.com.cn/">论坛</a>或 <a href="https://github.com/vesoft-inc/nebula/issues">GitHub</a> 提问。</p>
 </div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>从 3.0.0 开始，支持插入无 Tag 的点。如果用户需要保留无 Tag 的点，在集群内所有 Graph 服务的配置文件（<code>nebula-graphd.conf</code>）中新增<code>--graph_use_vertex_key=true</code>；在所有 Storage 服务的配置文件（<code>nebula-storaged.conf</code>）中新增<code>--use_vertex_key=true</code>。</p>
+</div>
 </li>
 <li>
-<p>在<strong>升级准备</strong>中解压 TAR 包的目的路径下，用此处<code>bin</code>目录中的新版二进制文件替换 NebulaGraph 安装路径下<code>bin</code>目录中的旧版二进制文件。</p>
+<p>在<strong>升级准备</strong>中下载的包的目的路径下，用此处<code>bin</code>目录中的新版二进制文件替换 NebulaGraph 安装路径下<code>bin</code>目录中的旧版二进制文件。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>每台部署了 NebulaGraph 服务的机器上都要更新相应服务的二进制文件。</p>
 </div>
 </li>
 <li>
-<p>编辑所有 Graph 服务的配置文件，修改以下参数以适应新版本的取值范围。如参数值已在规定范围内，忽略该步骤。</p>
+<p>编辑所有 Graph 服务的配置文件，修改以下参数以适应新版本的取值范围。如参数值已在规定范围内，忽略该步骤。
+   <!-- 在3.0.0后可忽略该步骤，因为3.0.0及之后配置文件中改了该字段的默认值。 -->
+</p>
 <ul>
 <li>为<code>session_idle_timeout_secs</code>参数设置一个在 [1,604800] 区间的值，推荐值为 28800。</li>
 <li>为<code>client_idle_timeout_secs</code>参数设置一个在 [1,604800] 区间的值，推荐值为 28800。</li>
@@ -7604,7 +7601,7 @@ A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文�
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2023</span>
       
     
   </small>
@@ -7654,13 +7651,13 @@ A: 有部分 glags 改变了，详情参见版本发布说明和配置说明文�
       
       
         
-        <a href="../upgrade-nebula-from-300-to-latest/" class="md-footer__link md-footer__link--next" aria-label="下一页: 升级 v3.0.x 至当前版本" rel="next">
+        <a href="../../4.uninstall-nebula-graph/" class="md-footer__link md-footer__link--next" aria-label="下一页: 卸载 NebulaGraph" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              升级 v3.0.x 至当前版本
+              卸载 NebulaGraph
             </div>
           </div>
           <div class="md-footer__button md-icon">
