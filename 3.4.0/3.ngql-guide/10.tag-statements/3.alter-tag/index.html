@@ -7718,10 +7718,6 @@
 <ul>
 <li>确保新增的属性名不与已存在或被删除的属性名同名，否则新增属性会失败。</li>
 </ul>
-<ul>
-<li>仅允许<strong>增加</strong><code>FIXED_STRING</code>和<code>INT</code>类型的长度，不允许减少长度。</li>
-<li>仅允许转换<code>FIXED_STRING</code>类型为<code>STRING</code>类型、转换<code>FLOAT</code>类型为<code>DOUBLE</code>类型。</li>
-</ul>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ALTER TAG &lt;tag_name&gt;
     &lt;alter_definition&gt; [[, alter_definition] ...]
@@ -7744,6 +7740,15 @@ ttl_definition:
 </ul>
 <ul>
 <li>当使用<code>ADD</code>或<code>CHANGE</code>指定属性值为<code>NOT NULL</code>时，必需为该属性指定默认值，即定义<code>DEFAULT</code>的值。</li>
+</ul>
+<ul>
+<li>
+<p>当使用<code>CHANGE</code>修改属性的数据类型时：</p>
+<ul>
+<li>仅允许修改<code>FIXED_STRING</code>和<code>INT</code>类型的长度为更大的长度，不允许减少长度。</li>
+<li>仅允许修改<code>FIXED_STRING</code>类型为<code>STRING</code>类型、修改<code>FLOAT</code>类型为<code>DOUBLE</code>类型。</li>
+</ul>
+</li>
 </ul>
 <h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG IF NOT EXISTS t1 (p1 string, p2 int);
