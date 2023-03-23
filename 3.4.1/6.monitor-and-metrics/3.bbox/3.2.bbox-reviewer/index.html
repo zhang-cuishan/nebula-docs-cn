@@ -7837,7 +7837,7 @@
 </tbody>
 </table>
 <h2 id="nebula-bbox_1">部署 Nebula-BBox<a class="headerlink" href="#nebula-bbox_1" title="Permanent link">&para;</a></h2>
-<p>支持多种部署方式，包括 RPM、DEB、Docker 等。本文以 RPM 部署为例介绍如何部署 Nebula-BBox。</p>
+<p>支持多种部署方式，包括 RPM、DEB、TAR、Docker 等。本文以 RPM 部署为例介绍如何部署 Nebula-BBox。</p>
 <ol>
 <li>
 <p>获取 RPM 安装包。</p>
@@ -7849,15 +7849,19 @@
 <li>
 <p>使用<code>sudo rpm -i &lt;rpm&gt;</code>命令安装 RPM 包。</p>
 <p>例如，<code>sudo rpm -i nebula-bbox-&lt;version&gt;.x86_64.rpm</code></p>
-<p>Nebula-BBox 以二进制文件的形式安装在默认路径<code>/usr/bin/</code>下。</p>
+<p>Nebula-BBox 以二进制文件（文件名为<code>nebula-bbox</code>）的形式安装在默认路径<code>/usr/bin/</code>下。</p>
 </li>
 </ol>
 <h2 id="nebula-bbox_2">使用 Nebula-BBox<a class="headerlink" href="#nebula-bbox_2" title="Permanent link">&para;</a></h2>
 <p>用户可以执行<code>nebula-bbox -h/--help</code>查看 Nebula-BBox 的帮助信息。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>对于安装在非默认路径（默认为<code>/usr/bin/</code>）下的 Nebula-BBox，执行<code>nebula-bbox</code>相关命令时，需指定 Nebula-BBox 的安装路径。例如，Nebula-BBox 安装在<code>/usr/bbox</code>下，则需执行<code>/usr/bbox/nebula-bbox -h</code>。</p>
+</div>
 <h3 id="nebula-bbox_3">查看 Nebula-BBox 版本<a class="headerlink" href="#nebula-bbox_3" title="Permanent link">&para;</a></h3>
 <p>执行<code>nebula-bbox version</code>查看 Nebula-BBox 的版本信息。</p>
 <h3 id="_2">查看采集的所有指标<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>执行<code>nebula-bbox metrics</code>命令查看 Nebula-BBox 采集的所有指标。关于指标的详细信息，参见<a href="https://man7.org/linux/man-pages/man5/proc.5.html">PROC(5)</a>。</p>
+<p>执行<code>nebula-bbox metrics</code>命令查看 Nebula-BBox 采集的所有指标。关于指标的详细信息，参见 <a href="https://man7.org/linux/man-pages/man5/proc.5.html">PROC(5)</a>。</p>
 <h3 id="_3">查看黑匣子文件数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>通过 Nebula-BBox，用户可以查看黑匣子文件的指标数据。语法如下：</p>
 <div class="highlight"><pre><span></span><code>nebula-bbox<span class="w"> </span>view<span class="w"> </span><span class="o">[(</span>-o<span class="p">|</span>--output<span class="o">=)</span>tui<span class="p">|</span>csv<span class="o">]</span><span class="w"> </span><span class="o">[</span>--metrics<span class="w"> </span>name<span class="o">[</span>,name<span class="w"> </span>...<span class="o">]]</span><span class="w"> </span><span class="o">[</span>flags<span class="o">]</span><span class="w"> </span><span class="o">(</span>FILE<span class="w"> </span><span class="p">|</span><span class="w"> </span>DIRECTORY<span class="w"> </span>...<span class="o">)</span>
@@ -7928,7 +7932,7 @@
 <td align="left"><code>nebula-bbox view --metrics &lt;name&gt; /usr/local/nebula/black_box</code></td>
 </tr>
 <tr>
-<td align="left">将所有文件中指定的指标数据导出为 CSV 文件。</td>
+<td align="left">将所有文件中指定的指标数据导出为 CSV 文件</td>
 <td align="left"><code>nebula-bbox view --metrics &lt;name1&gt;[,&lt;name2&gt; ...] --output csv --output-file &lt;csv_filename&gt;.csv /usr/local/nebula/black_box</code></td>
 </tr>
 <tr>
@@ -8017,7 +8021,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2023</span>
       
     
   </small>
