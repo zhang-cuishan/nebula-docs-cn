@@ -8011,8 +8011,9 @@ nebula&gt; MATCH (v:player)-[e]-&gt;() \
 +--------------+
 </code></pre></div>
 <h2 id="_3">返回属性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>使用语法<code>{&lt;vertex_name&gt;|&lt;edge_name&gt;}.&lt;property&gt;</code>返回点或边的属性。</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player) \
+<p>使用语法<code>&lt;vertex_name&gt;.&lt;tag_name&gt;.&lt;property_name&gt;</code>返回点的属性；使用语法<code>&lt;edge_name&gt;.&lt;property_name&gt;</code>返回边的属性。</p>
+<div class="highlight"><pre><span></span><code>// 返回点的属性
+nebula&gt; MATCH (v:player) \
         RETURN v.player.name, v.player.age \
         LIMIT 3;
 +------------------+--------------+
@@ -8022,6 +8023,17 @@ nebula&gt; MATCH (v:player)-[e]-&gt;() \
 | &quot;Tiago Splitter&quot; | 34           |
 | &quot;David West&quot;     | 38           |
 +------------------+--------------+
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>// 返回边的属性
+nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})-[e]-&gt;() \
+        RETURN e.start_year, e.degree \
++--------------+----------+
+| e.start_year | e.degree |
++--------------+----------+
+| __NULL__     | 95       |
+| __NULL__     | 95       |
+| 1997         | __NULL__ |
++--------------+----------+
 </code></pre></div>
 <p>使用<code>properties()</code>函数返回点或边的所有属性。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[]-&gt;(v2) \
@@ -8221,7 +8233,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tony Parker&quot;})--(v2:player) \
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2023</span>
       
     
   </small>
