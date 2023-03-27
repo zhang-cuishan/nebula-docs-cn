@@ -3246,21 +3246,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/" class="md-nav__link">
-        升级 v2.x 至 v3.4（社区版）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.x 至 v3.4（社区版）
+        升级 NebulaGraph 至 v3.4（社区版）
       </a>
     </li>
   
@@ -3274,7 +3260,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-ent-from-3.x-3.4/" class="md-nav__link">
-        升级 v3.x 至 v3.4（企业版）
+        升级 NebulaGraph 至 v3.4（企业版）
       </a>
     </li>
   
@@ -7018,22 +7004,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
+        连接 NebulaGraph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_5" type="checkbox" id="__nav_20_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_6" type="checkbox" id="__nav_20_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_20_5">
+        <label class="md-nav__link" for="__nav_20_6">
           配置 NebulaGraph
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="配置 NebulaGraph" data-md-level="2">
-        <label class="md-nav__title" for="__nav_20_5">
+        <label class="md-nav__title" for="__nav_20_6">
           <span class="md-nav__icon md-icon"></span>
           配置 NebulaGraph
         </label>
@@ -7081,6 +7081,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/" class="md-nav__link">
+        管理集群日志
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7108,8 +7122,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
-        连接 NebulaGraph
+      <a href="../../../nebula-operator/11.rolling-update-strategy/" class="md-nav__link">
+        配置滚动更新策略
       </a>
     </li>
   
@@ -7692,7 +7706,7 @@
 </ul>
 <ul>
 <li>
-<p><code>rank</code>：可选项。边的 rank 值。默认值为<code>0</code>。</p>
+<p><code>rank</code>：可选项。边的 rank 值。数据类型为<code>int</code>。默认值为<code>0</code>。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">openCypher 兼容性</p>
 <p>openCypher 中没有 rank 的概念。</p>
@@ -7748,7 +7762,7 @@ nebula&gt; FETCH PROP ON e2 &quot;14&quot;-&gt;&quot;15&quot;@1 YIELD edge AS e;
 <p class="admonition-title">Note</p>
 <ul>
 <li>NebulaGraph 3.4.1 允许存在悬挂边（Dangling edge）。因此可以在起点或者终点存在前，先写边；此时就可以通过 <code>&lt;edgetype&gt;._src</code>或<code>&lt;edgetype&gt;._dst</code>获取到（尚未写入的）点 VID（不建议这样使用）。</li>
-<li>目前还不能保证操作的原子性，如果失败请重试，否则会发生部分写入。此时读取该数据的行为是未定义的。</li>
+<li>目前还不能保证操作的原子性，如果失败请重试，否则会发生部分写入。此时读取该数据的行为是未定义的。例如写入操作涉及到多个机器时，可能会出现插入单个边的正反向边只写入成功一个，或者插入多个边时只写入成功一部分，此时会返回报错，请重新执行命令。</li>
 <li>并发写入同一条边会报<code>edge conflict</code>错误，可稍后重试。</li>
 <li><code>边的 INSERT 速度</code>大约是点的 INSERT 速度一半。原因是 INSERT 边会对应 storaged 的两个 INSERT，<code>INSERT 点</code>对应 storaged 的一个 INSERT。</li>
 </ul>
@@ -7759,7 +7773,7 @@ nebula&gt; FETCH PROP ON e2 &quot;14&quot;-&gt;&quot;15&quot;@1 YIELD edge AS e;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
       
     
   </small>

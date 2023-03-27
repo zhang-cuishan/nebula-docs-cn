@@ -3194,21 +3194,7 @@
   
     <li class="md-nav__item">
       <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/" class="md-nav__link">
-        升级 v2.x 至 v3.4（社区版）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.x 至 v3.4（社区版）
+        升级 NebulaGraph 至 v3.4（社区版）
       </a>
     </li>
   
@@ -3222,7 +3208,7 @@
   
     <li class="md-nav__item">
       <a href="../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-ent-from-3.x-3.4/" class="md-nav__link">
-        升级 v3.x 至 v3.4（企业版）
+        升级 NebulaGraph 至 v3.4（企业版）
       </a>
     </li>
   
@@ -7117,22 +7103,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
+        连接 NebulaGraph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_5" type="checkbox" id="__nav_20_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_6" type="checkbox" id="__nav_20_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_20_5">
+        <label class="md-nav__link" for="__nav_20_6">
           配置 NebulaGraph
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="配置 NebulaGraph" data-md-level="2">
-        <label class="md-nav__title" for="__nav_20_5">
+        <label class="md-nav__title" for="__nav_20_6">
           <span class="md-nav__icon md-icon"></span>
           配置 NebulaGraph
         </label>
@@ -7180,6 +7180,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/" class="md-nav__link">
+        管理集群日志
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7207,8 +7221,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
-        连接 NebulaGraph
+      <a href="../../nebula-operator/11.rolling-update-strategy/" class="md-nav__link">
+        配置滚动更新策略
       </a>
     </li>
   
@@ -7925,7 +7939,7 @@
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-&lt;version&gt;.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>&lt;install_path&gt;
 </code></pre></div>
 <p>例如：</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-3.4.1.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/local/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>tar<span class="w"> </span>-xzvf<span class="w"> </span>nebula-dashboard-ent-3.4.2.linux-amd64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/usr/local/
 </code></pre></div>
 </li>
 <li>
@@ -8084,7 +8098,7 @@ ldap:
 <li>
 <p>使用<code>sudo dpkg -i &lt;package_name&gt;</code>命令安装 DEB 包。</p>
 <p>例如，安装 Dashboard 企业版需要运行以下命令，默认安装路径为<code>/usr/local/nebula-dashboard-ent</code>：</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-dashboard-ent-3.4.1.ubuntu1804.amd64.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-dashboard-ent-3.4.2.ubuntu1804.amd64.deb
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

@@ -3194,21 +3194,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/" class="md-nav__link">
-        升级 v2.x 至 v3.4（社区版）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.x 至 v3.4（社区版）
+        升级 NebulaGraph 至 v3.4（社区版）
       </a>
     </li>
   
@@ -3222,7 +3208,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-ent-from-3.x-3.4/" class="md-nav__link">
-        升级 v3.x 至 v3.4（企业版）
+        升级 NebulaGraph 至 v3.4（企业版）
       </a>
     </li>
   
@@ -4026,6 +4012,13 @@
       
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    查看备份进度
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
     下一步
   </a>
   
@@ -7107,22 +7100,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
+        连接 NebulaGraph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_5" type="checkbox" id="__nav_20_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_6" type="checkbox" id="__nav_20_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_20_5">
+        <label class="md-nav__link" for="__nav_20_6">
           配置 NebulaGraph
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="配置 NebulaGraph" data-md-level="2">
-        <label class="md-nav__title" for="__nav_20_5">
+        <label class="md-nav__title" for="__nav_20_6">
           <span class="md-nav__icon md-icon"></span>
           配置 NebulaGraph
         </label>
@@ -7170,6 +7177,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/" class="md-nav__link">
+        管理集群日志
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7197,8 +7218,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
-        连接 NebulaGraph
+      <a href="../../../nebula-operator/11.rolling-update-strategy/" class="md-nav__link">
+        配置滚动更新策略
       </a>
     </li>
   
@@ -7803,6 +7824,13 @@
       
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
+    查看备份进度
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
     下一步
   </a>
   
@@ -8049,7 +8077,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_13">下一步<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h2 id="_13">查看备份进度<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p>在安装目录内可以查看 BR 的日志文件<code>br.log</code>。日志文件会记录备份进度，内容类似：</p>
+<div class="highlight"><pre><span></span><code>{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;full upload storaged partition finished, progress: 1/20&quot;,&quot;time&quot;:&quot;2023-03-15T02:13:20.946Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;full upload storaged partition finished, progress: 2/20&quot;,&quot;time&quot;:&quot;2023-03-15T02:13:21.154Z&quot;}
+{&quot;level&quot;:&quot;info&quot;,&quot;msg&quot;:&quot;full upload storaged partition finished, progress: 3/20&quot;,&quot;time&quot;:&quot;2023-03-15T02:13:21.537Z&quot;}
+</code></pre></div>
+<h2 id="_14">下一步<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
 <p>备份目录生成后，可以将备份目录的数据恢复到 NebulaGraph 中。具体操作，参见<a href="../4.restore-data/">恢复数据</a>。</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -8061,7 +8095,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
       
     
   </small>

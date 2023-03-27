@@ -641,13 +641,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    缓存
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hdfs" class="md-nav__link">
     与 HDFS 的区别
   </a>
@@ -3369,21 +3362,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/" class="md-nav__link">
-        升级 v2.x 至 v3.4（社区版）
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-from-300-to-latest/" class="md-nav__link">
-        升级 v3.x 至 v3.4（社区版）
+        升级 NebulaGraph 至 v3.4（社区版）
       </a>
     </li>
   
@@ -3397,7 +3376,7 @@
   
     <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-ent-from-3.x-3.4/" class="md-nav__link">
-        升级 v3.x 至 v3.4（企业版）
+        升级 NebulaGraph 至 v3.4（企业版）
       </a>
     </li>
   
@@ -7141,22 +7120,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
+        连接 NebulaGraph
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_5" type="checkbox" id="__nav_20_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_20_6" type="checkbox" id="__nav_20_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_20_5">
+        <label class="md-nav__link" for="__nav_20_6">
           配置 NebulaGraph
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="配置 NebulaGraph" data-md-level="2">
-        <label class="md-nav__title" for="__nav_20_5">
+        <label class="md-nav__title" for="__nav_20_6">
           <span class="md-nav__icon md-icon"></span>
           配置 NebulaGraph
         </label>
@@ -7204,6 +7197,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/" class="md-nav__link">
+        管理集群日志
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -7231,8 +7238,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-operator/4.connect-to-nebula-graph-service/" class="md-nav__link">
-        连接 NebulaGraph
+      <a href="../../../nebula-operator/11.rolling-update-strategy/" class="md-nav__link">
+        配置滚动更新策略
       </a>
     </li>
   
@@ -7863,13 +7870,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    缓存
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hdfs" class="md-nav__link">
     与 HDFS 的区别
   </a>
@@ -8183,14 +8183,16 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
 <p>对于 leader 来说，提交 leader 切换命令时，就会放弃自己的 leader 身份，当 follower 收到 leader 切换命令时，就会发起选举。</p>
 <h3 id="_7">成员变更<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>为了避免脑裂，当一个 Raft group 的成员发生变化时，需要有一个中间状态，该状态下新旧 group 的多数派需要有重叠的部分，这样就防止了新的 group 或旧的 group 单方面做出决定。为了更加简化，Diego Ongaro 在自己的博士论文中提出每次只增减一个 peer 的方式，以保证新旧 group 的多数派总是有重叠。NebulaGraph 也采用了这个方式，只不过增加成员和移除成员的实现有所区别。具体实现方式请参见 Raft Part class 里 addPeer/removePeer 的实现。</p>
-<!-- open after fully tested
+<!---  open after fully tested 企业版功能，放出后记得加宏标签 
 
-<!-- -->
-<h2 id="_8">缓存<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>由于 RocksDB 本身的缓存管理存在限制，无法按需缓存点或边，所以 NebulaGraph 自行实现了 Storage 缓存管理，可以更自由地设置缓存大小、内容等。详情参见 <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">storage cache 配置</a>。</p>
-<p>用户可以通过 cURL 命令<code>curl "http://[storaged IP]:[http port]/cache?stats"</code>查询缓存数据信息。</p>
-<!-- -->
-<p>--&gt;</p>
+## 缓存
+
+由于 RocksDB 本身的缓存管理存在限制，无法按需缓存点或边，所以 NebulaGraph 自行实现了 Storage 缓存管理，可以更自由地设置缓存大小、内容等。详情参见 [storage cache 配置](../../5.configurations-and-logs/1.configurations/4.storage-config.md)。
+
+用户可以通过 cURL 命令`curl "http://[storaged IP]:[http port]/cache?stats"`查询缓存数据信息。
+
+--->
+
 <h2 id="hdfs">与 HDFS 的区别<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h2>
 <p>Storage 服务基于 Raft 协议实现的分布式架构，与 HDFS 的分布式架构有一些区别。例如：</p>
 <ul>
@@ -8221,7 +8223,7 @@ Raft listener 进程还可以从 Leader 获取数据后，然后将它们写入 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
       
     
   </small>
