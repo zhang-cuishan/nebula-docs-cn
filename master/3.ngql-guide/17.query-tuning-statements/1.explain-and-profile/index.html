@@ -2941,6 +2941,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tck" class="md-nav__link">
+    tck格式
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7686,6 +7693,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tck" class="md-nav__link">
+    tck格式
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7715,17 +7729,17 @@
 <p>例如<code>SHOW TAGS</code>语句分为两个<code>action</code>，<code>operator</code>为<code>Start</code>和<code>ShowTags</code>。更复杂的<code>GO</code>语句可能会被处理成 10 个以上的<code>action</code>。</p>
 <h2 id="_2">语法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>EXPLAIN</code><div class="highlight"><pre><span></span><code>EXPLAIN [format= {&quot;row&quot; | &quot;dot&quot;}] &lt;your_nGQL_statement&gt;;
+<li><code>EXPLAIN</code><div class="highlight"><pre><span></span><code>EXPLAIN [format= {&quot;row&quot; | &quot;dot&quot; | &quot;tck&quot;}] &lt;your_nGQL_statement&gt;;
 </code></pre></div>
 </li>
 </ul>
 <ul>
-<li><code>PROFILE</code><div class="highlight"><pre><span></span><code>PROFILE [format= {&quot;row&quot; | &quot;dot&quot;}] &lt;your_nGQL_statement&gt;;
+<li><code>PROFILE</code><div class="highlight"><pre><span></span><code>PROFILE [format= {&quot;row&quot; | &quot;dot&quot; | &quot;tck&quot;}] &lt;your_nGQL_statement&gt;;
 </code></pre></div>
 </li>
 </ul>
 <h2 id="_3">输出格式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><code>EXPLAIN</code>或<code>PROFILE</code>语句的输出有两种格式：<code>row</code>（默认）和<code>dot</code>。用户可以使用<code>format</code>选项修改输出格式。</p>
+<p><code>EXPLAIN</code>或<code>PROFILE</code>语句的输出有三种格式：<code>row</code>（默认）、<code>dot</code>和<code>tck</code>。用户可以使用<code>format</code>选项修改输出格式。</p>
 <h2 id="row"><code>row</code>格式<a class="headerlink" href="#row" title="Permanent link">&para;</a></h2>
 <p><code>row</code>格式将返回信息输出到一个表格中。</p>
 <ul>
@@ -7820,13 +7834,56 @@ Execution Plan
 </code></pre></div>
 <p>将上述示例的 DOT 语言转换为 Graphviz 图，如下所示。</p>
 <p><img alt="Graphviz graph of EXPLAIN SHOW TAGS" src="https://docs-cdn.nebula-graph.com.cn/docs-2.0/3.ngql-guide/16.query-tuning-statements/explain-show-tags.png" /></p>
+<h2 id="tck"><code>tck</code>格式<a class="headerlink" href="#tck" title="Permanent link">&para;</a></h2>
+<p><code>tck</code>格式类似于表格，但是没有边框和行之间的间的分割线。用户可以将结果用在单元测试的测试用例中。
+关于<code>tck</code>格式的测试用例，参见 <a href="https://github.com/vesoft-inc/nebula/tree/master/tests/tck/features">TCK case</a>。</p>
+<ul>
+<li><code>EXPLAIN</code><div class="highlight"><pre><span></span><code>nebula&gt; EXPLAIN format=&quot;tck&quot; FETCH PROP ON player &quot;player_1&quot;,&quot;player_2&quot;,&quot;player_3&quot; YIELD properties(vertex).name as name, properties(vertex).age as age;
+Execution succeeded (time spent 261µs/613.718µs)
+
+Execution Plan (optimize time 28 us)
+
+
+| id | name        | dependencies | profiling data | operator info |
+|  2 | Project     | 1            |                |               |
+|  1 | GetVertices | 0            |                |               |
+|  0 | Start       |              |                |               |
+
+
+Wed, 22 Mar 2023 23:15:52 CST
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li><code>PROFILE</code><div class="highlight"><pre><span></span><code>nebula&gt; PROFILE format=&quot;tck&quot; FETCH PROP ON player &quot;player_1&quot;,&quot;player_2&quot;,&quot;player_3&quot; YIELD properties(vertex).name as name, properties(vertex).age as age;
+
+| name         | age |
+| &quot;Piter Park&quot; | 24  |
+| &quot;aaa&quot;        | 24  |
+| &quot;ccc&quot;        | 24  |
+
+Got 3 rows (time spent 1.474ms/2.19677ms)
+
+Execution Plan (optimize time 41 us)
+
+
+| id | name        | dependencies | profiling data                                                                                                      | operator info |
+|  2 | Project     | 1            | {&quot;rows&quot;:3,&quot;version&quot;:0}                                                                                              |               |
+|  1 | GetVertices | 0            | {&quot;resp[0]&quot;:{&quot;exec&quot;:&quot;232(us)&quot;,&quot;host&quot;:&quot;127.0.0.1:9779&quot;,&quot;total&quot;:&quot;758(us)&quot;},&quot;rows&quot;:3,&quot;total_rpc&quot;:&quot;875(us)&quot;,&quot;version&quot;:0} |               |
+|  0 | Start       |              | {&quot;rows&quot;:0,&quot;version&quot;:0}                                                                                              |               |
+
+
+Wed, 22 Mar 2023 23:16:13 CST
+</code></pre></div>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 31, 2023</span>
       
     
   </small>
