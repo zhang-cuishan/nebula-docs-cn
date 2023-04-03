@@ -8146,7 +8146,7 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) \
 | (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;}) |
 +-----------------------------------------------------+
 </code></pre></div>
-<p>要匹配多个点的 ID，可以用<code>WHERE id(v) IN [vid_list]</code>。</p>
+<p>要匹配多个点的 ID，可以用<code>WHERE id(v) IN [vid_list]</code>或者<code>WHERE id(v) IN {vid_list}</code>。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player { name: &#39;Tim Duncan&#39; })--(v2) \
         WHERE id(v2) IN [&quot;player101&quot;, &quot;player102&quot;] \
         RETURN v2;
@@ -8157,6 +8157,15 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;}) \
 | (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})       |
 | (&quot;player102&quot; :player{age: 33, name: &quot;LaMarcus Aldridge&quot;}) |
 +-----------------------------------------------------------+
+
+nebula&gt; MATCH (v) WHERE id(v) IN {&quot;player100&quot;, &quot;player101&quot;} \
+        RETURN v.player.name AS name;
++---------------+
+| name          |
++---------------+
+| &quot;Tony Parker&quot; |
+| &quot;Tim Duncan&quot;  |
++---------------+
 </code></pre></div>
 <h3 id="_7">匹配连接的点<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>用户可以使用<code>--</code>符号表示两个方向的边，并匹配这些边连接的点。</p>
@@ -8516,7 +8525,7 @@ nebula&gt; MATCH (v1:player{name:&quot;Tim Duncan&quot;}), (v2:team{name:&quot;S
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>
