@@ -7921,13 +7921,15 @@
 </ul>
 </li>
 <li>
-<p>进入目录<code>nebula</code>。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>nebula
+<p>进入<code>nebula/third-party</code>目录，安装 NebulaGraph 依赖的第三方库。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>nebula/third-party
+$<span class="w"> </span>./install-third-party.sh
 </code></pre></div>
 </li>
 <li>
-<p>创建目录<code>build</code>并进入该目录。</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+<p>返回<code>nebula</code>目录，创建目录<code>build</code>并进入该目录。</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+$<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 </code></pre></div>
 </li>
 <li>
@@ -8056,7 +8058,7 @@ $<span class="w"> </span>cmake<span class="w"> </span>-DCMAKE_C_COMPILER<span cl
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>
