@@ -5244,12 +5244,73 @@
       
       
         <label class="md-nav__link" for="__nav_16_6_4">
+          分析诊断
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="分析诊断" data-md-level="3">
+        <label class="md-nav__title" for="__nav_16_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          分析诊断
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/slow-query-analyst/" class="md-nav__link">
+        慢查询分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/cluster-diagnosis/" class="md-nav__link">
+        集群诊断
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_5" type="checkbox" id="__nav_16_6_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16_6_5">
           集群信息
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="集群信息" data-md-level="3">
-        <label class="md-nav__title" for="__nav_16_6_4">
+        <label class="md-nav__title" for="__nav_16_6_5">
           <span class="md-nav__icon md-icon"></span>
           集群信息
         </label>
@@ -5275,7 +5336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/cluster-diagnosis/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/cluster-diagnosis.md" class="md-nav__link">
         集群诊断
       </a>
     </li>
@@ -5341,18 +5402,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_5" type="checkbox" id="__nav_16_6_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_6" type="checkbox" id="__nav_16_6_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_6_5">
+        <label class="md-nav__link" for="__nav_16_6_6">
           集群操作
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="集群操作" data-md-level="3">
-        <label class="md-nav__title" for="__nav_16_6_5">
+        <label class="md-nav__title" for="__nav_16_6_6">
           <span class="md-nav__icon md-icon"></span>
           集群操作
         </label>
@@ -7759,7 +7820,7 @@
 </tr>
 <tr>
 <td align="left"><code>&lt;graph_space_name&gt;</code></td>
-<td align="left">在 NebulaGraph 实例中唯一标识一个图空间。图空间名称以英文字母开头，支持 1~4 字节的 UTF-8 编码字符，包括英文字母（区分大小写）、数字、中文等，但是不包括除下划线外的特殊字符。使用特殊字符或保留关键字时，需要用反引号（`）包围，详情参见<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</td>
+<td align="left">1、在 NebulaGraph 实例中唯一标识一个图空间。<br/>2、图空间名称设置后无法被修改。<br/>3、不能以数字开头；支持 1~4 字节的 UTF-8 编码字符，包括英文字母（区分大小写）、数字、中文等，但是不包括除下划线外的特殊字符；使用特殊字符、保留关键字或数字开头时，需要用反引号（`）包围且不能使用英文句号（<code>.</code>）。详情参见<a href="../../1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。<br/><strong>注意</strong>：如果以中文为图空间命名，报<code>SyntaxError</code>错误时，需使用反引号（`）包围中文字符。</td>
 </tr>
 <tr>
 <td align="left"><code>partition_num</code></td>
@@ -7898,7 +7959,7 @@ nebula&gt; SHOW HOSTS;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>

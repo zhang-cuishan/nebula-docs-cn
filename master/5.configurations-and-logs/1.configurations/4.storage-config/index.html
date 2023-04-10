@@ -5287,12 +5287,73 @@
       
       
         <label class="md-nav__link" for="__nav_16_6_4">
+          分析诊断
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="分析诊断" data-md-level="3">
+        <label class="md-nav__title" for="__nav_16_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          分析诊断
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/slow-query-analyst/" class="md-nav__link">
+        慢查询分析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/cluster-diagnosis/" class="md-nav__link">
+        集群诊断
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_5" type="checkbox" id="__nav_16_6_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_16_6_5">
           集群信息
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="集群信息" data-md-level="3">
-        <label class="md-nav__title" for="__nav_16_6_4">
+        <label class="md-nav__title" for="__nav_16_6_5">
           <span class="md-nav__icon md-icon"></span>
           集群信息
         </label>
@@ -5318,7 +5379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/cluster-diagnosis/" class="md-nav__link">
+      <a href="../../../nebula-dashboard-ent/4.cluster-operator/cluster-information/cluster-diagnosis.md" class="md-nav__link">
         集群诊断
       </a>
     </li>
@@ -5384,18 +5445,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_5" type="checkbox" id="__nav_16_6_5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_6_6" type="checkbox" id="__nav_16_6_6" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_6_5">
+        <label class="md-nav__link" for="__nav_16_6_6">
           集群操作
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="集群操作" data-md-level="3">
-        <label class="md-nav__title" for="__nav_16_6_5">
+        <label class="md-nav__title" for="__nav_16_6_6">
           <span class="md-nav__icon md-icon"></span>
           集群操作
         </label>
@@ -8176,6 +8237,12 @@
 <td align="left">支持</td>
 </tr>
 <tr>
+<td align="left"><code>num_max_connections</code></td>
+<td align="left"><code>0</code></td>
+<td align="left">所有网络线程的最大活动连接数，<code>0</code>表示没有限制。<br/>每个网络线程的最大连接数=<code>num_max_connections</code>/<code>num_netio_threads</code>。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
 <td align="left"><code>num_worker_threads</code></td>
 <td align="left"><code>32</code></td>
 <td align="left">Storage 的 RPC 服务的工作线程数量。</td>
@@ -8430,7 +8497,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
       
     
   </small>
