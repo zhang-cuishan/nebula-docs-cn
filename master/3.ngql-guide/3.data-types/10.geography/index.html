@@ -7755,6 +7755,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>请勿直接插入上述类型的 GEOGRAPHY 数据，例如<code>INSERT VERTEX any_shape(geo) VALUES "1":("POINT(1 1)")</code>，需要使用 <a href="../../6.functions-and-expressions/14.geo/">geo 函数</a>指定数据类型后才能插入，例如<code>INSERT VERTEX any_shape(geo) VALUES "1":(ST_GeogFromText("POINT(1 1)"));</code>。</p>
+</div>
 <!--
 ## 索引
 
@@ -7765,7 +7769,6 @@
 -->
 
 <h2 id="_2">示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>geo 相关函数请参见 <a href="../../6.functions-and-expressions/14.geo/">geo 函数</a>。</p>
 <div class="highlight"><pre><span></span><code>//创建 Tag，允许存储任意形状地理位置数据类型。
 nebula&gt; CREATE TAG IF NOT EXISTS any_shape(geo geography);
 
@@ -7849,7 +7852,7 @@ nebula&gt; LOOKUP ON any_shape YIELD ST_ASText(any_shape.geo);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 11, 2023</span>
       
     
   </small>
