@@ -8421,8 +8421,8 @@ nebula&gt; MATCH (v:player{name:&quot;Tim Duncan&quot;})--&gt;(v2:player) \
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>如果想要通过描述多跳的边的过滤条件，比如<code>-[e:follow*2]-&gt;</code>，这时候 <code>e</code> 不再是单条边时候的数据类型了，而是一列边组成的列表，例如：
-以下语句可以运行但是没有返回数据，因为<code>e</code>是一个列表，没有<code>.degree</code>的属性。
+<p>在对匹配的多跳边进行过滤时，如对<code>-[e:follow*2]-&gt;</code>中的<code>e</code>进行过滤，此时的<code>e</code>不再是单条边的数据类型，而是一个包含多条边的列表，例如：</p>
+<p>以下语句可以运行但是没有返回数据，因为<code>e</code>是一个列表，没有<code>.degree</code>的属性。
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*2]-&gt;(v2) \
         WHERE e.degree &gt; 1 \
         RETURN DISTINCT v2 AS Friends;
@@ -8516,6 +8516,14 @@ nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow*1..]-&gt;(v
 | (&quot;player101&quot; :player{age: 36, name: &quot;Tony Parker&quot;})       | 3         |
 +-----------------------------------------------------------+-----------+
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当在模式中使用变量<code>e</code>匹配定长或者变长路径时，例如<code>-[e:follow*0..3]-&gt;</code>，不支持在其他模式中引用<code>e</code>。例如，不支持以下语句：</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e:like*1..3]-&gt;(n) \
+        WHERE (n)-[e*1..4]-&gt;(:player) \
+        RETURN v;
+</code></pre></div>
+</div>
 <h3 id="edge_type_2">匹配多个 Edge type 的变长路径<a class="headerlink" href="#edge_type_2" title="Permanent link">&para;</a></h3>
 <p>用户可以在变长或定长模式中指定多个 Edge type。<code>hop</code>、<code>minHop</code>和<code>maxHop</code>对所有 Edge type 都生效。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; MATCH p=(v:player{name:&quot;Tim Duncan&quot;})-[e:follow|serve*2]-&gt;(v2) \
@@ -8586,7 +8594,7 @@ nebula&gt; MATCH (v1:player{name:&quot;Tim Duncan&quot;}), (v2:team{name:&quot;S
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
       
     
   </small>
