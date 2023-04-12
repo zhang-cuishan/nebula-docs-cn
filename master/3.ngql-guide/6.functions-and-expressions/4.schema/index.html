@@ -1552,8 +1552,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#startnode" class="md-nav__link">
-    startNode()
+  <a href="#none_direct_src" class="md-nav__link">
+    none_direct_src()
   </a>
   
 </li>
@@ -7998,8 +7998,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#startnode" class="md-nav__link">
-    startNode()
+  <a href="#none_direct_src" class="md-nav__link">
+    none_direct_src()
   </a>
   
 </li>
@@ -8322,11 +8322,62 @@
 | &quot;player125&quot; |
 +-------------+
 </code></pre></div>
-<h3 id="startnode">startNode()<a class="headerlink" href="#startnode" title="Permanent link">&para;</a></h3>
-<p>startNode() 获取一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。</p>
-<p>语法：<code>startNode(&lt;path&gt;)</code></p>
+<p>&lt;!-- 方便计算下推，用于POC，暂不对外发布，无英文文档</p>
+<h3 id="none_direct_src">none_direct_src()<a class="headerlink" href="#none_direct_src" title="Permanent link">&para;</a></h3>
+<p>none_direct_src() 返回的是不指定边方向的的起点 ID，而是指定边的编码的四元组（<code>_src</code>、<code>_dst</code>、<code>_rank</code>、<code>_type</code>）中<code>_src</code>字段。</p>
+<p>语法：<code>none_direct_src(&lt;edge&gt;)</code></p>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code>nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
+<div class="highlight"><pre><span></span><code>nebula&gt; MATCH (v:player)-[e:follow]-&gt;(v2)  \
+        WHERE none_direct_src(e) \
+        IN [&quot;player100&quot;, &quot;player101&quot;] \
+        RETURN v2.player.age;
++---------------+
+| v2.player.age |
++---------------+
+| 36            |
+| 41            |
+| 42            |
+| 33            |
+| 41            |
++---------------+
+
+
+### none_direct_dst()
+
+none_direct_dst() 返回的是不指定边方向的的终点 ID，而是指定边的编码的四元组（`_src`、`_dst`、`_rank`、`_type`）中`_dst`字段。
+
+语法：`none_direct_dst(&lt;edge&gt;)`
+
+示例：
+
+```ngql
+nebula&gt; MATCH (v:player)-[e:follow]-&gt;(v2)  \
+        WHERE none_direct_dst(e) \
+        IN [&quot;player100&quot;, &quot;player101&quot;] \
+        RETURN v2.player.age;
++---------------+
+| v2.player.age |
++---------------+
+| 36            |
+| 42            |
+| 42            |
+| 42            |
+| 42            |
+...
++---------------+
+
+--&gt;
+
+### startNode()
+
+startNode() 获取一条路径并返回它的起始点信息，包括点 ID、Tag、属性和值。
+
+语法：`startNode(&lt;path&gt;)`
+
+示例：
+
+```ngql
+nebula&gt; MATCH p = (a :player {name : &quot;Tim Duncan&quot;})-[r:serve]-(t) \
         RETURN startNode(p);
 +----------------------------------------------------+
 | startNode(p)                                       |
@@ -8369,7 +8420,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
       
     
   </small>
