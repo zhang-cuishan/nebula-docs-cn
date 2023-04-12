@@ -7778,8 +7778,11 @@
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>nebula-operator/nebula-cluster<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--set<span class="w"> </span><span class="nv">nameOverride</span><span class="o">=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--set<span class="w"> </span>nebula.storageClassName<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">STORAGE_CLASS_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.4.2<span class="w"> </span><span class="c1"># 指定 NebulaGraph 集群的版本，不指定则默认安装最新版本。</span>
+<span class="w">    </span>--set<span class="w"> </span>nebula.storageClassName<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">STORAGE_CLASS_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="c1"># 指定 NebulaGraph 集群的版本。</span>
+<span class="w">    </span>--set<span class="w"> </span>nebula.version<span class="o">=</span><span class="m">3</span>.4.1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="c1"># 指定 nebula-cluster chart 的版本，不指定则默认安装最新版本 chart。</span>
+<span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.4.2<span class="w"> </span>
 </code></pre></div>
 <!-- -->
 
