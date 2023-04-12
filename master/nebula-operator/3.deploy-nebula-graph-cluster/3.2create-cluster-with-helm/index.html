@@ -7805,7 +7805,7 @@
 <h2 id="nebulagraph">创建 NebulaGraph 集群<a class="headerlink" href="#nebulagraph" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>添加 NebulaGraph Operator chart 仓库至 Helm（如已创添加，略过前面 1 至 2 步，从第 3 步开始执行）。</p>
+<p>添加 NebulaGraph Operator Helm 仓库</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>nebula-operator<span class="w"> </span>https://vesoft-inc.github.io/nebula-operator/charts
 </code></pre></div>
 </li>
@@ -7815,10 +7815,10 @@
 </code></pre></div>
 </li>
 <li>
-<p>配置 Helm 的环境变量。</p>
+<p>为安装集群所需的配置参数设置环境变量。</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="o">=</span>nebula<span class="w">         </span><span class="c1"># NebulaGraph 集群的名字。</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="o">=</span>nebula<span class="w">    </span><span class="c1"># NebulaGraph 集群所处的命名空间的名字。</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">STORAGE_CLASS_NAME</span><span class="o">=</span>fast-disks<span class="w">             </span><span class="c1"># NebulaGraph 集群的 StorageClass。</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">STORAGE_CLASS_NAME</span><span class="o">=</span>fast-disks<span class="w">             </span><span class="c1"># NebulaGraph 集群所使用的 StorageClass 的名字。</span>
 </code></pre></div>
 </li>
 <li>
@@ -7853,6 +7853,8 @@
 <span class="w">    </span>--namespace<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAMESPACE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--set<span class="w"> </span><span class="nv">nameOverride</span><span class="o">=</span><span class="si">${</span><span class="nv">NEBULA_CLUSTER_NAME</span><span class="si">}</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--set<span class="w"> </span>nebula.storageClassName<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">STORAGE_CLASS_NAME</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span>--set<span class="w"> </span>nebula.version<span class="o">=</span><span class="m">3</span>.4.1<span class="w"> </span><span class="c1"># 指定 NebulaGraph 集群的版本。</span>
+<span class="w">    </span>--version<span class="o">=</span><span class="m">1</span>.4.2<span class="w"> </span><span class="c1"># 指定 nebula-cluster chart 的版本，不指定则默认安装最新版本 chart。</span>
 </code></pre></div>
 <!-- -->
 
@@ -7902,7 +7904,7 @@ nebula-storaged-2<span class="w">   </span><span class="m">1</span>/1<span class
 <p class="admonition-title">Caution</p>
 <p>目前仅支持对 NebulaGraph 集群中的 Graph 服务和 Storage 服务进行扩缩容，不支持扩缩容 Meta 服务。</p>
 </div>
-<p>用户可点击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.4.0/charts/nebula-cluster/values.yaml">nebula-cluster/values.yaml</a> 查看 NebulaGraph Cluster 集群 Chart 的更多配置。有关文件中配置项的解释，参考下文<strong> NebulaGraph 集群 Chart 配置参数说明</strong>。</p>
+<p>用户可点击 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.4.2/charts/nebula-cluster/values.yaml">nebula-cluster/values.yaml</a> 查看 NebulaGraph Cluster 集群 Chart 的更多配置。有关文件中配置项的解释，参考下文<strong> NebulaGraph 集群 Chart 配置参数说明</strong>。</p>
 <!-- -->
 
 <h2 id="_3">删除集群<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -8177,7 +8179,7 @@ nebula-storaged-2<span class="w">   </span><span class="m">1</span>/1<span class
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 1, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
       
     
   </small>

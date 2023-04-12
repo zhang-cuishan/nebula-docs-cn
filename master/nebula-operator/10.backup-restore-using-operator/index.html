@@ -7882,7 +7882,7 @@
 <h2 id="_1">原理介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="../../backup-and-restore/nebula-br-ent/1.br-ent-overview/">NebulaGraph BR（企业版）</a>工具是 NebulaGraph 企业版数据备份和恢复的命令行工具。NebulaGraph Operator 基于 BR 工具来实现 Kubernetes 上的 NebulaGraph 集群数据的备份和恢复。</p>
 <p>备份数据时，NebulaGraph Operator 会创建一个 Job，然后将 NebulaGraph 集群中的数据备份到指定的存储服务上。</p>
-<p>恢复数据时，NebulaGraph Operator 会根据 NebulaRestore 资源对象定义的信息检查指定的备份 NebulaGraph 集群是否存在、远端存储的访问是否正常，并且会创建一个新的集群，然后将备份数据恢复到新创建的 NebulaGraph 集群中。更多信息参见<a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.4.0/doc/user/br_guide.md#restore-nebulagraph-cluster">恢复流程图</a>。</p>
+<p>恢复数据时，NebulaGraph Operator 会根据 NebulaRestore 资源对象定义的信息检查指定的备份 NebulaGraph 集群是否存在、远端存储的访问是否正常，并且会创建一个新的集群，然后将备份数据恢复到新创建的 NebulaGraph 集群中。更多信息参见<a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.4.2/doc/user/br_guide.md#restore-nebulagraph-cluster">恢复流程图</a>。</p>
 <h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>使用 NebulaGraph Operator 备份和恢复数据，需要满足以下条件：</p>
 <ul>
