@@ -7838,17 +7838,13 @@
 <p>例如 <code>LOOKUP ON player WHERE player.name == "Tony Parker"</code> 或者 <code>MATCH (v:player {name:"Tony Parker"})</code>，是通过属性 <code>player.name</code> 的索引来定位到 <code>start vid</code>；</p>
 </li>
 </ol>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p><code>match (n) return n;</code> 会返回错误<code>Scan vertices or edges need to specify a limit number, or limit number can not push down.</code>，这是一个全局扫描，需要用<code>LIMIT</code>子句限制返回数量才能执行。</p>
-</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2023</span>
       
     
   </small>

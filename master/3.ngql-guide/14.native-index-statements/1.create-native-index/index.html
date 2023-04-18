@@ -2641,6 +2641,13 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     语法
   </a>
   
@@ -2654,14 +2661,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     创建单属性索引
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     创建复合属性索引
   </a>
   
@@ -7735,6 +7742,13 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     语法
   </a>
   
@@ -7748,14 +7762,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     创建单属性索引
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     创建复合属性索引
   </a>
   
@@ -7786,7 +7800,7 @@
 <p>创建索引之前，请确保相关的 Tag 或 Edge type 已经创建。如何创建 Tag 和 Edge type，请参见 <a href="../../10.tag-statements/1.create-tag/">CREATE TAG</a> 和 <a href="../../11.edge-type-statements/1.create-edge/">CREATE EDGE</a>。</p>
 <p>如何创建全文索引，请参见<a href="../../../4.deployment-and-installation/6.deploy-text-based-index/2.deploy-es/">部署全文索引</a>。</p>
 <h2 id="_2">使用索引必读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>索引的概念和使用限制都较为复杂。索引配合<code>LOOKUP</code>和<code>MATCH</code>语句使用。</p>
+<p>索引的概念和使用限制都较为复杂。在使用索引前，请务必阅读以下内容。</p>
 <p><code>CREATE INDEX</code>语句用于对 Tag、EdgeType 或其属性创建原生索引。通常分别称为“Tag 索引”、“Edge type 索引”和“属性索引”。</p>
 <ul>
 <li>Tag 索引和 Edge type 索引应用于和 Tag、Edge type 自身相关的查询，例如用<code>LOOKUP</code>查找有 Tag <code>player</code>的所有点。</li>
@@ -7799,11 +7813,8 @@
 <li>查询引擎可以使用<code>i_TA</code>来替代<code>i_T</code>。</li>
 </ul>
 <ul>
-<li>在<code>MATCH</code>语句中<code>i_T</code>不能替代<code>i_TA</code>用于属性查找。</li>
-</ul>
-<ul>
 <li>
-<p>在<code>LOOKUP</code>语句中<code>i_T</code>可以替代<code>i_TA</code>用于属性查找。</p>
+<p>在<code>MATCH</code>、<code>LOOKUP</code>语句中<code>i_T</code>可以替代<code>i_TA</code>查找属性。</p>
 <div class="admonition compatibility">
 <p class="admonition-title">历史版本兼容性</p>
 <p>在此前的版本中，<code>LOOKUP</code>语句中的 Tag 或 Edge type 索引不可替代属性索引用于属性查找。</p>
@@ -7814,9 +7825,9 @@
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>不要任意在生产环境中使用索引，除非很清楚使用索引对业务的影响。索引会导致写性能大幅下降<!-- 90%甚至更多-->。</p>
-<p>索引并不用于查询加速。只用于：根据属性定位到点或边，或者统计点边数量。</p>
 <p>长索引会降低 Storage 服务的扫描性能，以及占用更多内存。建议将索引长度设置为和要被索引的最长字符串相同。索引长度最长为 256。</p>
 </div>
+<h2 id="_3">操作步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>如果必须使用索引，通常按照如下步骤：</p>
 <ol>
 <li>
@@ -7842,7 +7853,7 @@
 <p class="admonition-title">Danger</p>
 <p>创建索引，或者删除并再次创建同名索引后，必须<code>REBUILD INDEX</code>。否则无法在<code>MATCH</code>和<code>LOOKUP</code>语句中返回这些数据。</p>
 </div>
-<h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">语法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>CREATE {TAG | EDGE} INDEX [IF NOT EXISTS] &lt;index_name&gt; ON {&lt;tag_name&gt; | &lt;edge_name&gt;} ([&lt;prop_name_list&gt;]) [COMMENT &#39;&lt;comment&gt;&#39;];
 </code></pre></div>
 <table>
@@ -7885,7 +7896,7 @@
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX follow_index on follow();
 </code></pre></div>
 <p>为 Tag 或 Edge type 创建索引后，用户可以使用 <code>LOOKUP</code> 语句查找<code>带有该 Tag 的</code>所有点的 VID，或者<code>所有该类型的边</code>的<code>对应起始点 VID、目的点 VID、以及 rank</code>。详情请参见 <a href="../../7.general-query-statements/5.lookup/">LOOKUP</a>。</p>
-<h2 id="_4">创建单属性索引<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">创建单属性索引<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_0 on player(name(10));
 </code></pre></div>
 <p>上述示例是为所有包含 Tag<code>player</code>的点创建属性<code>name</code>的索引，索引长度为 10。即只使用属性<code>name</code>的前 10 个字符来创建索引。</p>
@@ -7899,7 +7910,7 @@ nebula&gt; CREATE TAG INDEX IF NOT EXISTS fix ON fix_string(p1);
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE EDGE INDEX IF NOT EXISTS follow_index_0 on follow(degree);
 </code></pre></div>
-<h2 id="_5">创建复合属性索引<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">创建复合属性索引<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><code>复合属性索引</code>用于查找一个 Tag（或者 Edge type) 中的多个属性（的组合）。</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE TAG INDEX IF NOT EXISTS player_index_1 on player(name(10), age);
 </code></pre></div>
@@ -7943,7 +7954,7 @@ nebula&gt; MATCH (v:t) WHERE t.p1 == 1 and t.p2 == 2 and t.p3 == 3;
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2023</span>
       
     
   </small>

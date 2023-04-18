@@ -7767,13 +7767,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tagedgetype" class="md-nav__link">
-    如何在不指定 Tag/EdgeType 的情况下，获取所有的点和边？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#tagedge_type" class="md-nav__link">
     能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？
   </a>
@@ -8230,13 +8223,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tagedgetype" class="md-nav__link">
-    如何在不指定 Tag/EdgeType 的情况下，获取所有的点和边？
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#tagedge_type" class="md-nav__link">
     能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？
   </a>
@@ -8422,7 +8408,7 @@
 <h3 id="storage_error_e_rpc_failure">如何处理错误信息 <code>Storage Error E_RPC_FAILURE</code><a class="headerlink" href="#storage_error_e_rpc_failure" title="Permanent link">&para;</a></h3>
 <p>报错原因通常为 Graph 服务向 Storage 服务请求了过多的数据，导致 Storage 服务超时。请尝试以下解决方案：</p>
 <ul>
-<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>：在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加 Storage client 的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加--local_config=true 再重启服务。</li>
+<li><a href="../../5.configurations-and-logs/1.configurations/3.graph-config/">修改配置文件</a>：在<code>nebula-graphd.conf</code>文件中修改<code>--storage_client_timeout_ms</code>参数的值，以增加 Storage client 的连接超时时间。该值的单位为毫秒（ms）。例如，设置<code>--storage_client_timeout_ms=60000</code>。如果<code>nebula-graphd.conf</code>文件中未配置该参数，请手动增加。提示：请在配置文件开头添加<code>--local_config=true</code>再重启服务。</li>
 <li>优化查询语句：减少全库扫描型的查询，无论是否用<code>LIMIT</code>限制了返回结果的数量；用 GO 语句改写 MATCH 语句（前者有优化，后者无优化）。</li>
 <li>检查 Storaged 是否发生过 OOM。(<code>dmesg |grep nebula</code>)。</li>
 <li>为 Storage 服务器提供性能更好的 SSD 或者内存。</li>
@@ -8591,12 +8577,6 @@ Got 1 rows (time spent 1235/1934 us)
 </li>
 </ol>
 <p>更多详情请参见 <a href="../../3.ngql-guide/14.native-index-statements/1.create-native-index/">INDEX</a>、<a href="../../3.ngql-guide/7.general-query-statements/5.lookup/">LOOKUP</a> 和 <a href="../../3.ngql-guide/7.general-query-statements/2.match/">MATCH</a>。</p>
-<h3 id="tagedgetype">如何在不指定 Tag/EdgeType 的情况下，获取所有的点和边？<a class="headerlink" href="#tagedgetype" title="Permanent link">&para;</a></h3>
-<p>nGQL 没有该功能。</p>
-<p>你必须先指定 Tag/EdgeType，或者用<code>LIMIT</code>子句限制返回数量，才能获取对应类型的所有的点和边。</p>
-<p>例如执行 <code>MATCH (n) RETURN (n)</code>. 会返回错误 <code>Scan vertices or edges need to specify a limit number, or limit number can not push down.</code>。</p>
-<p>一个办法是使用 <a href="../../graph-computing/nebula-algorithm/">NebulaGraph Algorithm</a>。</p>
-<p>或者指定各 Tag/Edge Type，然后再自己通过 <code>Union</code> 拼装。</p>
 <h3 id="tagedge_type">能不能用中文字符做标识符，比如图空间、Tag、Edge type、属性、索引的名称？<a class="headerlink" href="#tagedge_type" title="Permanent link">&para;</a></h3>
 <p>能，详情参见<a href="../../3.ngql-guide/1.nGQL-overview/keywords-and-reserved-words/">关键字和保留字</a>。</p>
 <h3 id="_8">获取指定点的出度（或者入度）?<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
@@ -9063,7 +9043,7 @@ telnet:<span class="w"> </span>connect<span class="w"> </span>to<span class="w">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2023</span>
       
     
   </small>
