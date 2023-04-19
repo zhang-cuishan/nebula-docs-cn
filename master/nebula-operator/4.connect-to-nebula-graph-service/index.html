@@ -7905,11 +7905,12 @@ nebula-graphd-svc<span class="w">          </span>ClusterIP<span class="w">   </
 </code></pre></div>
 </li>
 </ol>
-<p>用户还可以使用<strong>完全限定域名（FQDN）</strong>连接数据库，域名格式为<code>&lt;cluster-name&gt;-graphd.&lt;cluster-namespace&gt;.svc.&lt;CLUSTER_DOMAIN&gt;</code>：</p>
-<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>run<span class="w"> </span>-ti<span class="w"> </span>--image<span class="w"> </span>vesoft/nebula-console:v3.4.0<span class="w"> </span>--restart<span class="o">=</span>Never<span class="w"> </span>--<span class="w"> </span>&lt;nebula_console_name&gt;<span class="w"> </span>-addr<span class="w"> </span>&lt;cluster_name&gt;-graphd-svc.default.svc.cluster.local<span class="w"> </span>-port<span class="w"> </span>&lt;service_port&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;
+<p>用户还可以使用<strong>完全限定域名（FQDN）</strong>连接数据库，域名格式为<code>&lt;cluster-name&gt;-graphd.&lt;cluster-namespace&gt;.svc.&lt;CLUSTER_DOMAIN&gt;</code>，<code>CLUSTER_DOMAIN</code>的默认值为<code>cluster.local</code>。</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>run<span class="w"> </span>-ti<span class="w"> </span>--image<span class="w"> </span>vesoft/nebula-console:v3.4.0<span class="w"> </span>--restart<span class="o">=</span>Never<span class="w"> </span>--<span class="w"> </span>&lt;nebula_console_name&gt;<span class="w"> </span>-addr<span class="w"> </span>&lt;cluster_name&gt;-graphd-svc.default.svc.cluster.local<span class="w"> </span>-port<span class="w"> </span>&lt;service_port&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;
 </code></pre></div>
-- <code>CLUSTER_DOMAIN</code>的默认值为<code>cluster.local</code>。
-- <code>&lt;service_port&gt;</code>为 Graph 服务默认的端口<code>9669</code>。</p>
+<ul>
+<li><code>&lt;service_port&gt;</code>为 Graph 服务默认的端口<code>9669</code>。</li>
+</ul>
 <h2 id="ingress_nebulagraph_nebulagraph">通过<code>Ingress</code>在 NebulaGraph 集群外部连接 NebulaGraph 数据库<a class="headerlink" href="#ingress_nebulagraph_nebulagraph" title="Permanent link">&para;</a></h2>
 <p>当集群中有多个 Pod 时，为每个 Pod 分别提供服务会变得非常困难和繁琐，而使用 Ingress 可以轻松解决这个问题。Ingress 可以将流量路由到集群内部的多个 Pod。</p>
 <p>Nginx Ingress 是 Kubernetes 中的一个 Ingress 控制器（Controller），是对 Kubernetes Ingress 资源的一个实现，通过 Watch 机制感知 Kubernetes 集群中的 Ingress 资源。它将这些 Ingress 规则转换为 Nginx 配置并启动一个 Nginx 实例来处理流量。</p>
