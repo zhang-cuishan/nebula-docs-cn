@@ -1416,6 +1416,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/system-settings/</loc>
+         <lastmod>2023-04-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/about-explorer/ex-ug-what-is-explorer/</loc>
          <lastmod>2023-04-23</lastmod>
          <changefreq>daily</changefreq>
