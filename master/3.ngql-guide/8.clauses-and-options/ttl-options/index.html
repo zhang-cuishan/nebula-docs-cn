@@ -7910,10 +7910,17 @@
 </tr>
 <tr>
 <td align="left"><code>ttl_duration</code></td>
-<td align="left">指定时间戳差值，单位：秒。时间戳差值必须为 64 位非负整数。属性值和时间戳差值之和如果小于当前时间戳，属性就会过期。如果<code>ttl_duration</code>为<code>0</code>，属性永不过期。</td>
+<td align="left">指定时间戳差值，默认单位：秒。时间戳差值必须为 64 位非负整数。属性值和时间戳差值之和如果小于当前时间戳，属性就会过期。如果<code>ttl_duration</code>为<code>0</code>，属性永不过期。<br/>可在配置文件<code>nebula-storaged.conf</code>（默认路径<code>/usr/local/nightly/etc/</code>）中设置<code>ttl_use_ms</code>为<code>true</code>将默认单位设为毫秒。</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<ul>
+<li>在设置<code>ttl_use_ms</code>为<code>true</code>前，请确保没有为属性设置 TTL，否则会因为过期时间缩短，导致数据被错误地删除。</li>
+<li>在设置<code>ttl_use_ms</code>为<code>true</code>后，即设置<code>ttl_duration</code>的默认单位为毫秒后，<code>ttl_col</code>的默认单位仍然为秒，它的数据类型必须是<code>int</code>，并且需要手动转换属性值为毫秒。例如设置<code>ttl_col</code>为<code>a</code>，则需要将<code>a</code>的值转换为毫秒，如当<code>a</code>的值为<code>now()</code>，则需要将<code>a</code>的值设置为<code>now() * 1000</code>。</li>
+</ul>
+</div>
 <h2 id="_2">属性过期<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -7984,7 +7991,7 @@ nebula&gt; INSERT VERTEX t2(a, b, c) VALUES &quot;102&quot;:(1648197138, 30, &qu
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 23, 2023</span>
       
     
   </small>
