@@ -5422,14 +5422,35 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    入口
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    操作说明
+    入口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新增配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    删除配置
   </a>
   
 </li>
@@ -7709,14 +7730,35 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    入口
+    注意事项
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    操作说明
+    入口
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    新增配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    删除配置
   </a>
   
 </li>
@@ -7742,36 +7784,50 @@
 
 
 <h1 id="_1">更新配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>在更新配置页面，用户可以查看及修改服务的配置文件。</p>
-<h2 id="_2">入口<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在更新配置页面，用户可以查看及更新服务的配置文件。</p>
+<h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>配置更新后需要在<strong>服务</strong>页面重启对应服务。具体操作参见<a href="../service/">服务管理</a>。</p>
+<h2 id="_3">入口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在 Dashboard 企业版顶部导航栏，单击<strong>集群管理</strong>。</li>
 <li>单击目标集群右侧<strong>详情</strong>。</li>
 <li>在左侧导航栏，单击<strong>集群操作</strong>-&gt;<strong>更新配置</strong>。</li>
 </ol>
-<h2 id="_3">操作说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">修改配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在上方选择需要修改配置的服务类型。</li>
 <li>查找需要修改的配置，在操作列单击<strong>编辑</strong>。</li>
 <li>
 <p>在弹出的会话框中，可以单个修改<strong>配置值</strong>，也可以在上方统一修改，修改后需要单击<strong>应用到所有服务</strong>。</p>
-<p><img alt="config" src="https://docs-cdn.nebula-graph.com.cn/figures/ds_config_230109_cn.png" /></p>
+<p><img alt="config" src="https://docs-cdn.nebula-graph.com.cn/figures/ds_config_230327_cn.png" /></p>
 </li>
 <li>
 <p>修改完成后单击<strong>确认</strong>。</p>
 </li>
 </ol>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>配置修改后需要在<strong>服务</strong>页面重启对应服务。具体操作参见<a href="../service/">服务管理</a>。</p>
+<h2 id="_5">新增配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>如果需要调整配置文件中没有的参数，需要先新增配置。</p>
+<ol>
+<li>在左上方单击<strong>新增配置</strong>。</li>
+<li>填写参数名称，即<strong>设置项</strong>，然后填写<strong>设置值</strong>，并将设置值应用到所有服务，也可以在下方调整单个服务的取值。</li>
+<li>单击<strong>确认</strong>。</li>
+</ol>
+<h2 id="_6">删除配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>删除配置并重启服务后，对应的配置会恢复为默认值。</p>
 </div>
+<ol>
+<li>在上方选择需要删除配置的服务类型。</li>
+<li>查找需要删除的配置，在操作列单击<strong>删除</strong>并<strong>确定</strong>。</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>
