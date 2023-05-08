@@ -5766,22 +5766,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5974,20 +5988,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7673,7 +7673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7899,20 +7899,6 @@
     <li class="md-nav__item">
       <a href="../../../20.appendix/learning-path/" class="md-nav__link">
         学习路径
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
       </a>
     </li>
   
@@ -8209,6 +8195,9 @@
 <ul>
 <li>待安装NebulaGraph的主机可以访问互联网。</li>
 </ul>
+<ul>
+<li>已<a href="../../9.about-license/2.license-management-suite/3.license-manager.md">在 LM 中加载 License Key</a></li>
+</ul>
 <h2 id="_2">安装步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -8266,9 +8255,13 @@ $<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </sp
 </code></pre></div>
 </li>
 <li>
-<p>安装目录下<code>etc/</code>目录中（默认为<code>/usr/local/nebula/etc</code>）的配置文件为参考模版，用户可以根据需要创建自己的配置文件。如果要使用 <code>script</code> 目录下的脚本，启动、停止、重启、中止和查看服务，配置文件需要命名为 <code>nebula-graph.conf</code>，<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>。</p>
+<p>在NebulaGraph的 Meta 服务配置文件（<code>nebula-metad.conf</code>）中，设置<code>license_manager_url</code>的值为许可证管理工具所在的主机 IP 和端口号<code>9119</code>，例如<code>192.168.8.100:9119</code>。</p>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>安装目录下<code>etc/</code>目录中（默认为<code>/usr/local/nebula/etc</code>）的配置文件为参考模版，用户可以根据需要创建自己的配置文件。如果要使用<code>script</code>目录下的脚本，启动、停止、重启、中止和查看服务，配置文件需要命名为<code>nebula-graph.conf</code>，<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>。</p>
+</div>
 <h2 id="master">更新 master 版本<a class="headerlink" href="#master" title="Permanent link">&para;</a></h2>
 <p>master 分支的代码更新速度快，如果安装了 master 分支对应的开发版NebulaGraph，可根据以下步骤更新版本。</p>
 <ol>
@@ -8280,9 +8273,7 @@ $<span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </sp
 </li>
 </ol>
 <h2 id="_3">下一步<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../../../2.quick-start/3.quick-start-on-premise/5.start-stop-service/">管理NebulaGraph服务</a></li>
-</ul>
+<p><a href="../../../2.quick-start/3.quick-start-on-premise/5.start-stop-service/">管理NebulaGraph服务</a></p>
 <h2 id="cmake">CMake 参数<a class="headerlink" href="#cmake" title="Permanent link">&para;</a></h2>
 <h3 id="_4">使用方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>cmake<span class="w"> </span>-D&lt;variable&gt;<span class="o">=</span>&lt;value&gt;<span class="w"> </span>...

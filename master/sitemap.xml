@@ -966,11 +966,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/analytics-ent-license/</loc>
-         <lastmod>2023-05-08</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/graph-computing/nebula-algorithm/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>

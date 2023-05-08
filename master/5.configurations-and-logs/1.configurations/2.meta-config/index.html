@@ -3472,6 +3472,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enterprise_license" class="md-nav__link">
+    enterprise license 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#logging" class="md-nav__link">
     logging 配置
   </a>
@@ -3502,6 +3509,13 @@
         <li class="md-nav__item">
   <a href="#rocksdb_options" class="md-nav__link">
     rocksdb options 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
   </a>
   
 </li>
@@ -5697,22 +5711,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5905,20 +5933,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7604,7 +7618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7842,20 +7856,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../20.appendix/0.FAQ/" class="md-nav__link">
         常见问题 FAQ
       </a>
@@ -8002,6 +8002,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enterprise_license" class="md-nav__link">
+    enterprise license 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#logging" class="md-nav__link">
     logging 配置
   </a>
@@ -8032,6 +8039,13 @@
         <li class="md-nav__item">
   <a href="#rocksdb_options" class="md-nav__link">
     rocksdb options 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
   </a>
   
 </li>
@@ -8112,6 +8126,25 @@
 <li><code>timezone_name</code>参数只用于转换NebulaGraph中存储的数据，NebulaGraph进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
 </ul>
 </div>
+<h2 id="enterprise_license">enterprise license 配置<a class="headerlink" href="#enterprise_license" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>license_manager_url</code></td>
+<td align="left">-</td>
+<td align="left">License Manager 地址。设置为 LM 所在的主机 IP 和端口号<code>9119</code>，例如<code>192.168.8.100:9119</code>。更多信息，参见 <a href="../../9.about-license/2.license-management-suite/3.license-manager.md">License Manager</a>。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
 <h2 id="logging">logging 配置<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -8298,6 +8331,47 @@
 <td align="left"><code>true</code></td>
 <td align="left">是否同步 RocksDB 的 WAL 日志。</td>
 <td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="black_box">Black box 配置<a class="headerlink" href="#black_box" title="Permanent link">&para;</a></h2>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅企业版支持黑匣子功能配置。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ng_black_box_switch</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否开启黑匣子功能。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_home</code></td>
+<td align="left"><code>black_box</code></td>
+<td align="left">存储黑匣子数据的目录名称。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_dump_period_seconds</code></td>
+<td align="left"><code>5</code></td>
+<td align="left">黑匣子采集指标的时间间隔。单位：秒。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_file_lifetime_seconds</code></td>
+<td align="left"><code>1800</code></td>
+<td align="left">采集指标后生成文件的保存时间。单位：秒</td>
+<td align="left">支持</td>
 </tr>
 </tbody>
 </table>

@@ -3528,6 +3528,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#metrics" class="md-nav__link">
     metrics 配置
   </a>
@@ -3544,6 +3551,13 @@
         <li class="md-nav__item">
   <a href="#experimental" class="md-nav__link">
     experimental 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
   </a>
   
 </li>
@@ -5732,22 +5746,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5940,20 +5968,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7639,7 +7653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7877,20 +7891,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../20.appendix/0.FAQ/" class="md-nav__link">
         常见问题 FAQ
       </a>
@@ -8079,6 +8079,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    audit 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#metrics" class="md-nav__link">
     metrics 配置
   </a>
@@ -8095,6 +8102,13 @@
         <li class="md-nav__item">
   <a href="#experimental" class="md-nav__link">
     experimental 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black_box" class="md-nav__link">
+    Black box 配置
   </a>
   
 </li>
@@ -8401,6 +8415,8 @@
 </tr>
 </tbody>
 </table>
+<p>|<code>enable_record_slow_query</code>|<code>true</code>|是否启用慢查询记录。|不支持|
+|<code>slow_query_limit</code>|<code>100</code>|慢查询记录的最大条数。|不支持|</p>
 <p>|<code>slow_query_threshold_us</code>|<code>200000</code>|定义超过多长时间的查询为慢查询。单位：微秒。|不支持|
 |<code>ws_meta_http_port</code>|<code>19559</code>|HTTP 协议监听 Meta 服务的端口，需要和 Meta 服务配置文件中的<code>ws_http_port</code>保持一致。|不支持|</p>
 <div class="admonition caution">
@@ -8476,6 +8492,8 @@
 </tr>
 </tbody>
 </table>
+<h2 id="audit">audit 配置<a class="headerlink" href="#audit" title="Permanent link">&para;</a></h2>
+<p>详细参数说明参见<a href="../2.log-management/audit-log.md">审计日志</a>。</p>
 <h2 id="metrics">metrics 配置<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -8536,6 +8554,47 @@
 <td><code>true</code></td>
 <td>是否开启<a href="../../../8.service-tuning/load-balance/">均衡分片</a>功能。仅当<code>enable_experimental_feature</code>为<code>true</code>时生效。</td>
 <td>不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="black_box">Black box 配置<a class="headerlink" href="#black_box" title="Permanent link">&para;</a></h2>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>仅企业版支持黑匣子功能配置。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th>是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>ng_black_box_switch</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否开启黑匣子功能。</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_home</code></td>
+<td align="left"><code>black_box</code></td>
+<td align="left">存储黑匣子数据的目录名称。</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_dump_period_seconds</code></td>
+<td align="left"><code>5</code></td>
+<td align="left">黑匣子采集指标的时间间隔。单位：秒。</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ng_black_box_file_lifetime_seconds</code></td>
+<td align="left"><code>1800</code></td>
+<td align="left">采集指标后生成文件的保存时间。单位：秒</td>
+<td>支持</td>
 </tr>
 </tbody>
 </table>

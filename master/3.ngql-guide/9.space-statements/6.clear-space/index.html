@@ -5669,22 +5669,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5877,20 +5891,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7576,7 +7576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7814,20 +7814,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../20.appendix/0.FAQ/" class="md-nav__link">
         常见问题 FAQ
       </a>
@@ -8015,9 +8001,9 @@
 <li>图空间中的数据量越大，<code>CLEAR SPACE</code>消耗的时间越长。如果<code>CLEAR SPACE</code>的执行因客户端连接超时而失败，可以增大 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>中<code>storage_client_timeout_ms</code>参数的值。</li>
 <li>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止。这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏。</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NebulaGraph 不支持在运行<code>CLEAR SPACE</code>的同时禁止写入。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>企业版NebulaGraph支持先运行<code>SET VARIABLE read_only=true</code>阻止向NebulaGraph写入数据，再运行<code>CLEAR SPACE</code>。数据清除成功后运行<code>SET VARIABLE read_only=false</code>即可重新允许写入。</p>
 </div>
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;

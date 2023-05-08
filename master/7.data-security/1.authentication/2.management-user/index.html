@@ -5704,22 +5704,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5912,20 +5926,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7611,7 +7611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7837,20 +7837,6 @@
     <li class="md-nav__item">
       <a href="../../../20.appendix/learning-path/" class="md-nav__link">
         学习路径
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
       </a>
     </li>
   
@@ -8096,6 +8082,16 @@
 </ul>
 <ul>
 <li>
+<p>企业版语法</p>
+<div class="highlight"><pre><span></span><code>CREATE USER [IF NOT EXISTS] &lt;user_name&gt; [WITH PASSWORD &#39;&lt;password&gt;&#39;][WITH IP WHITELIST &lt;ip_list&gt;];
+</code></pre></div>
+<ul>
+<li><code>ip_list</code>（企业版）：IP 白名单列表。该用户只有通过列表内的 IP 才能连接NebulaGraph。多个 IP 之间用英文逗号（,）分隔。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; CREATE USER user1 WITH PASSWORD &#39;nebula&#39;;
 nebula&gt; SHOW USERS;
@@ -8104,6 +8100,19 @@ nebula&gt; SHOW USERS;
 +---------+-------------------------------+
 | &quot;root&quot;  | &quot;&quot;                            |
 | &quot;user1&quot; | &quot;&quot;                            |
++---------+-------------------------------+
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>企业版示例</p>
+<div class="highlight"><pre><span></span><code>nebula&gt; CREATE USER user2 WITH PASSWORD &#39;nebula&#39; WITH IP WHITELIST 192.168.10.10,192.168.10.12;
+nebula&gt; SHOW USERS;
++---------+-------------------------------+
+| Account | IP Whitelist                  |
++---------+-------------------------------+
+| &quot;user2&quot; | &quot;192.168.10.10,192.168.10.12&quot; |
 +---------+-------------------------------+
 </code></pre></div>
 </li>
@@ -8210,6 +8219,13 @@ DESC USER &lt;user_name&gt;;
 </ul>
 <ul>
 <li>
+<p>企业版语法</p>
+<div class="highlight"><pre><span></span><code>ALTER USER &lt;user_name&gt; WITH PASSWORD &#39;&lt;password&gt;&#39; [WITH IP WHITELIST &lt;ip_list&gt;];
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
 <p>示例</p>
 <div class="highlight"><pre><span></span><code>nebula&gt; ALTER USER user2 WITH PASSWORD &#39;nebula&#39;;
 nebula&gt; SHOW USERS;
@@ -8220,6 +8236,17 @@ nebula&gt; SHOW USERS;
 | &quot;user1&quot; | &quot;&quot;           |
 | &quot;user2&quot; | &quot;&quot;           |
 +---------+--------------+
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>企业版示例</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>没有使用<code>WITH IP WHITELIST</code>时，表示取消 IP 白名单，用户使用任何 IP 都可以连接NebulaGraph。  </p>
+</div>
+<div class="highlight"><pre><span></span><code>nebula&gt; ALTER USER user2 WITH PASSWORD &#39;nebula&#39; WITH IP WHITELIST 192.168.10.10;
 </code></pre></div>
 </li>
 </ul>

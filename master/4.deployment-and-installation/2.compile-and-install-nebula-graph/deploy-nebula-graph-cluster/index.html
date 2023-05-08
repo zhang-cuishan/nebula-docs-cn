@@ -5696,22 +5696,36 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../nebula-dashboard-ent/11.license-manager.md" class="md-nav__link">
+        License 管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_9" type="checkbox" id="__nav_16_9" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16_10" type="checkbox" id="__nav_16_10" >
       
       
       
       
-        <label class="md-nav__link" for="__nav_16_9">
+        <label class="md-nav__link" for="__nav_16_10">
           平台设置
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="平台设置" data-md-level="2">
-        <label class="md-nav__title" for="__nav_16_9">
+        <label class="md-nav__title" for="__nav_16_10">
           <span class="md-nav__icon md-icon"></span>
           平台设置
         </label>
@@ -5904,20 +5918,6 @@
     <li class="md-nav__item">
       <a href="../../../nebula-explorer/deploy-connect/ex-ug-connect.md" class="md-nav__link">
         连接数据库
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../nebula-explorer/deploy-connect/3.explorer-license.md" class="md-nav__link">
-        悦数图探索 License
       </a>
     </li>
   
@@ -7603,7 +7603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../graph-computing/analytics-ent-license/" class="md-nav__link">
+      <a href="../../../graph-computing/analytics-ent-license.md" class="md-nav__link">
         悦数图计算 License
       </a>
     </li>
@@ -7829,20 +7829,6 @@
     <li class="md-nav__item">
       <a href="../../../20.appendix/learning-path/" class="md-nav__link">
         学习路径
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../20.appendix/8.about-license.md" class="md-nav__link">
-        关于 License
       </a>
     </li>
   
@@ -8114,6 +8100,9 @@
 <li>准备 5 台用于部署集群的机器。</li>
 <li>在集群中通过 NTP 服务同步时间。</li>
 </ul>
+<ul>
+<li>已<a href="../../9.about-license/2.license-management-suite/3.license-manager.md">在 LM 中加载 License Key</a>。</li>
+</ul>
 <h2 id="_3">手动部署流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="nebulagraph">安装NebulaGraph<a class="headerlink" href="#nebulagraph" title="Permanent link">&para;</a></h3>
 <p>在集群的每一台服务器上都安装NebulaGraph，安装后暂不需要启动服务。安装方式请参见：</p>
@@ -8169,6 +8158,10 @@
 <ul>
 <li><a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a></li>
 </ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在所有的 Meta 服务配置文件中，需要设置<code>license_manager_url</code>的值为 LM 所在的主机 IP 和端口号<code>9119</code>，例如<code>192.168.8.100:9119</code>。</p>
 </div>
 <ul>
 <li>
