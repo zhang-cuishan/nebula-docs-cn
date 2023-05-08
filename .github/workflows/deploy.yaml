@@ -82,6 +82,8 @@ jobs:
 
       - name: mike 
         run: |
+          python ./scripts/conditional_render.py
+          python ./scripts/conditional_yml.py
           git fetch origin gh-pages --depth=1 # fix mike's CI update
           mike deploy ${{ env.ACTIONTEST }}  -p --rebase
           mike list
@@ -131,11 +133,11 @@ jobs:
               mkdir -p /usr/web/ent-docs/
               tar -xzf /usr/web/ent-docs.tar.gz -C /usr/web/ent-docs/
               mkdir -p /usr/web/ent-docs/site/pdf/
-              cp -f /usr/web/ent-docs/${{ env.ACTIONTEST }}/pdf/NebulaGraph-CN.pdf /usr/web/ent-docs/site/pdf/NebulaGraph-book.pdf
+              #cp -f /usr/web/ent-docs/${{ env.ACTIONTEST }}/pdf/NebulaGraph-CN.pdf /usr/web/ent-docs/site/pdf/NebulaGraph-book.pdf
             else
               mkdir -p /usr/web/nebula-docs/
               tar -xzf /usr/web/nebula-docs.tar.gz -C /usr/web/nebula-docs/
               mkdir -p /usr/web/nebula-docs/site/pdf/
-              cp -f /usr/web/nebula-docs/${{ env.ACTIONTEST }}/pdf/NebulaGraph-CN.pdf /usr/web/nebula-docs/site/pdf/NebulaGraph-book.pdf
+              #cp -f /usr/web/nebula-docs/${{ env.ACTIONTEST }}/pdf/NebulaGraph-CN.pdf /usr/web/nebula-docs/site/pdf/NebulaGraph-book.pdf
             fi
             
