@@ -196,6 +196,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/community/20.appendix/release-notes/dashboard-comm-release-note/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/20.appendix/release-notes/nebula-comm-release-note/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/20.appendix/release-notes/studio-release-note/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/community/3.ngql-guide/4.job-statements/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
@@ -816,6 +831,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/community/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/community/4.deployment-and-installation/6.deploy-text-based-index/1.text-based-index-restrictions/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
@@ -957,6 +977,26 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/community/backup-and-restore/3.manage-snapshot/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/backup-and-restore/nebula-br/1.what-is-br/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/backup-and-restore/nebula-br/2.compile-br/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/backup-and-restore/nebula-br/3.br-backup-data/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/backup-and-restore/nebula-br/4.br-restore-data/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1207,6 +1247,91 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/community/nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/about-studio/st-ug-limitations/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/about-studio/st-ug-what-is-graph-studio/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/deploy-connect/st-ug-connect/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/deploy-connect/st-ug-deploy/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/manage-schema/st-ug-crud-edge-type/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/manage-schema/st-ug-crud-index/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/manage-schema/st-ug-crud-space/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/manage-schema/st-ug-crud-tag/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/manage-schema/st-ug-view-schema/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/quick-start/draft/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/quick-start/st-ug-console/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/quick-start/st-ug-create-schema/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/quick-start/st-ug-import-data/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/quick-start/st-ug-plan-schema/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/troubleshooting/st-ug-config-server-errors/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/troubleshooting/st-ug-connection-errors/</loc>
+         <lastmod>2023-05-08</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/community/nebula-studio/troubleshooting/st-ug-faq/</loc>
          <lastmod>2023-05-08</lastmod>
          <changefreq>daily</changefreq>
     </url>
