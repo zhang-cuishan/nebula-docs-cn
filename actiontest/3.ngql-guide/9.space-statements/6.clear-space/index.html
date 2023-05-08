@@ -8015,9 +8015,9 @@
 <li>图空间中的数据量越大，<code>CLEAR SPACE</code>消耗的时间越长。如果<code>CLEAR SPACE</code>的执行因客户端连接超时而失败，可以增大 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>中<code>storage_client_timeout_ms</code>参数的值。</li>
 <li>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止。这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏。</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NebulaGraph 不支持在运行<code>CLEAR SPACE</code>的同时禁止写入。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>企业版NebulaGraph支持先运行<code>SET VARIABLE read_only=true</code>阻止向NebulaGraph写入数据，再运行<code>CLEAR SPACE</code>。数据清除成功后运行<code>SET VARIABLE read_only=false</code>即可重新允许写入。</p>
 </div>
 <h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;
