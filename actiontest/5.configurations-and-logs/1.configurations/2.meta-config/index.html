@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#meta" class="md-skip">
           跳转至
         </a>
       
@@ -3426,9 +3426,89 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Meta 服务配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Meta 服务配置
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置文件使用方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置文件参数值说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    basics 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    logging 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    networking 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    storage 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rocksdb_options" class="md-nav__link">
+    rocksdb options 配置
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7974,70 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    配置文件使用方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    配置文件参数值说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basics" class="md-nav__link">
+    basics 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    logging 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    networking 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    storage 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    misc 配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rocksdb_options" class="md-nav__link">
+    rocksdb options 配置
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,20 +8056,251 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 32, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
-</code></pre></div>
+<h1 id="meta">Meta 服务配置<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h1>
+<p>Meta 服务提供了两份初始配置文件<code>nebula-metad.conf.default</code>和<code>nebula-metad.conf.production</code>，方便在不同场景中使用。文件的默认路径为<code>/usr/local/nebula/etc/</code>。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<ul>
+<li>不建议修改<code>local_config</code>的值为<code>false</code>。修改后NebulaGraph服务启动后会先尝试从 Meta 服务获取缓存的配置信息，可能导致集群配置不一致，造成未知风险。</li>
+<li>不建议修改文档未介绍的配置项，除非已经熟悉源代码并清楚了解配置项作用。</li>
+</ul>
+</div>
+<h2 id="_1">配置文件使用方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>如需使用初始配置文件，从上述两个文件选择其一，删除后缀<code>.default</code>或<code>.production</code>，Meta 服务才能将其识别为配置文件并从中获取配置信息。</p>
+<h2 id="_2">配置文件参数值说明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>配置文件内没有设置某个参数表示参数使用的是默认值。文件内只预设了部分参数的值，而且两份初始配置文件内的参数值也略有不同，本文的预设值以<code>nebula-metad.conf.default</code>为准。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>配置文件中的部分参数值可以在运行时动态修改。本文将这些参数标记为支持运行时动态修改，并当<code>local_config</code>值设置为<code>true</code>时重启服务后配置会恢复为初始配置。详情参见<a href="../1.configurations/">修改配置</a>。</p>
+</div>
+<p>如需查看所有的参数及其当前值，参见<a href="../1.configurations/">配置管理</a>。</p>
+<h2 id="basics">basics 配置<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>daemonize</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否启动守护进程。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>pid_file</code></td>
+<td align="left"><code>pids/nebula-metad.pid</code></td>
+<td align="left">记录进程 ID 的文件。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>timezone_name</code></td>
+<td align="left">-</td>
+<td align="left">指定NebulaGraph的时区。初始配置文件中未设置该参数，如需使用请手动添加。系统默认值为<code>UTC+00:00:00</code>。格式请参见 <a href="https://www.gnu.org/software/libc/manual/html_node/TZ-Variable.html" title="Click to view the timezone-related content in the GNU C Library manual">Specifying the Time Zone with TZ</a>。例如，东八区的设置方式为<code>--timezone_name=UTC+08:00</code>。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>在插入<a href="../../../3.ngql-guide/3.data-types/4.date-and-time/">时间类型</a>的属性值时，NebulaGraph会根据<code>timezone_name</code>设置的时区将该时间值（TIMESTAMP 类型例外）转换成相应的 UTC 时间，因此在查询中返回的时间类型属性值为 UTC 时间。</li>
+<li><code>timezone_name</code>参数只用于转换NebulaGraph中存储的数据，NebulaGraph进程中其它时区相关数据，例如日志打印的时间等，仍然使用主机系统默认的时区。</li>
+</ul>
+</div>
+<h2 id="logging">logging 配置<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>log_dir</code></td>
+<td align="left"><code>logs</code></td>
+<td align="left">存放 Meta 服务日志的目录，建议和数据保存在不同硬盘。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>minloglevel</code></td>
+<td align="left"><code>0</code></td>
+<td align="left">最小日志级别，即记录此级别或更高级别的日志。可选值为<code>0</code>（INFO）、<code>1</code>（WARNING）、<code>2</code>（ERROR）、<code>3</code>（FATAL）。建议在调试时设置为<code>0</code>，生产环境中设置为<code>1</code>。如果设置为<code>4</code>，NebulaGraph不会记录任何日志。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>v</code></td>
+<td align="left"><code>0</code></td>
+<td align="left">VLOG 日志详细级别，即记录小于或等于此级别的所有 VLOG 消息。可选值为<code>0</code>、<code>1</code>、<code>2</code>、<code>3</code>、<code>4</code>、<code>5</code>。glog 提供的 VLOG 宏允许用户定义自己的数字日志记录级别，并用参数<code>v</code>控制记录哪些详细消息。详情参见 <a href="https://github.com/google/glog#verbose-logging">Verbose Logging</a>。</td>
+<td align="left">支持</td>
+</tr>
+<tr>
+<td align="left"><code>logbufsecs</code></td>
+<td align="left"><code>0</code></td>
+<td align="left">缓冲日志的最大时间，超时后输出到日志文件。<code>0</code>表示实时输出。单位：秒。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>redirect_stdout</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否将标准输出和标准错误重定向到单独的输出文件。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>stdout_log_file</code></td>
+<td align="left"><code>metad-stdout.log</code></td>
+<td align="left">标准输出日志文件名称。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>stderr_log_file</code></td>
+<td align="left"><code>metad-stderr.log</code></td>
+<td align="left">标准错误日志文件名称。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>stderrthreshold</code></td>
+<td align="left"><code>3</code></td>
+<td align="left">要复制到标准错误中的最小日志级别（<code>minloglevel</code>）。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>timestamp_in_logfile_name</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">日志文件名称中是否包含时间戳。<code>true</code>表示包含，<code>false</code>表示不包含。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="networking">networking 配置<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>meta_server_addrs</code></td>
+<td align="left"><code>127.0.0.1:9559</code></td>
+<td align="left">全部 Meta 服务的 IP 地址和端口。多个 Meta 服务用英文逗号（,）分隔。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>local_ip</code></td>
+<td align="left"><code>127.0.0.1</code></td>
+<td align="left">Meta 服务的本地 IP 地址。本地 IP 地址用于识别 nebula-metad 进程，如果是分布式集群或需要远程访问，请修改为对应地址。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>port</code></td>
+<td align="left"><code>9559</code></td>
+<td align="left">Meta 服务的 RPC 守护进程监听端口。Meta 服务对外端口为<code>9559</code>，对内端口为<code>对外端口+1</code>，即<code>9560</code>，NebulaGraph使用内部端口进行多副本间的交互。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ws_ip</code></td>
+<td align="left"><code>0.0.0.0</code></td>
+<td align="left">HTTP 服务的 IP 地址。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ws_http_port</code></td>
+<td align="left"><code>19559</code></td>
+<td align="left">HTTP 服务的端口。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>ws_storage_http_port</code></td>
+<td align="left"><code>19779</code></td>
+<td align="left">HTTP 协议监听 Storage 服务的端口，需要和 Storage 服务配置文件中的<code>ws_http_port</code>保持一致。仅存算合并版NebulaGraph需要设置本参数。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>heartbeat_interval_secs</code></td>
+<td align="left"><code>10</code></td>
+<td align="left">默认心跳间隔。请确保所有服务的<code>heartbeat_interval_secs</code>取值相同，否则会导致系统无法正常工作。单位：秒。</td>
+<td align="left">支持</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>必须在配置文件中使用真实的 IP 地址。否则某些情况下<code>127.0.0.1/0.0.0.0</code>无法正确解析。</p>
+</div>
+<h2 id="storage">storage 配置<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>data_path</code></td>
+<td align="left"><code>data/meta</code></td>
+<td align="left">meta 数据存储路径。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="misc">misc 配置<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>default_parts_num</code></td>
+<td align="left"><code>100</code></td>
+<td align="left">创建图空间时的默认分片数量。</td>
+<td align="left">不支持</td>
+</tr>
+<tr>
+<td align="left"><code>default_replica_factor</code></td>
+<td align="left"><code>1</code></td>
+<td align="left">创建图空间时的默认副本数量。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rocksdb_options">rocksdb options 配置<a class="headerlink" href="#rocksdb_options" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">预设值</th>
+<th align="left">说明</th>
+<th align="left">是否支持运行时动态修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>rocksdb_wal_sync</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">是否同步 RocksDB 的 WAL 日志。</td>
+<td align="left">不支持</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">

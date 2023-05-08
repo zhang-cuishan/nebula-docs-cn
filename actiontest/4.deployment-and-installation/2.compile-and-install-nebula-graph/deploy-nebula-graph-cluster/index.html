@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#rpmdeb_nebulagraph" class="md-skip">
           跳转至
         </a>
       
@@ -3130,9 +3130,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 RPM/DEB 包部署多机集群
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         使用 RPM/DEB 包部署多机集群
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    部署方案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    手动部署流程
+  </a>
+  
+    <nav class="md-nav" aria-label="手动部署流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nebulagraph" class="md-nav__link">
+    安装NebulaGraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    启动集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    检查集群
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7973,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    部署方案
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    手动部署流程
+  </a>
+  
+    <nav class="md-nav" aria-label="手动部署流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nebulagraph" class="md-nav__link">
+    安装NebulaGraph
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    启动集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    检查集群
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,19 +8054,417 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 34, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
+<h1 id="rpmdeb_nebulagraph">使用 RPM/DEB 包部署NebulaGraph多机集群<a class="headerlink" href="#rpmdeb_nebulagraph" title="Permanent link">&para;</a></h1>
+<p>本文介绍通过 RPM 或 DEB 文件部署集群的示例。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>用户还可以通过官方工具部署NebulaGraph多机集群。详情参见<a href="../6.deploy-nebula-graph-with-peripherals/">使用生态工具安装集群</a>。</p>
+</div>
+<h2 id="_1">部署方案<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">机器名称</th>
+<th align="left">IP 地址</th>
+<th align="left">graphd 进程数量</th>
+<th align="left">storaged 进程数量</th>
+<th align="left">metad 进程数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A</td>
+<td align="left">192.168.10.111</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="left">192.168.10.112</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left">192.168.10.113</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">192.168.10.114</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">192.168.10.115</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">前提条件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>准备 5 台用于部署集群的机器。</li>
+<li>在集群中通过 NTP 服务同步时间。</li>
+</ul>
+<h2 id="_3">手动部署流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="nebulagraph">安装NebulaGraph<a class="headerlink" href="#nebulagraph" title="Permanent link">&para;</a></h3>
+<p>在集群的每一台服务器上都安装NebulaGraph，安装后暂不需要启动服务。安装方式请参见：</p>
+<ul>
+<li><a href="../2.install-nebula-graph-by-rpm-or-deb/">使用 RPM 或 DEB 包安装NebulaGraph</a></li>
+</ul>
+<ul>
+<li><a href="../1.install-nebula-graph-by-compiling-the-source-code/">使用源码安装NebulaGraph</a></li>
+</ul>
+<h3 id="_4">修改配置文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>修改每个服务器上的NebulaGraph配置文件。</p>
+<p>NebulaGraph的所有配置文件均位于安装目录的<code>etc</code>目录内，包括<code>nebula-graphd.conf</code>、<code>nebula-metad.conf</code>和<code>nebula-storaged.conf</code>，用户可以只修改所需服务的配置文件。各个机器需要修改的配置文件如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">机器名称</th>
+<th align="left">待修改配置文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A</td>
+<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code>、<code>nebula-metad.conf</code></td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left"><code>nebula-graphd.conf</code>、<code>nebula-storaged.conf</code></td>
+</tr>
+</tbody>
+</table>
+<p>用户可以参考如下配置文件的内容，仅展示集群通信的部分设置，未展示的内容为默认设置，便于用户了解集群间各个服务器的关系。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>主要修改的配置是<code>meta_server_addrs</code>，所有配置文件都需要填写所有 Meta 服务的 IP 地址和端口，同时需要修改<code>local_ip</code>为机器本身的联网 IP 地址。配置参数的详细说明请参见：</p>
+<ul>
+<li><a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta 服务配置</a></li>
+</ul>
+<ul>
+<li><a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a></li>
+</ul>
+<ul>
+<li><a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置</a></li>
+</ul>
+</div>
+<ul>
+<li>
+<p>机器 A 配置</p>
+<ul>
+<li>
+<p><code>nebula-graphd.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server Addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
+<span class="c1"># Network device to listen on</span>
+--listen_netdev<span class="o">=</span>any
+<span class="c1"># Port to listen on</span>
+--port<span class="o">=</span><span class="m">9669</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-storaged.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
+<span class="c1"># Storage daemon listening port</span>
+--port<span class="o">=</span><span class="m">9779</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-metad.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-metad process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.111
+<span class="c1"># Meta daemon listening port</span>
+--port<span class="o">=</span><span class="m">9559</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>机器 B 配置</p>
+<ul>
+<li>
+<p><code>nebula-graphd.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server Addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
+<span class="c1"># Network device to listen on</span>
+--listen_netdev<span class="o">=</span>any
+<span class="c1"># Port to listen on</span>
+--port<span class="o">=</span><span class="m">9669</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-storaged.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
+<span class="c1"># Storage daemon listening port</span>
+--port<span class="o">=</span><span class="m">9779</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-metad.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-metad process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.112
+<span class="c1"># Meta daemon listening port</span>
+--port<span class="o">=</span><span class="m">9559</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>机器 C 配置</p>
+<ul>
+<li>
+<p><code>nebula-graphd.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server Addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
+<span class="c1"># Network device to listen on</span>
+--listen_netdev<span class="o">=</span>any
+<span class="c1"># Port to listen on</span>
+--port<span class="o">=</span><span class="m">9669</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-storaged.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
+<span class="c1"># Storage daemon listening port</span>
+--port<span class="o">=</span><span class="m">9779</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-metad.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-metad process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.113
+<span class="c1"># Meta daemon listening port</span>
+--port<span class="o">=</span><span class="m">9559</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>机器 D 配置</p>
+<ul>
+<li>
+<p><code>nebula-graphd.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server Addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.114
+<span class="c1"># Network device to listen on</span>
+--listen_netdev<span class="o">=</span>any
+<span class="c1"># Port to listen on</span>
+--port<span class="o">=</span><span class="m">9669</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-storaged.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.114
+<span class="c1"># Storage daemon listening port</span>
+--port<span class="o">=</span><span class="m">9779</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>机器 E 配置</p>
+<ul>
+<li>
+<p><code>nebula-graphd.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta Server Addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-graphd process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.115
+<span class="c1"># Network device to listen on</span>
+--listen_netdev<span class="o">=</span>any
+<span class="c1"># Port to listen on</span>
+--port<span class="o">=</span><span class="m">9669</span>
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>nebula-storaged.conf</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">########## networking ##########</span>
+<span class="c1"># Comma separated Meta server addresses</span>
+--meta_server_addrs<span class="o">=</span><span class="m">192</span>.168.10.111:9559,192.168.10.112:9559,192.168.10.113:9559
+<span class="c1"># Local IP used to identify the nebula-storaged process.</span>
+<span class="c1"># Change it to an address other than loopback if the service is distributed or</span>
+<span class="c1"># will be accessed remotely.</span>
+--local_ip<span class="o">=</span><span class="m">192</span>.168.10.115
+<span class="c1"># Storage daemon listening port</span>
+--port<span class="o">=</span><span class="m">9779</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">启动集群<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>依次启动<strong>各个服务器</strong>上的对应进程。</p>
+<table>
+<thead>
+<tr>
+<th align="left">机器名称</th>
+<th align="left">待启动的进程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A</td>
+<td align="left">graphd、storaged、metad</td>
+</tr>
+<tr>
+<td align="left">B</td>
+<td align="left">graphd、storaged、metad</td>
+</tr>
+<tr>
+<td align="left">C</td>
+<td align="left">graphd、storaged、metad</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">graphd、storaged</td>
+</tr>
+<tr>
+<td align="left">E</td>
+<td align="left">graphd、storaged</td>
+</tr>
+</tbody>
+</table>
+<p>启动NebulaGraph进程的命令如下：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/local/nebula/scripts/nebula.service<span class="w"> </span>start<span class="w"> </span>&lt;metad<span class="p">|</span>graphd<span class="p">|</span>storaged<span class="p">|</span>all&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>确保每个服务器中的对应进程都已启动，否则服务将启动失败。</li>
+</ul>
+<ul>
+<li>当需都启动 graphd、storaged 和 metad 时，可以用 all 代替。</li>
+</ul>
+<ul>
+<li><code>/usr/local/nebula</code>是NebulaGraph的默认安装路径，如果修改过安装路径，请使用实际路径。更多启停服务的内容，请参见<a href="../../../2.quick-start/3.quick-start-on-premise/5.start-stop-service/">管理NebulaGraph服务</a>。</li>
+</ul>
+</div>
+<h3 id="_6">检查集群<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>安装原生 CLI 客户端 <a href="../../../2.quick-start/3.quick-start-on-premise/3.connect-to-nebula-graph/#_1">NebulaGraph Console</a>，然后连接任何一个已启动 graphd 进程的机器，添加 Storage 主机，然后执行命令<code>SHOW HOSTS</code>检查集群状态。例如：</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>./nebula-console<span class="w"> </span>--addr<span class="w"> </span><span class="m">192</span>.168.10.111<span class="w"> </span>--port<span class="w"> </span><span class="m">9669</span><span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span>nebula
+
+<span class="m">2021</span>/05/25<span class="w"> </span><span class="m">01</span>:41:19<span class="w"> </span><span class="o">[</span>INFO<span class="o">]</span><span class="w"> </span>connection<span class="w"> </span>pool<span class="w"> </span>is<span class="w"> </span>initialized<span class="w"> </span>successfully
+Welcome<span class="w"> </span>to<span class="w"> </span>NebulaGraph!
+
+&gt;<span class="w"> </span>ADD<span class="w"> </span>HOSTS<span class="w"> </span><span class="m">192</span>.168.10.111:9779,<span class="w"> </span><span class="m">192</span>.168.10.112:9779,<span class="w"> </span><span class="m">192</span>.168.10.113:9779,<span class="w"> </span><span class="m">192</span>.168.10.114:9779,<span class="w"> </span><span class="m">192</span>.168.10.115:9779<span class="p">;</span>
+&gt;<span class="w"> </span>SHOW<span class="w"> </span>HOSTS<span class="p">;</span>
++------------------+------+----------+--------------+----------------------+------------------------+----------------------+
+<span class="p">|</span><span class="w"> </span>Host<span class="w">             </span><span class="p">|</span><span class="w"> </span>Port<span class="w"> </span><span class="p">|</span><span class="w"> </span>Status<span class="w">   </span><span class="p">|</span><span class="w"> </span>Leader<span class="w"> </span>count<span class="w"> </span><span class="p">|</span><span class="w"> </span>Leader<span class="w"> </span>distribution<span class="w">  </span><span class="p">|</span><span class="w"> </span>Partition<span class="w"> </span>distribution<span class="w"> </span><span class="p">|</span><span class="w"> </span>Version<span class="w">              </span><span class="p">|</span>
++------------------+------+----------+--------------+----------------------+------------------------+----------------------+
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;192.168.10.111&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9779</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;ONLINE&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w">            </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;3.4.1&quot;</span><span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;192.168.10.112&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9779</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;ONLINE&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w">            </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;3.4.1&quot;</span><span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;192.168.10.113&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9779</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;ONLINE&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w">            </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;3.4.1&quot;</span><span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;192.168.10.114&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9779</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;ONLINE&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w">            </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;3.4.1&quot;</span><span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="s2">&quot;192.168.10.115&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">9779</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;ONLINE&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">0</span><span class="w">            </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;No valid partition&quot;</span><span class="w">   </span><span class="p">|</span><span class="w"> </span><span class="s2">&quot;3.4.1&quot;</span><span class="w"> </span><span class="p">|</span>
++------------------+------+----------+--------------+----------------------+------------------------+----------------------+
 </code></pre></div>
 
   <hr>

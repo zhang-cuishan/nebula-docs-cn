@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -3733,9 +3733,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          身份验证
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         身份验证
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    本地身份验证
+  </a>
+  
+    <nav class="md-nav" aria-label="本地身份验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    启用本地身份验证
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7938,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    本地身份验证
+  </a>
+  
+    <nav class="md-nav" aria-label="本地身份验证">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    启用本地身份验证
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,20 +7984,39 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 32, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
-</code></pre></div>
+<h1 id="_1">身份验证<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>身份验证用于将会话映射到特定用户，从而实现访问控制。</p>
+<p>当客户端连接到NebulaGraph时，NebulaGraph会创建一个会话，会话中存储连接的各种信息，如果开启了身份验证，就会将会话映射到对应的用户。</p>
+<p>NebulaGraph支持两种身份验证方式：本地身份验证和 LDAP 验证。</p>
+<h2 id="_2">本地身份验证<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本地身份验证是指在服务器本地存储用户名、加密密码，当用户尝试访问NebulaGraph时，将进行身份验证。</p>
+<h3 id="_3">启用本地身份验证<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>编辑配置文件<code>nebula-graphd.conf</code>（默认目录为<code>/usr/local/nebula/etc/</code>），设置如下参数：</p>
+<ul>
+<li>
+<p><code>--enable_authorize</code>：是否启用身份验证，可选值：<code>true</code>、<code>false</code>。   </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>默认情况下，身份验证功能是关闭的，用户可以使用<code>root</code>用户名和任意密码连接到NebulaGraph。</li>
+<li>开启身份验证后，默认的 God 角色账号为<code>root</code>，密码为<code>nebula</code>。角色详情请参见<a href="../3.role-list/">内置角色权限</a>。</li>
+</ul>
+</div>
+</li>
+</ul>
+<ul>
+<li><code>--failed_login_attempts</code>：可选项，需要手动添加该参数。单个 Graph 节点允许连续输入错误密码的次数。超过该次数时，账户会被锁定。如果有多个 Graph 节点，允许的次数为<code>节点数 * 次数</code>。</li>
+</ul>
+<ul>
+<li><code>--password_lock_time_in_secs</code>：可选项，需要手动添加该参数。多次输入错误密码后，账户被锁定的时间。单位：秒。</li>
+</ul>
+</li>
+<li>
+<p>重启NebulaGraph服务。</p>
+</li>
+</ol>
 
   <hr>
 <div class="md-source-file">

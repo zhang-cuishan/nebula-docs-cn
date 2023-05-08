@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#targz_nebulagraph" class="md-skip">
           跳转至
         </a>
       
@@ -3102,9 +3102,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 tar.gz 文件安装
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         使用 tar.gz 文件安装
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7932,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    操作步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    下一步
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,20 +7972,76 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 76, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
+<h1 id="targz_nebulagraph">使用 tar.gz 文件安装NebulaGraph<a class="headerlink" href="#targz_nebulagraph" title="Permanent link">&para;</a></h1>
+<p>用户可以下载打包好的 tar.gz 文件快速安装NebulaGraph。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>NebulaGraph从 2.6.0 版本起提供 tar.gz 文件。</li>
+</ul>
+<ul>
+<li>当前仅支持在 Linux 系统下安装NebulaGraph，且仅支持 CentOS 7.x、CentOS 8.x、Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04 操作系统。</li>
+</ul>
+<ul>
+<li>如果用户使用的是国产化的 Linux 操作系统，请<a href="https://www.nebula-graph.com.cn/contact">安装NebulaGraph</a>。 </li>
+</ul>
+</div>
+<h2 id="_1">操作步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>使用如下地址下载NebulaGraph的 tar.gz 文件。</p>
+<p>下载前需将<code>&lt;release_version&gt;</code>替换为需要下载的版本。</p>
+<div class="highlight"><pre><span></span><code>//Centos<span class="w"> </span><span class="m">7</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el7.x86_64.tar.gz
+//Checksum
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el7.x86_64.tar.gz.sha256sum.txt
+
+//Centos<span class="w"> </span><span class="m">8</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.tar.gz
+//Checksum
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.tar.gz.sha256sum.txt
+
+//Ubuntu<span class="w"> </span><span class="m">1604</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.tar.gz
+//Checksum
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.tar.gz.sha256sum.txt
+
+//Ubuntu<span class="w"> </span><span class="m">1804</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.tar.gz
+//Checksum
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.tar.gz.sha256sum.txt
+
+//Ubuntu<span class="w"> </span><span class="m">2004</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.tar.gz
+//Checksum
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.tar.gz.sha256sum.txt
 </code></pre></div>
+<p>例如，要下载适用于<code>CentOS 7.5</code>的NebulaGraph release-3.4 tar.gz 文件，运行以下命令：</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/3.4.1/nebula-graph-3.4.1.el7.x86_64.tar.gz
+</code></pre></div>
+</li>
+<li>
+<p>解压 tar.gz 文件到NebulaGraph安装目录。</p>
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xvzf<span class="w"> </span>&lt;tar.gz_file_name&gt;<span class="w"> </span>-C<span class="w"> </span>&lt;install_path&gt;
+</code></pre></div>
+<ul>
+<li><code>tar.gz_file_name</code>表示 tar.gz 文件的名称。</li>
+<li><code>install_path</code>表示安装路径。</li>
+</ul>
+<p>例如：</p>
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xvzf<span class="w"> </span>nebula-graph-3.4.1.el7.x86_64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/home/joe/nebula/install
+</code></pre></div>
+</li>
+<li>
+<p>修改配置文件名以应用配置。</p>
+<p>进入解压出的目录，将子目录<code>etc</code>中的文件<code>nebula-graphd.conf.default</code>、<code>nebula-metad.conf.default</code>和<code>nebula-storaged.conf.default</code>重命名，删除<code>.default</code>，即可应用NebulaGraph的默认配置。如需修改配置，参见<a href="../../../5.configurations-and-logs/1.configurations/1.configurations/">配置管理</a>。</p>
+</li>
+</ol>
+<p>至此，NebulaGraph安装完毕。</p>
+<h2 id="_2">下一步<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../manage-service/">管理NebulaGraph服务</a></li>
+</ul>
 
   <hr>
 <div class="md-source-file">

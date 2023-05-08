@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -3761,9 +3761,47 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          内置角色权限
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         内置角色权限
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内置角色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    角色权限
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7932,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    内置角色
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    角色权限
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,20 +7972,221 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 50, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
-</code></pre></div>
+<h1 id="_1">内置角色权限<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>所谓角色，就是一组相关权限的集合。用户可以把角色分配给<a href="../2.management-user/">创建的用户</a>，从而实现访问控制。</p>
+<h2 id="_2">内置角色<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>NebulaGraph内置了多种角色，说明如下：</p>
+<ul>
+<li>
+<p>God</p>
+<ul>
+<li>初始最高权限角色，拥有<strong>所有操作</strong>的权限。类似于 Linux 中的<code>root</code>和 Windows 中的<code>administrator</code>。</li>
+</ul>
+<ul>
+<li>
+<p>Meta 服务初始化时，会自动创建 God 角色用户<code>root</code>，密码为<code>nebula</code>。</p>
+<div class="admonition caution">
+<p class="admonition-title">注意</p>
+<p>请及时修改<code>root</code>用户的密码，保证数据安全。</p>
+</div>
+</li>
+</ul>
+<ul>
+<li>
+<p>在<code>nebula-graphd.conf</code>文件中（默认目录为<code>/usr/local/nebula/etc/</code>），当<code>--enable_authorize</code>为<code>true</code>时：</p>
+<ul>
+<li>一个集群只能有一个 God 角色用户，该用户可以管理集群内所有图空间。</li>
+<li>不支持手动授权 God 角色，只能使用默认 God 角色用户<code>root</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Admin</p>
+<ul>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>读写</strong>权限。</li>
+</ul>
+<ul>
+<li>
+<p>可以将权限内的图空间授权给其他用户。</p>
+<div class="admonition caution">
+<p class="admonition-title">注意</p>
+<p>只能授权低于 ADMIN 级别的角色给其他用户。</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>DBA</p>
+<ul>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>读写</strong>权限。</li>
+</ul>
+<ul>
+<li>无法将权限内的图空间授权给其他用户。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>User</p>
+<ul>
+<li>对权限内的图空间拥有 Schema 的<strong>只读</strong>权限。</li>
+</ul>
+<ul>
+<li>对权限内的图空间拥有 data 的<strong>读写</strong>权限。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Guest</p>
+<ul>
+<li>对权限内的图空间拥有 Schema 和 data 的<strong>只读</strong>权限。</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>不支持自行创建角色，只能使用默认的内置角色。</li>
+<li>一个用户在一个图空间内只能拥有一个角色权限。授权用户请参见<a href="../2.management-user/">用户管理</a>。</li>
+</ul>
+</div>
+<h2 id="_3">角色权限<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>各角色的执行权限如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">权限</th>
+<th align="left">God</th>
+<th align="left">Admin</th>
+<th align="left">DBA</th>
+<th align="left">User</th>
+<th align="left">Guest</th>
+<th align="left">Basic（企业版）</th>
+<th align="left">相关语句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Read space</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"><code>USE</code>、<code>DESCRIBE SPACE</code></td>
+</tr>
+<tr>
+<td align="left">Read schema</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"><code>DESCRIBE TAG</code>、<code>DESCRIBE EDGE</code>、<code>DESCRIBE TAG INDEX</code>、<code>DESCRIBE EDGE INDEX</code></td>
+</tr>
+<tr>
+<td align="left">Write schema</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>CREATE TAG</code>、<code>ALTER TAG</code>、<code>CREATE EDGE</code>、<code>ALTER EDGE</code>、<code>DROP TAG</code>、<code>DELETE TAG</code>、<code>DROP EDGE</code>、<code>CREATE TAG INDEX</code>、<code>CREATE EDGE INDEX</code>、<code>DROP TAG INDEX</code>、<code>DROP EDGE INDEX</code></td>
+</tr>
+<tr>
+<td align="left">Write user</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>CREATE USER</code>、<code>DROP USER</code>、<code>ALTER USER</code></td>
+</tr>
+<tr>
+<td align="left">Write role</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>GRANT</code>、<code>REVOKE</code></td>
+</tr>
+<tr>
+<td align="left">Read data</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">C</td>
+<td align="left"><code>GO</code>、<code>SET</code>、<code>PIPE</code>、<code>MATCH</code>、<code>ASSIGNMENT</code>、<code>LOOKUP</code>、<code>YIELD</code>、<code>ORDER BY</code>、<code>FETCH VERTICES</code>、<code>Find</code>、<code>FETCH EDGES</code>、<code>FIND PATH</code>、<code>LIMIT</code>、<code>GROUP BY</code>、<code>RETURN</code></td>
+</tr>
+<tr>
+<td align="left">Write data</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left">C</td>
+<td align="left"><code>INSERT VERTEX</code>、<code>UPDATE VERTEX</code>、<code>INSERT EDGE</code>、<code>UPDATE EDGE</code>、<code>DELETE VERTEX</code>、<code>DELETE EDGES</code>、<code>DELETE TAG</code></td>
+</tr>
+<tr>
+<td align="left">Show operations</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"><code>SHOW</code>、<code>CHANGE PASSWORD</code></td>
+</tr>
+<tr>
+<td align="left">Job</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>SUBMIT JOB COMPACT</code>、<code>SUBMIT JOB FLUSH</code>、<code>SUBMIT JOB STATS</code>、<code>STOP JOB</code>、<code>RECOVER JOB</code>、<code>BUILD TAG INDEX</code>、<code>BUILD EDGE INDEX</code>、<code>INGEST</code>、<code>DOWNLOAD</code></td>
+</tr>
+<tr>
+<td align="left">Write space</td>
+<td align="left">Y</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><code>CREATE SPACE</code>、<code>DROP SPACE</code>、<code>CREATE SNAPSHOT</code>、<code>DROP SNAPSHOT</code>、<code>BALANCE</code>、<code>CONFIG</code></td>
+</tr>
+</tbody>
+</table>
+<!-- balance-3.1
+  |Write space|Y|||||`CREATE SPACE`、`DROP SPACE`、`CREATE SNAPSHOT`、`DROP SNAPSHOT`、`BALANCE ZONE`、`BALANCE LEADER`、`ADMIN`、`CONFIG`、`INGEST`、`DOWNLOAD`|
+-->
+
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>当前仅企业版支持基于 Basic 角色的细粒度(Tag/Edge type 级别)权限管理。</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Show operations 为特殊操作，只会在自身权限内执行。例如<code>SHOW SPACES</code>，每个角色都可以执行，但是只会返回自身权限内的图空间。
+只有 God 角色可以执行<code>SHOW USERS</code>和<code>SHOW SNAPSHOTS</code>语句。</p>
+</div>
 
   <hr>
 <div class="md-source-file">

@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#graph" class="md-skip">
           跳转至
         </a>
       
@@ -7877,8 +7877,42 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meta" class="md-nav__link">
+    Meta
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" class="md-nav__link">
+    Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    图空间级别监控指标
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -7898,20 +7932,572 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 154, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
-</code></pre></div>
+  <h1>Source monitoring metrics</h1>
+
+<h3 id="graph">Graph<a class="headerlink" href="#graph" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_active_queries</code></td>
+<td>活跃的查询语句数的变化数。<br>计算公式：时间范围内开始执行的语句数减去执行完毕的语句数。</td>
+</tr>
+<tr>
+<td><code>num_active_sessions</code></td>
+<td>活跃的会话数的变化数。<br>计算公式：时间范围内登录的会话数减去登出的会话数。<br>例如查询num_active_sessions.sum.5，过去 5 秒中登录了 10 个会话数，登出了 30 个会话数，那么该指标值就是<code>-20</code>（10-30）。</td>
+</tr>
+<tr>
+<td><code>num_aggregate_executors</code></td>
+<td>聚合（Aggregate）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions_bad_username_password</code></td>
+<td>因用户名密码错误导验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions_out_of_max_allowed</code></td>
+<td>因为超过<code>FLAG_OUT_OF_MAX_ALLOWED_CONNECTIONS</code>参数导致的验证登录的失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions</code></td>
+<td>登录验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_indexscan_executors</code></td>
+<td>索引扫描（IndexScan）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_killed_queries</code></td>
+<td>被终止的查询数量。</td>
+</tr>
+<tr>
+<td><code>num_opened_sessions</code></td>
+<td>服务端建立过的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_queries</code></td>
+<td>查询次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors_leader_changes</code></td>
+<td>因查询错误而导致的 Leader 变更的次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors</code></td>
+<td>查询错误次数。</td>
+</tr>
+<tr>
+<td><code>num_reclaimed_expired_sessions</code></td>
+<td>服务端主动回收的过期的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad_failed</code></td>
+<td>Graphd 服务发给 Metad 的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad</code></td>
+<td>Graphd 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged_failed</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_sentences</code></td>
+<td>Graphd 服务接收的语句数。</td>
+</tr>
+<tr>
+<td><code>num_slow_queries</code></td>
+<td>慢查询次数。</td>
+</tr>
+<tr>
+<td><code>num_sort_executors</code></td>
+<td>排序（Sort）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>optimizer_latency_us</code></td>
+<td>优化器阶段延迟时间。</td>
+</tr>
+<tr>
+<td><code>query_latency_us</code></td>
+<td>查询延迟时间。</td>
+</tr>
+<tr>
+<td><code>slow_query_latency_us</code></td>
+<td>慢查询延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_queries_hit_memory_watermark</code></td>
+<td>达到内存水位线的语句的数量。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="meta">Meta<a class="headerlink" href="#meta" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commit_log_latency_us</code></td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_snapshot_latency_us</code></td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
+</tr>
+<tr>
+<td><code>heartbeat_latency_us</code></td>
+<td>心跳延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_heartbeats</code></td>
+<td>心跳次数。</td>
+</tr>
+<tr>
+<td><code>num_raft_votes</code></td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td><code>transfer_leader_latency_us</code></td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_agent_heartbeats</code></td>
+<td>AgentHBProcessor 心跳次数。</td>
+</tr>
+<tr>
+<td><code>agent_heartbeat_latency_us</code></td>
+<td>AgentHBProcessor 延迟时间。</td>
+</tr>
+<tr>
+<td><code>replicate_log_latency_us</code></td>
+<td>Raft 复制日志至大多数节点的延迟。</td>
+</tr>
+<tr>
+<td><code>num_send_snapshot</code></td>
+<td>Raft 发送快照至其他节点的次数。</td>
+</tr>
+<tr>
+<td><code>append_log_latency_us</code></td>
+<td>Raft 复制日志到单个节点的延迟。</td>
+</tr>
+<tr>
+<td><code>append_wal_latency_us</code></td>
+<td>Raft 写入单条 WAL 的延迟。</td>
+</tr>
+<tr>
+<td><code>num_grant_votes</code></td>
+<td>Raft 投票给其他节点的次数。</td>
+</tr>
+<tr>
+<td><code>num_start_elect</code></td>
+<td>Raft 发起投票的次数。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add_edges_latency_us</code></td>
+<td>添加边的延迟时间。</td>
+</tr>
+<tr>
+<td><code>add_vertices_latency_us</code></td>
+<td>添加点的延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_log_latency_us</code></td>
+<td>Raft 协议中 Commit 日志的延迟时间。</td>
+</tr>
+<tr>
+<td><code>commit_snapshot_latency_us</code></td>
+<td>Raft 协议中 Commit 快照的延迟时间。</td>
+</tr>
+<tr>
+<td><code>delete_edges_latency_us</code></td>
+<td>删除边的延迟时间。</td>
+</tr>
+<tr>
+<td><code>delete_vertices_latency_us</code></td>
+<td>删除点的延迟时间。</td>
+</tr>
+<tr>
+<td><code>get_neighbors_latency_us</code></td>
+<td>查询邻居延迟时间。</td>
+</tr>
+<tr>
+<td><code>get_dst_by_src_latency_us</code></td>
+<td>通过起始点获取终点的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_get_prop</code></td>
+<td>GetPropProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_neighbors_errors</code></td>
+<td>GetNeighborsProcessor 执行出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_dst_by_src_errors</code></td>
+<td>GetDstBySrcProcessor 执行出错的次数。</td>
+</tr>
+<tr>
+<td><code>get_prop_latency_us</code></td>
+<td>GetPropProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_edges_deleted</code></td>
+<td>删除的边数量。</td>
+</tr>
+<tr>
+<td><code>num_edges_inserted</code></td>
+<td>插入的边数量。</td>
+</tr>
+<tr>
+<td><code>num_raft_votes</code></td>
+<td>Raft 协议中投票的次数。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad_failed</code></td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad</code></td>
+<td>Storaged 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_tags_deleted</code></td>
+<td>删除的 Tag 数量。</td>
+</tr>
+<tr>
+<td><code>num_vertices_deleted</code></td>
+<td>删除的点数量。</td>
+</tr>
+<tr>
+<td><code>num_vertices_inserted</code></td>
+<td>插入的点数量。</td>
+</tr>
+<tr>
+<td><code>transfer_leader_latency_us</code></td>
+<td>Raft 协议中转移 Leader 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>lookup_latency_us</code></td>
+<td>LookupProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_lookup_errors</code></td>
+<td>LookupProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_scan_vertex</code></td>
+<td>ScanVertexProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_scan_vertex_errors</code></td>
+<td>ScanVertexProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>update_edge_latency_us</code></td>
+<td>UpdateEdgeProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_update_vertex</code></td>
+<td>UpdateVertexProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_update_vertex_errors</code></td>
+<td>UpdateVertexProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>kv_get_latency_us</code></td>
+<td>Getprocessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>kv_put_latency_us</code></td>
+<td>PutProcessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>kv_remove_latency_us</code></td>
+<td>RemoveProcessor 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_kv_get_errors</code></td>
+<td>GetProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_get</code></td>
+<td>GetProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_put_errors</code></td>
+<td>PutProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_put</code></td>
+<td>PutProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_remove_errors</code></td>
+<td>RemoveProcessor 执行出错次数。</td>
+</tr>
+<tr>
+<td><code>num_kv_remove</code></td>
+<td>RemoveProcessor 执行次数。</td>
+</tr>
+<tr>
+<td><code>forward_tranx_latency_us</code></td>
+<td>传输延迟时间。</td>
+</tr>
+<tr>
+<td><code>scan_edge_latency_us</code></td>
+<td>ScanEdgeProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_scan_edge_errors</code></td>
+<td>ScanEdgeProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_scan_edge</code></td>
+<td>ScanEdgeProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>scan_vertex_latency_us</code></td>
+<td>ScanVertexProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_add_edges</code></td>
+<td>添加边的次数。</td>
+</tr>
+<tr>
+<td><code>num_add_edges_errors</code></td>
+<td>添加边时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_add_vertices</code></td>
+<td>添加点的次数。</td>
+</tr>
+<tr>
+<td><code>num_start_elect</code></td>
+<td>Raft 发起投票的次数</td>
+</tr>
+<tr>
+<td><code>num_add_vertices_errors</code></td>
+<td>添加点时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_delete_vertices_errors</code></td>
+<td>删除点时出错的次数。</td>
+</tr>
+<tr>
+<td><code>append_log_latency_us</code></td>
+<td>Raft 复制日志到单个节点的延迟。</td>
+</tr>
+<tr>
+<td><code>num_grant_votes</code></td>
+<td>Raft 投票给其他节点的次数。</td>
+</tr>
+<tr>
+<td><code>replicate_log_latency_us</code></td>
+<td>Raft 复制日志到大多数节点的延迟。</td>
+</tr>
+<tr>
+<td><code>num_delete_tags</code></td>
+<td>删除 Tag 的次数。</td>
+</tr>
+<tr>
+<td><code>num_delete_tags_errors</code></td>
+<td>删除 Tag 时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_delete_edges</code></td>
+<td>删除边的次数。</td>
+</tr>
+<tr>
+<td><code>num_delete_edges_errors</code></td>
+<td>删除边时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_send_snapshot</code></td>
+<td>发送快照的次数。</td>
+</tr>
+<tr>
+<td><code>update_vertex_latency_us</code></td>
+<td>UpdateVertexProcessor 执行的延迟时间。</td>
+</tr>
+<tr>
+<td><code>append_wal_latency_us</code></td>
+<td>Raft 写入单条 WAL 的延迟。</td>
+</tr>
+<tr>
+<td><code>num_update_edge</code></td>
+<td>UpdateEdgeProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>delete_tags_latency_us</code></td>
+<td>删除 Tag 的延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_update_edge_errors</code></td>
+<td>UpdateEdgeProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_neighbors</code></td>
+<td>GetNeighborsProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_dst_by_src</code></td>
+<td>GetDstBySrcProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_get_prop_errors</code></td>
+<td>GetPropProcessor 执行时出错的次数。</td>
+</tr>
+<tr>
+<td><code>num_delete_vertices</code></td>
+<td>删除点的次数。</td>
+</tr>
+<tr>
+<td><code>num_lookup</code></td>
+<td>LookupProcessor 执行的次数。</td>
+</tr>
+<tr>
+<td><code>num_sync_data</code></td>
+<td>Storage 同步 Drainer 数据的次数。</td>
+</tr>
+<tr>
+<td><code>num_sync_data_errors</code></td>
+<td>Storage 同步 Drainer 数据出错的次数。</td>
+</tr>
+<tr>
+<td><code>sync_data_latency_us</code></td>
+<td>Storage 同步 Drainer 数据的延迟时间。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">图空间级别监控指标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>图空间级别监控指标是动态创建的, 只有当图空间内触发该行为时，对应的指标才会创建，用户才能查询到。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>num_active_queries</code></td>
+<td>当前正在执行的查询数。</td>
+</tr>
+<tr>
+<td><code>num_queries</code></td>
+<td>查询次数。</td>
+</tr>
+<tr>
+<td><code>num_sentences</code></td>
+<td>Graphd 服务接收的语句数。</td>
+</tr>
+<tr>
+<td><code>optimizer_latency_us</code></td>
+<td>优化器阶段延迟时间。</td>
+</tr>
+<tr>
+<td><code>query_latency_us</code></td>
+<td>查询延迟时间。</td>
+</tr>
+<tr>
+<td><code>num_slow_queries</code></td>
+<td>慢查询次数。</td>
+</tr>
+<tr>
+<td><code>num_query_errors</code></td>
+<td>查询报错语句数量。</td>
+</tr>
+<tr>
+<td><code>num_query_errors_leader_changes</code></td>
+<td>因查询错误而导致的 Leader 变更的次数。</td>
+</tr>
+<tr>
+<td><code>num_killed_queries</code></td>
+<td>被终止的查询数量。</td>
+</tr>
+<tr>
+<td><code>num_aggregate_executors</code></td>
+<td>聚合（Aggregate）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_sort_executors</code></td>
+<td>排序（Sort）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_indexscan_executors</code></td>
+<td>索引扫描（IndexScan）算子执行时间。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions_bad_username_password</code></td>
+<td>因用户名密码错误导验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_auth_failed_sessions</code></td>
+<td>登录验证失败的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_opened_sessions</code></td>
+<td>服务端建立过的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_queries_hit_memory_watermark</code></td>
+<td>达到内存水位线的语句的数量。</td>
+</tr>
+<tr>
+<td><code>num_reclaimed_expired_sessions</code></td>
+<td>服务端主动回收的过期的会话数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad_failed</code></td>
+<td>Graphd 服务发给 Metad 的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_metad</code></td>
+<td>Graphd 服务发给 Metad 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged_failed</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求失败的数量。</td>
+</tr>
+<tr>
+<td><code>num_rpc_sent_to_storaged</code></td>
+<td>Graphd 服务发给 Storaged 服务的 RPC 请求数量。</td>
+</tr>
+<tr>
+<td><code>slow_query_latency_us</code></td>
+<td>慢查询延迟时间。</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
