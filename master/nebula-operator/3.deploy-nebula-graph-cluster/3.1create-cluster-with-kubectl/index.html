@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#kubectl_nebulagraph" class="md-skip">
           跳转至
         </a>
       
@@ -7225,9 +7225,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用 Kubectl 部署 NebulaGraph 集群
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         使用 Kubectl 部署 NebulaGraph 集群
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    扩缩容集群
+  </a>
+  
+    <nav class="md-nav" aria-label="扩缩容集群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    扩容集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    缩容集群
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    删除集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    后续操作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7973,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    创建集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    扩缩容集群
+  </a>
+  
+    <nav class="md-nav" aria-label="扩缩容集群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    扩容集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    缩容集群
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    删除集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    后续操作
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,20 +8054,309 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 12, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
+<h1 id="kubectl_nebulagraph">使用 Kubectl 部署NebulaGraph集群<a class="headerlink" href="#kubectl_nebulagraph" title="Permanent link">&para;</a></h1>
+<div class="admonition compatibility">
+<p class="admonition-title">历史版本兼容性</p>
+<p>1.x 版本的 NebulaGraph Operator 不兼容 3.x 以下版本的NebulaGraph。</p>
+</div>
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../2.deploy-nebula-operator/">安装 NebulaGraph Operator</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">已创建 StorageClass</a></li>
+</ul>
+<ul>
+<li>
+<p>准备相应的 License 文件</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>只有当创建的NebulaGraph集群是企业版本时，才需要提供 License 文件。</p>
+</div>
+</li>
+</ul>
+<h2 id="_2">创建集群<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本文以创建名为<code>nebula</code>的集群为例，说明如何部署NebulaGraph集群。</p>
+<ol>
+<li>
+<p>创建集群配置文件。</p>
+<ul>
+<li>
+<p>社区版集群示例。</p>
+<p>创建名为<code>apps_v1alpha1_nebulacluster.yaml</code>的文件。文件内容参见<a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.4.2/config/samples/apps_v1alpha1_nebulacluster.yaml">示例配置</a>。</p>
+<p>示例配置的参数描述如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>metadata.name</code></td>
+<td align="left">-</td>
+<td align="left">创建的NebulaGraph集群名称。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.graphd.replicas</code></td>
+<td align="left"><code>1</code></td>
+<td align="left">Graphd 服务的副本数。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.graphd.images</code></td>
+<td align="left"><code>vesoft/nebula-graphd</code></td>
+<td align="left">Graphd 服务的容器镜像。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.graphd.version</code></td>
+<td align="left"><code>v3.4.1</code></td>
+<td align="left">Graphd 服务的版本号。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.graphd.service</code></td>
+<td align="left"></td>
+<td align="left">访问 Graphd 服务的 Service 配置。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.graphd.logVolumeClaim.storageClassName</code></td>
+<td align="left">-</td>
+<td align="left">Graphd 服务的日志盘存储卷的存储类名称。使用示例配置时需要将其替换为事先创建的存储类名称，参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Storage Classes</a> 查看创建存储类详情。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.metad.replicas</code></td>
+<td align="left"><code>1</code></td>
+<td align="left">Metad 服务的副本数。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.metad.images</code></td>
+<td align="left"><code>vesoft/nebula-metad</code></td>
+<td align="left">Metad 服务的容器镜像。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.metad.version</code></td>
+<td align="left"><code>v3.4.1</code></td>
+<td align="left">Metad 服务的版本号。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.metad.dataVolumeClaim.storageClassName</code></td>
+<td align="left">-</td>
+<td align="left">Metad 服务的数据盘存储配置。使用示例配置时需要将其替换为事先创建的存储类名称，参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Storage Classes</a> 查看创建存储类详情。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.metad.logVolumeClaim.storageClassName</code></td>
+<td align="left">-</td>
+<td align="left">Metad 服务的日志盘存储配置。使用示例配置时需要将其替换为事先创建的存储类名称，参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Storage Classes</a> 查看创建存储类详情。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.replicas</code></td>
+<td align="left"><code>3</code></td>
+<td align="left">Storaged 服务的副本数。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.images</code></td>
+<td align="left"><code>vesoft/nebula-storaged</code></td>
+<td align="left">Storaged 服务的容器镜像。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.version</code></td>
+<td align="left"><code>v3.4.1</code></td>
+<td align="left">Storaged 服务的版本号。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.dataVolumeClaims.resources.requests.storage</code></td>
+<td align="left">-</td>
+<td align="left">Storaged 服务的数据盘存储大小，可指定多块数据盘存储数据。当指定多块数据盘时，路径为：<code>/usr/local/nebula/data1</code>、<code>/usr/local/nebula/data2</code>等。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.dataVolumeClaims.resources.storageClassName</code></td>
+<td align="left">-</td>
+<td align="left">Storaged 服务的数据盘存储配置。使用示例配置时需要将其替换为事先创建的存储类名称，参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Storage Classes</a> 查看创建存储类详情。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.logVolumeClaim.storageClassName</code></td>
+<td align="left">-</td>
+<td align="left">Storaged 服务的日志盘存储配置。使用示例配置时需要将其替换为事先创建的存储类名称，参见 <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">Storage Classes</a> 查看创建存储类详情。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.reference.name</code></td>
+<td align="left">-</td>
+<td align="left">依赖的控制器名称。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.schedulerName</code></td>
+<td align="left">-</td>
+<td align="left">调度器名称。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.imagePullPolicy</code></td>
+<td align="left">NebulaGraph镜像的拉取策略。关于拉取策略详情，请参考 <a href="https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy">Image pull policy</a>。</td>
+<td align="left">镜像拉取策略。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.logRotate</code></td>
+<td align="left">-</td>
+<td align="left">日志轮转配置。详情参见<a href="../../8.custom-cluster-configurations/8.4.manage-running-logs/">管理集群日志</a>。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.enablePVReclaim</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">定义是否在删除集群后自动删除 PVC 以释放数据。详情参见<a href="../../8.custom-cluster-configurations/8.2.pv-reclaim/">回收 PV</a>。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul>
+<li>
+<p>企业版集群示例。</p>
+<p>创建名为<code>apps_v1alpha1_nebulacluster.yaml</code>的文件。联系销售人员获取完整配置示例。</p>
+<p>企业版特有参数描述如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">默认值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>spec.metad.license</code></td>
+<td align="left">-</td>
+<td align="left">创建NebulaGraph集群所需的 License 配置。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.storaged.enableAutoBalance</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">是否启用自动均衡。详情参见<a href="../8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage.md">均衡扩容后的 Storage 数据</a>。</td>
+</tr>
+<tr>
+<td align="left"><code>spec.enableBR</code></td>
+<td align="left"><code>false</code></td>
+<td align="left">定义是否启用 BR 工具。详情参见<a href="../10.backup-restore-using-operator.md">备份与恢复</a>。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>拉取企业版NebulaGraph集群镜像前，请确保已联系销售人员（<a href="mailto:inqury@vesoft.com">inqury@vesoft.com</a>）获取企业版NebulaGraph集群的镜像信息。</p>
+</div>
+</li>
+<li>
+<p>配置集群 License。</p>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<ul>
+<li>此步骤只适用于创建企业版NebulaGraphh集群。</li>
+</ul>
+<ul>
+<li>创建社区版NebulaGraph集群时，忽略此步骤。</li>
+</ul>
+</div>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>nebula-license<span class="w"> </span>--from-file<span class="o">=</span>nebula.license
 </code></pre></div>
+<p>查看集群 License 信息：</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secrets<span class="w"> </span>nebula-license<span class="w"> </span>-o<span class="w"> </span>yaml
+</code></pre></div>
+</li>
+<li>
+<p>创建NebulaGraph集群。</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>apps_v1alpha1_nebulacluster.yaml
+</code></pre></div>
+<p>返回：</p>
+<div class="highlight"><pre><span></span><code>nebulacluster.apps.nebula-graph.io/nebula<span class="w"> </span>created
+</code></pre></div>
+</li>
+<li>
+<p>查看NebulaGraph集群状态。</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nebulaclusters<span class="w"> </span>nebula
+</code></pre></div>
+<p>返回：</p>
+<div class="highlight"><pre><span></span><code>NAME<span class="w">     </span>GRAPHD-DESIRED<span class="w">   </span>GRAPHD-READY<span class="w">   </span>METAD-DESIRED<span class="w">   </span>METAD-READY<span class="w">   </span>STORAGED-DESIRED<span class="w">   </span>STORAGED-READY<span class="w">   </span>AGE
+nebula<span class="w">   </span><span class="m">1</span><span class="w">                </span><span class="m">1</span><span class="w">              </span><span class="m">1</span><span class="w">               </span><span class="m">1</span><span class="w">             </span><span class="m">3</span><span class="w">                  </span><span class="m">3</span><span class="w">                </span>86s
+</code></pre></div>
+</li>
+</ol>
+<h2 id="_3">扩缩容集群<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>不支持扩缩容社区版的NebulaGraph集群。</li>
+</ul>
+<ul>
+<li>仅支持通过 v1.1.0 及以上版本的 NebulaGraph Operator 扩缩容企业版的NebulaGraph集群。</li>
+</ul>
+<p>用户可以通过编辑<code>apps_v1alpha1_nebulacluster.yaml</code>文件中的<code>replicas</code>的值进行NebulaGraph集群的扩缩容。</p>
+<h3 id="_4">扩容集群<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>本文举例扩容NebulaGraph集群中 Storage 服务至 5 个。步骤如下：</p>
+<ol>
+<li>
+<p>将<code>apps_v1alpha1_nebulacluster.yaml</code>文件中<code>storaged.replicas</code>的参数值从<code>3</code>改为<code>5</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">storaged</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;500m&quot;</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;500Mi&quot;</span>
+<span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1&quot;</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1Gi&quot;</span>
+<span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vesoft/nebula-storaged</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v3.4.1</span>
+<span class="w">    </span><span class="nt">dataVolumeClaims</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2Gi</span>
+<span class="w">      </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast-disks</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2Gi</span>
+<span class="w">      </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast-disks</span>
+<span class="w">    </span><span class="nt">logVolumeClaim</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">storage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2Gi</span>
+<span class="w">      </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fast-disks</span>
+<span class="w">  </span><span class="nt">reference</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">statefulsets.apps</span>
+<span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="w">  </span><span class="nt">schedulerName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-scheduler</span>
+</code></pre></div>
+</li>
+<li>
+<p>执行以下命令使上述更新同步至NebulaGraph集群 CR 中。</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>apps_v1alpha1_nebulacluster.yaml
+</code></pre></div>
+</li>
+<li>
+<p>查看 Storage 服务的副本数。</p>
+<p><div class="highlight"><pre><span></span><code>kubectl<span class="w">  </span>get<span class="w"> </span>pods<span class="w"> </span>-l<span class="w"> </span>app.kubernetes.io/cluster<span class="o">=</span>nebula
+</code></pre></div>
+返回：</p>
+<p><div class="highlight"><pre><span></span><code>NAME<span class="w">                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
+nebula-graphd-0<span class="w">     </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m
+nebula-metad-0<span class="w">      </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m
+nebula-storaged-0<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m
+nebula-storaged-1<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m
+nebula-storaged-2<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>2m
+nebula-storaged-3<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>5m
+nebula-storaged-4<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>5m
+</code></pre></div>
+由上可看出 Storage 服务的副本数被扩容至 5 个。</p>
+</li>
+</ol>
+<h3 id="_5">缩容集群<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>缩容集群的原理和扩容一样，用户只需将<code>apps_v1alpha1_nebulacluster.yaml</code>文件中的<code>replicas</code>的值缩小。具体操作，请参考上文的<strong>扩容集群</strong>部分。</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>目前仅支持对NebulaGraph集群中的 Graph 服务和 Storage 服务进行扩缩容，不支持扩缩容 Meta 服务。</p>
+</div>
+<h2 id="_6">删除集群<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>使用 Kubectl 删除NebulaGraph集群的命令如下：</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>-f<span class="w"> </span>apps_v1alpha1_nebulacluster.yaml
+</code></pre></div>
+<h2 id="_7">后续操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><a href="../../4.connect-to-nebula-graph-service/">连接NebulaGraph数据库</a></p>
 
   <hr>
 <div class="md-source-file">

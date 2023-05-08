@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -7877,8 +7877,55 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    前提条件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    下载安装包
+  </a>
+  
+    <nav class="md-nav" aria-label="下载安装包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oss" class="md-nav__link">
+    阿里云 OSS 下载
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nebulagraph" class="md-nav__link">
+    安装NebulaGraph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    后续操作
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -7898,20 +7945,127 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'ent' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 8, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;ent&#39; is undefined
+  <h1>Source install nebula graph by rpm or deb</h1>
+
+<p>RPM 和 DEB 是 Linux 系统下常见的两种安装包格式，本文介绍如何使用 RPM 或 DEB 文件在一台机器上快速安装NebulaGraph。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>部署NebulaGraph集群的方式参见<a href="https://docs.nebula-graph.com.cn/3.4.1/2.quick-start/3.quick-start-on-premise/3.1add-storage-hosts/">使用 RPM/DEB 包部署集群</a>。<!--这里用外链。--></p>
+</div>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>企业版请<a href="https://www.nebula-graph.com.cn/contact">联系我们</a>。</p>
+</div>
+<h2 id="_1">前提条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>安装 wget</p>
+<h2 id="_2">下载安装包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>当前仅支持在 Linux 系统下安装NebulaGraph，且仅支持 CentOS 7.x、CentOS 8.x、Ubuntu 16.04、Ubuntu 18.04、Ubuntu 20.04 操作系统。</li>
+</ul>
+<ul>
+<li>如果用户使用的是国产化的 Linux 操作系统，请<a href="https://www.nebula-graph.com.cn/contact">安装企业版NebulaGraph</a>。  </li>
+</ul>
+</div>
+<h3 id="oss">阿里云 OSS 下载<a class="headerlink" href="#oss" title="Permanent link">&para;</a></h3>
+<ul>
+<li>下载 release 版本<p>URL 格式如下：</p>
+<div class="highlight"><pre><span></span><code>//Centos<span class="w"> </span><span class="m">7</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el7.x86_64.rpm
+
+//Centos<span class="w"> </span><span class="m">8</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.el8.x86_64.rpm
+
+//Ubuntu<span class="w"> </span><span class="m">1604</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1604.amd64.deb
+
+//Ubuntu<span class="w"> </span><span class="m">1804</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu1804.amd64.deb
+
+//Ubuntu<span class="w"> </span><span class="m">2004</span>
+https://oss-cdn.nebula-graph.com.cn/package/&lt;release_version&gt;/nebula-graph-&lt;release_version&gt;.ubuntu2004.amd64.deb
 </code></pre></div>
+<p>例如要下载适用于<code>Centos 7.5</code>的<code>3.4.1</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/3.4.1/nebula-graph-3.4.1.el7.x86_64.rpm
+wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/3.4.1/nebula-graph-3.4.1.el7.x86_64.rpm.sha256sum.txt
+</code></pre></div>
+<p>下载适用于<code>ubuntu 1804</code>的<code>3.4.1</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/3.4.1/nebula-graph-3.4.1.ubuntu1804.amd64.deb
+wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/3.4.1/nebula-graph-3.4.1.ubuntu1804.amd64.deb.sha256sum.txt
+</code></pre></div></p>
+</li>
+</ul>
+<ul>
+<li>
+<p>下载日常开发版本 (nightly)</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<ul>
+<li>nightly 版本通常用于测试新功能、新特性，请<strong>不要</strong>在生产环境中使用 nightly 版本。</li>
+<li>nightly 版本不保证每日都能完整发布，也不保证是否会更改文件名。</li>
+</ul>
+</div>
+<p>URL 格式如下：</p>
+<div class="highlight"><pre><span></span><code>//Centos<span class="w"> </span><span class="m">7</span>
+https://oss-cdn.nebula-graph.com.cn/package/nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el7.x86_64.rpm
+
+//Centos<span class="w"> </span><span class="m">8</span>
+https://oss-cdn.nebula-graph.com.cn/package/nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.el8.x86_64.rpm
+
+//Ubuntu<span class="w"> </span><span class="m">1604</span>
+https://oss-cdn.nebula-graph.com.cn/package/nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1604.amd64.deb
+
+//Ubuntu<span class="w"> </span><span class="m">1804</span>
+https://oss-cdn.nebula-graph.com.cn/package/nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu1804.amd64.deb
+
+//Ubuntu<span class="w"> </span><span class="m">2004</span>
+https://oss-cdn.nebula-graph.com.cn/package/nightly/&lt;yyyy.mm.dd&gt;/nebula-graph-&lt;yyyy.mm.dd&gt;-nightly.ubuntu2004.amd64.deb
+</code></pre></div>
+<p>例如要下载<code>2021.11.24</code>适用于<code>Centos 7.5</code>的<code>2.x</code>安装包：</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.el7.x86_64.rpm
+wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.el7.x86_64.rpm.sha256sum.txt
+</code></pre></div>
+<p>要下载<code>2021.11.24</code>适用于<code>Ubuntu 1804</code>的<code>2.x</code>安装包：
+  <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.ubuntu1804.amd64.deb
+wget<span class="w"> </span>https://oss-cdn.nebula-graph.com.cn/package/nightly/2021.11.24/nebula-graph-2021.11.24-nightly.ubuntu1804.amd64.deb.sha256sum.txt
+</code></pre></div></p>
+</li>
+</ul>
+<h2 id="nebulagraph">安装NebulaGraph<a class="headerlink" href="#nebulagraph" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>安装 RPM 包</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>--prefix<span class="o">=</span>&lt;installation_path&gt;<span class="w"> </span>&lt;package_name&gt;
+</code></pre></div>
+<p><code>--prefix</code>为可选项，用于指定安装路径。如不设置，系统会将NebulaGraph安装到默认路径<code>/usr/local/nebula/</code>。</p>
+<p>例如，要在默认路径下安装3.4.1版本的 RPM 包，运行如下命令：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>nebula-graph-3.4.1.el7.x86_64.rpm
+</code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>安装 DEB 包</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>&lt;package_name&gt;
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 DEB 包安装NebulaGraph时不支持自定义安装路径。默认安装路径为<code>/usr/local/nebula/</code>。</p>
+</div>
+<p>例如安装3.4.1版本的 DEB 包：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>nebula-graph-3.4.1.ubuntu1804.amd64.deb
+</code></pre></div>
+</li>
+</ul>
+<h2 id="_3">后续操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>（企业版）<a href="https://docs.nebula-graph.com.cn/3.4.1/4.deployment-and-installation/deploy-license">设置 License</a></li>
+</ul>
+<ul>
+<li><a href="https://docs.nebula-graph.com.cn/3.4.1/2.quick-start/3.quick-start-on-premise/5.start-stop-service/">启动NebulaGraph</a><!--这里用外链。--></li>
+<li><a href="https://docs.nebula-graph.com.cn/3.4.1/2.quick-start/3.quick-start-on-premise/3.connect-to-nebula-graph/">连接NebulaGraph</a><!--这里用外链。--></li>
+</ul>
 
   <hr>
 <div class="md-source-file">

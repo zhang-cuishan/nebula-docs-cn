@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro_rendering_error" class="md-skip">
+        <a href="#clear_space" class="md-skip">
           跳转至
         </a>
       
@@ -2169,9 +2169,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CLEAR SPACE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         CLEAR SPACE
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    权限要求
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    保留的数据
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7894,6 +7946,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    权限要求
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    注意事项
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    保留的数据
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -7912,19 +8000,150 @@
   </a>
 
 
-<h1 id="macro_rendering_error"><em>Macro Rendering Error</em><a class="headerlink" href="#macro_rendering_error" title="Permanent link">&para;</a></h1>
-<p><strong>UndefinedError</strong>: 'comm' is undefined</p>
-<div class="highlight"><pre><span></span><code>Traceback (most recent call last):
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/mkdocs_macros/plugin.py&quot;, line 480, in render
-    return md_template.render(**page_variables)
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 1301, in render
-    self.environment.handle_exception()
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File &quot;&lt;template&gt;&quot;, line 21, in top-level template code
-  File &quot;/opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/jinja2/environment.py&quot;, line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: &#39;comm&#39; is undefined
+<h1 id="clear_space">CLEAR SPACE<a class="headerlink" href="#clear_space" title="Permanent link">&para;</a></h1>
+<p><code>CLEAR SPACE</code>语句用于清空图空间中的点和边，但不会删除图空间本身以及其中的 Schema 信息。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议在执行<code>CLEAR SPACE</code>操作之后，立即执行<a href="../../4.job-statements/#submit_job_compact"><code>SUBMIT JOB COMPACT</code></a>操作以提升查询性能。需要注意的是，COMPACT 操作可能会影响查询性能，建议在业务低峰期（例如凌晨）执行该操作。</p>
+</div>
+<h2 id="_1">权限要求<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>只有 <a href="../../../7.data-security/1.authentication/3.role-list/">God 角色</a>的用户可以执行<code>CLEAR SPACE</code>语句。</p>
+<h2 id="_2">注意事项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>数据清除后，<strong>如无备份，无法恢复</strong>。使用该功能务必谨慎。</li>
+<li><code>CLEAR SPACE</code>不是原子性操作。如果执行出错，请重新执行，避免残留数据。</li>
+<li>图空间中的数据量越大，<code>CLEAR SPACE</code>消耗的时间越长。如果<code>CLEAR SPACE</code>的执行因客户端连接超时而失败，可以增大 <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置</a>中<code>storage_client_timeout_ms</code>参数的值。</li>
+<li>在<code>CLEAR SPACE</code>的执行过程中，向该图空间写入数据的行为不会被自动禁止。这样的写入行为可能导致<code>CLEAR SPACE</code>清除数据不完全，残留的数据也可能受到损坏。</li>
+</ul>
+<div class="admonition enterpriseonly">
+<p class="admonition-title">Enterpriseonly</p>
+<p>企业版NebulaGraph支持先运行<code>SET VARIABLE read_only=true</code>阻止向NebulaGraph写入数据，再运行<code>CLEAR SPACE</code>。数据清除成功后运行<code>SET VARIABLE read_only=false</code>即可重新允许写入。</p>
+</div>
+<h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>CLEAR SPACE [IF EXISTS] &lt;space_name&gt;;
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>参数/选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IF EXISTS</code></td>
+<td>检查待清空的图空间是否存在，如果图空间存在，则继续执行清空操作；如果图空间不存在，则完成执行，并且提示执行成功，不会提示图空间不存在。若不设置该选项，当图空间不存在时，<code>CLEAR SPACE</code>语句会执行失败，系统会报错。</td>
+</tr>
+<tr>
+<td><code>space_name</code></td>
+<td>要清除数据的图空间名称。</td>
+</tr>
+</tbody>
+</table>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code>CLEAR SPACE basketballplayer;
+</code></pre></div>
+<h2 id="_4">保留的数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>图空间中，<code>CLEAR SPACE</code>不会删除的数据包括：</p>
+<ul>
+<li>Tag 信息。</li>
+<li>Edge type 信息。</li>
+<li>原生索引和全文索引的元数据。</li>
+</ul>
+<p>下面的执行示例明确展示了<code>CLEAR SPACE</code>会删除与保留的数据。</p>
+<div class="highlight"><pre><span></span><code># 进入图空间 basketballplayer。
+nebula[(none)]&gt; use basketballplayer;
+Execution succeeded
+
+# 查看 Tag 和 Edge type。
+nebula[basketballplayer]&gt; SHOW TAGS;
++----------+
+| Name     |
++----------+
+| &quot;player&quot; |
+| &quot;team&quot;   |
++----------+
+Got 2 rows
+
+nebula[basketballplayer]&gt; SHOW EDGES;
++----------+
+| Name     |
++----------+
+| &quot;follow&quot; |
+| &quot;serve&quot;  |
++----------+
+Got 2 rows
+
+# 统计图空间中的数据。
+nebula[basketballplayer]&gt; SUBMIT JOB STATS;
++------------+
+| New Job Id |
++------------+
+| 4          |
++------------+
+Got 1 rows
+
+# 查看统计结果。
+nebula[basketballplayer]&gt; SHOW STATS;
++---------+------------+-------+
+| Type    | Name       | Count |
++---------+------------+-------+
+| &quot;Tag&quot;   | &quot;player&quot;   | 51    |
+| &quot;Tag&quot;   | &quot;team&quot;     | 30    |
+| &quot;Edge&quot;  | &quot;follow&quot;   | 81    |
+| &quot;Edge&quot;  | &quot;serve&quot;    | 152   |
+| &quot;Space&quot; | &quot;vertices&quot; | 81    |
+| &quot;Space&quot; | &quot;edges&quot;    | 233   |
++---------+------------+-------+
+Got 6 rows
+
+# 查看 Tag 索引。
+nebula[basketballplayer]&gt; SHOW TAG INDEXES;
++------------------+----------+----------+
+| Index Name       | By Tag   | Columns  |
++------------------+----------+----------+
+| &quot;player_index_0&quot; | &quot;player&quot; | []       |
+| &quot;player_index_1&quot; | &quot;player&quot; | [&quot;name&quot;] |
++------------------+----------+----------+
+Got 2 rows
+
+# ----------------------- CLEAR SPACE 分割线 -----------------------
+# 执行 CLEAR SPACE 清空图空间 basketballplayer。
+nebula[basketballplayer]&gt; CLEAR SPACE basketballplayer;
+Execution succeeded
+
+# 更新统计信息。
+nebula[basketballplayer]&gt; SUBMIT JOB STATS;
++------------+
+| New Job Id |
++------------+
+| 5          |
++------------+
+Got 1 rows
+
+# 查看统计信息。Tag 和 Edge type 还存在，但所有的点和边都没了。
+nebula[basketballplayer]&gt; SHOW STATS;
++---------+------------+-------+
+| Type    | Name       | Count |
++---------+------------+-------+
+| &quot;Tag&quot;   | &quot;player&quot;   | 0     |
+| &quot;Tag&quot;   | &quot;team&quot;     | 0     |
+| &quot;Edge&quot;  | &quot;follow&quot;   | 0     |
+| &quot;Edge&quot;  | &quot;serve&quot;    | 0     |
+| &quot;Space&quot; | &quot;vertices&quot; | 0     |
+| &quot;Space&quot; | &quot;edges&quot;    | 0     |
++---------+------------+-------+
+Got 6 rows
+
+# 查看 Tag 索引，它们依然存在。
+nebula[basketballplayer]&gt; SHOW TAG INDEXES;
++------------------+----------+----------+
+| Index Name       | By Tag   | Columns  |
++------------------+----------+----------+
+| &quot;player_index_0&quot; | &quot;player&quot; | []       |
+| &quot;player_index_1&quot; | &quot;player&quot; | [&quot;name&quot;] |
++------------------+----------+----------+
+Got 2 rows (time spent 523/978 us)
 </code></pre></div>
 
   <hr>
