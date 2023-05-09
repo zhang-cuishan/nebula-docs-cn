@@ -1,11 +1,11 @@
 name: Publish docs via GitHub Pages
 env:
-  ACTIONTEST: master
+  ACTIONTEST: community
 # branch name, like master, 2.4
 on:
   push:
     branches: # hard code branch name
-      - master
+      - community
 
 jobs:
   prepare:
@@ -27,11 +27,9 @@ jobs:
         id: set-matrix
         run: |
           import yaml, os, json
-          with open('mkdocs.yml', 'r') as file:
+          with open('database_edition.yml', 'r') as file:
               mkdocs = yaml.safe_load(file)
-          # Access the `database_edition` variable from the `extra` section
-          database_edition = mkdocs.get('extra', {}).get('database_edition', '')
-
+          database_edition = mkdocs.get('database_edition', '')
           print(f"database_edition: {database_edition}")  # Print the variable for debugging
           matrix = []
           if database_edition == 'both':
@@ -64,22 +62,22 @@ jobs:
       - name : prepare
         run: sh ./prepare.sh
 
-      - name: Update mkdocs.yml
+      - name: Update database_edition.yml
         run: |
           import yaml
-          with open('mkdocs.yml', 'r') as file:
+          with open('database_edition.yml', 'r') as file:
               mkdocs = yaml.safe_load(file)
-          # Access the `database_edition` variable from the `extra` section and set the new value
-          database_edition = mkdocs.setdefault('extra', {}).get('database_edition', '')
-          mkdocs['extra']['database_edition'] = f"${{ matrix.database_edition }}"
-          with open('mkdocs.yml', 'w') as file:
-              yaml.dump(mkdocs, file)
+          database_edition = mkdocs.get('database_edition', '')
         shell: python
-
 
       - name: Git Config
         run: git config user.name whitewum && git config user.email min.wu@vesoft.com
 
+      - name: save tmp files
+        run: |
+          cp -f *.json /tmp/
+          cp -f *.yml  /tmp/
+          ls /tmp/ -ltr
       - name: mike 
         run: |
           python ./scripts/conditional_render.py
@@ -92,6 +90,26 @@ jobs:
           git branch
           git checkout .
           git checkout gh-pages
+      - name: replace version.json
+        run: | 
+          import yaml, json
+          new_content = {"version": "${{ env.ACTIONTEST }}", "title": "${{ env.ACTIONTEST }}", "aliases": []}
+          with open('/tmp/database_edition.yml', 'r') as file:
+              mkdocs = yaml.safe_load(file)
+          database_edition = mkdocs.get('database_edition', '')
+          filename = "/tmp/" + database_edition + "_versions.json"
+          with open(filename, 'r') as infile:
+              json_data = json.load(infile)
+          found = False
+          for item in json_data:
+            if item['version'] == new_content['version']: # in case duplicate master branch
+                found = True
+                break
+          if not found:
+              json_data.append(new_content)
+          with open('versions.json', 'w') as outfile:
+              json.dump(json_data, outfile, indent=2)
+        shell: python        
       - name: Compress
         run: |
           if [ "${{ matrix.database_edition }}" = "enterprise" ]; then
