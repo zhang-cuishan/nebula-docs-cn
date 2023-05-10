@@ -971,6 +971,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.nebula-graph.com.cn/master/9.about-license/1.license-overview/</loc>
+         <lastmod>2023-05-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.nebula-graph.com.cn/master/9.about-license/3.purchase-license/</loc>
          <lastmod>2023-05-10</lastmod>
          <changefreq>daily</changefreq>
