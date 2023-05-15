@@ -196,17 +196,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/dashboard-ent-release-note/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/dashboard-comm-release-note/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/explorer-release-note/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/nebula-comm-release-note/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/nebula-ent-release-note/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/20.appendix/release-notes/studio-release-note/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -831,7 +831,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-ent-from-3.x-3.4/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/4.deployment-and-installation/3.upgrade-nebula-graph/upgrade-nebula-graph-to-latest/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -876,11 +876,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/5.configurations-and-logs/2.log-management/audit-log/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/5.configurations-and-logs/2.log-management/logs/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
@@ -892,16 +887,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/6.monitor-and-metrics/2.rocksdb-statistics/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/6.monitor-and-metrics/3.bbox/3.1.bbox/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/6.monitor-and-metrics/3.bbox/3.2.bbox-reviewer/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -922,11 +907,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/7.data-security/1.authentication/3.role-list/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/7.data-security/1.authentication/4.ldap/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1011,22 +991,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br-ent/1.br-ent-overview/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br/1.what-is-br/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br-ent/2.install-tools/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br/2.compile-br/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br-ent/3.backup-data/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br/3.br-backup-data/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br-ent/4.restore-data/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/backup-and-restore/nebula-br/4.br-restore-data/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1037,16 +1017,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/graph-computing/nebula-algorithm/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/nebula-analytics/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/graph-computing/use-explorer/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1101,166 +1071,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/1.what-is-dashboard-ent/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/10.tasks/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/11.license-manager/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/2.deploy-connect-dashboard-ent/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/3.connect-dashboard/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/5.account-management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/7.monitor-parameter/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/8.faq/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/3.create-import-dashboard/1.create-cluster/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/3.create-import-dashboard/2.import-cluster/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/1.overview/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/2.monitor/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/5.operation-record/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/6.settings/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/9.notification/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/cluster-diagnosis/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/slow-query-analyst/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/cluster-information/audit-log/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/cluster-information/job-management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/cluster-information/overview-info/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/cluster-information/runtime-log/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/backup-and-restore/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/member-management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/node/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/scale/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/service/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/update-config/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/4.cluster-operator/operator/version-upgrade/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/manage-package/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/notification-endpoint/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/single-sign-on/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-dashboard-ent/system-settings/system-settings/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/ex-ug-FAQ/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1287,11 +1097,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/parameter-reference/ex-ug-parameter/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-exchange/use-exchange/ex-ug-export-from-nebula/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1371,186 +1176,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/12.query-visually/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/ex-ug-page-overview/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/ex-ug-shortcuts/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/faq/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/iframe/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/system-settings/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/about-explorer/ex-ug-what-is-explorer/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/canvas-operations/canvas-overview/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/canvas-operations/canvas-snapshot/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/canvas-operations/visualization-mode/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/10.create-schema/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/11.import-data/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/dbuser_management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/draft/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/explorer-console/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/db-management/ngql-template/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/deploy-connect/ex-ug-connect/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/deploy-connect/ex-ug-deploy/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/13.choose-graphspace/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/ex-ug-graph-exploration/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/ex-ug-query-exploration/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/graph-algorithm/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/node-filtering/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/graph-explorer/property-calculation/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/1.prepare-resources/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/2.create-workflow/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/3.workflow-management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/4.jobs-management/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflows/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-cancel-job/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-desc-job/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-desc-task/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-get-jobs/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-get-workflow-jobs/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/api-post-jobs/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-explorer/workflow/workflow-api/workflow-api-overview/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-importer/config-with-header/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
@@ -1567,11 +1192,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/1.introduction-to-nebula-operator/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/10.backup-restore-using-operator/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1631,12 +1251,92 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/8.custom-cluster-configurations/8.3.balance-data-when-scaling-storage/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.nebula-graph.com.cn/master/nebula-operator/8.custom-cluster-configurations/8.4.manage-running-logs/</loc>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-limitations/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/about-studio/st-ug-what-is-graph-studio/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/deploy-connect/st-ug-connect/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/deploy-connect/st-ug-deploy/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/manage-schema/st-ug-crud-edge-type/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/manage-schema/st-ug-crud-index/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/manage-schema/st-ug-crud-space/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/manage-schema/st-ug-crud-tag/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/manage-schema/st-ug-view-schema/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/draft/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-console/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-create-schema/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-import-data/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/quick-start/st-ug-plan-schema/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/troubleshooting/st-ug-config-server-errors/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/troubleshooting/st-ug-connection-errors/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.nebula-graph.com.cn/master/nebula-studio/troubleshooting/st-ug-faq/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1672,11 +1372,6 @@
     </url>
     <url>
          <loc>https://docs.nebula-graph.com.cn/master/synchronization-and-migration/2.balance-syntax/</loc>
-         <lastmod>2023-05-15</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.nebula-graph.com.cn/master/synchronization-and-migration/replication-between-clusters/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
