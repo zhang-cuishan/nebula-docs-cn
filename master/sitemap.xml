@@ -116,6 +116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ent-docs.nebula-graph.com.cn/master/2.quick-start/2.start-free-trial-on-cloud/</loc>
+         <lastmod>2023-05-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ent-docs.nebula-graph.com.cn/master/2.quick-start/6.cheatsheet-for-ngql-command/</loc>
          <lastmod>2023-05-17</lastmod>
          <changefreq>daily</changefreq>
