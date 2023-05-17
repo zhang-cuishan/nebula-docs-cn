@@ -7030,36 +7030,59 @@
 <p>在悦数图探索页面顶部的导航栏中，单击 <strong>Workflow</strong>。</p>
 </li>
 <li>
-<p>在<strong>工作流</strong>标签页单击<strong>配置</strong>。</p>
+<p>在页面右上角单击<strong>工作流配置</strong>。</p>
 </li>
 <li>
-<p>配置如下三种资源：</p>
-<p><img alt="workflow_configuration" src="https://docs-cdn.nebula-graph.com.cn/figures/workflow_configuration_221117_cn.png" /></p>
-<table>
-<thead>
-<tr>
-<th align="left">类型</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">悦数图数据库配置</td>
-<td align="left">执行图查询或写入图计算结果的 Graph 服务地址。默认为登录悦数图探索使用的 Graph 服务，无法修改。可以设置三种服务的超时时间。</td>
-</tr>
-<tr>
-<td align="left">HDFS 配置</td>
-<td align="left">存储结果的 HDFS 地址。单击<strong>添加</strong>新增地址，设置 HDFS 名称、HDFS 路径（<code>fs.defaultFS</code>配置）、HDFS 用户名。HDFS 路径支持配置保存路径，例如<code>hdfs://192.168.8.100:9000/test</code>。需要先在悦数图计算所在机器上安装 HDFS 客户端，该配置才能生效。</td>
-</tr>
-<tr>
-<td align="left">悦数图计算配置</td>
-<td align="left">执行图计算的悦数图计算地址。单击<strong>添加</strong>新增地址。</td>
-</tr>
-</tbody>
-</table>
+<p>配置如下资源：</p>
+<p><img alt="workflow_configuration" src="https://docs-cdn.nebula-graph.com.cn/figures/workflow_configuration_230424_cn.png" /></p>
+<ul>
+<li>
+<p>NebulaGraph 配置</p>
+<p>执行图查询或写入图计算结果的 Graph 服务地址。默认为登录 Explorer 使用的 Graph 服务，无法修改。可以设置三种服务的超时时间。</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>DAG 配置</p>
+<p>执行图计算的 Dag Controller 的相关配置。</p>
+<ul>
+<li>用户名：固定为<code>vesoft</code>，无需修改。</li>
+<li>数据路径：Analytics 数据目录，NFS 服务的共享目录。工作流默认使用 NFS 方式存储图计算结果，但是需要用户手动安装 NFS 并挂载目录。</li>
+<li>SSH 免密私钥路径：Dag Controller 所在机器的私钥文件路径。用于机器间 SSH 免密登录。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>NebulaGraph Analytics 节点配置</p>
+<p>添加执行图计算的 NebulaGraph Analytics 地址。</p>
+<ul>
+<li>Nebula Analytics 节点 IP 地址：填写新的 Analytics 节点 IP 地址。</li>
+<li>用户名：默认为<code>vesoft</code>，无需修改。</li>
+<li>Analytics 节点 SSH 端口号：默认为<code>22</code>。</li>
+<li>Analytics 节点用户 SSH 免密私钥路径：用于机器间 SSH 免密登录。默认为<code>~/.ssh/id_rsa</code>。</li>
+<li>Analytics 节点本地数据目录：默认为<code>~/analytics-data</code>。</li>
+<li>Analytics 节点算法脚本路径：默认为<code>~/nebula-analytics/scripts/run_algo.sh</code>。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>HDFS 配置（可选）</p>
+<p>默认情况下使用的是 NFS 保存图计算结果，如果需要使用 HDFS，请先在 Analytics 所在机器上安装 HDFS 客户端，该配置才能生效。</p>
+<ul>
+<li>HDFS 名称：填写 HDFS 配置名称，方便区分不同 HDFS 配置。</li>
+<li>HDFS 路径：即<code>fs.defaultFS</code>配置。支持配置保存路径，例如<code>hdfs://192.168.8.100:9000/test</code>。</li>
+<li>HDFS 用户名：使用 HDFS 的用户名称。</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
-<p>配置完成后，单击<strong>确认</strong>。</p>
+<p>配置完成后，单击<strong>保存</strong>。</p>
+</li>
+<li>
+<p>在右上角单击<strong>配置检查</strong>，然后单击<strong>开始检查</strong>，检查配置是否正常。</p>
 </li>
 </ol>
 

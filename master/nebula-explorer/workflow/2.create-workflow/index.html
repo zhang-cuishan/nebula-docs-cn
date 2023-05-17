@@ -7104,7 +7104,7 @@
 </tr>
 <tr>
 <td align="left">结果</td>
-<td align="left">设置结果的保存位置。为方便其他算法调用结果，图查询组件的结果只支持保存在 HDFS 上。</td>
+<td align="left">设置结果的保存位置。为方便其他算法调用结果，图查询组件的结果只支持保存在 NFS/HDFS 上。</td>
 </tr>
 </tbody>
 </table>
@@ -7121,7 +7121,7 @@
 </li>
 <li>
 <p>单击该图计算组件，在右侧弹出的工作流配置面板中进行如下设置。</p>
-<p><img alt="connect-component" src="https://docs-cdn.nebula-graph.com.cn/figures/ex-algorithm-220623-cn.png" /></p>
+<p><img alt="connect-component" src="https://docs-cdn.nebula-graph.com.cn/figures/ex-algorithm-230423-cn.png" /></p>
 <table>
 <thead>
 <tr>
@@ -7136,7 +7136,7 @@
 </tr>
 <tr>
 <td align="left">输入</td>
-<td align="left">支持三种数据源作为输入。<strong>NebulaGraph</strong> 可以选择图空间和对应的边类型；<strong>Dependence</strong> 会根据锚点的连接情况自动识别；<strong>HDFS</strong>可以选择 HDFS 和数据源文件的相对路径。</td>
+<td align="left">支持多种数据源作为输入。<br><strong>NebulaGraph</strong> 可以选择图空间和对应的边类型。<br><strong>Dependence</strong> 会根据锚点的连接情况自动识别。<br><strong>HDFS</strong>可以选择 HDFS 和数据源文件的相对路径。<br><strong>Local</strong>可以选择 NFS 中数据源文件的相对路径。</td>
 </tr>
 <tr>
 <td align="left">参数配置</td>
