@@ -335,6 +335,9 @@ extra:
     # nav.ent.begin
     name: 悦数图数据库
     # nav.ent.end
+    # nav.comm.begin
+    name: 悦数图数据库
+    # nav.comm.end
 
 # nav.ent.begin
 nav:
