@@ -284,9 +284,9 @@ extra:
     release: 3.4.0
     tag: v3.4.0
   cpp:
-    release: 3.5.0
-    branch: release-3.5
-    tag: v3.5.0
+    release: 3.4.0
+    branch: release-3.4
+    tag: v3.4.0
   java:
     release: 3.5.0
     branch: release-3.5
