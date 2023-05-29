@@ -25,13 +25,13 @@ NebulaGraph Importer（简称 Importer）是一款{{nebula.name}}的 CSV 文件�
 在使用 NebulaGraph Importer 之前，请确保：
 
 - 已部署{{nebula.name}}服务。目前有三种部署方式：
-  
+
+  - [RPM/DEB 包安装](../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md)
+    {{comm.comm_begin}}
   - [Docker Compose 部署](../4.deployment-and-installation/2.compile-and-install-nebula-graph/3.deploy-nebula-graph-with-docker-compose.md)
   
-  - [RPM/DEB 包安装](../4.deployment-and-installation/2.compile-and-install-nebula-graph/2.install-nebula-graph-by-rpm-or-deb.md)
-  
   - [源码编译安装](../4.deployment-and-installation/2.compile-and-install-nebula-graph/1.install-nebula-graph-by-compiling-the-source-code.md)
-
+    {{comm.comm_end}}
 - {{nebula.name}} 中已创建 Schema，包括图空间、Tag 和 Edge type，或者通过参数`manager.hooks.before.statements`设置。
 
 ## 操作步骤
