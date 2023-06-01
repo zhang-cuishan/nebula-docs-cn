@@ -166,7 +166,12 @@
       partition: 10
       # 读取消息的间隔。单位：秒。
       interval.seconds: 10
+      # 消费起点，默认值 latest。 可选 latest、earliest
+      startingOffsets: latest
+      # 流控，对每个触发区间处理的最大偏移量的速率限制，可不配置。
+      # maxOffsetsPerTrigger:10000
     }
+    
     # 设置 Tag team 相关信息。
     {
       name: team
@@ -184,6 +189,9 @@
       batch: 10
       partition: 10
       interval.seconds: 10
+      startingOffsets: latest
+      # 流控，对每个触发区间处理的最大偏移量的速率限制，可不配置。
+      # maxOffsetsPerTrigger:10000
     }
 
   ]
@@ -245,6 +253,10 @@
 
       # 读取消息的间隔。单位：秒。
       interval.seconds: 10
+      
+      startingOffsets: latest
+      # 流控，对每个触发区间处理的最大偏移量的速率限制，可不配置。
+      # maxOffsetsPerTrigger:10000
     }
 
     # 设置 Edge type serve 相关信息
@@ -273,6 +285,9 @@
       batch: 10
       partition: 10
       interval.seconds: 10
+      startingOffsets: latest
+      # 流控，对每个触发区间处理的最大偏移量的速率限制，可不配置。
+      # maxOffsetsPerTrigger:10000
     }
   ]
 }
