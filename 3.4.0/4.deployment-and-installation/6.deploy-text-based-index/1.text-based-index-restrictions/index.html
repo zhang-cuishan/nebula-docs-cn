@@ -7628,7 +7628,7 @@
 <li>全文索引当前仅支持<code>LOOKUP</code>语句。</li>
 </ul>
 <ul>
-<li>全文索引名称必须以<code>nebula_</code>开头，只能包含数字、小写字母、下划线，字符串长度不能超过 256 字节。</li>
+<li>全文索引名称必须以<code>nebula_</code>开头，只能包含数字、小写字母、下划线。</li>
 </ul>
 <ul>
 <li>如果 Tag/Edge type 上存在全文索引，无法删除或修改 Tag/Edge type。</li>
@@ -7661,7 +7661,7 @@
 <li>从写入 NebulaGraph，到写入 listener，再到写入 Elasticsearch 并创建索引可能需要一段时间。如果访问全文索引时返回未找到索引，可等待索引生效（但是，该等待时间未知，也无返回码检查）。</li>
 </ul>
 <ul>
-<li>使用 K8s 方式部署的 NebulaGraph 集群不支持全文索引。</li>
+<li>使用 K8s 方式部署的 NebulaGraph 集群不支持自动部署全文索引。</li>
 </ul>
 
   <hr>
@@ -7669,7 +7669,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 13, 2023</span>
       
     
   </small>
