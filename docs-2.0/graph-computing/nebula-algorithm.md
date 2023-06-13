@@ -130,7 +130,7 @@ NebulaGraph Algorithm 实现图计算的流程如下：
 
   ```bash
   val prConfig = new PRConfig(5, 1.0)
-  val louvainResult = PageRankAlgo.apply(spark, data, prConfig, false)
+  val prResult = PageRankAlgo.apply(spark, data, prConfig, false)
   ```
 
   如果用户的节点 ID 是 String 类型，可以参考 PageRank 的[示例](https://github.com/vesoft-inc/nebula-algorithm/blob/master/example/src/main/scala/com/vesoft/nebula/algorithm/PageRankExample.scala)。示例中进行了 ID 转换，将 String 类型编码为 Long 类型， 并在算法结果中将 Long 类型 ID 解码为原始的 String 类型。
