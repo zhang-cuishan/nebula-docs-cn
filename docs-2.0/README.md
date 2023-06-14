@@ -80,4 +80,4 @@ NebulaGraph 是一款开源的、分布式的、易扩展的原生图数据库�
     
 ## 修改文档中的错误
  
-NebulaGraph 文档以 Markdown 语言编写。单击文档标题右上侧的铅笔图标即可提交修改建议。
+NebulaGraph 文档以 Markdown 语言编写。单击文档标题右上侧的铅笔图标即可提交修改建议。 
