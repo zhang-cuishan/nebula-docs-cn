@@ -716,7 +716,7 @@ nav:
           - 审计日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/audit-log.md
           - 运行日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/runtime-log.md
         - 通知: nebula-dashboard-ent/4.cluster-operator/9.notification.md
-        - 数据同步: nebula-dashboard-ent/4.cluster-operator/8.data-synchronization.md
+        - 数据同步: nebula-dashboard-ent/4.cluster-operator/7.data-synchronization.md
         - 操作记录: nebula-dashboard-ent/4.cluster-operator/5.operation-record.md
         - 其他设置: nebula-dashboard-ent/4.cluster-operator/6.settings.md
       - 权限管理: nebula-dashboard-ent/5.account-management.md
