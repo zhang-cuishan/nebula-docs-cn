@@ -699,15 +699,6 @@ nav:
       - 集群管理:
         - 集群总览: nebula-dashboard-ent/4.cluster-operator/1.overview.md
         - 集群监控: nebula-dashboard-ent/4.cluster-operator/2.monitor.md
-        - 通知: nebula-dashboard-ent/4.cluster-operator/9.notification.md
-        - 分析诊断:
-          - 慢查询分析: nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/slow-query-analyst.md
-          - 集群诊断: nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/cluster-diagnosis.md 
-        - 集群信息: 
-          - 信息总览: nebula-dashboard-ent/4.cluster-operator/cluster-information/overview-info.md
-          - 作业管理: nebula-dashboard-ent/4.cluster-operator/cluster-information/job-management.md
-          - 审计日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/audit-log.md
-          - 运行日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/runtime-log.md
         - 集群操作: 
           - 节点管理: nebula-dashboard-ent/4.cluster-operator/operator/node.md
           - 扩缩容: nebula-dashboard-ent/4.cluster-operator/operator/scale.md
@@ -716,6 +707,16 @@ nav:
           - 成员管理: nebula-dashboard-ent/4.cluster-operator/operator/member-management.md
           - 版本升级: nebula-dashboard-ent/4.cluster-operator/operator/version-upgrade.md
           - 备份恢复: nebula-dashboard-ent/4.cluster-operator/operator/backup-and-restore.md
+        - 分析诊断:
+          - 慢查询分析: nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/slow-query-analyst.md
+          - 集群诊断: nebula-dashboard-ent/4.cluster-operator/analysis-diagnosis/cluster-diagnosis.md 
+        - 集群信息: 
+          - 信息总览: nebula-dashboard-ent/4.cluster-operator/cluster-information/overview-info.md
+          - 作业管理: nebula-dashboard-ent/4.cluster-operator/cluster-information/job-management.md
+          - 审计日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/audit-log.md
+          - 运行日志: nebula-dashboard-ent/4.cluster-operator/cluster-information/runtime-log.md
+        - 通知: nebula-dashboard-ent/4.cluster-operator/9.notification.md
+        - 数据同步: nebula-dashboard-ent/4.cluster-operator/8.data-synchronization.md
         - 操作记录: nebula-dashboard-ent/4.cluster-operator/5.operation-record.md
         - 其他设置: nebula-dashboard-ent/4.cluster-operator/6.settings.md
       - 权限管理: nebula-dashboard-ent/5.account-management.md
