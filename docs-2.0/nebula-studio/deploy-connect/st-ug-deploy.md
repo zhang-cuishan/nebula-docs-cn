@@ -86,8 +86,8 @@ $ lsof -i:7001
 
 如果端口被占用，且无法结束该端口上进程，用户可以通过以下命令修改 Studio 服务启动端口，并重新启动服务。
 ```bash
-//修改 studio 服务启动端口
-$ vi etc/studio-api.yam
+//修改 studio 服务启动端口，当前路劲位于nebula-graph-studio主目录，默认安装/usr/local/nebula-graph-studio。
+$ vi etc/studio-api.yaml
 
 //修改
 Port: 7001 // 修改这个端口号，改成任意一个当前可用的即可
